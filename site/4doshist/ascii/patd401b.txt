@@ -1,0 +1,48 @@
+                               JP Software
+
+            4DOS 4.01 rev A ==> 4.01 rev B Patch Documentation
+
+                              June 12, 1992
+
+
+Copyright 1988 - 1992, JP Software Inc., All Rights Reserved.  Published
+by JP Software Inc., P.O. Box 1470, E. Arlington, MA 02174 USA, (617)
+646-3975.
+
+
+This file explains how to install the 4DOS 4.01 rev B patch for 4DOS.COM.
+
+To use the patch, you must have the PATCH.EXE program uploaded by JP
+Software.  This program is in a separate file, PATCH.ZIP or PATCH4D.ZIP
+(depending on your download source).  Instructions for running the PATCH
+program are in the file PATCH.DOC which is distributed with PATCH.EXE.
+
+This patch modifies 4DOS.COM only.  To use it, copy the PAT401B.RTP file
+to the directory where your 4DOS.COM file for version 4.01 rev A is
+stored and enter the command:
+
+      patch . pat401b
+
+The patch update converts your current copy of 4DOS 4.01 rev A to version
+4.01 rev B.  Branding (name and serial number) information in your
+version 4.01 rev A 4DOS.COM file will be preserved in the modified file.
+The modified file will show the same date and time as the original file.
+You can check your current version of 4DOS with the VER /R command.  This
+command will report "4DOS Revision A" or "4DOS Revision B" in its output.
+
+Version 4.01 rev B fixes the following minor bugs and anomalies in version
+4.01 rev A:
+
+   * Descriptions were not always properly deleted when a file was
+     deleted.
+
+   * If two copies of 4DOS were started on top of each other in an OS/2
+     DOS session (eg START 4DOS from a 4OS2 prompt, which runs one copy
+     of 4DOS to start the session and another as the application to run)
+     the session would not change the title properly when running an
+     external program.
+
+   * 4DOS did not terminate properly when it reached the end of a
+     redirected input file (eg 4DOS < cmdlist).
+
+

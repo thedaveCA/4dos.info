@@ -1,0 +1,223 @@
+                               JP Software
+
+        Take Command 1.0 rev A ==> 1.0 rev B Patch Documentation
+
+                            December 20, 1994
+
+
+Copyright 1994, JP Software Inc., All Rights Reserved.  Published by JP
+Software Inc., P.O. Box 1470, E. Arlington, MA 02174 USA, (617)
+646-3975.  Take Command is a trademark of JP Software Inc.
+
+
+This file explains how to install the Take Command 1.0 rev B patch.
+
+To use the patch, you must have:
+
+     * JP Software's PATCH.EXE program.  This program is in a separate
+     file, PATCH.ZIP on CompuServe, or 4DPATCH.ZIP on bulletin boards
+     and the Internet.  [* See note below.]
+
+     * A copy of Take Command 1.0 rev A.  The simplest way to check your
+     revision level is to use the Take Command VER /R command.
+
+To use this patch, copy the TCMD10A.RTP file to the directory where your
+Take Command version 1.0 files are stored.  Make sure you are NOT using
+the copy of TCMD.EXE that you want to patch (under some conditions Windows
+may not allow you to modify a file while that file is in use).  You can
+run the patch from a 4DOS or COMMAND.COM session, exit Windows and run the
+patch, or make a copy of TCMD.EXE and patch the copy.
+
+Make sure JP Software's PATCH.EXE is in the same directory as TCMD.EXE,
+or in a directory on your PATH, then enter the command:
+
+      patch tcmd10b
+
+This patch converts Take Command 1.0 rev A to version 1.0 rev B.  It
+modifies TCMD.EXE, TC16DLL.DLL, CAVEMAN.386, and TCMD.HLP.  All other files
+are unchanged from rev A.  Branding (name and serial number) information in
+your TCMD.EXE file will be preserved in the modified file.
+
+If you have copied any of these files to other locations be sure you copy
+the updated files to those locations as well.  For example, if you are
+using Take Command as your Windows shell you probably have a copy of
+TC16DLL.DLL in the \WINDOWS\SYSTEM directory; in this case the updated
+TC16DLL.DLL must be copied to that directory as well.
+
+If you want to test TCMD.EXE to make sure the patch worked, restart Take
+Command, then use the VER /R command.  This command will report "Take
+Command Revision A" (if the patch did not work) or "Take Command Revision
+B" (if it did work).
+
+If you are short on disk space and receive a message that there is not
+enough space to perform the patch, you can use a command like this to
+reduce the disk space required:
+
+      patch /noundo tcmd10b
+
+This will make recovery slightly more difficult in the unlikely event of
+a power failure or similar problem during the patch process, but will
+reduce the disk space required to perform the patch.
+
+
+[* JP Software's PATCH.EXE is the version 1.10 patch program from the
+.RTPatch patch software sold by PocketSoft Inc.  If you have a copy of
+PATCH.EXE version 1.10 or later from another company which also uses
+.RTPatch to update its software, you can use it with JP Software
+patches. However, we recommend that you do NOT use version 2.0 of
+PATCH.EXE under OS/2.  When PATCH.EXE 2.0 is used under OS/2 it patches
+the files properly, but does not correctly update the dates and times of
+the patched files.]
+
+
+Take Command version 1.0 rev B includes the following changes to version
+1.0 rev A:
+
+Command Input and Editing Changes:
+
+     * Fixed a bug in resizing the history list from the Configure Take
+       Command dialog.
+
+     * Fixed a problem with Ctrl-Shift-Tab (the "append next matching"
+       key).
+
+     * Fixed a problem with redefining the History and @SELECT window
+       keys.
+
+     * Worked around a Windows bug which caused trouble assigning F11
+       and F12 to keystroke aliases.
+
+
+General Feature Changes:
+
+     * Changed the version string to use the country-defined decimal
+       character, so IF tests on the version level will work properly.
+
+     * Comparisons like "if %_date == 12-20-94 ..."  now work as they
+       did in 5.0. Note that even though these tests now work, this
+       approach is not recommended.  To test two strings quotes should
+       be used around the strings. Otherwise the fact that the strings
+       begin with digits may cause them to be interpreted as numbers.
+
+     * Fixed a problem with an @@ key alias turning off echoing for
+       subsequent @ key aliases.
+
+     * Fixed a problem with numeric color names with values greater than
+       7 when BRI or BLI was not used).  Also, the "ON" is now optional.
+
+     * Fixed a problem with numeric comparisons where one had a decimal
+       component and the other didn't (e.g., "if 2 == 2.0").
+
+     * Fixed a problem with TCMD not enforcing a 127-character limit on
+       session titles.
+
+     * Made some minor changes to allow other Windows applications to be
+       more responsive when Take Command is doing heavy disk crunching.
+
+     * TCMD now uses only 1 system timer.  Previously it used two; if
+       you were seriously short of spare timers you might end up with
+       Caveman not ever updating its screen.
+
+
+Variable and Function Changes:
+
+     * @ALIAS: Now truncates aliases greater than the maximum line size
+       (255 in DOS, 1023 in OS/2 & NT) to avoid line length errors.
+
+     * @ATTRIB: Fixed a problem with not matching against all the
+       specified attributes.
+
+     * @EVAL: Fixed a problem which was truncating the returned value.
+
+     * @FILEREAD in binary mode will now properly terminate the input
+       string.
+
+     * @INT and @NUMERIC now do more exhaustive testing.
+
+     * @INIREAD:  Fixed a problem INIREAD when the last argument was
+       more than one word, for example:
+
+          %@iniread[c:\windows\control.ini,current,color scheme]
+
+
+Batch File Changes:
+
+     * Fixed a problem with ESC not working with SETDOS /Y1 (the ESC
+       should have been equivalent to an 'R').
+
+     * Fixed a problem with the batch file line (used in error messages)
+       not getting updated inside command groups or line continuations
+       (where the previous line ended in an escape character).
+
+
+Windows- and Caveman-related Changes
+
+     * Changed the time-of-day clock on the status bar to include a
+       seconds count (updated every two seconds).
+
+     * Fixed a problem which would cause an EXIT in a secondary copy of
+       Take Command to close other Windows applications when Take
+       Command was defined as the Windows shell.
+
+     * Fixed a problem with Caveman apps not displaying properly after
+       killing the previous one from the Apps menu.
+
+     * Fixed a problem with describing directories in the Describe
+       dialog.
+
+     * Improved Caveman compatibility with some programs which use INT
+       10 functions 10, 11, and 12.
+
+
+Command Changes:
+
+     * ?:  Fixed a problem with a "?..." command being executed even if
+       it was inside an IFF block where the condition was false.  Also
+       fixed a problem when the command following a "?" was an alias.
+
+     * ?:  The "?" command can now be redirected or piped; using
+       redirection or piping will no longer cause "?" to be interpreted
+       as a batch prompt command.
+
+     * ACTIVATE: fixed a problem with ACTIVATE CLOSE with certain
+       programs.
+
+     * ACTIVATE: Worked around a Windows bug when you try to find or
+       activate a window with no title (e.g., ACTIVATE "").
+
+     * ALIAS: Added a check for UNKNOWN_CMD alias loops.
+
+     * DIR: Fixed two case problems with SETDOS /U1 and the /F and /L
+       switches.
+
+     * DO: Fixed an obscure problem if you do a LEAVE in a DO UNTIL, in
+       the same loop pass where DO would have terminated anyway.
+
+     * DRAWBOX: Slowed down the ZOOM option on fast systems so you can
+       actually see it.
+
+     * EXCEPT: Fixed a problem with ranges.
+
+     * FFIND: Fixed a bug where FFIND would loop endlessly if there was
+       a match on the last line of a file, with no terminating CR/LF,
+       and a bug in the /E option.  Also, FFIND will no longer return
+       the "." and ".." directories.
+
+     * LIST: Now supports files with CR's only (no LF's).  LIST should
+       now display files properly whether lines are terminated by CR,
+       LF, or CR/LF.  Also LIST now updates the status bar (date and
+       time) while LIST is active.
+
+     * SCRPUT: Fixed a minor glitch when displaying a character past the
+       current cursor position on the current line.
+
+     * SELECT: Enabled the + and - keys; fixed a problem with calling up
+       LIST within SELECT, then hitting ^C in LIST and again when you
+       return to SELECT; and fixed an occasional problem with garbage on
+       the SELECT header line after doing a LIST from within SELECT.
+
+     * TEE and Y:  Fixed problems when you didn't specify any arguments
+       (this isn't exactly invalid syntax, but isn't exactly useful
+       either).
+
+

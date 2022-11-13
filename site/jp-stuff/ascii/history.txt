@@ -1,0 +1,762 @@
+4NT 8.0 / Take Command 8.01
+
+8.01, Build 64:
+---------------
+
+    Minor help file updates.
+
+    Minor corrections to SDK TakeCmd.h file.
+
+    Fixed a problem with the (not recommended) batch variable
+      syntax when appending a + or - to a variable name followed
+      by a number.  (This can cause confusion with the new variable
+      range arguments; we recommend always using white space
+      around the arguments.) 
+
+    GOSUB - fix for a problem with GOSUB arguments when using 
+      incorrect syntax for the label (inserting white space 
+      after the ':').
+
+    TAIL (4NT only) - fixed an erratic problem when displaying
+      the start of Unicode files with some fonts.
+
+    TOUCH - fixed a problem when creating a file (with /C) that
+      begins with a @.  (This is STRONGLY discouraged, as a
+      leading @ character is interpreted by 4NT / TC / CMD to
+      mean at least two different things -- making it a part of
+      the filename as well is guaranteed to cause you trouble!)
+
+8.01, Build 63:
+---------------
+
+    Fixed a GPF in @FLOOR and @CEILING.
+
+8.01, Build 62:
+---------------
+
+    Fixed a problem with dialogs and themes.
+
+    Some minor help file updates.
+
+8.01, Build 61:
+---------------
+
+    FFIND, LIST - fixed a hang caused by Windows incorrectly
+      identifying a binary file as Unicode.
+
+    HELP - fixed a GPF when requesting help for a nonexistent
+      variable function.
+
+8.01, Build 60:
+---------------
+
+    Fix for a problem with @MAX and @MIN when passing negative
+      numbers.
+
+Version 8.01, Build 59:
+-----------------------
+
+    The Spanish localization is now nearly complete, including
+      all menus, dialogs, and internal messages and errors 
+      (except for some of the usage error messages).
+
+    Miscellaneous minor help updates.
+
+    Fixed a problem with FTP directory parsing on WinCE FTP 
+      servers.
+
+    4NT - Fixed a problem with the 4NT window sometimes flashing
+      at startup inside TCI.
+
+    The IPWorks dll's have been updated.
+
+    The attribute selection switch (/A:...) now includes 'L' (for
+      junctions and symbolic links), for compatibility with Vista's
+      CMD.EXE.  (It is synonymous with the existing 'J'.)
+
+    Added support for the wacky CMD substring variables with the wacky 
+      CMD delayed expansion syntax (i.e., "!var:~10,5!).
+
+    @MAX and @MIN - now ignore leading & trailing commas.
+
+    @SYMLINK - new variable function to return the target of the
+      specified symbolic link.
+
+    ATTRIB - added the -I and +I (not indexed) attribute.
+
+    COPY - added support for the (undocumented) CMD.EXE kludge
+      "copy file+" (to touch the date & time of the specified file
+      to the current date/time.
+
+    COPY (Vista only) - changed the /L (FTP ASCII) option to match
+      Vista's CMD definition:
+
+        /L - if the source is a symbolic link, copy the link to the
+             target instead of the actual file.
+
+    COPY - changed the /L (FTP ASCII) switch to /FTP:A (see above).
+
+    COPY - added support for /F when copying from FTP.
+
+    DIR (Vista only) - includes support for displaying symbolic links
+      (SYMLINK for files, SYMLINKD for directories).  For one column
+      displays, DIR will display the name followed by the target.
+
+    LIST - fixed a problem with the 'E' (editor) option in pipes.
+
+    MKLINK (Vista only, for compatibility with CMD) - create symbolic 
+      links.  The syntax is:
+
+      MKLINK [/D /H /J /Q] link target
+
+       /D      Create a directory symbolic link.  (The default is to
+                 create a file symbolic link.)
+       /H      Create a hard link (like MKLNK).
+       /J      Create a junction.
+       /Q      Don't display results.
+       Link    The new symbolic link name
+       Target  The pathname (full or relative) that the new link 
+                 refers to.
+
+    OSD - fix for a Windows bug with repeated invocations.  Also
+      added support for multiple simultaneous OSD windows.
+
+    PDIR (Vista only) - includes support for displaying symbolic links
+      (SYMLINK for files, SYMLINKD for directories).
+
+    PDIR - the format for the size/"DIR" field has been increased to
+      15 characters (because of the changes for SYMLINK and SYMLINKD).
+
+    SETLOCAL / ENDLOCAL - added a check for nesting SETLOCALS with
+      differing delayed expansion flags (not recommended!).
+
+    TEE - the output files can now be read by other apps while the
+      TEE is in process.
+
+
+Build 50:
+---------
+
+    Miscellaneous minor help updates.
+
+    JPSTREE.IDX - added a workaround for Vista.  Vista restricts the
+      root directory access for non-admin users, so if you don't have
+      TreePath defined in your .INI, the default directory for jpstree
+      will be %appdata%.  If %appdata% isn't defined in your environment,
+      the default will be the 4NT / TC installation directory.
+
+    @FILEWRITE - changed to return the number of bytes written rather
+      the number of bytes written + 1.
+
+    @OWNER - added a workaround for a bug in active directory DFS.
+
+    @REGEXSUB - added check for parenthesized arguments.
+
+    @SELECT - fixed a problem when KEYSTACK'ing a long line to @SELECT
+      (to set the text search string).
+
+    DIR /Q - added a workaround for a bug in active directory DFS.
+
+    GOSUB - added a kludge for (illegal) label names with trailing colons.
+
+    LIST - added support for listing HTTP files.
+
+    LIST - fixed a problem with /B and /L.
+
+    PDIR /(M) - if the file cannot be accessed, the MD5 value returned
+      will be "FFFFFFFFFFFFFFFFFFFFFFFFFFFF".
+
+    PDIR /(R) - if the file cannot be accessed, the CRC32 value returned
+      will be "FFFFFFFF".
+
+    PDIR /Q - added a workaround for a bug in active directory DFS.
+
+    PRIORITY - now returns an error rather than suspending / resuming
+      the process if you don't specify either /R or /S and you don't
+      have a priority argument.
+
+    TASKLIST (Vista only) - no longer displays the "Not all privileges 
+      referenced are assigned to the caller" when running as a limited
+      user.  (Note that this only affects TASKLIST; a limited user will
+      still get the error when attempting to run TASKEND.)
+	  
+Build 49:
+---------
+
+    BDEBUGGER - the watch window now checks for a variable
+	  in the watch list being removed from the environment.
+	  
+    GLOBAL - added check for /S option only allowed before
+	  the GLOBAL arguments.
+
+Build 48:
+---------
+
+    Fixed a Windows bug when accessing an FTP server with 
+	  Wow64FsRedirection=No (64-bit Windows only).
+	  
+	Fixed a problem in date ranges with ISO dates when no 
+	  seconds are specified.
+	  
+Build 47:
+---------
+
+    @REGEX, @REGEXSUB, @REGEXINDEX - added kludge to look for 
+      trailing ^" in regular expression, and not interpret it
+      in the token parser as escaping the double quote.  This
+      should allow you to use arguments such as:
+	  
+        %@regexindex["\^",%str]
+	
+	WOW64FsRedirection - fixed a problem with 4NT / TC not
+	  immediately recognizing the directive if it was not in
+	  the startup .INI file.
+	  
+Build 46:
+---------
+
+    UNSET - fix for the (mostly useless) "UNSET *" syntax.
+	
+Build 45:
+---------
+
+    Help file updates.
+	
+    Miscellaneous fixes for Vista bugs when reading / setting
+	  environment variables.
+	  
+    BDEBUGGER - fixed a problem when changing a variable value
+	  in the watch window.
+
+    LIST - fix for /S with STDIN redirection (i.e., "list /s foo").
+	
+	SET - fix for erroneous error message with /V, /S, /U, and /D.
+	
+Build 40:
+---------
+
+    Fix for Vista bugs when piping to a child 4NT / TC process.
+	
+	Fix for other Vista bugs when loading the language dll's in
+	  a child process.
+	
+    Minor corrections to French & German language dll's.
+	
+	@MAKEAGE - fixed a problem when only specifying a single
+	  argument.
+	  
+	GOTO - fixed a problem with not aborting nested DO loops when
+	  you use a GOTO without a /I.  (Note that if you use GOTO in
+	  this fashion, E. Dijkstra will beat you with a lead pipe!)
+	  
+    KEYSTACK - fixed a problem when passing a too-long argument.
+	
+Build 39:
+---------
+
+    Fixed a problem with the BATCH.BCP file sometimes losing keywords
+	  when batch debugger options are changed in OPTION.
+
+Build 38:
+---------
+
+    LIST (4NT) - fix for a Windows bug with /C when running in TCI.
+	
+	LIST (4NT) - fixed an erratic problem with hex searches.
+	
+Build 37:
+---------
+
+    Help file updates.
+	
+    Fixed some problems with handling of DBCS languages.
+	
+	Worked around a sporadic Windows bug when attempting to delete file
+	  streams to the recycle bin.
+	  
+	Added some additional functionality to the keystroke plugins.
+	
+	@LINKS will return "1" if Windows won't permit querying the file
+	  (i.e., for things like "pagefile.sys").
+	  
+	@INODE will return "0000:0000" if Windows won't permit querying
+	  the file (i.e., "pagefile.sys).
+
+Build 36:
+---------
+
+    Public release of 4NT 8.0 and Take Command 8.0.
+
+
+4NT 7.01 / Take Command 7.01
+
+Build 370:
+----------
+
+    @SHAxx - changed the output to upper case to match the @MD5 and @CRC32
+      functions.
+
+    (Win x64 only) - kludged around an undocumented (bug? Feature?) Windows
+      behavior when attempting to write to a file's SummaryInformation 
+      stream.  (Windows x64 will read from the SummaryInformation stream,
+      but will send a write to the Updt_SummaryInformation stream -- but
+      only after also creating a 0-byte SummaryInformation stream!)
+
+    DO - changed the /L behavior to accept strings beginning with a switch
+      character (i.e., "do var in /L /stop") provided the string isn't also
+      a valid switch character.
+
+    Some minor corrections/additions to the online help.
+
+Build 369:
+----------
+
+    @WINAPI - fixed a problem with passing Unicode strings to the API.
+	 
+	FOR - changed the /F option slightly to always parse a quoted string
+	  as a string value, not a filename.  (Previously, it would parse an
+	  string referring to an existing filename as a file, and a string
+	  otherwise.)  The change was made for CMD.EXE compatibility; if you
+	  have been using the /F option (not recommended, as there are MANY
+	  better ways to do this in 4NT / TC!) you may need to edit your 
+	  batch files / aliases.
+	  
+    KEYSTACK - worked around a Windows bug when invoking KEYSTACK the first
+	  time from a hotkey (thanks to V. Fatica!).  
+	  
+	Some minor corrections to the online help.
+	
+Build 368:
+----------
+
+    4NT - Fixed a problem with calling HELP and the batch debugger from TCI.
+
+Build 367:
+----------
+
+    Added a check in the CMD-style %~.. processing for the (inappropriate!) 
+	  use of a single-character FOR variable name that is also in the valid
+	  character list for %~.
+	
+    Changed the help & batch debugger windows so they work appropriately
+	  in both TCI and "bare" 4NT mode.
+	  
+	TEE - added support for "con:".
+	
+Build 366:
+----------
+
+    Fix for an ATITools bug (caused a crash when loading 4NT).
+
+    ON ERRORMSG - fixed a problem with the specified routine not
+      being called.
+
+Build 365:
+----------
+
+    Some minor corrections in the help text.
+    
+    Cosmetic fix for cosmetic issue (Windows problem) with pipes using
+      the CPU time that would otherwise be used by the idle process.
+    
+    @SELECT - fixed a problem with very large files (which BTW are 
+      definitely NOT recommended!).
+      
+    FOR - changed the argument parsing to disable switch characters as
+      delimiters (to match changed CMD.EXE behavior).  For example,
+      
+        for %a in (1/2/3) do echo %a
+	
+      will now echo "1/2/3".
+      
+    FOR - fixed a couple of problems with the /T option.
+    
+    FOR - now allows embedded ")" characters in a filename if enclosed
+      in double quotes.
+      
+    FOR - fixed a problem with (unnecessary) double %'s and the wacky
+      CMD.EXE-style "%%~$PATH:x" variable substitution.
+      
+    SELECT (TC) - fixed a display problem with the SELECT file / char
+      count on the status bar.
+	  
+Build 364:
+----------
+
+    BDEBUGGER - fixed a Windows bug when running 4NT in TCI (the
+      BDEBUGGER window wouldn't display).
+      
+Build 363:
+----------
+
+    Some minor updates to the help.
+    
+    DESCRIBE - fixed a minor problem with DESCRIPT.ION not always
+      being created hidden.
+      
+    RD - fixed a problem when (erroneously!) attempting to RD a file
+      (not a directory) and NTFSDescriptions=Yes.
+      
+    Fixed a problem with various colorization routines (SCRPUT,
+      directory colorization, etc.) when using double-wide character
+      languages (such as Chinese and Japanese).
+      
+Build 362:
+----------
+
+    Some minor updates to the help.
+    
+    Fixed a problem with some obscure CMD.EXE syntax ("%var%=%value"
+      was being interpreted by 4NT as an escape character rather than
+      a trailing % for the variable name).
+      
+    Fixed a problem with @FORMATN when the number is < the precision.
+    
+    MSGBOX - fixed a problem with the messagebox size calculation when
+      the text had multiple embedded tabs.
+    
+Build 362:
+----------
+
+    Added a workaround for a bug in Total Commander (creating lines
+      in DESCRIPT.ION without trailing CR/LF's).
+
+    @GETFILE - worked around a Windows resource bug that caused
+      the filter option to fail erratically.
+      
+    @INIREAD - increased the maximum argument size from 511 to
+      2047 characters.
+      
+    FTP - added a check for a valid port number following a trailing
+      ':' (to work around a VAX issue with trailing colons in the
+      directory names).   
+
+Build 361:
+----------
+
+    4NT - fixed a problem with OPTION writing the Transparency
+      directive as 0 (which caused a problem with ESET /W).  (You
+      may need to delete an existing "Transparency=0" line in
+      your 4NT.INI file.)
+      
+    @CHAR - increased maximum argument size from 511 to 2047
+      characters.
+
+Build 360:
+----------
+
+    The parser now deletes a DESCRIPT.ION file when it is empty.
+    
+    Added include list support to FTP / FTPS / IFTP.
+    
+    Fixed a problem with FTPS and unquoted arguments.
+    
+    DO - fixed a problem with /Sxxx on the DO command line being
+      interpreted as a /S.
+    
+    LIST - fixed a problem with /E.
+
+Build 359:
+----------
+
+    FTP - fixed a problem with non-standard FTP sites that don't
+      accept a password.
+      
+    Take Command - fixed an erratic bug with some Caveman apps like
+      "XCOPY /?".
+      
+    @CRC32, @MD5 - fixed a problem with leading spaces not being
+      included in the hash code.  
+
+    COPY - eliminated a (harmless but distracting) error message with
+      the /O option and FTP targets.
+
+    SET - fixed a problem with /A when omitting the % and the variable
+	  is a negative number.
+
+Build 358:
+----------
+
+    @READSCR - fixed a problem with the parser not recognizing the
+	  function name.
+
+Build 357:
+----------
+
+    4NT and Take Command can now optionally store the registration 
+      info in a key file rather than in the registry.  This should
+      allow you to use your registered copy on another machine via
+      a usb key.  Note that this does NOT permit you to use a single
+      license simultaneously on more than one machine!  You can
+      download the key file versions (executable only; they don't
+      include the installer) at ftp://jpsoft.com/4nt/inikey/4nt.exe
+      and ftp://jpsoft.com/tcmd/inikey/tcmd.exe.  The keys will be
+      stored in 4nt_keys.ini and tcmd_keys.ini.
+      
+Build 356:
+----------
+
+    Fixed a problem with Delphi plugins.
+
+Build 355:
+----------
+
+    Optimized plugin references to speed up batch files.
+    
+    Colorized directories - fixed a problem (Windows change) with
+      the "encrypted" keyword.
+      
+    FFIND - fixed a problem with regular expression searches in
+      files > 4Mb.
+      
+    LIST - fixed a problem when toggling between ASCII & Unicode
+      display with binary files.
+      
+    LOG - changed the behavior when logging errors & a "Usage" error
+      is triggered -- it no longer displays the entire quick help
+      syntax for an internal command.
+
+Build 354:
+----------
+
+    Take Command - fixed a problem with Caveman apps that scroll
+      backwards in the console buffer.
+      
+    Fixed a problem with tab completion and a leading (obsolete!)
+      %+.
+
+    Fixed a problem with filename completion with CompletePaths=Yes
+      and include lists.
+
+Build 353:
+----------
+
+    Take Command - fixed a couple of problems with Caveman and 
+      maximized TC windows on large monitors.
+    
+    Shebang - fixed a problem when the .CMD file name had embedded
+      whitespace.
+      
+    MSGBOX - increased the maximum prompt size from 1023 to 8191 
+      characters.
+   
+      
+Build 352:
+----------
+
+    FTP - added a workaround for the FTP server returning an invalid
+      (fragmentary) directory entry.  (It only happens sporadically on
+      one particular type of FTP server.)
+      
+    FTPS - fixed a problem when provided with an invalid certificate.
+      
+    ASSOC - fixed a problem (Windows API bug) when setting or deleting
+      a value.
+      
+    COPY - added a workaround for a Windows bug/peculiarity that caused
+      a strange (momentary) output on a COPY /G.
+      
+    COPY - will no longer return an error if /S is specified and a
+      subdirectory has no matching files.
+      
+    FTYPE - fixed a problem (Windows API bug) when setting or deleting
+      a value.
+      
+
+Build 351:
+----------
+
+    Take Command - worked around two Windows XP bugs that caused DOS
+      apps run in Caveman to hang.
+      
+    @EVAL - fixed a problem with the string operators (i.e., MOD, SHL,
+      etc.). 
+
+    START - fixed a problem when starting an HTTPS or FTPS URL.
+    
+Build 350 (Initial release of 7.01)
+-----------------------------------
+
+  New Features:
+  -------------
+
+    Take Command - now supports piping in Caveman; also improved 
+      Caveman compatibility & speed.  Removed the "STDIO app" option in
+      Caveman, as it's now unnecessary with the Caveman changes.
+
+    %_BDEBUGGER - returns 1 if the debugger is actively debugging a 
+      batch file, 0 otherwise.
+      
+    %@EXECSTR - will now work even if redirection is disabled (SETDOS 
+      /X-6).
+      
+    %@SERIAL - returns the serial number for the specified disk.
+
+    @WINAPI - added an exception handler to avoid GPFs when passing
+      invalid arguments to the Windows API.
+      
+    JPSTREE.IDX - no longer saves the SFN if Win32SFNSearch=No.  
+      (This makes the CDD /S 50% faster, and the JPSTREE.IDX file 30%
+      smaller.)
+
+    IF - changed the ISPLUGIN test to return 1 if the argument is a plugin
+      variable, function, or command (previously it only returned 1 for a
+      command).
+      
+    PDIR - added support for directory colorization:
+    
+	/D - colorize directory.  Note that this is the opposite of the
+	   DIR syntax -- DIR defaults to directory colorization enabled,
+	   and /D turns it off.  PDIR default to colorization disabled,
+	   and /D turns it on.
+    
+    REBOOT - added new switches:
+    
+	/K - lock workstation.  This option has the same result as 
+	   pressing Ctrl+Alt+Del and clicking Lock Workstation. 
+	   To unlock the workstation, the user must log in.
+	
+	/M or /M0 - switch the display to low power (standby)
+
+	/M1 - shut off the display (system dependent; will not work on
+	   all systems)
+
+	/R - reboot.  This is the default, but is required if you specify
+	   /M or /M1, in order to allow you shut off the monitor without
+	   rebooting the system.
+    
+    REXEC - added support for double quoting the argument list.  (The 
+      quotes will be removed before executing the commands but will
+      prevent redirection from occurring on the local rather than the
+      remote machine.)
+    
+    RSHELL - added support for double quoting the argument list.  (The 
+      quotes will be removed before executing the commands but will
+      prevent redirection from occurring on the local rather than the
+      remote machine.)
+    
+    SET - changed the /A behavior to default non-existent variables to 0
+      (to match CMD.EXE's behavior).
+
+    SHRALIAS - If you have a SHRALIAS_SAVE_PATH environment variable set, 
+      SHRALIAS will save the alias, history, dirhistory, and function lists 
+      to the path specified by SHRALIAS_SAVE_PATH when SHRALIAS exits.  The 
+      files will be saved in Unicode format; the filenames are:
+      
+          alias.sav
+	  history.sav
+	  dirhistory.sav
+	  function.sav
+
+    TAIL - added support for /N+n syntax in pipes.
+    	   
+
+  Bug Fixes:
+  ----------
+
+    Take Command - if you try to pipe to an unknown command in a child
+      TC session, it will now pop up a error message box rather than
+      displaying a message and then immediately exiting.
+      
+    Take Command - fixed a problem when starting TC as another user
+      (via the "Run As" option).
+      
+    4NT - fixed a problem when running as a Caveman app in TC and scrolling
+      past the end of the window.
+      
+    Redirection - fixed a problem with the (no longer valid) syntax
+      "3>filename" keeping the handle to "filename" open.
+      
+    Fixed a problem with F9 & unmatched single quotes on the command line.
+      
+    Fixed a problem with F10 and CompletePaths=Yes.
+    
+    @AVERAGE - fixed a confusing return when no arguments are supplied.
+    
+    @CEILING / @FLOOR - fixed a problem with reporting both an error and
+      a result when no arguments are supplied.
+      
+    @INC / @DEC - added support for exponent format (i.e., @inc[1e2]).
+    
+    @UNC - now strips double quotes (which are not needed anyway).
+    
+    BDEBUGGER - changed the "Save" button to act like the "Save" menu
+      item rather than the "Save As" (provided the file is already named).
+      
+    CALL - fixed a problem with %* when using the (wacky) CMD.EXE syntax
+      call :label ...
+    
+    CD / CDD - added an error message when the directory index is unavailable
+      because another 4NT / TC process is updating it.
+        
+    CDD - fixed a problem with not displaying the "Indexing" message 
+      the first time you do a fuzzy CD without a jpstree.idx file, 
+      and another with using too much CPU time while indexing.
+      
+    COPY - changed the timestamp applied to a file copied from an FTP
+      server back to the old (6.x) way.  (Attempting to show the same
+      date/time as the FTP server was causing problems with COPY /U,
+      among others.)
+      
+    COPY - fixed a problem with /N[est].
+      
+    DESCRIBE - fixed a problem when deleting files (it was inserting
+      invalid entries with a "*" in the DESCRIPT.ION file).
+      
+    EVENTLOG - added a workaround for a problem in the Windows event
+      viewer.
+    
+    FOR - fixed a problem with the /F "tokens..." syntax.
+    
+    FOR - fixed a problem with /F and empty FOR arguments.
+
+    FOR - added a check for escape character processing within the
+      argument set (for CMD compatibility).
+      
+    FOR - if you specify /R and the set does not include wildcards (i.e.,
+      (.), FOR will enumerate the directory tree with the set argument
+      appended.  (CMD.EXE compatibility issue, and I don't know *why*
+      CMD is doing it or what it's for!)
+      
+    FOR - fixed a problem (CMD compatibility issue) with "usebackq" and
+      backquoted arguments.
+      
+    FOR - fixed a problem (CMD compatibility issue) with "usebackq" and 
+      a quoted argument when the argument was NOT a filename.
+      
+    FOR - fixed a problem (extremely minor CMD compatibility issue!) with
+      "usebackq" and an argument in single quotes.  (It will be treated as
+      a string value rather than a command name.)
+      
+    FTYPE - fixed a problem with /R.
+    
+    HISTORY - fixed a problem with repeated swapping between local
+      and global histories.
+
+    IFTP - worked around a problem with the Windows Firewall and
+      certain FTP servers.
+
+    LIST - fixed a problem with include lists.
+    
+    LIST - added support for C(ontinue) to work across multiple
+      file arguments.
+
+    LIST (4NT only) - fixed a formatting (wrapping) problem when 
+      highlighting search text at the end of a line.
+
+    OPTION - kludged around a Windows bug when invoking the tabbed 
+      dialog from the command line (the Apply button was inappropriately
+      enabled).
+      
+    OPTION - fixed a problem when you attempt to change the size of
+      a global history or directory history list.  (Not allowed!)
+
+    PLUGIN - when invoked with no arguments, PLUGIN now prints a blank
+      line between each plugin's components.
+
+    PRINT - fixed a problem when not using a switch option.
+
+    TEE - made a change to reduce CPU usage.
+
+    TREE - fixed a problem with /A: .
+	

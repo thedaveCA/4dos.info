@@ -1,0 +1,1865 @@
+<!doctype HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+<meta name="generator" content="Microsoft FrontPage 5.0" />
+<meta name="ProgId" content="FrontPage.Editor.Document" />
+<meta http-equiv="Content-Language" content="en-gb" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<title>4DOS.INFO - Klaus Meinhard&apos;s Homepage: Title</title>
+<meta name="description" content="Everything about 4DOS and Batch Programming - Alles zu 4DOS und Batch-Programmierung" />
+<meta name="keywords" content="4XBTM, SHELL, SCRIPT, BATCH, COMMAND, PROMPT, 4DOS, 4OS2, 4NT, TCMD, TAKE COMMAND, JPSOFT, DOS, BTM" />
+<meta name="rating" content="General" />
+<meta name="resource-type" content="document" />
+<meta name="revisit-after" content="30 Days" />
+<meta http-equiv="Expires" content="0" />
+<meta http-equiv="Last-Modified" content="0" />
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+<meta name="MSStartTagsPreventParsing" content="True" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<base target="_self" />
+<!-- Disable other sites from forcing a Frameset on this page -->
+<script type="text/javascript">
+<!--
+if(parent.frames.length>0) {
+parent.location.href=location.href;
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+a:link       { font-family: Courier New; font-size: 10pt; color: #0000CC; font-weight: bold; text-decoration:none )              }
+a:visited    { font-family: Courier New; font-size: 10pt; color: #3366CC; font-weight: bold; text-decoration:none }
+a:active     { font-family: Courier New; font-size: 10pt; color: #6600CC; font-weight: bold; text-decoration:none }
+h6           { font-family: verdana; font-size: 10pt; font-weight: bold; text-align:left; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h5           { font-family: verdana; font-size: 10pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h4           { font-family: verdana; font-size: 12pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h3           { font-family: verdana; font-size: 14pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h2           { font-family: verdana; font-size: 18pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h1           { font-family: verdana; font-size: 24pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+p            { font-family: verdana; font-size: 10pt; text-align:left; word-spacing:0; text-indent:0; line-height:110%; margin-left:6; margin-right:6; margin-top:6; margin-bottom:6}
+li           { font-family: Courier New; font-size: 10pt; text-align:left; word-spacing:0; text-indent:0; line-height:110%; margin-left:6; margin-right:6; margin-top:6; margin-bottom:12}
+-->
+</style>
+<style type="text/css">
+A:hover {color: #6600CC; font-weight: bold}
+</style>
+</head>
+
+<body bgcolor="#666699" text="#000080" link="#0000FF" vlink="#3366CC" alink="#99CCFF">
+
+<h1 style="margin-bottom: 6"><font color="#FFFFFF"><a name="0"></a>[4DOS.INFO]</font></h1>
+<p style="margin-bottom: 6">&#160;</p>
+<div align="left">
+  <p style="margin-top: 0; margin-bottom: 6">
+  <font face="verdana" align="center" margin-bottom:="" 6"="" color="#FEFEFE" size="5">
+  c:\test\&gt; _</font></p></div>
+<div align="left">
+  <table summary="menú" border="0" width="165" bordercolor="#000080" cellpadding="6" cellspacing="0" height="509" align="left" style="position: absolute; left: 10; top: 100; border-collapse: collapse">
+    <tbody>
+    <tr>
+      <td valign="top" bgcolor="#FFFFFF" width="164" height="1">
+      <!-- beginn freecity.de counter code -->
+      <a href="http://www.freecity.de" target="_new">
+      <img src="http://tools.freecity.de/counter/Klaus_Meinhard" border="0" width="154" height="88" /></a>
+      <!-- ende freecity.de counter code -->&#160; </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#FFFFFF" width="164" height="15">
+      <h4 align="center" style="text-align: center">&#160;Topics</h4>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#EEEEEE" width="164" height="4">
+      <p style="margin-top: 6; margin-bottom: 6"><a href="../updates.htm">
+      <font face="Verdana">Updates</font></a><font face="Verdana"> </font></p></td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#FFFFFF" width="164" height="18">
+      <h4><font face="Verdana" size="3">4DOS INFO</font></h4>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#EEEEEE" width="164" height="237">
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="../v4dos.htm" target="_self"><font face="Verdana">4DOS Versions</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="../v4nt.htm" target="_self"><font face="Verdana">4NT Versions</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="../v4os2.htm" target="_self"><font face="Verdana">4OS2 Versions</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="../4tips.htm" target="_self"><font face="Verdana">4DOS Tips &amp; Tricks</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="../4docs.htm" target="_self"><font face="Verdana">4DOS Docs</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="../4batfaq.htm" target="_self"><font face="Verdana">4DOS BatFAQ</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a target="_self" href="../4obtms.htm"><font face="Verdana">4DOS Batches, 
+      Aliases, Functions</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <font face="Verdana">&#160; </font><a href="../4bernd.htm" target="_self">
+      <font face="Verdana">B. Schneider's</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <font face="Verdana">&#160; </font><a href="../4xbtm.htm">
+      <font face="Verdana">K. Meinhard's</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="../4links.htm" target="_self"><font face="Verdana">4DOS Links</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="../4tools.htm" target="_self"><font face="Verdana">4DOS Tools</font></a></h6>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#FFFFFF" width="164" height="18">
+      <h3 align="center"><font size="3" face="Verdana">INFO for DOS</font></h3>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#EEEEEE" width="164" height="42">
+      <p align="left"><a href="../dlinks.htm" target="_self"><font face="Verdana">
+      DOS-Links</font></a></p>
+      <p><a href="../dalter.htm"><font face="Verdana">DOS Alternatives</font></a></p>
+      <p><a href="../dhardw.htm" target="_self"><font face="Verdana">DOS Hardware</font></a></p>
+      <p><a href="../dtools.htm"><font face="Verdana">DOS Tools</font></a></p>
+      <p><a href="../dprogs.htm"><font face="Verdana">DOS Programs</font></a></p>
+      <p><a href="../dgems.htm"><font face="Verdana">DOS Gems</font></a></p></td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#FFFFFF" width="164" height="18">
+      <h3 align="center"><font face="Verdana" size="3">Service</font></h3>
+      </td>
+    </tr>
+    <tr>
+      <td width="164" height="40" bgcolor="#EEEEEE">
+      <p style="margin: 6"><a href="../search.htm" target="_self">
+      <font face="Verdana">Search Engines</font></a></p>
+      <p><a href="mailto:K_Meinhard@gmx.de"><font face="Verdana">Contact me</font></a><font face="Verdana">
+      </font></p></td>
+    </tr>
+    <tr>
+      <td width="164" height="1" bgcolor="#FFFFFF">
+      <p style="margin: 6"><a href="../default.htm" target="_self">
+      <font face="Verdana">Back to Homepage</font></a><font face="Verdana">
+      </font></p></td>
+    </tr>
+  </tbody>
+  </table>
+</div>
+<table summary="main body" border="0" width="75%" cellpadding="6" cellspacing="0" bordercolor="#000080" align="left" style="position: absolute; left: 200; top: 100; border-collapse: collapse">
+  <tbody>
+  <tr>
+    <td width="75%" bgcolor="#FFFFFF" height="41" valign="top">
+    <h4><font color="#0000CC">4DOS V4.nn&nbsp; Version History</font></h4>
+    <p style="text-align: center"><font color="#0000CC">This page can be
+    <a target="_blank" href="h4dos4.doc">downloaded</a> in MS-Word .doc format.</font> 
+    </td>
+  </tr>
+  <tr>
+    <td width="75%" bgcolor="#EEEEEE" height="14" valign="top">
+    <div align="left">
+      <p style="margin-top: 0; margin-bottom: 0" align="left">
+      <b>
+      <font color="#0000CC">4DOS Change Log - this log describes changes and bug fixes to  version 
+      4.nn of 4DOS</font></b></div>
+    </td>
+    </tr>
+  <tr>
+    <td width="75%" bgcolor="#FFFFFF" height="12" valign="top">
+    <h5><font SIZE="2" color="#0000CC"><b>Version 4.0 -- November 1, 1991</b></font></h5>
+    </td>
+  </tr>
+  <tr>
+    <td width="75%" bgcolor="#EEEEEE" valign="top">
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font SIZE="2"><font face="Verdana" color="#0000CC">Installation and Configuration</font></p>
+    <ul>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC" face="Courier New">4DOS is now a single file, 4DOS.COM. The old structure of separate 
+      4DOS.COM and 4DOS88.EXE / 4DOS286.EXE files has been eliminated. There is 
+      a wide variety of new startup options for 4DOS, ranging from the simple to 
+      the highly technical. Most of the startup switches that used to go on the 
+      SHELL= line in CONFIG.SYS or in the 4DSHELL environment variable have been 
+      eliminated, and 4DOS configuration is now controlled through the new 
+      4DOS.INI file, for both primary and secondary shells. Those switches which 
+      still work for DOS compatibility reasons (such as /E: for environment 
+      size) can also be set through 4DOS.INI. If you install 4DOS manually or 
+      have a complex configuration, you should read about 4DOS.INI in the manual 
+      before modifying your SHELL= line to load version 4.0! See Chapter 6 for 
+      more details.&nbsp; The following summary lists version 3 startup switches 
+      and the corresponding 4DOS.INI directive for version 4.0. Switches marked 
+      with a &quot;*&quot; are still available in version 4.0, in order to maintain 
+      compatibility with DOS.</font></li>
+    </ul>
+    <blockquote>
+      <blockquote>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">Ver. 3 Switch&nbsp; Function&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4DOS.INI Directive</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">-------------&nbsp; 
+    ---------------------&nbsp; -------------------</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">/A:nnnn&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Set alias list size&nbsp;&nbsp;&nbsp; Alias = nnnn</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">/C*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Execute one command&nbsp;&nbsp;&nbsp; none</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">/E:nnnn*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Set environment size&nbsp;&nbsp; Environment = nnnn</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">/E:nnnnU&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Load environment high&nbsp; UMBEnvironment = 
+    Yes</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">/H:nnnn&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Set history list size&nbsp; History = nnnn</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">/L:path&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Set EXE file location&nbsp; none, not needed</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">/P*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Load permanently&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; none</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">/R&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Disable reduced swap&nbsp;&nbsp; Reduce = No</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">/S:type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Set swap type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Swapping = swap type</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">/U&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Load 4DOS high&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UMBLoad = Yes</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">/V&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    (Used with Windows)&nbsp;&nbsp;&nbsp; none, automatic</font></p>
+      </blockquote>
+      <b>
+    </blockquote>
+    </b>
+    <ul>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">The KEYSTACK.SYS device driver is no longer 
+    used. It has beenreplaced by KSTACK.COM, a TSR (memory-resident 
+    program), normallyloaded from AUTOEXEC.BAT (or with INSTALL= in 
+    CONFIG.SYS).</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">The /P switch is now set automatically when 4DOS 
+    is loaded as the true primary shell via a SHELL= statement in 
+    CONFIG.SYS.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">4DOS now supports the COMMAND.COM syntax for 
+    specifying a COMSPEC-directory in the SHELL statement. See &quot;Setting 
+    up CONFIG.SYS&quot;. However (see next item) ...</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">Under MS-DOS and PC-DOS you probably won't need 
+    to set the COMSPEC directory on the SHELL= line or in AUTOEXEC. 4DOS sets it 
+    automatically in most cases, provided that you specify 
+    the full path for 4DOS.COM in the name you use on the SHELL= line 
+    in CONFIG.SYS. If you use DR-DOS automatic determination of the 
+    COMSPEC directory will NOT work, so you will have to set the 
+    directory yourself on the SHELL= line. (Thanks to Hans Salvisberg, 
+    author of BOOT.SYS, for the technical information needed to 
+    implement the automatic COMSPEC directory feature!). See &quot;Setting up 
+    CONFIG.SYS&quot;.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">4DOS can now 
+    load its resident portion and / or the master environment into DOS 5 UMBs. DOS 5 UMBs are used 
+    automatically if they are available and if UMB access is requested 
+    with the UMBLoad or UMBEnvironment directive in 4DOS.INI.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">Swapping is now controlled by the Swapping 
+    directive in 4DOS.INI. You can use this directive to set up any sequence of 
+    swapping attempts you like (for example, you can tell 4DOS 
+    to try EMS, then your RAM disk, then XMS, then the hard disk). If 
+    no Swapping directive is used the default is to try EMS, then 
+    XMS, then the root directory of the boot drive if it is drive C: or 
+    higher. 4DOS will no longer attempt to swap to drive A: or B: by 
+    default (though you can tell it to if you want to). If all of these 
+    methods fail, 4DOS will load resident.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">Most SETDOS settings can be initialized in the 
+    4DOS.INI file. SETDOS settings are now inherited automatically 
+    in secondary shells, so you no longer need to put a SETDOS 
+    command into the 4START file to get the right settings in 
+    secondary shells.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">The LOG state and log file name are now 
+    inherited by secondary shells, and may be set at boot time using the 
+    LogName directive in 4DOS.INI.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">For BBS operators, the /F startup switch (or the 
+    CritFail directive in 4DOS.INI) generates an automatic &quot;fail&quot; 
+    response to all critical errors.</font></p>
+      </li>
+    </ul>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">&#12288;</font></p>
+    <p style="margin: 0"><font face="Verdana" color="#0000CC">General Features</font></p>
+    <p style="margin: 0">&nbsp;</p>
+    <ul>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">The PATH 
+    search is now faster by 50 - 100% depending on where the file is found in the path.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">Secondary shells now require only about 1.7K of 
+    resident space (down from about 2.8K in version 3.03). The primary shell 
+    requirement is still 3K or less under most 
+    circumstances.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">Description file processing has been sped up 
+    substantially, and should generate much less network traffic than 
+    before.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">Directory displays in DIR and SELECT can now be 
+    colorized based on file extension or attributes. See &quot;COLORDIR&quot;.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">&quot;Include lists&quot; which allow you to specify 
+    multiple files with a single path were only available for the DIR and 
+    SELECT commands in 4DOS 3.03. In version 4.0 they have been 
+    extended to all 4DOS file processing commands, and the separator character 
+    has been changed to a semicolon. For example, the command:</font></p>
+      </li>
+    </ul>
+        <blockquote>
+    <blockquote>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">copy d:\data\*.dat;*.txt a:</font></p>
+    </blockquote>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">will copy the .DAT and .TXT files from D:\DATA 
+    to drive A:. See &quot;Include Lists&quot;.</font></p>
+        </blockquote>
+      <ul>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">Wildcards have 
+    been enhanced so that you can specify lists or ranges of characters to include or exclude. For 
+    example [abf-h]*.* means all files whose names begin with a, b, f, 
+    g, or h. See &quot;Wildcards&quot;.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">4DOS now performs variable expansion on the 
+    prompt string, so any environment variable, internal variable, or 
+    variable function can be put into the prompt and displayed.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">When 4DOS exits from a shell it looks for and 
+    executes a 4EXIT.BAT or 4EXIT.BTM file (like the 4START file). This 
+    can be used to save history or perform other actions.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">All upper case conversions (SETDOS /C1, DIR /C, 
+    @UPPER, etc.) now support international characters.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">Executable extensions will now support internal 
+    commands, and they no longer require the full path name of an 
+    executable file. Also, executable extensions now support wildcards, 
+    including the new extended wildcards. For example, to set the 
+    program for all extensions starting with WK to 123:</font></p>
+    <p style="margin: 0">&nbsp;</p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set .wk?=d:\123\123.com</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">A &quot;.&quot; can now be used in the PATH to delay the 
+    search of the current directory.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">Command grouping (originally an OS/2 feature) 
+    has been added to 4DOS. This allows you to use parentheses to 
+    group commands logically. This is a powerful feature, especially 
+    when used with the &quot;prefix&quot; commands like EXCEPT, FOR, GLOBAL, and 
+    SELECT.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">4DOS now supports Microsoft's command processor 
+    based message processing scheme for DOS external commands. If you enter a 
+    DOS external command with a bad argument (eg DEBUG 
+    XYZZY) in DOS 4 or above you will now get a real error message (eg 
+    &quot;File not found&quot;) instead of a numerical message (&quot;Extended error 
+    2&quot;). This feature adds about 200 bytes to the resident size of 
+    4DOS, and can be disabled with the &quot;MessageServer = No&quot; directive in 
+    4DOS.INI.</font></p>
+      </li>
+    </ul>
+    <p style="margin: 0">&nbsp;</p>
+    <p style="margin: 0"><font face="Verdana" color="#0000CC">At the Command Line</font></p>
+    <p style="margin: 0">&nbsp;</p>
+    <ul>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">The command 
+    history can now be viewed and executed from a popup window as well as at the command line.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">&quot;Automatic directory changes&quot; let you change to 
+    a directory by typing its name followed by a backslash.</font></p>
+      </li>
+    </ul>
+    <p style="margin: 0"><font face="Verdana" color="#0000CC">4DOS HELP System</font></p>
+    <ul>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">The help system has been extensively revised. It 
+    now supports line by line scrolling, and scrolling and paging with 
+    the mouse follow industry standard conventions. The mouse can be 
+    used more easily to perform most help navigation functions.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">The help text 
+    has been updated and expanded to cover all new 4DOS features as well as 
+    MS-DOS 5 external commands. </font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">Help is now 
+    context sensitive. If you press F1 from the command line, 4DOS will try to 
+    find help for the first command on the line. If there is no help for that 
+    command, you will be put into the main HELP menu.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">The help program has been renamed 4HELP.EXE to 
+    avoid conflicts with other HELP.EXE programs. This program is run 
+    when F1 is pressed at the command line or when the HELP command is 
+    executed. The help text file is now 4DOS.HLP (for those with a 
+    utility disk, the ASCII text file is 4DOS.TXT). The 4HELP, 4HELPF, and 
+    4HELPC environment variables have been removed and replaced by the 
+    4DOS.INI directives</font></p>
+      </li>
+    </ul>
+    <p style="margin: 0"><font face="Verdana" color="#0000CC">HelpPath and HelpOptions.</font></p>
+    <p style="margin: 0">&nbsp;</p>
+    <ul>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">The new HELP system is not compatible with the 
+    version 3.0 HELP system; if you have modified the version 3.0 
+    HELP text you must purchase a version 4.0 Utility Disk and 
+    recompile your help text to use it with 4DOS 4.0 HELP.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">HELPCFG now supports a /M switch to force it to 
+    run in monochrome mode and adjust the monochrome HELP colors, even 
+    on color systems. Also the HELPCFG exit keys have been changed to 
+    conform to general usage standards.</font></p>
+      </li>
+    </ul>
+    <p style="margin: 0">&nbsp;</p>
+    <p style="margin: 0"><font face="Verdana" color="#0000CC">I/O Redirection</font></p>
+    <p style="margin: 0">&nbsp;</p>
+    <ul>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">Added a new environment variable for directing 
+    where to create the temporary pipe files in 4DOS. 4DOS will first 
+    look for the environment variable TEMP4DOS; if it doesn't find it 
+    it will look for the (DOS 5 standard) TEMP variable; if it 
+    doesn't find that pipes will be created in the root directory of the 
+    boot disk.  </font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">Pipe names are now unique for each shell, to 
+    avoid conflicts when running pipes in different partitions under a multitasker.</font></p>
+      </li>
+    </ul>
+    <p style="margin: 0"><font face="Verdana" color="#0000CC">&#12288;</font></p>
+    <p style="margin: 0"><font face="Verdana" color="#0000CC">Environment Variables, Internal Variables, and 
+    Variable Functions</font></p>
+    <p style="margin: 0">&nbsp;</p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">There are many new environment variables, 
+    internal variables, and variable functions -- far too many to list here! 
+    This section just mentions a few highlights; see the manual for 
+    full details.</font></p>
+    <ul>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">New environment variables used by 4DOS include 
+    CDPATH, COLORDIR, and TEMP4DOS. The old TMP has been changed to TEMP for DOS 
+    5 compatibility. The old 4DSHELL variable has been 
+    eliminated, its functions are now provided by 4DOS.INI. One new 
+    variable (_CDPATH, as opposed to CDPATH) is described in MANMOD.DOC, 
+    but is not in the printed manual.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">New internal variables let you access a broad 
+    range of information on system status and configuration. Some didn't 
+    make it into the manual: see the beginning of this file for 
+    information on _BOOT,_LASTDISK, _MOUSE, and _TRANSIENT.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">In addition a very large number of variable 
+    functions have been added providing a wide array of new functions -- 
+    everything from available memory and disk space to menuing. A 
+    few of these functions didn't make it into the printed manual, so 
+    see the ASCII manual or MANMOD.DOC for information on @ALIAS, 
+    @DEVICE, @LINES, @MAKEDATE, @MAKETIME, @READSCR, and @SELECT, and 
+    some changes to @LINE, @SUBSTR, and @WORD.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">Environment variable expansion will now handle 
+    nested variables in the form %[%var] (or even %[%[%var]]!).</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">There are some 
+    enhancements to specific variables and functions: </font></p>
+    <p style="margin: 0">&nbsp;</p>
+    <ul>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">_DATE and 
+    _TIME: Return a leading zero if the first number in the date or time string 
+    is less than 10.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">@EVAL: Now supports decimal places! Numbers can 
+    have up to 16 digits to the left of the decimal point and 8 to 
+    the right. Also %@EVAL now accepts commas in numbers.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">@LINE: Now returns &quot;**EOF**&quot; at the end of the 
+    file. Also @LINE can now get its input from STDIN if you 
+    specify &quot;con&quot; as the filename**.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">@SUBSTR: The last argument (the length of the 
+    string) is now optional; it will default to the remainder of 
+    the string**. </font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">@WORD: Now allows you to return words from the 
+    end of the string**. For example %@word[-0,now is the time] 
+    returns &quot;time&quot;, %@word[-2,now is the time] returns &quot;is&quot;.</font></p>
+      </li>
+    </ul>
+      </li>
+    </ul>
+    <p style="margin: 0">&nbsp;</p>
+    <p style="margin: 0"><font face="Verdana" color="#0000CC">Aliases</font></p>
+    <p style="margin: 0">&nbsp;</p>
+    <ul>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">The command line can now grow to up to 512 bytes 
+    while an alias is being executed. The alias definition itself is 
+    still limited to 255 bytes.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">&quot;Key aliases&quot; allow you to assign aliases to 
+    function keys and most Alt and Ctrl keys. See &quot;Keystroke aliases&quot;.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">QUIT can now be used in aliases.</font></p>
+      </li>
+    </ul>
+    <p style="margin: 0">&nbsp;</p>
+    <p style="margin: 0"><font face="Verdana" color="#0000CC">Batch Files</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">&#12288;</font></p>
+    <ul>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">GOSUB now saves the IFF state, so you can use 
+    IFF within subroutines without interfering with an IFF in the 
+    calling section of the batch file.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">.BAT files have been sped up significantly, 
+    especially when executing internal commands (this speed increase 
+    applies only to .BAT files, not to .BTM files which are already much 
+    faster).</font></p>
+      </li>
+    </ul>
+    <p style="margin: 0">&nbsp;</p>
+    <p style="margin: 0"><font face="Verdana" color="#0000CC">Command Changes</font></p>
+    <p style="margin: 0">&nbsp;</p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">This section describes changes to 4DOS commands 
+    and new commands, but only briefly. It is intended to alert you to 
+    areas where your use of 4DOS commands may need to be changed, not to 
+    provide a comprehensive description. See the manual for full details.</font></p>
+    <ul>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">ATTRIB: Added 
+    two new switches: /Q (quiet) and /S (process current directory and its subdirectories).</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">CANCEL: Now accepts an optional argument to set 
+    the ERRORLEVEL.  </font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">CD and CDD: These commands now use the CDPATH 
+    environment variable to find the subdirectory to change to. This 
+    allows changing to a subdirectory without typing its full path name. 
+    Also, CD and CDD now save the previous directory, and allow you 
+    to switch back to it with &quot;CD -&quot; or &quot;CDD -&quot;.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">CLS and COLOR: Can now set the screen border 
+    color, and will set colors with or without ANSI loaded. If ANSI is 
+    not loaded, the colors will not be &quot;sticky&quot; -- you may lose them 
+    when you run an application.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">COPY: New switches include /C (copy changed 
+    files only), /H (copy hidden files), /N (do nothing, just test results 
+    of copy), and /S (copy files from the current directory and its 
+    subdirectories). /Q (quiet) now turns off the display of the number 
+    of files copied.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">If you copy a file and the target file has a 
+    description but the source doesn't, 4DOS will now preserve the 
+    target description; this allows you to update files without losing the 
+    descriptions. A full destination disk during a COPY will now give an 
+    informative message, and stop the copy. COPY now preserves 
+    Hidden and System attributes (but not Read Only) when creating the 
+    target file.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">DEL: New switches include /N (do nothing, just 
+    test results of DEL), /S (delete files from the current 
+    directory and its subdirectories), /X (remove empty subdirectories), and 
+    /Z (allow deletion of hidden, system, and read-only files). If you have a 
+    large number of files to delete you can increase deletion 
+    speed dramatically if you use the /Q switch and do NOT use 4DOS's 
+    extended wildcards in the file name.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">DIR: (See additional section below on switch 
+    changes). Directory displays can now be colorized with COLORDIR. 
+    Free space displays will be correct even on JOINed, SUBSTed, or 
+    ASSIGNed drives in DOS 3.1 and above. File description handling has 
+    been sped up significantly. Directory names are displayed in square 
+    brackets [] for DOS 5 compatibility. If an argument begins with 
+    &quot;\\&quot;, 4DOS will assume it's a network reference and will not try 
+    to get the volume label or disk space for that drive, to avoid 
+    network errors.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">DIR Switches: Many switches have been changed 
+    for DOS 5 compatibility; a summary is below. DIR now supports the 
+    DOS 5 sort order switches (/O:[-degns]), as well as the original 
+    4DOS switches (/O:[-eirtuz]). The new /O:a option sorts the 
+    directory in standard ASCII order rather than sorting filenames 
+    containing numbers in the default numerical order. A byproduct of 
+    the switch changes is that the /A:xxxx and /O:xxxx switches CANNOT 
+    be followed by another parameter without an intervening slash. 
+    For example, you used to be able to say DIR /OEP to display the 
+    directory in extension order with pauses. You must now use DIR /OE/P.</font></p>
+    <p style="margin: 0">&nbsp;</p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">&nbsp;&nbsp;&nbsp;&nbsp; Old Switch&nbsp; Function&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; New Switch</font></p>
+      <blockquote>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">----------&nbsp; ------------------------&nbsp; ----------</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">/1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Single column&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; no change</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">/2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Two columns&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; no change</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">/4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Four columns&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; no change</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">/A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Display attributes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /T</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">/C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Upper case&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; no change</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">/D&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Scan subdirectories&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /S</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">/F&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Display files only&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /A:-d</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">/H&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Display all files&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /A</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">/J&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Justify file names&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; no change</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">/N&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Reset DIR options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; no change</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">/O&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sort order&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; see above</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">/P&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pause at end of screen&nbsp;&nbsp;&nbsp; no change</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">/Q&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Display file names only&nbsp;&nbsp; /B</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">/S&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Display summary only&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /U</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">/V&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sort vertically&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; no change</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">/W&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Wide display&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; no change</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">/X&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Display directories only&nbsp; /A:d</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">New&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Disable colorization&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /D**</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">New&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Display full path names&nbsp;&nbsp; /F</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">New&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Suppress header&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /K</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">New&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lower case&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /L</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">New&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Suppress footer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /M</font></p>
+      </blockquote>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">DRAWBOX: Added a new &quot;shadow&quot; option to create a 
+    transparent drop shadow for the box.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">ECHOS: This is a new command which works just 
+    like an ECHO, but doesn't print a CR/LF at the end of a line. It's 
+    useful when redirecting output to a printer or other device.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">ESET: The new 
+    /M switch makes the change to the master environment, not the local one.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">EXIT can now accept and return a result code 
+    (error level) to the program that started a secondary shell.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">FOR: The set to be processed can now be read 
+    from a file. The new /A: switch allows selection of files for 
+    processing based on attributes, using the same syntax as DIR /A**.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">GLOBAL: Added switches /H (process hidden 
+    directories) and /P (prompt before executing the command in each 
+    directory)**.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">GOTO: Added a /I switch which tells 4DOS to NOT 
+    cancel IFF processing. (Use only if you know EXACTLY what 
+    you're doing, and don't attempt to jump outside of the IFF or into 
+    a different IFF or IFF nesting level!)</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">HISTORY: Two switches were added: /A adds a 
+    command to the history list; /P pauses after displaying each page of 
+    the history.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">IF and IFF: Most of the old tests for system 
+    resources (EMS, XMS, DISKFREE, etc.) have been moved to variable 
+    functions to make the information available throughout 4DOS rather 
+    than just in IF and IFF. You will need to edit your batch files or 
+    aliases if you used these tests in IF or IFF commands (see below). 
+    New conditional operators .AND., .OR., and .XOR. have been 
+    added. Some new tests have been added: ISINTERNAL tests if a string 
+    matches the name of an internal command; ISLABEL tests if a label 
+    exists in the current batch file**.</font></p>
+      </li>
+    </ul>
+    <blockquote>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">&nbsp;&nbsp;&nbsp;&nbsp; Old IF / IFF test New Variable or Variable 
+    Function</font></p>
+    <blockquote>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">----------------- 
+    ---------------------------------</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">MONITOR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; %_MONITOR</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">VIDEO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; %_VIDEO</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">ATTRIB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; %@ATTRIB[filename,attrib]</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">DISKFREE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; %@DISKFREE[d:,b|k|m]</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">DOSMEM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; %@DOSMEM[b|k|m]</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">EMS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; %@EMS[b|k|m]</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">EXTENDED&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; %@EXTENDED[b|k|m]</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">FILESIZE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; %@FILESIZE[filename,b|k|m]</font></p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">XMS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; %@XMS[b|k|m]</font></p>
+    </blockquote>
+    </blockquote>
+    <ul>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">INKEY: The new /K switch specifies the 
+    permissible keystrokes**.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">KEYSTACK: Key names can be entered mnemonically, 
+    and delays can now be included in the keystroke sequence. The 
+    KEYSTACK.SYS device driver has been removed and replaced by a TSR, 
+    KSTACK.COM.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">LH: New command added to support DOS 5's load 
+    high capability.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">LIST: Now saves your position on a search or a 
+    print, and returns you to it after the print or an unsuccessful 
+    search. You can now toggle the high bit (/H) and line wrap (/W) 
+    flags from inside LIST, and /W(rap) now affects the P(rint) option.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">LOADHIGH: New command added to support DOS 5's 
+    load high capability.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">LOG: The LOG state and file name are now 
+    inherited by secondary shells. The log file name and/or path can be set 
+    with the LogName directive in 4DOS.INI** (using LogName does not 
+    turn logging on, you must still use LOG ON to do so).</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">MOVE: New switches include /C (move changed 
+    files only), /D (require that the destination be a directory), /H 
+    (move hidden files), /N (do nothing, just test results of move), and 
+    /S (move files from the current directory and its subdirectories). 
+    /Q (quiet) now turns off the display of the number of files 
+    copied. If you move a file and the target file has a description but 
+    the source doesn't, 4DOS will now preserve the target description; 
+    this allows you to update files without losing the descriptions. A 
+    full destination disk during a MOVE will now give an informative 
+    message, and stop the move.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">PROMPT: Environment variables, internal 
+    variables, and variable functions can now be used from within the 
+    prompt, allowing you to include a wide variety of values in your prompt 
+    text. </font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">QUIT: Now accepts an optional argument to set 
+    the ERRORLEVEL.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">REBOOT: This is a new command which does a warm 
+    or cold boot, with an optional verification prompt. You need to 
+    test it on your system as some reboot methods do not work on all 
+    systems or with all other software.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">REN has two new switches: /N (do nothing, just 
+    test results of rename); /S (allow subdirectory renames). 
+    Subdirectory renames are now disabled if wildcards are used in the old 
+    name, to avoid inadvertent renaming of directories; you can enable 
+    them with /S.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">SELECT: There 
+    are some new switches and switch changes: /A selects files based on attribute (see DIR), /C 
+    displays in upper case, /D disables directory colorization**, and 
+    /O has the same changes as in DIR. A &quot;*&quot; now reverses the marks 
+    on all files, rather than simply marking all files -- for 
+    example, if you mark 3 files and then press '*' SELECT will unmark 
+    those three files and mark all the others. You can now unmark all of 
+    the marked files with a '/'.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">SET: The new /M switch makes the change to the 
+    master environment, not the local one. The syntax has been changed 
+    to match COMMAND.COM: you MUST enter an '=' in a SET 
+    statement, and you may now put whitespace in the variable name or the 
+    argument. Also, if you enter SET VARNAME with nothing else on the 
+    line SET will now display the value of the variable, rather than 
+    removing it from the environment as it used to. To remove an 
+    environment variable, you must add the &quot;=&quot; sign to the end (e.g. SET 
+    VARNAME=), or use UNSET. Also note that, because whitespace in 
+    environment variable names and values is now preserved, batch files with 
+    lines like &quot;SET MYVAR = MYVALUE&quot; may not work unless they 
+    are changed to eliminate the extra spaces. Under 4DOS 3.03 this 
+    example would set &quot;MYVAR&quot; to &quot;MYVALUE; under 4DOS 4.0 it will set 
+    &quot;MYVAR &quot; to &quot; MYVALUE&quot;.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">SETDOS: The /A option can now be set to tell 
+    4DOS that ANSI is not loaded (/A2). The /H option has been removed; 
+    the minimum length of a command to save can be set with the HistMin 
+    option in 4DOS.INI. The /S option now uses percentages, 
+    not line counts, to set the cursor shape for insert and overstrike modes. 
+    The /V option can now be set to echo everything, even if 
+    echo is off (/V2)**.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">SWAPPING: Now displays the current swapping type 
+    (EMS, XMS, Disk, or None) as well as the swapping state.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">TIMER: There are now three timers available, 
+    selected with /1, /2, or /3. TIMER ON can be used to force a reset of 
+    the timer regardless of the current state.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">TRUENAME: This is a new command which displays 
+    the true name of a file, even on ASSIGNed, JOINed, or SUBSTed 
+    drives.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">UNSET: The new 
+    /M switch makes the change to the master environment, not the local one.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">VER: The new /R switch displays the DOS revision 
+    level and location of the DOS kernel (DOS 5 only)**.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">VSCRPUT: This is a new command which has the 
+    same parameters as SCRPUT, but displays the string vertically.</font></p>
+      </li>
+    </ul>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">Technical Changes</font></p>
+    <p style="margin: 0">&nbsp;</p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">These changes are primarily of interest to 
+    programmers and others interested in &quot;how 4DOS works&quot;. Most users do 
+    not need to read this information.</font></p>
+    <ul>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">New programming interfaces are included in 
+    version 4.0; see Appendix C of the manual for details. These include a 
+    new KEYSTACK interface, installable commands, and extended 
+    information in the DESCRIPT.ION file.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">Full support for INT 2E is now provided. See the 
+    &quot;Appendix C&quot;&nbsp; section of this file for details.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">4DOS now reserves all available DOS RAM while it 
+    is running at the prompt. This space is freed as needed for BTM 
+    files, DIR, LIST, SELECT, etc., and is always freed when starting 
+    an application. This mimics COMMAND.COM; we have implemented it 
+    to get around some odd behavior with loading certain networks or 
+    TSRs which depend on this approach.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">4DOS now detects a version mismatch with a 
+    previous shell and disables alias and history inheritance and reduced 
+    swapping if one isfound.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">4DOS now supports third-party INT 24 (critical 
+    error) handlers like 4DOS24H, and will no longer disable them when an 
+    unruly TSR unloads.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">The 4DOS transient portion is now 100% 
+    dynamically relocatable. This means if you have a TSR that grabs a block 
+    from the end of DOS memory, 4DOS will dynamically relocate itself 
+    below the TSR when it swaps in after the TSR goes resident. The only 
+    thing you can't do is load such a TSR with swapping off, then turn 
+    swapping back on. If you do the results will not be good.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">Reduced swapping is now enabled all the time. 
+    Starting a secondary shell under DESQView, or when alias or 
+    environment space is expanded, etc., will no longer result in a full-sized 
+    swap area. The only way to get a full-sized swap area in a 
+    secondary shell is to force it with the Reduce = NO directive in 
+    4DOS.INI, or to load one version of 4DOS on top of another.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">The maximum internal line size in 4DOS has been 
+    increased from 255 to 512 characters. The maximum command line 
+    length is still 255, but the increase in the internal buffer will 
+    allow you to have more complex aliases, variables, and command groups.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">4DOS will now &quot;short-circuit&quot; attempts by 
+    certain programs to do a &quot;4DOS /C 4DOS&quot; (ie load 4DOS and tell it to load 
+    itself again) when shelling to DOS. When this occurs 4DOS will only 
+    be loaded once.</font></p>
+      </li>
+    </ul>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">Compatibility 
+    Changes:</font></p>
+    <p style="margin: 0">&nbsp;</p>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">This section gives a quick overview of changes 
+    to 4DOS 4.0 to enhance compatibility with other software. For details 
+    on any specific package see APPNOTES.DOC.</font></p>
+    <p style="margin: 0">&nbsp;</p>
+    <ul>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">ANSI: 4DOS has improved ANSI detection and now 
+    will usually correctly detect whether ANSI is loaded regardless 
+    of whether ANSI or DOS is loaded high or low. If you have problems 
+    with ANSI detection use SETDOS /A or the ANSI directive in 
+    4DOS.INI to tell 4DOS whether ANSI is installed.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">APPEND: 4DOS sets APPEND's /PATH:OFF flag if 
+    using DOS 4 or DOS 5.&nbsp; This will eliminate any attempt by APPEND to 
+    extend its searches in a way that interferes with 4DOS file access and 
+    file descriptions. DESQview: A Close Window command from within 
+    4DOS will now release all resources (XMS, EMS, UMB, swap file, shell 
+    number, interrupts) owned by 4DOS before the window is closed, just 
+    as if you typed EXIT. 4DOS only performs this cleanup if you are 
+    actually in 4DOS when you issue the Close Window command. If you 
+    are in an application the cleanup will not occur.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">DR-DOS: Several changes have been made for 
+    DR-DOS compatibility including access to 4DOS extended wildcards, and 
+    use of DR-DOS passwords (the &quot;;&quot; must be doubled on certain 
+    commands for this to work). </font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">Novell Netware: Numerous changes have been made 
+    to improve Netware compatibility, especially with 4DOS redirection 
+    and batch files. Novell has also fixed bugs which would cause 
+    environment variables to be destroyed when logging in to the network 
+    under 4DOS. Also, you can now swap secondary shells to a network 
+    drive using the SwapReopen directive in 4DOS.INI.</font></p>
+      </li>
+      <li>
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">Windows: 4DOS 
+    now detects Windows 3 and configures itself accordingly. At startup you will get a message: &quot;4DOS 
+    running under Windows 3 in [Win3 mode]&quot;. There will be no 
+    message if you aren't running under Win3. Memory allocation in Win3 is 
+    now automatic, hence there is no need for the old /V switch.</font></p>
+      </li>
+    </ul>
+    </font>
+    </td>
+  </tr>
+  <tr>
+    <td width="75%" bgcolor="#FFFFFF" height="12" valign="top">
+    <h5><font color="#0000CC"><span lang="EN-GB">Version 4.0b -- November 18, 
+    1991</span></font></h5>
+    </td>
+  </tr>
+  <tr>
+    <td width="75%" bgcolor="#EEEEEE" height="65" valign="top">
+    &nbsp;<p>
+    <font color="#0000CC" face="Verdana" size="2">No changes found in the 
+    documents. Probably only internal bugfixes.</font></p>
+    <p>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="75%" bgcolor="#FFFFFF" height="12" valign="top">
+    <h5><font color="#0000CC">
+    <span lang="EN-GB" style="font-size: 10.0pt; font-family: Verdana">Version 
+    4.01b -- June 8, 1992</span></font></h5>
+    </td>
+  </tr>
+  <tr>
+    <td width="75%" bgcolor="#EEEEEE" height="4137" valign="top">
+    <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Verdana; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+    <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Verdana; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+    <font color="#0000CC"><span lang="EN-GB">General Features</span></font></p>
+    <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+    <ul>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">Include lists can be up to 255 
+      characters long (the previous limit was 79 characters).</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">External applications can now be 
+      invoked with extended parent directory names (&quot;...\appname&quot;).</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">Drive changes will now save the 
+      old drive and directory so it can be retrieved with a &quot;CDD -&quot;.</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">A new 4DOS.INI directive, 
+      DescriptionMax = nnnn, now controls the description length limit for 
+      DESCRIBE (the previous limit was fixed at 40 characters).&nbsp; This will 
+      provide better support for 3rd-party description editors which support 
+      longer descriptions.&nbsp; The default for DescriptionMax is 40 characters; the 
+      allowable range is 20 to 120 characters.&nbsp; DESCRIBE will also allow editing 
+      of descriptions longer than DescriptionMax, but such descriptions cannot 
+      be lengthened. Descriptions displayed by DIR and SELECT are truncated at 
+      the screen width, with a right arrow at the end if the full description 
+      doesn't fit on the screen.</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">Lines in SET /R and ALIAS /R 
+      files, and aliases and variables edited by ESET, editing lines can all be 
+      up to 511 characters long.</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">The &quot;Cancel batch file?&quot; prompt 
+      is now sent to STDERR rather than STDOUT, in case batch output is 
+      redirected.</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">Prefacing an external command 
+      with a '@' will remove the old value of CMDLINE from the environment.&nbsp; For 
+      folks who want to keep the environment small when loading TSRs.&nbsp;</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">KSTACK has been rewritten with a 
+      different internal implementation. The external use is the same for both 
+      users (the KEYSTACK command) and programmers (the API for KSTACK).&nbsp; The 
+      new version will not eat up CPU time in DESQview windows the way the old 
+      one did.&nbsp;Also some minor problems have been fixed, and KSTACK now releases 
+      its environment block at startup.</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">4DOS now displays the true INI 
+      file name when an error occurs (previously &quot;4DOS.INI&quot; was displayed 
+      reagrdless of the actual name).</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">Variable expansion will now work 
+      when the variable is within an alias and is embedded in the first item on 
+      the line.&nbsp; For example:</span></font></li>
+    </ul>
+    <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+    <font color="#0000CC"><span lang="EN-GB">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c:\&gt; alias mycopy=copy 
+    /r</span></font></p>
+    <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+    <font color="#0000CC"><span lang="EN-GB">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c:\&gt; set xx=py</span></font></p>
+    <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+    <font color="#0000CC"><span lang="EN-GB">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c:\&gt; myco%xx file1 a:</span></font></p>
+    <dl>
+      <dd>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">will copy file1 to drive A:, and 
+      prompt if the destination file already exists.</span></font></dd>
+    </dl>
+    <ul>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">Added a new 4DOS startup switch, 
+      /K.&nbsp; This switch does nothing, but all text after it is treated like a 
+      command, so using &quot;/K command&quot; at the end of the 4DOS command line is 
+      equivalent to including the &quot;command&quot; without /K.&nbsp; This is equivalent to 
+      the 4OS2 /K switch, and is included for compatibility with the version of 
+      COMMAND.COM distributed with OS/2 2.0.&nbsp; You can use either /K or /C before 
+      the command, but not both.</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">Several internal changes were 
+      made to provide better support for using 4DOS in OS/2 2.0 DOS sessions.</span></font></li>
+    </ul>
+    <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+    <font color="#0000CC"><span lang="EN-GB">&nbsp;</span></font></p>
+    <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+    <font color="#0000CC"><span lang="EN-GB">&nbsp;<font face="Verdana">Internal 
+    Variables and Variable Functions</font></span></font></p>
+    <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+    <font color="#0000CC"><span lang="EN-GB">&nbsp;&nbsp;</span></font></p>
+    <ul>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">%_DISK no longer generates a 
+      physical disk access.</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">%@ASCII[] now checks for an 
+      escape character preceding the actual character to process.&nbsp; This allows 
+      quotes and other special characters as the argument (eg %@ASCII[^X`]).</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">%@FILESIZE now returns -1 on a 
+      non-existent file.</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">%@SELECT now supports input from 
+      CON (standard input).</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">Changed %@WORD to disable the / 
+      as a separator; now it will only use spaces, tabs, and commas.</span></font></li>
+    </ul>
+    <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+    <font color="#0000CC"><span lang="EN-GB">&nbsp;</span></font></p>
+    <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+    <font color="#0000CC"><span lang="EN-GB"><font face="Verdana">Commands</font></span></font></p>
+    <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+    <font color="#0000CC"><span lang="EN-GB">&nbsp;</span></font></p>
+    <ul>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">ATTRIB:&nbsp; Now has a /P(ause) 
+      switch to make it easier to display attributes for groups of files.</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">CALL:&nbsp; Now returns an exit code 
+      (%_?) which matches the batch file exit code.&nbsp;This allows the use of 
+      conditionals (&amp;&amp; and ||) after CALL based on the batch file's exit code (eg 
+      from QUIT n) rather than whether the CALL command worked.&nbsp;</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">COPY and MOVE:&nbsp; When performed 
+      from an OS/2 session, these will now copy OS/2 extended attributes if the 
+      target file system supports them.&nbsp; Also, /U and /R switches will now 
+      search for hidden and system files on the target.</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">DEL:&nbsp; Now sets the internal error 
+      level (%_?) non-zero if no files&nbsp;were deleted.</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">ECHOS:&nbsp; Output is now in binary 
+      &quot;raw&quot; mode (without CR to CRLF conversion etc.) to assist those using it 
+      to echo printer control strings.</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">IF and IFF:&nbsp; Integer tests (i.e., 
+      &quot;if 5 lt 12&quot;) have been modified to allow for - and +, so you can now test 
+      things like &quot;if -1 lt 1&quot;.</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">INKEY:&nbsp; Now translates the Enter 
+      key to its scan code (@28) to simplify detection of this keystroke.&nbsp; 
+      Previously Enter was put into the environment as an ASCII 13, which 
+      wouldn't display, and which would be discarded as whitespace when the 
+      parser expanded the variable.</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">PROMPT:&nbsp; Has a new symbol:&nbsp; $r 
+      displays the return code of the last command.&nbsp; This is for compatibility 
+      with COMMAND.COM under OS/2 2.0 which also provides this feature.</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">SETDOS:&nbsp; Has a new /P switch to 
+      set the character used to specify all or all remaining command line 
+      arguments.&nbsp; The default is '&amp;' (as in &quot;%&amp;&quot;) for 4DOS and '$' (as in &quot;%$&quot;) 
+      for 4OS2.&nbsp; Use (for example) SETDOS /P$ to set the 4DOS character to match 
+      4OS2.&nbsp; Also see the ParameterChar directive below.</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">UNALIAS and UNSET:&nbsp; Have a new /Q(uiet) 
+      option to disable error messages if the alias or variable does not exist.&nbsp; 
+      This can be used to avoid annoying error messages from batch files which 
+      clear variables or aliases that may not be defined.</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">VER:&nbsp; Now reports DR-DOS and OS/2 
+      version numbers and revision levels when they are available.</span></font></li>
+    </ul>
+    <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+    <font color="#0000CC"><span lang="EN-GB">&nbsp;</span></font></p>
+    <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Verdana; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+    <font color="#0000CC"><span lang="EN-GB">Technical and Compatibility Changes</span></font></p>
+    <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+    <ul>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">DR-DOS:&nbsp; Added a DIREXIST 
+      condition (same as ISDIR) to IF and IFF for compatibility with DR-DOS 6 
+      batch files.</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">OS/2:&nbsp; 4DOS will now search the 
+      true boot drive (as opposed to the current drive) for AUTOEXEC and other 
+      similar files when starting a primary shell in DOS 4 and above.&nbsp; This 
+      should allow AUTOEXEC to run properly in OS/2 2.0 VDMs when starting the 
+      VDM on a drive different from the boot drive.&nbsp;Also, 4DOS changes the 
+      session title on the OS/2 desktop to the name of the application program 
+      when running an application in an OS/2 2.0 DOS session.&nbsp; This behavior can 
+      be disabled with the ChangeTitle directive (see below).&nbsp; </span></font>
+      </li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">Novell Netware:&nbsp; Worked around a 
+      Netware bug which allows the current directory to be deleted (and loses 
+      the disk mapping) when 4DOS does a DEL /X.&nbsp;</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">The prompt interrupt (INT 2F, AX=D44E) 
+      is now issued just after a line is read (ie just after the CR), with 
+      BX=2.&nbsp; This is in addition to the interrupts already done with BX=0 and 1 
+      per appendix C of the manual.</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">4DOS now allows multiple 
+      processes to redirect output to NUL simultaneously in multitaskers.</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">4DOS now generates a &quot;4DOS 
+      internal stack overflow&quot; error if you attempt to nest batch files or 
+      commands like EXCEPT, FOR, IF, IFF, GLOBAL, or SELECT too deep, and 4DOS 
+      runs out of stack space.&nbsp; In the past 4DOS could hang the system under 
+      these conditions.</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">The default stack size (set via 
+      the StackSize directive in 4DOS.INI)has been increased from 3584 to 4096 
+      bytes.</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">Added the following new INI file 
+      directives.&nbsp; Most of these directives are advanced directives, and should 
+      be changed only to solve unusual problems or for compatibility with the 
+      indicated software (eg NetwareNames for Novell Netware, or ParameterChar 
+      to make 4DOS and 4OS2 syntax the same).</span></font></li>
+    </ul>
+    <blockquote>
+      <ul type="circle">
+        <li>
+        <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+        <font color="#0000CC"><span lang="EN-GB">ChangeTitle = YES | No:&nbsp; 
+        Determines whether 4DOS changes the OS/2 session title when running an 
+        external program from an OS/2 2.0 DOS session.</span></font></li>
+        <li>
+        <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+        <font color="#0000CC"><span lang="EN-GB">CopyEA = YES | No:&nbsp; Determines 
+        whether the 4DOS COPY and MOVE commands attempt to copy extended 
+        attributes when running in an OS/2 1.x or 2.0 DOS session.&nbsp; </span>
+        </font></li>
+        <li>
+        <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+        <font color="#0000CC"><span lang="EN-GB">DiskReset = Yes | NO:&nbsp; Enables 
+        or disables disk resets after COPY, MOVE, and RENAME, and before DIR.&nbsp; 
+        Set to Yes if you have problems with disk change detection on 
+        non-standard or cached floppy disk drives, or with network software 
+        which doesn't always properly flush data to the disk.&nbsp; However such 
+        problems are VERY rare and normally No is the best choice.&nbsp; Setting 
+        DiskReset to Yes will reduce the performance of DIR, COPY, MOVE, and 
+        RENAME when using a &quot;staged-write&quot; disk cache such as SmartDrive 4.0.</span></font></li>
+        <li>
+        <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+        <font color="#0000CC"><span lang="EN-GB">DRSets = YES | No.&nbsp; When 
+        running under DR-DOS, 4DOS will normally retrieve environment variables 
+        created by any SET commands in the DR-DOS CONFIG.SYS file and place them 
+        in the 4DOS master environment.&nbsp; Set DRSets to No to disable this 
+        feature.</span></font></li>
+        <li>
+        <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+        <font color="#0000CC"><span lang="EN-GB">DVCleanup = YES | No.&nbsp; No 
+        disables 4DOS's DESQview close window cleanup code and thereby reenables 
+        the Quit choice on the DESQview menu when at a 4DOS prompt.&nbsp; However 
+        this will prevent 4DOS from cleaning up its resources (releasing the 
+        shell number and deleting any disk swap file) when you Close a 4DOS 
+        window from the DESQview menu, rather than with the EXIT command.</span></font></li>
+        <li>
+        <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+        <font color="#0000CC"><span lang="EN-GB">NetwareNames = Yes | NO.&nbsp; Set 
+        to Yes to include strings in the resident portion of 4DOS which Netware 
+        searches for when it loads. NetwareNames should be set to Yes for 
+        Netware systems to avoid problems with destroyed environment variables 
+        during LOGIN. CAUTION:&nbsp; If NetwareNames is set to Yes and you BOOT FROM 
+        a Netware drive (a rare situation), the TEMP4DOS or TEMP variables must 
+        be SET explicitly to the appropriate drive and directory for each user 
+        to avoid conflicts in the directory used for pipe files (if NetwareNames 
+        is not used or you boot from a local drive, 4DOS and Netware will 
+        automatically set the proper drive and directory for pipe files).</span></font></li>
+        <li>
+        <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+        <font color="#0000CC"><span lang="EN-GB">NextINIFile = File.&nbsp; Full path 
+        and name must be specified.&nbsp; All subsequent shells will read the 
+        specified INI file, and ignore any [Secondary] section in the original 
+        4DOS.INI.&nbsp; Intended to allow diskless or floppy-only workstation users 
+        to shift 4DOS.INI to a network drive for secondary shells, and avoid all 
+        access to the original boot drive.</span></font></li>
+        <li>
+        <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+        <font color="#0000CC"><span lang="EN-GB">ParameterChar = c.&nbsp; Sets the 
+        character used to specify all or all remaining command line arguments.&nbsp; 
+        Default is '&amp;' (as in &quot;%&amp;&quot;) for 4DOS and '$' (as in &quot;%$&quot;) for 4OS2.&nbsp; 
+        Also see SETDOS /P above.</span></font></li>
+        <li>
+        <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+        <font color="#0000CC"><span lang="EN-GB">UniqueSwapName = Yes | No.&nbsp; Set 
+        to Yes to change the disk swap file name from 4DOSSWAP.nnn to a unique 
+        name generated by 4DOS, with an extension of &quot;4SW&quot; (eg a1gd6nnw.4sw).&nbsp; 
+        This prevents conflicts between swap files in different shells; it is 
+        only&nbsp;necessary when using disk swapping with a COMMAND.COM primary shell 
+        (eg if using Software Carousel) or in an OS/2 2.0 DOS session.&nbsp; The 
+        default is Yes in OS/2 2.0 DOS sessions and No elsewhere.&nbsp; 
+        UniqueSwapName only works in DOS 3.0 and above and applies only to disk 
+        swapping.</span></font></li>
+      </ul>
+    </blockquote>
+    <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+    <font color="#0000CC"><span lang="EN-GB">&nbsp;</span></font></p>
+    <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Verdana; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+    <b>
+    <font color="#0000CC"><span lang="EN-GB">Bugs Fixed:</span></font></b></p>
+    <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+    <font color="#0000CC"><span lang="EN-GB">&nbsp;</span></font></p>
+    <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+    <font color="#0000CC"><span lang="EN-GB">Initialization:</span></font></p>
+    <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+    <font color="#0000CC"><span lang="EN-GB">&nbsp;</span></font></p>
+    <ul>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">The sense of the MessageServer 
+      directive in 4DOS.INI was reversed.</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">The /F startup switch did not 
+      work unless there was also a CritFail=Yes in 4DOS.INI.</span></font></li>
+    </ul>
+    <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+    <font color="#0000CC"><span lang="EN-GB">&nbsp;</span></font></p>
+    <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+    <font color="#0000CC"><span lang="EN-GB">Command Line:</span></font></p>
+    <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+    <font color="#0000CC"><span lang="EN-GB">&nbsp;</span></font></p>
+    <ul>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">Ctrl-D in a history window did 
+      not work properly when using command completion.</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">An F8 or Shift-Tab at the 
+      beginning of a command line didn't preserve the trailing backslash for 
+      directory names from a previous F9 or Tab.&nbsp;</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">Key remapping for standard ASCII 
+      keys (e.g. ListFind=S) only worked if upper case key was typed.</span></font></li>
+    </ul>
+    <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+    <font color="#0000CC"><span lang="EN-GB">Environment Variables, Variable 
+    Functions, Batch Files, and Aliases:</span></font></p>
+    <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+    <font color="#0000CC"><span lang="EN-GB">&nbsp;</span></font></p>
+    <ul>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">Command grouping had a glitch 
+      when used after a conditional operator (&amp;&amp; or ||).</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">Batch variables of %10 and larger 
+      were not expanding correctly.</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">Variable expansion had trouble 
+      when used following a leading command group [e.g. (dir^memory) &gt; %outfile].</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">Variable expansion crashed when 
+      an environment variable argument was over 255 characters long.</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">@DATE:&nbsp; Did not work correctly 
+      with non-US date entries (i.e., yy-mm-dd or dd-mm-yy).</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">@FILESIZE:&nbsp; Was not rounding 
+      properly when the k, K, m, or M units0 were used.</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">@SELECT:&nbsp; Was allowing Ctrl-D but 
+      it did not work.&nbsp; It is no longer allowed.&nbsp; Also %@SELECT had trouble with 
+      0-length files and very large (&gt;64K) files.&nbsp;</span></font></li>
+    </ul>
+    <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+    <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+    <font color="#0000CC"><span lang="EN-GB">Commands:</span></font></p>
+    <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+    <ul>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">CANCEL:&nbsp; Was failing to terminate 
+      succeeding commands on the same line in a parent batch file.</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">COPY:&nbsp; Was not handling an append 
+      of the form COPY FU+NUL FU /B properly.</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">COPY and MOVE:&nbsp; Would lose the 
+      first description if the target file had a description and the source 
+      didn't.</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">DEL:&nbsp; /Q was not doing a fast (FCB-style) 
+      delete.</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">FOR:&nbsp; (@filename) did not work 
+      correctly with long lines (&gt;=80 characters).&nbsp; The maximum line length now 
+      is 255 characters.</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">INKEY:&nbsp; /K didn't work properly 
+      with variable names over 6 characters.</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">LIST:&nbsp; /S had problems with very 
+      large (&gt;64K) files when you hit an invalid key.</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">MEMORY:&nbsp; did not display 
+      available XMS in an OS/2 2.0 VDM.</span></font></li>
+      <li>
+      <p class="MsoPlainText" style="font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+      <font color="#0000CC"><span lang="EN-GB">MOVE:&nbsp; /D didn't work properly 
+      with multiple source arguments. Also MOVE did not preserve the read-only 
+      bit when moving a file to another drive.&nbsp; </span></font></li>
+    </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="75%" bgcolor="#FFFFFF" height="12" valign="top">
+    <h5><font color="#0000CC">
+    <span lang="EN-GB" style="font-size: 10.0pt; font-family: Verdana">Version 
+    4.01d -- September 30, 1992</span></font></h5>
+    </td>
+  </tr>
+  <tr>
+    <td width="75%" bgcolor="#EEEEEE" height="16" valign="top">
+    <font color="#0000CC" face="Verdana" size="2">No changes found in the 
+    documents. Probably only internal bugfixes.</font></td>
+  </tr>
+  <tr>
+    <td width="75%" bgcolor="#FFFFFF" height="12" valign="top">
+    <font SIZE="2">
+    <h5 style="margin: 0"><font color="#0000CC">Version 4.02 -- March 30, 1993</font></h5>
+    </font>
+    </td>
+  </tr>
+  <tr>
+    <td width="75%" bgcolor="#EEEEEE" height="4386" valign="top">
+    <font SIZE="2">
+    <p style="margin: 0"><font face="Courier New" color="#0000CC">&#12288;</font></p>
+    <p style="margin: 0"><font face="Verdana" color="#0000CC">Startup and 
+    Initialization</font></p>
+    <p style="margin: 0">&nbsp;</p>
+    <ul>
+      <li>
+      <p style="margin: 0"><font face="Courier New" color="#0000CC">Three new 
+      startup switches are now supported in 4DOS: ** /P[:]filename sets the path 
+      and file name for the AUTOEXEC file in the primary shell. This is 
+      equivalent to using the //AutoExecPath directive in 4DOS.INI. It is 
+      included for compatibility with the DOS_AUTOEXEC setting available under 
+      OS/2 2.1, and should not be needed elsewhere.</font></li>
+      <li>
+      <p style="margin: 0"><font face="Courier New" color="#0000CC">/D disables 
+      AUTOEXEC. A /D overrides AutoExecPath and /A (see above). This switch is 
+      intended for internal use by MS-DOS 6.0 when you use the F8 key at boot 
+      time, and answer &quot;No&quot; to the &quot;Run AUTOEXEC&quot; question.</font></li>
+      <li>
+      <p style="margin: 0"><font face="Courier New" color="#0000CC">/K[:]command: 
+      Run the specified command after 4DOS starts. 4DOS 4.01 supported this 
+      switch in OS/2 DOS sessions; it is now available in a standard DOS boot as 
+      well. For compatibility reasons, in a primary shell under MS-DOS 6.0, /K 
+      will execute the command INSTEAD of AUTOEXEC.BAT. However in other 
+      environments (DOS 5.0, OS/2 DOS sessions, etc.), /K will execute the 
+      command IN ADDITION to AUTOEXEC.</font></li>
+      <li>
+      <p style="margin: 0"><font face="Courier New" color="#0000CC">The 4DOS 
+      manual has never stated any required order for items on the startup 
+      command line. In order for command line switches to properly override 
+      items in the INI file, and in order for 4DOS to find the INI file, you 
+      should use the following order in the command tail:</font></li>
+    </ul>
+    <blockquote>
+      <blockquote>
+        <p style="margin: 0"><font face="Courier New" color="#0000CC">- any 
+        &quot;d:\path&quot; for COMSPEC directory</font></p>
+        <p style="margin: 0"><font face="Courier New" color="#0000CC">- any 
+        explicit INI file name (@ininame)</font></p>
+        <p style="margin: 0"><font face="Courier New" color="#0000CC">- the /A, 
+        /E, /F, and /P switches, if used, in any order</font></p>
+        <p style="margin: 0"><font face="Courier New" color="#0000CC">- the /C 
+        or /K switch, if used</font></p>
+        <p style="margin: 0"><font face="Courier New" color="#0000CC">- any 
+        explicit startup command</font></p>
+        <p style="margin: 0">&nbsp;</p>
+      </blockquote>
+      <p style="margin: 0"><font face="Courier New" color="#0000CC">(For more 
+      information on startup options, see your 4DOS manual.)</font></p>
+    </blockquote>
+    <ul>
+      <li>
+      <p style="margin: 0"><font face="Courier New" color="#0000CC">There are 
+      two new directives in 4DOS.INI: ** AmPm = Yes | NO | Auto: Yes tells 4DOS 
+      to display times in 12-hour format with a trailing &quot;a&quot; for AM or &quot;p&quot; for 
+      PM. The default of No formats times in military (24-hour) format. Auto 
+      formats the time according to the country code set for your system. The 
+      time format selected by AmPm applies to DIR and SELECT displays, LOG 
+      files, the output of TIMER, and the DATE and TIME commands. It does not 
+      affect %_TIME, %@MAKETIME, or PROMPT $t and $T.</font></li>
+      <li>
+      <p style="margin: 0"><font face="Courier New" color="#0000CC">BrightBG = 
+      Yes | No. Yes switches the video board to display bright background colors 
+      (rather than blinking foreground colors) within 4DOS (what happens within 
+      other programs is up to them). No switches to blinking foreground mode and 
+      disables bright backgrounds. The default if BrightBG is not used is to 
+      leave the video board in its current state and not adjust the mode at all. 
+      For further details before using BrightBG see the section on &quot;Color 
+      Changes&quot; below.</font></li>
+      <li>
+      <p style="margin: 0"><font face="Courier New" color="#0000CC">The 
+      AutoExecPath directive in 4DOS.INI can now specify a path, or a path and 
+      file name. Previously this directive could only include a path; the file 
+      name was always AUTOEXEC.BAT. Now, if a file name is included that file 
+      will be run instead of AUTOEXEC.BAT. If only a path is included, 4DOS will 
+      run AUTOEXEC.BAT from the specified directory. For example:</font></li>
+    </ul>
+    <blockquote>
+      <blockquote>
+        <p style="margin: 0">&nbsp;</p>
+        <p style="margin: 0"><font face="Courier New" color="#0000CC">
+        AutoExecPath=C:\MYDIR</font></p>
+        <p style="margin: 0">&nbsp;</p>
+      </blockquote>
+      <p style="margin: 0"><font face="Courier New" color="#0000CC">runs the 
+      file C:\MYDIR\AUTOEXEC.BAT when the system boots.</font></p>
+      <blockquote>
+        <p style="margin: 0"><font face="Courier New" color="#0000CC">
+        AutoExecPath=C:\MYDIR\MYSTART.BAT</font></p>
+      </blockquote>
+      <p style="margin: 0"><font face="Courier New" color="#0000CC">runs the 
+      specified file when the system boots.</font></p>
+      <p style="margin: 0">&nbsp;</p>
+      <p style="margin: 0"><font face="Courier New" color="#0000CC">This change 
+      allows you to put multiple startup files for different boot options or 
+      different OS/2 2.x DOS sessions into the same directory, and pick the file 
+      to be run by changing the AutoExecPath directive</font></p>
+    </blockquote>
+    <ul>
+      <li>
+      <p style="margin: 0"><font face="Courier New" color="#0000CC">The default 
+      setting for the FullINT2E directive in 4DOS.INI is now Yes. This increases 
+      4DOS's default memory usage by about 100 bytes, but ensures compatibility 
+      with applications that use interrupt 2E. Only a few applications use 
+      interupt 2E to execute commands. If you don't run any such applications, 
+      you can save the space taken by interrupt 2E support by including a 
+      FullINT2E=No directive in 4DOS.INI.</font></li>
+      <li>
+      <p style="margin: 0"><font face="Courier New" color="#0000CC">4DOS fully 
+      supports the MS-DOS 6.0 multiple configuration facility which allows menus 
+      in CONFIG.SYS. This includes support for SET statements in CONFIG.SYS, and 
+      for the CONFIG variable generated when CONFIG.SYS menus are used. 
+      Environment variables created from CONFIG.SYS will be available within 
+      AUTOEXEC and 4START when the primary 4DOS shell begins execution.</font></li>
+    </ul>
+    <p style="margin: 0">&nbsp;</p>
+    <p style="margin: 0"><font face="Verdana" color="#0000CC">Color Changes</font></p>
+    <p style="margin: 0">&nbsp;</p>
+    <ul>
+      <li>
+      <p style="margin: 0"><font face="Courier New" color="#0000CC">There are 
+      two general changes to color specifications in 4DOS 4.02. First, the 
+      DRAWBOX, DRAWHLINE, DRAWVLINE, SCRPUT, and VSCRPUT commands no longer 
+      accept border colors. Border colors did not always work as expected in 
+      these commands, and were never part of the documented syntax. To specify 
+      border colors you must use CLS or COLOR, or the StdColors directive in 
+      4DOS.INI followed by a CLS. Second, bright background colors can now be 
+      specified in color settings on EGA and VGA systems. The remainder of this 
+      section describes the use of bright background colors.
+      <p style="margin: 0">Bright 
+      background colors work only on EGA and VGA displays, and should not be 
+      used on other systems. They are an alternative to blinking text, and you 
+      must choose one or the other: if you enable bright backgrounds, displayed 
+      text will not blink, and vice versa.</p>
+      <p style="margin: 0">To use 
+      bright background colors, enable them with the BrightBG directive in 
+      4DOS.INI (see Startup and Initialization changes above for details).</p>
+    </blockquote>
+      <p style="margin: 0">The syntax 
+      of color specifications has been changed to support bright backgrounds. 
+      The full syntax is now:<p style="margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      <p style="margin: 0">&nbsp;&nbsp;&nbsp;&nbsp; <font face="Courier New">&nbsp;&nbsp;&nbsp; [BRIght] [BLInk] 
+      fg on [BRIght] bg</font><p style="margin: 0">&nbsp;<p style="margin: 0">This change 
+      applies to all commands which accept color specifications, and to all 
+      color directives in 4DOS.INI.</ul>
+      <p style="margin: 0">&nbsp;<p style="margin: 0">Technical 
+      Notes:<p style="margin: 0">&nbsp;<blockquote>
+      <p style="margin: 0">Bright 
+      background and blinking foreground colors use the same bit in the video 
+      board's registers. Therefore, you must have the BrightBG setting and your 
+      color specifications properly synchronized to get the desired result. With 
+      BrightBG = No, either 
+      &quot;blink&quot; or &quot;bright [bg]&quot; in the color specification will result in 
+      blinking text. With BrightBG = Yes, either specification will result in a 
+      bright background.<p style="margin: 0">&nbsp;<p style="margin: 0">For example, 
+      these two color specifications will always produce the same result on the 
+      screen:
+      <blockquote>
+        <p style="margin: 0">color blink 
+      white on blue<p style="margin: 0">color white 
+      on bright blue</blockquote>
+      <p style="margin: 0">If BrightBG 
+      = No, the above statements will both result in the same blinking white 
+      text on a blue background. If BrightBG = Yes, they will both result in the 
+      same white text on a bright blue background.<p style="margin: 0">&nbsp;<p style="margin: 0">Setting 
+      BrightBG may not be compatible with all video boards, but should work with 
+      standard EGA- and VGA-compatible systems. If BrightBG is set to Yes or No 
+      the video board bright background / blinking foreground state is set each 
+      time 4DOS displays the prompt. If BrightBG is not used the video board 
+      state is not adjusted at all. If you experience screen &quot;flashes&quot; at each 
+      prompt when BrightBG is used, then your video board probably is not 
+      compatible with the approach used by 4DOS's bright background support. In 
+      this case, leave the BrightBG statement out of 4DOS.INI altogether to 
+      eliminate the &quot;flashes&quot;. This problem should be very rare and is not 
+      likely to occur on standard EGA and VGA systems.</blockquote>
+      <p style="margin: 0">&nbsp;<p style="margin: 0"><font face="Courier New">C</font>ommand 
+    Changes<p style="margin: 0">&nbsp;<ul>
+      <li>
+      <p style="margin: 0">DIR: The 
+      following switch changes were made, for compatibility with MS-DOS 6.0's 
+      DBLSPACE disk compression facility:<p style="margin: 0">&nbsp;</li>
+      <li>
+      <p style="margin: 0">/C: The old 
+      /C (upper case display) switch has been changed to /E.</li>
+      <li>
+      <p style="margin: 0">/C: Display 
+      per-file and total compression ratios on drives compressed with MS-DOS 
+      6.0's DBLSPACE disk compression utility. The compression ratio is 
+      displayed instead of the file description. The ratio is left blank for 
+      directories and files with length 0, and for files on non-DBLSPACE drives. 
+      /C only works in single-column mode, and is ignored if /2, /4, or /W is 
+      used.</li>
+      <li>
+      <p style="margin: 0">The 
+      numerator for the displayed compression ratio is the amount of space which 
+      would be allocated to the file on the DBLSPACE drive if it were not 
+      compressed, using the DBLSPACE drive's cluster size (normally 8K bytes). 
+      The denominator is the space 
+      actually allocated for the compressed file.</li>
+      <li>
+      <p style="margin: 0">/CH: Display 
+      compression ratios like /C, but base the calculation on the host drive's 
+      cluster size. This gives a more accurate picture of the space saved 
+      through compression than is given by /C. PLEASE NOTE: 
+      /CH will occasionally display compression ratios slightly less than 1.0 to 
+      1.0. This reflects files which have actually expanded when stored on the 
+      DBLSPACE drive. COMMAND.COM may display these ratios as 1.0 to 1.0, even 
+      if the true ratio is slightly less. 4DOS always displays the true ratio.</li>
+      <li>
+      <p style="margin: 0">/O:c Sort by 
+      DBLSPACE compression ratio (the least compressed file in the list sorts 
+      first; the most compressed file sorts last). The sort can be reversed with 
+      /O:-c. For single-column directory displays, /O:c implies /C -- in other 
+      words, compression ratios will be displayed as well as used for the sort 
+      order. For wider displays (/2, /4, etc.) the ratios will be used to 
+      determine the order, but will not be displayed. If /O:c is used /O:i (sort 
+      by description) will be ignored. If /CH is used with /O:C the sort will be 
+      by compression ratios base don the host drive cluster size.</li> </li>
+      <li>
+      <p style="margin: 0">LH / 
+      LOADHIGH: Now support loading memory-resident programs into specific 
+      regions in upper memory. These new features are designed for compatibility 
+      with MS-DOS 6.0's COMMAND.COM, but will also work with MS-DOS 5.0 and in 
+      OS/2 2.0 VDMs. The full 
+      syntax for LH is now:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </li>
+    </ul>
+    <blockquote>
+      <blockquote>
+      <p style="margin: 0">
+      <i>&nbsp;LH 
+      [/L:r1,n1;r2,n2;... /S] [d:][path]filename</i></blockquote>
+      <p style="margin: 0">To use the 
+      new upper memory region switches you must meet ALL of the following 
+      requirements:<p style="margin: 0">&nbsp;<p style="margin: 0">- You must 
+      be running MS-DOS / PC-DOS 5.0 or above, or a DOS session under OS/2 2.0 
+      or above.<p style="margin: 0">&nbsp;<p style="margin: 0">- You must 
+      have one of the following memory management packages running:
+      <p style="margin: 0">EMM386 and 
+      HIMEM.SYS from MS-DOS / PC-DOS 5.0 or above;<p style="margin: 0">&nbsp;<p style="margin: 0">386MAX from 
+      Qualitas; QEMM from Quarterdeck; or DOS session memory management under 
+      OS/2 2.x, with UMB support enabled (typically via the /UMB switch on the 
+      VXMS.SYS line in your OS/2 CONFIG.SYS file).<p style="margin: 0">&nbsp;<p style="margin: 0">- You must 
+      have a DOS=HIGH,UMB or DOS=UMB statement in CONFIG.SYS; or under OS/2 2.x, 
+      you must have the DOS_UMB setting for the session set to &quot;On&quot;.<p style="margin: 0">&nbsp;<p style="margin: 0">The new LH / 
+      LOADHIGH options are:<blockquote>
+      <p style="margin: 0">/L:r1,n1;r2,n2;...: 
+      </blockquote>
+    </blockquote>
+    <blockquote>
+      <p style="margin: 0">Give the program access to upper memory region r1 if 
+      that region has at least n1 bytes available, to region r2 if it has at 
+      least n2 bytes available, and so on. If /L is not used, the program is 
+      given access to all upper memory regions. Region numbers beyond those that 
+      exist on your system will be ignored, with a warning. The figures for 
+      space required in each region (n1, n2, etc.) are rounded up to the nearest 
+      16 bytes. If the free space in any region is less than the space required 
+      for that region, then the region will be locked out and unavailable to the 
+      program. If the required space value is left out the program is given 
+      access to the region regardless of the amount of free space available.</blockquote>
+    <blockquote>
+      <p style="margin: 0">
+      <font face="Courier New">The program, 
+      its environment block, and any data allocated by the program, will be 
+      loaded only into the region(s) allowed by the /L switch; all other regions 
+      will be locked out and made unavailable to the program. If a program 
+      requests memory beyond that available to it in upper memory, DOS will 
+      normally allocate low memory 
+      (below 640K) to fulfill the request.</font><p style="margin: 0">
+      &nbsp;<p style="margin: 0"><font face="Courier New">Regions are 
+      numbered beginning with 1. If you specify region 0 the program and its 
+      environment will be loaded into low memory, and any other region(s) 
+      specified will be available for allocation of program data. Any minimum 
+      size for region 0 will be ignored.</font><p style="margin: 0">&nbsp;<p style="margin: 0">
+      <font face="Courier New">For example, 
+      for a simple load into region 2 only, regardless of the space available in 
+      that region:</font><blockquote>
+        <p style="margin: 0">
+      <font face="Courier New">LH /L:2 
+      progname ...</font></blockquote>
+      <p style="margin: 0">
+      <font face="Courier New">For access 
+      to region 2 if it has 10000 bytes free, and region 3 if it has 15000 bytes 
+      free: LH /L:2,10000;3,15000 ...</font><p style="margin: 0">
+      &nbsp;<p style="margin: 0">/S: Shrink 
+      each specified region to the minimum available size before loading the 
+      program. If /S is not used all space in the specified region(s) is made 
+      available to the program. You can use /S to prevent a program from taking 
+      more than the minimum specified space in a particular region (e.g. to 
+      limit memory used by a cache 
+      that takes whatever memory it can get). For example, to load a cache 
+      program into low memory, give the program access to region 2 for data as 
+      long as there is at least 16K free in region 2, and also limit the program 
+      to using no more than that 
+      16K:<blockquote>
+        <p style="margin: 0">
+      <font face="Courier New">LH 
+      /L:0;2,16384 /S mycache ...</font></blockquote>
+      <p style="margin: 0">The /S 
+      switch is intended for use by MS-DOS 6.0's MEMMAKER utility. It will not 
+      be especially useful for other purposes unless you are involved in complex 
+      manual adjustments to upper memory allocations, and have a thorough 
+      understanding of the memory 
+      allocation strategies used by the programs involved.<p style="margin: 0">&nbsp;</blockquote>
+    <ul>
+      <li>
+      <p style="margin: 0">MOVE: MOVE 
+      now intercepts attempts to perform an infinitely recursive MOVE /S, and 
+      displays an error message.</li>
+      <li>
+      <p style="margin: 0">SELECT: 
+      There are several switch changes to support MS-DOS 6.0's DBLSPACE disk 
+      compression. The upper case display switch has been changed to /E, and 
+      there is new compression support provided by /C, /CH, and /O:c. See DIR 
+      above for details.</li>
+    </ul>
+      <p style="margin: 0">&nbsp;<p style="margin: 0">Bugs Fixed<p style="margin: 0">&nbsp;<ul>
+      <li>
+      <p style="margin: 0">A /E:nnnn 
+      setting on the startup command line was not overriding an Environment= 
+      setting in the default 4DOS.INI file.</li>
+      <li>
+      <p style="margin: 0">A /F on the 
+      startup command line was not overriding a CritFail=No in the default 
+      4DOS.INI file.</li>
+      <li>
+      <p style="margin: 0">4DOS 
+      occasionally displayed an incorrect filename in error messages related to 
+      4DOS.INI.</li>
+      <li>
+      <p style="margin: 0">If there was 
+      no 4DOS.INI file in the directory with 4DOS.COM, 4DOS was sometimes 
+      looking for it in the root directory of that drive, rather than the 
+      documented location of the root directory of the boot drive.</li>
+      <li>
+      <p style="margin: 0">The 4DOS PSP 
+      in upper memory was not chaining back to the low-memory PSP when UMBLoad 
+      was used. This fix should solve some very rare problems with programs that 
+      trace down the PSP chain.</li>
+      <li>
+      <p style="margin: 0">Redirection 
+      was not properly backing up over an end of file mark (^Z) when appending 
+      to an existing file.</li>
+      <li>
+      <p style="margin: 0">Filename 
+      completion could not handle illegal DOS filenames like OS/2's &quot;EA DATA. 
+      SF&quot; properly. (You still can't USE these filenames in commands, but they 
+      will no longer cause trouble with filename completion when you go past 
+      them.)</li>
+      <li>
+      <p style="margin: 0">%_ALIAS and 
+      the MEMORY command did not agree as to the amount of free alias space.</li>
+      <li>
+      <p style="margin: 0">When a 
+      prompt was displayed in a command with a /P switch (e.g. COPY /P), 
+      pressing a non-printing key would display garbage characters.</li>
+      <li>
+      <p style="margin: 0">A bug in 
+      MS-DOS JOIN sometimes prevented 4DOS from correctly identifying JOINed 
+      directories as directories. We have worked around this bug.</li>
+      <li>
+      <p style="margin: 0">COPY and 
+      MOVE: Occasionally would not properly handle attempts to copy OS/2 
+      Extended Attributes to file systems that did not support them.</li>
+      <li>
+      <p style="margin: 0">DEL /Q: 
+      Conflicted with include lists so that only the first file on the list was 
+      deleted.</li>
+      <li>
+      <p style="margin: 0">EXCEPT: 
+      Using EXCEPT (*.) ... to prevent processing of files with no extension 
+      could cause problems in EXCEPT's handling of the directories &quot;.&quot; and &quot;..&quot;.</li>
+      <li>
+      <p style="margin: 0">EXIT: 4EXIT 
+      would not always be run when EXITing from a batch file.&nbsp; Also an 
+      infinite loop would occur if an EXIT command was included in 4EXIT.</li>
+      <li>
+      <p style="margin: 0">LH / 
+      LOADHIGH: Fixed a problem which could very rarely cause a crash on return 
+      from a TSR loaded with LOADHIGH.</li>
+      <li>
+      <p style="margin: 0">MOVE: 
+      Incorrect moves could occur when the source file was on a Netware Lite 
+      drive. These problems were due to network bugs, not 4DOS bugs; we have 
+      worked around the network problems.</li>
+      <li>
+      <p style="margin: 0">SELECT: The 
+      displayed counter would overflow when tagging over 64MB of files.</li>
+      <li>
+      <p style="margin: 0">Y: had 
+      several minor problems when used at the console.</font></td>
+  </tr>
+  <tr>
+    <td width="75%" bgcolor="#FFFFFF" height="12" valign="top">
+    <h5><font color="#0000CC">
+    <span lang="EN-GB" style="font-size: 10.0pt; font-family: Verdana">Version 
+    4.02b -- June 6, 1993</span></font></h5>
+    </td>
+  </tr>
+  <tr>
+    <td width="75%" bgcolor="#EEEEEE" height="65" valign="top">
+    &nbsp;<p>
+    <font color="#0000CC" face="Verdana" size="2">No changes found in the 
+    documents. Probably only internal bugfixes.</font></p>
+    <p>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="75%" bgcolor="#FFFFFF" height="26" valign="top">
+    <p align="center" style="text-align: center"><a href="#0">
+    <font face="Arial">Top of Page</font></a><font face="Arial"> - </font> <a href="../default.htm">
+    <font face="Arial">Home</font></a></p></td>
+  </tr>
+</tbody>
+</table>
+
+</body>
+
+</html>

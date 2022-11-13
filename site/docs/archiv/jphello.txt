@@ -1,0 +1,452 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><HTML>
+<!-- HTML source and images Copyright 2004, JP Software Inc., All
+     Rights  Reserved.  See http://jpsoft.com/jplegal.htm  before
+     doing anything with any material from JP Software's web site.
+-->
+<HEAD>
+<BASE TARGET="_top">
+<LINK REL="SHORTCUT ICON" HREF="http://jpsoft.com/favicon.ico">
+<LINK REL="P3Pv1" HREF="http://jpsoft.com/w3c/p3p.xml">
+<LINK REV="made" HREF="&#119;&#101;&#098;&#109;&#097;&#115;&#116;&#101;&#114;&#064;&#106;&#112;&#115;&#111;&#102;&#116;&#046;&#099;&#111;&#109;">
+<LINK REL="prefetch" HREF="/images/blogo.gif">
+<LINK REL="prefetch" HREF="/images/bhomeb2.gif">
+<LINK REL="prefetch" HREF="/images/bstoreb2.gif">
+<LINK REL="prefetch" HREF="/images/bprodb2.gif">
+<LINK REL="prefetch" HREF="/images/bordb2.gif">
+<LINK REL="prefetch" HREF="/images/bupgrb2.gif">
+<LINK REL="prefetch" HREF="/images/bsuppb2.gif">
+<LINK REL="prefetch" HREF="/images/bsiteb.gif">
+<LINK REL="prefetch" HREF="/images/bhelpb2.gif">
+<LINK REL="prefetch" HREF="/images/bhomes2.gif">
+<META HTTP-EQUIV="Cache-Control" CONTENT="must-revalidate">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="author" CONTENT="webmaster@jpsoft.com">
+<META NAME="copyright" CONTENT="Copyright 2004, JP Software, Inc. All Rights Reserved.">
+<META NAME="description" CONTENT="Advanced Command processors for DOS and Windows">
+<META NAME="keywords" CONTENT="COMMAND LINE,WINDOWS PROMPT, BATCH FILE,SHELL,SCRIPT,PROMPT,BTM,CMD,4DOS,4NT,TCMD,TAKE COMMAND,JPSOFT,WINDOWS,WIN98,WINME,W2K,XP,DOS,NT">
+<META NAME="rating" CONTENT="General">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="revisit-after" CONTENT="7 Days">
+<STYLE type="text/css">
+#highlight {background: #FFFF80; }
+#lowlight {background: #D2E2FF; }
+#neon {background: #99FF00; }
+A:HOVER { color: #000000; background: yellow}
+</STYLE>
+<BASE HREF="http://jpsoft.com/">
+<META NAME="ROBOTS" CONTENT="NOFOLLOW,NOARCHIVE,NOINDEX">
+<TITLE>JP Software - Text File Viewer: jphello.txt</TITLE></HEAD>
+<BODY BGCOLOR="#FBF7FB" TEXT="#000000" LINK="#0000FF" ALINK="#FF0000" VLINK="#4F2F4F">
+<CENTER><TABLE COLS=1 BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=600 BGCOLOR="#D2E2FF">
+<TR><TD WIDTH=600 VALIGN=TOP NOWRAP>
+<A NAME="top"><IMG HEIGHT=50 WIDTH=136 HSPACE=0 VSPACE=0 BORDER=0 ALIGN=LEFT ALT="JP Software: " SRC="/images/blogo.gif"></A>
+<A TARGET="_top" HREF="/index.htm" onmouseover="document.images.home.src='/images/bhomeb2.gif'" onmouseout="document.images.home.src='/images/bhomes2.gif'"><img name=home HEIGHT=50 WIDTH=52 HSPACE=0 VSPACE=0 BORDER=0 ALIGN=LEFT ALT="Home Page" SRC="/images/bhomes2.gif"></A>
+<A HREF="http://jpsoft.com/store/store.mv" onmouseover="document.images.store.src='/images/bstoreb2.gif'" onmouseout="document.images.store.src='/images/bstores2.gif'"><img name=store HEIGHT=50 WIDTH=46 HSPACE=0 VSPACE=0 BORDER=0 ALIGN=LEFT ALT="Online Store" SRC="/images/bstores2.gif"></A>
+<A HREF="/products.htm" onmouseover="document.images.prod.src='/images/bprodb2.gif'" onmouseout="document.images.prod.src='/images/bprods2.gif'"><img name=prod HEIGHT=50 WIDTH=65 HSPACE=0 VSPACE=0 BORDER=0 ALIGN=LEFT ALT="Products" SRC="/images/bprods2.gif"></A>
+<A HREF="/ordinf.htm" onmouseover="document.images.ord.src='/images/bordb2.gif'" onmouseout="document.images.ord.src='/images/bords2.gif'"><img name=ord HEIGHT=50 WIDTH=54 HSPACE=0 VSPACE=0 BORDER=0 ALIGN=LEFT ALT="Orders" SRC="/images/bords2.gif"></A>
+<A HREF="/upgrade.htm" onmouseover="document.images.upgr.src='/images/bupgrb2.gif'" onmouseout="document.images.upgr.src='/images/bupgrs2.gif'"><img name=upgr HEIGHT=50 WIDTH=70 HSPACE=0 VSPACE=0 BORDER=0 ALIGN=LEFT ALT="Upgrades" SRC="/images/bupgrs2.gif"></A>
+<A HREF="/techsup.htm" onmouseover="document.images.supp.src='/images/bsuppb2.gif'" onmouseout="document.images.supp.src='/images/bsupps2.gif'"><img name=supp HEIGHT=50 WIDTH=61 HSPACE=0 VSPACE=0 BORDER=0 ALIGN=LEFT ALT="Support" SRC="/images/bsupps2.gif"></A>
+<A TARGET=JP_Help HREF="/help/index.htm" onmouseover="document.images.help.src='/images/bhelpb2.gif'" onmouseout="document.images.help.src='/images/bhelps2.gif'"><img name=help HEIGHT=50 WIDTH=45 HSPACE=0 VSPACE=0 BORDER=0 ALIGN=LEFT ALT="Online Help" SRC="/images/bhelps2.gif"></A>
+</TD></TR></TABLE>
+</CENTER>
+<P>
+<CENTER><FONT COLOR="#003399"><H1><STRONG>Text File Viewer</STRONG></H1></FONT></CENTER>
+<CENTER><H2><BIG><STRONG>"jphello.txt"</STRONG></BIG> (
+13456
+ bytes)</H2>
+<STRONG>also available in <A HREF="ascii/jphello.txt">text/plain</A> format</STRONG>
+</CENTER><P><FONT FACE="arial, helvetica, sans-serif" SIZE="-1" COLOR="#006699">
+<UL><LI>Use your browser's FIND function to locate specific text.</UL></FONT>
+<HR NOSHADE WIDTH="95%">
+<TABLE COLS=1 BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH="100%" BGCOLOR="#FBF7FB" BACKGROUND="/images/perf.gif"><TR><TD>
+<UL><UL></FONT><PRE>
+
+                                        [jp-hello, updated 22-Jun-03]
+
+
+Welcome to the JP Software Support Forum!
+
+This forum is for support of JP Software products, and related
+topics.
+
+This welcome message explains our forum policies, the different ways
+you can access the forum, and how to leave the forum.  Please read
+through all of the information below before using the forum.
+
+
+Message Content and Support Policies
+
+   In this support forum we welcome discussion of all technical
+   issues related to JP Software's products and consistent with
+   these guidelines.  This includes technical questions, bug
+   reports, suggestions, compatibility issues, and other similar
+   topics.  Additional topics may be discussed as well; see below
+   for details.
+
+   JP Software provides official technical support through this
+   forum.  Our general rule is to provide an initial answer to all
+   technical support questions posted here within one business day,
+   and in most cases our response is likely to be much faster.
+
+   When posting a technical support question please answer the
+   following basic questions:
+
+      * Which JP Software product and version are you using, and
+        under what operating system?
+
+      * What exactly did you do?
+
+      * What did you expect to happen?
+
+      * What actually happened?
+
+      * If you saw an error message or other important or unusual
+        information on the screen, what exactly did it say?
+
+      * Briefly, what techniques did you use to try to resolve the
+        problem?  What results did you get?
+
+      * Can you repeat the problem or does it occur randomly?
+
+   If you need to discuss "branding" your JP Software products and you
+   cannot explain your question without including the serial number or
+   validation code, send it privately to support@jpsoft.com, do not use
+   the forum.
+
+   If you post a question here you will receive answers which
+   represent the best understanding we are able to gain from your
+   message.  However, there is no way for us or any other forum
+   member to understand every detail of your operating environment,
+   and we can and do make mistakes at times.
+
+   Therefore, it is your responsibility to test any solution or
+   other information provided here to verify its usefulness and
+   accuracy and assure the proper implementation in your own
+   environment.  It is especially important that you do careful
+   testing before implementing any solution which may delete or
+   otherwise unalterably change your system or data.
+
+   We understand that customers may want to discuss topics related
+   to our products or on which other users may have expertise, but
+   which are not strictly technical support issues (e.g. the latest
+   release of an operating system, the best software to use to work
+   with one of our products, etc.).  We welcome these discussions as
+   long as they are reasonably related to JP Software products, or
+   if not are very short, but we may ask you to let them end or
+   continue them privately if the topic drifts too far from
+   something we feel is of interest to other members.
+
+   Please avoid using the forum for private messages (use private email
+   instead) or trivial comments (e.g. "I agree" with no substantive
+   additions to the discussion).
+
+
+Quoting
+
+   Quoting in this forum should be kept to a minimum, and messages with
+   excessive quoting will be rejected automatically by the server.
+
+   Quote only the text you need to establish the context for your reply,
+   and intersperse your comments with the quoted material.  Remember that
+   other forum participants have almost certainly already read the message
+   to which you are replying.
+
+   The increasingly common practice of following your comments with
+   a quote of the entire message to which you are replying is not
+   acceptable here, and will almost certainly cause your reply to be
+   rejected.
+
+
+Real Names
+
+   We require the use of real names in this forum.
+
+   A name must be provided when joining.  If you join with a name
+   that is incomplete or obviously false we will ask you to change
+   to your real name in order to remain a member, or we may simply
+   cancel or deny your forum membership.
+
+
+Signatures
+
+   Whether you post to the Forum via the news or email interfaces,
+   please try to keep your "signature" short, typically no more than
+   3 or 4 lines, and precede it by a "sigdash" or "sigsep" which is a
+   line consisting of only two dashes followed by a single space, i.e.
+   "-- ", without the quotes.
+
+   The sigdash allows other programs to recognize when the body of your
+   message is finished and where the signature begins. This is useful
+   for automatically removing the signature when quoting for a reply,
+   as well as isolating it from the relevant part of the message for
+   display or archiving.  Most current mail and news clients
+   automatically produce or at least recognize sigsdashes.
+
+   Note that this is good practice for any Internet email message you
+   send to anyone or post to any newsgroup.
+
+
+Prohibited Content
+
+   Please note that the following types of messages are prohibited
+   and that anyone who posts them may be temporarily or permanently
+   removed from the forum, with or without warning (depending on the
+   circumstances), at our sole discretion:
+
+      * Messages which include product serial numbers or validation
+        codes, any content intended to facilitate bypassing the
+        lawful registration procedure of any software product, and in
+        general any content considered illegal in most jurisdictions.
+
+      * Binaries or attached files of any kind.  We will try to be
+        friendly in requesting removal of "V-Cards" and other
+        attachments you may not be aware of which are added
+        automatically by some email software, but we do expect these
+        to be removed for messages posted here.
+
+      * Commercial postings of any type other than by JP Software
+        Inc.  One-time announcements of products directly related to
+        JP Software products are permitted provided they clearly
+        state that they are about your product and that the product
+        is not associated with JP Software Inc.  If you are unsure,
+        ask for permission first via email to support@jpsoft.com.
+
+      * Mass mailings or solicitations of any kind whatsoever.
+
+      * Material which in our sole judgment is illegal, obscene,
+        pornographic, bigoted, prejudiced, hateful, or otherwise
+        damages the atmosphere or tone of the forum; or which is in
+        our judgment otherwise inappropriate or destructive.
+
+      * Messages cross-posted to a set of other forums, lists or
+        newsgroups (except compatibility issues posted here and to a
+        similar discussion area for the "other" product).
+
+      * Harassment or personal attacks of any kind, whether directed
+        toward JP Software, its staff, other forum members, or any
+        other person (this does not prohibit complaints about
+        our products or services, but they must be directed at what
+        happened, and not at any person's character, motivations,
+        etc.).
+
+
+Forum Access
+
+   You can access this forum as a newsgroup, via a web interface, as
+   an email list, or through any combination of these methods you
+   desire.
+
+   We recommend newsgroup access as it gives you the best control
+   over which messages you read, and gives you the ability to see
+   the "thread" (message hierarchy) for each topic.
+
+   The sections below explain how to use the various access methods.
+
+   >> Newsgroup Access
+
+         To access the forum as a newsgroup be sure you have set
+         your membership to our default of "nomail" (see below),
+         then use the URL:
+
+               news://email.sparklist.com/jpsoft_support
+           or  nntp://email.sparklist.com/jpsoft_support
+
+         If you use a news reader (such as Agent or Gravity), set
+         your reader to access the server email.sparklist.com, and
+         read the jpsoft_support newsgroup.
+
+   >> Web Access
+
+         To use a web browser to access the forum and to read and
+         post messages be sure you have set your membership to our
+         default of "nomail" (see below), then use the URL:
+
+      http://email.sparklist.com/cgi-bin/lyris.pl?enter=jpsoft_support
+
+   >> Email Access
+
+         To receive forum messages in your email be sure you have
+
+         set your membership to "mail", "digest", or "index" (see
+         below).  To post a message, send email to the forum
+         address:
+
+                jpsoft_support@email.sparklist.com
+
+   >> Selecting Nomail, Mail, Digest, or Index
+
+         Your forum membership can be one of four types.  If you
+         joined the forum through our web page or other links we
+         provided your initial membership type was set to nomail by
+         default, and you can leve it that way unless you want to
+         receive forum messages in your email.
+
+         The types are:
+
+            nomail:  Receive no mail (default).  Use this type when
+                     you want to access the forum via the newsgroup
+                     or web interface.
+
+            mail:    Receive each message via email as it is
+                     contributed.
+
+            digest:  Receive a daily digest with all the messages of
+                     the day.
+
+            index:   Receive a daily index of the subject lines of
+                     all the messages of the day.
+
+         To set your membership type go to the web page (see Web
+         Access above), enter your email address and password, and
+         select "Your Settings".  The "Status" field controls your
+         membership type.
+
+         To use an email command to change your membership type send
+         a message to lyris@email.sparklist.com with a blank subject
+         and one of the following single lines in the text, without
+         a signature:
+
+               set jpsoft_support mail
+               set jpsoft_support digest
+               set jpsoft_support index
+               set jpsoft_support nomail
+
+   For more complete "technical" details on access methods,
+   passwords, and other aspects of the forum see our server
+   documentation.  This file is available from our web site at:
+
+         http://jpsoft.com/jpview.cgi?jpserver.txt
+
+   You can also retrieve this file by sending a message to
+   lyris@email.sparklist.com with a blank subject and the
+following
+   single line in the text, without a signature:
+
+         get jpsoft_support jp-server
+
+
+Leaving the Forum
+
+   To leave the forum at any time go to the web page (see Web Access
+   above), enter your email address and password, and then use the
+   Leave button.  If you are signed up as a mail or digest member
+   you can also use the information provided at the end of each
+   message emailed to you.
+
+   You can also leave the forum by sending an email message to
+   lyris@email.sparklist.com with a blank subject and the following
+   single line in the text, without a signature:
+
+         unsubscribe jpsoft_support
+
+
+Legal Notices
+
+   This is a private forum entirely owned and operated by JP
+   Software Inc. ("we" or "us"), using the facilities of
+   sparklist.com, a California-based Internet Service
+   Provider.  Access privileges and rules are set and implemented
+   by us at our sole discretion, and by sparklist.com, at their sole
+   discretion.
+
+   Your enrollment or participation in the forum indicates your
+   agreement to our rules and policies, and any future changes to
+   them.  If you do not agree to abide by these policies you should
+   not participate in the forum.
+
+   Comments posted to the forum are made by its members and are not
+   reviewed prior to posting, and membership in the forum is
+   generally open to all, except where restricted by us or by
+   sparklist.com.  JP Software Inc. assumes no responsibility or
+   liability of any kind whatsoever for the content of messages
+   posted here, or for the enrollment or removal of any member.
+
+   Forum contents may not be redistributed by any one in any form
+   without specific prior consent from JP Software except that a
+   member may quote a message he or she posted to this forum as long
+   as no other forum material is included.
+
+   While we will make reasonable efforts to provide what we believe
+   are accurate and useful answers to technical support and other
+   questions, we make no warranty of any kind as to the accuracy or
+   usefulness of information provided here.
+
+   This service is subject to interruption from time to time due to
+   a wide range of circumstances both within and beyond our control.
+   We make no guarantees of any kind as to its uptime, availability,
+   or continuation, or as to the delivery or timeliness of forum
+   messages sent to your email address, or viewed through your
+   newsgroup or web software.
+
+
+Copyright 2003, JP Software Inc., All Rights Reserved.  Published by
+JP Software Inc., P.O. Box 328, Chestertown, MD 21620, U.S.A.,
+phone 410-810-8818, fax 410-810-0026.
+
+Take Command and 4DOS are registered trademarks of JP Software Inc.
+4DOS, 4OS2, and 4NT are JP Software Inc.'s trademarks for its family
+of character-mode command processors.  JP Software, jpsoft.com, and
+all JP Software designs and logos are also trademarks of JP Software
+Inc. Other product and company names are trademarks of their
+respective owners.
+</PRE></UL></UL>
+</TR></TD></TABLE>
+<HR NOSHADE WIDTH="95%">
+<CENTER><STRONG>also available in <A HREF="ascii/jphello.txt">text/plain</A> format</STRONG></CENTER>
+</FONT><FONT FACE="arial, helvetica, sans-serif" SIZE="-1" COLOR="#006699">
+<UL><A HREF="jpview.cgi?jphello.txt#top"><IMG SRC="images/top4.gif" VSPACE=5 HSPACE=0 WIDTH=13 HEIGHT=7 ALIGN=TOP BORDER=0 ALT="^"><FONT COLOR="#663399"><STRONG>Top</STRONG></FONT></A></UL>
+<UL><LI>If your browser displayed this page in a separate window, <A HREF="" onclick="window.close()">close this window</A> to return to your previous location.</UL>
+</FONT><P>
+<center>
+<FORM TARGET="JP_Link" METHOD="get" ACTION="http://sitelevel.whatuseek.com/query.go">
+<INPUT TYPE="hidden" SIZE=0 NAME="crid" VALUE="4d3ea8ef0d7c5f46">
+<INPUT TYPE="hidden" SIZE=0 NAME="slice_title" VALUE="Text Files only">
+<TABLE bgcolor="#D2E2FF" CELLSPACING=0 CELLPADDING=5 BORDER=1 BORDERCOLOR="#003399">
+<TR><SMALL><TD ALIGN="center">
+<INPUT TYPE="submit" NAME="B1" VALUE=" search Text Files">
+</TD></SMALL></TR>
+<TR><TD ALIGN="center" VALIGN="bottom">
+<INPUT TYPE="text" NAME="query" SIZE="20" VALUE="&quot;search string&quot;" MAXLENGTH="200"></TD></TR>
+</TABLE></FORM>
+</center>
+<FONT FACE="Helvetica,Arial,Geneva,Swiss,sans-serif" SIZE=2>
+<UL><LI><H3>View a <A HREF="ascii.htm">Directory of all Text Files</A></H3></UL>
+<P></FONT>
+<P><HR WIDTH="95%"><P>
+<TABLE COLS=1 CELLSPACING=0 CELLPADDING=0 BORDER=0 WIDTH="90%">
+<TR><TD></TD></TR>
+<TR><TD BGCOLOR="#D2E2FF"><CENTER>
+<FONT FACE="Helvetica,Arial,Geneva,Swiss,sans-serif" SIZE=2>
+<A TARGET="_top" HREF="/index.htm">Home</A> |
+<A HREF="http://jpsoft.com/store/store.mv">Store</A> |
+<A HREF="/products.htm">Products</A> |
+<A HREF="/ordinf.htm">Orders</A> |
+<A HREF="/upgrade.htm">Upgrades</A> |
+<A HREF="/techsup.htm">Support</A> |
+<A TARGET=JP_Help HREF="/help/index.htm">Online Help</A>
+</FONT>
+</CENTER></TD></TR>
+<TR><TD>&nbsp;</TD></TR>
+<TR><TD><CENTER>
+<A HREF="#top"><IMG HEIGHT=30 WIDTH=90 VSPACE=5 BORDER=0 ALT=" (top of page) " SRC="/images/smjpswsh.gif"></A>
+</CENTER></TD></TR>
+<TR><TD><CENTER>
+<FONT FACE="Helvetica,Arial,Geneva,Swiss,sans-serif" SIZE=1>
+Page script last updated by
+<A HREF="&#119;&#101;&#098;&#109;&#097;&#115;&#116;&#101;&#114;&#064;&#106;&#112;&#115;&#111;&#102;&#116;&#046;&#099;&#111;&#109;?subject=Comments_WWW" TITLE="Comments_WWW">webmaster@jpsoft.com</A>.
+Copyright &copy; 2004 JP Software, Inc.  All Rights Reserved.
+<BR>See our <A HREF="/jplegal.htm">Legal Notices and Trademarks</A>
+and <A HREF="/privacy.htm">Privacy</A> Statements.
+<BR>
+<CENTER><FORM>
+<INPUT TYPE="button" VALUE=" &lt;&lt " onClick="history.go(-1)">
+<A HREF="#top"><IMG SRC="/images/top4.gif" VSPACE=5 HSPACE=0 WIDTH=13 HEIGHT=7 ALIGN=TOP BORDER=0 ALT="^"><FONT COLOR="#663399"><STRONG>Top</STRONG></FONT></A>
+<INPUT TYPE="button" VALUE=" &gt;&gt; " onCLick="history.go(1)">
+</FORM></CENTER>
+</FONT>
+</CENTER></TD></TR>
+<TR><TD>
+<CENTER><P><script language="JavaScript1.2" src="http://www.altavista.com/r?entr"></script></CENTER>
+</TD></TR>
+</TABLE>
+</BODY></HTML>

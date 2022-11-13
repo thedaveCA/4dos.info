@@ -1,0 +1,656 @@
+<!doctype HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Language" content="en-gb" />
+<link rel="shortcut icon" href="favicon.ico" />
+<title>4DOS.INFO - Klaus Meinhard's Homepage: 4DOS Tools</title>
+<meta name="description" content="Everything about 4DOS and Batch Programming - Alles zu 4DOS und Batch-Programmierung" />
+<meta name="keywords" content="TOOLS, SHELL, SCRIPT, BATCH, COMMAND, PROMPT, 4DOS, JPSOFT, DOS, BAT, BTM" />
+<meta name="rating" content="General" />
+<meta name="resource-type" content="document" />
+<meta name="revisit-after" content="30 Days" />
+<meta http-equiv="Expires" content="0" />
+<meta http-equiv="Last-Modified" content="0" />
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+<meta name="MSStartTagsPreventParsing" content="True" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<base target="_self" />
+<!-- Disable other sites from forcing a Frameset on this page -->
+<script type="text/javascript"><!--
+if(parent.frames.length>0) {
+parent.location.href=location.href;
+}
+//--></script>
+<style type="text/css">
+<!--
+a:link       { font-family: Courier New; font-size: 10pt; color: #0000CC; font-weight: bold; text-decoration:none )              }
+a:visited    { font-family: Courier New; font-size: 10pt; color: #3366CC; font-weight: bold; text-decoration:none }
+a:active     { font-family: Courier New; font-size: 10pt; color: #6600CC; font-weight: bold; text-decoration:none }
+h6           { font-family: verdana; font-size: 10pt; font-weight: bold; text-align:left; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h5           { font-family: verdana; font-size: 10pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h4           { font-family: verdana; font-size: 12pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h3           { font-family: verdana; font-size: 14pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h2           { font-family: verdana; font-size: 18pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h1           { font-family: verdana; font-size: 24pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+p            { font-family: verdana; font-size: 10pt; text-align:left; word-spacing:0; text-indent:0; line-height:110%; margin-left:6; margin-right:6; margin-top:6; margin-bottom:6}
+li           { font-family: Courier New; font-size: 10pt; text-align:left; word-spacing:0; text-indent:0; line-height:110%; margin-left:6; margin-right:6; margin-top:6; margin-bottom:12}
+-->
+</style>
+<style fprolloverstyle>A:hover {color: #6600CC; font-weight: bold}
+</style>
+</head>
+
+<body bgcolor="#666699" text="#000080" link="#0000FF" vlink="#3366CC" alink="#99CCFF">
+
+<h1 style="margin-bottom: 6; margin-top:0" align="center"><a name="0"></a>
+<font face="verdana" color="#FEFEFE">[4DOS.INFO]</font></h1>
+<p style="margin-bottom: 6; margin-top:0" align="center">&nbsp;</p>
+<div align="left">
+  <p style="margin-top: 0; margin-bottom: 6" align="left">
+  <font face="verdana" align="center" style="margin-top: 0; margin-bottom: 6" color="#FEFEFE" size="5">
+  c:\4dos\tools\&gt; _</font></div>
+<div align="left">
+  <table summary="men£" border="0" width="165" bordercolor="#000080" cellpadding="6" cellspacing="0" height="509" align="left" style="position: absolute; left: 10; top: 100; border-collapse: collapse">
+    <tr>
+      <td valign="top" bgcolor="#FFFFFF" width="164" height="1">
+      <!-- beginn freecity.de counter code -->
+      <a href="http://www.freecity.de" target="_new">
+      <img src="http://tools.freecity.de/counter/Klaus_Meinhard" border="0" width="154" height="88"></a>
+      <!-- ende freecity.de counter code -->&nbsp; </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#FFFFFF" width="164" height="15">
+      <h4 align="center" style="text-align: center">&nbsp;Topics</h4>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#EEEEEE" width="164" height="4">
+      <p style="margin-top: 6; margin-bottom: 6"><a href="updates.htm">
+      <font face="Verdana">Updates</font></a><font face="Verdana"> </font></td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#FFFFFF" width="164" height="18">
+      <h4><font face="Verdana" size="3">4DOS INFO</font></h4>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#EEEEEE" width="164" height="237">
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="sources.htm" target="_self"><font face="Verdana">4DOS Sources</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="v4dos.htm" target="_self"><font face="Verdana">4DOS Versions</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="v4nt.htm" target="_self"><font face="Verdana">4NT Versions</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="v4os2.htm" target="_self"><font face="Verdana">4OS2 Versions</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="4tips.htm" target="_self"><font face="Verdana">4DOS Tips &amp; Tricks</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="4docs.htm" target="_self"><font face="Verdana">4DOS Docs</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="4batfaq.htm" target="_self"><font face="Verdana">4DOS BatFAQ</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a target="_self" href="4obtms.htm"><font face="Verdana">4DOS Batches, 
+      Aliases, Functions</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <font face="Verdana">&nbsp; </font><a href="4bernd.htm" target="_self">
+      <font face="Verdana">B. Schneider's</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <font face="Verdana">&nbsp; </font><a href="4xbtm.htm">
+      <font face="Verdana">K. Meinhard's</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="4links.htm" target="_self"><font face="Verdana">4DOS Links</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="4tools.htm" target="_self"><font face="Verdana">4DOS Tools</font></a></h6>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#FFFFFF" width="164" height="18">
+      <h3 align="center"><font size="3" face="Verdana">INFO for DOS</font></h3>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#EEEEEE" width="164" height="42">
+        <p align="left">
+        <a href="dlinks.htm" target="_self"><font face="Verdana">DOS Links</font></a></p>
+		<p align="left">
+        <a href="dlinksu.htm" target="_self"><font face="Verdana"> More DOS 
+		Links</font></a></p>
+		</p>
+        <p><a href="dalter.htm"><font face="Verdana">DOS Alternatives</font></a></p>
+      <p><a href="dhardw.htm" target="_self"><font face="Verdana">DOS Hardware</font></a></p>
+      <p><a href="dtools.htm"><font face="Verdana">DOS Tools</font></a></p>
+      <p><a href="dprogs.htm"><font face="Verdana">DOS Programs</font></a></p>
+      <p><a href="dgems.htm"><font face="Verdana">DOS Gems</font></a></td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#FFFFFF" width="164" height="18">
+      <h3 align="center"><font face="Verdana" size="3">Service</font></h3>
+      </td>
+    </tr>
+    <tr>
+      <td width="164" height="40" bgcolor="#EEEEEE">
+      <p style="margin: 6"><a href="search.htm" target="_self">
+      <font face="Verdana">Search Engines</font></a></p>
+      <p><a href="mailto:K_Meinhard@gmx.de"><font face="Verdana">Contact me</font></a><font face="Verdana">
+      </font></td>
+    </tr>
+    <tr>
+      <td width="164" height="1" bgcolor="#FFFFFF">
+      <p style="margin: 6"><a href="index.htm" target="_self">
+      <font face="Verdana">Back to Homepage</font></a><font face="Verdana">
+      </font></td>
+    </tr>
+  </table>
+</div>
+<table summary="main body" border="0" width="75%" cellpadding="6" cellspacing="0" style="border-collapse: collapse; position:absolute; left:200; top:100" bordercolor="#000080" align="left">
+  <tr>
+    <td width="100%" bgcolor="#FFFFFF" style="border-left-style: solid; border-left-width: 1" height="15">
+    <h4 align="center" style="margin-top: 0; margin-bottom: 0">&nbsp;4DOS Tools</h4>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" bgcolor="#EEEEEE" style="border-left-style: solid; border-left-width: 1" height="65">&nbsp;<p>
+    Collected links to 4DOS description-aware programs of all kind and 4DOS 
+    tools.</p>
+    <p>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="100%" bgcolor="#FFFFFF" style="border-left-style: solid; border-left-width: 1" height="41">
+    <h4 style="text-align: center; margin-top: 0; ">Topics:</h4>
+    <p style="text-align: center"><font face="Verdana">
+    <span style="background-color: #CCCCFF">&nbsp; </span></font>
+    <a target="_self" href="#01"><font face="Verdana">
+    <span style="background-color: #CCCCFF">Editors</span></font></a><font face="Verdana"><span style="background-color: #CCCCFF"> 
+    &nbsp;</span>&nbsp;&nbsp; <span style="background-color: #CCCCFF">&nbsp;&nbsp;</span></font><a href="#02"><font face="Verdana"><span style="background-color: #CCCCFF">4DOS-Aware 
+    Programs</span></font></a><span style="background-color: #CCCCFF"><font face="Verdana"> 
+    &nbsp;</font></span>&nbsp; <span style="background-color: #CCCCFF">&nbsp;
+    <a href="#03"><font face="Verdana">4NT / TCC Topics</font></a>&nbsp; </span>&nbsp; </td>
+  </tr>
+  <tr>
+    <td width="100%" bgcolor="#EEEEEE" style="border-left-style: solid; border-left-width: 1" height="1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="100%" bgcolor="#FFFFFF" style="border-left-style: solid; border-left-width: 1" height="18">
+    <h4><a name="01"></a>Editors</h4>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" bgcolor="#EEEEEE" style="border-left-style: solid; border-left-width: 1" height="635">
+    <ul>
+      <li>
+      <p style="margin-bottom: 12"><a target="_blank" href="http://www.crimsoneditor.com/">
+      <span style="background-color: #CCCCFF">Crimson Editor</span></a><font face="Courier New"><span style="background-color: #CCCCFF">&nbsp;
+      </span>&nbsp; Crimson Editor is a free professional source code editor for 
+      Windows, fast and small. While it can serve as a good replacement for 
+      Notepad, it also offers many powerful features for programming languages 
+      such as HTML, C/C++, Perl and Java. - by Ingyu Kang</font><ul>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New">
+      <a target="_blank" href="http://www.nmia.com/~raster/btm_syntax.zip">Syntax definition</a> 
+      file by Charles Dye</font></li>
+    </ul>
+      <p style="margin-bottom: 12">&nbsp;</li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New">
+      <a target="_blank" href="http://www.editpadpro.com">
+      <span style="background-color: #CCCCFF">EditPad Pro</span></a><font size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp; 
+      EditPad&nbsp;Pro is a powerful and versatile editor/word</font></font><font face="Courier New" size="2"> 
+      processor. Designed to make text editing as convenient as possible, using 
+      EditPad&nbsp;Pro to edit text files will save you a lot of time and 
+      fjrustration. - by JG Software</font><ul>
+        <li>
+        <p style="margin-bottom: 12"><font face="Courier New"><font size="2">
+        <a target="_blank" href="http://www.editpadpro.com/cgi-bin/cscsdl2.pl?id=16">Syntax 
+        Definition </a></font>F<a href="http://www.editpadpro.com/cgi-bin/cscsdl2.pl?id=16">ile</a><font size="2"> 
+        for btms and batches</font></font><font face="Courier New" size="2">.
+        </font></li>
+      </ul>
+      <p style="margin-bottom: 12">&nbsp;</li>
+      <li>
+      <p style="margin-bottom: 12">
+      <a target="_blank" href="http://www.lugaru.com/">
+      <span style="background-color: #CCCCFF">Epsilon</span></a><font face="Courier New"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; A programmable, extensible editor. Commercial software by 
+      Lugaru. 4DOS/4NT syntax support file by Timithy Byrd is
+      <a target="_blank" href="http://www.lugaru.com/ftp.html">here</a>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </font></li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New">
+      <a target="_blank" href="http://www.textpad.com">
+      <span style="background-color: #CCCCFF">Textpad</span></a><font size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; An interesting editor with good 4DOS support</font></font><font face="Courier New" size="2">. 
+      By Helios Software Solutions. Textpad needs the following Clipbooks for 
+      4DOS support:</font><ul>
+        <li>
+        <p style="margin-bottom: 12"><span class="q0"><font face="Courier New">
+        <a target="_blank" href="tools/jpsoft.syn">JPSoft.sys</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        updated syntax definition file used with <br>
+        Textpad editor to mirror the functionality of 4NT and <br>
+        TCMD v7.01, by Bernd Berg</font></span></li>
+        <li>
+        <p style="margin-bottom: 12"><a target="_blank" href="tools/jpsoft.syn">JPSoft_old.syn</a><font face="Courier New">&nbsp;
+        <span class="q0">Syntax highlight file current with 4NT and 
+        TCMD as of version 6.01, by Federico Romano, 2005-03-15</span></font></li>
+        <li>
+        <p style="margin-bottom: 12"><font face="Courier New">
+        <a target="_blank" href="http://www.textpad.com/add-ons/files/cliplibs/4dos.zip">4DOS</a><font size="2">&nbsp; 2 Textpad Clip Books for 4DOS: Internal 
+        Functions </font></font><font face="Courier New" size="2">and Internal 
+        Variables by Marc Scheuner and extended syntax definitions by Arjan 
+        Feddema. 1999-08-15</font></li>
+        <li>
+        <p style="margin-bottom: 12"><font face="Courier New">
+        <a target="_blank" href="http://www.textpad.com/add-ons/files/cliplibs/4nt_tc.zip">4NT/Take Command</a>&nbsp;&nbsp; Additional clip libs (Internal 
+        Functions and Internal Variables) for jpsoft's 4nt/TakeCommand v6. - by 
+        Michael Applebee, 2004-09-20</font></li>
+      </ul>
+      <p style="margin-bottom: 12">&nbsp;</li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New">
+      <span style="background-color: #CCCCFF">
+      <a target="_blank" href="http://www.semware.com/">TSE Editor</a></span><font size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; TSE is a very fine (commercial) programmable</font></font><font face="Courier New" size="2"> 
+      editor with btm syntax highlighting, sticky indentation, 
+      parentheses&nbsp;checking, 4DOS help system integration and more. My editor of 
+      choice. By Semware</font><ul>
+        <li>
+        <p style="margin-bottom: 12"><font face="Courier New">
+        <a target="_blank" href="tools/tsedos25.zip">Macros</a><font size="2"> for TSE</font></font></li>
+        <li>
+        <p style="text-align: left; margin-top: 0; margin-bottom: 12">
+        <font face="Courier New"><a target="_blank" href="tnt/tse_btm.zip">TSE_BTM</a><font size="2">&nbsp;is a BTM syntax color template for TSE editor 
+        B</font></font><font face="Courier New" size="2">y Tom Bowden.</font></li>
+      </ul>
+      <p style="text-align: left; margin-top: 0; margin-bottom: 12">
+      <font face="Courier New" size="2">Look for or ask at JP Software for an 
+      up-to-date keyword file for their products. This will make it easier to 
+      update this rather old file.</font></li>
+    </ul>
+    <p style="margin-bottom: 12"><b><font face="Arial" size="2">Other good 
+    editor choices with the ability to highlight btm syntax: </font></b></p>
+    <ul>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New">
+      <a target="_blank" href="http://www.boxersoftware.com/">
+      <span style="background-color: #CCCCFF">Boxer</span></a><font size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; or</font></font></li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New">
+      <a target="_blank" href="http://www.multiedit.com/">
+      <span style="background-color: #CCCCFF">MultiEdit</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; (<a target="_blank" href="tools/multiedit.upd">Wordfile</a> 
+      for 4DOS/4NT/TC) or</font></li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New">
+      <a target="_blank" href="http://www.ultraedit.com/">
+      <span style="background-color: #CCCCFF">Ultraedit</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; (<a target="_blank" href="tools/ultraedit.txt">Wordfile</a> for 4DOS/4NT/TC, 
+      alternative
+      <a target="_blank" href="http://home.arcor.de/theonlysilverwolf/txt/my-jpsoft-wordfile.txt">here</a>)</font></li>
+    </ul>
+    <blockquote>
+      <p style="margin-bottom: 12"><font face="Courier New">
+      &nbsp;and there are many more.</font></blockquote>
+    <p>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="100%" bgcolor="#FFFFFF" style="border-left-style: solid; border-left-width: 1" height="18">
+    <h4><a name="02"></a>4DOS-Aware Programs</h4>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" bgcolor="#EEEEEE" style="border-left-style: solid; border-left-width: 1" height="1950">
+    <p style="margin-bottom: 12"><font face="Arial"><b>4DOS &quot;awareness&quot; 
+    generally means recognition, display and, ideally, support of the file 
+    descriptions stored in &quot;descript.ion&quot; files used by JP Software's products.</b></font></p>
+    <ul>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New">
+      <a target="_blank" href="tools/4clock.zip">
+      <span style="background-color: #CCCCFF">4CLOCK 1.1a</span></a><span style="background-color: #CCCCFF">
+      </span><font size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp; 4Clock is yet another TSR clock in the corner program.
+      </font></font><font face="Courier New" size="2">But what makes it 
+      different is its interface with 4DOS version 4.0 and later</font></li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New">
+      <a target="_blank" href="tools/4d24h13.zip">
+      <span style="background-color: #CCCCFF">4D24H 1.3</span></a><font size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp; 4DOS24H&nbsp;is&nbsp;a&nbsp;replacement&nbsp;for the standard DOS Critical Error</font></font><font face="Courier New" size="2"> 
+      Handler&nbsp;which&nbsp;issues&nbsp;the&nbsp;&quot;Abort,&nbsp; Retry, Ignore, Fail ?&quot; message. - 
+      by Patrick Philipot 1990</font></li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New" size="2">
+      <a href="tools/4desy140.zip"><span style="background-color: #CCCCFF">
+      4DESY/2</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp; 4Desy/2 v1.40 -&nbsp; comfortable full-screen editor for 4OS2 
+      file descriptions stored in DESCRIPT.ION. - by W. KÖrner</font></li>
+      <li>
+      <p style="margin-bottom: 12"><font size="2" face="Courier New">
+      <a href="tools/4dizzy96.zip"><span style="background-color: #CCCCFF">
+      4DIZZY</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp; 4Dizzy is the widely-acclaimed&nbsp; archive processor for 
+      both OS/2 and&nbsp; DOS. It's used to import file_id.diz information into 
+      4dos/4os2 º descriptions. - by Olli Männistö</font></li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New">
+      <a target="_blank" href="http://pascal.sources.ru/dos/4hist.htm">
+      <span style="background-color: #CCCCFF">4HIST</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp; 4HIST removes all duplicate lines from the current 4DOS 
+      command history list. A tiny batch file is included to automate 
+      processing. - by David Daniel Anderson</font></li>
+      <li>
+      <p style="margin-bottom: 12"><a href="tools/4TAR.EXE">
+      <span style="background-color: #CCCCFF">4TAR</span></a><font face="Courier New"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp; 4TAR is a 
+      French TAR for 4DOS with descriptions - v0.3b - by 
+      Frédéric Herque</font></li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New">
+      <a target="_blank" href="tools/4d24h20b.zip">
+      <span style="background-color: #CCCCFF">4D24H 2.0b</span></a><font size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp; 4DOS24H is a replacement for the standard DOS Critical Error
+      </font></font><font face="Courier New" size="2">Handler which issues&nbsp;the 
+      &quot;Abort, Retry, Ignore, Fail ?&quot; message. This is another (better?) version, 
+      completely in assembler, based on the above. - by Niels Jensen 1992</font></li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New" size="2">
+      <font face="Courier New"><span style="background-color: #CCCCFF">
+      <a href="tools/4mouse.com">4MOUSE.COM </a></span></font>
+      <span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp; is a DOS mouse driver to use at the command line and in 
+      batches. Used in some of these batches.</font></li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New">
+      <a target="_blank" href="http://4tex.ntg.nl/4tex5/">
+      <span style="background-color: #CCCCFF">4TEX</span></a><font size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp; TeX shell realized with lots of btms. Comes on 2 CDs.</font></font><font face="Courier New" size="2"> 
+      - by the Nederlandstalige TeX Gebruikersgroep</font></li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New">
+      <a target="_blank" href="http://store.acdsee.com/store/acd/en_US/DisplayProductDetailsPage/productID.78701700">
+      <span style="background-color: #CCCCFF">ACD See&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;</a><font size="2"> A commercial &quot;descript.ion&quot; aware image viewer 
+      and browser</font></font><font face="Courier New" size="2">, - by ACD 
+      Systems</font></li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New">
+      <a target="_blank" href="http://www.elcomsoft.com/adc.html">
+      <span style="background-color: #CCCCFF">ADC</span></a><font size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp; Advanced Disk Catalogue, a &quot;descript.ion&quot; aware disk</font></font><font face="Courier New" size="2"> 
+      cataloguer. Trialware (30 days) by Elcomsoft</font></li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New">
+      <a target="_blank" href="http://www.sweger.com/ansiplus/">
+      <span style="background-color: #CCCCFF">ANSIPLUS</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp; The ANSIPLUS console device driver integrates major console 
+      elements missing from the command shell environment of DOS/Windows and the 
+      personal computer BIOS into a single compact device driver. Features 
+      include enhanced ANSI support, screen saver, scroll-back with cut 'n 
+      paste, enhanced keyboard buffer, key stuffing, key assigning, VGA register 
+      control and more, e. g.
+      <a target="_blank" href="http://www.sweger.com/ansiplus/TechNotes4DOS.html">
+      4DOS support</a>. One of my favourites! - by Kristopher Sweger</font></li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New">
+      <a href="tools/am113.zip"><span style="background-color: #CCCCFF">
+      ArcMaster 1.13</span></a><font size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp; A &quot;descript.ion&quot; aware archiver shell </font></font>
+      <font face="Courier New" size="2">by New Ware Shareware 1995</font></li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New">
+      <span style="background-color: #CCCCFF">
+      <a target="_blank" href="http://www.student.northpark.edu/pemente/develop/files/cn.zip">
+      Connect</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp; Connect may be the best Norton Commander clone: it is a 
+      full-fledged DOS shell with a Borland-style interface supporting a 
+      powerful text editor (regexes, line-draw, formatting, syntax highlighting, 
+      vertical blocks, etc.), a multi-window hex editor, views text/dBASE/HTML 
+      files in structured format, file manager with support for 4DOS file 
+      descriptions which are preserved on file copy/move/ren, supports Win 
+      9x/NT/2K long filenames, advanced filters, modem terminal, phone book, 
+      calendar, calculator, environment editor, CD Player(!), and more. - 
+      Freeware by Dima Orlov.</font></li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New">
+      <a href="http://www.rbahr.de/4dos.htm">
+      <span style="background-color: #CCCCFF">DescExt</span></a><font size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp; 4DOS Description Extension for Explorer Win95 / XP. </font>
+      </font><font face="Courier New" size="2">Use and edit 4DOS descriptions in 
+      Windows Explorer. - by Rainer Bahr</font></li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New">
+      <span style="background-color: #CCCCFF">
+      <a target="_blank" href="http://www.ritlabs.com/dn/download.html">DOS Navigator
+      </a> </span><font size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</span>&nbsp; Very extensive &quot;descript.ion&quot;-aware, Commander - like </font>
+      </font><font face="Courier New" size="2">DOS shell with archive support, 
+      editor, calculator, spreadsheet, terminal, games and much more. Worth more 
+      than one look. Freeware open source project. By RIT Research Labs.</font></li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New">
+      <a target="_blank" href="http://www.dnosp.com/e_index.php">
+      <span style="background-color: #CCCCFF">DOS Navigator </span><span style="background-color: #CCCCFF"><font size="2">
+      Open Source Project</font></span></a><span style="background-color: #CCCCFF"><font size="2">&nbsp;</font></span><font size="2">&nbsp;A 
+      project based on RIT Research Labs DOS Navigator (see above)</font></font><font face="Courier New" size="2">.</font></li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New">
+      <a target="_blank" href="http://filemanager.free.fr/index.htm">
+      <span style="background-color: #CCCCFF">F File Manager</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp; F is a freeware multi-platform text-mode file manager with 
+      many features. Main F functions: multiple file windows display, full 
+      support for ZIP archives, integration with built-in file viewer and 
+      editor, network support.</font></li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New">
+      <a target="_blank" href="http://farmanager.com/">
+      <span style="background-color: #CCCCFF">FAR Manager</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp; FAR Manager is a program for managing files and archives in 
+      Win9x/Me/NT/2000/XP). FAR Manager works in text mode and provides a simple 
+      and intuitive interface for performing most of the necessary actions: 
+      viewing files and directories, editing, copying and renaming files and 
+      many other operations. Very configurable by plugins: e.g.
+      <a target="_blank" href="http://plugring.farmanager.com/cgi-bin/downld.cgi?Lang=Eng&Draw=List&Sort=Date&SelectCateg=(none)&Select=PlugIn&SelectPlugIn=10&SelectAuthor=0&SelectOther=1&SearchText=">
+      Description Editor</a>,
+      <a target="_blank" href="http://plugring.farmanager.com/cgi-bin/downld.cgi?Lang=Eng&Draw=List&Sort=Date&SelectCateg=(none)&Select=PlugIn&SelectPlugIn=128&SelectAuthor=0&SelectOther=1&SearchText=">
+      Description Extractor</a> and
+      <a target="_blank" href="http://plugring.farmanager.com/cgi-bin/downld.cgi?Lang=Eng&Draw=List&Sort=Date&SelectCateg=(none)&Select=PlugIn&SelectPlugIn=23&SelectAuthor=0&SelectOther=1&SearchText=">
+      Description Search</a>. - by Eugene Roshal</font></li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New">
+      <a href="tools/ffit162.zip"><span style="background-color: #CCCCFF">FFIT</span></a><font size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp; Copy files to disk with best fit, 4DOS-&quot;descript.ion&quot; aware</font></font><font face="Courier New" size="2">. 
+      - by Kai Risku</font></li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New">
+      <a href="http://www.aarsoftware.com/ffdclt.exe">
+      <span style="background-color: #CCCCFF">FFDC&nbsp; </span></a>
+      <font size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp; File / Folder description Center lite: integrates free
+      </font></font><font face="Courier New" size="2">description editor, and 
+      file info into Windows Explorer. Freeware, there's a more complex 
+      commercial version available. - by AAR Software Ltd</font></li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New">
+      <a target="_blank" href="http://www.optimasc.com/products/fileid/">
+      <span style="background-color: #CCCCFF">File Identifier</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp; The file identifier software is a command line tool that 
+      permits identifying files as well as getting information on directories 
+      from their content (thereafter called a resource), and not simply from 
+      their file extensions (in the case of files). - by Carl Eric Codère</font></li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New">
+      <a target="_blank" href="http://www.canyonsw.com/">
+      <span style="background-color: #CCCCFF">File, Zip and View</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;</span>&nbsp; Canyon Software's file and archive management programs are 
+      4DOS-aware in their Windows 3.1, Windows NT and Windows95 versions. </font>
+      </li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New">
+      <a href="http://www.greenparrots.com/1stfd.zip">
+      <span style="background-color: #CCCCFF">First File Descriptor</span></a><font size="2">&nbsp; 
+      File description editor for Windows. Many features: works</font></font><font face="Courier New" size="2"> 
+      with archives, extracts ID3 tags from MP3 files and more. Looks good for 
+      description &quot;power users&quot;. Demo version. There S a commercial version 
+      available. - by Green Parrots Software</font></li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New">
+      <a href="tools/fwin32.exe"><span style="background-color: #CCCCFF">FWIN</span></a><font size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp; FWIN is a freeware multi-platform text-mode file manager 
+      with</font></font><font face="Courier New" size="2"> many&nbsp;features. Main 
+      FWIN functions: multiple file windows display, full support for ZIP 
+      archives, integration with built-in file viewer and editor, network 
+      support.4DOS-&quot;descript.ion&quot; aware. - by N. D. Nguyen and Michel Normand</font></li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New">
+      <span style="background-color: #CCCCFF">
+      <a target="_blank" href="ftp://ftp.sac.sk/pub/sac/utilmisc/ink153.exe">Inkutils 1.53</a></span><font size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp; Freeware suite of eleven DOS, 4DOS (file description editor)
+      </font></font><font face="Courier New" size="2">and Windows 95/98&nbsp; 
+      utilities. - by Marc Inkley</font></li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New">
+      <a target="_blank" href="http://www.geocities.com/mmarko.geo/jedmacros/4dos.sl.txt">
+      <span style="background-color: #CCCCFF">JED Macro</span></a><font size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp; JED (the editor) macro for 4DOS syntax highlighting.</font></font><font face="Courier New" size="2"> 
+      - by Marko&nbsp;Mahniè</font></li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New">
+      <a target="_blank" href="http://www.enriva.com">
+      <span style="background-color: #CCCCFF">Magellan Explorer</span></a><font size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;</span>&nbsp; A Windows Explorer replacement with lot's of additional 
+      features.</font></font><font face="Courier New" size="2"> 
+      4DOS-&quot;descript.ion&quot; aware. - by Enriva Developement</font></li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New">
+      <a target="_self" href="tools/melody21.zip">
+      <span style="background-color: #CCCCFF">Melody Master 2.1</span></a><font size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;</span>&nbsp; Create, edit, and play music on your PC speaker. Creates,</font></font><font face="Courier New" size="2"> 
+      among other things, ready made btm beep sequences of melodies... Abandoned 
+      shareware by Shareable Software International</font></li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New" size="2">
+      <span style="background-color: #CCCCFF">
+      <a target="_blank" href="http://search.cpan.org/~cjm/">MSDOS-Descript</a>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</span>&nbsp; This module provides access to 4DOS style DESCRIPT.ION 
+      files. It can both read and write them. - by Christopher J. Madsen</font></li>
+      <li>
+      <p style="margin-bottom: 12">
+      <span style="background-color: #CCCCFF"><font face="Courier New">
+      <a target="_blank" href="http://ndn.muxe.com/beta/">NDN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </a></font></span><font size="2" face="Courier New">&nbsp; 
+      Necromancer's DOS Navigator plus file editor and viewer, calculator, 
+      spreadsheet and many more features. Based on RIT Labs DOS Navigator, it's 
+      freeware, open source and still under developement. - by Muxe Inc.</font></li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New" size="2">
+      <span style="background-color: #CCCCFF">
+      <a target="_blank" href="http://www.bmtmicro.com/BMTCatalog/os2/os2cmmdr.html">
+      OS/2 Commander</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp; 
+      Norton Commander clone for OS/2. 4DOS-&quot;descript.ion&quot; aware. Abandonware by 
+      Wolfgang Arp</font></li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New">
+      <a href="tools/shez109.zip"><span style="background-color: #CCCCFF">Shez 
+      1.09</span></a><font size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp; A &quot;descript.ion&quot; aware DOS archiver shell. - b</font></font><font face="Courier New" size="2">y 
+      California Software design</font></li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New">
+      <span style="background-color: #CCCCFF">
+      <a target="_blank" href="ftp://ftp.sac.sk/pub/sac/utilfile/smish314.zip">
+      SmilerShell 1.4</a></span><font size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp; SmilerShell/1.4 is a compact yet powerful Windows 3.nn</font></font><font face="Courier New" size="2"> 
+      control center. It looks like a simple command line, but in reality it's 
+      more like a cross between Dashboard and 4DOS, without heavy memory 
+      requirements. Win95 version
+      <a href="ftp://ftp.sac.sk/pub/sac/utilfile/smi95v14.zip">here</a>. This 
+      fully functional SmilerShell version for Win 3.1/9x is now free. Freeware 
+      by Barry Smiler</font></li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New">
+      <a target="_blank" href="http://www.stgsys.com/">
+      <span style="background-color: #CCCCFF">STG FPP</span></a><font size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp; FolderPrint Plus. Another Explorer-like app with added</font></font><font face="Courier New" size="2"> 
+      capabilties (print your folder contents with added info). 
+      4DOS-&quot;descrip.ion&quot; aware.</font> - by <font size="2" face="Courier New">
+      Starglider Systems </font></li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New">
+      <a target="_blank" href="http://free.prohosting.com/~sdir/">
+      <span style="background-color: #CCCCFF">SuperDir</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp; SuperDIR is an advanced but simple to use directory lister. 
+      It completely replaces the familiar DIR command issued at the DOS prompt. 
+      It has all the features of the DIR command plus a huge array of other 
+      useful features. Moreover, it still remains extremely easy to use. 
+      SuperDIR is available in 16 and 32 bit versions. - Shareware by Omnivision 
+      Technologies</font></li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New" size="2">
+      <a target="_blank" href="http://www.ghisler.com/">
+      <span style="background-color: #CCCCFF">Total Commander</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp; Formerly Windows Commander, another Explorer replacement 
+      with many enhanced features. Many add-ons and plugins for special needs. - 
+      by Christian Ghisler</font><a href="http://www.jonas-baehr.de/lst2desc.php?language=en">.
+      </a>
+      <ul>
+        <li>
+        <p style="margin-bottom: 12"><font face="Courier New" size="2">
+        <a target="_blank" href="http://www.jonas-baehr.de/lst2desc.php?language=en">
+        lst2desc</a> is one such tool für Total Commander, which puts Long File 
+        Names into descript.ion files. By Jonas Baehr</font></li>
+      </ul>
+      </li>
+      <li>
+      <p style="margin-bottom: 12">
+      <a target="_blank" href="http://www.prineas.com/V/">
+      <span style="background-color: #CCCCFF">V File Viewer</span></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp;<b> V</b> is a combination File Viewer, Directory Browser, File 
+      Finder and File UnZipper for Windows.
+      <a target="_blank" href="http://www.fileviewer.com/">Alternate site</a> 
+      here. - by Charles Pineas</font></li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New">
+      <a target="_blank" href="tools/vga24h.zip">
+      <span style="background-color: #CCCCFF">VGA24H</span></a><font size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; VGA24H is a replacement for the standard DOS Critical Error
+      </font></font><font face="Courier New" size="2">Handler which issues&nbsp;the 
+      &quot;Abort, Retry, Ignore, Fail ?&quot; message. This is the EGA/VGA version, based 
+      on the above, adapted for VGA and different line lengths. - by Ray Tackett 
+      1990</font></li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New">
+      <span style="background-color: #CCCCFF">
+      <a target="_blank" href="http://egner-online.de/vc/en/intro.shtml">Volkov Commander&nbsp;
+      </a> </span>
+      <font size="2"><span style="background-color: #CCCCFF">&nbsp; </span>&nbsp; 
+      Another enhanced text-mode Commander-like shell with 4DOS-</font></font><font face="Courier New" size="2">&quot;descript.ion&quot; 
+      awareness. Still in active development. Shareware by Vsevolod V. Volkov
+      </font></li>
+      <li>
+      <p style="margin-bottom: 12"><font face="Courier New">
+      <a target="_blank" href="http://www.whereisit-soft.com">
+      <span style="background-color: #CCCCFF">Where Is It?</span></a><font size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; Cataloguing Software, Win 32bit, designed to help you 
+      maintain </font></font><font face="Courier New" size="2">and organize a 
+      catalogue of your computer media collection, including CD-ROMs, audio CDs, 
+      diskettes, removable drives, hard drives, network drives, DVDs, or any 
+      other media that Windows can access as a drive&nbsp; &quot;Lite&quot; freeware 
+      version available. With 4DOS-&quot;descript.ion&quot; awareness, - by Robert Galle</font></li>
+    </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" bgcolor="#FEFEFE" style="border-left-style: solid; border-left-width: 1" height="19">
+    <h4><a name="03"></a>4NT / TCC related Topics</h4>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" bgcolor="#EEEEEE" style="border-left-style: solid; border-left-width: 1" height="19">
+    <ul>
+      <li>
+      <a target="_blank" href="http://dl.openafs.org/dl/openafs/1.4.0/winnt/relnotes.htm">
+      <span style="background-color: #CCCCFF">OpenAFS</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; The Andrew File System (<a target="_blank" href="http://dl.openafs.org/dl/openafs/1.4.0/winnt/frames.htm">AFS</a>) 
+      is a location-independent file system that uses a local cache to increase 
+      its performance. They recommend using 4NT or Take Command:</li>
+    </ul>
+    <blockquote>
+      <p><font face="Courier New">&quot;The OpenAFS 1.4 client supports UNC paths 
+      everywhere. UNC paths provide a canonical name for resources stored within 
+      AFS. UNC paths should be used instead of drive letter mappings whenever 
+      possible. This is especially true when specifying the location of roaming 
+      profiles and redirected folders. <br>
+      <br>
+      Power users that make extensive use of the command line shell, cmd.exe, 
+      should consider using JP Software's 4NT or Take Command command 
+      processors. Unlike cmd.exe, the JPSoftware shells fully support UNC paths 
+      as the current directory. With the release of version 4NT 7.0 and Take 
+      Command 7.0, JPSoftware is adding special recognition of OpenAFS. AFS 
+      paths can be entered in UNIX notation (e.g., /afs/openafs.org/software), 
+      space utilization reports the output of the volume status for the 
+      specified path, and many AFS specific functions and variables have been 
+      added to the command language.&quot;</font></p>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" bgcolor="#FFFFFF" style="border-left-style: solid; border-left-width: 1" height="12">
+    <h5 align="center"><a href="#0"><font face="verdana">Top of Page</font></a> 
+    - <a href="index.htm"><font face="verdana">Home</font></a></h5>
+    </td>
+  </tr>
+</table>
+
+</body>
+
+</html>

@@ -1,0 +1,782 @@
+<!doctype HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+<meta name="generator" content="Microsoft FrontPage 5.0" />
+<meta name="ProgId" content="FrontPage.Editor.Document" />
+<meta http-equiv="Content-Language" content="en-gb" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<title>4DOS.INFO - Klaus Meinhard&apos;s Homepage: Title</title>
+<meta name="description" content="Everything about 4DOS and Batch Programming - Alles zu 4DOS und Batch-Programmierung" />
+<meta name="keywords" content="4XBTM, SHELL, SCRIPT, BATCH, COMMAND, PROMPT, 4DOS, 4OS2, 4NT, TCMD, TAKE COMMAND, JPSOFT, DOS, BTM" />
+<meta name="rating" content="General" />
+<meta name="resource-type" content="document" />
+<meta name="revisit-after" content="30 Days" />
+<meta http-equiv="Expires" content="0" />
+<meta http-equiv="Last-Modified" content="0" />
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+<meta name="MSStartTagsPreventParsing" content="True" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<base target="_self" />
+<!-- Disable other sites from forcing a Frameset on this page -->
+<script type="text/javascript">
+<!--
+if(parent.frames.length>0) {
+parent.location.href=location.href;
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+a:link       { font-family: Courier New; font-size: 10pt; color: #0000CC; font-weight: bold; text-decoration:none )              }
+a:visited    { font-family: Courier New; font-size: 10pt; color: #3366CC; font-weight: bold; text-decoration:none }
+a:active     { font-family: Courier New; font-size: 10pt; color: #6600CC; font-weight: bold; text-decoration:none }
+h6           { font-family: verdana; font-size: 10pt; font-weight: bold; text-align:left; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h5           { font-family: verdana; font-size: 10pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h4           { font-family: verdana; font-size: 12pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h3           { font-family: verdana; font-size: 14pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h2           { font-family: verdana; font-size: 18pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h1           { font-family: verdana; font-size: 24pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+p            { font-family: verdana; font-size: 10pt; text-align:left; word-spacing:0; text-indent:0; line-height:110%; margin-left:6; margin-right:6; margin-top:6; margin-bottom:6}
+li           { font-family: Courier New; font-size: 10pt; text-align:left; word-spacing:0; text-indent:0; line-height:110%; margin-left:6; margin-right:6; margin-top:6; margin-bottom:12}
+-->
+</style>
+<style type="text/css">
+A:hover {color: #6600CC; font-weight: bold}
+</style>
+</head>
+
+<body bgcolor="#666699" text="#000080" link="#0000FF" vlink="#3366CC" alink="#99CCFF">
+
+<h1 style="margin-bottom: 6"><font color="#FFFFFF"><a name="0"></a>[4DOS.INFO]</font></h1>
+<p style="margin-bottom: 6">&#160;</p>
+<div align="left">
+  <p style="margin-top: 0; margin-bottom: 6">
+  <font face="verdana" align="center" margin-bottom:="" 6"="" color="#FEFEFE" size="5">
+  c:\test\&gt; _</font></p></div>
+<div align="left">
+  <table summary="menú" border="0" width="165" bordercolor="#000080" cellpadding="6" cellspacing="0" height="509" align="left" style="position: absolute; left: 10; top: 100; border-collapse: collapse">
+    <tbody>
+    <tr>
+      <td valign="top" bgcolor="#FFFFFF" width="164" height="1">
+      <!-- beginn freecity.de counter code -->
+      <a href="http://www.freecity.de" target="_new">
+      <img src="http://tools.freecity.de/counter/Klaus_Meinhard" border="0" width="154" height="88" /></a>
+      <!-- ende freecity.de counter code -->&#160; </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#FFFFFF" width="164" height="15">
+      <h4 align="center" style="text-align: center">&#160;Topics</h4>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#EEEEEE" width="164" height="4">
+      <p style="margin-top: 6; margin-bottom: 6"><a href="../updates.htm">
+      <font face="Verdana">Updates</font></a><font face="Verdana"> </font></p></td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#FFFFFF" width="164" height="18">
+      <h4><font face="Verdana" size="3">4DOS INFO</font></h4>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#EEEEEE" width="164" height="237">
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="../v4dos.htm" target="_self"><font face="Verdana">4DOS Versions</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="../v4nt.htm" target="_self"><font face="Verdana">4NT Versions</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="../v4os2.htm" target="_self"><font face="Verdana">4OS2 Versions</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="../4tips.htm" target="_self"><font face="Verdana">4DOS Tips &amp; Tricks</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="../4docs.htm" target="_self"><font face="Verdana">4DOS Docs</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="../4batfaq.htm" target="_self"><font face="Verdana">4DOS BatFAQ</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a target="_self" href="../4obtms.htm"><font face="Verdana">4DOS Batches, 
+      Aliases, Functions</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <font face="Verdana">&#160; </font><a href="../4bernd.htm" target="_self">
+      <font face="Verdana">B. Schneider's</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <font face="Verdana">&#160; </font><a href="../4xbtm.htm">
+      <font face="Verdana">K. Meinhard's</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="../4links.htm" target="_self"><font face="Verdana">4DOS Links</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="../4tools.htm" target="_self"><font face="Verdana">4DOS Tools</font></a></h6>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#FFFFFF" width="164" height="18">
+      <h3 align="center"><font size="3" face="Verdana">INFO for DOS</font></h3>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#EEEEEE" width="164" height="42">
+      <p align="left"><a href="../dlinks.htm" target="_self"><font face="Verdana">
+      DOS-Links</font></a></p>
+      <p><a href="../dalter.htm"><font face="Verdana">DOS Alternatives</font></a></p>
+      <p><a href="../dhardw.htm" target="_self"><font face="Verdana">DOS Hardware</font></a></p>
+      <p><a href="../dtools.htm"><font face="Verdana">DOS Tools</font></a></p>
+      <p><a href="../dprogs.htm"><font face="Verdana">DOS Programs</font></a></p>
+      <p><a href="../dgems.htm"><font face="Verdana">DOS Gems</font></a></p></td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#FFFFFF" width="164" height="18">
+      <h3 align="center"><font face="Verdana" size="3">Service</font></h3>
+      </td>
+    </tr>
+    <tr>
+      <td width="164" height="40" bgcolor="#EEEEEE">
+      <p style="margin: 6"><a href="../search.htm" target="_self">
+      <font face="Verdana">Search Engines</font></a></p>
+      <p><a href="mailto:K_Meinhard@gmx.de"><font face="Verdana">Contact me</font></a><font face="Verdana">
+      </font></p></td>
+    </tr>
+    <tr>
+      <td width="164" height="1" bgcolor="#FFFFFF">
+      <p style="margin: 6"><a href="../default.htm" target="_self">
+      <font face="Verdana">Back to Homepage</font></a><font face="Verdana">
+      </font></p></td>
+    </tr>
+  </tbody>
+  </table>
+</div>
+<table summary="main body" border="0" width="75%" cellpadding="6" cellspacing="0" bordercolor="#000080" align="left" style="position: absolute; left: 200; top: 100; border-collapse: collapse">
+  <tbody>
+  <tr>
+    <td width="75%" bgcolor="#FFFFFF">
+    <h4><font color="#0000CC">4DOS Version 2 History</font></h4>
+    <p style="text-align: center"><font color="#0000CC">This page can be
+    <a href="h4dos2.doc">downloaded</a> in MS-Word .doc format.</font> 
+    </td>
+  </tr>
+  <tr>
+    <td width="75%" bgcolor="#EEEEEE">
+    <div align="left">
+      <p style="margin-top: 0; margin-bottom: 0; text-align:center" align="left">
+      <b>
+      <font color="#0000CC">4DOS Change Log - this log describes changes and bug fixes to version 
+      2.nn 
+      of 4DOS</font></b></div>
+    </td>
+    </tr>
+    <tr>
+    <td width="75%" bgcolor="#FFFFFF">
+    <div align="left">
+      <h5 style="margin-top: 0; margin-bottom: 0" align="left">
+      <font color="#0000CC">&nbsp;Version 2.0a released 2/23/89</font></h5>
+    </div>
+    </td>
+    </tr>
+    <tr>
+    <td width="75%" bgcolor="#EEEEEE">
+        
+    <ul>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 0"><font color="#0000CC">Hidden .EXE and .COM files will now be executed properly; previously 4DOS could not find them.</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 0"><font color="#0000CC">Programs which use the path stored at the end of the environment under DOS 3.x will now run properly if run from the directory they are stored in. (This caused problems with some programs in PCTools version 5.0.)</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 0"><font color="#0000CC">Problems with screen page length on systems which are not 100% IBM compatible (e.g. ITT, AT&amp;T) have been fixed. Users with such systems may need to use the version of ANSI.SYS that came with their system instead of the version that comes with 4DOS. The 4DOS program files have been fixed to handle the screen length correctly, but 4DOS's ANSI.SYS may still have trouble.</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 0"><font color="#0000CC">When 4DOS is run with the /C switch the command to be executed no longer needs to be separated from the /C with a space. This fixes some problems with programs which execute other programs via the command processor.</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 0"><font color="#0000CC">Command lines with no arguments are now passed correctly in swapping mode. Previously such lines would cause a single space rather than a null argument list to be passed to the commands. This caused trouble with argument parsing in some programs.</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 0"><font color="#0000CC">I/O operations which generated undefined critical error codes now produce the error message &quot;Undefined error on device [name]&quot;. Previously these generated garbage characters in the error message.</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 0"><font color="#0000CC">GOTO :label and GOSUB :label now work correctly. These commands were failing to handle the &quot;:&quot; prefix on the label correctly, resulting in &quot;label not found&quot; errors.</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 0"><font color="#0000CC">ANSI.SYS now correctly redefines keys when the ESC[...p control sequence is used. This occasionally failed in the earlier version of ANSI.</font></li>
+      </ul>
+        
+    </td>
+      </tr>
+      <tr>
+    <td width="75%" bgcolor="#FFFFFF">
+    <div align="left">
+      <h5 style="margin-top: 0; margin-bottom: 0" align="left">
+      <font color="#0000CC">&nbsp;Version 2.0b released 2/28/89</font></h5>
+    </div>
+    </td>
+      </tr>
+      <tr>
+    <td width="75%" bgcolor="#EEEEEE">
+    <ul>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 0"><font color="#0000CC">PROMPT: Added $P for path in upper case, $p still does lower case.</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 0"><font color="#0000CC">Append redirection (using &gt;&gt;) was not properly overwriting the ^Z at the end of an old ASCII file. This has been fixed.</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 0"><font color="#0000CC">The &quot;isdir&quot; condition in IF statements would return true for the root directory of an invalid drive (e.g. Z:\). It now returns false if the drive is not legitimate.</font></li>
+      </ul>
+    </td>
+      </tr>
+      <tr>
+    <td width="75%" bgcolor="#FFFFFF">
+    <div align="left">
+      <h5 style="margin-top: 0; margin-bottom: 0" align="left">
+      <font color="#0000CC">Version 2.1 released 5/15/89</font></h5>
+    </div>
+    </td>
+      </tr>
+      <tr>
+    <td width="75%" bgcolor="#EEEEEE">
+    <ul>
+      <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">ALIAS names can now be truncated by embedding a &quot;&quot; in the name.</font></li>
+      <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">ALIAS expansion can be terminated by prefixing a command with a &quot;&quot;.</font></li>
+      <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">ATTRIB logic has been completely revamped. ATTRIB will now only change the attributes specified; the other attributes will be preserved. Also the attribute will only be written back to the disk if it was actually changed.</font></li>
+      <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">CLS now detects whether ANSI is installed, and will clear the screen properly with or without ANSI.</font></li>
+      <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">COPY now deletes the partial target on an error (usually disk full).</font></li>
+      <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">COPY /A and /B options are now supported.</font></li>
+      <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">CTTY is now supported.</font></li>
+      <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">Descriptions are now passed along with the files when doing a COPY, RENAME, or MOVE, and are deleted when a file is deleted with DEL or ERASE.</font></li>
+      <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">DIR now expands .ext to .ext.</font></li>
+      <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">DIR has two new options: /Oi will sort on the descriptions; /C will display all of the filenames in upper case. Also, /J now removes the '.' in the filename, just like COMMAND.COM.</font></li>
+      <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">GLOBAL has a new option, /I, to ignore the result code returned by the specified command and continue scanning the directories.&nbsp; Without a /I, GLOBAL will abort if the command returns a non-zero result.</font></li>
+      <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">GLOBAL was occasionally hanging the system if aborted at just the wrong point with a ^C or ^Break. This should no longer happen.</font></li>
+      <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">HELP has been enhanced to include mouse support and a &quot;sticky&quot; menu cursor.</font></li>
+      <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">LIST will now print the entire file on LPT1 if F4 is pressed.</font></li>
+      <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">LIST and SELECT determine the display attribute to use from the first character on the screen. They will now detect if this character has an &quot;invisible&quot; attribute (e.g. black on black) and if so use white on black for the display.</font></li>
+      <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">LIST and SELECT are now DesqView-aware, and should run properly in DesqView windows smaller than the full screen.</font></li>
+      <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">PROMPT $h was doing a non-destructive backspace, now it does a destructive backspace.</font></li>
+      <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">PUSHD with no parameters now gives the correct usage message.</font></li>
+      <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">SELECT can now sort the directory by description with the /Oi switch.</font></li>
+      <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">TIMER now includes the time of day in the output text.</font></li>
+      </ul>
+    <div align="left">
+      <p style="margin-top: 0; margin-bottom: 0" align="left">
+      <font color="#0000CC">Command Line Editing and Recall</font></div>
+      <ul>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">Delete word left (^L) and right (^R or ^Backspace) have been added to the command line editor.</font></li>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">When viewing a history list entry it can now be deleted with ^D.</font></li>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">Command line recall now recalls the correct command if command completion is used just after re-executing a previous command from the middle of the history list.</font></li>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">Relative paths will now work properly with F9 filename completion.</font></li>
+        <li>
+    <div align="left">
+      <p style="margin-top: 0; margin-bottom: 0" align="left">
+      <font color="#0000CC">Batch Files</font></div>
+        </li>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">Batch files are now closed before an external command is executed. This should fix problems with TSRs permanently acquiring file handles.</font></li>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">Batch files now run much faster.</font></li>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">The current ECHO state is now inherited by called batch files.</font></li>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">Batch files will no longer give a &quot;Cancel Batch File&quot; prompt when a program returns with error level 3.</font></li>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">The %&amp; variable which substitutes all command line arguments now works in batch files as well as aliases. When %&amp; is used in a batch file it substitutes all arguments from %1 on, but does not substitute %0.</font></li>
+        </ul>
+    <div align="left">
+      <p style="margin-top: 0; margin-bottom: 0" align="left">
+      <font color="#0000CC">Environment and Environment Variables</font></div>
+      <ul>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">Environment variable expansion has been changed to support the COMMAND.COM approach (%var%). An environment variable is now terminated either by a %, or by a non- alphanumeric character.&nbsp; Aliases and batch files may need to be edited slightly to accommodate this change.</font></li>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">&quot;-&quot; has been added as a legal environment variable name character.</font></li>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">Master environment: In swapping mode 4DOS can now create a standard COMMAND.COM-compatible master environment block located in low memory just above the loader. This is invoked by using /M instead of /E to specify environment size.</font></li>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">Both the /E and /M switches now support environment increments. This will force a specified amount of FREE environment space in a secondary shell.</font></li>
+        <li>
+    <div align="left">
+      <p style="margin-top: 0; margin-bottom: 0" align="left">
+      <font color="#0000CC">Swapping and Secondary Shells</font></div>
+        </li>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">Transient copies of the shell (4dos /c command...) no longer print a blank line after the command.</font></li>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">The swapping options are now E for EMS, D for disk, B for best available method, or N for no swapping. B is the default, and will cause 4DOS to try EMS first, then disk.</font></li>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">If the requested swap method is not available 4DOS now loads in normal low-memory resident mode (previous versions remained in high memory under these circumstances).</font></li>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">Secondary shell swapping added, controlled by the environment variable 4DSHELL, which may contain the /S, /L, /M, and /E options.</font></li>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">When EMS swapping is used 4DOS now saves and restores the EMS page map. This should fix problems with programs which assume the command interpreter does not change the page map.</font></li>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">The drive and directory for disk swapping can now be fully&nbsp; specified by entering a path after /S:D or /S:B. This allows swapping to drives other than the boot drive, including RAM disks.</font></li>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">Disk swapping will now work properly with multiple copies of 4DOS started by multitaskers and / or nested shell operations.&nbsp; Previously multiple copies of 4DOS could not use disk swapping without interfering with each other.</font></li>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">Disk swapping will now fail if the swap disk is full. Previously it would appear to be OK, then hang.</font></li>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">Disk swap files are now deleted on exit except in the primary shell.</font></li>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">All swap files are now hidden system files to fix problems with the swap file being moved by disk defragmenters and reformatters.</font></li>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">The integrity of the disk swap file is now tested every time it&nbsp; is used. If 4DOS detects that the file has been corrupted the system is halted and must be rebooted. This fixes problems with defragmenters and reformatters that move or overwrite the swap file even though it is a hidden system file.</font></li>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">Disk swapping to a hard disk is significantly faster.</font></li>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">4DOS.COM will now look for the 4DOS EXE files in the path specified by /L:, or by COMSPEC if it is present and /L: is not. If these paths are not available or the search fails it will thenlook in the current directory.</font></li>
+        </ul>
+    <div align="left">
+      <p style="margin-top: 0; margin-bottom: 0" align="left">
+      <font color="#0000CC">Compatibility</font></div>
+      <ul>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">The PSP chain pointer is now handled correctly in both primary and secondary shells. This fixes a number of miscellaneous compatibility problems.</font></li>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">4DOS no longer uses an interrupt in the 60 - 66 range. All communication is now via the standard multiplex interrupt, 2F. For this reason the /I: switch on the 4DOS command line or SHELL= line is no longer supported.</font></li>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">ANSI.SYS is no longer distributed with 4DOS. It was causing too many compatibility problems and there are many good public-domain, shareware, or commercial versions available.</font></li>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">KEYSTACK.SYS has been modified to work properly with DesqView release 2.2, NewKey, and other programs which use the enhanced keyboard BIOS calls.</font></li>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">Known compatibility problems with DOS APPEND have been mostly fixed.</font></li>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">Known compatibility problems with InvisibleNet have been fixed.</font></li>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">Some problems with directory names on Novell networks have been fixed.</font></li>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">WordPerfect Library Shell should now be able to use 4DOS as a shell to execute commands. At times it passes &quot;4dos /c=[command]&quot; instead of the standard &quot;4dos /c [command]&quot;, and this was confusing 4DOS.</font></li>
+        </ul>
+    <div align="left">
+      <p style="margin-top: 0; margin-bottom: 0" align="left">
+      <font color="#0000CC">Miscellaneous and Performance</font></div>
+      <ul>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">An FCB parsing bug has been fixed. This would cause some DOS external programs (especially XCOPY) to fail when two filename arguments were given and the first one included a path.</font></li>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">Entering an incorrect command which generates an &quot;unknown command&quot; error now sets the ERRORLEVEL to a non-zero value.&nbsp; Previously it was left at zero.</font></li>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">TYPE, GOTO, GOSUB, and TEXT have been speeded up significantly.</font></li>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">Redirection of both input and output now works properly. Previously under some circumstances redirection of both would only do whichever one was specified first.</font></li>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">Critical error handling now works properly when A&gt;bort is given as a response to a critical error while executing a 4DOS internal command (e.g. DIR on an empty floppy drive). Previously this caused some systems to hang.</font></li>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">Cursor shape is handled better to correct for bugs in the old IBM PC BIOS.</font></li>
+        <li>
+      <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <font color="#0000CC">When 4DOS is loaded in swapping mode you can now detect its presence from within your program via an INT 2F call.
+      </font></li>
+        </ul>
+        </td>
+        </tr>
+        <tr>
+    <td width="75%" bgcolor="#FFFFFF">
+    <div align="left">
+      <h5 style="margin-top: 0; margin-bottom: 0" align="left">
+      <font color="#0000CC">Version 2.11 released 5/26/89</font></h5>
+    </div>
+          </td>
+        </tr>
+        <tr>
+    <td width="75%" bgcolor="#EEEEEE">
+    <ul>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">The MOVE command will now give an error 
+      message whenever the original file cannot be deleted; previously it did 
+      not (for example, when MOVEing a read-only file). The new target file is 
+      left intact when this happens.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">A bug introduced in version 2.1 caused 
+      problems when the last line of a batch file did not have a CR/LF before 
+      the end of file mark (^Z). This has been fixed.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">Our last remaining Novell compatibility 
+      problem has been fixed; as far as we know 4DOS now works correctly and 
+      without generating spurious error messages on Novell networks.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">A bug in the 4DOS &quot;DESQView-aware&quot; code in 
+      version 2.1 caused double-spaced screen displays in LIST and SELECT if 
+      4DOS was running in a DESQView window with &quot;Writes text directly to 
+      screen&quot; set to &quot;Y&quot;. This has been fixed.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">The beep generated by keying errors (e.g., 
+      attempting to page or scroll beyond the end of a file in LIST) has been 
+      shortened from the typical 1/2 second to less than 1/10 of a second. This 
+      will prevent a long sequence of beeps after multiple keying errors.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">TYPE will now work properly with files 
+      containing NUL (binary 0) characters.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">Temporary files used for pipes are now placed on the 
+      drive and directory specified by the TMP environment variable. If 
+      TMP is not specified they are placed in the root directory of the boot 
+      drive. This eliminates problems with pipe files when booting from 
+      floppies, and allows control of pipe file placement on networks.</font></li>
+    </ul>
+    </td>
+        </tr>
+        <tr>
+    <td width="75%" bgcolor="#FFFFFF">
+    <h5 style="margin:0; line-height: 100%; ">
+    <font color="#0000CC">Version 2.2 released 7/5/89</font></h5>
+          </td>
+        </tr>
+        <tr>
+    <td width="75%" bgcolor="#EEEEEE">
+    <ul>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">Switch problems in version 2.11 have been 
+      fixed; all command switches should now work properly.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">Pipe problems in version 2.11 have been fixed. 
+      It is no longer necessary to set the TMP environment variable to specify a 
+      location for pipe files (though TMP can be used for this purpose if 
+      desired). Also, using multiple pipes within a single command will now work 
+      properly.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">Executable extensions added. If a command is 
+      not found as an internal command or EXE, COM, or BAT file 4DOS will search 
+      for other files of that name, and then look for an environment variable 
+      which contains the file extension. The content of the environment variable 
+      is assumed to be the name of a command to execute on the file that was 
+      found. This allows enhanced batch file processors like Personal Rexx to 
+      find their files, and can be used to invoke the appropriate processor for 
+      any file.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">4DOS now correctly traps (and ignores) the 
+      hardware divide by zero interrupt if an application does not handle the 
+      divide by zero condition itself. Previously there could be problems if an 
+      application caused a divide by zero error but did not do its own divide by 
+      zero error handling.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">Redirection with noclobber now works properly 
+      with devices. Before it was claiming the device &quot;already existed&quot; when 
+      redirecting output to a device with noclobber on.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">Leading spaces on the command line are now 
+      removed before the history match tests.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">A batch file which is deleted, renamed, or 
+      otherwise disappears while it is active will now generate a &quot;Batch file 
+      missing&quot; error and abort if the file was located on drive C: or above. 
+      Missing batch files on drive A: or B: will continue to generate the 
+      &quot;Insert disk ...&quot; error.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">You can specify portions of the command line 
+      in an alias or batch file by specifying %n&amp; where &quot;n&quot; is a numeric 
+      argument. For example %3&amp; selects the remainder of the command line from 
+      the third argument on.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">Minimum environment size is now really 512. It 
+      was stated as 512 before, but in fact would not go below 1024 in most 
+      circumstances.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">Environment information is no longer lost when 
+      a secondary shell is loaded at an address above 512K.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">ALIAS /R [filename] option added. This 
+      retrieves the aliases from the specified file. The format of the file is 
+      the same as the format of the ALIAS command, just without the word &quot;alias&quot;,e.g. 
+      &quot;d dir&quot; etc.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">BEEP now supports optional frequency (Hz) and 
+      duration (clock ticks) arguments. This allows you to play simple music 
+      etc. in batch files. For example: beep 440 9 will play middle A for 1/2 
+      second (1 tick = 1/18 second, 9 ticks = 1/2 second). If no arguments are 
+      specified the beep will be at 440 Hz for 2 ticks (= about 110 ms). If the 
+      frequency is below 20 Hz no beep is generated; this allows you to use 
+      &quot;BEEP 0 nnn&quot; to delay for nnn clock ticks in a batch file.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">COPY now has a /M option which copies only 
+      modified files. This option will not reset the archive bit on the source 
+      file(s).</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">DEL now forces a /P anywhere on the line to 
+      apply to the whole line.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">DEL now says &quot;Deleting [filename]&quot; instead of 
+      just listing the name.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">DEL switches can now follow arguments without 
+      intervening white space.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">DIR displays the volume label before the first 
+      directory listing in upper case.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">DIR /D now displays headers and summaries only 
+      for those directories which contain matching filenames. This makes DIR 
+      much less verbose when using it to find files across a whole disk or a 
+      group of subdirectories.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">DIR /V will display multi-column directories 
+      sorted vertically rather than horizontally. The sort is over all 
+      filenames, not per display page.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">FOR will now stop on a ^C when running batch 
+      files and internal commands.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">FREE now displays the total disk space, total 
+      bytes used, and total bytes free.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">GLOBAL SELECT will now continue if you press 
+      ESC when viewing the SELECT list, but not if you press ^C.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">IF ERRORLEVEL now supports comparisons (==, GT, 
+      etc.). The original syntax (IF ERRORLEVEL n) will still work, and is 
+      equivalent to IF ERRORLEVEL GE n.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">LIST now prints a formfeed following a file 
+      print with F4.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">LIST saves the search string between commands 
+      so that F2 can be used in subsequent commands to repeat a search. This is 
+      particularly useful with SELECT LIST.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">PAUSE now flushes the keyboard buffer before 
+      waiting for a keystroke.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">The default prompt is now $n$g on drives A: 
+      and B:, and $p$g on all other drives. This cuts down floppy disk activity, 
+      and avoids critical errors when the current drive is switched to an empty 
+      floppy drive. The default is only $n$g on drives A: and B: if no explicit 
+      PROMPT command has been issued. If the prompt has been set explicitly to 
+      any string -- including the default $p$g -- it will remain that way on all 
+      drives.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">PUSHD with no arguments now saves the current 
+      directory. This should help those who want to combine 4DOS PUSHD / POPD 
+      with Norton NCD or other similar path utilities.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">RENAME changed to work like COMMAND.COM: if no 
+      path is specified for the target file name, the source file is left in its 
+      original directory, rather than moving it to the current directory.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">RENAME switches can now follow arguments 
+      without intervening white space.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">SCREEN now checks for valid row and column 
+      numbers and gives an &quot;invalid parameter&quot; error if either value is out of 
+      range. </font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">SELECT now displays the number of files &amp; 
+      Kbytes marked on the second line of the display.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">SELECT will put all selected filenames on the 
+      same command line if square brackets [] instead of parentheses () are used 
+      to delimit the file specification. If too many files are selected to fit 
+      on a line then a &quot;command line too long&quot; error will occur.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">SETDOS /C with no argument will now be 
+      ignored, rather than confusing 4DOS.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">SETDOS /Rnn will set the number of screen rows 
+      explicitly. This should help with non-standard displays. </font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">SETDOS /Ss:e will set the cursor for the 
+      default line editing mode to start on scan line &quot;s&quot; and end on scan line 
+      &quot;e&quot;.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">TIMER /S (&quot;split&quot;) shows the elapsed time 
+      while the timer isrunning, without turning it off. If the timer is not 
+      running it will be started regardless of whether /S is specified.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">TYPE will work properly with lines over 255 
+      characters, and for lines over 80 characters when using /P.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">TYPE switches can now follow arguments without 
+      intervening white space.</font></li>
+      <li>
+      <p style="margin:0; line-height: 100%; ">
+      <font color="#0000CC">VOL has been fixed to handle periods in volume 
+      labels correctly, including VDISK labels.</font></li>
+    </ul>
+    </td>
+        </tr>
+  <tr>
+    <td width="75%" bgcolor="#FFFFFF">
+    <h5 style="margin-top: 0; margin-bottom: 0"><font color="#0000CC">&nbsp;Version 
+    2.21 released 9/6/89</font></h5>
+    </td>
+  </tr>
+  <tr>
+    <td width="75%" bgcolor="#EEEEEE">
+        
+    <ul>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 0"><font color="#0000CC">All 4DOS 
+      beeps now explicitly turn interrupts on before the beep is started. This 
+      should fix problems with PC Magazine's ANSI.COM version 1.2 (ANSI.COM 
+      version 1.3 will also fix this problem) and some rare systems which start 
+      programs with interrupts off. In both cases the symptom of the problem was 
+      a system hang with the beep running, requiring a cold reboot.</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 0"><font color="#0000CC">
+      4DOS.COM's handling of long command lines has been improved. In previous 
+      versions space was taken for /E and /H parameters even if they were not 
+      specified by the user. This limited the maximum command tail to about 105 
+      characters, restricting the use of long commands in MAKE files. In version 
+      2.21 MAKE command lines will work properly up to about 120 characters.</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 0"><font color="#0000CC">DIR now 
+      allocates memory used to hold the directory information in bigger chunks. 
+      This should help solve problems with some versions of DOS and some 
+      networks, which could get confused by the memory allocation requests DIR 
+      was issuing in large directories.</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 0"><font color="#0000CC">SELECT 
+      COPY got confused about file names when COPYing from a directory other 
+      than the current directory to a directory other than the current 
+      directory. The problem only occurred when copying multiple files with 
+      non-blank descriptions. SELECT COPY now works properly.</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 0"><font color="#0000CC">SELECT 
+      will accept command lines with only a single argument, e.g.:<br>
+      <br>
+      SELECT (*.COM)<br>
+      <br>
+      can be used to run one or more .COM files.</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 0"><font color="#0000CC">
+      TYPE\filename (ie TYPE without a space before the argument) would return 
+      to the prompt without typing the file and with no error message. It now 
+      types the file properly.</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 0"><font color="#0000CC">The Y 
+      command would not accept more than one file in its argument list. This 
+      problem has been fixed.</font></li>
+    </ul>
+        
+    </td>
+  </tr>
+  <tr>
+    <td width="75%" bgcolor="#FFFFFF">
+    <p align="center" style="text-align: center"><a href="#0">
+    <font face="verdana">Top of Page</font></a> - <a href="../default.htm">
+    <font face="verdana">Home</font></a></p></td>
+  </tr>
+</tbody>
+</table>
+
+</body>
+
+</html>

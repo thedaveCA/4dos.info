@@ -1,0 +1,67 @@
+@echo off
+setlocal
+::Put this file in a directory in your path.
+:: Following are three aliases
+::Prompts for destination when renaming moving and copying
+alias COP=`iff not "%2"=="" then ^ *copy/u/q %1 %2 ^ comp %1 %2 ^ else input DESTINATION? %%d ^ *copy/u/q %1 %d ^ comp %1 %d ^ endiff ^ cls`
+alias mov=`input DESTINATION? %%d ^ move %file %d ^ cls`
+alias rn=`input NEW NAME? %%d ^ ren/q %file %d ^ cls`
+cd\
+global /q gosub file
+goto end
+:file
+set option=0
+set talk=0
+for/[d-%1] %file in (*.*) gosub begin
+return
+:begin
+if "%option"=="@81" return
+if %talk=0 echo %_cwp
+set talk=1
+cls
+text
+                    DON'S FILE MANAGER
+F1: copy
+F2: delete
+F3: rename
+F4: move
+F5: type to screen
+F6: load editor
+F7: load word perfect
+Down Arrow: next file
+Page Down: next directory
+Q: quits to 4dos
+endtext
+set mo=%@substr[%@filedate[%file],0,2]
+set da=%@substr[%@filedate[%file],3,2]
+set yr=%@substr[%@filedate[%file],6,2]
+set ho=%@substr[%@filetime[%file],0,2]
+set mi=%@substr[%@filetime[%file],3,2]
+set month=%@word[%@dec[%mo],January February March April May June July August September October November December]
+:time
+set whole=%@int[%@eval[%@date[%@filedate[%file]]/7]]
+set daynum=%@eval[%@date[%@filedate[%file]]-(%whole*7)]
+set day=%@word[%daynum,Tuesday Wednesday Thursday Friday Saturday Sunday Monday]
+:day
+if "%day"=="Saturday" .or. "%day"=="Sunday" (set when=Home ^ goto screen)
+if %ho gt 18 .or. %ho lt 08 (set when=Home ^ goto screen)
+if %ho gt 08 .and. %ho lt 18 (set when=Work ^ goto screen)
+:screen
+scrput 13 0 %_fg on %_bg %@repeat[ ,70]
+screen 13 0 %file %month %da, 19%yr %when %@filesize[%file,k]
+inkey /K"q[PgDn][F1][F2][F3][F4][F5][F6][F7][Down]" %%option
+if "%option" == "@80" return
+if "%option"=="q" (endlocal ^ quit)
+if "%option" == "@59" (cop %file ^ goto screen)
+if "%option" == "@60" (*del %file ^ return)
+if "%option" == "@61" (rn ^ return)
+if "%option" == "@62" (mov ^ return)
+if "%option"=="@63" (type /p %file ^ cls ^ goto screen)
+::Customize next line for editor path.
+if "%option"=="@64" (call c:\util\edit %file ^ cls ^ goto screen)
+::Customize for path to Word Processor.
+if "%option"=="@65" (call c:\util\wp %file ^ cls ^ goto screen)
+if "%option"=="@81" return
+return
+:end
+(beep 222 8 ^ cls ^ cancel)

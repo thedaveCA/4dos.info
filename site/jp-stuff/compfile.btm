@@ -1,0 +1,43 @@
+: Alfred Bergkemper?
+
+:==================== The CompFile.btm file ==============================
+if "%2"=="" goto usage
+set FCRes=
+if not exist %2 goto NotExist
+if %@fileage[%1] gt %@fileage[%2] set FCRes=%FCRes%New
+if %@fileage[%1] lt %@fileage[%2] set FCRes=%FCRes%Old
+iff %@filesize[%1] gt %@filesize[%2] then 
+ iff "%FCRes"=="" then 
+  set FCRes=%@format[9,Large]
+ else
+  set FCRes=%FCRes Large
+ endiff
+endiff
+iff %@filesize[%1] lt %@filesize[%2] then 
+ iff "%FCRes"=="" then 
+  set FCRes=%@format[9,Small]
+ else
+  set FCRes=%FCRes Small
+ endiff
+endiff
+goto Display
+:NotExist
+set FCRes=%FCRes%No File @
+:Display
+if "%FCRes"=="" quit
+if "%fg"=="" set fg=%_fg
+if %@index[%FCRes,new]==0 color gre on %_bg
+if %@index[%FCRes,old]==0 color mag on %_bg
+if %@index[%FCRes,No File]==0 color red on %_bg
+if "%FCRes"=="No File @" echo %@format[-9,%FCRes] %2
+if not "%FCRes"=="No File @" echo %@format[-9,%FCRes] %1
+if %@index[%FCRes,old]==0 color %fg on %_bg
+if %@index[%FCRes,new]==0 color %fg on %_bg
+if %@index[%FCRes,No File]==0 color %fg on %_bg
+quit
+:usage
+echo Usage:
+echo           CompFile d:\directory1\file1.ext e:\directory2\file2.ext
+:end
+:==================== The CompFile.btm file ends here =====================
+

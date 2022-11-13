@@ -1,0 +1,115 @@
+; Win95 Registry Extensions Installation file
+; JPSoft.inf
+; support@jpsoft.com
+; 27-Sep-96
+;
+; ---------------------------------------------------------------------
+;
+; Customizes a few Win95 functions to best take advantage of features
+; provided by JP Software's 4DOS and Take Command/32 command processors
+;
+; 1.  Creates a new "4DOS" entry in the context menu of drives and
+;   directories.  Selecting that option will launch 4DOS in the current
+;   drive and directory. The command itself can be most anything acceptable
+;   to Windows, but a *.PIF or *.LNK seems wisest for non-Windows
+;   applications.
+;
+; 2.  Creates a new "Take Command/32" entry in the context menu of drives
+;   and directories.  Selecting that option will launch Take Command/32 in
+;   the current drive and directory. The command itself can be most anything
+;   acceptable to Windows, but an *.EXE or *.LNK seems wisest for WinApps.
+;
+; 3.  Extends Windows' definition of a "batch file" to include *.BTM files,
+;   including the ability to double-click on a *.BTM to execute it with the
+;   default DOS command processor (presumably 4DOS).
+;
+; 4.  Provides two additional "open" options in the context menu of all batch
+;   files, one to run the file with 4DOS (redundant if 4DOS is the default
+;   DOS command processor), and the other with Take Command/32.
+;
+; 5.  Includes itself among the features that can be "uninstalled" via
+;   the Windows Control Panel.
+;
+; ---------------------------------------------------------------------
+;
+: **NOTE**:  You _MUST_ change the "RUN_16" and "RUN_32" string values
+;            defined in the "[strings]" section of this file to reflect
+;            the actual location of 4DOS and Take Command/32 on your
+;            system.  It is suggested that you fully qualify the location
+;            of the executables, preferably using the "true" (8+3) name,
+;            such as:
+;
+;                   RUN_16="C:\PROGRA~1\TCMD32\TCMD32.EXE"
+;
+;            If you enter the wrong location, Windows will (should?) simply
+;            give you a chance to locate the file the first time you attempt
+;            to use the feature, and add an entry for "4DOS.PIF" and/or
+;            "TCMD32.EXE" in the "[programs]" section of your WIN.INI.
+;
+;  TO INSTALL: Right-click on the file name from the Explorer, and select
+;  the "Install" option.
+;
+;  TO REMOVE:  Use the Control Panel's "Install/Remove Programs" menu.
+;
+; ---------------------------------------------------------------------
+
+[Strings]
+;   !!! verify that the two entries below point to the correct files !!!
+RUN_16="C:\WINDOWS\DESKTOP\4DOS.PIF"
+RUN_32="C:\TCMD32\TCMD32.EXE"
+;   !!! verify that the two entries above point to the correct files !!!
+
+DESC_16 = "&4DOS"
+DESC_32 = "&Take Command/32"
+REMOVE_DESC = "JP Software Registry Extensions (Remove only)"
+
+[version]
+signature="$CHICAGO$"
+
+[DefaultInstall]
+AddReg = JPSoft.AddReg
+CopyFiles = JPSoft.CopyFiles.Inf
+
+[JPsoftInstall]
+AddReg = JPSoft.AddReg
+CopyFiles = JPSoft.CopyFiles.Inf
+
+[DefaultUninstall]
+DelReg = JPSoft.AddReg
+DelFiles = JPSoft.CopyFiles.Inf
+
+[JPsoftRemove]
+DelReg = JPSoft.AddReg
+DelFiles = JPsoft.CopyFiles.Inf
+
+[JPSoft.AddReg]
+HKCR,Drive\Shell\JPSoft16,,,"%DESC_16%"
+HKCR,Drive\Shell\JPSoft16\command,,,"%RUN_16% /k *cdd %1"
+HKCR,Directory\Shell\JPSoft16,,,"%DESC_16%"
+HKCR,Directory\Shell\JPSoft16\command,,,"%RUN_16% /k *cdd %1"
+HKCR,Drive\Shell\JPSoft32,,,"%DESC_32%"
+HKCR,Drive\Shell\JPSoft32\command,,,"%RUN_32% /k *cdd %1"
+HKCR,Directory\Shell\JPSoft32,,,"%DESC_32%"
+HKCR,Directory\Shell\JPSoft32\command,,,"%RUN_32% /k *cdd %1"
+HKLM,Software\Classes\.btm,,,"batfile"
+HKLM,Software\Classes\batfile\shell\JPSoft16,,,"open with %DESC_16%"
+HKLM,Software\Classes\batfile\shell\JPSoft16\command,,,"%RUN_16% /c %1"
+HKLM,Software\Classes\batfile\shell\JPSoft32,,,"open with %DESC_32%"
+HKLM,Software\Classes\batfile\shell\JPSoft32\command,,,"%RUN_32% /c %1"
+HKLM,Software\Microsoft\Windows\CurrentVersion\Uninstall\JPSoft,DisplayName,,"%REMOVE_DESC%"
+HKLM,Software\Microsoft\Windows\CurrentVersion\Uninstall\JPSoft,UninstallString,,"RunDll setupx.dll,InstallHinfSection JPSoftRemove 4 JPSoft.inf"
+
+[JPSoft.CopyFiles.Inf]
+JPSoft.Inf
+
+[SourceDisksNames]
+55="JPSoft","",1
+
+[SourceDisksFiles]
+JPsoft.Inf=55
+
+[DestinationDirs]
+JPSoft.CopyFiles.Inf = 17
+
+[eof]
+

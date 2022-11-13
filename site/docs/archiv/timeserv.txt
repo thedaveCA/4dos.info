@@ -1,0 +1,228 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><HTML>
+<!-- HTML source and images Copyright 2004, JP Software Inc., All
+     Rights  Reserved.  See http://jpsoft.com/jplegal.htm  before
+     doing anything with any material from JP Software's web site.
+-->
+<HEAD>
+<BASE TARGET="_top">
+<LINK REL="SHORTCUT ICON" HREF="http://jpsoft.com/favicon.ico">
+<LINK REL="P3Pv1" HREF="http://jpsoft.com/w3c/p3p.xml">
+<LINK REV="made" HREF="&#119;&#101;&#098;&#109;&#097;&#115;&#116;&#101;&#114;&#064;&#106;&#112;&#115;&#111;&#102;&#116;&#046;&#099;&#111;&#109;">
+<LINK REL="prefetch" HREF="/images/blogo.gif">
+<LINK REL="prefetch" HREF="/images/bhomeb2.gif">
+<LINK REL="prefetch" HREF="/images/bstoreb2.gif">
+<LINK REL="prefetch" HREF="/images/bprodb2.gif">
+<LINK REL="prefetch" HREF="/images/bordb2.gif">
+<LINK REL="prefetch" HREF="/images/bupgrb2.gif">
+<LINK REL="prefetch" HREF="/images/bsuppb2.gif">
+<LINK REL="prefetch" HREF="/images/bsiteb.gif">
+<LINK REL="prefetch" HREF="/images/bhelpb2.gif">
+<LINK REL="prefetch" HREF="/images/bhomes2.gif">
+<META HTTP-EQUIV="Cache-Control" CONTENT="must-revalidate">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="author" CONTENT="webmaster@jpsoft.com">
+<META NAME="copyright" CONTENT="Copyright 2004, JP Software, Inc. All Rights Reserved.">
+<META NAME="description" CONTENT="Advanced Command processors for DOS and Windows">
+<META NAME="keywords" CONTENT="COMMAND LINE,WINDOWS PROMPT, BATCH FILE,SHELL,SCRIPT,PROMPT,BTM,CMD,4DOS,4NT,TCMD,TAKE COMMAND,JPSOFT,WINDOWS,WIN98,WINME,W2K,XP,DOS,NT">
+<META NAME="rating" CONTENT="General">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="revisit-after" CONTENT="7 Days">
+<STYLE type="text/css">
+#highlight {background: #FFFF80; }
+#lowlight {background: #D2E2FF; }
+#neon {background: #99FF00; }
+A:HOVER { color: #000000; background: yellow}
+</STYLE>
+<BASE HREF="http://jpsoft.com/">
+<META NAME="ROBOTS" CONTENT="NOFOLLOW,NOARCHIVE,NOINDEX">
+<TITLE>JP Software - Text File Viewer: timeserv.txt</TITLE></HEAD>
+<BODY BGCOLOR="#FBF7FB" TEXT="#000000" LINK="#0000FF" ALINK="#FF0000" VLINK="#4F2F4F">
+<CENTER><TABLE COLS=1 BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=600 BGCOLOR="#D2E2FF">
+<TR><TD WIDTH=600 VALIGN=TOP NOWRAP>
+<A NAME="top"><IMG HEIGHT=50 WIDTH=136 HSPACE=0 VSPACE=0 BORDER=0 ALIGN=LEFT ALT="JP Software: " SRC="/images/blogo.gif"></A>
+<A TARGET="_top" HREF="/index.htm" onmouseover="document.images.home.src='/images/bhomeb2.gif'" onmouseout="document.images.home.src='/images/bhomes2.gif'"><img name=home HEIGHT=50 WIDTH=52 HSPACE=0 VSPACE=0 BORDER=0 ALIGN=LEFT ALT="Home Page" SRC="/images/bhomes2.gif"></A>
+<A HREF="http://jpsoft.com/store/store.mv" onmouseover="document.images.store.src='/images/bstoreb2.gif'" onmouseout="document.images.store.src='/images/bstores2.gif'"><img name=store HEIGHT=50 WIDTH=46 HSPACE=0 VSPACE=0 BORDER=0 ALIGN=LEFT ALT="Online Store" SRC="/images/bstores2.gif"></A>
+<A HREF="/products.htm" onmouseover="document.images.prod.src='/images/bprodb2.gif'" onmouseout="document.images.prod.src='/images/bprods2.gif'"><img name=prod HEIGHT=50 WIDTH=65 HSPACE=0 VSPACE=0 BORDER=0 ALIGN=LEFT ALT="Products" SRC="/images/bprods2.gif"></A>
+<A HREF="/ordinf.htm" onmouseover="document.images.ord.src='/images/bordb2.gif'" onmouseout="document.images.ord.src='/images/bords2.gif'"><img name=ord HEIGHT=50 WIDTH=54 HSPACE=0 VSPACE=0 BORDER=0 ALIGN=LEFT ALT="Orders" SRC="/images/bords2.gif"></A>
+<A HREF="/upgrade.htm" onmouseover="document.images.upgr.src='/images/bupgrb2.gif'" onmouseout="document.images.upgr.src='/images/bupgrs2.gif'"><img name=upgr HEIGHT=50 WIDTH=70 HSPACE=0 VSPACE=0 BORDER=0 ALIGN=LEFT ALT="Upgrades" SRC="/images/bupgrs2.gif"></A>
+<A HREF="/techsup.htm" onmouseover="document.images.supp.src='/images/bsuppb2.gif'" onmouseout="document.images.supp.src='/images/bsupps2.gif'"><img name=supp HEIGHT=50 WIDTH=61 HSPACE=0 VSPACE=0 BORDER=0 ALIGN=LEFT ALT="Support" SRC="/images/bsupps2.gif"></A>
+<A TARGET=JP_Help HREF="/help/index.htm" onmouseover="document.images.help.src='/images/bhelpb2.gif'" onmouseout="document.images.help.src='/images/bhelps2.gif'"><img name=help HEIGHT=50 WIDTH=45 HSPACE=0 VSPACE=0 BORDER=0 ALIGN=LEFT ALT="Online Help" SRC="/images/bhelps2.gif"></A>
+</TD></TR></TABLE>
+</CENTER>
+<P>
+<CENTER><FONT COLOR="#003399"><H1><STRONG>Text File Viewer</STRONG></H1></FONT></CENTER>
+<CENTER><H2><BIG><STRONG>"timeserv.txt"</STRONG></BIG> (
+5791
+ bytes)</H2>
+<STRONG>also available in <A HREF="ascii/timeserv.txt">text/plain</A> format</STRONG>
+</CENTER><P><FONT FACE="arial, helvetica, sans-serif" SIZE="-1" COLOR="#006699">
+<UL><LI>Use your browser's FIND function to locate specific text.</UL></FONT>
+<HR NOSHADE WIDTH="95%">
+<TABLE COLS=1 BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH="100%" BGCOLOR="#FBF7FB" BACKGROUND="/images/perf.gif"><TR><TD>
+<UL><UL></FONT><PRE>
+timeserv.txt [04-Mar-04]                            JP Software, Inc.
+                                                   http://jpsoft.com/
+
+This document lists some time (NTP) servers for possible use by the
+optional "TimeServer" INI directive and the "TIME /S" command of 4NT
+and Take Command.  Inclusion in this list does not guarantee that a
+server will always be available or return suitable data, of course.
+See your local help file or our extensive Online Web Help for details.
+
+NTP SERVERS:
+-----------
+augean.eleceng.adelaide.edu.au=Austrialia, University of Adelaide
+biofiz.mf.uni-lj.si=Slovenia, University of Ljubljana
+bitsy.mit.edu=USA, MA, Cambridge, MIT Information Systems
+chime.utoronto.ca=Canada, University of Toronto
+clepsydra.dec.com=USA, CA, Palo Alto, DEC Research Laboratory
+clock-1.cs.cmu.edu=USA, PA, Pittsburgh, Carnegie Mellon University
+clock.isc.org=USA, CA, Palo Alto, Internet Software Consortium
+clock.nc.fukuoka-u.ac.jp=Japan, Fukuoka, Fukuoka University
+clock.psu.edu=PA, Penn State University, University Park
+clock.tl.fukuoka-u.ac.jp=Japan, Fukuoka, Fukuoka University
+clock1.unc.edu=USA, NC, Chapel Hill, University of North Carolina
+cuckoo.nevada.edu=USA, NV, Las Vegas, University of Nevada
+eagle.tamu.edu=USA, Texas A&M University
+everest.cclabs.missouri.edu=USA, MO, University of Missouri-Columbia
+fartein.ifi.uio.no=Norway, University of Oslo
+finch.cc.ukans.edu=USA, Kansas University Computer Center
+fuzz.psc.edu=USA, PA, Pittsburgh, PSC Supercomputer Center
+gazette.bcm.tmc.edu=USA, TX, Houston, Baylor College of Medicine
+gilbreth.ecn.purdue.edu=USA, IN, West Lafayette, Purdue University
+harbor.ecn.purdue.edu=USA, IN, West Lafayette, Purdue University
+info.cyf-kr.edu.pl=Poland, Academic Computer Centre, Krakow
+kuhub.cc.ukans.edu=USA, KN, Lawrence, Kansas University
+louie.udel.edu=USA, DE, University of Delaware
+mizbeaver.udel.edu=USA, DE, Newark, University of Delaware
+molecule.ecn.purdue.edu=USA, IN, West Lafayette, Purdue University
+nic.near.net=USA, MA, Cambridge
+noc.near.net=USA, MA, Cambridge
+ns.unet.umn.edu=USA, MN, Minneapolis
+nss.nts.umn.edu=USA, MN, St Paul
+nss.unet.umn.edu=USA, MN, St. Paul
+ntp-0.cso.uiuc.edu=USA, IL, Champaign, University of Illinois
+ntp-1.ece.cmu.edu=USA, PA, Pittsburgh, Carnegie Mellon
+ntp-1.mcs.anl.gov=USA, IL, Chicago, Argonne National Laboratory
+ntp-2.cso.uiuc.edu=USA, IL, Champaign, University of Illinois
+ntp-2.ece.cmu.edu=USA, PA, Pittsburgh, Carnegie Mellon
+ntp-2.mcs.anl.gov=USA, IL, Argonne National Laboratory
+ntp.adelaide.edu.au=Australia, University of Adelaide
+ntp.cs.strath.ac.uk=Scotland, Strathclyde University, Glasgow
+ntp.css.gov=USA, VA, Arlington, Center for Seismic Studies
+ntp.ctr.columbia.edu=USA, NY, New York, Columbia University
+ntp.lth.se=Sweden, Lund Institute of Technology
+ntp.maths.tcd.ie=Ireland, Trinity College, Dublin
+ntp.nasa.gov=USA, CA, NASA Ames Research Center
+ntp.saard.net=Australia, The University of Adelaide
+ntp.ucsd.edu=USA, CA, San Diego, UCSD Computer Science & Engineering
+ntp.univ-lyon1.fr=France, Lyon, CISM
+ntp0.cornell.edu=USA, NY, Cornell University, Ithaca
+ntp0.ja.net=UK, University of Cambridge Computer Laboratory
+ntp0.nl.net=Netherlands, Amsterdam, NLnet
+ntp0.pipex.net=UK, Cambridge
+ntp0.strath.ac.uk=Scotland, Glasgow, Strathclyde University
+ntp1.cs.wisc.edu=University of Wisconsin-Madison, Computer Science Dept.
+ntp1.pipex.net=UK, Cambridge
+ntp1.strath.ac.uk=Scotland, Glasgow, Strathclyde University
+ntp2.pipex.net=UK, Cambridge
+ntp2.strath.ac.uk=Scotland, Glasgow, Strathclyde University
+ntp2a.mcc.ac.uk=England, University of Manchester, Manchester
+ntp3.cs.wisc.edu=University of Wisconsin-Madison, Computer Science Dept
+ntp3.strath.ac.uk=Scotland, Glasgow, Strathclyde University
+ntp4.strath.ac.uk=Scotland, Glasgow, Strathclyde University
+ntp5.tamu.edu=TX, Texas A&M University, College Station
+ntps1-0.cs.tu-berlin.de=Germany, Berlin, Technische Universitaet Berlin
+ntps1-0.uni-erlangen.de=Germany, Erlangen, University Erlangen-Nuernberg
+ntps1-1.cs.tu-berlin.de=Germany, Berlin, Technische Universitaet Berlin
+ntps1-1.uni-erlangen.de=Germany, Erlangen, University Erlangen-Nuernberg
+ntps1-2.uni-erlangen.de=Germany, Erlangen, University Erlangen-Nuernberg
+otc1.psu.edu=USA, PA, Penn State University
+rolex.peachnet.edu=USA, GA, Kennesaw, PeachNet NOC
+salmon.maths.tcd.ie=Ireland, Dublin, Trinity College
+sundial.columbia.edu=USA, NY, New York, Mornigside Campus Columbia U.
+swisstime.ethz.ch=Switzerland, Zurich, Integrated Systems Laboratory
+tick.cs.unlv.edu=USA, NV, Las Vegas, UNLV Computer Science Department
+tick.usno.navy.mil=USA, Washington DC, U.S. Naval Observatory
+tick.utoronto.ca=Canada, University of Toronto
+time-a.nist.gov=time-a.nist.gov
+time-A.timefreq.bldrdoc.gov=USA, CO, Nat. Inst. of Standards and Technology
+time-b.nist.gov=
+time.ijs.si=Slovenia, J. Stefan Institute, Ljubljana
+time.nist.gov=USA, CO, Boulder, National Center for Atmospheric Research
+time.nrc.ca=Canada, National Research Council of Canada, Ottawa
+time.service.uit.no=Norway, University of Tromsoe
+timelord.cs.uregina.ca=Canada, Saskatchewan, University of Regina
+timeserver.cs.umb.edu=USA, MA, Boston, University of Massachusetts
+timex.cs.columbia.edu=USA, NY, New York, Columbia University
+timex.peachnet.edu=USA, GA, Kennesaw, PeachNet NOC
+tmc.edu=USA, TX, Houston, Baylor College of Medicine
+tock.cs.unlv.edu=USA, NV, Las Vegas, UNLV Computer Science Department
+tock.usno.navy.mil=USA, Washington DC, U.S. Naval Observatory
+vtserf.cc.vt.edu=USA, VA, Virginia Tech Computing Center
+wwvb.isi.edu=USA, CA, Marina del Rey, USC Information Sciences Institute
+www1.cmc.ec.gc.ca=Canada, Canadian Meteorological Centre, Dorval
+www2.cmc.ec.gc.ca=Canada, Canadian Meteorological Centre, Dorval
+zeus.tamu.edu=USA, TX, College Station, Texax A&M
+
+</PRE></UL></UL>
+</TR></TD></TABLE>
+<HR NOSHADE WIDTH="95%">
+<CENTER><STRONG>also available in <A HREF="ascii/timeserv.txt">text/plain</A> format</STRONG></CENTER>
+</FONT><FONT FACE="arial, helvetica, sans-serif" SIZE="-1" COLOR="#006699">
+<UL><A HREF="jpview.cgi?timeserv.txt#top"><IMG SRC="images/top4.gif" VSPACE=5 HSPACE=0 WIDTH=13 HEIGHT=7 ALIGN=TOP BORDER=0 ALT="^"><FONT COLOR="#663399"><STRONG>Top</STRONG></FONT></A></UL>
+<UL><LI>If your browser displayed this page in a separate window, <A HREF="" onclick="window.close()">close this window</A> to return to your previous location.</UL>
+</FONT><P>
+<center>
+<FORM TARGET="JP_Link" METHOD="get" ACTION="http://sitelevel.whatuseek.com/query.go">
+<INPUT TYPE="hidden" SIZE=0 NAME="crid" VALUE="4d3ea8ef0d7c5f46">
+<INPUT TYPE="hidden" SIZE=0 NAME="slice_title" VALUE="Text Files only">
+<TABLE bgcolor="#D2E2FF" CELLSPACING=0 CELLPADDING=5 BORDER=1 BORDERCOLOR="#003399">
+<TR><SMALL><TD ALIGN="center">
+<INPUT TYPE="submit" NAME="B1" VALUE=" search Text Files">
+</TD></SMALL></TR>
+<TR><TD ALIGN="center" VALIGN="bottom">
+<INPUT TYPE="text" NAME="query" SIZE="20" VALUE="&quot;search string&quot;" MAXLENGTH="200"></TD></TR>
+</TABLE></FORM>
+</center>
+<FONT FACE="Helvetica,Arial,Geneva,Swiss,sans-serif" SIZE=2>
+<UL><LI><H3>View a <A HREF="ascii.htm">Directory of all Text Files</A></H3></UL>
+<P></FONT>
+<P><HR WIDTH="95%"><P>
+<TABLE COLS=1 CELLSPACING=0 CELLPADDING=0 BORDER=0 WIDTH="90%">
+<TR><TD></TD></TR>
+<TR><TD BGCOLOR="#D2E2FF"><CENTER>
+<FONT FACE="Helvetica,Arial,Geneva,Swiss,sans-serif" SIZE=2>
+<A TARGET="_top" HREF="/index.htm">Home</A> |
+<A HREF="http://jpsoft.com/store/store.mv">Store</A> |
+<A HREF="/products.htm">Products</A> |
+<A HREF="/ordinf.htm">Orders</A> |
+<A HREF="/upgrade.htm">Upgrades</A> |
+<A HREF="/techsup.htm">Support</A> |
+<A TARGET=JP_Help HREF="/help/index.htm">Online Help</A>
+</FONT>
+</CENTER></TD></TR>
+<TR><TD>&nbsp;</TD></TR>
+<TR><TD><CENTER>
+<A HREF="#top"><IMG HEIGHT=30 WIDTH=90 VSPACE=5 BORDER=0 ALT=" (top of page) " SRC="/images/smjpswsh.gif"></A>
+</CENTER></TD></TR>
+<TR><TD><CENTER>
+<FONT FACE="Helvetica,Arial,Geneva,Swiss,sans-serif" SIZE=1>
+Page script last updated by
+<A HREF="&#119;&#101;&#098;&#109;&#097;&#115;&#116;&#101;&#114;&#064;&#106;&#112;&#115;&#111;&#102;&#116;&#046;&#099;&#111;&#109;?subject=Comments_WWW" TITLE="Comments_WWW">webmaster@jpsoft.com</A>.
+Copyright &copy; 2004 JP Software, Inc.  All Rights Reserved.
+<BR>See our <A HREF="/jplegal.htm">Legal Notices and Trademarks</A>
+and <A HREF="/privacy.htm">Privacy</A> Statements.
+<BR>
+<CENTER><FORM>
+<INPUT TYPE="button" VALUE=" &lt;&lt " onClick="history.go(-1)">
+<A HREF="#top"><IMG SRC="/images/top4.gif" VSPACE=5 HSPACE=0 WIDTH=13 HEIGHT=7 ALIGN=TOP BORDER=0 ALT="^"><FONT COLOR="#663399"><STRONG>Top</STRONG></FONT></A>
+<INPUT TYPE="button" VALUE=" &gt;&gt; " onCLick="history.go(1)">
+</FORM></CENTER>
+</FONT>
+</CENTER></TD></TR>
+<TR><TD>
+<CENTER><P><script language="JavaScript1.2" src="http://www.altavista.com/r?entr"></script></CENTER>
+</TD></TR>
+</TABLE>
+</BODY></HTML>

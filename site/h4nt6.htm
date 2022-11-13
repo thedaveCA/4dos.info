@@ -1,0 +1,791 @@
+<!doctype HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+<meta name="generator" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Language" content="en-gb">
+<link rel="shortcut icon" href="favicon.ico">
+<title>4DOS.INFO - Klaus Meinhard's Homepage: 4NT V.6 History</title>
+<meta name="description" content="Everything about 4DOS and Batch Programming - Alles zu 4DOS und Batch-Programmierung">
+<meta name="keywords" content="SHELL, SCRIPT, BATCH, COMMAND, CMD, PROMPT, 4NT, JPSOFT, DOS, XP, NT, BAT, BTM">
+<meta name="rating" content="General">
+<meta name="resource-type" content="document">
+<meta name="revisit-after" content="30 Days">
+<meta http-equiv="Expires" content="0">
+<meta http-equiv="Last-Modified" content="0">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="MSStartTagsPreventParsing" content="True">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<base target="_self">
+<!-- Disable other sites from forcing a Frameset on this page -->
+<script type="text/javascript">
+<!--
+if(parent.frames.length>0) {
+parent.location.href=location.href;
+}
+//-->
+    
+</script>
+<style type="text/css">
+<!--
+a:link       { font-family: Courier New; font-size: 10pt; color: #0000CC; font-weight: bold; text-decoration:none )              }
+a:visited    { font-family: Courier New; font-size: 10pt; color: #3366CC; font-weight: bold; text-decoration:none }
+a:active     { font-family: Courier New; font-size: 10pt; color: #6600CC; font-weight: bold; text-decoration:none }
+h6           { font-family: verdana; font-size: 10pt; font-weight: bold; text-align:left; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0 }
+h5           { font-family: verdana; font-size: 10pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h4           { font-family: verdana; font-size: 12pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h3           { font-family: verdana; font-size: 14pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h2           { font-family: verdana; font-size: 18pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h1           { font-family: verdana; font-size: 24pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+p            { font-family: verdana; font-size: 10pt; text-align:left; word-spacing:0; text-indent:0; line-height:110%; margin-left:6; margin-right:6; margin-top:6; margin-bottom:6}
+li           { font-family: Courier New; font-size: 10pt; text-align:left; word-spacing:0; text-indent:0; line-height:110%; margin-left:6; margin-right:6; margin-top:6; margin-bottom:12}
+-->
+</style>
+<style fprolloverstyle>A:hover {color: #6600CC; font-weight: bold}
+<style type="text/css" fprolloverstyle>
+A:hover {color: #6600CC; font-weight: bold}
+</style>
+</head>
+
+<body bgcolor="#666699" text="#000080" link="#0000FF" vlink="#3366CC" alink="#99CCFF">
+
+<h1 style="margin-bottom: 6; margin-top:0" align="center"><a name="0"></a>
+<font face="verdana" color="#FEFEFE">[4DOS.INFO]</font></h1>
+<p style="margin-bottom: 6; margin-top:0" align="center">&nbsp;</p>
+<div align="left">
+  <p style="margin-top: 0; margin-bottom: 6" align="left">
+  <font face="verdana" align="center" style="margin-top: 0; margin-bottom: 6" color="#FEFEFE" size="5">
+  c:\4nt\docs</font><font face="verdana" align="center" color="#FEFEFE" size="5">\jpsoft 
+  &gt; _</font><br>
+</div>
+<div align="left">
+  <table summary="men£" border="0" width="165" bordercolor="#000080" cellpadding="6" cellspacing="0" height="509" align="left" style="position: absolute; left: 10; top: 100; border-collapse: collapse">
+    <tr>
+      <td valign="top" bgcolor="#FFFFFF" width="164" height="1">
+      <!-- beginn freecity.de counter code -->
+      <a href="http://www.freecity.de" target="_new">
+      <img src="http://tools.freecity.de/counter/Klaus_Meinhard" border="0" width="154" height="88"></a>
+      <!-- ende freecity.de counter code -->&nbsp; </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#FFFFFF" width="164" height="15">
+      <h4 align="center" style="text-align: center">&nbsp;Topics</h4>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#EEEEEE" width="164" height="4">
+      <p style="margin-top: 6; margin-bottom: 6"><a href="updates.htm">
+      <font face="Verdana">Updates</font></a><font face="Verdana"> </font></td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#FFFFFF" width="164" height="18">
+      <h4><font face="Verdana" size="3">4DOS INFO</font></h4>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#EEEEEE" width="164" height="237">
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="sources.htm" target="_self"><font face="Verdana">4DOS Sources</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="v4dos.htm" target="_self"><font face="Verdana">4DOS Versions</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="v4nt.htm" target="_self"><font face="Verdana">4NT Versions</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="v4os2.htm" target="_self"><font face="Verdana">4OS2 Versions</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="4tips.htm" target="_self"><font face="Verdana">4DOS Tips &amp; Tricks</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="4docs.htm" target="_self"><font face="Verdana">4DOS Docs</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="4batfaq.htm" target="_self"><font face="Verdana">4DOS BatFAQ</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a target="_self" href="4obtms.htm"><font face="Verdana">4DOS Batches, 
+      Aliases, Functions</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <font face="Verdana">&nbsp; </font><a href="4bernd.htm" target="_self">
+      <font face="Verdana">B. Schneider's</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <font face="Verdana">&nbsp; </font><a href="4xbtm.htm">
+      <font face="Verdana">K. Meinhard's</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="4links.htm" target="_self"><font face="Verdana">4DOS Links</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="4tools.htm" target="_self"><font face="Verdana">4DOS Tools</font></a></h6>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#FFFFFF" width="164" height="18">
+      <h3 align="center"><font size="3" face="Verdana">INFO for DOS</font></h3>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#EEEEEE" width="164" height="42">
+        <p align="left">
+        <a href="dlinks.htm" target="_self"><font face="Verdana">DOS Links</font></a></p>
+		<p align="left">
+        <a href="dlinksu.htm" target="_self"><font face="Verdana"> More DOS 
+		Links</font></a></p>
+		</p>
+        <p><a href="dalter.htm"><font face="Verdana">DOS Alternatives</font></a></p>
+		<p><a href="dhardw.htm" target="_self"><font face="Verdana">DOS Hardware</font></a></p>
+      <p><a href="dtools.htm"><font face="Verdana">DOS Tools</font></a></p>
+      <p><a href="dprogs.htm"><font face="Verdana">DOS Programs</font></a></p>
+      <p><a href="dgems.htm"><font face="Verdana">DOS Gems</font></a></td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#FFFFFF" width="164" height="18">
+      <h3 align="center"><font face="Verdana" size="3">Service</font></h3>
+      </td>
+    </tr>
+    <tr>
+      <td width="164" height="40" bgcolor="#EEEEEE">
+      <p style="margin: 6"><a href="search.htm" target="_self">
+      <font face="Verdana">Search Engines</font></a></p>
+      <p><a href="mailto:K_Meinhard@gmx.de"><font face="Verdana">Contact me</font></a><font face="Verdana">
+      </font></td>
+    </tr>
+    <tr>
+      <td width="164" height="1" bgcolor="#FFFFFF">
+      <p style="margin: 6"><a href="index.htm" target="_self">
+      <font face="Verdana">Back to Homepage</font></a><font face="Verdana">
+      </font></td>
+    </tr>
+  </table>
+</div>
+<table summary="main body" border="0" width="75%" cellpadding="6" cellspacing="1" style="position:absolute; left:200; top:100" height="100%" align="left">
+  <tr>
+    <td width="100%" bgcolor="#FFFFFF" style="border-left-style: solid; border-left-width: 1" height="15">
+    <h4 align="center"><font face="verdana">history.txt&nbsp;
+    <span style="font-weight: 400">[last updated: 30-November-2004] (from JPSOFT 
+    website)</span></font> </h4>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" bgcolor="#EEEEEE" style="border-left-style: solid; border-left-width: 1" height="34">&nbsp;
+    <p>Note: This list is merely for informational purposes and is not intended 
+    to show all changes from one build to another, nor does it necessarily 
+    include all private, beta, and public builds. For details on current 
+    versions and builds, visit us at &quot;http://jpsoft.com/&quot; or in our Support 
+    Forum.<br>
+    <br>
+&nbsp; </p>
+    <p><strong>4NT 6.01 and Take Command 6.01 Build 235</strong><br>
+    -----------------------------------------<br>
+    <br>
+    4NT - enabled Alt-Bksp for key aliases.<br>
+    <br>
+    @EVAL - fixed a problem with embedded commas (thousands separators) in 
+    variables.<br>
+    <br>
+&nbsp; </p>
+    <p><strong>4NT 6.01 and Take Command 6.01 Build 234</strong><br>
+    -----------------------------------------<br>
+    <br>
+    Take Command - fixed a problem with STDIO Caveman apps.<br>
+    <br>
+    Take Command - added an additional check to keep the TC window from 
+    returning to the foreground after running a Caveman app and switching to 
+    another window before the Caveman app exits.<br>
+    <br>
+    RD - added check for existence when using the /S switch.<br>
+    <br>
+    SET - added dumb kludge to emulate the undocumented (bug?) CMD.EXE behavior 
+    with:<br>
+    <br>
+    set &quot;var=xxx&quot;<br>
+    <br>
+    TYPE - 4NT now attempts to guess whether you're (erroneously?) typing a 
+    binary file, and if so, turns off the processed output. This keeps the beep 
+    (ASCII 0x07) from hanging the process, or even the whole system (Windows 
+    bug).<br>
+    <br>
+&nbsp; </p>
+    <p><strong>4NT 6.01 and Take Command 6.01 Build 233</strong><br>
+    -----------------------------------------<br>
+    <br>
+    Take Command - fixed a problem (Windows bug) with not closing TCMD on a 
+    logoff or Windows shutdown.<br>
+    <br>
+    Take Command - fixed a problem (Windows bug) with the console window 
+    appearing as a topmost window.<br>
+    <br>
+    SELECT (4NT) - fixed a GPF in the (somewhat unlikely) event that you have a 
+    &gt; 256 column window.<br>
+    <br>
+    SET - added support for the (undocumented &amp; illegal syntax) CMD quoted 
+    argument:<br>
+    <br>
+    set &quot;myvar=xxx&quot;<br>
+    <br>
+    <strong>&nbsp;</strong> </p>
+    <p><strong>4NT 6.01 and Take Command 6.01 Build 232</strong><br>
+    -----------------------------------------<br>
+    <br>
+    Take Command - Worked around a Windows bug when starting TC maximized from a 
+    shortcut.<br>
+    <br>
+    Take Command - Fixed some display glitches with DOS apps writing directly to 
+    the screen.<br>
+    <br>
+    Take Command - added right-click context menu support for pasting into 
+    Caveman apps.<br>
+    <br>
+&nbsp; </p>
+    <p><strong>4NT 6.01 and Take Command 6.01 Build 231</strong><br>
+    -----------------------------------------<br>
+    <br>
+    Take Command - worked around a Windows bug that was causing an erratic crash 
+    when exiting a Caveman app.<br>
+    <br>
+    PROMPT - fixed a problem with $W.<br>
+    <br>
+&nbsp; </p>
+    <p><strong>4NT 6.01 and Take Command 6.01 Build 230</strong><br>
+    -----------------------------------------<br>
+    <br>
+    Take Command - fixed a problem with very large (&gt;16K characters) displays in 
+    Caveman.<br>
+    <br>
+    Added a check for (incorrect) quoting of device names.<br>
+    <br>
+    Fixed a problem with setting the CMDLINE environment variable.<br>
+    <br>
+    @EXPAND - fixed a problem with the value returned by @EXPAND being 
+    incorrectly truncated at 4K (should have been 8K) characters.<br>
+    <br>
+    COPY (4NT) - now supports &quot;copy file con:&quot;.<br>
+    <br>
+&nbsp; </p>
+    <p><strong>4NT 6.01 and Take Command 6.01 Build 228</strong><br>
+    -----------------------------------------<br>
+    <br>
+    Fixed an erratic problem when using output append redirection and the target 
+    file has a trailing ^Z.<br>
+    <br>
+    Fixed a couple of problems with filename matching and include lists: (1) it 
+    would only match two filenames in the include list; and (2) if the pathname 
+    required double quotes, a trailing quote would be added to subsequent file 
+    natches in the include list.<br>
+    <br>
+    Directory sorting - modified the /O:n matching so if the filenames match it 
+    will then sort on the extensions (unless there is an explicit 'e' in the 
+    sort order).<br>
+    <br>
+    Take Command - various Caveman tweaks to improve compatibility and speed.<br>
+    <br>
+    Take Command - added Caveman support for some ill-behaved apps like 
+    Microsoft's Telnet.exe.<br>
+    <br>
+    TCMD - fixed a problem with Caveman apps that don't install their own Ctrl-C 
+    handler.<br>
+    <br>
+    Take Command - unless you're executing a DOS app, the Caveman console window 
+    in Windows 2000 &amp; XP will now be the same size as the Take Command window, 
+    not just either 80x25, 80x43, or 80x50. (Note that this could make some 
+    badly-written console apps fail!) If the Take Command window is less than 25 
+    lines, it will be resized to 25 lines for the duration of the console app.<br>
+    <br>
+    If your Windows time format setting specifies leading 0's for hours, the 
+    time displays (i.e., in DIR) will now display a leading 0 for<br>
+    single-digit hours.<br>
+    <br>
+    Filename matching - if the filename contains semicolons, the file search now 
+    first checks for an exact match before looking for an include list.<br>
+    <br>
+    Filename completion - if you want to complete non-executable files as the 
+    first argument on the command line without defining an executable extension, 
+    you can create a &quot;dummy&quot; executable extension with an executable name of 
+    &quot;*&quot;. For example, to allow completing .TXT and .DOC files as the first 
+    argument:<br>
+    <br>
+    set .txt;.doc=*<br>
+    <br>
+    To allow every extension, use &quot;set .*=*&quot;.<br>
+    <br>
+    Fixed various problems with local filenames in UNC form (i.e., &quot;dir 
+    \\.\d:\*&quot;).<br>
+    <br>
+    Fixed an erratic problem when debugging batch files with piping or @EXEC / 
+    @EXECSTR calls.<br>
+    <br>
+    Added support for (the nearly-useless) redirection to CON.<br>
+    <br>
+    4NT Unicode / Take Command Unicode - now work with DEP enabled in XP SP2.<br>
+    <br>
+    TCMD - added an Insert / Overstrike indicator to the status bar.<br>
+    <br>
+    TCMD - fixed a problem with piping (from build 222).<br>
+    <br>
+    TCMD - fixed a problem (Windows bug) with not closing TCMD on a logoff or 
+    Windows shutdown.<br>
+    <br>
+    TCMD - the TCMD window no longer changes to the inactive color when a 
+    Caveman app is running. (The TCMD window always stays active, and passes 
+    keystrokes to the console app.)<br>
+    <br>
+    Ctrl-Tab - changed slightly so that if only a single filename matches, it 
+    displays it on the command line and does not display the popup window.<br>
+    <br>
+    %_CMDSPEC - new internal variable that returns the full pathname of the 
+    command processor.<br>
+    <br>
+    %_DATETIME - new internal variable that returns the current date and time in 
+    the format yyyymmddhhmmss (with no separators).<br>
+    <br>
+    @CWD - new function to return the current directory on the specified drive. 
+    (The returned string includes the drive spec.) The syntax is:<br>
+&nbsp; </p>
+    <p>@cwd[d:]<br>
+    <br>
+    @CWDS - new function, like @CWD, but ensures there is a trailing \ on the 
+    returned directory name.<br>
+    <br>
+    @DIRSTACK - fixed a problem when calling it with no arguments.<br>
+    <br>
+    @DOMAIN (Unicode &amp; Win2K+ only) - new function to return the domain (if any) 
+    for the specified computer. The syntax is:<br>
+&nbsp; </p>
+    <p>@domain[name]<br>
+&nbsp; </p>
+    <p>where &quot;name&quot; is the DNS or NetBIOS name of the computer to query. If no 
+    name is specified, @DOMAIN returns the domain for the local computer.<br>
+    <br>
+    @EVAL - added three synonyms for existing operators:<br>
+    <br>
+    MOD - modulo (same as %)<br>
+    SHL - shift left (same as &lt;&lt;)<br>
+    SHR - shift right (same as &gt;&gt;)<br>
+    <br>
+    @EXPAND - added support for ranges. The range must be the first argument, 
+    with a space before the filename. For example:<br>
+    <br>
+    echo %@expand[/[d-5] *.doc]<br>
+    <br>
+    @FILES - added support for ranges. The range must be the first argument, 
+    with a space before the filename. For example:<br>
+    <br>
+    echo %@files[/[d-5] *.doc]<br>
+    <br>
+    @FINDFIRST - added support for ranges. The range must be the first argument, 
+    with a space before the filename. For example:<br>
+    <br>
+    echo %@findfirst[/[d-5] *.doc]<br>
+    <br>
+    @INSERT - added support for negative position. (If the first argument is 
+    negative, the insertion will be made counting backwards from the end of the 
+    string.)<br>
+    <br>
+    @TRUNCATE - new function that truncates the specified file at the current 
+    file pointer position. The syntax is:<br>
+    <br>
+    @truncate[n]<br>
+    <br>
+    where &quot;n&quot; is a file handle returned by @FILEOPEN. (You must have opened the 
+    file for write access.)<br>
+    <br>
+    @WORKGROUP (Unicode &amp; Win2K+ only)- new function to return the workgroup (if 
+    any) for the specified computer. The syntax is:<br>
+    <br>
+    @dworkgroup[name]<br>
+    <br>
+    where &quot;name&quot; is the DNS or NetBIOS name of the computer to query. If no name 
+    is specified, @WORKGROUP returns the workgroup for the local computer.<br>
+    <br>
+    BDEBUGGER - fixed an obscure problem with the batch file handle possibly 
+    being left open if you click on the &quot;Stop Debugging&quot;<br>
+    icon and then File/Exit.<br>
+    <br>
+    BDEBUGGER - has a new option:<br>
+    <br>
+    /I(nactive) - loads the batch file into the debugger but don't execute it. 
+    (This allows you to edit the batch file before you start debugging.)<br>
+    <br>
+    BDEBUGGER - fixed an erratic gpf (at program exit) when you use a SETDOS /Y1 
+    or BDEBUGGER with no argument to turn on the debugger inside a batch file.<br>
+    <br>
+    COPY - the /G option when combined with /V will now show the percent 
+    verified.<br>
+    <br>
+    DIR - added additional attribute types to directory colorization:<br>
+    <br>
+    Encrypted<br>
+    Normal<br>
+    Temporary<br>
+    Sparse<br>
+    Junction<br>
+    Compressed<br>
+    Offline<br>
+    Notindexed<br>
+    <br>
+    DIR - /O:n now excludes the extension when sorting the filenames (to match 
+    CMD.EXE's behavior).<br>
+    <br>
+    GOSUB - changed the argument parsing to not consider the switch character 
+    (/) as a delimiter. (Note that this may be changed<br>
+    back if compatibility issues occur.)<br>
+    <br>
+    IF - added the ISFILE test to check for the existence of the specified file. 
+    (ISFILE was added because Microsoft changed IF EXIST to return 1 if either a 
+    file or directory exists. This made it impossible to check for an empty 
+    directory because &quot;.&quot; and &quot;..&quot; always exist.)<br>
+    <br>
+    INPUT - fixed a (harmless) problem with the /L option beeping when the input 
+    string was greater than or equal to the maximum length (rather than only 
+    when it would be greater than the maximum length).<br>
+    <br>
+    LIST - added the Ctrl-L key (LIST selected file) to Take Command. (It was 
+    already in 4NT.)<br>
+    <br>
+    ON - fixed a problem with ON BREAK only being called the first time.<br>
+    <br>
+    REBOOT - changed the messages when using /V (previously it would always 
+    prompt to reboot even when logging off or shutting down).<br>
+    <br>
+    SET - added the /E option to also set the local environment when setting 
+    registry variables.<br>
+    <br>
+    SHIFT - fixed a GPF with SHIFT /1 when you don't have any arguments to 
+    shift.<br>
+    <br>
+    TCTOOLBAR - fixed a GPF when using (incorrect) syntax with no whitespace 
+    between the arguments.<br>
+    <br>
+    UNSET - added the /E option to also unset the local environment when 
+    unsetting registry variables.<br>
+    <br>
+&nbsp; </p>
+    <p><strong>4NT 6.0 and Take Command 6.0 Build 222</strong><br>
+    ---------------------------------------<br>
+    <br>
+    Fixed a problem with multiple pipes and output redirection on the same line.<br>
+    <br>
+    ASSOC - fixed a problem with /R.<br>
+    <br>
+&nbsp; </p>
+    <p><strong>4NT 6.0 and Take Command 6.0 Build 221</strong><br>
+    ---------------------------------------<br>
+    <br>
+    4NT - trying another kludge for the Windows bug with popup windows and the 
+    console.<br>
+    <br>
+    TCMD - fixed a problem with the toolbar being disabled (only in build 220).<br>
+    <br>
+    BDEBUGGER - fixed an (erratic) problem with starting BDEBUGGER with no 
+    arguments and selecting a batch file from an LFN directory (with embedded 
+    whitespace in the pathname).<br>
+    <br>
+    START - fixed a problem (the transient switches were being ignored) when 
+    parsing the (pointless) syntax:<br>
+    <br>
+    4nt /c 4nt /c ...<br>
+    or<br>
+    tcmd /c tcmd /c ...<br>
+    <br>
+&nbsp; </p>
+    <p><strong>4NT 6.0 and Take Command 6.0 Build 220</strong><br>
+    ---------------------------------------<br>
+    <br>
+    4NT - Implemented another attempt at fixing the Windows bug with putting 
+    popup windows behind the console window (only the first time). This one 
+    should also work when you start 4NT in fullscreen mode.<br>
+    <br>
+    4NT - fixed a problem with Alt-numeric key aliases.<br>
+    <br>
+    Fixed a problem with the clipboard when the clipboard text is in Unicode 
+    format and you're writing to an ASCII file. (The Unicode xFEFF was not being 
+    stripped from the beginning of the file.)<br>
+    <br>
+    @FORMATN - will now accept the decimal separator for your locale in the 
+    numeric argument (NOT in the format argument).<br>
+    <br>
+    @FORMATN - fixed a problem with decimal numbers &lt; 0.10.<br>
+    <br>
+    BDEBUGGER - you can now invoke the batch debugger in an already-running 
+    batch file by the command:<br>
+    <br>
+    BDEBUGGER<br>
+    <br>
+    with no arguments.<br>
+    <br>
+    ON - fixed a problem with ON ERROR / ON ERRORMSG only working for the first 
+    error.<br>
+    <br>
+    SENDMAIL - fixed a problem with passing only a / as an argument.<br>
+    <br>
+    SETDOS - fixed a problem with /Y1 when the batch debugger hadn't been 
+    started yet.<br>
+    <br>
+&nbsp; </p>
+    <p><strong>4NT 6.0 and Take Command 6.0 Build 219</strong><br>
+    ---------------------------------------<br>
+    <br>
+    Fixed a (rare) problem with extremely long command groups.<br>
+    <br>
+&nbsp; </p>
+    <p><strong>4NT 6.0 and Take Command 6.0 Build 219</strong><br>
+    ---------------------------------------<br>
+    <br>
+    Fixed a sporadic problem with some of the &quot;Save As&quot; dialogs with the file 
+    types in the combobox.<br>
+    <br>
+    @DAY - fixed a problem when passing a date with a two-digit year. (Also 
+    affected @DOY, @MONTH, and @YEAR.)<br>
+    <br>
+    BDEBUGGER - fixed an erratic startup problem when starting BDEBUGGER with no 
+    arguments.<br>
+    <br>
+    PDIR - added more error checking on the width field (to avoid a GPF for 
+    those users determined to pass exceptionally bad arguments).<br>
+    <br>
+&nbsp; </p>
+    <p><strong>4NT 6.0 and Take Command 6.0 Build 218</strong><br>
+    ---------------------------------------<br>
+    <br>
+    Command groups - fixed a problem with embedded REM's in a command group.<br>
+    <br>
+    @FINDFIRST - fixed a problem with the optional second argument (for 
+    attribute searches) being ignored.<br>
+    <br>
+    @FINDNEXT - Fixed a (very old) GPF caused when you call @findnext with no 
+    parameters and you've already closed the directory search handle.<br>
+    <br>
+    PDIR (ASCII versions, Win9x only) - fixed an erratic GPF with invalid 
+    arguments.<br>
+    <br>
+    <strong><br>
+    4NT 6.0 and Take Command 6.0 Build 217</strong><br>
+    ---------------------------------------<br>
+    <br>
+    Rolled back an updated third-party component that was causing GPFs in Win98 
+    systems and erratic (unreproducible) problems in Win2K / XP. (This means the 
+    DEP support in XP SP2 is disabled.)<br>
+    <br>
+&nbsp; </p>
+    <p><strong>4NT 6.0 and Take Command 6.0 Build 216</strong><br>
+    ---------------------------------------<br>
+    <br>
+    4NT and Take Command now include a French language.dll option.<br>
+    <br>
+    Fixed an erratic FTP problem with DEL, MD, and RD.<br>
+    <br>
+    Fixed a compatibility issue with an undocumented variation of CMD.EXE &quot;:=&quot; 
+    variable syntax that's too horrible to document, for fear some misguided 
+    soul will actually try to use it. (Use variable functions instead; they're 
+    smaller and more understandable.)<br>
+    <br>
+    @DISKFREE - fixed a problem with it not complaining about invalid input.<br>
+    <br>
+    DIR - fixed a problem with Win9x crashing on &quot;DIR /:&quot;.<br>
+    <br>
+    ON - fixed a problem with ON ERROR only working once.<br>
+    <br>
+    PDIR - fixed a problem with Win9x crashing on a &quot;PDIR /(&quot;.<br>
+    <br>
+&nbsp; </p>
+    <p><strong>4NT 6.0 and Take Command 6.0 Build 215</strong><br>
+    ---------------------------------------<br>
+    <br>
+    Fixed a problem with the FOR ~ variable syntax when used with batch 
+    variables (i.e., %0-%9). (This bug was introduced in build 214 with the fix 
+    for another bug with FOR ~ variables.)<br>
+    <br>
+    %_MONTHF - corrected a misspelling in &quot;September&quot;.<br>
+    <br>
+&nbsp; </p>
+    <p><strong>4NT 6.0 and Take Command 6.0 Build 214</strong><br>
+    ---------------------------------------<br>
+    <br>
+    Fixed a problem in the variable windows (in the debugger, and in ESET /W) 
+    with the shortcut keys printing a character before<br>
+    popping up the appropriate dialog.<br>
+    <br>
+    Filename completion -- when the previous character is a semicolon, filename 
+    completion now checks if the filename to complete begins with a drive spec 
+    (i.e., c:) or a pathname separator (\). If so, it turns off include list 
+    matching.<br>
+    <br>
+    Fixed a problem with the CMD ~ FOR variables when the single-character FOR 
+    variable is the same as the last character used in the ~ variable, and that 
+    last character is one of the ~ variable modifiers (ADFNPSTXZ).<br>
+    <br>
+&nbsp; </p>
+    <p><strong>4NT 6.0 and Take Command 6.0 Build 213</strong><br>
+    ---------------------------------------<br>
+    <br>
+    Fixed a problem with the registration information (and possibly other 
+    information) sometimes being overwritten when you pass a batch file on the 
+    startup line.<br>
+    <br>
+    Added a kludge to work around a problem with some ineptly-written Windows 
+    apps (such as NETSTAT) that invoke another copy of the command processor 
+    with a command line looking like:<br>
+    <br>
+    &quot;c:\program files\jpsoft\4nt6\4nt.exe&quot; c:\program files\jpsoft\4nt6\4nt.exe 
+    /c route.exe<br>
+    <br>
+    (The first argument is properly quoted, and the second is a useless 
+    duplicate and isn't quoted.)<br>
+    <br>
+    TC - fixed a problem with random screen writes ahead of the last line in the 
+    buffer.<br>
+    <br>
+    OPTION (TC) - fixed a problem with some keystroke combinations invoking the 
+    online help.<br>
+    <br>
+&nbsp; </p>
+    <p><strong>4NT 6.0 and Take Command 6.0 Build 212</strong><br>
+    ---------------------------------------<br>
+    <br>
+    Fixed a problem with the batch debugger not restoring breakpoints when 
+    returning from a CALL.<br>
+    <br>
+    Fixed a problem with active mode and FTP. (Note that SSL still only supports 
+    passive mode.)<br>
+    <br>
+    LIST ( TC) - fixed a problem with listing the clipboard (&quot;clip:&quot;).<br>
+    <br>
+    LIST (TC) - fixed a GPF when using the scrollbar to rapidly scroll through 
+    very large files.<br>
+    <br>
+    START - added support for nonstandard (non-MS) ftp handlers (&quot;start 
+    ftp://jpsoft.com&quot;).<br>
+    <br>
+&nbsp; </p>
+    <p><strong>4NT 6.0 and Take Command 6.0 Build 211<br>
+    </strong>---------------------------------------<br>
+    <br>
+    Added a kludge for the peculiar syntax &quot;\dir\.&quot;, as in<br>
+    <br>
+    copy * \newdir\.<br>
+    <br>
+    (Note that this syntax is meaningless, and a simpler way would be to delete 
+    the trailing &quot;.&quot;.)<br>
+    <br>
+    Fixed a problem with the F1 key on the Caveman and Debugger tabs in the 
+    Option dialog.<br>
+    <br>
+    TC - fixed a problem with the descriptions editor.<br>
+    <br>
+    @FILEOPEN - changed to return -1 rather than an error message for 
+    non-critical failure (i.e., file not found, file locked, etc.)<br>
+    <br>
+    @FILEOPEN - fixed a problem with &quot;append&quot; not automatically moving to the 
+    end of the file.<br>
+    <br>
+    FOR - fixed a problem with the temp file in a &quot;for %f in ('...')&quot; construct 
+    not being deleted.<br>
+    <br>
+    LIST - fixed a problem with the status bar when using large system fonts.<br>
+    <br>
+    LIST (TC) - fixed a problem with the /T switch when not using quotes around 
+    the argument.<br>
+    <br>
+    <br>
+    <strong>4NT 6.0 and Take Command 6.0 Build 211<br>
+    </strong>---------------------------------------<br>
+    <br>
+    Added a kludge for the peculiar syntax &quot;\dir\.&quot;, as in<br>
+    <br>
+    copy * \newdir\.<br>
+    <br>
+    (Note that this syntax is meaningless, and a simpler way would be to delete 
+    the trailing &quot;.&quot;.)<br>
+    <br>
+    Fixed a problem with the F1 key on the Caveman and Debugger tabs in the 
+    Option dialog.<br>
+    <br>
+    TC - fixed a problem with the descriptions editor.<br>
+    <br>
+    @FILEOPEN - changed to return -1 rather than an error message for 
+    non-critical failure (i.e., file not found, file locked, etc.)<br>
+    <br>
+    @FILEOPEN - fixed a problem with &quot;append&quot; not automatically moving to the 
+    end of the file.<br>
+    <br>
+    FOR - fixed a problem with the temp file in a &quot;for %f in ('...')&quot; construct 
+    not being deleted.<br>
+    <br>
+    LIST - fixed a problem with the status bar when using large system fonts.<br>
+    <br>
+    LIST (TC) - fixed a problem with the /T switch when not using quotes around 
+    the argument.<br>
+    <br>
+&nbsp; </p>
+    <p><strong>4NT 6.0 and Take Command 6.0 Build 210</strong><br>
+    ---------------------------------------<br>
+    <br>
+    Initial public release of 4NT and Take Command 6.0.<br>
+    <br>
+    <br>
+    =======================================================================<br>
+    JP Software Inc. P.O. Box 328, Chestertown, MD 21620, USA<br>
+    phone: (410) 810-8818 fax: (410) 810-0026<br>
+    WWW: http://jpsoft.com email: sales@jpsoft.com<br>
+&nbsp; </td>
+  </tr>
+  <tr>
+    <td width="100%" bgcolor="#FFFFFF" valign="top" height="19">
+    <h4>Promotion</h4>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" bgcolor="#EEEEEE" border-left-style: border-left-width: valign="top" height="7">
+      <p><font face="Verdana" size="2" color="#000099">
+      If you're a power user of the command line, you've probably gone from DOS 
+      to Windows XP/NT or Vista by now. For these operating systems JP Software 
+      offers </font><font face="Verdana" color="#000099"><b>4NT</b> and <b>Take 
+      Command</b>, flexible and powerful command processors in the tradition of 
+      and mostly compatible with<b> 4DOS</b>: </font></p>
+      <p><font face="Verdana" color="#000099">More than 100 new commands, 
+      improved command line editing, and thousands of other features for work at 
+      the command prompt. In addition, they are powerful batch file programming 
+      tools, providing extensions such as DO loops, error and exception 
+      handling, block-structured logic, a powerful integrated batch debugger, 
+      third-party plugins, and over 300 built-in variables and functions.</font></p>
+      <p><font face="Verdana" color="#000099"><b>TCI</b> is a graphical 
+      application that allows you to run multiple console applications (for 
+      example, command processors such as 4NT, CMD, bash, PowerShell, etc.) 
+      within a single tabbed window.</font></p>
+      <p><font color="#000099"><b>CascadePoint</b> is a real-time backup and 
+      archiving solution designed to work in a mobile world.</font></p>
+      <p><font face="Verdana" color="#000099">I'm happy to announce that all JP 
+      Software products are now available to readers of this site at a 10% 
+      discount on their listed price. Just quote the promo code <b>Partner1000</b> 
+      in your order.</font></p>
+      <table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%" id="AutoNumber1" bgcolor="#F66906">
+        <tr>
+          <td width="100%">
+          <p align="center" style="text-align: center">
+          <a href="http://www.jpsoft.com" style="font-family: Courier New; font-size: 10pt; color: #0000CC; font-weight: bold; text-decoration: none">
+          <img border="0" src="images/4dinfo1.jpg" width="416" height="74"></a></p>
+          <p align="center" style="text-align: center">
+          <span style="font-variant: small-caps">
+          <font size="4" color="#FFFFFF" face="Verdana">10% discount on all 
+          software products</font></span></p>
+          <p align="center" style="text-align: center">&nbsp;</p>
+          <p align="center" style="text-align: center">
+          <span style="font-variant: small-caps">
+          <font size="5" color="#FFFFFF" face="Verdana">4NT - Take Command - TCI 
+          - Cascadepoint</font></span></p>
+          <p align="center" style="text-align: center">&nbsp;</p>
+          <p align="center" style="text-align: center">
+          <span style="font-variant: small-caps">
+          <font face="Verdana" size="4" color="#FFFFFF">Code:&nbsp; </font>
+          <font face="Verdana" color="#FFFFFF" size="5"><i>Partner1000</i></font></span></p>
+          <p align="center" style="text-align: center">&nbsp;</td>
+        </tr>
+    </table>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" bgcolor="#FFFFFF" style="border-left-style: solid; border-left-width: 1" height="1">
+    <h5 align="center"><a href="#0"><font face="verdana">Top of Page</font></a> 
+    - <a href="index.htm"><font face="verdana">Home</font></a> </h5>
+    </td>
+  </tr>
+</table>
+
+</body>
+
+</html>

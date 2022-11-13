@@ -1,0 +1,365 @@
+<!doctype HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+<meta name="generator" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Language" content="en-gb">
+<link rel="shortcut icon" href="favicon.ico">
+<title>4DOS.INFO - Klaus Meinhard's Homepage: 4DOS Batches, Aliases, Functions
+</title>
+<meta name="description" content="Everything about 4DOS and Batch Programming - Alles zu 4DOS und Batch-Programmierung">
+<meta name="keywords" content="SHELL, SCRIPT, BATCH, COMMAND, PROMPT, 4DOS, JPSOFT, DOS, BAT, BTM">
+<meta name="rating" content="General">
+<meta name="resource-type" content="document">
+<meta name="revisit-after" content="30 Days">
+<meta http-equiv="Expires" content="0">
+<meta http-equiv="Last-Modified" content="0">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="MSStartTagsPreventParsing" content="True">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<base target="_self">
+<style type="text/css">
+<!--
+a:link       { font-family: Courier New; font-size: 10pt; color: #0000CC; font-weight: bold; text-decoration:none )              }
+a:visited    { font-family: Courier New; font-size: 10pt; color: #3366CC; font-weight: bold; text-decoration:none }
+a:active     { font-family: Courier New; font-size: 10pt; color: #6600CC; font-weight: bold; text-decoration:none }
+h6           { font-family: verdana; font-size: 10pt; font-weight: bold; text-align:left; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0 }
+h5           { font-family: verdana; font-size: 10pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h4           { font-family: verdana; font-size: 12pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h3           { font-family: verdana; font-size: 14pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h2           { font-family: verdana; font-size: 18pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h1           { font-family: verdana; font-size: 24pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+p            { font-family: verdana; font-size: 10pt; text-align:left; word-spacing:0; text-indent:0; line-height:110%; margin-left:6; margin-right:6; margin-top:6; margin-bottom:6}
+li           { font-family: Courier New; font-size: 10pt; text-align:left; word-spacing:0; text-indent:0; line-height:110%; margin-left:6; margin-right:6; margin-top:6; margin-bottom:12}
+-->
+</style>
+<style type="text/css" fprolloverstyle>
+A:hover {color: #6600CC; font-weight: bold}
+<style type="text/css" fprolloverstyle>
+A:hover {color: #6600CC; font-weight: bold}
+</style>
+</head>
+
+<body bgcolor="#666699" text="#000080" link="#0000FF" vlink="#3366CC" alink="#99CCFF">
+
+<h1 style="margin-bottom: 6"><font color="#FFFFFF"><a name="0"></a>[4DOS.INFO]</font></h1>
+<p style="margin-bottom: 6">&nbsp;</p>
+<div align="left">
+  <p style="margin-top: 0; margin-bottom: 6">
+  <font face="verdana" color="#fefefe" size="5" margin-bottom: align="center">
+  c:\4dos\btms\other\&gt; _</font></div>
+<div align="left">
+  <table summary="men£" border="0" width="165" bordercolor="#000080" cellpadding="6" cellspacing="0" height="509" align="left" style="position: absolute; left: 10; top: 100; border-collapse: collapse">
+    <tr>
+      <td valign="top" bgcolor="#FFFFFF" width="164" height="1">
+      <!-- beginn freecity.de counter code -->
+      <a href="http://www.freecity.de" target="_new">
+      <img src="http://tools.freecity.de/counter/Klaus_Meinhard" border="0" width="154" height="88"></a>
+      <!-- ende freecity.de counter code -->&nbsp; </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#FFFFFF" width="164" height="15">
+      <h4 align="center" style="text-align: center">&nbsp;Topics</h4>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#EEEEEE" width="164" height="4">
+      <p style="margin-top: 6; margin-bottom: 6"><a href="updates.htm">
+      <font face="Verdana">Updates</font></a><font face="Verdana"> </font></td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#FFFFFF" width="164" height="18">
+      <h4><font face="Verdana" size="3">4DOS INFO</font></h4>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#EEEEEE" width="164" height="237">
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="sources.htm" target="_self"><font face="Verdana">4DOS Sources</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="v4dos.htm" target="_self"><font face="Verdana">4DOS Versions</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="v4nt.htm" target="_self"><font face="Verdana">4NT Versions</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="v4os2.htm" target="_self"><font face="Verdana">4OS2 Versions</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="4tips.htm" target="_self"><font face="Verdana">4DOS Tips &amp; Tricks</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="4docs.htm" target="_self"><font face="Verdana">4DOS Docs</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="4batfaq.htm" target="_self"><font face="Verdana">4DOS BatFAQ</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a target="_self" href="4obtms.htm"><font face="Verdana">4DOS Batches, 
+      Aliases, Functions</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <font face="Verdana">&nbsp; </font><a href="4bernd.htm" target="_self">
+      <font face="Verdana">B. Schneider's</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <font face="Verdana">&nbsp; </font><a href="4xbtm.htm">
+      <font face="Verdana">K. Meinhard's</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="4links.htm" target="_self"><font face="Verdana">4DOS Links</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="4tools.htm" target="_self"><font face="Verdana">4DOS Tools</font></a></h6>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#FFFFFF" width="164" height="18">
+      <h3 align="center"><font size="3" face="Verdana">INFO for DOS</font></h3>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#EEEEEE" width="164" height="42">
+        <p align="left">
+        <a href="dlinks.htm" target="_self"><font face="Verdana">DOS Links</font></a></p>
+		<p align="left">
+        <a href="dlinksu.htm" target="_self"><font face="Verdana"> More DOS 
+		Links</font></a></p>
+		</p>
+        <p><a href="dalter.htm"><font face="Verdana">DOS Alternatives</font></a></p>
+      <p><a href="dhardw.htm" target="_self"><font face="Verdana">DOS Hardware</font></a></p>
+      <p><a href="dtools.htm"><font face="Verdana">DOS Tools</font></a></p>
+      <p><a href="dprogs.htm"><font face="Verdana">DOS Programs</font></a></p>
+      <p><a href="dgems.htm"><font face="Verdana">DOS Gems</font></a></td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#FFFFFF" width="164" height="18">
+      <h3 align="center"><font face="Verdana" size="3">Service</font></h3>
+      </td>
+    </tr>
+    <tr>
+      <td width="164" height="40" bgcolor="#EEEEEE">
+      <p style="margin: 6"><a href="search.htm" target="_self">
+      <font face="Verdana">Search Engines</font></a></p>
+      <p><a href="mailto:K_Meinhard@gmx.de"><font face="Verdana">Contact me</font></a><font face="Verdana">
+      </font></td>
+    </tr>
+    <tr>
+      <td width="164" height="1" bgcolor="#FFFFFF">
+      <p style="margin: 6"><a href="index.htm" target="_self">
+      <font face="Verdana">Back to Homepage</font></a><font face="Verdana">
+      </font></td>
+    </tr>
+  </table>
+</div>
+<table summary="main body" border="0" width="75%" cellpadding="6" cellspacing="0" bordercolor="#000080" align="left" style="position: absolute; left: 200; top: 100; border-collapse: collapse">
+  <tr>
+    <td width="100%" bgcolor="#FFFFFF" height="15" align="left" valign="top">
+    <h4 align="center"><font face="verdana">4DOS Aliases, Batches, Functions and 
+    Tools</font></h4>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" bgcolor="#EEEEEE" height="67" valign="top" align="left">&nbsp;
+    <p>Here I have collected batches and utilities from various sources, even a 
+    few of my own which didn't make it into 4XBTM.</p>
+    <p>&nbsp;</p>
+    <p>I don't intend to continue my &quot;BTM Of The Month&quot; selection. I'll add 
+    interesting (to me) aliases, batches, functions and tools here as I come 
+    across them.</p>
+    <p>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="100%" bgcolor="#FFFFFF" height="3" valign="top" align="left">
+    <h4 style="text-align: left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    File&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    Description</h4>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" bgcolor="#EEEEEE" height="67" valign="top" align="left">
+    <p style="margin-top: 0; margin-bottom: 12">&nbsp;</p>
+    <ul>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12"><a href="btm/4cd.zip">
+      <font face="Courier New"><span style="background-color: #CCCCFF">4CD</span></font></a><fon0t face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;</span> &nbsp;Alias / batch file system to install a fuzzy dir change. This 
+      was a great&nbsp;replacement for external tools like NCD, LCD etc. before 
+      Version 6 came along with this capability built-in. - by Mike Bessy 1996. 
+      Small fixes by Mark Andrews 1996</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12"><a href="btm/4dosbof1.zip">
+      <font face="Courier New"><span style="background-color: #CCCCFF">4DOSBOF1</span></font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+      &nbsp;1 - 6: Collection of lots interesting btms. Origin is probably the 
+      newsgroup or the forum. Done by an Italian whose name I'd like to know. 
+      The filedates range from 1991 to 1996.</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12"><a href="btm/4dosbof2.zip">
+      <font face="Courier New"><span style="background-color: #CCCCFF">4DOSBOF2</span></font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+      &nbsp;</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12"><a href="btm/4dosbof3.zip">
+      <font face="Courier New"><span style="background-color: #CCCCFF">4DOSBOF3</span></font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;</span></font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12"><a href="btm/4dosbof4.zip">
+      <font face="Courier New"><span style="background-color: #CCCCFF">4DOSBOF4</span></font></a><font face="Courier New"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;</span></font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12"><a href="btm/4dosbof5.zip">
+      <font face="Courier New"><span style="background-color: #CCCCFF">4DOSBOF5</span></font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+      &nbsp;</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12"><a href="btm/4dosbof6.zip">
+      <font face="Courier New"><span style="background-color: #CCCCFF">4DOSBOF6</span></font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+      &nbsp;</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12"><a href="btm/4dosbof7.zip">
+      <font face="Courier New"><span style="background-color: #CCCCFF">4DOSBOF7</span></font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;</span></font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12"><a href="btm/4dum20.zip">
+      <font face="Courier New"><span style="background-color: #CCCCFF">4DUM20</span></font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+      &nbsp;Batch menu system with big digital clock and calendar. You should really 
+      take a look at the nice user interface. I've internationalized and 
+      y2k-sified the calendar :-) - by Dick Botbyl 1991.</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12"><a href="btm/4u-btu10.zip">
+      <font face="Courier New"><span style="background-color: #CCCCFF">4U-BTU10</span></font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+      &nbsp;30 short beep tunes to use for alerts, errors, messages etc... - by 
+      Underwear (Josef Braun) 1997</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12"><a href="btm/4x.zip">
+      <font face="Courier New"><span style="background-color: #CCCCFF">4X</span></font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+      &nbsp;Batch to start up to 4 Explorer instances in different dirs and place 
+      their windows on the desktop in an orderly fashion (needs 4NT.EXE). - by 
+      Klaus Meinhard, 2001</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12"><a href="btm/age2dat.zip">
+      <font face="Courier New"><span style="background-color: #CCCCFF">AGE2DAT</span></font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+      &nbsp;Batch to convert @fileage value to date and time. - by Vincent Fatica 
+      1998.</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12"><a href="btm/bmi.zip">
+      <font face="Courier New"><span style="background-color: #CCCCFF">BMI</span></font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+      &nbsp;2 batches to calculate the Body Mass Index:</font><ul>
+        <li>
+        <p style="margin-top: 0; margin-bottom: 12">
+        <font face="Courier New" size="2">BMICALC.BTM (in German) by Urs Mellini 
+        1996</font></li>
+        <li>
+        <p style="margin-top: 0; margin-bottom: 12">
+        <font face="Courier New" size="2">BMIC.BTM (in English, kind of) is my 
+        4XBM adaptation and translation.</font></li>
+      </ul>
+      </li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12"><a href="btm/chess.zip">
+      <font face="Courier New"><span style="background-color: #CCCCFF">CHESS</span></font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+      &nbsp;CHESS..BTM allows you to play a game of chess onscreen. Nice ansi 
+      graphics, knows the elementary drawing rules (including en passant and 
+      castling), retrain your draws, and more. - by Jasen Betts 2001</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12"><a href="btm/compact.zip">
+      <font face="Courier New"><span style="background-color: #CCCCFF">COMPACT</span></font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+      &nbsp;Tool to compact (remove duplicates from) the 4DOS history file. - by 
+      Peter Ogden 1991</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12"><a href="btm/exit.zip">
+      <font face="Courier New"><span style="background-color: #CCCCFF">EXIT</span></font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+      &nbsp;Btm to make sure that the window of the last 4DOS shell under Windows 
+      isn´t&nbsp;closed accidentally. - by Steve Fabian</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12"><font face="Courier New">
+      <a href="btm/ez-btm10.zip"><span style="background-color: #CCCCFF">
+      EZ-BTM10&nbsp;&nbsp;&nbsp; </span>&nbsp; </a>A collection of more than 30 
+      interesting batches by different authors, put together by Itamar 
+      Even-Zohar</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12">
+      <font face="Courier New" size="2">
+      <a target="_blank" href="http://www.backdoortech.com/personal/alias_favs.html">
+      <span style="background-color: #CCCCFF"><font face="Courier New">Fav. 
+      Aliases</font></span></a>
+      &nbsp;Favourite aliases, a collection by Michael Smith</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12"><a href="btm/getopts.zip">
+      <font face="Courier New"><span style="background-color: #CCCCFF">GETOPTS</span></font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+      &nbsp;A batch file to permit case-sensitive switch parsing under 4DOS. Supports 
+      single-character option switches, string switches -cfoo, -c &quot;foo bar&quot;), 
+      and numeric switches. Extensive documentation and 3 sample batch files. - 
+      by Eric Pement&nbsp;</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12"><a href="btm/idchec.zip">
+      <font face="Courier New"><span style="background-color: #CCCCFF">
+      IDENTIFIER</span></font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;</span> 
+      &nbsp;Attempts to identify a file. Gives full TrueType font names, full 
+      descriptions of MOD and STM files, full descriptions of most Windows 
+      files, Resolution &amp; color depth of GIFs, PCXs, BMPs. Good partner for 
+      4DOS. Cardware by Steve Greenspon</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12"><font face="Courier New">
+      <span style="background-color: #CCCCFF"><a href="btm/jambtm02.zip">
+      JAMBTM02</a>&nbsp;&nbsp;&nbsp; </span>&nbsp; This file collection contains 
+      about 20 interesting and well-written 4DOS batches. - by Jouni Miettunen</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12"><a href="btm/mandbrot.zip">
+      <font face="Courier New"><span style="background-color: #CCCCFF">MANDBROT</span></font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+      &nbsp;Btm to create an ascii Mandelbrot set (&quot;Apfelmännchen&quot;) - by WARP</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12"><a href="btm/moon.zip">
+      <font face="Courier New"><span style="background-color: #CCCCFF">MOONY</span></font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+      &nbsp;3 btms re biorhythm and the moon's phases. - by Vincenzo Palazzo, Michael 
+      Bednarek and me.</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12"><a href="btm/pn21_201.zip">
+      <font face="Courier New"><span style="background-color: #CCCCFF">PN21 
+      V.2.01</span></font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;</span> 
+      &nbsp;The game&nbsp; &quot;21&quot; (&quot;17 + 4&quot; in Germany) as btm. Check it out, but watch 
+      your wallet! -&nbsp; by Phi Nguyen 1995</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12"><a href="btm/ranges.zip">
+      <font face="Courier New"><span style="background-color: #CCCCFF">
+      RANGES.ALS</span></font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;</span> 
+      &nbsp;Alias file add ranges to all commands... -by N.N. (Please notify me, if 
+      you know the author)</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12"><a href="btm/scap.zip">
+      <font face="Courier New"><span style="background-color: #CCCCFF">SCAP</span></font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+      &nbsp;Capture and restore of a text screen with color with a little help 
+      from&nbsp;debug.exe. This function can be useful in other batches. - by 
+      Frederick Sohn 1996</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12"><a href="btm/tictacto.zip">
+      <font face="Courier New"><span style="background-color: #CCCCFF">TicTacTo</span></font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+      &nbsp;Plays Tic-Tac-Toe Original program by Tom Koos modified by Steve North, 
+      Donald Spencer, Tim Hartnell Ported to 4DOS &amp; all comments by Michael 
+      Bednarek, Brisbane, Australia</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12"><a href="btm/treesize.zip">
+      <font face="Courier New"><span style="background-color: #CCCCFF">TREESIZE</span></font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+      &nbsp;Shows directory size and graphical tree from start. - by Tom Rawson, Jay 
+      Sage, Howard Goldstein and me.</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12"><a href="btm/webster.als">
+      <font face="Courier New"><span style="background-color: #CCCCFF">WEBSTER</span></font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+      &nbsp;Webster dictionary lookup alias for 4DOS.&nbsp;</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12"><a href="btm/woy.zip">
+      <font face="Courier New"><span style="background-color: #CCCCFF">WOY</span></font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+      &nbsp;2 different btms to determine the week of the year number:</font><ul>
+        <li>
+        <p style="margin-top: 0; margin-bottom: 12">
+        <font face="Courier New" size="2">WOY_JB.BTM by Jason Betts</font></li>
+        <li>
+        <p style="margin-top: 0; margin-bottom: 12">
+        <font face="Courier New" size="2">XWOY.BTM&nbsp; by Klaus Meinhard</font></li>
+      </ul>
+      </li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12"><a href="btm/yatzee.zip">
+      <font face="Courier New"><span style="background-color: #CCCCFF">YATZEE</span></font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+      &nbsp;Another nice batch to play a dice game of Kniffel / Yazzee. - by Rolf 
+      Jentsch, 2001</font></li>
+    </ul>
+    <p>&nbsp;</fon0t></td>
+  </tr>
+  <tr>
+    <td width="100%" bgcolor="#FFFFFF" height="12" align="left" valign="top">
+    <h5 align="center"><a href="#0"><font face="verdana">Top of Page</font></a> 
+    - <a href="index.htm"><font face="verdana">Home</font></a></h5>
+    </td>
+  </tr>
+</table>
+
+</body>
+
+</html>

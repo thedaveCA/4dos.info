@@ -1,0 +1,78 @@
+
+			 VISUAL BASIC 3.0
+			 ****************
+
+			   4DOS Users
+
+       Dealing with the "not enough space for environment" problem
+       ***********************************************************
+
+
+
+    If you are using 4DOS and if you have, like me, an environment string
+    that is rather long (1600 bytes), you may have got the annoying
+    message mentioned above. Although this is not a problem for most
+    applications, it seems that VB cannot copy such a big environment
+    string to its internal structure. I'm not aware of any VB.INI setting
+    allowing to load a bigger environment string. Making this environment
+    string shorter solves the problem only partially if you want all your
+    environment variables to be available when opening DOS windows.
+
+    Here is the work-around I have found to solve this problem, thanks to
+    the 4DOS extended SET command:
+
+    1. My autoexec.bat contains only the SET statements that are
+    necessary to its own execution (actually, only the PATH command).
+    Other SET statements are loaded from a text file (MYSET) using SET
+    /R. The format of such a file is as follows:
+
+    ENVVAR1=ENVVALUE1
+    ENVVAR2=ENVVALUE2
+    ENVVAR3=ENVVALUE3
+    etc... (please refer to your 4DOS documentation)
+
+    2. I have copied MYSET to MYSETW. In MYSETW, all SET commands that
+    are not necessary for Windows applications or for Windows itself when
+    it is loading are reset to a NULL string. For example:
+
+    ENVVAR1=ENVVALUE1
+    ENVVAR2=
+    ENVVAR3=
+
+    You could also use a batch file and the UNSET command.
+
+    3. My alias for loading Windows has been changed to:
+
+    W SET /R c:\4dos\mysetw^WIN %1 %2^SET /R c:\4dos\myset
+
+    This way, the environment string "seen" and stored by Windows is now
+    much smaller and VB doesn't complain any more when loading. When
+    returning to DOS, the original environment is restored.
+
+    4. Then, I have added the following line to my 4START.BTM file:
+
+    SET /R MYSET
+
+    So, when opening a DOS box under Windows, 4DOS restores the original
+    environment string which was active before loading Windows.
+
+    This has no influence on Windows itself (hence on VB) because the
+    copy of the environment string that Windows copies to its internal
+    structure cannot be modified anyway (if anyone knows how this can be
+    done from a program using either a documented or an undocumented API,
+    please let me know: I have other problems of this kind to solve). I'm
+    aware of the LoadModule() capability to launch a Windows or DOS app
+    with a different environment string than the "master" Windows
+    environment but this is an awkward solution: I would have to write a
+    tiny VB launcher for this sole purpose...
+
+
+    That's it. The only drawback of this method is that it doesn't work
+    for DOS apps launched directly without first opening a DOS window.
+    This is because, in that case, no secondary shell is run. But anyway,
+    it's better than nothing and this can help waiting for a fix from MS.
+
+
+    Enjoy!
+
+    Patrick Philippot, June 15, 1993

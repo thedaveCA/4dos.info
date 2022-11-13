@@ -1,0 +1,929 @@
+
+                           4DOS Update Documentation
+
+                             Version 3.03, 4/12/91
+
+
+   Copyright 1988 - 1991, JP Software Inc., All Rights Reserved.  Published
+   by JP Software Inc., P.O. Box 1470, E. Arlington, MA 02174 USA, (617)
+   646-3975.
+
+
+   This file provides details on features changed and bug fixes in versions
+   3.01, 3.02, and 3.03; and corrections to the version 3 printed manual
+   due to typographical errors or new features added after the manual went
+   to press.  The ASCII manual distributed with shareware copies of 4DOS
+   has already been corrected to include most of the changes in this file
+   (all the ones we could fit!), but such corrections have not been made in
+   the printed manual.  We have made every effort to ensure that this file
+   is as accurate as possible, but we cannot guarantee that every single
+   change is included.
+
+   This file does not document changes between versions 2 and 3 of 4DOS. 
+   If you are a 4DOS version 2 user and this is the first copy of version 3
+   you've seen, contact JP Software for documentation on the extensive
+   changes between versions 2 and 3, or read through the new manual and
+   this file carefully before you begin using version 3.03.
+
+   The following marks are used to identify items in this file:
+
+      -->     CAUTION:  This change may require modifications to your ex-
+              isting batch files, aliases, commands, or common methods of
+              using 4DOS.  Check these carefully when replacing an earlier
+              version of 4DOS with 4DOS 3.03.
+
+      3.0x    This item is new or has been modified for version 3.0x (3.01,
+              3.02, or 3.03).
+
+      [p nn]  This item corrects or adds to the information in the version
+              3 manual, on page "nn".
+
+   If you don't want to read through all changes you may find it easiest to
+   view this file with 4DOS's LIST command using its (F)ind capability.  If
+   you want to see the modifications for version 3.03, search for "3.03";
+   if you want to see the changes in your printed manual, search for the
+   string "[p".
+
+   This file is formatted at 58 lines per page, and contains form feeds and
+   page footers.  It can be viewed with a file viewer such as the 4DOS LIST
+   command, or printed on most PC printers using the command:
+
+              copy update30.doc prn
+
+   Printing it with a program that formats the pages is not likely to work
+   due to the formatting included in the file.
+
+
+   4DOS 3.03  [4-12-91]          UPDATE30.DOC                        page 1
+
+
+                               Table of Contents
+
+
+   Installation and Configuration  . . . . . . . . . . . . . . . . . .    3
+      General Enhancements . . . . . . . . . . . . . . . . . . . . . .    3
+      Automatic Installation . . . . . . . . . . . . . . . . . . . . .    3
+      Command Line Options . . . . . . . . . . . . . . . . . . . . . .    3
+
+   Features and Usage  . . . . . . . . . . . . . . . . . . . . . . . .    5
+      General Features . . . . . . . . . . . . . . . . . . . . . . . .    5
+      Command Line Editing . . . . . . . . . . . . . . . . . . . . . .    5
+      Batch Files  . . . . . . . . . . . . . . . . . . . . . . . . . .    6
+      I/O Redirection  . . . . . . . . . . . . . . . . . . . . . . . .    6
+      Environment Variables  . . . . . . . . . . . . . . . . . . . . .    6
+      Technical Information  . . . . . . . . . . . . . . . . . . . . .    8
+
+   Commands  . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   10
+      ALIAS  . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   10
+      BEEP, DELAY  . . . . . . . . . . . . . . . . . . . . . . . . . .   10
+      CD and CDD . . . . . . . . . . . . . . . . . . . . . . . . . . .   10
+      COPY . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   10
+      DATE . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   10
+      DIR  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   10
+      EXIT . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   10
+      FOR  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   11
+      GLOBAL . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   11
+      GOSUB  . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   11
+      GOTO . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   11
+      IF . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   11
+      KEYSTACK . . . . . . . . . . . . . . . . . . . . . . . . . . . .   12
+      LIST . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   13
+      LOADBTM  . . . . . . . . . . . . . . . . . . . . . . . . . . . .   13
+      PROMPT . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   13
+      REN  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   14
+      SET  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   14
+      SETDOS . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   14
+      TIME . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   14
+      TYPE . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   14
+      Y  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   14
+
+   HELP System . . . . . . . . . . . . . . . . . . . . . . . . . . . .   15
+      New Capabilities and Topics  . . . . . . . . . . . . . . . . . .   15
+      Environment Variables and Switches . . . . . . . . . . . . . . .   15
+      Configuring HELP with HELPCFG  . . . . . . . . . . . . . . . . .   16
+
+
+
+
+
+
+
+
+
+
+
+   4DOS 3.03  [4-12-91]          UPDATE30.DOC                        page 2
+
+
+   Installation and Configuration
+   ------------------------------
+
+   This section discusses changes in the way 4DOS is installed and config-
+   ured on your system.  It is not an explanation of how to install your
+   upgrade to version 3.03 (for that see README.DOC).  For more information
+   on installation see pages 9 - 26 of the manual.
+
+
+      General Enhancements:
+
+   3.02   [p 27]  When starting a shareware copy of 4DOS there is a 1/2-
+          second, two-tone beep to identify this as a shareware copy, fol-
+          lowed by a 3-second delay to allow reading of the shareware re-
+          minder message.  Beginning with version 3.02, you can skip this
+          delay by pressing any key.
+
+
+      Automatic Installation:
+
+          [p 13] The command to start automatic installation has been
+          changed to:
+
+                    x:install x y
+
+          where "x" is the drive the 4DOS disk is in, and "y" is the drive
+          on which you want to install 4DOS.  See README.1ST for more de-
+          tailed instructions if you need them.
+
+
+      Command Line Options:
+
+          All the items below refer to information on pages 21 - 23 of the
+          manual.
+
+   3.01   [p 21-23]  Either / or - may be used as the switch character on
+          the 4DOS command line (eg SHELL=4DOS -S:E instead of /S:E, etc.).
+
+          [p 21]  The file specified in the "@filename" option can have
+          more than one line, and is limited to a total of 255 characters
+          in the file, not 128.  A file invoked with @filename can have
+          another @filename inside it.  Wherever @filename occurs, all
+          options placed after it are ignored, so it must be the last item
+          present.
+
+          [p 21]  The /A switch supports the same incremental syntax used
+          with /E, i.e. /A+n.  When used in 4DSHELL this allows you to
+          guarantee a specified amount of free alias space in secondary
+          shells.
+
+          [p 21]  /E:nnnn may also be followed by S (/E:nnnnS) to swap the
+          master copy of the environment.  This will save a small amount of
+          low memory, but may not be compatible with all applications, and
+
+
+   4DOS 3.03  [4-12-91]          UPDATE30.DOC                        page 3
+
+          will not work with any application that needs to modify the mas-
+          ter environment.
+
+          [p 22]  4DOS will normally reduce the space used to swap a sec-
+          ondary shell by retrieving static information from the primary
+          shell's swap area.  This reduces secondary shell swap size from
+          68K or more to about 20K.  This feature will not work if the
+          total of your alias, history, and environment sizes in the sec-
+          ondary shell is larger than that specified for the primary shell,
+          or if the size of DOS memory has been reduced when the secondary
+          shell is started (e.g. by a program like DESQView that reserves
+          some memory at the top end of DOS memory).  In such cases second-
+          ary shells will require a full-size swap area.  The size of the
+          swap area is displayed in the "swapping initialized (nnK)" mes-
+          sage when 4DOS starts.
+
+   3.01   [p 22]  The default location for disk swap files in secondary
+   -->    shells is now in the root directory of the drive specified in the
+          COMSPEC environment variable (the drive where 4DOS.COM is
+          stored).  If you want disk swap files to go to another drive or
+          directory, use the "/S:Bd:\path" or "/S:Dd:\path" settings in the
+          4DSHELL environment variable (see page 25 of the manual).  This
+          should cut down on swap file clutter, yet leave you with complete
+          control over swap file location.  
+
+   3.01   [p 23]  The /U switch requires 386MAX, MOVE-EM 1.02 or above,
+          QRAM, or QEMM 5.0 or above.  It may not be compatible with all
+          other software products.  See COMPAT.DOC for full details on com-
+          patibility.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   4DOS 3.03  [4-12-91]          UPDATE30.DOC                        page 4
+
+
+   Features and Usage
+   ------------------
+
+   This section discusses changes in 4DOS features and usage which are not
+   specific to a particular command and which are not related to installa-
+   tion and startup.
+
+      General Features:
+
+          [p 29]  The command history is now automatically passed to sec-
+          ondary shells.  It is passed in one direction only, i.e. addi-
+          tional commands entered in the secondary shell will not be passed
+          back to the primary shell.  To disable this option, place a HIS-
+          TORY /F command in your 4START file.
+
+   3.02   The "?" character in filename wildcards now matches zero or more
+   -->    characters like COMMAND.COM instead of one or more like previous
+          versions of 4DOS.  Thus "DIR A?." will match both the files "A"
+          and "AA"; before it would only match "AA".  This change adjusts
+          4DOS to work the way COMMAND.COM works instead of the way
+          COMMAND.COM is documented to work.
+
+   3.03   4DOS will now preserve leading whitespace on the command tail for
+          external commands, and pass no whitespace to the command if
+          that's how the line is entered.  For example, the command:
+
+                    myprog/c
+
+          will pass "/c" to MYPROG; previously an extra space (" /c") was
+          passed.  This should fix occasional problems with programs that
+          can't handle leading whitespace.
+
+   3.03   [p 31]  There is one additional character which can be used after
+          the 4DOS escape character (the escape character is normally ctrl-
+          X):  a "t" will mean the ASCII TAB character, so that:
+
+                    ^Xt
+
+          will place a TAB on the line (^X means the single character ctrl-
+          X, which appears on your screen as an upward-pointing arrow).
+
+
+      Command Line Editing:
+
+   3.01   [p 28]  You can now enter characters that would normally be in-
+          terpreted by the line editor as a command (e.g., Ctrl-D or Ctrl-
+          K).  To do so precede the character with an ASCII 255 (hold down
+          the ALT key and enter 255 on the numeric keypad, then release the
+          ALT key).  To enter the ASCII 255 itself into the line, you must
+          enter it twice.
+
+   3.02   [p 28]  The F3 key now works like COMMAND.COM, so you can type
+          part of a line and hit F3 to get the rest of the previous line.
+
+
+   4DOS 3.03  [4-12-91]          UPDATE30.DOC                        page 5
+
+   3.03   [p 28]  TAB has been added as a synonym for F9, and Shift-TAB as
+   -->    a synonym for F8.  Also the F3 key will now put the cursor at the
+          end of the command line after recalling the previous command.
+
+
+      Batch Files:
+
+   3.01   See the commands section below for information on the new LOADBTM
+          command, which allows any batch file to work as a BTM file some
+          or all of the time.
+
+   3.03   [p 33-34]  The maximum batch file nesting depth has been in-
+   -->    creased to 8; the previous limit was 4 or 6, depending on the
+          version of 4DOS.
+
+   3.03   Error levels generated by external programs in batch files are
+          now returned properly to the calling program when the batch file
+          is run from a transient 4DOS shell (4DOS /C).  This should fix
+          problems with BBS systems which return error levels through batch
+          files (also see the EXIT command below for related information).
+
+
+      I/O Redirection:
+
+   -->    [p 43-44]  Redirection is now fully nestable.  For example, in-
+          voking a batch file XYZ with "XYZ > OUT.DAT" will redirect all
+          output from the batch file to OUT.DAT unless additional redirec-
+          tion is encountered within the batch file.  Note that nested
+          redirection applies to input and output only, NOT to pipes.
+
+
+      Environment Variables:
+
+   3.01   [p 40]  In order to support subtraction in the new %@EVAL func-
+   -->    tion (see below) 4DOS will no longer accept a dash ("-") in the
+          name of an environment variable to be expanded, unless the name
+          is enclosed in brackets [].
+
+   3.01   [p 41]  Three new internal variables have been added:
+
+                    %_dow          The day of the week as a string (Mon,
+                                   Tue, etc.)
+                    %_rows         The height of the screen
+                    %_columns      The width of the screen
+
+   3.02   [p 41]  One new internal variable has been added:
+
+              %_ndp                Returns:
+                                        0 if no coprocessor is installed
+                                        87 for an 8087
+                                        287 for an 80287
+                                        387 for an 80387
+
+
+
+
+   4DOS 3.03  [4-12-91]          UPDATE30.DOC                        page 6
+
+          [p 42]  There are a few minor errors or points which are not
+          clear in the list of variable functions in some versions of the
+          printed manual:
+
+              * When using variable functions they must be preceded (and
+              optionally followed) by a percent sign, like all other envi-
+              ronment variables.  For example the "ext" function is refer-
+              enced as %@ext[filename] or as %@ext[filename]%.
+
+              * The correct spelling for the string length function is
+              "%@len", not "%@length".
+
+              * The %@line function is missing from early copies of the
+              printed manual.  This function returns the nth line of a
+              file.  The first line of the file is numbered 0.
+
+              * In the %@substr function, the first character is numbered
+              0, and the correct syntax is "%@substr[string,start,length]"
+              not "%@substr[string,start,end]".
+
+   3.01   [p 42]  A new function, %@eval, has been added.  The syntax is:
+
+                    %@eval[expression]
+
+          Where "expression" is any arithmetic expression.  The expression
+          can include any of the following elements:
+
+              parentheses, which may be nested
+              unary + or - operators
+              multiplication and division operators:  *, /, and %% (modulo)
+              addition and subtraction operators:  + and -
+              environment variables, variable functions, and constants
+
+          The elements of an expression are processed in the order shown
+          above.  For example, 5*3+2 is treated as (5*3)+2 rather than
+          5*(3+2).  Examples of the use of %@eval are:
+
+              Increment a variable:  set a=%@eval[%a+1]
+
+              Perform environment variable arithmetic:
+                    set c=%@eval[(%a*2) + (%@len[%b]-5)*7]
+
+              Evaluate expressions in IF:
+
+                    if %@eval[%@substr[%_time,0,2] %% 12] == 0 echo 12:00!
+
+              Set up a simple command line calculator:
+
+                    alias calc `echo The answer is:  %@eval[%&]`
+
+   3.02   [p 42]  Commas will now be ignored by %@eval.  This will allow
+          (for example) %@eval[10,000 * 3] to get the expected result.  It
+          will also allow %@eval to work on the output of a command like
+          FREE, which contains embedded commas.  Also %@eval will give a
+
+
+   4DOS 3.03  [4-12-91]          UPDATE30.DOC                        page 7
+
+          "Divide by zero" error message if you try to use 0 as a denomina-
+          tor for division or modulo calculation; previously it would give
+          an error for the modulo, but return the numerator as the result
+          for the division.
+
+   3.02   [p 42]  %@substr can now handle quotes around the "string" argu-
+          ment.  Double quotes and back quotes are equivalent in this con-
+          text, and the quote characters DO count when determining which
+          characters are placed in the substring.  This capability allows
+          you to get substrings of strings which contain commas.  For exam-
+          ple:
+
+                    %@substr["Mon, Aug 27, 1990", 1, 3]
+
+          will return "Mon".  Previously the commas would be seen as argu-
+          ment separators, even if they were within a quoted string.
+
+   3.01   [p 42]  Another new function, %@index[string1,string2] returns
+          the position of string2 within string1 (string2 can be as small
+          as a single character).  The first position in string1 is num-
+          bered 0.  If there is no match, the function returns -1.
+
+   3.02   [p 42]  Two new variable functions have been added:
+
+              %@upper[string]      Returns the string converted to upper
+                                   case.
+
+              %@lower[string]      Returns the string converted to lower
+                                   case.
+
+   3.01   [p 42]  When expanding environment variables 4DOS will display a
+          "Variable loop" error if you nest variable functions too deep, or
+          define variables which refer back to themselves.
+
+
+      Technical Information:
+
+          (All items here go with the technical information on page 149 of
+          the manual.)
+
+   3.01   4DOS now generates two different INT 2F calls to allow TSRs to
+          tell when 4DOS is back at the prompt.  These calls have AX =
+          D44Eh.  The first occurs immediately before displaying the
+          prompt, with BX = 0; the second occurs after displaying the
+          prompt and immediately before accepting keyboard input, with BX =
+          1.  Any routine intercepting these calls should preserve at least
+          the SI, DI, BP, SP, DS, ES, and SS registers.
+
+   3.02   Divide by zero handling has been removed from 4DOS, allowing
+          standard DOS divide by zero handling to take place.  The 4DOS
+          divide by zero handler was not providing any advantage and could
+          occasionally fail to recover properly from division errors in
+          application programs.
+
+
+
+   4DOS 3.03  [4-12-91]          UPDATE30.DOC                        page 8
+
+   3.03   4DOS now does a disk reset following a ^C, or a MOVE, REN, or DEL
+          command.  This should fix problems occasional problems with disk
+          caches and FASTOPEN.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   4DOS 3.03  [4-12-91]          UPDATE30.DOC                        page 9
+
+
+   Commands
+   --------
+
+   This section describes the changes made to specific commands.  Note that
+   some commands are also affected by the general changes in the "features
+   and usage" section above.
+
+   3.01   [[p 49]  ALIAS:  ALIAS /R can now read multiple files, for exam-
+          ple:
+
+                    alias /r alias1 alias2 alias3
+
+   3.03   BEEP, DELAY:  Fixed a bug that could hang the system if a BEEP or
+          DELAY was active at an even 1/2 hour.
+
+   3.01   [p 57-58]  CD and CDD:  Modified to allow forward slashes (/) in
+          path names.
+
+   3.01   [p 62-64]  COPY:  There are two changes:
+
+              The /R and /U switches are now ignored if the target is a
+              device.
+
+              A ^Z (end of file mark) is now properly added to the target
+              file when it is in ASCII mode.
+
+   3.03   DATE:  If you enter only two digits for the year and it is below
+   -->    80, 4DOS will now assume it is in the 21st century; if it is 80
+          or above 4DOS will assume it is in the 20th century.  You can
+          specify the year you want explicitly by using a 4-digit value. 
+          The system of using 3-digit year values for dates in the 21st
+          century, as documented in the printed manual, has been removed. 
+          Also DATE now supports the European date display format (Mon  1.
+          Jan 1991).
+
+   3.02   DIR:  Problems with occasional "Out of memory" errors and missing
+          description displays in DIR have been resolved.  However, if you
+          fragment DOS memory (for example by loading two TSRs, then un-
+          loading the first but not the second) you can get "Out of memory"
+          errors in larger directories as DIR tries to expand the memory it
+          is using to store your filenames and descriptions.  If this oc-
+          curs, determine the cause of the fragmentation and resolve it. 
+          The primary tool for solving such a problem is a memory mapping
+          program like MAPMEM, PMAP, or Manifest.
+
+   3.03   DIR:  Fixed an occasional problem with doing a "DIR ." in the
+          root directory.
+
+   3.03   [p 80]  EXIT:  EXIT now accepts a numeric argument (EXIT n).  The
+          argument value is returned to the previous program as the error
+          level.  If no argument is given the error level from the most
+          recent external program will be returned; this is a change from
+          previous versions of 4DOS, for compatibility with COMMAND.COM.
+
+
+   4DOS 3.03  [4-12-91]          UPDATE30.DOC                       page 10
+
+   3.03   [p 81]  FOR:  An active FOR is now aborted properly when a nested
+          batch file CANCELs, or when a batch file chains to another batch
+          file.
+
+   3.01   [p 83]  GLOBAL:  Added a /Q(uiet) switch to disable the display
+          of "GLOBAL: pathname".
+
+   3.03   GOSUB:  Previously if a GOSUB was used within an IFF statement
+   -->    and there was another IFF statement inside the called subroutine,
+          the two IFF statements could interfere with each other.  This has
+          been corrected; two such IFF statements will now operate indepen-
+          dently of each other.  This also means that you can use a GOTO
+          inside the subroutine without canceling the operation of the IFF
+          statement in the calling part of the batch file (see next item on
+          GOTO and IFF).
+
+   3.01   [p 85]  GOTO:  A GOTO inside an IFF statement now cancels all IFF
+   -->    processing, and assumes you've branched completely outside the
+          IFF construct.  If you haven't, you will get "Unknown command"
+          errors on subsequent ELSE, ELSEIFF, and ENDIFF statements (see
+          examples below).  This change was necessary to avoid frequent
+          errors caused by GOTOs from inside an IFF block which left IFF
+          processing active.  Also fixed a bug which prevented GOTO from
+          branching to the end of the file from within a GOSUB subroutine.
+
+              iff "%1"=="Y"
+              :test
+                copy file1 a:
+                goto done               <--- Legal - branches outside the
+              else                           IFF block
+                copy file2 b:
+                goto test               <--- Illegal - branches within IFF
+              endiff                         block
+              [do some other work here]
+              :done
+
+   3.01   [p 88-90]  IF:  There are several corrections to the description
+          in the printed manual.  Some of these errors are present only in
+          early copies of the manual:
+
+              * The DOS memory size option is named DOSMEM, not DOSFREE.
+
+              * The tests which check a numeric value (EMS, DOSMEM, etc.)
+              use the same relational operators as the string tests, as
+              shown in the examples.  For example, the syntax for EMS
+              should read:
+
+                    EMS relop n[K|M]
+
+              where "relop" means EQ, GE, GT, etc.  The "relop" is optional
+              for ERRORLEVEL, but required for all other numeric tests.
+
+              * The MONITOR and VIDEO tests also require a relational oper-
+              ator (==, EQ, or NE) as described above for numeric tests.
+
+
+   4DOS 3.03  [4-12-91]          UPDATE30.DOC                       page 11
+
+              * The IF ATTRIB test has an additional option:  "N" tests for
+              no attributes set (i.e. all of the other attributes are off). 
+
+              * IF ATTRIB volname V will only work if the volume name re-
+              fers to the root directory, and if there is a period after
+              the eighth character in volume names of nine characters or
+              more (e.g. to test for volume "MYFILES0107" in drive A:, use
+              IF ATTRIB A:\MYFILES0.107 V ...).
+
+              * Two tests are missing from some copies of the printed manu-
+              al:
+
+                    IF DISKFREE relop n
+                         Tests the disk free space on the current drive. 
+                         Cannot be used to test other drives.
+
+                    IF FILESIZE filename relop n
+                         Tests the size of the specified file.
+
+                    For example:
+
+                         if diskfree gt 40M echo Plenty of room
+                         if filesize myfile.dat gt 360K echo It won't fit!
+
+   3.01   [p 88-90]  IF:  String comparisons will now be done numerically
+          if both values being compared begin with a digit.  This allows
+          you to do true arithmetic tests.  For example:
+
+              set aa=027
+              set bb=20
+              if %aa gt %bb ...         This test will succeed because it
+                                        will compare the numeric values 27
+                                        and 20.
+              if "%aa" gt "%bb" ...     This test will fail because it will
+                                        compare the alphanumeric values
+                                        "027" and "20", and the "02" will
+                                        appear 'smaller' (alphanumerically)
+                                        than "20".
+
+   3.01   [p 94]  KEYSTACK:  There are two changes:
+
+              * KEYSTACK now supports a new symbol, !, to clear keystrokes
+              from the typeahead buffer, as well as anything in the
+              KEYSTACK buffer.  For example:
+
+                    keystack ! @59
+
+              will clear the typeahead buffer before stacking the @59 (F1)
+              keystroke.
+
+              * Some programs will not interpret stacked keystrokes proper-
+              ly unless they contain both the correct ASCII value and the
+              correct keyboard "scan code".  For example, if you attempt to
+              KEYSTACK an "Enter" using ASCII code 13 (carriage return) and
+
+
+   4DOS 3.03  [4-12-91]          UPDATE30.DOC                       page 12
+
+              see a small musical note instead, the program you are running
+              probably needs the scan code to interpret the keystroke prop-
+              erly.
+
+              KEYSTACK now supports the entry of scan codes for standard
+              ASCII keys.  To enter the scan code, multiply it by 256 and
+              add it to the ASCII code.  Using the same example, the scan
+              code for the Enter key is 28, so the full value for this key
+              would be 28*256+13 = 7181.  With some programs you will find
+              that KEYSTACK 7181 works when KEYSTACK 13 does not (or vice
+              versa).  Experimentation is required to get the correct val-
+              ue.  A full discussion and table of scan codes is beyond the
+              scope of this document, but is available in many basic PC
+              books.
+
+   3.01   [p 95]  LIST:  There are two changes:
+
+   -->        Changed the search and print keys to use letters instead of
+              function keys:  F(ind), N(ext), and P(rint).  This avoids
+              conflicts when you wish to redefine the function keys for
+              other purposes.
+
+              Added a new switch, /H, to strip the high bit of each charac-
+              ter, for displaying WordStar documents and other similar
+              files.
+
+   3.01   [p 96]  LOADBTM:  This is a new command.  It will switch the
+          current batch file to and from .BTM mode.  The syntax is:
+
+                    LOADBTM [ON | OFF]
+
+          LOADBTM ON loads the entire file into memory and processes the
+          following lines as a .BTM file.  LOADBTM OFF unloads the file
+          from memory and processes the following lines one by one like a
+          .BAT file.  Both commands can be used regardless of the file's
+          original extension.  
+
+          LOADBTM will allow you to have a single batch file for both
+          COMMAND.COM and 4DOS, and select .BTM mode via a statement like:
+
+                    if "%@eval[2+2]" == "4" loadbtm on
+
+          Since the %@eval function does not exist under COMMAND.COM, the
+          IF test will fail there and the rest of the line will be ignored. 
+          Under 4DOS where %@eval exists, the LOADBTM ON will be executed.
+
+          LOADBTM will also allow you to load TSRs from a .BTM file by
+          switching it into .BAT mode, loading the TSRs, and switching back
+          to .BTM mode.  However note that, depending on what the file
+          does, such mode switching can erase much of the speed gained by
+          using a .BTM file in the first place.
+
+   3.03   PROMPT:  When displaying the date in the prompt 4DOS now supports
+   -->    the European format (e.g. Mon  1. Jan 1991).
+
+
+   4DOS 3.03  [4-12-91]          UPDATE30.DOC                       page 13
+
+   3.03   REN:  Fixed a bug which would give an "Invalid path" error when
+          the only thing specified for the target was ".", as in:
+
+                    ren \4dos\4dos.doc .
+
+   3.01   [p 117]  SET:  SET /R can now read multiple files, for example:
+
+                    set /r env1 env2 env3
+
+   3.01   [p 119]  SETDOS:  There are two changes:
+
+              /S now resets the cursor shape immediately, so it can be used
+              to hide the cursor while in a batch file.
+
+              /U1 should now properly return uppercase filenames in all
+              instances.
+
+   3.02   [p 119]  SETDOS:  The COMPOUND character (SETDOS /C) can now be
+          any ASCII character except those specified in the manual as not
+          allowed.  Previously characters above ASCII 127 would not work as
+          the separator.
+
+   3.03   TIME:  An invalid entry will now display an error message and
+          prompt again, instead of generating an incorrect time value.
+
+   3.03   TYPE:  TYPE will now stop on a ^Z (end of file mark), for compat-
+          ibility with COMMAND.COM.
+
+   3.03   Y:  "Y:" at the start of the command line will now refer to drive
+          Y rather than the Y command.  This should allow network users
+          with mapped "Y" drives to execute programs on those drives with-
+          out having to disable the 4DOS Y command.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   4DOS 3.03  [4-12-91]          UPDATE30.DOC                       page 14
+
+
+   HELP System
+   -----------
+
+   This section describes changes made to the 4DOS HELP system.
+
+      New Capabilities and Topics:
+
+   3.01   HELP is now DESQView-aware and should run properly in a less than
+          full screen DESQView window.
+
+   3.01   HELP now accepts up to 16 pages per topic and 32 cross-references
+          per topic, to allow 4MAKE users to install longer topics inside
+          the help file.
+
+   3.02   The text has been modified in many places.  An ANSI table has
+          been added along with the APPEND, FASTOPEN, GRAPHICS, KEYB,
+          NLSFUNC, RECOVER, and REPLACE commands, and more information on
+          HELP itself.  The explanations of JOIN and SUBST are more de-
+          tailed.  All resident commands now show their DOS 3.3 resident
+          size.  Several minor typographical errors have been corrected.
+
+
+      Environment Variables and Switches:
+
+   3.02   HELP has two switches which can be set temporarily on the command
+          line (in version 3.02 or later), or "permanently" -- until ex-
+          plicitly changed -- via the 4HELPC environment variable (see
+          below).  When switches are set on the command line they can be
+          placed before or after the topic name (if any), so for example
+          these two commands are equivalent:
+
+                    help copy /r
+                    help /r copy
+
+          The switches are:
+
+   3.02       /BW:  Forces HELP to display all text in monochrome colors,
+              to support the use of monochrome monitors attached to color
+              video boards (e.g. use of a composite monochrome monitor on a
+              CGA system).  If you have such a system you will probably
+              want to set the /BW switch permanently as shown under 4HELPC
+              below.
+
+   3.01       /R:  Disables dynamic window resizing and forces all text
+              screens to be displayed at the full screen height for those
+              who prefer an unchanging display window size.
+
+
+   3.01   Three new environment variables have been added to give you bet-
+          ter control over HELP:
+
+              4HELP:  Specifies the full path and file name for the help
+              program to be loaded when F1 is pressed.  If 4HELP is not
+
+
+   4DOS 3.03  [4-12-91]          UPDATE30.DOC                       page 15
+
+              used, 4DOS will look for HELP.EXE in the current directory
+              and then on the PATH.  4HELP affects only F1, NOT the HELP
+              command; if you need to change how the HELP command works as
+              well, use an alias.  
+
+              For example, if your HELP files are in the directory
+              D:\4DOS\HELP you will need the following lines in
+              AUTOEXEC.BAT:
+
+                    set 4help=d:\4dos\help\help.exe
+                    alias help d:\4dos\help\help.exe
+
+              4HELPF:  Specifies the full path and file name for the help
+              text file.  If not used, HELP will search for DOS.HLP in the
+              directory specified in 4HELP (if any), then in the current
+              directory and on the path.
+
+              4HELPC:  Specifies permanent control switches for HELP.EXE. 
+              More information on switches is above.  For example, to per-
+              manently force HELP into monochrome mode, place the following
+              line in AUTOEXEC.BAT:
+
+                    set 4helpc=/bw
+
+
+      Configuring HELP with HELPCFG:
+
+          The HELPCFG.EXE program, provided with 4DOS, can be used to con-
+          figure the help system display colors.  To use it, change to the
+          directory HELP.EXE is in, be sure HELPCFG.EXE is in the same
+          directory, and enter the command:
+
+                    HELPCFG
+
+          HELPCFG allows you to set the colors for several different por-
+          tions of the help display.  Use the vertical arrows to select
+          which type of display color you wish to adjust.  Hit <cr> and you
+          will be able to move a box in the left-hand window to select the
+          color.  Hit <cr> again to select the color, or Esc to return to
+          the right hand window without changing the color.  Another Esc
+          will save the new colors and return you to DOS.
+
+          If you are using a monochrome monitor on a color system and re-
+          quire HELP's /BW switch for proper displays, you may not be able
+          to change the monochrome display attributes easily with HELPCFG,
+          which does not currently have a /BW switch.  This will be changed
+          in a future release of 4DOS.
+
+
+
+
+
+
+
+
+
+   4DOS 3.03  [4-12-91]          UPDATE30.DOC                       page 16
+
+

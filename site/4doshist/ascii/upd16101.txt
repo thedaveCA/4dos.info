@@ -1,0 +1,408 @@
+
+
+
+                                  JP Software
+
+                     Take Command/16 Update Documentation
+
+                       Version 1.01 -- October 17, 1995
+
+   Copyright 1988 - 1995, JP Software Inc., All Rights Reserved.  Published
+   by JP Software Inc., P.O. Box 1470, E. Arlington, MA 02174 USA, (617)
+   646-3975.  4DOS is a registered trademark and 4OS2, Take Command, and
+   Take Command/32 are trademarks of JP Software Inc.  Other brand and
+   product names are trademarks of their respective owners.
+
+
+   Check through this file for a comprehensive list of what's changed in
+   Take Command/16 for Windows 3.x since version 1.0.  Additional
+   documentation on new features is in the online help.
+
+   Some of the descriptions below may be more detailed than you need; if
+   you aren't using a feature, feel free to skip to the next item.  If you
+   are new to Take Command with version 1.01, you can skip this file
+   entirely, and begin with the Introduction and Installation Guide.
+
+   This file is divided into the following sections:
+
+          General Features and Enhancements
+          Startup and Initialization
+          Menus and Dialogs
+          Command Changes
+          Variables and Variable Functions
+          Technical, Compatibility, and Bug Fixes (each revision)
+
+   Significant new features and those which affect most users are marked
+   with "**" in the lists below.  Other items discuss smaller or more
+   technical changes.
+
+   This file may cover multiple revisions (e.g. version 1.01A, 1.01B,
+   etc.).  Most items refer to changes made in the initial release,
+   revision A.  Any item with a revision letter in the left margin (e.g. an
+   item marked with "=>B") was added or updated in that revision.  Minor
+   technical, compatibility, and bug fixes for each revision are listed at
+   the end of the file.
+
+   This file is formatted at 58 lines per page, and contains form feeds and
+   page footers.  It can be viewed with a file viewer such as the LIST
+   command, or printed on most PC printers using the command:
+
+              copy updat101.doc prn
+
+   Printing it with a program that formats the pages is not likely to work
+   due to the formatting included in the file.
+
+                                                              (10/95-1.01B)
+
+
+
+   Take Command 1.01  [10-17-95] UPDAT101.DOC                        page 1
+
+
+
+                       Take Command/16 1.01 Change List
+
+
+   General Features and Enhancements
+   ---------------------------------
+
+   => **  Take Command/16 now supports beta versions of Windows 95
+          including long filenames and the LOCK and UNLOCK commands. 
+          However we recommend use of Take Command/32, not Take Command/16,
+          under Windows 95.
+
+
+   Startup and Initialization
+   --------------------------
+
+   =>     Added two new .INI directives:
+
+              PromptShellExit = Yes | NO:  Specify whether to prompt when
+              exiting if Take Command is the Windows shell.  This applies
+              to the EXIT command, Alt-F4, and the "Exit" option in the
+              File menu.   This option is not available in the
+              configuration dialogs.
+
+     B        TCMDTaskList = YES | No:  If "no", disables the internal Take
+              Command task list manager called up by Ctrl-Esc, and uses the
+              Windows default instead.
+
+
+   Menus and Dialogs
+   -----------------
+
+   => **  The Alias and Environment dialogs now copy the alias/environment
+          list and perform all their work on the copy.  The changes are
+          saved if you press the "OK" button, and discarded if you press
+          "Cancel".  Previously each change was saved as it was made, so
+          that Cancel would cancel only the most recent change.
+
+   => **  The background color is now maintained separately for each
+          process, so you can have multiple copies running without
+          defaulting to the standard class color.
+
+   =>     Added the I-Beam cursor setting (allows you to switch to an arrow
+          cursor for laptops) to the Startup page of the configuration
+          dialogs.  Previously this setting was only available via
+          IBeamCursor=No in the .INI file.
+
+
+
+
+
+
+
+
+
+   Take Command 1.01  [10-17-95] UPDAT101.DOC                        page 2
+
+
+   Command Changes
+   ---------------
+
+   =>B ** ACTIVATE:  Added wildcard matching for the "window" parameter, so
+          you can select a window even if you know only part of its name.
+
+   => **  CLS:  Added a new switch, /C, to clear the entire scrollback
+          buffer (CLS without /C clears only the visible portion of the
+          window).
+
+   => **  COPY / DEL / MOVE / REN:  When using the prompt (/P) option, an
+          ESCAPE will now cancel further processing for that argument,
+          rather than canceling prompting and continuing with the
+          operation.
+
+   =>B**  DIR:  Colorizing filenames with no extension wasn't specifically
+          covered before, though you could do it by using "*:color" to
+          color everything.  You can now specify files without extensions
+          using the syntax " :color".  For example, the following ColorDir
+          setting in the .INI file will color EXE files red, TXT files
+          bright red, and files with no extension bright cyan:
+
+                  ColorDir = exe:red;txt:bri red; :bri cya
+
+   =>     GOSUB / GOTO:  Made a change to try to accommodate both the old
+          label style (first word) and the new style that permits multi-
+          word labels.
+
+   =>     IFF:  Changed the way the command processor handles piping to
+          IFF.  You can now pipe to an IFF and the pipe information will be
+          passed to the command(s) following the IFF (previously it was
+          ignored).
+
+   =>B    LIST:  Now defaults to listing (all files ("*.*") if the argument
+          is a directory name.  Also printing the file now displays a
+          header (filename, date, and time) on the first page, and GOTO now
+          supports negative offsets -- for example you can enter "-10" to
+          go back 10 lines.  When using negative offsets, the number of
+          lines moved will not correspond accurately to the line count in
+          the LIST status bar when the LIST display is wrapped.
+
+   =>     ON:  Added a new ON ERRORMSG option.  ON ERRORMSG is the same as
+          ON ERROR, but displays the usual error message before executing
+          the specified command (ON ERROR suppresses the error message).
+
+   =>     SETDOS:  You can now change the default description filename with
+          the SETDOS /D switch.  If the /D is followed by a double quote,
+          the string inside the quotes will be used as the description
+          file.  For example:
+
+                  setdos /d"files.bbs"
+
+
+
+
+   Take Command 1.01  [10-17-95] UPDAT101.DOC                        page 3
+
+
+          The SETDOS /D[0|1] switch (to disable or enable description
+          processing) is still available.
+
+   =>     TYPE:  Will now check for a filename of "NUL" and allow it. 
+          However TYPE will trap attempts to type any other character
+          device.
+
+
+   Internal Variables and Variable Functions
+   -----------------------------------------
+
+   =>     Added two new internal variables:
+
+              %_CI        returns the insert-mode cursor shape, as a
+                          percentage (see SETDOS /S)
+
+              %_CO        returns the overstrike-mode cursor shape, as a
+                          percentage
+
+   =>     @ATTRIB:  Added an optional third argument.  The new syntax is
+          %@ATTRIB[filename[,NRSHA[,p]]].  The 'p' tells ATTRIB to accept a
+          partial match; i.e. if the file has "RHA" attributes set:
+
+              %@ATTRIB[filename,R]         fails, because @ATTRIB wants an
+                                           exact match
+
+              %@ATTRIB[filename,R,p]       succeeds
+
+   =>     @READSCR:  Added offset capability when "+" and "-" are used in
+          the row and column (e.g., "READSCR[-2,0,10]").  The ofsset is
+          relative to the current cursor position.
+
+   =>     @TIMER:  Now separates the hundredths digits with the default
+          country decimal character, not a hard-coded decimal point.
+
+
+   Technical, Compatibility, and Bug Fixes (1.01 rev A)
+   ----------------------------------------------------
+
+   => **  You can now remove extensions that Take Command loaded from the
+          [Extensions] section of WIN.INI with the UNSET command.  If the
+          name begins with a '.', UNSET will first look for an environment
+          variable; if it doesn't find a matching one it will look in the
+          list loaded from [Extensions].  UNSET will not modify WIN.INI, it
+          will simply remove the extension from Take Command's internal
+          copy of the WIN.INI associations.
+
+   =>     The version number now uses the default decimal separator for the
+          current country (e.g. "1,01" rather than "1.01" for Germany).
+
+
+
+
+
+
+   Take Command 1.01  [10-17-95] UPDAT101.DOC                        page 4
+
+
+   =>     Worked around a Windows bug which caused trouble when you click
+          on a toolbar button, move the mouse off the toolbar, then release
+          the button.
+
+   =>     Added a minor fix to skip the mouse position arguments that
+          Windows passes when you define Take Command as the Task Manager
+          replacement.
+
+   =>     Worked around a Windows bug that was causing problems when
+          creating unique filenames for pipes.
+
+   => **  Made several changes to fix problems with DOS applications
+          running under Caveman where the Caveman window is smaller than
+          the Take Command window.
+
+   => **  Changed the keyboard hook handler to fix problems with other
+          keyboard hooks not working properly when Take Command was in the
+          foreground.
+
+   =>     Fixed a problem with the time display on the status bar being
+          disabled after running an app inside Caveman.
+
+   =>     Fixed a problem with the Describe dialog if you changed drives --
+          in this case directories and hidden files weren't being added to
+          the Files listbox.
+
+   =>     Fixed a bug when clicking the left button in the Take Command
+          window while it was displaying output.  Depending on where the
+          click was, Take Command could reset its current output point and
+          overwrite previous text.
+
+   =>     Fixed a problem with the ? command only displaying the first word
+          of the prompt.
+
+   =>     Fixed a problem with long directory paths in the Describe dialog
+          box.
+
+   =>     Fixed a minor bug in UNKNOWN_CMD alias processing which caused
+          the command processor to remove the command argument if it was
+          (1) an existing file, and (2) not an executable file.
+
+   =>     Fixed a problem with the File Find dialog resetting the Disk edit
+          control after selecting an item from the Search group.
+
+   =>     Fixed a problem with very long descriptions (over 500
+          characters).
+
+   =>     Fixed a problem with piping inside a batch file with arguments
+          when a 4START file is loaded.
+
+   =>     Fixed a problem with redirecting to "nul:".
+
+
+
+
+   Take Command 1.01  [10-17-95] UPDAT101.DOC                        page 5
+
+
+   =>     Fixed a problem with the background color not being redrawn
+          properly for the entire window.
+
+   =>     Fixed a minor problem with command line colors when Ctrl-C was
+          hit during input.
+
+   =>     Fixed a problem when a DOS application read from STDIN in
+          Caveman.
+
+   =>     Fixed a bug which could occasionally cause traps during a DIR, or
+          any other command or operation which made a DOS "true name" call.
+
+   =>     DEL:  Disabled "fast deletes" with /Q when /A:... is used to
+          specify attributes.  Previously the /Q overrode the /A: and the
+          attribute settings were ignored.
+
+   =>     DESCRIBE:  Fixed a problem with clearing a description using the
+          syntax:
+
+                  describe file ""
+
+   =>     DO:  Fixed a problem with ITERATE inside nested IFFs inside DOs.
+
+   =>     DRAWBOX:  Fixed a couple of problems with the cursor positioning
+          and fill colors when the box was drawn over the current cursor
+          position.  Also fixed a problem with the fill color being written
+          one column too far to the right.
+
+   =>     FFIND:  Fixed a problem which sometimes caused FFIND to loop
+          endlessly printing blank lines; also fixed a problem with FFIND
+          not searching past the first 64K of the file in a text search.
+
+   =>     IF:  Now properly supports numeric comparisons when the current
+          country uses a whitespace character (e.g., ',') as the decimal
+          separator.
+
+   =>     INKEY:  Fixed a problem with combining the /P and /K switches and
+          then entering invalid input.
+
+   =>     LIST:  Fixed several problems:  with LIST colors when you have a
+          StdColors defined (different from the Windows default) and don't
+          have a ListColors defined; with dragging the scrollbar thumbs;
+          with scrolling through extremely large files; and with scrolling
+          backwards in files with lines longer than 65,520 characters.
+
+   =>     SCRPUT / VSCRPUT:  Now preserve leading quoted whitespace in the
+          text argument.
+
+   =>     SELECT:  Fixed a problem when displaying files with very long
+          descriptions (over 450 characters).
+
+
+
+
+
+   Take Command 1.01  [10-17-95] UPDAT101.DOC                        page 6
+
+
+   Technical, Compatibility, and Bug Fixes (1.01 rev B)
+   ----------------------------------------------------
+
+   =>     Modified the Alias and Environment dialogs to save new entries
+          when you switch to another entry (previously you had to hit Enter
+          in the value field to save a new entry).
+
+   =>     Partially worked around a Windows bug which may prevent display
+          of the last button on the Take Command toolbar when Take Command
+          is the Windows shell.
+
+   =>     Added support for expanding variables in the command line in
+          program manager items in the Apps menu.  If you have items with
+          command lines like %WINSYSDIR%\APPNAME.EXE they should now work
+          correctly.
+
+   =>     Filename completion was incorrectly inserting quotes around
+          filenames with embedded ampersands.
+
+   =>     Fixed a problem with pasting long lines from the clipboard to the
+          command line.
+
+   =>     Fixed problems with long filenames in the TCSTART / TCEXIT path
+          and the LOG /W path.
+
+   =>     %_DPMI:  Changed to use the country-dependent decimal character.
+
+   =>     %_WINVER:  Changed to use the country-dependent decimal
+          character.
+
+   =>     FFIND:  Fixed a problem with not clearing the hex flag after a
+          previous LIST /X.
+
+   =>     LIST:  Fixed a problem with marking lines longer than 511
+          characters.
+
+   =>     QUIT:  Fixed a problem with running "QUIT n" from the command
+          line.
+
+   =>     SELECT:  Fixed a problem with page numbering in the SELECT
+          display.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   Take Command 1.01  [10-17-95] UPDAT101.DOC                        page 7
+

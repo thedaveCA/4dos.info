@@ -1,0 +1,477 @@
+@echo off
+
+rem   RegTweaks.btm     2007-03-26     C. Dye     raster@highfiber.com
+rem
+rem   Installs registry tweaks for 4NT or Take Command (whichever is
+rem   running.)  Version 6 or later is required.  Available tweaks
+rem   include adding the current shell to Explorer's drive and directory
+rem   context menus, making the current shell the default handler for
+rem   .BTM and (optionally) .BAT and .CMD files, and adding the shell to
+rem   the context menus for .BTM, .BAT and .CMD files.
+
+
+rem   Tedious preliminaries:
+
+if not 1.0 == 01 goto bad_version
+*if %@index[4NT TCMD32,%_cmdproc] == -1 goto bad_version
+*if %_4ver lt 6.0 goto bad_version
+
+*setlocal
+*unalias *
+setdos /c254 /e94 /p36
+
+alias regcreate=`gosub regcreate`
+alias regset=`set value=%3$ %+ gosub regset %1 %2`
+alias regsetstr=`set value=%2$ %+ gosub regset %1 REG_SZ`
+alias regdelete=`gosub regdelete`
+alias abort=`echoerr %+ echoerr * %$ %+ echoerr * Aborting! %+ quit 1`
+
+set shell=%@if[%_cmdproc == TCMD32,Take Command,4NT]
+set scriptver=2007-03-26
+
+iff %@index[WIN98C WINMEC,%_dos] ne -1 then
+   set batfiles=.bat
+   set batch=.BAT
+   set msshell=COMMAND.COM
+   set antique=1
+else
+   set batfiles=.bat .cmd
+   set batch=.BAT and .CMD
+   set msshell=CMD.EXE
+   set antique=
+endiff
+
+if "%1" == "/undo" .or. "%1" == "-undo" .or. "%1" == "undo" goto undo
+
+
+rem   Determine whether we are running in TCI:
+
+set tci_flag=
+if "%shell" ne "4NT" goto no_tci
+if %_winver lt 5.1   goto no_tci
+if not defined tci   goto no_tci
+if not exist "%tci"  goto no_tci
+if "%@verinfo["%tci",ProductName]" ne "TCI" goto no_tci
+if "%@verinfo["%tci",FileDescription]" ne "Tabbed Console Interface" goto no_tci
+if "%@verinfo["%tci",CompanyName]" == "JP Software" set tci_flag=Y
+:no_tci
+
+
+rem   Introductory information:
+
+echo.
+echo.
+echo This script will install several registry tweaks for %shell:
+echo    Add "%shell Here" to Drive and Directory context menus
+echo    Make %shell the default handler for .BTM files
+echo    Add %shell to the context menu for .BTM files
+echo    Make %shell the default handler for %batch files
+echo    Add %shell to the context menu for %batch files
+echo.
+
+iff "%shell" == "4NT" .and. %_winver ge 5.1 .and. "%tci_flag" == "" then
+   echo TCI is not detected.  If you use TCI, you should cancel now, and run
+   echo this script in a 4NT shell running under TCI.  Otherwise, the TCI-
+   echo related tweaks will not be installed.
+   echo.
+endiff
+
+echo All tweaks are optional, and you will be prompted before each.
+echos Do you want to continue?  [Y/n]%=s
+inkey /k"yn[enter]" %%yorn
+echo.
+
+if "%yorn" == "n" abort Cancelled by user.
+
+
+rem   Back up registry before beginning!
+
+gosub reg_backup
+
+
+rem   Add "4NT prompt here" or "Take Command prompt here" items to
+rem   Explorer's Drive and Directory context menus:
+
+echo.
+echo.
+echo Do you want to add a "%shell prompt here" entry to Explorer's
+echos context menus for drives and directories?  [Y/n]%=s
+inkey /k"yn[enter]" %%yorn
+echo.
+
+iff "%yorn" ne "n" then
+   do object in /l Drive Directory
+      echo    Adding %shell %_4ver to Explorer's %@lower[%object] context menus:
+      regcreate "HKCR\%object\shell\%shell\command"
+      regsetstr "HKCR\%object\shell\%shell\" &%shell %_4ver prompt here
+      regsetstr "HKCR\%object\shell\%shell\command\" "%_cmdspec" /k *cdd "{percent}1"
+      iff "%shell" == "Take Command" then
+         regdelete "HKCR\%object\shell\TCMD"
+      endiff
+   enddo
+endiff
+
+
+rem   Add a "TCI tab here" item to Explorer's Drive and Directory context
+rem   menus:
+
+iff "%tci_flag" == "y" then
+   echo.
+   echo Do you want to add a "TCI tab here" entry to Explorer's
+   echos context menus for drives and directories?  [Y/n]%=s
+   inkey /k"yn[enter]" %%yorn
+   echo.
+
+   iff "%yorn" ne "n" then
+      do object in /l Drive Directory
+         echo    Adding TCI (%shell %_4ver) to Explorer's %@lower[%object] context menus:
+         regcreate "HKCR\%object\shell\TCI\command"
+         regsetstr "HKCR\%object\shell\TCI\" TC&I tab here (4NT %_4ver)
+         regsetstr "HKCR\%object\shell\TCI\command\" "%tci" /r "%_cmdspec" /k *cdd "{percent}1"
+      enddo
+      
+      echo.
+      echos Also add a context menu item for %msshell in a TCI tab?  [y/N]%=s
+      inkey /k"yn[enter]" %%yorn
+      echo.
+
+      iff "%yorn" == "y" then
+         do object in /l Drive Directory
+            echo    Adding TCI (%msshell) to Explorer's %@lower[%object] context menus:
+            regcreate "HKCR\%object\shell\TCI-Cmd\command"
+            regsetstr "HKCR\%object\shell\TCI-Cmd\" TCI tab here (%msshell)
+            regsetstr "HKCR\%object\shell\TCI-Cmd\command\" "%tci" /r "%@search[%msshell]" /k cd /d "{percent}1"
+         enddo
+      endiff
+   endiff
+endiff
+
+
+rem   Normally we want to make the current shell the default handler for
+rem   .BTM files.  But in the special case of the current shell being Take
+rem   Command, and 4NT already being the default handler for .BTM files,
+rem   we probably do not want to change the .BTM handler.  Check for this
+rem   special case:
+
+set default=Y
+if "%shell" ne "Take Command" goto skip
+set btm_handler=%@regquery[HKCR\.btm]
+if defined btm_handler set btm_handler=%@regquery[HKCR\%btm_handler\shell\open\command\]
+if defined btm_handler set btm_handler=%@word[0,%btm_handler]
+if not defined btm_handler goto skip
+if not exist %btm_handler goto skip
+if "%@verinfo[%btm_handler,ProductName]" ne "4NT" goto skip
+if "%@verinfo[%btm_handler]" ge "%@verinfo["%_cmdspec"]" set default=N
+:skip
+
+
+rem   Make this shell the default handler for .BTM files:
+
+iff "%default" == "Y" then
+   echo.
+   echo Do you want to make %shell %_4ver the default handler for
+   echos .BTM files?  [Y/n]%=s
+else
+   echo.
+   echo Do you want to make %shell %_4ver the default handler for
+   echos .BTM files?  (4NT is now the default handler.)  [y/N]%=s
+endiff
+
+inkey /k"yn[enter]" %%yorn
+if "%yorn" == "@28" set yorn=%default
+echo.
+
+iff "%yorn" == "y" then
+   echo    Associating .BTM files with %shell %_4ver:
+   regcreate "HKCR\.btm"
+   regsetstr "HKCR\.btm\" btmfile
+   regcreate "HKCR\btmfile\shell\open\command"
+   regsetstr "HKCR\btmfile\" JP Software advanced batch file
+   regsetstr "HKCR\btmfile\shell\open\command\" "%_cmdspec" /c "{percent}1" {percent}*
+
+   iff "%@regquery[HKCR\btmfile\shell\edit\command\]" == "-1" then
+      iff "%@search[reg.exe]" ne "" .and. "%@regquery[HKCR\batfile\shell\edit\command\]" ne "-1" then
+         reg.exe copy HKCR\batfile\shell\edit\command HKCR\btmfile\shell\edit\command /f > nul
+         regsetstr "HKCR\btmfile\shell\edit\" &Edit
+      else
+         set edit="%@search[notepad.exe]" "{percent}1"
+         regcreate "HKCR\btmfile\shell\edit\command"
+         regsetstr "HKCR\btmfile\shell\edit\" &Edit
+         regsetstr "HKCR\btmfile\shell\edit\command\" %edit
+      endiff
+   endiff
+
+   iff "%@regquery[HKCR\btmfile\shell\print\command\]" == "-1" then
+      iff "%@search[reg.exe]" ne "" .and. "%@regquery[HKCR\batfile\shell\print\command\]" ne "-1" then
+         reg.exe copy HKCR\batfile\shell\print\command HKCR\btmfile\shell\print\command /f > nul
+         regsetstr "HKCR\btmfile\shell\print\" &Print
+      else
+         set print="%@search[notepad.exe]" /p "{percent}1"
+         regcreate "HKCR\btmfile\shell\print\command"
+         regsetstr "HKCR\btmfile\shell\print\" &Print
+         regsetstr "HKCR\btmfile\shell\print\command\" %print
+      endiff
+   endiff
+endiff
+
+
+rem   Add this shell to the context menu for .BTM files:
+
+iff "%@regquery[HKCR\.btm\]" == "btmfile" then
+   echo.
+   echo Do you want to add %shell %_4ver to the context menu for
+   echos .BTM files?  [Y/n]%=s
+   inkey /k"yn[enter]" %%yorn
+   echo.
+
+   iff "%yorn" ne "n" then
+      echo    Adding %shell %_4ver to .BTM context menu:
+      regcreate "HKCR\btmfile\shell\Run in &%shell\command"
+      regsetstr "HKCR\btmfile\" JP Software advanced batch file
+      regsetstr "HKCR\btmfile\shell\Run in &%shell\" Run in &%shell %_4ver
+      regsetstr "HKCR\btmfile\shell\Run in &%shell\command\" "%_cmdspec" /c "{percent}1" {percent}*
+   endiff
+endiff
+
+
+rem   Make this shell the default handler for .BAT and .CMD files:
+
+echo.
+echo Do you want to make %shell %_4ver the default handler for
+echos %batch files?  (Not recommended!) [y/N]%=s
+inkey /k"yn[enter]" %%yorn
+echo.
+
+iff "%yorn" == "y" then
+   do ext in /l %batfiles
+      set ftype=%@right[-1,%ext]file
+      echo    Associating %@upper[%ext] files with %shell %_4ver:
+      regcreate "HKCR\%ext"
+      regsetstr "HKCR\%ext\" %ftype
+      regcreate "HKCR\%ftype\shell\open\command"
+      regsetstr "HKCR\%ftype\" %@if[%ext == .cmd,Windows NT Command Script,MS-DOS Batch File]
+      regsetstr "HKCR\%ftype\shell\open\command\" "%_cmdspec" /c "{percent}1" {percent}*
+      regcreate "HKCR\%ftype\shell\edit"
+      regsetstr "HKCR\%ftype\shell\edit\" &Edit
+      regcreate "HKCR\%ftype\shell\print"
+      regsetstr "HKCR\%ftype\shell\print\" &Print
+      regcreate "HKCR\%ftype\shell\Run in &%msshell\command"
+      regsetstr "HKCR\%ftype\shell\Run in &%msshell\command\" "%@search[%msshell]" /c "{percent}1" {percent}*
+   enddo
+else
+   echo.
+   echo Do you want to restore %batch files to Microsoft's default
+   echos settings, so they will run in %msshell?  [y/N]%=s
+   inkey /k"yn[enter]" %%yorn
+   echo.
+   iff "%yorn" == "y" then
+      echo    Restoring default settings for %batch files:
+      gosub bat_defaults
+   endiff   
+endiff
+
+
+rem   Add this shell to the context menu for .BAT and .CMD files:
+
+echo.
+echo Do you want add %shell %_4ver to the context menu for
+echos %batch files?  [Y/n]%=s
+inkey /k"yn[enter]" %%yorn
+echo.
+
+iff "%yorn" ne "n" then
+   do ext in /l %batfiles
+      set ftype=%@right[-1,%ext]file
+      echo    Adding %shell %_4ver to %@upper[%ext] context menu:
+      regcreate "HKCR\%ext"
+      regsetstr "HKCR\%ext\" %ftype
+      regcreate "HKCR\%ftype\shell\Run in &%shell\command"
+      regsetstr "HKCR\%ftype\" %@if[%ext == .cmd,Windows NT Command Script,MS-DOS Batch File]
+      regsetstr "HKCR\%ftype\shell\Run in &%shell\" Run in &%shell %_4ver
+      regsetstr "HKCR\%ftype\shell\Run in &%shell\command\" "%_comspec" /c "{percent}1" {percent}*
+   enddo
+endiff
+
+echo.
+echo Done.
+echo.
+
+endlocal
+quit
+
+
+
+:undo
+
+echo.
+echo.
+echo This will make lots of random changes to your registry and probably
+echo leave your system completely pooched.  It will delete gobs of info,
+echo including things which it never installed in the first place.  There
+echo are no safety checks and no way to recover.  Continuing is likely to
+echo be a Very Bad Idea.  Why are you mucking about with undocumented
+echo options anyway?
+echo.
+echos Do you wish to continue, sucker?  [y/N]%=s
+
+inkey /k"yn[enter]" %%yorn
+echo.
+if "%yorn" ne "y" abort Cancelled by user.
+
+gosub reg_backup
+
+echo.
+echo Cleaning Explorer context menus:
+do prod in /l 4NT Take_Command TCmd TCI TCI-Cmd
+   set product=%@replace[_, ,%prod]
+   do object in /l Drive Directory
+      iff %@regexist["HKCR\%object\shell\%product"] == 1 then
+         echo    Removing %product from context menus for %object:
+         regdelete "HKCR\%object\shell\%product"
+      endiff
+   enddo
+enddo
+
+iff %@regexist["HKCR\.btm"] == 1 then
+   echo.
+   echo Removing .BTM file extension:
+   set result=%@regdelkey["HKCR\.btm"]
+endiff
+
+do type in /l btmfile 4NT.Batch TakeCommand.Batch
+   iff %@regexist["HKCR\%type"] == 1 then
+      echo Removing %type file type:
+      set result=%@regdelkey["HKCR\%type"]
+   endiff
+enddo
+
+echo.
+echo Restoring default settings for %batch files:
+gosub bat_defaults
+
+do ftype in /l batfile cmdfile
+   do prod in /l 4NT Take_Command TCmd CMD.EXE COMMAND.COM
+      set shell=%@replace[_, ,%prod]
+      iff %@regexist["HKCR\%ftype\shell\Run in &%shell"] == 1 then
+         echo Removing "Run in &%shell" from "%ftype" context menu:
+         regdelete "HKCR\%ftype\shell\Run in &%shell"
+      endiff
+      iff %@regexist["HKCR\%ftype\shell\Run in %shell"] == 1 then
+         echo Removing "Run in %shell" from "%ftype" context menu:
+         regdelete "HKCR\%ftype\shell\Run in %shell"
+      endiff
+      iff %@regexist["HKCR\%ftype\shell\&%shell"] then
+         echo Removing "&%shell" from "%ftype" context menu:
+         regdelete "HKCR\%ftype\shell\&%shell"
+      endiff
+      iff %@regexist["HKCR\%ftype\shell\%shell"] then
+         echo Removing "%shell" from "%ftype" context menu:
+         regdelete "HKCR\%ftype\shell\%shell"
+      endiff
+   enddo
+enddo
+
+echo.
+echo Done.
+echo.
+
+endlocal
+quit
+
+
+
+:bat_defaults
+
+rem   Restore Microsoft's default settings for batch files:
+
+do ext in /l %batfiles
+   set ftype=%@right[-1,%ext]file
+   regcreate "HKCR\%ext"
+   regsetstr "HKCR\%ext\" %ftype
+   regcreate "HKCR\%ftype\shell\open\command"
+   regsetstr "HKCR\%ftype\" %@if[%ext == .cmd,Windows NT Command Script,MS-DOS Batch File]
+   regsetstr "HKCR\%ftype\shell\open\command\" "{percent}1" {percent}*
+   regcreate "HKCR\%ftype\shell\edit\command"
+   regsetstr "HKCR\%ftype\shell\edit\"
+   regcreate "HKCR\%ftype\shell\print\command"
+   regsetstr "HKCR\%ftype\shell\print\"
+   iff defined antique then
+      regsetstr "HKCR\%ftype\shell\edit\command\" %windir\NOTEPAD.EXE {percent}1
+      regsetstr "HKCR\%ftype\shell\print\command\" %windir\NOTEPAD.EXE /p {percent}1
+   else
+      regset    "HKCR\%ftype\shell\edit\command\" REG_EXPAND_SZ {percent}SystemRoot{percent}\System32\NOTEPAD.EXE {percent}1
+      regset    "HKCR\%ftype\shell\print\command\" REG_EXPAND_SZ {percent}SystemRoot{percent}\System32\NOTEPAD.EXE /p {percent}1
+   endiff
+enddo
+return
+
+
+:reg_backup
+
+echo.
+echos Do you want to back up the registry keys which will be altered?  [Y/n]%=s
+inkey /k"yn[enter]" %%yorn
+echo.
+
+iff "%yorn" ne "n" then
+   echos    Creating backup: %=s
+   set dir=%@path[%_batchname]
+   set backupname=Backup %_isodate
+   set n=0
+   do while exist "%dir%%Backupname.reg"
+      set n=%@inc[n]
+      set backupname=Backup %_isodate (%n)
+   enddo
+   del /e /q "%dir%$$Temp$$-*.reg"
+   echos . %+ regedit /e "%dir%$$Temp$$-1.reg" HKEY_CLASSES_ROOT\Drive\shell
+   echos . %+ regedit /e "%dir%$$Temp$$-2.reg" HKEY_CLASSES_ROOT\Directory\shell
+   echos . %+ regedit /e "%dir%$$Temp$$-3.reg" HKEY_CLASSES_ROOT\.btm
+   echos . %+ regedit /e "%dir%$$Temp$$-4.reg" HKEY_CLASSES_ROOT\.bat
+   echos . %+ regedit /e "%dir%$$Temp$$-5.reg" HKEY_CLASSES_ROOT\.cmd
+   echos . %+ regedit /e "%dir%$$Temp$$-6.reg" HKEY_CLASSES_ROOT\btmfile
+   echos . %+ regedit /e "%dir%$$Temp$$-7.reg" HKEY_CLASSES_ROOT\batfile
+   echos . %+ regedit /e "%dir%$$Temp$$-8.reg" HKEY_CLASSES_ROOT\cmdfile
+   set unicode_save=%@option[unicodeoutput]
+   option //unicodeoutput=yes
+   do i = 1 to 8
+      iff exist "%dir%$$Temp$$-%i.reg" then
+         echos .
+         tail /n9999 %@if[%i == 1,,/n+1] "%dir%$$Temp$$-%i.reg" >>! "%dir%%backupname.reg"
+      endiff
+   enddo
+   option //unicodeoutput=%unicode_save
+   echo.
+   echo    Saved as "%dir%%backupname.reg"
+   del /e /q "%dir%$$Temp$$-*.reg"
+endiff
+
+return
+
+
+:regcreate [name]
+set result=%@regcreate[%name]
+if %result == 0 return
+abort Error %result creating registry key %name
+
+
+:regset [name type]
+if not defined value if %@regquery[%name] == -1 ( set result=0 %+ return )
+set result=%@regset[%name,%type,%@replace[{percent},%%%%,%value]]
+if %result == 0 return
+abort Error %result setting registry item %name to %type = %value
+
+
+:regdelete [name]
+if %@len[%name] lt 16 abort Whoa, Nellie!
+if %@regexist[%name] == 0 ( set result=0 %+ return )
+set result=%@regdelkey[%name]
+return
+
+
+:bad_version
+
+echo.
+echo * Sorry; this script requires 4NT or Take Command version 6 or later.
+echo * Aborting!
+if 1.0 == 01 quit 1
+

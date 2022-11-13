@@ -1,0 +1,48 @@
+@echo off
+if "%1" == "" goto noargs
+if not exist %1 goto nofile
+if "%@ext[%1]" == "LZH" goto lha
+if "%@ext[%1]" == "ARC" goto arc
+if "%@ext[%1]" == "ARJ" goto arj
+goto nomatch
+:noargs
+text
+
+        No File Name Was Provided
+
+        Syntax: conv <filename.ext>
+
+        ext = LZH/ARJ/ARC
+endtext
+quit
+:nomatch
+echo No Matching Archive Conversion Routine
+quit
+:nofile
+echo File %1 Does Not Exist
+quit
+:arc
+echo Using PKXARC and PKZIP
+md $$$
+pkxarc %@full[%1] $$$\
+pkzip -m %@name[%1] $$$\*.*
+rd $$$
+erase %1
+quit
+:lha
+echo Using LHA and PKZIP
+md $$$
+Lha e %@full[%1] $$$\
+pkzip -m %@name[%1] $$$\*.*
+rd $$$
+erase %1
+quit
+:arj
+echo Using ARJ and PKZIP
+md $$$
+arj x %@full[%1] $$$\
+pkzip -m %@name[%1] $$$\*.*
+rd $$$
+erase %1
+quit
+

@@ -1,0 +1,128 @@
+
+                        ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+                   ÍÍÍÍÍ   4 - F I L E S   ÍÍÍÍÍ
+                        ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+               Information about 4FILES & 4FILES-PRO
+
+                              v-3.30
+
+                          December 6, 1995
+
+  ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+  ³                                                              ³
+  ³  A FILE MANAGER, FILE DESCRIPTION EDITOR & "COMMAND CENTER"  ³
+  ³                                                              ³
+  ³              for DOS, Windows, OS/2 & Desqview,              ³
+  ³                                                              ³
+  ³           with Special 4DOS- & NDOS-Aware Features,          ³
+  ³                                                              ³
+  ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+  << Reviewed and recommend in PC-Computing magazine, Sept. 1994. >>
+
+
+File Contents ....
+=============
+
+  1)  Description of 4FILES.
+
+  2)  Description of 4FILES-PRO.    ...  Search for "2)"
+
+  3)  Details on recent revisions.  ...  Search for "3)"
+
+
+1)  4FILES -- A UNIQUE FILE MANAGER:
+    ================================   Efficient, accurate file management
+requires ready access to information about any file, especially its
+purpose or contents.  Unfortunately, eight or eleven character DOS file
+names are too short to meet this need, causing you to interrupt the flow
+of your work to do awkward research about various files.  No more!
+4FILES not only makes such research easy, but allows you to save the
+information in a permanent note for each file.  If you use 4DOS or
+NDOS (excellent replacements for COMMAND.COM), each note automatically
+remains  associated with its file whenever the file is copied, moved
+or renamed.  4FILES may be fully evaluated under COMMAND.COM, although
+notes then will not be transferred during these operations.
+
+     The ability to create and edit file notes and to have your system
+automatically keep them with their files is the basis for a quantum leap
+in file management efficiency.  This ability is only a basis however,
+and an exceptional interface is needed to realize its full potential.
+My goal has been to design 4FILES to put all of this potential at your
+finger tips, with a nice complement of features, and keystroke commands
+that are easy to learn and remember.  You will be the judge of my
+success, and since 4FILES is shareware by an ASP member, the fully
+functional program is available free for your evaluation.  If you like
+it, a registration fee of $30 is required (includes printed manual).
+Shareware copies are brandable as registered.
+
+    There are several essential elements for an efficient file manager:
+1) easy inspection of the contents of a file, 2) permanent recording of
+the information obtained, 3) clear presentation of this information
+along with the filename and vital statistics of the file, in a sorted
+directory listing, 4) good implementation of file management operations,
+including access to third party utilities, and 5) easy navigation both
+across drives & directories and within a directory.  4FILES has been
+designed from its inception with these things as priorities.
+
+    In the PC-Computing review (9/94), 4FILES was recommended as a
+replacement for the commercially available file manager X-TREE.
+
+
+2)  4FILES-PRO -- An Enhanced Version of 4FILES.
+    ============================================
+
+    4FILES-PRO provides additional support for text editors and other
+applications that have advanced capabilities.  In addition to everything
+that 4FILES does, the PRO version can do two things.
+
+    o  When it calls the editor or application, it can provide a list of
+       all marked files from which the editor or application will load the
+       files.
+
+    o  For editors and applications that have macro languages with
+       adequate features and the ability to call other programs,
+       4FILES-PRO can serve as the File-Mangager / File-Selector.  Single
+       or multiple files may be selected for loading, and multiple files
+       can be selected from multiple directors in one operation.
+
+    Macros with source code are provided for the TSE and Multi-Edit
+programmers' editors.
+
+    4FILES-PRO is an optional non-shareware upgrade available for only $5
+to those who register 4FILES.
+
+
+3)   DETAILS OF RECENT REVISIONS TO 4FILES
+     =====================================
+
+    v-3.30 adds new macros for setting up "utility ports" to call other
+programs.
+
+    v-3.23 fixes a video bug that occurred when running under Desqview and
+Desqview/X and which caused lock-ups on some systems.
+
+    v-3.22 improves the shelling and archiving functions.  The method of
+generating beeps has been changed since the old method resulted in a
+long harsh beep on some laptop computers.  Windows and OS/2 users now
+have key combinations for exiting to either the current or original
+directory, when working from the DOS or OS/2 command line interfaces.
+
+    v-3.20 improves restoration of the original video mode and font when
+call other programs or terminating.  Improvements have also been made to
+the disk system error handler, providing smoother operation and better messages
+for the user.  A bug which sometimes limited input to the target path field
+(e.g. for file copying, etc.) to 12 characters has been fixed.
+
+    v-3.15 through v-3.19 added several new features, made improvements to
+many existing operations, and fixed a few bugs.  Significant updates to the
+manual were made in 3.19.  Some of the significant changes:  Operation on
+networks was improved.  When a path fragment used to change directories fails,
+the user is now prompted to automatically rescan the disk to rebuild the
+database.  A problem with infrequent but annoying loss of the brand on
+registered versions was fixed.  A change was made to allow 4FILES to create a
+new directory of the form ..\..\subdir during copy and move operations, if the
+directory does not exist.
+
+-= 30 =-

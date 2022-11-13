@@ -1,0 +1,740 @@
+diff -u3 -N -r -s 7.501/4all.h 7.502/4all.h
+--- 7.501/4all.h	Sun Nov 12 16:00:50 2006
++++ 7.502/4all.h	Sat Nov 25 11:27:56 2006
+@@ -718,6 +718,14 @@
+ #include "globals.h"		// global variables
+ #include "proto.h"		// function prototypes
+ 
++#if (_MSC_VER <= 700)
++/* found in startup code, MSC 8 and later define in stdlib.h/stdio.h */
++extern char FAR *_pgmptr;
++/* from windows.h */
++typedef char FAR * LPSTR;
++#endif
++
++
+ #ifdef ENGLISH
+ #include "message.h"		// English message definitions for 4xxx
+ #endif
+Files 7.501/4dlinit.asm and 7.502/4dlinit.asm are identical
+Files 7.501/4dlmsg.asm and 7.502/4dlmsg.asm are identical
+Files 7.501/4dlparms.asm and 7.502/4dlparms.asm are identical
+Files 7.501/4dlstruc.asm and 7.502/4dlstruc.asm are identical
+Files 7.501/4dos and 7.502/4dos are identical
+Files 7.501/4dos.asm and 7.502/4dos.asm are identical
+Files 7.501/4dos.com and 7.502/4dos.com are identical
+Files 7.501/4dos.h and 7.502/4dos.h are identical
+Files 7.501/4dos.hlp and 7.502/4dos.hlp are identical
+Files 7.501/4dos.ico and 7.502/4dos.ico are identical
+Files 7.501/4dos.lin and 7.502/4dos.lin are identical
+Files 7.501/4dos.lnk and 7.502/4dos.lnk are identical
+Files 7.501/4doslst and 7.502/4doslst are identical
+Files 7.501/4dostart.asm and 7.502/4dostart.asm are identical
+Binary files 7.501/4dostart.bak and 7.502/4dostart.bak differ
+Files 7.501/4dostart.lib and 7.502/4dostart.lib are identical
+Files 7.501/4help.exe and 7.502/4help.exe are identical
+Files 7.501/4make.exe and 7.502/4make.exe are identical
+Files 7.501/_file.c and 7.502/_file.c are identical
+Files 7.501/apprel and 7.502/apprel are identical
+Files 7.501/apprel.c and 7.502/apprel.c are identical
+Files 7.501/apprel.exe and 7.502/apprel.exe are identical
+Files 7.501/apprel2 and 7.502/apprel2 are identical
+Files 7.501/apprel2.c and 7.502/apprel2.c are identical
+Files 7.501/apprel2.exe and 7.502/apprel2.exe are identical
+Files 7.501/asmutil.asm and 7.502/asmutil.asm are identical
+diff -u3 -N -r -s 7.501/batch.c 7.502/batch.c
+--- 7.501/batch.c	Sun Nov 12 16:00:50 2006
++++ 7.502/batch.c	Sat Nov 25 11:18:36 2006
+@@ -2923,7 +2923,7 @@
+ 		// collapse starting at a particular argument
+ 		if ( *pszCmdLine == _TEXT('/') ) {
+ 
+-			nShift = atoi( pszCmdLine + 1 ) + bframe[aGlobals.bn].Argv_Offset;
++			nShift = atoi( pszCmdLine + 1 ) + bframe[ cv.bn].Argv_Offset;
+ 			for ( i = 1; ( bframe[ cv.bn ].Argv[i] != NULL ) ; i++ )
+ 				;
+ 			if (( i <= nShift ) || ( nShift < 0 ))
+Files 7.501/batcomp and 7.502/batcomp are identical
+Files 7.501/batcomp.c and 7.502/batcomp.c are identical
+Files 7.501/batcomp.def and 7.502/batcomp.def are identical
+Files 7.501/batcomp.doc and 7.502/batcomp.doc are identical
+Files 7.501/batcomp.h and 7.502/batcomp.h are identical
+Files 7.501/batdcomp.asm and 7.502/batdcomp.asm are identical
+Files 7.501/bcd.asm and 7.502/bcd.asm are identical
+Files 7.501/build.btm and 7.502/build.btm are identical
+Files 7.501/build.dos and 7.502/build.dos are identical
+Files 7.501/build.h and 7.502/build.h are identical
+Files 7.501/build.txt and 7.502/build.txt are identical
+Files 7.501/cmds.c and 7.502/cmds.c are identical
+Files 7.501/compdrv.asm and 7.502/compdrv.asm are identical
+Files 7.501/compress.exe and 7.502/compress.exe are identical
+Files 7.501/criterrs.asd and 7.502/criterrs.asd are identical
+Files 7.501/criterrs.asm and 7.502/criterrs.asm are identical
+Files 7.501/criterrs.txd and 7.502/criterrs.txd are identical
+Files 7.501/criterrs.txt and 7.502/criterrs.txt are identical
+Files 7.501/cutil.h and 7.502/cutil.h are identical
+Files 7.501/dblspace.h and 7.502/dblspace.h are identical
+Files 7.501/debug.asm and 7.502/debug.asm are identical
+Files 7.501/decout.asm and 7.502/decout.asm are identical
+Files 7.501/dircmds.c and 7.502/dircmds.c are identical
+Files 7.501/dolink.mak and 7.502/dolink.mak are identical
+Files 7.501/doscalls.c and 7.502/doscalls.c are identical
+diff -u3 -N -r -s 7.501/doscmds.c 7.502/doscmds.c
+--- 7.501/doscmds.c	Sun Nov 12 16:00:50 2006
++++ 7.502/doscmds.c	Sat Nov 25 15:52:04 2006
+@@ -330,11 +330,13 @@
+ 		if ( fExit++ == 0 )
+ 			find_4files( AUTOEXIT );
+ 
++#ifdef SHAREWARE_VERSION
+ 		// ensure shareware data is written
+ 		if ( gfShareware && gfSharewareDataRead ) {
+ 			AccessSharewareData( &SharewareData, 1 );
+ 			AccessSharewareDup( &SharewareData, 1 );
+ 		}
++#endif
+ 
+ 		ServCtrl( SERV_QUIT, nRet );
+ 	}
+@@ -1397,8 +1399,10 @@
+ 
+ 		crlf();
+ 
++#ifdef SHAREWARE_VERSION
+ 		// display serial number (brand) info
+ 		TestBrand( 0 );
++#endif
+ 	}
+ 
+ 	return 0;
+Files 7.501/dosinit.c and 7.502/dosinit.c are identical
+Files 7.501/dostty.c and 7.502/dostty.c are identical
+Files 7.501/dosumb.asm and 7.502/dosumb.asm are identical
+Files 7.501/dosutil.asm and 7.502/dosutil.asm are identical
+Files 7.501/dv.asm and 7.502/dv.asm are identical
+Files 7.501/dvapi.inc and 7.502/dvapi.inc are identical
+Files 7.501/env.c and 7.502/env.c are identical
+Files 7.501/error.c and 7.502/error.c are identical
+Files 7.501/errormsg.asm and 7.502/errormsg.asm are identical
+Files 7.501/errparms.asm and 7.502/errparms.asm are identical
+Files 7.501/eval.c and 7.502/eval.c are identical
+diff -u3 -N -r -s 7.501/expand.c 7.502/expand.c
+--- 7.501/expand.c	Sun Nov 12 16:00:50 2006
++++ 7.502/expand.c	Sat Nov 25 11:27:50 2006
+@@ -56,6 +56,11 @@
+ #include "4all.h"
+ #include "inifile.h"
+ 
++#if (_MSC_VER <= 700)
++/* from conio.h, note can not be defined and include MESSAGE.H */
++#define BLINK       128 /* blink bit */
++#endif
++
+ 
+ void _fastcall SeekToEnd( int );
+ static int _near _fastcall UserFunctions( LPTSTR, LPTSTR );
+diff -u3 -N -r -s 7.501/filecmds.c 7.502/filecmds.c
+--- 7.501/filecmds.c	Sun Nov 12 16:00:50 2006
++++ 7.502/filecmds.c	Sat Nov 25 11:07:02 2006
+@@ -39,6 +39,7 @@
+ #include <direct.h>
+ #include <dos.h>
+ 
++/* Note: for MSC 7 and earlier this is in the %BASE%\C700\SOURCE\STARTUP\ */
+ #include <msdos.h>
+ 
+ #include <fcntl.h>
+@@ -3189,8 +3190,11 @@
+ 
+ 				nBytes = 0;
+ 
++				if (0) {
++#if 0
+ 					wwrite( STDOUT, (LPSTR)(glpPipe + llPipeOffset), uSize );
+ 
++#endif
+ 					break;
+ 
+ 				} else {
+diff -u3 -N -r -s 7.501/fileio.inc 7.502/fileio.inc
+--- 7.501/fileio.inc	Thu Jan  1 00:00:00 1970
++++ 7.502/fileio.inc	Thu Nov 23 18:21:10 2006
+@@ -0,0 +1,26 @@
++IFNDEF     fileio_inc
++fileio_inc EQU 1
++
++; constants for DOS compatible file open() calls
++O_RDONLY  EQU 0000h    ; read only
++O_WRONLY  EQU 0001h    ; write only
++O_RDWR    EQU 0002h    ; read & write
++O_APPEND  EQU 0008h    ; write, staring at end of file
++O_CREAT   EQU 0100h    ; open existing file or create & open if doesn't exist
++O_TRUNC   EQU 0200h    ; open file, truncate if exists or create if doesn't exist
++O_EXCL    EQU 0400h    ; create & open file, only if it doesn't exist
++
++O_TEXT    EQU 4000h    ; treat as text, convert \r\n <--> \n sequences
++O_BINARY  EQU 8000h    ; treat as binary, do no conversion of newlines
++
++O_NOINHERIT EQU 008h   ; child process shouldn't inherit open handle
++
++
++; constants for DOS file open() calls in share mode
++O_COMPAT  EQU 0000h    ; compatibility mode
++O_DENYRW  EQU 0010h    ; deny read/write mode
++O_DENYWR  EQU 0020h    ; deny write mode
++O_DENYRD  EQU 0030h    ; deny read mode
++O_DENYNO  EQU 0040h    ; deny none mode
++
++ENDIF
+Files 7.501/findems.asm and 7.502/findems.asm are identical
+Files 7.501/findureg.asm and 7.502/findureg.asm are identical
+Files 7.501/fname.asm and 7.502/fname.asm are identical
+Files 7.501/globals.h and 7.502/globals.h are identical
+Files 7.501/helpcfg.exe and 7.502/helpcfg.exe are identical
+Files 7.501/hexout.asm and 7.502/hexout.asm are identical
+Files 7.501/idirenum.btm and 7.502/idirenum.btm are identical
+Files 7.501/inidump.c and 7.502/inidump.c are identical
+Files 7.501/inierrs.asd and 7.502/inierrs.asd are identical
+Files 7.501/inifile.h and 7.502/inifile.h are identical
+Files 7.501/iniparse.asm and 7.502/iniparse.asm are identical
+Files 7.501/inistruc.asm and 7.502/inistruc.asm are identical
+Files 7.501/inistruc.h and 7.502/inistruc.h are identical
+Files 7.501/initerrs.asd and 7.502/initerrs.asd are identical
+Files 7.501/initerrs.asm and 7.502/initerrs.asm are identical
+Files 7.501/initerrs.txd and 7.502/initerrs.txd are identical
+Files 7.501/initerrs.txt and 7.502/initerrs.txt are identical
+Files 7.501/inout.asm and 7.502/inout.asm are identical
+Files 7.501/intclean.asm and 7.502/intclean.asm are identical
+Files 7.501/intver.asm and 7.502/intver.asm are identical
+Files 7.501/intver.h and 7.502/intver.h are identical
+Files 7.501/iofmt.c and 7.502/iofmt.c are identical
+Files 7.501/iofmt16.c and 7.502/iofmt16.c are identical
+Files 7.501/iparse.c and 7.502/iparse.c are identical
+Files 7.501/istring.c and 7.502/istring.c are identical
+Files 7.501/keyparse.asm and 7.502/keyparse.asm are identical
+Files 7.501/keystack and 7.502/keystack are identical
+Files 7.501/keyvalue.asm and 7.502/keyvalue.asm are identical
+Files 7.501/kparse.c and 7.502/kparse.c are identical
+Files 7.501/kstack and 7.502/kstack are identical
+Files 7.501/kstack.asm and 7.502/kstack.asm are identical
+Files 7.501/kstack.com and 7.502/kstack.com are identical
+Files 7.501/lines.c and 7.502/lines.c are identical
+Files 7.501/listall.c and 7.502/listall.c are identical
+Files 7.501/listc.c and 7.502/listc.c are identical
+Files 7.501/loaddata.asm and 7.502/loaddata.asm are identical
+Files 7.501/main.c and 7.502/main.c are identical
+Files 7.501/makeset.btm and 7.502/makeset.btm are identical
+diff -u3 -N -r -s 7.501/MD5.c 7.502/MD5.c
+--- 7.501/MD5.c	Thu Jan  1 00:00:00 1970
++++ 7.502/MD5.c	Sat Nov 25 12:36:54 2006
+@@ -0,0 +1,327 @@
++/*
++ * This code implements the MD5 message-digest algorithm.
++ * The algorithm is due to Ron Rivest.  This code was
++ * written by Colin Plumb in 1993, no copyright is claimed.
++ * This code is in the public domain; do with it what you wish.
++ *
++ * Equivalent code is available from RSA Data Security, Inc.
++ * This code has been tested against that, and is equivalent,
++ * except that you don't need to include two pages of legalese
++ * with every copy.
++ *
++ * To compute the message digest of a chunk of bytes, declare an
++ * MD5Context structure, pass it to MD5Init, call MD5Update as
++ * needed on buffers full of bytes, and then call MD5Final, which
++ * will fill a supplied 16-byte array with the digest.
++ */
++#include <string.h>		/* for memcpy() */
++#include "md5.h"
++
++#ifndef HIGHFIRST
++#define byteReverse(buf, len)	/* Nothing */
++#else
++void byteReverse(unsigned char *buf, unsigned longs);
++
++#ifndef ASM_MD5
++/*
++ * Note: this code is harmless on little-endian machines.
++ */
++void byteReverse(unsigned char *buf, unsigned longs)
++{
++    uint32 t;
++    do {
++	t = (uint32) ((unsigned) buf[3] << 8 | buf[2]) << 16 |
++	    ((unsigned) buf[1] << 8 | buf[0]);
++	*(uint32 *) buf = t;
++	buf += 4;
++    } while (--longs);
++}
++#endif
++#endif
++
++/*
++ * Start MD5 accumulation.  Set bit count to 0 and buffer to mysterious
++ * initialization constants.
++ */
++void MD5Init(struct MD5Context *ctx)
++{
++    ctx->buf[0] = 0x67452301;
++    ctx->buf[1] = 0xefcdab89;
++    ctx->buf[2] = 0x98badcfe;
++    ctx->buf[3] = 0x10325476;
++
++    ctx->bits[0] = 0;
++    ctx->bits[1] = 0;
++}
++
++/*
++ * Update context to reflect the concatenation of another buffer full
++ * of bytes.
++ */
++void MD5Update(struct MD5Context *ctx, unsigned char const *buf, unsigned len)
++{
++    uint32 t;
++
++    /* Update bitcount */
++
++    t = ctx->bits[0];
++    if ((ctx->bits[0] = t + ((uint32) len << 3)) < t)
++	ctx->bits[1]++;		/* Carry from low to high */
++    ctx->bits[1] += len >> 29;
++
++    t = (t >> 3) & 0x3f;	/* Bytes already in shsInfo->data */
++
++    /* Handle any leading odd-sized chunks */
++
++    if (t) {
++	unsigned char *p = (unsigned char *) ctx->in + t;
++
++	t = 64 - t;
++	if (len < t) {
++	    memcpy(p, buf, len);
++	    return;
++	}
++	memcpy(p, buf, t);
++	byteReverse(ctx->in, 16);
++	MD5Transform(ctx->buf, (uint32 *) ctx->in);
++	buf += t;
++	len -= t;
++    }
++    /* Process data in 64-byte chunks */
++
++    while (len >= 64) {
++	memcpy(ctx->in, buf, 64);
++	byteReverse(ctx->in, 16);
++	MD5Transform(ctx->buf, (uint32 *) ctx->in);
++	buf += 64;
++	len -= 64;
++    }
++
++    /* Handle any remaining bytes of data. */
++
++    memcpy(ctx->in, buf, len);
++}
++
++/*
++ * Final wrapup - pad to 64-byte boundary with the bit pattern 
++ * 1 0* (64-bit count of bits processed, MSB-first)
++ */
++void MD5Final(unsigned char digest[16], struct MD5Context *ctx)
++{
++    unsigned count;
++    unsigned char *p;
++
++    /* Compute number of bytes mod 64 */
++    count = (ctx->bits[0] >> 3) & 0x3F;
++
++    /* Set the first char of padding to 0x80.  This is safe since there is
++       always at least one byte free */
++    p = ctx->in + count;
++    *p++ = 0x80;
++
++    /* Bytes of padding needed to make 64 bytes */
++    count = 64 - 1 - count;
++
++    /* Pad out to 56 mod 64 */
++    if (count < 8) {
++	/* Two lots of padding:  Pad the first block to 64 bytes */
++	memset(p, 0, count);
++	byteReverse(ctx->in, 16);
++	MD5Transform(ctx->buf, (uint32 *) ctx->in);
++
++	/* Now fill the next block with 56 bytes */
++	memset(ctx->in, 0, 56);
++    } else {
++	/* Pad block to 56 bytes */
++	memset(p, 0, count - 8);
++    }
++    byteReverse(ctx->in, 14);
++
++    /* Append length in bits and transform */
++    ((uint32 *) ctx->in)[14] = ctx->bits[0];
++    ((uint32 *) ctx->in)[15] = ctx->bits[1];
++
++    MD5Transform(ctx->buf, (uint32 *) ctx->in);
++    byteReverse((unsigned char *) ctx->buf, 4);
++    memcpy(digest, ctx->buf, 16);
++    memset(ctx, 0, sizeof(ctx));	/* In case it's sensitive */
++}
++
++#ifndef ASM_MD5
++
++/* The four core functions - F1 is optimized somewhat */
++
++/* #define F1(x, y, z) (x & y | ~x & z) */
++#define F1(x, y, z) (z ^ (x & (y ^ z)))
++#define F2(x, y, z) F1(z, x, y)
++#define F3(x, y, z) (x ^ y ^ z)
++#define F4(x, y, z) (y ^ (x | ~z))
++
++/* This is the central step in the MD5 algorithm. */
++#ifdef __PUREC__
++#define MD5STEP(f, w, x, y, z, data, s) \
++	( w += f /*(x, y, z)*/ + data,  w = w<<s | w>>(32-s),  w += x )
++#else
++#define MD5STEP(f, w, x, y, z, data, s) \
++	( w += f(x, y, z) + data,  w = w<<s | w>>(32-s),  w += x )
++#endif
++
++/*
++ * The core of the MD5 algorithm, this alters an existing MD5 hash to
++ * reflect the addition of 16 longwords of new data.  MD5Update blocks
++ * the data and converts bytes into longwords for this routine.
++ */
++void MD5Transform(uint32 buf[4], uint32 const in[16])
++{
++    register uint32 a, b, c, d;
++
++    a = buf[0];
++    b = buf[1];
++    c = buf[2];
++    d = buf[3];
++
++#ifdef __PUREC__	/* PureC Weirdness... (GG) */
++    MD5STEP(F1(b,c,d), a, b, c, d, in[0] + 0xd76aa478L, 7);
++    MD5STEP(F1(a,b,c), d, a, b, c, in[1] + 0xe8c7b756L, 12);
++    MD5STEP(F1(d,a,b), c, d, a, b, in[2] + 0x242070dbL, 17);
++    MD5STEP(F1(c,d,a), b, c, d, a, in[3] + 0xc1bdceeeL, 22);
++    MD5STEP(F1(b,c,d), a, b, c, d, in[4] + 0xf57c0fafL, 7);
++    MD5STEP(F1(a,b,c), d, a, b, c, in[5] + 0x4787c62aL, 12);
++    MD5STEP(F1(d,a,b), c, d, a, b, in[6] + 0xa8304613L, 17);
++    MD5STEP(F1(c,d,a), b, c, d, a, in[7] + 0xfd469501L, 22);
++    MD5STEP(F1(b,c,d), a, b, c, d, in[8] + 0x698098d8L, 7);
++    MD5STEP(F1(a,b,c), d, a, b, c, in[9] + 0x8b44f7afL, 12);
++    MD5STEP(F1(d,a,b), c, d, a, b, in[10] + 0xffff5bb1L, 17);
++    MD5STEP(F1(c,d,a), b, c, d, a, in[11] + 0x895cd7beL, 22);
++    MD5STEP(F1(b,c,d), a, b, c, d, in[12] + 0x6b901122L, 7);
++    MD5STEP(F1(a,b,c), d, a, b, c, in[13] + 0xfd987193L, 12);
++    MD5STEP(F1(d,a,b), c, d, a, b, in[14] + 0xa679438eL, 17);
++    MD5STEP(F1(c,d,a), b, c, d, a, in[15] + 0x49b40821L, 22);
++
++    MD5STEP(F2(b,c,d), a, b, c, d, in[1] + 0xf61e2562L, 5);
++    MD5STEP(F2(a,b,c), d, a, b, c, in[6] + 0xc040b340L, 9);
++    MD5STEP(F2(d,a,b), c, d, a, b, in[11] + 0x265e5a51L, 14);
++    MD5STEP(F2(c,d,a), b, c, d, a, in[0] + 0xe9b6c7aaL, 20);
++    MD5STEP(F2(b,c,d), a, b, c, d, in[5] + 0xd62f105dL, 5);
++    MD5STEP(F2(a,b,c), d, a, b, c, in[10] + 0x02441453L, 9);
++    MD5STEP(F2(d,a,b), c, d, a, b, in[15] + 0xd8a1e681L, 14);
++    MD5STEP(F2(c,d,a), b, c, d, a, in[4] + 0xe7d3fbc8L, 20);
++    MD5STEP(F2(b,c,d), a, b, c, d, in[9] + 0x21e1cde6L, 5);
++    MD5STEP(F2(a,b,c), d, a, b, c, in[14] + 0xc33707d6L, 9);
++    MD5STEP(F2(d,a,b), c, d, a, b, in[3] + 0xf4d50d87L, 14);
++    MD5STEP(F2(c,d,a), b, c, d, a, in[8] + 0x455a14edL, 20);
++    MD5STEP(F2(b,c,d), a, b, c, d, in[13] + 0xa9e3e905L, 5);
++    MD5STEP(F2(a,b,c), d, a, b, c, in[2] + 0xfcefa3f8L, 9);
++    MD5STEP(F2(d,a,b), c, d, a, b, in[7] + 0x676f02d9L, 14);
++    MD5STEP(F2(c,d,a), b, c, d, a, in[12] + 0x8d2a4c8aL, 20);
++
++    MD5STEP(F3(b,c,d), a, b, c, d, in[5] + 0xfffa3942L, 4);
++    MD5STEP(F3(a,b,c), d, a, b, c, in[8] + 0x8771f681L, 11);
++    MD5STEP(F3(d,a,b), c, d, a, b, in[11] + 0x6d9d6122L, 16);
++    MD5STEP(F3(c,d,a), b, c, d, a, in[14] + 0xfde5380cL, 23);
++    MD5STEP(F3(b,c,d), a, b, c, d, in[1] + 0xa4beea44L, 4);
++    MD5STEP(F3(a,b,c), d, a, b, c, in[4] + 0x4bdecfa9L, 11);
++    MD5STEP(F3(d,a,b), c, d, a, b, in[7] + 0xf6bb4b60L, 16);
++    MD5STEP(F3(c,d,a), b, c, d, a, in[10] + 0xbebfbc70L, 23);
++    MD5STEP(F3(b,c,d), a, b, c, d, in[13] + 0x289b7ec6L, 4);
++    MD5STEP(F3(a,b,c), d, a, b, c, in[0] + 0xeaa127faL, 11);
++    MD5STEP(F3(d,a,b), c, d, a, b, in[3] + 0xd4ef3085L, 16);
++    MD5STEP(F3(c,d,a), b, c, d, a, in[6] + 0x04881d05L, 23);
++    MD5STEP(F3(b,c,d), a, b, c, d, in[9] + 0xd9d4d039L, 4);
++    MD5STEP(F3(a,b,c), d, a, b, c, in[12] + 0xe6db99e5L, 11);
++    MD5STEP(F3(d,a,b), c, d, a, b, in[15] + 0x1fa27cf8L, 16);
++    MD5STEP(F3(c,d,a), b, c, d, a, in[2] + 0xc4ac5665L, 23);
++
++    MD5STEP(F4(b,c,d), a, b, c, d, in[0] + 0xf4292244L, 6);
++    MD5STEP(F4(a,b,c), d, a, b, c, in[7] + 0x432aff97L, 10);
++    MD5STEP(F4(d,a,b), c, d, a, b, in[14] + 0xab9423a7L, 15);
++    MD5STEP(F4(c,d,a), b, c, d, a, in[5] + 0xfc93a039L, 21);
++    MD5STEP(F4(b,c,d), a, b, c, d, in[12] + 0x655b59c3L, 6);
++    MD5STEP(F4(a,b,c), d, a, b, c, in[3] + 0x8f0ccc92L, 10);
++    MD5STEP(F4(d,a,b), c, d, a, b, in[10] + 0xffeff47dL, 15);
++    MD5STEP(F4(c,d,a), b, c, d, a, in[1] + 0x85845dd1L, 21);
++    MD5STEP(F4(b,c,d), a, b, c, d, in[8] + 0x6fa87e4fL, 6);
++    MD5STEP(F4(a,b,c), d, a, b, c, in[15] + 0xfe2ce6e0L, 10);
++    MD5STEP(F4(d,a,b), c, d, a, b, in[6] + 0xa3014314L, 15);
++    MD5STEP(F4(c,d,a), b, c, d, a, in[13] + 0x4e0811a1L, 21);
++    MD5STEP(F4(b,c,d), a, b, c, d, in[4] + 0xf7537e82L, 6);
++    MD5STEP(F4(a,b,c), d, a, b, c, in[11] + 0xbd3af235L, 10);
++    MD5STEP(F4(d,a,b), c, d, a, b, in[2] + 0x2ad7d2bbL, 15);
++    MD5STEP(F4(c,d,a), b, c, d, a, in[9] + 0xeb86d391L, 21);
++#else
++    MD5STEP(F1, a, b, c, d, in[0] + 0xd76aa478, 7);
++    MD5STEP(F1, d, a, b, c, in[1] + 0xe8c7b756, 12);
++    MD5STEP(F1, c, d, a, b, in[2] + 0x242070db, 17);
++    MD5STEP(F1, b, c, d, a, in[3] + 0xc1bdceee, 22);
++    MD5STEP(F1, a, b, c, d, in[4] + 0xf57c0faf, 7);
++    MD5STEP(F1, d, a, b, c, in[5] + 0x4787c62a, 12);
++    MD5STEP(F1, c, d, a, b, in[6] + 0xa8304613, 17);
++    MD5STEP(F1, b, c, d, a, in[7] + 0xfd469501, 22);
++    MD5STEP(F1, a, b, c, d, in[8] + 0x698098d8, 7);
++    MD5STEP(F1, d, a, b, c, in[9] + 0x8b44f7af, 12);
++    MD5STEP(F1, c, d, a, b, in[10] + 0xffff5bb1, 17);
++    MD5STEP(F1, b, c, d, a, in[11] + 0x895cd7be, 22);
++    MD5STEP(F1, a, b, c, d, in[12] + 0x6b901122, 7);
++    MD5STEP(F1, d, a, b, c, in[13] + 0xfd987193, 12);
++    MD5STEP(F1, c, d, a, b, in[14] + 0xa679438e, 17);
++    MD5STEP(F1, b, c, d, a, in[15] + 0x49b40821, 22);
++
++    MD5STEP(F2, a, b, c, d, in[1] + 0xf61e2562, 5);
++    MD5STEP(F2, d, a, b, c, in[6] + 0xc040b340, 9);
++    MD5STEP(F2, c, d, a, b, in[11] + 0x265e5a51, 14);
++    MD5STEP(F2, b, c, d, a, in[0] + 0xe9b6c7aa, 20);
++    MD5STEP(F2, a, b, c, d, in[5] + 0xd62f105d, 5);
++    MD5STEP(F2, d, a, b, c, in[10] + 0x02441453, 9);
++    MD5STEP(F2, c, d, a, b, in[15] + 0xd8a1e681, 14);
++    MD5STEP(F2, b, c, d, a, in[4] + 0xe7d3fbc8, 20);
++    MD5STEP(F2, a, b, c, d, in[9] + 0x21e1cde6, 5);
++    MD5STEP(F2, d, a, b, c, in[14] + 0xc33707d6, 9);
++    MD5STEP(F2, c, d, a, b, in[3] + 0xf4d50d87, 14);
++    MD5STEP(F2, b, c, d, a, in[8] + 0x455a14ed, 20);
++    MD5STEP(F2, a, b, c, d, in[13] + 0xa9e3e905, 5);
++    MD5STEP(F2, d, a, b, c, in[2] + 0xfcefa3f8, 9);
++    MD5STEP(F2, c, d, a, b, in[7] + 0x676f02d9, 14);
++    MD5STEP(F2, b, c, d, a, in[12] + 0x8d2a4c8a, 20);
++
++    MD5STEP(F3, a, b, c, d, in[5] + 0xfffa3942, 4);
++    MD5STEP(F3, d, a, b, c, in[8] + 0x8771f681, 11);
++    MD5STEP(F3, c, d, a, b, in[11] + 0x6d9d6122, 16);
++    MD5STEP(F3, b, c, d, a, in[14] + 0xfde5380c, 23);
++    MD5STEP(F3, a, b, c, d, in[1] + 0xa4beea44, 4);
++    MD5STEP(F3, d, a, b, c, in[4] + 0x4bdecfa9, 11);
++    MD5STEP(F3, c, d, a, b, in[7] + 0xf6bb4b60, 16);
++    MD5STEP(F3, b, c, d, a, in[10] + 0xbebfbc70, 23);
++    MD5STEP(F3, a, b, c, d, in[13] + 0x289b7ec6, 4);
++    MD5STEP(F3, d, a, b, c, in[0] + 0xeaa127fa, 11);
++    MD5STEP(F3, c, d, a, b, in[3] + 0xd4ef3085, 16);
++    MD5STEP(F3, b, c, d, a, in[6] + 0x04881d05, 23);
++    MD5STEP(F3, a, b, c, d, in[9] + 0xd9d4d039, 4);
++    MD5STEP(F3, d, a, b, c, in[12] + 0xe6db99e5, 11);
++    MD5STEP(F3, c, d, a, b, in[15] + 0x1fa27cf8, 16);
++    MD5STEP(F3, b, c, d, a, in[2] + 0xc4ac5665, 23);
++
++    MD5STEP(F4, a, b, c, d, in[0] + 0xf4292244, 6);
++    MD5STEP(F4, d, a, b, c, in[7] + 0x432aff97, 10);
++    MD5STEP(F4, c, d, a, b, in[14] + 0xab9423a7, 15);
++    MD5STEP(F4, b, c, d, a, in[5] + 0xfc93a039, 21);
++    MD5STEP(F4, a, b, c, d, in[12] + 0x655b59c3, 6);
++    MD5STEP(F4, d, a, b, c, in[3] + 0x8f0ccc92, 10);
++    MD5STEP(F4, c, d, a, b, in[10] + 0xffeff47d, 15);
++    MD5STEP(F4, b, c, d, a, in[1] + 0x85845dd1, 21);
++    MD5STEP(F4, a, b, c, d, in[8] + 0x6fa87e4f, 6);
++    MD5STEP(F4, d, a, b, c, in[15] + 0xfe2ce6e0, 10);
++    MD5STEP(F4, c, d, a, b, in[6] + 0xa3014314, 15);
++    MD5STEP(F4, b, c, d, a, in[13] + 0x4e0811a1, 21);
++    MD5STEP(F4, a, b, c, d, in[4] + 0xf7537e82, 6);
++    MD5STEP(F4, d, a, b, c, in[11] + 0xbd3af235, 10);
++    MD5STEP(F4, c, d, a, b, in[2] + 0x2ad7d2bb, 15);
++    MD5STEP(F4, b, c, d, a, in[9] + 0xeb86d391, 21);
++#endif
++
++    buf[0] += a;
++    buf[1] += b;
++    buf[2] += c;
++    buf[3] += d;
++}
++
++#endif
+diff -u3 -N -r -s 7.501/MD5.h 7.502/MD5.h
+--- 7.501/MD5.h	Thu Jan  1 00:00:00 1970
++++ 7.502/MD5.h	Sat Nov 25 12:37:34 2006
+@@ -0,0 +1,27 @@
++#ifndef MD5_H
++#define MD5_H
++
++#ifdef __alpha
++typedef unsigned int uint32;
++#else
++typedef unsigned long uint32;
++#endif
++
++struct MD5Context {
++	uint32 buf[4];
++	uint32 bits[2];
++	unsigned char in[64];
++};
++
++void MD5Init(struct MD5Context *context);
++void MD5Update(struct MD5Context *context, unsigned char const *buf,
++	       unsigned len);
++void MD5Final(unsigned char digest[16], struct MD5Context *context);
++void MD5Transform(uint32 buf[4], uint32 const in[16]);
++
++/*
++ * This is needed to make RSAREF happy on some MS-DOS compilers.
++ */
++typedef struct MD5Context MD5_CTX;
++
++#endif /* !MD5_H */
+Files 7.501/memsrch.asm and 7.502/memsrch.asm are identical
+diff -u3 -N -r -s 7.501/message.h 7.502/message.h
+--- 7.501/message.h	Sun Nov 12 16:00:50 2006
++++ 7.502/message.h	Sat Nov 25 11:28:00 2006
+@@ -1610,3 +1610,5 @@
+ extern TCHAR WHICH_INTERNAL[];
+ 
+ extern TCHAR CODE_PAGE[];
++
++#endif /* DEFINE_GLOBALS */
+Files 7.501/message.h_d and 7.502/message.h_d are identical
+diff -u3 -N -r -s 7.501/misc.c 7.502/misc.c
+--- 7.501/misc.c	Sun Nov 12 16:00:50 2006
++++ 7.502/misc.c	Sat Nov 25 11:29:22 2006
+@@ -49,6 +49,12 @@
+ 
+ #include "4all.h"
+ 
++#if (_MSC_VER <= 700)
++/* from conio.h, note can not be defined and include MESSAGE.H */
++#define BLINK       128 /* blink bit */
++#endif
++
++
+ static LPTSTR _fastcall NextRange( TCHAR * );
+ static int _fastcall GetRangeArgs( TCHAR *, RANGES * );
+ static int _fastcall GetStrTime( TCHAR *, int *, int * );
+Files 7.501/mkbatcom.btm and 7.502/mkbatcom.btm are identical
+Files 7.501/mkdos.btm and 7.502/mkdos.btm are identical
+Files 7.501/mkproc.btm and 7.502/mkproc.btm are identical
+Files 7.501/model.inc and 7.502/model.inc are identical
+Files 7.501/modules.asm and 7.502/modules.asm are identical
+Files 7.501/msc7.btm and 7.502/msc7.btm are identical
+Files 7.501/option.c and 7.502/option.c are identical
+Files 7.501/option.exe and 7.502/option.exe are identical
+Files 7.501/option.rc and 7.502/option.rc are identical
+diff -u3 -N -r -s 7.501/parser.c 7.502/parser.c
+--- 7.501/parser.c	Sun Nov 12 16:00:50 2006
++++ 7.502/parser.c	Thu Nov 23 19:18:26 2006
+@@ -53,6 +53,7 @@
+ static void _fastcall ParsePrompt( TCHAR _far *, LPTSTR pszBuffer );
+ 
+ 
++
+ // INT 2Eh "back door" to 4DOS; also used by %@EXEC[] in all platforms
+ int PASCAL DoINT2E( TCHAR _far *pszCommand )
+ {
+@@ -1501,10 +1502,12 @@
+ 	if (( gnCurrentDisk = _getdrive()) < 0 )
+ 		gnCurrentDisk = 0;
+ 
++#ifdef SHAREWARE_VERSION
+ 	// Decrement command counter for restricted usage (actually increment,
+ 	// since it is negative)
+ 	if ( glExpDate < 0L )
+ 		glExpDate += SW_RESTRICT_CMDMUL;
++#endif
+ 
+ 	// get prompt from environment, or use default if none
+ 	if (( lpszPrompt = get_variable( PROMPT_NAME )) != 0L ) {
+Files 7.501/parserrs.asd and 7.502/parserrs.asd are identical
+Files 7.501/parserrs.asm and 7.502/parserrs.asm are identical
+Files 7.501/parserrs.txd and 7.502/parserrs.txd are identical
+Files 7.501/parserrs.txt and 7.502/parserrs.txt are identical
+Files 7.501/parspath.asm and 7.502/parspath.asm are identical
+Files 7.501/pbdos.btm and 7.502/pbdos.btm are identical
+Files 7.501/product.asm and 7.502/product.asm are identical
+Files 7.501/product.h and 7.502/product.h are identical
+Files 7.501/prodvars.txt and 7.502/prodvars.txt are identical
+diff -u3 -N -r -s 7.501/proto.h 7.502/proto.h
+--- 7.501/proto.h	Sun Nov 12 16:00:50 2006
++++ 7.502/proto.h	Thu Nov 23 18:40:54 2006
+@@ -469,7 +469,9 @@
+ int PASCAL FileTimeToDOSTime( PFILETIME, USHORT *, USHORT * );
+ void SetWin95Flags(void);
+ #if _DOS
++#ifdef SHAREWARE_VERSION
+ void AccessSharewareData( SHAREWARE_DATA *, int );
++#endif
+ void GetMachineName( LPTSTR );
+ #endif
+ LPTSTR IniReadWrite( int, LPTSTR, LPTSTR, LPTSTR, LPTSTR );
+Files 7.501/readme.txt and 7.502/readme.txt are identical
+Files 7.501/release.dos and 7.502/release.dos are identical
+Files 7.501/relinfo.btm and 7.502/relinfo.btm are identical
+Files 7.501/relocate.asm and 7.502/relocate.asm are identical
+Files 7.501/renum.btm and 7.502/renum.btm are identical
+Files 7.501/renum2.btm and 7.502/renum2.btm are identical
+Files 7.501/reshigh.asm and 7.502/reshigh.asm are identical
+Files 7.501/sasjp.lib and 7.502/sasjp.lib are identical
+Files 7.501/screenio.c and 7.502/screenio.c are identical
+Files 7.501/select.c and 7.502/select.c are identical
+Files 7.501/selectc.c and 7.502/selectc.c are identical
+Files 7.501/sencrypt.asm and 7.502/sencrypt.asm are identical
+Files 7.501/serial.asm and 7.502/serial.asm are identical
+Files 7.501/servdata.asm and 7.502/servdata.asm are identical
+Files 7.501/server.asm and 7.502/server.asm are identical
+Files 7.501/serverrs.asd and 7.502/serverrs.asd are identical
+Files 7.501/serverrs.asm and 7.502/serverrs.asm are identical
+Files 7.501/serverrs.txd and 7.502/serverrs.txd are identical
+Files 7.501/serverrs.txt and 7.502/serverrs.txt are identical
+Files 7.501/setup.mak and 7.502/setup.mak are identical
+diff -u3 -N -r -s 7.501/sharware.h 7.502/sharware.h
+--- 7.501/sharware.h	Thu Jan  1 00:00:00 1970
++++ 7.502/sharware.h	Sat Nov 25 15:49:56 2006
+@@ -0,0 +1,25 @@
++#ifdef SHAREWARE_VERSION
++
++/* shareware/registered trial/registration data */
++typedef struct SHAREWARE_DATA
++{
++} SHAREWARE_DATA;
++
++/* global flags */
++extern int gfShareware, gfSharewareDataRead;
++
++/* expiration date of trial version, negative values ok to use, positive then times up */
++extern long glExpDate; 
++#define SW_RESTRICT_CMDMUL 1
++
++/* reads shareware registration data */
++void AccessSharewareData( SHAREWARE_DATA *SharewareData, int unknown);
++
++/* write shareware trial data */
++void AccessSharewareDup( SHAREWARE_DATA *SharewareData, int unknown);
++
++
++/* display serial number (brand) info */
++void TestBrand(int unknown);
++
++#endif
+Files 7.501/shelltab.asm and 7.502/shelltab.asm are identical
+Files 7.501/srcfiles.btm and 7.502/srcfiles.btm are identical
+Files 7.501/srchenv.asm and 7.502/srchenv.asm are identical
+Files 7.501/startupm.lib and 7.502/startupm.lib are identical
+Files 7.501/strencc.c and 7.502/strencc.c are identical
+Files 7.501/strmenc.c and 7.502/strmenc.c are identical
+Files 7.501/strmenc.h and 7.502/strmenc.h are identical
+Files 7.501/swapchk.asm and 7.502/swapchk.asm are identical
+diff -u3 -N -r -s 7.501/swerror.c 7.502/swerror.c
+--- 7.501/swerror.c	Thu Jan  1 00:00:00 1970
++++ 7.502/swerror.c	Thu Nov 23 18:47:38 2006
+@@ -0,0 +1 @@
++/* ShareWare Error */
+Files 7.501/syscmds.c and 7.502/syscmds.c are identical
+Files 7.501/tokens.asm and 7.502/tokens.asm are identical
+Files 7.501/trmac.asm and 7.502/trmac.asm are identical
+Files 7.501/umbreg.asm and 7.502/umbreg.asm are identical
+Files 7.501/util.inc and 7.502/util.inc are identical
+Files 7.501/version.h and 7.502/version.h are identical
+Files 7.501/win95.asm and 7.502/win95.asm are identical
+Files 7.501/window.c and 7.502/window.c are identical

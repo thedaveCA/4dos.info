@@ -1,0 +1,88 @@
+
+                    JP Software Patch Documentation
+
+This patch updates 4DOS as follows:
+
+     Original:      Version 5.51 rev A build 44
+     Updated to:    Version 5.51 rev B
+     Release date:  10-17-95
+
+This file explains how to install the patch.  To use this patch, you
+must have:
+
+     * JP Software's PATCH.EXE program.  PATCH.EXE is distributed in a
+       separate file, 4DPATCH.ZIP, and is available on our CompuServe,
+       BBS, and Internet sites.  You should be able to find it where you
+       found this file.  (* Also see note below regarding other versions
+       of PATCH.EXE.)
+
+     * A copy of 4DOS 5.51 rev A build 44.  The simplest way to check
+       your revision level is to use the VER /R command.
+
+If VER /R shows that you currently have 4DOS 5.51 rev A build 43 (rather
+than build 44), download the file 4DOS551A.ZIP.  This is a patch file
+which updates build 43 to build 44.  Apply that patch first, then apply
+this one.  You can NOT apply this patch directly to build 43, you must
+update to build 44 first.
+
+To use this patch, copy the 4DOS551B.RTP file to the directory where
+your 4DOS version 5.51 files are stored.  Make sure JP Software's
+PATCH.EXE is in the same directory, or in a directory on your
+PATH, then enter the command:
+
+      patch 4DOS551B
+
+
+This patch modifies the following files:
+
+          4DOS.COM
+          4DOS.HLP
+          APPNOTES.DOC
+          UPDAT551.DOC
+          ORDER.FRM
+          ORDERINF.DOC
+
+Any branding (name and serial number) information will be preserved
+in the modified files.  If any of the files are missing the patch
+program will continue without patching them.
+
+If you want to test 4DOS to make sure the patch worked, restart the
+program and then use the VER /R command.
+
+If you are short on disk space and receive a message that there is not
+enough space to perform the patch, you can use a command like this to
+reduce the disk space required:
+
+      patch /noundo 4DOS551B
+
+This will make recovery slightly more difficult in the unlikely event of
+a power failure or similar problem during the patch process, but will
+reduce the disk space required to perform the patch.
+
+
+For a list of changes in this revision see the file UPDAT551.DOC after
+the patch is completed.  Any substantial changes in this revision are
+included in the body of the file, with the revision letter included to
+the left of the relevant paragraphs (e.g.  ==>B for a change made in
+revision B).  Minor changes and bug fixes are listed in chronological
+order at the end of the UPDAT551.DOC file.  If you do not have a copy
+order at the end of the UPDAT551.DOC file.  If you do not have a copy
+of UPDAT551.DOC in your original directory, the patch program cannot
+update it and you will not be able to view these lists.
+
+
+(* JP Software's PATCH.EXE is the version 1.10 patch program from the
+.RTPatch patch software sold by PocketSoft Inc.  If you have a copy of
+PATCH.EXE version 1.10 or later from another company which also uses
+.RTPatch to update its software, you can use it with JP Software
+patches. However, we recommend that you do NOT use version 2.0 of
+PATCH.EXE under OS/2.  When PATCH.EXE 2.0 is used under OS/2 it patches
+the files properly, but does not correctly update the dates and times of
+the patched files.)
+
+
+Copyright 1995, JP Software Inc., All Rights Reserved.  Published by JP
+Software Inc., P.O. Box 1470, E. Arlington, MA 02174 USA, (617)
+646-3975.  4DOS is a registered trademark and 4OS2, Take Command, JP
+Software, and all JP Software logos are trademarks of JP Software Inc.
+

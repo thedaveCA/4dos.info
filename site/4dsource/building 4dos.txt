@@ -1,0 +1,33 @@
+1. Building 4DOS.COM
+You need patch(1), MASM 6.11d or 6.15 and VC 1.5x with library sources (for msdos.h).
+
+       1. Apply CODE.DIF against the original source code release by Rex Conn.
+       2. Create a DOS sub-directory. 4DOS.COM will be there if built successfully.
+       3. Modify MSC7.BTM to set your environment variables PATH, INCLUDE, LIB.
+       4. Run MKDOS.BTM. You should see one inevitable A4013 warning. Ignore it.
+
+Before modifying the code, increment both VER_BUILD and INTVER so that the
+new shell does not inherit the old one, or it will crash soon or later. OPTION
+must be rebuilt to work with each build.
+
+2. Building OPTION.EXE
+You need Watcom C, MASM 5.10 and Mix C/WinDOS Toolchest with source code.
+
+       1. Install the binary and source versions of the Mix C/WinDOS Toochest.
+       2. Apply CWIND.DIF against the source code of the library and build it.
+       3. Unzip the OPTION sources into a subdirectory of the 4DOS sources.
+       4. Edit MAKESET.BTM to set your environment variables WATCOM, TUI.
+       5. Type "MAKE OPTION R".
+
+
+
+3. Building 4HELP/4MAKE/HELPCFG
+You need BP7 (TP7), TPRO5, BP7PATCH, Turbofix, EDITOOLS4.
+
+       1. Install BP7, EDITOOLS4 and TPRO5 and build the latter's units.
+       2. Apply the BP7 patch and Turbofix.
+       3. Update
+          tpcmd.pas,tpdos.pas,tpedit.pas,tpinline.pas,tpmemchk.pas,tpstring.pas
+          and tpcrt.pas and copy tpdefine.inc,tppick.in1 and tpmouse.asm from TPRO5.
+       4. Apply 4HELP.DIF and adjust TPC.CFG and BUILD.BTM for your environment.
+       5. Run BUILD.BTM.

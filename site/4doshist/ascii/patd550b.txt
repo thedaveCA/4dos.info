@@ -1,0 +1,69 @@
+                               JP Software
+
+             4DOS 5.5 rev A ==> 5.5 rev B Patch Documentation
+
+                            October 19, 1994
+
+
+Copyright 1994, JP Software Inc., All Rights Reserved.  Published by JP
+Software Inc., P.O. Box 1470, E. Arlington, MA 02174 USA, (617)
+646-3975.  4DOS is a registered trademark of JP Software Inc.
+
+
+This file explains how to install the 4DOS 5.5 rev B patch.
+
+To use the patch, you must have:
+
+     * JP Software's PATCH.EXE program.  This program is in a separate
+     file, PATCH.ZIP on CompuServe, or 4DPATCH.ZIP on bulletin boards
+     and the Internet.  [* See note below.]
+
+     * A copy of 4DOS 5.5 rev A.  The simplest way to check your
+     revision level is to use the 4DOS VER /R command.
+
+To use this patch, copy the 4DOS55A.RTP file to the directory where your
+4DOS version 5.5 files are stored. Make sure JP Software's PATCH.EXE is
+in the same directory, or in a directory on your PATH, then enter the
+command:
+
+      patch 4dos55b
+
+This patch converts 4DOS 5.5 rev A to version 5.5 rev B.  It modifies
+only 4DOS.COM, all other files are unchanged from rev A.  Branding (name
+and serial number) information in your 4DOS.COM file will be preserved
+in the modified file.
+
+If you want to test 4DOS.COM to make sure the patch worked, restart
+4DOS, then use the VER /R command.  This command will report "4DOS
+Revision A" (if the patch did not work) or "4DOS Revision B" (if it did
+work).
+
+If you are short on disk space and receive a message that there is not
+enough space to perform the patch, you can use a command like this to
+reduce the disk space required:
+
+      patch /noundo 4dos55b
+
+This will make recovery slightly more difficult in the unlikely event of
+a power failure or similar problem during the patch process, but will
+reduce the disk space required to perform the patch.
+
+
+[* JP Software's PATCH.EXE is the version 1.10 patch program from the
+.RTPatch patch software sold by PocketSoft Inc.  If you have a copy of
+PATCH.EXE version 1.10 or later from another company which also uses
+.RTPatch to update its software, you can use it with JP Software
+patches. However, we recommend that you do NOT use version 2.0 of
+PATCH.EXE under OS/2.  When PATCH.EXE 2.0 is used under OS/2 it patches
+the files properly, but does not correctly update the dates and times of
+the patched files.]
+
+
+4DOS version 5.5 revision B includes the following changes to version
+5.5 revision A:
+
+     * Fixed a problem which could cause MOVE to delete files without
+       moving them if you attempted to MOVE a file to itself (e.g.
+       MOVE *.DAT with no target specified).
+
+

@@ -1,0 +1,140 @@
+                               JP Software
+
+             4DOS 5.0 rev C ==> 5.0 rev D Patch Documentation
+
+                             February 8, 1994
+
+
+Copyright 1994, JP Software Inc., All Rights Reserved.  Published by JP
+Software Inc., P.O. Box 1470, E. Arlington, MA 02174 USA, (617)
+646-3975.  4DOS is a registered trademark of JP Software Inc.
+
+
+This file explains how to install the 4DOS 5.0 rev D patches.
+
+To use the patch, you must have:
+
+     * JP Software's PATCH.EXE program.  This program is in a separate
+     file, PATCH.ZIP on CompuServe, or 4DPATCH.ZIP on bulletin boards
+     and the Internet.  [* See note below.]
+
+     * A copy of 4DOS 5.0 rev C.  The simplest way to check your
+     revision level is to use the 4DOS VER /R command.
+
+     If you find you have rev A or rev B, you must download additional
+     patch files and sequentially update your current copy of 4DOS to
+     rev C before you can apply this latest rev D patch.  To update from
+     rev A to rev B you need the patch file 4D50B.ZIP.  To update from
+     rev B to rev C you need 4D50C.ZIP.  The older patch files should be
+     available from the same place where you got this rev D file.
+
+To use this patch, copy the 4DOS50D.RTP file to the directory where your
+4DOS version 5.0 files are stored. Make sure JP Software's PATCH.EXE is
+in the same directory, or in a directory on your PATH, then enter the
+command:
+
+      patch 4dos50d
+
+This patch converts 4DOS 5.0 rev C to version 5.0 rev D.  It modifies
+only 4DOS.COM, all other files are unchanged from rev C. Branding (name
+and serial number) information in your 4DOS.COM file will be preserved
+in the modified file.
+
+If you want to test 4DOS.COM to make sure the patch worked, restart
+4DOS, then use the VER /R command.  This command will report "4DOS
+Revision C" (if the patch did not work) or "4DOS Revision D" (if it did
+work).
+
+If you are short on disk space and receive a message that there is not
+enough space to perform the patch, you can use a command like this to
+reduce the disk space required:
+
+      patch /noundo pat50d
+
+This will make recovery slightly more difficult in the unlikely event of
+a power failure or similar problem during the patch process, but will
+reduce the disk space required to perform the patch.
+
+
+[* JP Software's PATCH.EXE is the version 1.10 patch program from the
+.RTPatch patch software sold by PocketSoft Inc.  If you have a copy of
+PATCH.EXE version 1.10 or later from another company which also uses
+.RTPatch to update its software, you can use it with JP Software
+patches. However, we recommend that you do NOT use version 2.0 of
+PATCH.EXE under OS/2.  When PATCH.EXE 2.0 is used under OS/2 it patches
+the files properly, but does not correctly update the dates and times of
+the patched files.]
+
+
+4DOS version 5.0 revision D includes the following changes to version
+5.0 revision C:
+
+   General Features:
+
+     * Fixed a problem with nested aliases with leading whitespace.
+
+     * 4DOS now checks for an error return on normal output and will
+       invoke the ON ERROR command if one has been set up.  This allows
+       you to use ON ERROR to catch errors in redirected output from
+       internal commands.
+
+     * The /L, /LA, and /LH startup switches now work as documented.
+
+     * Worked around a bug in SHARE which caused trouble when creating
+       unique filenames very rapidly, particularly when using multiple
+       pipes (e.g. DIR | SORT | LIST /S) on fast systems.
+
+     * Fixed a problem with negative numbers in %@EVAL.
+
+     * Fixed date, time, and size ranges so that you can use environment
+       variables inside a range specification.
+
+     * Fixed a problem with using the 4DOS escape character before a
+       redirection character.
+
+   Command Changes:
+
+     * BEEP:  Ctrl-C or Ctrl-Break during a beep in a .BTM file will now
+       stop both the beep and the batch file.
+
+     * CTTY:  Worked around a bug in SHARE which caused problems in
+       opening the device named in the CTTY command.
+
+     * DESCRIBE:  Fixed a problem where DESCRIBE would exit if you hit
+       Enter and were describing files with a wildcard file name.
+
+     * DIR:  Fixed a problem with 0-byte DESCRIPT.ION files.
+
+     * DIR and SELECT:  Fixed a problem with displaying file dates after
+       2024.
+
+     * DO:  Fixed a problem with DO UNTIL which required two ENDDOs for
+       the loop to work.
+
+     * DRAWBOX:  Now accepts SHADOW and ZOOM in either order.
+
+     * GOTO:  Fixed a problem with the /I switch.
+
+     * GLOBAL:  Now checks to see if you've done a QUIT / CANCEL from
+       within the GLOBAL command.
+
+     * IF / IFF:  now strip leading whitespace from the IF test
+       arguments.
+
+     * LIST:  Fixed a problem with /W and lines of exactly the screen
+       width; fixed problems with files over 64K long.
+
+     * LOG:  Eliminated extra white space prior to the text in a "LOG /H
+       text" command; changed LOG so it won't try to look for options
+       anywhere but at the beginning of the line.
+
+     * MOVE and RENAME:  Now return an error code if no files were moved
+       or renamed.
+
+     * SELECT:  Fixed a bug in SELECT /I; also SELECT can now be nested
+       in other SELECTs.
+
+     * START:  Fixed a bug in /WIN[3]S=filename.
+
+     * SETDOS:  SETDOS /A2 will now force the %_ANSI variable to 0.
+

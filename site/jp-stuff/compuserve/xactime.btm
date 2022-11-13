@@ -1,0 +1,188 @@
+::  XACTIME.BTM  Time by Telephone Utility         Version 1.0
+::                                                 released 15-Dec-95
+::
+::  by                                             Klaus Meinhard
+::                                                 Brahmsstr. 12
+::                                                 G 26842 Ostrhauderfehn
+::                                                 Germany
+::                                                 Compuserve 100115,2025
+::
+::  XACTIME.BTM is a utility to set your internal clock by calling an accu-
+::  rate time source by phone.
+::
+::  This btm obviously needs to be customized: you need at least the phone
+::  number of a provider for a time source that sends an ascii time string
+::  over the phone for every second. Once you have found that, you need to
+::  take a look at the string you receive. The string handling you need may
+::  differ a bit. I have outlined how to do this in the relevant section of
+::  this btm.
+::
+::  The modem sequences I used are all pretty standard basic AT commands.
+::
+::  CUSTOMIZATION:
+::
+::  Set _TELNR to the phone number of your time source.
+::  The number you find here is for a german time source. US users may want
+::  to experiment with common "timekeepers" such as:
+::
+::  US Naval Observatory (Washington, DC) 202-653-0351
+::  National Institute of Standards and Technology (Boulder, CO) 714-587-6687
+::  or more local numbers that mirror that information.
+::
+::  Set _COM to your modem port (COM1 ... COM4).
+::
+::  Set _ATCOM to ATDT for tone,
+::                ATDP for puls dial.
+::
+::  Set _ATINI to the modem initialize string you want. (Result codes must be
+::  displayed in verbose form, but that is factory standard with my Zyxel). I
+::  leave the loudspeaker on as control)
+::
+::  Set _ATBREAK to the modem break string. +++ seems to be standard.
+::  Set _ATHANGUP to the modem hang up string.
+::
+
+
+:CUSTOMIZE
+
+    setlocal
+    unalias *
+    on break goto END
+
+::  User Parameters?
+    if [%1]==[-?] .or. [%1]==[/?] .or. [%1]==[?] goto USAGE
+
+::  ******************************************************
+    set _TELNR=0531 512038
+    set _COM=COM1
+    set _ATCOM=ATDP
+    set _ATINI=AT&F&B14M2
+    set _ATBREAK=+++
+    set _ATHANGUP=ATH
+::  ******************************************************
+
+    mode %_com:2400,n,8,1 > nul
+
+    set _oldfg=%_fg
+    set _oldbg=%_bg
+    set _oldci=%_ci
+    set _oldco=%_co
+
+    setdos /s0:0
+
+:START
+
+    gosub SCREEN
+    screen 13 0
+
+:DIAL
+
+    scrput 11 6 bri yel on blu ` Ctrl-C to quit. `
+    scrput 3 6 bri whi on cya %@repeat[ÿ,66]
+    scrput 3 6 bri whi on cya ` Modem initialization ...                   `
+
+::  Send the initialization string to the modem
+    echo %_atini > %_com
+
+::  Modem may need time to "digest" the ini string.
+    delay 1
+
+::  Here we do the actual dialling.
+    scrput 3 6 bri whi on cya %@repeat[ÿ,66]
+    scrput 3 6 bri whi on cya ` Dialling :` %[_telnr]
+    echo %[_atcom]%[_telnr] > %_com
+    delay 10
+    scrput 3 6 bri whi on cya ` Listening ...                              `
+
+:CHECK
+::  We have to do a loop here, because the modem sends a few other characters
+::  and carriage returns. Keep this loop as fast as possible, or you won't
+::  catch the beginning of the strings sent in intervals of 1 second!
+::
+::  This is where we get the ascii time string. Remove the colons in the
+::  third line to see what you receive. After that it is straight string
+::  handling.
+::  The test for MEZ shows me that I have received the correct string from
+::  the beginning. If my modem gets a BUSY signal I simply start again.
+
+    do 60
+        input /c %%_var < %_com
+::      echo %_var
+        iff .%@instr[20,3,%_var] eq .MEZ then
+            set _res=%@instr[0,24,%_var]
+            leave
+        endiff
+        if .%@index[%_var,BUSY] ge .0 goto DIAL
+    enddo
+
+:HANGUP
+
+    echos %_atbreak > com1
+    delay 1
+    echo %_athangup > com1
+
+    scrput 3 6 bri whi on cya %@repeat[ÿ,66]
+    scrput 3 6 bri whi on cya ` Modem is OFFLINE                           `
+
+:GETSTRING
+::  Extract the year(yy), month(mm), day(dd), hour(hh), minute(mi), second(ss)
+::  from _RES. This will probably be different in your time string.
+
+    set yy=%@instr[0,4,%_res]
+    set mm=%@instr[5,2,%_res]
+    set dd=%@instr[8,2,%_res]
+    set hh=%@instr[11,2,%_res]
+    set mi=%@instr[14,2,%_res]
+    set ss=%@instr[17,2,%_res]
+
+::  You will have to put these date strings together according to your
+::  country's usage
+    scrput 6 6 bri whi on blu ` Date received: `%dd-%mm-%yy
+    scrput 8 6 bri whi on blu ` Time received: `%hh:%mi:%ss
+
+    date %dd-%mm-%yy
+    time %hh:%mi:%ss
+
+    scrput 11 6 cya on cya %@repeat[ÿ,66]
+    scrput 11 6 bri whi on cya ` New date and time set! `
+
+:END
+
+    echos %_atbreak > %_com
+    delay 1
+    echo %_athangup > %_com
+    color %_oldfg on %_oldbg
+    setdos /s%[_oldco]:%[_oldci]
+    screen 23 0
+    quit
+
+:SCREEN
+
+    cls
+    drawbox 2 5 12 72 1 bri whi on bri blu fill blu sha
+    scrput 2 21 bri whi on red ` XACTIME Phone external time source `
+    drawhline 4 5 68 1 bri whi on bri blu
+    drawhline 10 5 68 1 bri whi on bri blu
+    return
+
+
+
+:USAGE
+
+    cls
+    text
+
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³                                                                           ³
+³ XACTIME  ÄÄÄÄÄÄÄ              Utility to set system date and time        ³
+³                                by phoning an accurate time source.        ³
+³                                                                           ³
+³ Syntax:  XACTIME               Program execution. For customisation       ³
+³                                hints see header of this file.             ³
+³                                                                           ³
+³          XACTIME /?            Syntax  (this screen)                      ³
+³                                                                           ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+    endtext
+    goto END

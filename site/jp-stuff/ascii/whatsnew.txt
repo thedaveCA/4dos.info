@@ -1,0 +1,786 @@
+                   WHATSNEW.TXT -- September 2006
+
+                          JP Software Inc. 
+                            P.O. Box 328 
+                     Chestertown, MD 21620, USA 
+
+                           (410) 810-8818 
+                         fax (410) 810-0026 
+
+                       Email sales@jpsoft.com 
+                       support@jpsoft.com 
+                       Web http://jpsoft.com 
+
+
+NEW VERSION OVERVIEW -  Take Command and 4NT 8.0
+------------------------------------------------ 
+
+Since the last major release we've added over 200 new features,
+commands, switches, variables, and other enhancements to 4NT and
+Take Command! 
+
+This is a summary of the compatibility fixes and new features.  For 
+complete details, see the appropriate topics in the online help. 
+
+
+FEATURE LIST:
+-------------
+
+    The window menus are now in the language dll's, so they will be
+      localized for English, German, and French.
+      
+    You can now specify regular expressions for file name tests.  
+      The syntax is:
+      
+        ::regex
+	
+      For example:
+     
+        dir ::ca[td]
+      
+    Changed the startup inheritance so that 4NT / TC will only inherit
+      .INI values from a prior 4NT / TC shell if they're a child pipe 
+      process or were started from a parent 4NT / TC process.  (This 
+      also means the %_shell internal variable has changed; see below.)
+
+    Directory Aliases - are a shorthand way of specifying drive / 
+      pathnames.  For example, if you define an alias:
+
+        alias pf:=c:\program files
+
+      Then you can reference the files in "c:\program files\jpsoft" by
+      entering "pf:\jpsoft".  Directory aliases work in places that 
+      accept filenames and directory names, including filename 
+      completion.
+
+    FTP / IFTP - added internal support for additional FTP LIST formats.
+      The parser should now be able to recognize these formats:
+
+        EPLF
+        WFTPD
+        VMS (single-line filenames only)
+        NetPresenz (Macintosh)
+        NetWare
+        All known UNIX and Linux formats
+        Windows FTP server
+
+    FTP - now supports FTP / FTPS accounts where you do not have
+      access to the root (i.e., logon puts you into a subdirectory).
+      (IFTP already supported this.)  Unfortunately, this also means
+      that FTP access (not IFTP) is slightly slower.
+      
+    FTP / IFTP - added support for symbolic hostnames (i.e., in
+      "\windows\system32\drivers\etc\hosts"), and using symbolic
+      names and port numbers with no username / password.
+      
+    If you press Ctrl-C in Take Command, it now checks to see if it is
+      at the prompt (where a "Copy" would be valid); if it is not, a 
+      Ctrl-C will act like a Ctrl-Break.
+
+    Added an additional parameter type for alias argument expansion:
+
+      %-n$ - substitute all of the arguments from 1 to n-1.
+
+    Added an additional parameter type for batch variable expansion:
+
+      %-n$ - substitute all of the arguments from 1 to n-1.
+
+    Added an additional parameter type for user-defined function 
+      argument expansion:
+
+      %-n$ - substitute all of the arguments from 1 to n-1.
+
+    Added support for stream completion (i.e., "test:t<tab>").  Note
+      that you cannot attempt to complete both a filename and a stream
+      name at the same time (i.e., "t*:t<tab>" will NOT work!).
+
+    Added regular expression searches of file descriptions.  The syntax
+      is:
+
+      /R"text"
+
+      The regular expression searches also support exclusions
+      (/!R"text").
+
+    Added ! (exclusion) for /I (description) searches.  The syntax is:
+
+      /!I"text"
+
+    Added ! (exclusion) for /[D..] (date) ranges.  The syntax is:
+
+      /![D...]
+
+      For example, to exclude all of today's files:
+
+        /![D]
+
+    Added ! (exclusion) for /[S..] (size) ranges.  The syntax is:
+
+      /![Sn]
+
+      For example, to exclude all files that are >= 100 bytes:
+
+        /![S100]
+
+    Added ! (exclusion) for /[T..] (time) ranges.  The syntax is:
+
+      /![T...]
+
+    File exclusion ranges now allow directories to be excluded.  For
+      example:
+
+      dir /s /[!foo\] *  - exclude any subdirectories named "foo" 
+        anywhere in the directory tree.
+
+    When at the command prompt (i.e., not executing a batch file) the
+      parser will look for the following aliases:
+
+        PRE_INPUT - executed immediately before accepting input for a
+	  new command line.
+	  
+        PRE_EXEC - executed immediately after a command line is entered
+	  (before any expansion or redirection).
+	  
+        POST_EXEC - executed immediately after returning from a
+	  command and before displaying the prompt.
+	  
+      None of these aliases will be passed any arguments.
+      
+    Plugins can now define functions that will receive every keystroke
+      entered at the command prompt.  A keystroke plugin can call
+      other functions or even change the keystroke before passing it
+      back to 4NT / TC.
+	  
+
+Startup Options
+---------------
+
+    There is a new startup switch for 4NT and Take Command:
+
+      /H - start 4NT or TC as a hidden window.  Note that in 4NT you 
+             will still see the console window momentarily appear and
+	     then disappear (Windows limitation).  With TC, you will 
+	     not see any window appear. The 4NT / TC window will not 
+	     appear on the start bar, or in the Alt-Tab list of 
+	     applications -- if you need to kill it you'll have to 
+	     use the Windows Task Manager.
+
+
+Command Line Editing:
+---------------------
+
+    Added Shift-Ins as an alternative to ^V (paste from clipboard).
+
+    Filename completion now checks whether the filename is inside a
+      variable function, so you no longer need to add a space following
+      the left bracket (i.e., "%@name[a<tab>]" instead of 
+      "%@name[ a<tab>]".)
+
+
+New .INI directives:
+--------------------
+
+    AutoCancel=NO|yes - if set to YES, a ^C will cancel a batch file 
+      without any prompting.
+
+    AutoRun=YES|no - if set to NO, 4NT / TC will not execute any
+      applications in the "Software\Microsoft\Command Processor\Autorun"
+      registry keys in HKLM or HKCU.
+      
+    BGColorRGB=n,n,n (TCMD only) - set the default background color
+      as an RGB value.
+      
+    FGColorRGB=n,n,n (TCMD only) - set the default foreground color
+      as an RGB value.
+      
+    InactiveTransparency=nnn (TCMD only) - set the transparency level
+      of the TCMD window when it is out of focus (range is 40-255).
+
+    ListInverseColors=fg on bg (4NT only) - set the color to use in
+      LIST when showing search matches.
+
+    LogAll (TCMD only) - log all output (see LOG below).
+    
+
+Modified .INI directives:
+-------------------------
+
+    ColorDir - now supports and/or/xor tests for the attributes (see 
+      DIR).
+
+    Editor - now supported in 4NT.  Editor also now supports variables
+      and aliases in the Editor argument. (Note that this means if you
+      have been specifying a LFN with embedded whitespace, you will now
+      need to quote the program name.)
+
+    WindowState - added new option "Hidden" to hide the command 
+      processor window at startup.  (See "Startup Options" above.)
+
+  
+New Internal Variables:
+-----------------------
+
+    %_CDROMS - returns a space-delimited list of the CD-ROM drives.
+
+    %_DVDS - returns a space-delimited list of the DVD drives.
+
+    %_EDITMODE - returns 0 if in overstrike mode, or 1 if in insert
+      mode.
+
+    %_EXECSTR - returns the return code of the last @EXECSTR function.
+
+    %_EXPANSION - returns the current expansion mode (SETDOS /X).
+
+    %_HDRIVES - returns a space-delimited list of the hard drives.
+
+    %_READY - like %_DRIVES, but returns a space-delimited list of the
+      drives that are ready.
+
+    %_REGISTERED - returns the registered name or an empty string if
+      4NT / TC isn't registered.
+
+    %_SHELLS - returns the same value that %_SHELL did in previous 
+      versions (see below).
+      
+    %_VIRTUALPC - returns 1 if 4NT / TC is running inside VirtualPC.
+
+    %_VMWARE - returns 1 if 4NT / TC is running inside VMWare.
+
+    %_WOW64 - returns 1 if 4NT / TC is running in the WOW64 environment.
+
+    
+Modified Internal Variables:
+----------------------------
+
+    %_shell - will always now return 0 unless 4NT / TC was
+      started by another 4NT / TC process (either directly or via
+      a pipe.)  This now matches the %_shell with the documentation; if
+      you have need of the old %_shell behavior you can use %_shells.
+
+
+New Variable Functions:
+-----------------------
+
+    %@CAPI - like @WINAPI, but for _cdecl functions.  The syntax is:
+
+      @CAPI[module,function[,integer | NULL | BUFFER | |PINT=n | PLONG=n
+          | PDWORD=n "string"]
+        module - name of the DLL containing the function
+        function - function name (case sensitive)
+        integer - an integer value to pass to the function
+        NULL - a null pointer (0)
+        BUFFER - @CAPI will pass an address for an internal buffer 
+                   for the API to return a Unicode string value.
+        aBUFFER - @CAPI will pass an address for an internal buffer 
+                   for the API to return an ASCII string value.
+        "string" - text argument
+        PINT=n - pointer to an integer
+        PLONG=n - pointer to a long
+        PDWORD=n - pointer to a DWORD
+
+    %@DRIVETYPEEX[drive] : Return the type for the specified drive:
+
+      0 The drive type cannot be determined 
+      1 The root path is invalid (no volume is mounted at the path) 
+      2 Removable disk  
+      3 Fixed disk  
+      4 Remote (network) drive 
+      5 CD-ROM 
+      6 RAM disk
+      7 DVD
+      8 Tape
+
+    %@OWNER - returns the owner of the specified file (if any).
+
+    %@SCRIPT - execute a line in the specified Active Scripting engine.
+      The syntax is:
+      
+        %@script[engine,command]
+	
+      For example, to execute the command "MsgBox" in VBSCRIPT:
+      
+        %@script[vbscript,MsgBox "Called MsgBox from 4NT"]
+	
+      (You can find the names of the installed engines by running
+      the SCRIPT command (see below) with no arguments.)
+	
+    %@UNQUOTES - removes leading & trailing double quotes.
+
+    %@WINPOS - returns normal position of the window with the
+      specified title in the format "top,left,bottom,right".
+
+    %@WMI - query Windows Management Interface.  This function is *very*
+      powerful, letting you query nearly any Windows value.  The syntax
+      is:
+
+	%@WMI[namespace,"wql search string"[,enum]]
+
+      
+      You can omit the "enum" parameter if you're querying a single
+      property and instance.  For example:
+      
+        %@wmi[root\cimv2,"SELECT name FROM Win32_Processor"]
+	
+      The optional "enum" parameter specifies the property instance to
+        return (for classes that return multiple properties).
+
+	echo %@wmi[root\cimv2,"SELECT name, state FROM Win32_service",4]
+
+      For more details on what is available, see the WMI and WQL 
+      documentation on MSDN (msdn.microsoft.com), and download the 
+      "WMI Code Creator" from Microsoft and browse the available 
+      namespaces, classes, and properties.  Also see the new WMIQUERY
+      internal command (below).
+
+    %@XMLPATH - return the text of the current element.  The syntax is:
+    
+      %@XMLPATH[filename,path]
+      
+        filename - name of XML file
+	path - one or more element accessors separated by a /.
+	
+
+Modified Variable Functions:
+----------------------------
+
+    %@EVAL - if a "=X" is appended to the expression, the output will
+      be in hex with a leading "0x".
+
+    %@FIELD - added ranges (see @WORD for details).
+
+    %@TRUENAME - added support for junctions.
+
+    %@WINAPI - added new argument types to pass pointers to integers,
+      longs, and dwords:
+
+	PINT=n
+	PLONG=n
+	PDWORD=n
+
+    %@WORD - added ranges.  The syntax is:
+
+      %@WORD[start[-end|+range],string]
+
+      You can specify an inclusive range with a '-'.  For example:
+
+        %@WORD[2-4,A B C D E F G]  will return "C D E".  (Note that you
+	cannot use inclusive ranges when starting from the end.)
+
+      You can specify a relative range with a '+'.  For example:
+
+        %@WORD[2+1,A B C D E F G]  will return "C D".
+
+
+New Internal Commands:
+----------------------
+
+    OSD - (On Screen Display) Writes "floating" text to the display
+      (like TV or monitor prompts).  OSD has several options:
+
+	/Font=n         Font height (default 18)
+	/N		Don't wait for timeout
+	/POS=top,left   Screen coordinates for the top left corner of
+	                  the text (default 10,10)
+        /RGB=r,g,b      Text color in RGB format (0-255) (default 0,255,0)
+        /TIME=n         Time to display the text in seconds (default 10)
+	/TOP            Position the text to the top of the display
+	/BOTTOM	        Position the text at the bottom of the display
+        /LEFT           Position the text at the left of the display
+	/RIGHT          Position the text at the right of the display
+	/HCENTER        Center the text horizontally
+	/VCENTER        Center the text vertically
+	
+      You can combine the window positioning options. 
+	
+    PRIORITY - display or set process priority, or suspend / resume
+      process. The syntax is:
+
+      PRIORITY [/Q /R /S PID | "title" ABOVE | BELOW | NORMAL | HIGH | IDLE | REALTIME]
+
+        /Q - quiet (don't display resume/suspend messages)
+        /R - resume process
+        /S - suspend process
+        PID - process ID
+        title - main window title
+        ABOVE - above normal priority
+        BELOW - below normal priority
+        NORMAL - normal priority
+        HIGH - high priority
+        IDLE - idle priority (runs only when system is idle)
+        REALTIME - realtime priority
+
+      You can specify the process either by the PID or by the window 
+      title.  If you do not enter any arguments, PRIORITY displays the
+      processes, their current priority, and the module names.  If you
+      don't enter a window title or PID, PRIORITY will set the priority
+      of the current process.
+
+    SCRIPT - execute scripts using Active Scripting engines (i.e., 
+      VBScript, JavaScript, PerlScript, etc.)  The syntax is:
+      
+        SCRIPT [/E engine] [filename ...]
+	
+          /E - specify the scripting engine to use (if SCRIPT can't
+	         determine it from the extension).
+		 
+      If you don't specify any arguments, SCRIPT will display the names
+      of the installed active scripting engines.
+      
+    SNMP - send SNMP traps.  The syntax is:
+    
+      SNMP remotehost trapOID "value" [username password]
+      
+        remotehost
+        trapOID - the full OID of the trap
+	value - descriptive text
+	username - username for SNMPv3 trap
+	password - password for SNMPv3 trap
+      
+      SNMP normall sends an SNMPv2 Trap; if you specify a username and
+        password it will send an SNMPv3 Trap.
+	
+      The following symbolic names are recognized and translated:
+      
+        Trap Name              OID
+	---------              ---
+        coldStart              1.3.6.1.6.3.1.1.5.1
+        warmStart              1.3.6.1.6.3.1.1.5.2
+        linkDown               1.3.6.1.6.3.1.1.5.3
+        linkUp                 1.3.6.1.6.3.1.1.5.4
+        authenticationFailure  1.3.6.1.6.3.1.1.5.5 
+        egpNeighborLoss        1.3.6.1.6.3.1.1.5.6
+        enterpriseSpecific     1.3.6.1.6.3.1.1.5.7
+	
+    SYNC - synchronize two directories.  The syntax is:
+
+      SYNC [/D /E /G /H /I"description] /K /N /P /Q /S[n] /V /W /X /Z] source target
+
+        /W - delete files in the target directory that are not present 
+	  in the source directory.
+
+        (The other SYNC options are the same as for COPY.)
+
+    WMIQUERY - Query the Windows WMI interface.  The syntax is:
+    
+      WMIQUERY [/A /B /C /H] namespace "query string" [index]
+      
+        /A - display all class instances starting at "index"
+        /B - separate class instances with a blank line
+	/C - display matching classes for the specified namespace
+	       ("query string" is filter)
+        /H - display a header for class instances
+	namespace - a . defaults to root\cimv2
+	"query string" - WMI 
+	index - instance of the class to display	
+      
+        wmiquery . "SELECT name FROM Win32_Processor"]
+	
+      For more details on what is available, see the WMI and WQL 
+      documentation on MSDN (msdn.microsoft.com), and download the 
+      "WMI Code Creator" from Microsoft and browse the available 
+      namespaces, classes, and properties.
+    
+
+Modified Internal Commands:
+---------------------------
+
+    ACTIVATE - added some new options:
+
+      /R(estore) - restore the original foreground window after 
+        updating the specified window.
+
+      TRAY - move the specified window to the system tray.  Note: this
+        is intended for 4NT and Take Command; no other console apps
+	will work (Windows limitation); and GUI apps will only work 
+	if they have built-in tray support.
+
+    ALIAS - now prevents a common user error when creating an @ and @@
+      key alias with the same key.  (ALIAS will delete the previous 
+      alias definition so you won't have both active.)
+
+    COPY - added new options:
+
+      /F - don't create empty subdirectories (must be used with /S).
+
+    COPY - now supports connected web folders.  If an HTML file (i.e.,
+      with an .htm or .html extension) is copied, COPY will look for a
+      folder in the same directory with the same name and an extension 
+      of ".files".  If it is found, the .files directory will be copied
+      to the target directory. You can disable connected web folders by
+      setting the registry key:
+
+        HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\NoFileFolderConnection=0
+
+    COPY - added support for copying streams attached to directory 
+      names.
+
+    DEL - added support for deleting streams attached to directory names.
+    
+    DETACH - added the /Q(uiet) option to suppress displaying the 
+      process ID.
+
+    DIR - enhanced the /Q (show owner) option to display owners of 
+      remote files and folders.
+
+    DIR - enhanced the directory colorization.  You can now use and/or
+      /xor combinations (like IFF) with the attribute tests.  (ColorDir 
+      does not support parentheses for grouping; the processing is left 
+      to right.)  For example:
+
+        set colordir=com exe:bri red; rdonly .and. system:bri green
+
+    DO - added new options:
+
+      /C - each time through the loop, assign the next character in the
+           expression to the argument; i.e.:
+
+               do var in /c ABC
+                   echo %var
+               enddo
+
+             will echo "A", "B", and "C".
+
+      FOR n SECONDS | MINUTES | HOURS - loops for the specified amount
+        of time.
+
+    EVENTLOG - added a new option:
+    
+      /Cn - set the Category.  The value can be from 0-999999; Windows
+            defines 0-7 as:
+	      0 - None
+	      1 - Devices
+	      2 - Disk
+	      3 - Printers
+	      4 - Services
+	      5 - Shell
+	      6 - System
+	      7 - Network
+	      
+    FFIND - added support for the /Sn syntax (to specify the maximum
+      subdirectory recursion level).
+
+    FFIND (4NT) - now supports the "Editor" .INI directive.
+
+    FFIND - if you specify /U, FFIND will no longer print a CR/LF 
+      before the summary (so that it can be parsed by @EXECSTR).
+
+    FFIND - added new options:
+
+      /G - change to the directory where the file was found.
+
+    GLOBAL - added support for the /Sn syntax (to specify the maximum
+      subdirectory recursion level).
+
+    GOSUB - now allows calling subroutines in other files.  (This
+      allows you to create files containing common subroutines.)
+      The syntax is:
+      
+        GOSUB "filename" label [args]
+	
+    GOSUB - if you are in the batch debugger and attempt to call a
+      nonexistent subroutine, GOSUB will now display a messagebox 
+      before exiting the batch file.
+
+    GOTO - if you are in the batch debugger and attempt to branch to a
+      nonexistent label, GOTO will now display a messagebox before 
+      exiting the batch file.
+
+    HEAD - added support for displaying streams attached to directory 
+      names.
+
+    IF - added new tests:
+
+	IF PLUGIN modulename ... - returns TRUE if the specified plugin
+	  module is loaded.
+
+    IFTP - added some additional options:
+
+      /P0 - disable passive mode (overrides PassiveFTP directive)
+      /P1 - enable passive mode (overrides PassiveFTP directive)
+
+    KEYSTACK - added new options:
+
+      /A - append to existing KEYSTACK string.  (I suspect this is 
+        going to be useless, but I've had a continuing stream of 
+	requests for it.  If you actually find a use for it, please
+	let me know!)
+
+      /R - read input from the specified file.
+
+    LIST - if you are displaying input from a pipe, the 'E' (invoke 
+      editor) key will copy the pipe contents to the clipboard and then
+      open the editor.  (You will need to do the paste into the editor 
+      manually.)
+
+    LIST - has some additional options:
+
+      (4NT) - added support for the 'E' (invoke editor) key (already 
+                in TC).
+
+      /C (4NT) - display the file in a separate screen buffer and 
+                   restore the original buffer (& contents) upon 
+		   exiting LIST.
+ 
+      /N - display line numbers on each line.  You can also toggle line
+            numbers with the 'L' key.
+
+    LIST - added support for displaying streams attached to directory 
+      names.
+
+
+    LOG - added a new option:
+    
+      /A - (TCMD only) logs all output to the a log file (same name
+           as the normal log but with a ".all" extension appended).
+	   
+    MKLNK - specifying /D for a filename with no additional links will
+      no longer delete the file.
+
+    MOVE - added the /N options:
+
+	/NE - don't display errors
+	/NT - don't update JPSTREE.IDX
+
+    MOVE - now supports connected web folders.  If an HTML file (i.e., 
+      with an .htm or .html extension) is moved, MOVE will look for a 
+      folder in the same directory with the same name and an extension 
+      of ".files".  If it is found, the .files directory will be moved 
+      to the target directory. You can disable connected web folders by
+      setting the registry key:
+
+        HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\NoFileFolderConnection=0
+
+    OPTION - the "Registration" tab has a new button to remove the 
+      registration information from the computer.
+
+    OPTION - will now start at the last-referenced tab.
+
+    PDIR - enhanced the directory colorization (see DIR).
+
+    PLUGIN - added new switches:
+
+      /B - display the full pathname (only) for the specified 
+             module (also supports wildcards)
+
+      /P - pause after displaying a screen page
+
+    PLUGIN - the /I(nfo) switch now supports wildcards, and also 
+      displays the full pathname.
+
+    REN - added the /N options:
+
+	/NE - don't display errors
+	/NT - don't update JPSTREE.IDX
+
+    SETDOS - added option:
+
+      /X9 - enable / disable include lists
+      
+    SHORTCUT - displaying a shortcut's values now shows the icon offset
+      and the hotkey.
+    
+    SHORTCUT - you can now define the hotkey for the link:
+    
+      SHORTCUT "command" ["args" "dir" "description" "linkname" mode [iconfile iconoffset [hotkey]]]
+
+      The hotkey is in the same format as KEYSTACK; i.e. "Ctrl-Alt-[Shift-]x"
+
+    TAIL - added support for displaying streams attached to directory 
+      names.
+
+    TCTOOLBAR - you can now have up to 64 buttons.  There are also some
+      new options:
+
+        /C - clear toolbar
+
+	/R filename - load toolbar buttons from the specified file.
+	    (A /R will NOT clear an existing toolbar; you must use the
+	    /C flag in conjunction with /R for that.)  The file is in 
+	    the same format as the [Buttons] section in TCMD32.INI:
+
+               Bn=flags,text,command
+ 
+		  Bn - The button number (1 – 32) 
+                  flags - 0=Echo, 1=Echo & Execute, 2=Execute w/o echo 
+                  text - The button text 
+                  command - The command line to execute. 
+
+    TEE - added support for /A when TEE'ing to CLIP:
+
+    TEE - added new options:
+
+      /D - prefix each line with the date (in yyyy-mm-dd format)
+
+      /T - prefix each line with the time (in HH:MM:SS.MSS format)
+
+    TIMER - added the /Q(uiet) option.
+
+    TITLE - added a new option:
+
+      /P - expand PROMPT metacharacters in the title
+
+    TOUCH - /R now retains the exact time (100ns increments) of the 
+      source file.
+
+    TREE - added support for ranges (when used with /F).
+
+    TRUENAME - added support for junctions.
+
+    TYPE - added support for displaying streams attached to directory 
+      names.
+
+
+New Debugger Features:
+----------------------
+
+    Batch debugger options (in BATCH.BCP) can now be set in the 
+      Debugger tab of the OPTION dialog.
+      
+    You can change the line to be executed next when in debugging mode
+      with either the "GOTO" dialog or by moving the caret to the line
+      and either right clicking & selecting "Jump to This Line" or by
+      pressing Ctrl-Shift-F11.  Note that if you attempt to jump into
+      or out of a DO loop or IFF block, bad things will happen!
+      
+    A ^C / ^Break while debugging will now bring up the prompt:
+
+      Cancel batch job %s ? (Y/N/A/D) :
+
+      Pressing 'D' will return you to single-step mode in the debugger.
+      (This allows you to interrupt a "run-to-breakpoint" without 
+      terminating the debugger.)
+
+    Now supports saving Unicode files.
+
+    Added support for Ctrl-F1 (help for highlighted word) to Take 
+      Command.
+
+    The Alias window now uses the same syntax coloring as the debugger
+      window.
+
+    Alt-F11 now invokes the Evaluate Expression dialog.
+
+    Ctrl-F9 invokes the Evaluate Expression dialog for the current 
+      line selection, or if there is no selection then for the current
+      line in the debugger.
+
+    When running to a breakpoint, the debugger will no longer revert to
+      single-stepping following a call to a compressed .BTM.
+      
+    When running to a breakpoint, the debugger will highlight the line
+      currently being executed.
+       
+    The Find and Replace dialogs are now non-modal.  Also if you
+      ve selected something on the line, the search field will be
+      pre-populated with the selection.
+
+    Improved printer support.
+
+    Added support for background colors for keywords, text blocks,
+      delimiters and numbers.
+
+    Added bracket and line highlighting.
+
+    Added case-fixing. When turned on, this will automagically fix 
+      keyword case.
+ 

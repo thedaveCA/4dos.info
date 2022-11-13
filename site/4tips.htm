@@ -1,0 +1,409 @@
+<!doctype HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Language" content="en-gb">
+<link rel="shortcut icon" href="favicon.ico">
+<title>4DOS.INFO - Klaus Meinhard's Homepage: 4DOS Tips</title>
+<meta name="description" content="Everything about 4DOS and Batch Programming - Alles zu 4DOS und Batch-Programmierung">
+<meta name="keywords" content="TIPS, SHELL, SCRIPT, BATCH, COMMAND, PROMPT, 4DOS, JPSOFT, DOS, BAT, BTM">
+<meta name="rating" content="General">
+<meta name="resource-type" content="document">
+<meta name="revisit-after" content="30 Days">
+<meta http-equiv="Expires" content="0">
+<meta http-equiv="Last-Modified" content="0">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="MSStartTagsPreventParsing" content="True">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<base target="_self" />
+<!-- Disable other sites from forcing a Frameset on this page -->
+<script type="text/javascript">
+<!--
+if(parent.frames.length>0) {
+parent.location.href=location.href;
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+a:link       { font-family: Courier New; font-size: 10pt; color: #0000CC; font-weight: bold; text-decoration:none )              }
+a:visited    { font-family: Courier New; font-size: 10pt; color: #3366CC; font-weight: bold; text-decoration:none }
+a:active     { font-family: Courier New; font-size: 10pt; color: #6600CC; font-weight: bold; text-decoration:none }
+h6           { font-family: verdana; font-size: 10pt; font-weight: bold; text-align:left; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0 }
+h5           { font-family: verdana; font-size: 10pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h4           { font-family: verdana; font-size: 12pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h3           { font-family: verdana; font-size: 14pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h2           { font-family: verdana; font-size: 18pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h1           { font-family: verdana; font-size: 24pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+p            { font-family: verdana; font-size: 10pt; text-align:left; word-spacing:0; text-indent:0; line-height:110%; margin-left:6; margin-right:6; margin-top:6; margin-bottom:6}
+li           { font-family: Courier New; font-size: 10pt; text-align:left; word-spacing:0; text-indent:0; line-height:110%; margin-left:6; margin-right:6; margin-top:6; margin-bottom:12}
+-->
+</style>
+<style fprolloverstyle>A:hover {color: #6600CC; font-weight: bold}
+<style type="text/css" fprolloverstyle>
+A:hover {color: #6600CC; font-weight: bold}
+</style>
+</head>
+
+<body bgcolor="#666699" text="#000080" link="#0000FF" vlink="#3366CC" alink="#99CCFF">
+
+<h1 style="margin-bottom: 6; margin-top:0" align="center"><a name="0"></a>
+<font face="verdana" color="#FEFEFE">[4DOS.INFO]</font></h1>
+<p style="margin-bottom: 6">&nbsp;</p>
+<p style="margin-bottom: 6">
+<font face="verdana" align="center" margin-bottom: color="#FEFEFE" size="5">
+c:\4dos\tnt\&gt; _</font></p>
+<div align="left">
+  <table summary="men£" border="0" width="165" bordercolor="#000080" cellpadding="6" cellspacing="0" height="509" align="left" style="position: absolute; left: 10; top: 100; border-collapse: collapse">
+    <tr>
+      <td valign="top" bgcolor="#FFFFFF" width="164" height="1">
+      <!-- beginn freecity.de counter code -->
+      <a href="http://www.freecity.de" target="_new">
+      <img src="http://tools.freecity.de/counter/Klaus_Meinhard" border="0" width="154" height="88"></a>
+      <!-- ende freecity.de counter code -->&nbsp; </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#FFFFFF" width="164" height="15">
+      <h4 align="center" style="text-align: center">&nbsp;Topics</h4>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#EEEEEE" width="164" height="4">
+      <p style="margin-top: 6; margin-bottom: 6"><a href="updates.htm">
+      <font face="Verdana">Updates</font></a><font face="Verdana"> </font></td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#FFFFFF" width="164" height="18">
+      <h4><font face="Verdana" size="3">4DOS INFO</font></h4>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#EEEEEE" width="164" height="237">
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="sources.htm" target="_self"><font face="Verdana">4DOS Sources</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="v4dos.htm" target="_self"><font face="Verdana">4DOS Versions</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="v4nt.htm" target="_self"><font face="Verdana">4NT Versions</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="v4os2.htm" target="_self"><font face="Verdana">4OS2 Versions</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="4tips.htm" target="_self"><font face="Verdana">4DOS Tips &amp; Tricks</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="4docs.htm" target="_self"><font face="Verdana">4DOS Docs</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="4batfaq.htm" target="_self"><font face="Verdana">4DOS BatFAQ</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a target="_self" href="4obtms.htm"><font face="Verdana">4DOS Batches, 
+      Aliases, Functions</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <font face="Verdana">&nbsp; </font><a href="4bernd.htm" target="_self">
+      <font face="Verdana">B. Schneider's</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <font face="Verdana">&nbsp; </font><a href="4xbtm.htm">
+      <font face="Verdana">K. Meinhard's</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="4links.htm" target="_self"><font face="Verdana">4DOS Links</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="4tools.htm" target="_self"><font face="Verdana">4DOS Tools</font></a></h6>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#FFFFFF" width="164" height="18">
+      <h3 align="center"><font size="3" face="Verdana">INFO for DOS</font></h3>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#EEEEEE" width="164" height="42">
+        <p align="left">
+        <a href="dlinks.htm" target="_self"><font face="Verdana">DOS Links</font></a></p>
+		<p align="left">
+        <a href="dlinksu.htm" target="_self"><font face="Verdana"> More DOS 
+		Links</font></a></p>
+		</p>
+        <p><a href="dalter.htm"><font face="Verdana">DOS Alternatives</font></a></p>
+      <p><a href="dhardw.htm" target="_self"><font face="Verdana">DOS Hardware</font></a></p>
+      <p><a href="dtools.htm"><font face="Verdana">DOS Tools</font></a></p>
+      <p><a href="dprogs.htm"><font face="Verdana">DOS Programs</font></a></p>
+      <p><a href="dgems.htm"><font face="Verdana">DOS Gems</font></a></td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#FFFFFF" width="164" height="18">
+      <h3 align="center"><font face="Verdana" size="3">Service</font></h3>
+      </td>
+    </tr>
+    <tr>
+      <td width="164" height="40" bgcolor="#EEEEEE">
+      <p style="margin: 6"><a href="search.htm" target="_self">
+      <font face="Verdana">Search Engines</font></a></p>
+      <p><a href="mailto:K_Meinhard@gmx.de"><font face="Verdana">Contact me</font></a><font face="Verdana">
+      </font></td>
+    </tr>
+    <tr>
+      <td width="164" height="1" bgcolor="#FFFFFF">
+      <p style="margin: 6"><a href="index.htm" target="_self">
+      <font face="Verdana">Back to Homepage</font></a><font face="Verdana">
+      </font></td>
+    </tr>
+  </table>
+</div>
+<table summary="main body" border="0" width="75%" cellpadding="6" cellspacing="0" style="border-collapse: collapse; position:absolute; left:200; top:100" bordercolor="#000080" align="left">
+  <tr>
+    <td width="100%" bgcolor="#FFFFFF">
+    <h4 align="center" style="margin-bottom: 0"><font face="verdana">4DOS Tips &amp; 
+    Tricks</font></h4>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" bgcolor="#EEEEEE" align="left" valign="top">&nbsp;
+    <p style="margin-top: 0; margin-bottom: 0">The 4DOS-Tips below contain the 
+    archives of the FIDO-net 4DOS board with batches and aliases 1992/1994.&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">I have found very lovingly done 
+    compilations from the usenet group for the years 1996 - 1998, all with an 
+    index and readily decoded executables.&nbsp;Does anybody remember who did these 
+    compilations? I'd like to give them their due credit here.</p>
+    <p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">It is really&nbsp; a pity there 
+    are no such compilations for later years as well as&nbsp; for the now 
+    defunct Compuserve forum, where Mike Bessy gave his highly interesting 
+    comments.</p>
+    <p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">Then there are the archives of 
+    the 4DOS usenet group, which was, after FIDO and Compuserve, the main 
+    support forum for 4DOS users.</p>
+    <p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">All these archives contain many 
+    aliases and batches,</p>
+    <p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">If you find further material that 
+    would fit this site&nbsp; I'll be happy to receive and perhaps include it 
+    here.</p>
+    <p>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="100%" bgcolor="#FFFFFF" align="left" valign="top">
+    <h4 style="text-align: left; margin-bottom:0"><font size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    File&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    Size&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    Remarks</font></h4>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" bgcolor="#EEEEEE" align="left" valign="top">
+    <p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+    <h4 style="margin-top: 0; margin-bottom: 0">4DOS TIPS</h4>
+    <p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+    <ul>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 11">
+      <a href="tnt/4dostip4.zip" target="_self" style="font-weight: bold; text-decoration: none; background-color: #CCCCFF">
+      <font face="Courier New">4DOS-TIPS 4</font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;
+      </span>&nbsp;&nbsp; 142353&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      Extract from FIDO echos 1992/1</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 11">
+      <a href="tnt/4dostip5.zip" style="font-weight: bold; text-decoration: none; background-color: #CCCCFF">
+      <font face="Courier New">4DOS-TIPS 5</font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;
+      </span>&nbsp;&nbsp; 157092&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      Extract from FIDO echos 1992/2</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 11">
+      <a href="tnt/4dostip6.zip" style="font-weight: bold; text-decoration: none; background-color: #CCCCFF">
+      <font face="Courier New">4DOS-TIPS 6</font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;
+      </span>&nbsp;&nbsp; 112590&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      Extract from FIDO echos 1992/3</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 11">
+      <a href="tnt/4dostip7.zip" style="font-weight: bold; text-decoration: none; background-color: #CCCCFF">
+      <font face="Courier New">4DOS-TIPS 7</font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;
+      </span>&nbsp;&nbsp; 143729&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      Extract from FIDO echos 1993/1</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 11">
+      <a href="tnt/4dostip8.zip" style="font-weight: bold; text-decoration: none; background-color: #CCCCFF">
+      <font face="Courier New">4DOS-TIPS 8</font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;
+      </span>&nbsp;&nbsp; 159346&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      Extract from FIDO echos 1993/2</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 11">
+      <a href="tnt/4dostp10.zip" style="font-weight: bold; text-decoration: none; background-color: #CCCCFF">
+      <font face="Courier New">4DOS-TIPS 10</font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;
+      </span>&nbsp;&nbsp; 132445&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      Extract from FIDO echos 1994-95</font></li>
+    </ul>
+    <p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+    <hr color="#000080" width="80%" size="1">
+    <h4 style="margin-top: 0; margin-bottom: 0">&nbsp;</h4>
+    <h4 style="margin-top: 0; margin-bottom: 0"><font size="3">4DOS Usenet group 
+    messages, indexed and with decoded executables</font></h4>
+    <p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+    <ul>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12">
+      <a href="tnt/4nw1996.zip" style="font-size: 10pt; font-weight: bold; text-decoration: none">
+      <font face="Courier New"><span style="background-color: #CCCCFF">
+      4NW1996&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;</font></a><font face="Courier New" size="2">637668&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      4DOS user group messages 1996</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12">
+      <a href="tnt/4nw_106.zip" style="font-size: 10pt; font-weight: bold; text-decoration: none">
+      <font face="Courier New"><span style="background-color: #CCCCFF">
+      4NW_106&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;</font></a><font face="Courier New" size="2"> 
+      44086&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      4DOS user group messages 10/96</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12">
+      <a href="tnt/4nw_116.zip" style="font-size: 10pt; font-weight: bold; text-decoration: none">
+      <font face="Courier New"><span style="background-color: #CCCCFF">
+      4NW_116&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;</font></a><font face="Courier New" size="2">99243&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      4DOS user group messages 11/96</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12">
+      <a href="tnt/4nw_126.zip" style="font-size: 10pt; font-weight: bold; text-decoration: none; background-color: #CCCCFF">
+      <font face="Courier New">4NW_126</font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp;&nbsp;&nbsp; 70301&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      4DOS user group messages 12/96</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12">
+      <a href="tnt/4nw_017.zip" style="font-size: 10pt; font-weight: bold; text-decoration: none; background-color: #CCCCFF">
+      <font face="Courier New">4NW_017</font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp;&nbsp;&nbsp; 50223&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      4DOS user group messages 01/97</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12">
+      <a href="tnt/4nw_027.zip" style="font-size: 10pt; font-weight: bold; text-decoration: none; background-color: #CCCCFF">
+      <font face="Courier New">4NW_027</font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp;&nbsp;&nbsp; 68065&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      4DOS user group messages 02/97</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12">
+      <a href="tnt/4nw_037.zip" style="font-size: 10pt; font-weight: bold; text-decoration: none; background-color: #CCCCFF">
+      <font face="Courier New">4NW_037</font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp;&nbsp; 115484&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      4DOS user group messages 03/97</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12">
+      <a href="tnt/4nw_047.zip" style="font-size: 10pt; font-weight: bold; text-decoration: none; background-color: #CCCCFF">
+      <font face="Courier New">4NW_047</font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp;&nbsp;&nbsp; 72105&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      4DOS user group messages 04/97</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12">
+      <a href="tnt/4nw_057.zip" style="font-size: 10pt; font-weight: bold; text-decoration: none; background-color: #CCCCFF">
+      <font face="Courier New">4NW_057</font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp;&nbsp;&nbsp; 71268&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      4DOS user group messages 05/97</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12">
+      <a href="tnt/4nw_067.zip" style="font-size: 10pt; font-weight: bold; text-decoration: none; background-color: #CCCCFF">
+      <font face="Courier New">4NW_067</font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp;&nbsp;&nbsp; 63026&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      4DOS user group messages 06/97</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12">
+      <a href="tnt/4nw_077.zip" style="font-size: 10pt; font-weight: bold; text-decoration: none; background-color: #CCCCFF">
+      <font face="Courier New">4NW_077</font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp;&nbsp; 122297&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      4DOS user group messages 07/97</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12">
+      <a href="tnt/4nw_087.zip" style="font-size: 10pt; font-weight: bold; text-decoration: none; background-color: #CCCCFF">
+      <font face="Courier New">4NW_087</font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp;&nbsp; 101180&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      4DOS user group messages 08/97</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12">
+      <a href="tnt/4nw_097.zip" style="font-size: 10pt; font-weight: bold; text-decoration: none; background-color: #CCCCFF">
+      <font face="Courier New">4NW_097</font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp;&nbsp;&nbsp; 64421&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      4DOS user group messages 09/97</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12">
+      <a href="tnt/4nw_107.zip" style="font-size: 10pt; font-weight: bold; text-decoration: none; background-color: #CCCCFF">
+      <font face="Courier New">4NW_107</font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp;&nbsp;&nbsp; 88138&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      4DOS user group messages 10/97</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12">
+      <a href="tnt/4nw_117.zip" style="font-size: 10pt; font-weight: bold; text-decoration: none; background-color: #CCCCFF">
+      <font face="Courier New">4NW_117</font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp;&nbsp;&nbsp; 45600&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      4DOS user group messages 11/97</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12">
+      <a href="tnt/4nw_127.zip" style="font-size: 10pt; font-weight: bold; text-decoration: none; background-color: #CCCCFF">
+      <font face="Courier New">4NW_127</font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp;&nbsp;&nbsp; 37442&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      4DOS user group messages 12/97</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12">
+      <a href="tnt/4nw_018.zip" style="font-size: 10pt; font-weight: bold; text-decoration: none; background-color: #CCCCFF">
+      <font face="Courier New">4NW_018</font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp;&nbsp;&nbsp; 58328&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      4DOS user group messages 01/98</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12">
+      <a href="tnt/4nw_028.zip" style="font-size: 10pt; font-weight: bold; text-decoration: none; background-color: #CCCCFF">
+      <font face="Courier New">4NW_028</font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp;&nbsp;&nbsp; 66857&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      4DOS user group messages 02/98</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12">
+      <a href="tnt/4nw_038.zip" style="font-size: 10pt; font-weight: bold; text-decoration: none; background-color: #CCCCFF">
+      <font face="Courier New">4NW_038</font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp;&nbsp;&nbsp; 51961&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      4DOS user group messages 03/98</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12">
+      <a href="tnt/4nw_048.zip" style="font-size: 10pt; font-weight: bold; text-decoration: none; background-color: #CCCCFF">
+      <font face="Courier New">4NW_048</font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp;&nbsp;&nbsp; 46571&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      4DOS user group messages 04/98</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12">
+      <a href="tnt/4nw_058.zip" style="font-size: 10pt; font-weight: bold; text-decoration: none; background-color: #CCCCFF">
+      <font face="Courier New">4NW_058</font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp;&nbsp;&nbsp; 55741&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      4DOS user group messages 05/98</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12">
+      <a href="tnt/4nw_068.zip" style="font-size: 10pt; font-weight: bold; text-decoration: none; background-color: #CCCCFF">
+      <font face="Courier New">4NW_068</font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp;&nbsp;&nbsp; 41481&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      4DOS user group messages 06/98</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12">
+      <a href="tnt/4nw_088.zip" style="font-size: 10pt; font-weight: bold; text-decoration: none; background-color: #CCCCFF">
+      <font face="Courier New">4NW_088</font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp;&nbsp;&nbsp; 51151&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      4DOS user group messages 08/98</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12">
+      <a href="tnt/4nw_098.zip" style="font-size: 10pt; font-weight: bold; text-decoration: none; background-color: #CCCCFF">
+      <font face="Courier New">4NW_098</font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp;&nbsp;&nbsp; 35038&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      4DOS user group messages 09/98</font></li>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 12">
+      <a href="tnt/4nw_108.zip" style="font-size: 10pt; font-weight: bold; text-decoration: none; background-color: #CCCCFF">
+      <font face="Courier New">4NW_108</font></a><font face="Courier New" size="2"><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp;&nbsp;&nbsp; 37285&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      4DOS user group messages 10/98</font></li>
+    </ul>
+    <p style="margin-top: 0; margin-bottom: 12">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" width="100%" bgcolor="#FFFFFF" align="left">
+    <h5 align="center" style="margin-bottom: 0"><a href="#0"><font size="2">Top 
+    of Page</font></a><font size="2">&nbsp; /&nbsp;</font>
+    <a href="index.htm" target="_self"><font size="2">Home</font></a></h5>
+    </td>
+  </tr>
+</table>
+
+</body>
+
+</html>

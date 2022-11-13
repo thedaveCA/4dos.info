@@ -1,0 +1,19 @@
+> fd.dat
+do vn in 4dos*.*
+    echos %@sfn[%vn] >> fd.dat
+    pkunzip -v %@sfn[%vn] 4dos.com|ffind /K/M/T"4dos.com" >> fd.dat
+    echo. >> fd.dat
+enddo
+
+:test
+do vn=0 to %@lines[fd.dat]
+    set cl=%@line[fd.dat,%vn]
+    iff "%cl" ne "" then
+        set fname=%@word[0,%@line[fd.dat,%vn]]
+        iff "%fname" ne "" then
+            set fdate=%@word[5,%@line[fd.dat,%vn]]
+            set ftime=%@word[6,%@line[fd.dat,%vn]]
+            touch /D%fdate /T%ftime "%fname"
+        endiff
+    endiff
+enddo

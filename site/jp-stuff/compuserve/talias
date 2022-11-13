@@ -1,0 +1,23 @@
+::TALIAS (1994) by Tim Stoddard, released to the Public Domain
+::TALIAS - Useful ALIASES for handling multiple boot configurations and handling a LARGE ALIAS file
+:: DELCONFIG,POPCONFIG,PUSHCONFIG, and USECONFIG handle multiple boot configs
+:: SYNTAX for all four -->  xxxCONFIG ext
+::     where xxx = DEL,POP,PUSH,or USE
+::     and ext = a unique file extention
+::EXAMPLES
+::To save your current configuration --> PUSHCONFIG WRK
+::this will copy CONFIG.SYS to CONFIG.WRK and AUTOEXEC.BAT to AUTOEXEC.WRK
+::use descriptive EXT such as WRK for "working",NR3 for "Netroom 3"
+::CUR for "Current" etc.
+::
+::To restore a config --> POPCONFIG WRK
+::To delete a config --> DELCONFIG
+::To restore a config and reboot --> USECONFIG WRK
+DELCONFIG=del c:\config.%1^del c:\autoexec.%1
+POPCONFIG=copy c:\config.%1 c:\config.sys^copy c:\autoexec.%1 c:\autoexec.bat
+PUSHCONFIG=copy c:\config.sys c:\config.%1^copy c:\autoexec.bat c:\autoexec.%1
+USECONFIG=POPCONFIG^reboot
+::
+::EDITALIAS will edit the ALIAS file called "ALIAS", sort it, then reload it
+::activating the newly edited aliases
+EDITALIAS=pushd 4dos^edit alias^sort<alias>alias.srt^del alias^ren alias.srt alias^unalias *^alias /r alias^popd

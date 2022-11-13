@@ -1,0 +1,48 @@
+: 4COLOR.BTM version 1.2 - Oct-10-94
+:                                                   Mike Bessy
+:                                                   75300,1215
+@echo off
+*setlocal
+unalias *
+if %_ansi != 1 (
+  echo Display may be incorrect without an ANSI driver
+  pause
+)
+cls whi on bla
+text
+
+  This batch file is meant to test the way specific color combinations
+  appear on your particular video adapter / monitor configuration.
+  The 3-letter abbreviations are those used in color-related 4DOS/4OS2
+  commands and 4DOS.INI/4OS2.INI directives.  See your 4DOS/4OS2
+  documentation or online HELP screens for further details.
+
+endtext
+set r=9
+set c=1
+set l=0   1   2   3   4   5   6   7
+screen %@eval[%r-2] 6 %l
+set l=8   9  10  11  12  13  14  15
+screen %@eval[%r-2] 42 %l
+set l=bla blu gre red mag cya yel whi
+screen %@eval[%r-1] 5 %@upper[%l]
+screen %@eval[%r-1] 41 %@upper[%l]
+for %%f in ( %l ) do (
+  set c=5
+  set r=%@eval[%r+1]
+  for %%b in ( %l ) do (
+    scrput %r %c %f on %b %f` `
+    set c=%@eval[%c+4]
+  )
+  set c=%@eval[%c+4]
+  for %%b in ( %l ) do (
+    scrput %r %c bri %f on %b %f` `
+    set c=%@eval[%c+4]
+  )
+  set c=%@eval[%c+8]
+)
+screen %@eval[%r+2] 13 fg ON bg
+screen %@eval[%r+2] 49 BRI fg ON bg
+screen %@eval[%r+3] 0
+inkey /w30 %%i
+echo `` ^ echo %@line[%@search[%0],0]

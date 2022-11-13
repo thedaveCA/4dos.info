@@ -1,0 +1,657 @@
+[ 30-Jul-97 ]
+
+Note: the following text is extracted from the 4DOS 6.00 online help.
+
+Copyright 1997, JP Software Inc., All Rights Reserved.
+4DOS is a registered trademark of JP Software Inc.  Other product names are
+trademarks of their respective manufacturers.
+
+
+
+4DOS Help Topic:  Windows 95
+
+
+This topic explains how to use 4DOS with Windows 95.  See the following
+subtopics for complete details:
+
+     Boot Sequence            Background information on how Windows 95
+                              starts.
+
+     Installing 4DOS          Explains how to install 4DOS as the
+                              primary shell so it loads when Windows 95
+                              boots.
+
+     Starting 4DOS            Explains how to start 4DOS from the
+                              Windows 95 Graphical User Interface.
+
+     File Systems and Names   Describes the file systems and file name
+                              conventions supported by 4DOS, including
+                              information on using Windows 95 long file
+                              names.
+
+     LFN File Searches        Explains how 4DOS searches for files on
+                              drives which support Windows 95 long file
+                              names.
+
+     Installing KSTACK        Notes on how to install KSTACK.COM so
+                              that the KEYSTACK program will work
+                              properly with Windows 95.
+
+     Using "MS-DOS Mode"      Information on using 4DOS in Windows 95's
+                              "MS-DOS Mode".
+
+     Using DRVSPACE           Information on using Microsoft's disk
+                              compression technology with 4DOS.
+
+
+
+4DOS Help Topic:  The Windows 95 Boot Sequence
+
+
+In order to understand the different methods for installing 4DOS you may
+find it helpful to learn a little about the Windows 95 boot sequence (if you
+are not interested in these details, skip to the next section).
+
+Modified versions of the standard MS-DOS startup programs are used to boot
+Windows 95.  These programs look for CONFIG.SYS and AUTOEXEC.BAT just as
+under previous versions of MS-DOS.  If CONFIG.SYS is not present, Windows 95
+will load the appropriate real-mode DOS device drivers automatically, then
+start WIN.COM, which loads the Windows 32-bit drivers and GUI.  If
+CONFIG.SYS is present, the MS-DOS startup portion of Windows 95 will process
+it (while displaying a graphical Windows 95 startup screen).  Certain
+drivers required by Windows 95 (e.g. HIMEM.SYS) will be loaded automatically
+even if they are not listed in CONFIG.SYS, but otherwise CONFIG.SYS works
+just as it does under previous versions of MS-DOS.
+
+If you use the default command processor, COMMAND.COM, it will be loaded
+automatically at the end of CONFIG.SYS if needed to process AUTOEXEC.BAT,
+then the GUI is loaded as described above.  If you use a SHELL command in
+CONFIG.SYS to load a different command processor (such as 4DOS), it will be
+loaded just as under previous versions of MS-DOS, and can then invoke the
+Windows GUI if desired (see below for details). However the SHELL command is
+ignored if AUTOEXEC.BAT is not present.
+
+Some aspects of the boot process are controlled by the file MSDOS.SYS, which
+is now an ASCII file which functions as a .INI file for DOS itself.  For
+example you can control whether the GUI is automatically loaded with the
+BootGUI setting in the [Options] section of MSDOS.SYS, and you can
+automatically display a standard startup options menu by setting BootMenu=1
+in the [Options] section (you can also display this menu by pressing F8 when
+you see the "Starting Windows 95 ..." prompt). MSDOS.SYS is a hidden,
+system, read-only file; to edit it from 4DOS use a sequence like this:
+
+     c:\> attrib -rhs msdos.sys
+     c:\> edit msdos.sys
+     c:\> attrib +rhs msdos.sys
+
+
+
+4DOS Help Topic:  Installing 4DOS as the Primary Shell Under Windows 95
+
+
+The best way to configure 4DOS for Windows 95 is to add a standard SHELL
+command as shown in the 4DOS manual to the end of the Windows 95 CONFIG.SYS
+file.  For example:
+
+     SHELL=C:\4DOS55\4DOS.COM C:\4DOS55 /P
+
+The second directory name and the /P should always be used.  (If you find a
+previous SHELL= line for COMMAND.COM, be sure to remove it or add "REM " at
+the start to convert it to a comment.)
+
+[NOTE:  If you reinstall Windows 95 or install a later build over an earlier
+one, your SHELL line will be removed from CONFIG.SYS by the Windows 95
+installation process.  To correct this simply boot the new version, go to a
+4DOS prompt (your desktop with its 4DOS icon is typically preserved when you
+upgrade), and use EDIT or another ASCII editor to put the SHELL line back in
+CONFIG.SYS, then restart Windows 95.  You can also boot with F8 and select
+the "Command Prompt Only" boot option, which will give you a COMMAND.COM
+prompt.  At this point use an ASCII editor to modify CONFIG.SYS and add the
+SHELL= line for 4DOS, then reboot.]
+
+When 4DOS is loaded as the primary shell in CONFIG.SYS it will start the
+Windows 95 GUI automatically (except when you select the "Command prompt
+only" option from the Windows 95 boot menu).  If you want 4DOS to display a
+prompt without starting the GUI, edit MSDOS.SYS as described above and
+change the line reading BootGUI=1 to read BootGUI=0.  You can then use the
+WIN command to start the GUI when you wish.
+
+Some users find it convenient to set BootGUI=0, then add commands similar to
+the following at the end of AUTOEXEC.BAT:
+
+     inkey /w5 Press X for prompt, or wait for Windows ... %%key
+     if "%key" != "X" win
+     unset /q key
+
+These commands start Windows automatically unless you press the X key within
+5 seconds after the message is displayed.  You can interrupt the 5-second
+delay by pressing any other key.  This gives you a convenient way to go
+directly to a prompt if you wish, but otherwise starts Windows
+automatically.
+
+Please note that the Windows 95 directory (usually C:\WINDOWS) must be in
+your PATH for the above examples to work.  If it is not, the WIN command may
+not be recognized.  Generally under Windows 95 it is best to include the
+Windows 95 directory in your PATH.
+
+If you load Windows 95 in "safe mode" your startup files (CONFIG.SYS and
+AUTOEXEC.BAT) are ignored, and 4DOS will not be loaded as the primary shell
+(safe mode is for troubleshooting and is selected by pressing F5 during the
+boot process, or by pressing F8 and selecting a safe mode boot from the
+menu).  In most cases you should not load 4DOS after the GUI starts when
+Windows 95 is running in "safe mode", because DOS applications often do not
+work properly in "safe mode".
+
+If you select other boot modes from the F8 menu (e.g. "step by step" or
+"command prompt only") the 4DOS primary shell will load, and will handle the
+option you have selected.  The only exception is that if you select step by
+step mode and then answer "N" (or Esc) when prompted whether to process
+AUTOEXEC.BAT, the SHELL line will also be ignored and COMMAND.COM will be
+loaded rather than 4DOS (this is a Windows 95 behavior unrelated to 4DOS).
+
+
+
+4DOS Help Topic:  Starting 4DOS From The Windows 95 GUI
+
+
+The simplest method for running 4DOS from the Windows 95 GUI is to create a
+new shortcut on the desktop.  To do so click with mouse button 2 in any open
+area of the desktop.  On the popup menu click New, then Shortcut.  Fill in
+the drive and path for 4DOS.COM, and any other items you wish to set (no
+specific settings are required for 4DOS).  Use the Change Icon button to
+assign the standard 4DOS icon, in the file 4DOS.ICO, to the shortcut.
+
+Once the shortcut is created 4DOS will start when you double-click the
+corresponding icon on the desktop.  You can place any necessary commands or
+other directives (e.g. @ininame to name a specific INI file) on the startup
+command line just as you would under DOS or Windows 3.1; see Startup for
+details.
+
+If 4DOS is started in this way, and is not installed as the primary shell
+(whether because you have no CONFIG.SYS and AUTOEXEC.BAT and therefore do
+not load a primary shell, or because you use COMMAND.COM as your primary
+shell), then it will not inherit aliases or other startup settings.  In this
+case you must use the 4START file (see your 4DOS manual) to load aliases and
+perform other startup tasks.  To avoid this problem we recommend that you
+install 4DOS as the primary shell (see above) and load your aliases etc. at
+system startup, just as you would under DOS.
+
+We do not recommend the use of disk swapping under Windows 95.  If you do
+use disk swapping aliases and other settings may not be inherited properly
+in some cases, especially when 4DOS is the primary shell.  The best setup is
+to install 4DOS as the primary shell, and to use XMS swapping for all
+shells.  You can set this swapping type with the following line in 4DOS.INI:
+
+     Swapping = XMS
+
+If you start Windows 95 in "safe mode" in most cases you should not load
+4DOS after the GUI starts.  DOS applications often do not work properly in
+"safe mode".
+
+
+
+4DOS Help Topic:  File Systems and File Name Conventions
+
+
+You may have dozens, hundreds, or thousands of files stored on your
+computer's disks.  Your operating system is responsible for managing all of
+these files.  In order to do so, it uses a unique name to locate each file
+in much the same way that the post office assigns a unique address to every
+residence.
+
+The unique name of any file is composed of a drive letter, a directory path,
+and a filename.  Each of these parts of the file's name is case insensitive;
+you can mix upper and lower case letters in any way you wish.
+
+The topics below are roughly divided according to the different parts of a
+file name, and cover the file system structure and naming conventions:
+
+     Drives and Volumes
+     File Systems
+     Directories and Subdirectories
+     File Names
+     File Attributes and Time Stamps
+
+
+
+4DOS Help Topic:  Drives and Volumes
+
+
+A drive letter designates which drive contains the file.  In a file's full
+name, the drive letter is followed by a colon.  Drive letters A: and B: are
+normally reserved for the floppy disk drives.
+
+Normally, drive C: is the first (or only) hard disk drive.  Most current
+operating systems can divide a large hard disk into multiple logical drives
+or volumes that are usually called C:, D:, E:, etc.  Network systems (LANs)
+give additional drive letters to sections of the network file server drives.
+
+Most recent systems also include a CD-ROM drive.  The CD-ROM is also
+assigned a drive letter (or several letters, for CD-ROM changers), typically
+using letters beyond that used by the last hard disk in the system, but
+before any network drives.  Some systems may have "RAM disks" (sometimes
+called "virtual disks"), which are areas of memory set aside by software (a
+"RAM disk driver") for use as fast but temporary storage.  Like CD-ROM
+drives, RAM disks are usually assigned drive letters beyond the last hard
+disk in the system, but before network drives.
+
+For example, on a system with a large hard disk you might have A: and B: as
+floppy drives, C:, D:, and E: as parts of the hard disk, F: as a CD-ROM
+drive, G: as a RAM disk, and H: and I: as network drives.
+
+Each volume is formatted under a particular file system; see File Systems
+for details.  Additional information about disk files and directories is
+available under Directories and Subdirectories, File Names, and File
+Attributes and Time Stamps.
+
+
+
+4DOS Help Topic:  File Systems
+
+
+Each disk volume is organized according to a file system.  The file system
+determines how files are named and how they are organized on the disk.
+
+As hard disk technology and operating systems have evolved, new file systems
+have been invented to support longer file names, larger drives, and higher
+disk performance.  Several different and incompatible schemes have evolved.
+Which file systems you can use depends on which operating system you are
+using, and how the operating system and your hard disk are configured.
+
+The operating systems under which 4DOS runs support four standard file
+systems:  FAT, VFAT, FAT32, and HPFS.  See File Names for details on the
+rules for naming files under each file system.
+
+     * The FAT File System is the traditional file system used by all
+       versions of DOS.  Its name comes from the File Allocation Table
+       DOS uses to keep track of the space allocated to each file.
+       Windows 95, Windows NT, and OS/2 also support the FAT file
+       system.
+
+     * The VFAT File System is an extension of the FAT file system
+       available in Windows NT and Windows 95, including DOS and 4DOS
+       sessions run from the Windows 95 desktop.  This system maintains
+       additional information about files on FAT drives, including long
+       filenames (LFNs).
+
+       Other operating systems (OS/2 and earlier versions of DOS) can
+       access files on VFAT drives, but will not be able to access long
+       filenames or other information which is added by the VFAT file
+       system.
+
+     * The FAT32 File System is an additional extension to the VFAT
+       file system.  It is only available in Windows 95 OEM Service
+       Release 2 ("OEMSR2") and later versions, and in DOS sessions run
+       from the Windows 95 OEMSR2 desktop.  It is similar to the VFAT
+       file system, but supports larger disk drives.
+
+       This file system is incompatible with OS/2, Windows NT, and
+       earlier versions of DOS, and can only be used under Windows 95
+       OEMSR2.
+
+       (If you are not sure whether your system is running Windows 95
+       OEM Service Release 2, use the 4DOS VER command to check.  VER
+       reports MS-DOS 7.0 for the original Windows 95 release, and
+       MS-DOS 7.1 or higher for OEMSR2 and later versions.)
+
+     * The High Performance File System or HPFS is a file system
+       provided with all versions of OS/2, and is also supported in
+       Windows NT version 3.51 and below.  It supports long file names,
+       and offers higher performance and better support for large
+       drives than the FAT or VFAT system.  It also supports "extended
+       attributes" to retain additional information about your files.
+
+       DOS sessions running under OS/2 can access files on HPFS drives
+       if the files have short, FAT-compatible names.  Other operating
+       systems (DOS, Windows 95, and Windows NT 4.0 and above) can not
+       access files on HPFS drives.
+
+Throughout this manual, the term "LFN file system" is used to describe the
+VFAT and FAT32 systems as a group (LFN stands for Long File Name).
+
+Additional file systems may be installed under some operating systems to
+support CD-ROM or network drives.  The file system type (FAT / VFAT, FAT32,
+or HPFS) is determined when a hard disk volume is formatted and applies to
+the entire volume.  For example, under OS/2 you might have a 2 GB hard disk
+divided into four 500 MB volumes, with the first three volumes (C:, D:, and
+E:) formatted for the FAT file system, and the fourth formatted for HPFS.
+
+4DOS supports any standard file system installed under your operating
+system.  If your operating system can access files on a particular drive,
+then 4DOS will be able to access those files as well.
+
+Additional information about disk files and directories is available under
+Drives and Volumes, Directories and Subdirectories, File Names, and File
+Attributes and Time Stamps.
+
+
+Network File Systems
+
+A network file system allows you to access files stored on another computer
+on a network, rather than on your own system.  4DOS supports all network
+file systems which are compatible with the underlying operating system.
+
+File and directory names for network file systems depend on both the
+"server" software running on the system that has the files on it, and the
+"client" software running on your computer to connect it to the network.
+However, they usually follow the rules described under File Names.
+
+Most network software "maps" unused drive letters on your system to specific
+locations on the network, and you can then treat the drive as if it were
+physically part of your local computer.
+
+Some networks also support the Universal Naming Convention, which provides a
+common method for accessing files on a network drive without using a
+"mapped" drive letter.  Names specified this way are called UNC names.  They
+typically appear as \\server\volume\path\filename, where server is the name
+of the network server where the files reside, volume is the name of a disk
+volume on that server, and the path\filename portion is a directory name and
+file name which follow the conventions described in Directories and
+Subdirectories.  4DOS supports UNC filenames, and also allows you to use UNC
+directory names when changing directories (see Directory Navigation for more
+details).
+
+When you use a network file system, remember that the naming conventions for
+files on the network may not match those on your local system.  For example,
+your local system may support long filenames while the network server or
+client software does not, or vice versa.  4DOS will usually handle whatever
+naming conventions are supported by your network software, as long as the
+network software accurately reports the types of names it can handle.
+
+In rare cases, 4DOS may not be able to report correct statistics on network
+drives (such as the number of bytes free on a drive).  This is usually
+because the network file system does not provide complete or accurate
+information.
+
+
+
+4DOS Help Topic:  Directories and Subdirectories
+
+
+A file system is a method of organizing all of the files on an entire disk
+or hard disk volume.  Directories are used to divide the files on a disk
+into logical groups that are easy to work with.  Their purpose is similar to
+the use of file drawers to contain groups of hanging folders, hanging
+folders to contain smaller manila folders, and so on.  Directories are also
+sometimes referred to as folders.
+
+Every drive has a root or base directory, and many have one or more
+subdirectories.  Subdirectories can also have subdirectories, extending in a
+branching tree structure from the root directory.  The collection of all
+directories on a drive is often called the directory tree, and a portion of
+the tree is sometimes called a subtree.  The terms directory and
+subdirectory are typically used interchangeably to mean a single
+subdirectory within this tree structure.
+
+Subdirectory names follow the same rules as file names (see File Names).
+
+The drive and subdirectory portion of a file's name are collectively called
+the file's path.  For example, the file name C:\DIR1\DIR2\MYFILE.DAT says to
+look for the file MYFILE.DAT in the subdirectory DIR2 which is part of the
+subdirectory DIR1 which is on drive C.  The path for MYFILE.DAT is
+C:\DIR1\DIR2.  The backslashes between subdirectory names are required.  On
+NTFS, and LFN volumes the path and file name must each be 255 characters or
+less in length, and in addition the total length of the path and file name
+together cannot exceed 260 characters.
+
+The operating system and command processor remember both a current or
+default drive for your system as a whole, and a current or default directory
+for every drive in your system.  Whenever a program tries to create or
+access a file without specifying the file's path, the operating system uses
+the current drive (if no other drive is specified) and the current directory
+(if no other directory path is specified).
+
+The root directory is named using the drive letter and a single backslash.
+For example, D:\ refers to the root directory of drive D:.  Using a drive
+letter with no directory name at all refers to the current directory on the
+specified drive.  For example, E:README.DOC refers to the file README.DOC in
+the current directory on drive E:, whereas E:\README.DOC refers to the file
+README.DOC in the root directory on drive E:.
+
+There are also two special subdirectory names that are useful in many
+situations:  a single period by itself [.] means "the current default
+directory."  Two periods together [..] means "the directory which contains
+the current default directory" (often referred to as the parent directory).
+These special names can be used wherever a full directory name can be used.
+4DOS allows you to use additional periods to specify directories further
+"up" the tree (see Extended Parent Directory Names).
+
+Additional information about disk files and file systems is available under
+Drives and Volumes, File Systems, File Names, and File Attributes and Time
+Stamps.
+
+
+
+4DOS Help Topic:  File Names
+
+
+Under the FAT file system, the filename consists of a base name of 1 to 8
+characters plus an optional extension composed of a period plus 1 to 3 more
+characters.  Traditional FAT filenames with an 8-character name and a
+3-character extension are sometimes referred to as short filenames (SFNs) to
+distinguish them from long filenames (LFNs).
+
+You can use alphabetic and numeric characters plus the punctuation marks ! #
+$ % & ' ( ) - @ ^ _ ` { } and ~ in both the base name and the extension of a
+FAT filename.  Because the exclamation point [!], percent sign [%], caret
+[^], at sign [@], parentheses [()], and back-quote [`] also have other
+meanings to 4DOS, it is best to avoid using them in filenames.
+
+The LFN and HPFS file systems allow file names with a maximum of 255
+characters, including spaces and other characters that are not allowed in a
+FAT system file name, but excluding some punctuation characters which are
+allowed in FAT file names.  See your operating system documentation for
+details on the characters allowed.  If you use file names which contain
+semicolons [;], see Wildcards for details on avoiding problems with
+interpretation of those file names under 4DOS.
+
+LFN and HPFS file names are stored and displayed exactly as you entered
+them, and are not automatically shifted to upper or lower case.  For
+example, you could create a file called MYFILE, myfile, or MyFile, and each
+name would be stored in the directory just as you entered it.  However, case
+is ignored when looking for filenames, so you cannot have two files whose
+names differ only in case (i.e., the three names given above would all refer
+to the same file).  This behavior is sometimes described as "case-retentive
+but not case sensitive" because the case information is retained, but does
+not affect access to the files.
+
+Files stored on LFN and HPFS volumes often have "FAT-compatible" names:
+names which contain only those characters legal on a FAT volume, and which
+meet the 8 character name / 3 character extension limits.  Programs which
+cannot handle long names (for example, DOS programs accessing a VFAT drive
+under Windows 95) generally can access files by using FAT-compatible names.
+
+HPFS and LFN-compatible file name includes spaces or other characters that
+would not be allowed in a FAT name, you must place double quotes around the
+name.  For example, suppose you have a file named LET3 on a FAT volume, and
+you want to copy it to the LETTERS directory on drive F:, an HPFS partition,
+and give it the name Letter To Sara.  To do so, use either of these
+commands:
+
+     c:\wp> copy let3 f:\LETTERS\"Letter To Sara"
+     c:\wp> copy let3 "f:\LETTERS\Letter To Sara"
+
+LFN and HPFS file systems do not explicitly define an "extension" for file
+names which are not FAT-compatible.  However, by convention, all characters
+after the last period in the file name are treated as the extension.  For
+example, the file name "Letter to Sara" has no extension, whereas the name
+"Letter.to.Sara" has the extension Sara.
+
+Additional information about disk files and file systems is available under
+Drives and Volumes, File Systems, Directories and Subdirectories, and File
+Attributes and Time Stamps.
+
+
+
+4DOS Help Topic:  File Attributes and Time Stamps
+
+
+Each file also has attributes, and one or more time stamps.  Attributes
+define characteristics of the file which may be useful to the operating
+system, to you, or to an application program.  Time stamps can record when
+the file was created, last modified, or last accessed.  Most 4DOS file
+processing commands allow you to select files for processing based on their
+attributes and/or time stamp(s).
+
+Each file on your system has four standard attributes.  Every time a program
+modifies a file, the operating system sets the Archive attribute, which
+signals that the file has been modified since it was last backed up.  This
+attribute can be used by 4DOS to determine which files to COPY, and by
+backup programs to determine which files to back up.  When the Read-only
+attribute is set, the file can't be changed or erased accidentally; this can
+be used to help protect important files from damage.  The Hidden and System
+attributes prevent the file from appearing in normal directory listings.
+(Two additional attributes, Directory and Volume label, are also available.
+These attributes are controlled by the operating system, and are not
+modified directly by 4DOS.)
+
+Attributes can be set and viewed with the ATTRIB command.  The DIR command
+also has options to select filenames to view based on their attributes, to
+view the attributes themselves, and to view information about normally
+"invisible" hidden and system files.
+
+When a file is created, and every time it is modified, the operating system
+records the system time and date in a time stamp in the file's directory
+entry.  Several 4DOS commands and variable functions, and many backup and
+utility programs, use this time stamp to determine the relative ages of
+files.
+
+On FAT volumes, only the single time stamp described above is available.
+Files on LFN volumes have three sets of time and date stamps.  The operating
+system records when each file was created, when it was last written or
+modified, and when it was last accessed.  The "last write" time stamp
+matches the single time stamp used on traditional FAT volumes.
+
+Several 4DOS commands and variable functions let you specify which set of
+time and date stamps you want to view or work with on LFN volumes.  These
+commands and functions use the letter "c" to refer to the creation time
+stamp, "w" for the last write time stamp, and "a" for the last access time
+stamp.  Note that LFN volumes under Windows 95 store a date but no time in
+the "last access" time stamp; on these drives the time of last access will
+always be 00:00.
+
+Additional information about disk files and file systems is available under
+Drives and Volumes, File Systems, Directories and Subdirectories, and File
+Names.
+
+
+
+4DOS Help Topic:  LFN File Searches
+
+
+Under Windows 95, files on VFAT volumes can have both a long file name (LFN)
+and a short FAT-compatible file name.  4DOS, when running under Windows 95,
+normally examines both forms of each file name when searching for files.  It
+does so in order to remain compatible with the default command processor,
+COMMAND.COM.
+
+The long filename is checked first, and if it does not match then the short
+name is checked.  Matching files which have only a short filename will be
+found during the first search, because in that case Windows treats the short
+name as if it were a long name.
+
+For example, suppose you have two files in a directory with these names:
+
+     Long Name          Short Name
+     ---------------    ------------
+     Letter Home.DOC    LETTER~1.DOC
+     Letter02.DOC       LETTER02.DOC
+
+A search for LETTER??.DOC will find both files.  The second file
+(LETTER02.DOC) will be found during the search of long filenames.  The
+firstfile ("Letter Home.DOC") will be found during the search of short
+filenames.
+
+You can change this default behavior with the Win95SFNSearch directive in
+4DOS.INI.  Set Win95SFNSearch to No to disable the secondary short filename
+search.  This will prevent the potential problem described above, but will
+make 4DOS's behavior inconsistent with that of COMMAND.COM.
+
+Caution:  Take extra care when you use wildcards to perform operations on
+LFN volumes because you may select more files than you intended.  For
+example, Windows 95 often creates short filenames that end "~1.", "~2.",
+etc.  If you use a command like:
+
+     del *1.*
+
+you will delete all such files, including most files with long filenames,
+which is probably not the result you intended!
+
+
+
+4DOS Help Topic:  Installing the KSTACK Program in Windows 95
+
+
+If you want to load KSTACK.COM (required for the KEYSTACK command) under
+Windows 95, it should be loaded separately for each 4DOS window.  To do so,
+include the KSTACK command on the startup command line when you set up the
+corresponding shortcut(s).  For example, the command line for your shortcut
+might read:
+
+     c:\4dos55\4dos.com c:\4dos55\kstack.com
+
+This will load KSTACK when the 4DOS window is opened, then display a prompt.
+
+If you install KSTACK in AUTOEXEC.BAT it will not work properly when
+multiple 4DOS windows are open -- stacked keystrokes will "bleed through"
+from one window to another.
+
+
+
+4DOS Help Topic:  Using "MS-DOS Mode"
+
+
+Windows 95 allows you to run programs in "MS-DOS Mode".  In this mode
+Windows is shut down and the entire computer is devoted to running a single
+MS-DOS program.  When the program is finished, Windows reboots.
+
+You can start a specific program in MS-DOS mode by checking the appropriate
+box on the Advanced screen in that program's Properties dialog.  4DOS
+generally is not involved when specific, individual programs are run this
+way.
+
+When you shut down Windows 95 one option is to "Restart the computer in
+MS-DOS mode".  If you select this option Windows will shut down and
+COMMAND.COM will start.  To use 4DOS (rather than COMMAND.COM) when this
+option is selected, you must adjust the "Exit to DOS.PIF" file as follows:
+
+     * Open (double-click) the My Computer object on the desktop,
+       open the drive where Windows is loaded (usually drive C:), and
+       open the WINDOWS folder.
+
+     * Find the item in the WINDOWS folder labeled "Exit to DOS"
+       (this refers to the file "\WINDOWS\Exit to DOS.PIF")
+
+     * Click on this item with mouse button 2, then click the
+       Properties selection on the pop-up menu
+
+     * Change the field which names COMMAND.COM so that it refers to
+       4DOS.COM (including the drive and path)
+
+     * Close the Properties dialog and the other windows
+
+Once this change is made the "Restart the computer in MS-DOS mode" option
+will load 4DOS, not COMMAND.COM.  If you use this option, type EXIT when you
+are done, and Windows will reboot.
+
+4DOS itself does not need to run in MS-DOS mode.  However if you want to
+create an object which starts 4DOS in MS-DOS mode for some special purpose,
+you can use the approach described above.  Simply create a shortcut for 4DOS
+as described in Starting 4DOS, and check the MS-DOS Mode box on the Advanced
+screen in the shortcut's Properties dialog.
+
+
+
+4DOS Help Topic:  DBLSPACE and DRVSPACE
+
+
+4DOS fully supports DBLSPACE and DRVSPACE compressed drives in MS-DOS 6 and
+above, and DRVSPACE compression in Windows 95.  You can display and sort by
+compression ratios on these drives with the DIR /C and /O:c switches (the
+same switches also work with SELECT).  See your Reference Manual or the
+online help for details on these switches.
+
+4DOS will display Win95 DRVSPACE compression ratios whether you are in a
+"command prompt" boot (without the GUI loaded) or in a full Win95 boot.
+Windows 95 COMMAND.COM only displays compression ratios when the GUI is
+loaded.

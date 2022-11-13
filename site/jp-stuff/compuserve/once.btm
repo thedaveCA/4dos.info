@@ -1,0 +1,65 @@
+@echo off
+if NOT "%1"=="" goto start
+cls
+TEXT
+
+       This batch file will start a specified command if not previously
+       called within the specified number of minutes. The first parameter 
+       specifies the instance of invocation of this batch file, so that 
+       multiple independent commands can use this function (useful if 
+       re-booting frequently). The second parameter is the number of 
+       minutes to wait. The third parameter is the command, with arguments.
+       Examples:
+               ONCE 1 60 IMAGE C:
+               ONCE 2 60 CHKDSK C:
+
+       0-byte files are created to store info about the prior execution
+       of the command. You can specify the drive and/or directory to store
+       these filenames by using SET={drive:} or SET={drive:\directory}
+       (note: no trailing backslash).
+ENDTEXT
+QUIT
+
+:start
+setlocal
+set lastdate=0
+set lasttime=0
+
+if "%savedir"=="" set savedir=c:
+: check if input is correct
+if %@numeric[%1]=0 goto error1
+if %@numeric[%2]=0 goto error1
+
+: Normalize instance to 2 digits
+set instance=%1
+if %@len[%1]=1 set instance=0%1
+
+: Is there a 0-byte file once.!%instance in the SAVEDIR dir.?
+: If so, set LASTDATE to the file date in days and LASTTIME to the 
+: file time in seconds
+iff exist %savedir\once.!%instance then
+  set lastdate=%@date[%@filedate[%savedir\once.!%instance]]
+  set lasttime=%@time[%@filetime[%savedir\once.!%instance]]
+endiff
+
+: Is the date-time of the file more than %2 minutes old (in seconds)?
+: If so, do the 3rd parameter as a command 
+: After execution, make once.!%instance with today's date-time
+iff %@date[%_date] gt %lastdate goto WORK
+iff %@date[%_date] eq %lastdate .AND. %@eval[%@time[%_time]-(60*%2)] ge %lasttime goto WORK
+
+:NOWORK  
+  echo Skipping execution of %3
+  Delay 1
+QUIT
+
+:WORK
+  call %3&
+  > %savedir\once.!%instance
+QUIT
+
+:error1
+  beep
+  echo First and second parameters must be numeric.
+  echo.
+QUIT

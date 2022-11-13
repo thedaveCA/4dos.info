@@ -1,0 +1,119 @@
+::  XCHKEXE.BTM                                 VERSION 1.1   18_APR_1995
+::  (What type of EXE file?)
+::
+::  If you don't know any more if that .EXE file on your disk wants to be
+::  run under DOS, WINDOWS, OS/2 and are tired of the "This program needs
+::  Microsoft Windows" type message, XCHKEXE will tell you more.  XCHKEXE
+::  tries to emulate the %@exetype function only available under OS/2 for
+::  the hardboiled DOS user.
+::
+::  XCHKEXE first looks at the first 2 bytes of a file, which are "MZ" in
+::  every valid exe_file. It then looks at the 4 bytes starting at offset
+::  60 (3Chex) for the pointer to the start of a new style exe header and
+::  tries to find that. It then extracts the OS flag from that.
+::
+::  I have incorporated what I could find about the  OS flag of NE and LX
+::  style headers.  This sadly isn't enough, as you will see if you check
+::  out BATCOMP.EXE and PATCH.EXE from JPS. If there is a way to get more
+::  correct info out of that header within the scope of a btm,  give me a
+::  hint. I could not find anything about PE file headers.  And there may
+::  be still others...
+::
+::  Further suggestions welcome
+
+    setlocal
+    unalias *
+    on break goto END
+    on error goto ERR
+
+    if "%1" eq "-?" .or. "%1" eq "/?" .or. "%1" eq "?" goto USAGE
+
+    if "%1" eq "" dir /bfa:-d *.exe > %temp\CHKEXE.DAT
+    if exist %1 dir /bfa:-d %1 > %temp\CHKEXE.DAT
+    if "%1" ne "" .and. isdir %1 dir /bfa:-d %1\*.exe > %temp\CHKEXE.DAT
+    if %@filesize[%temp\CHKEXE.DAT] lt 1 goto END
+
+    setdos /x-45678
+    echo.
+    do n=0 to %@lines[%temp\CHKEXE.DAT]
+        set _handle=%@fileopen[%@line[%temp\CHKEXE.DAT,%n],read,b]
+        set _dummy=%@fileseek[%_handle,0,0]
+        set _dummy=%@fileread[%_handle,2]
+
+        iff "%_dummy" eq "MZ" then
+            do m=0 to 3
+                set _dummy=%@fileseek[%_handle,%@eval[60 + %m],0]
+                set _inp=%@eval[%@ascii[%@fileread[%_handle,1]] * (256 ** %m)]
+                set _cinp=%@eval[%_cinp + %_inp]
+            enddo
+            set _dummy=%@fileseek[%_handle,%_cinp,0]
+            set _style=%@fileread[%_handle,2]
+
+            iff "%_style" eq "NE" then
+                echos    %@format[12,%@upper[%@filename[%@line[%temp\CHKEXE.DAT,%n]]]]    NE new style exe, OS flag:
+                set _dummy=%@fileseek[%_handle,52,1]
+                set _type=%@ascii[%@fileread[%_handle,1]]
+                if "%_type" eq "1"  echo  OS/2
+                if "%_type" eq "2"  echo  WINDOWS
+                if "%_type" eq "3"  echo  DOS
+                if "%_type" eq "0"  .or. "%_type" ge "4" echo unknown
+            elseiff "_style" eq "PE" then
+                echo    %@format[12,%@upper[%@filename[%@line[%temp\CHKEXE.DAT,%n]]]]    PE new style exe
+            elseiff "_style" eq "LX" then
+                echos    %@format[12,%@upper[%@filename[%@line[%temp\CHKEXE.DAT,%n]]]]    LX new style exe, OS flag:
+                set _dummy=%@fileseek[%_handle,9,1]
+                set _type=%@ascii[%@fileread[%_handle,1]]
+                if "%_type" eq "1"  echo  OS/2
+                if "%_type" eq "2"  echo  WINDOWS
+                if "%_type" eq "3"  echo  DOS
+                if "%_type" eq "4"  echo  WINDOWS 386
+                if "%_type" eq "0"  .or. "%_type" ge "5" echo unknown
+            else
+                echo    %@format[12,%@upper[%@filename[%@line[%temp\CHKEXE.DAT,%n]]]]    MZ old style exe, OS: DOS
+            endiff
+
+            unset _inp _cinp
+        else
+            echo    %@format[12,%@upper[%@filename[%@line[%temp\CHKEXE.DAT,%n]]]]    EXE_file format not valid!
+        endiff
+        if "%_handle" ne "" set _dummy=%@fileclose[%_handle]
+    enddo
+    setdos /x0
+
+:END
+
+    if "%_dummy" ne "" set _dummy=%@fileclose[%_handle]
+    if exist %temp\CHKEXE.DAT del /q %temp\CHKEXE.DAT
+    setdos /x0
+    quit
+
+:ERR
+
+    beep
+    echo.
+    echo ERROR: No files found
+    echo.
+    goto END
+
+:USAGE
+
+    cls
+    text
+
+
+ XCHKEXE.BTM   컴컴컴컴    Utility to find OS for .EXE files.
+
+ Syntax:
+
+ XCHKEXE                    Display info for .EXE files in
+                            current directory
+
+ XCHKEXE d:\foobar          Display info for .EXE files in D:\FOOBAR
+
+ XCHKEXE <filespec>         Display info for files in <filespec>
+
+ XCHKEXE /?                 Syntax  (this screen)
+
+    endtext
+    goto END
+

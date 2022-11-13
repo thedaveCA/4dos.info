@@ -1,0 +1,38 @@
+:: mkindex2.htm
+:: see "news://jpsoft.media3.net/138154%40jpsoft.support"
+  *setlocal
+  *unalias *
+  ::on error goto done
+  ::on break goto done
+  set f="index.htm"
+  set d="%@full[.]"
+  echo %=n%@upper[%0]:  Hit Ctrl-C to abend or press any key to
+  pause %@if[exist %f,re,]build %f.
+  cdd %d
+  >!%f
+  echo %=<HTML%=>%=<HEAD%=>%=<TITLE%=>Contents of %@full[%d]%=</TITLE%=>%=<HEAD%=> >> %f
+  echo %=<BODY%=>%=<CENTER%=>%=<H1%=>%d%=</H1%=>%=<P%=> >> %f
+text >> %f
+<TABLE ALIGN=CENTER BORDERCOLOR="#0000FF" BORDER="5" COLS="4" WIDTH="90%">
+<TR>
+<TD BGCOLOR="WHITE"><CENTER><B>Name</B></CENTER></TD>
+<TD BGCOLOR="WHITE"><CENTER><B>Date</B></CENTER></TD>
+<TD BGCOLOR="WHITE"><CENTER><B>Size</B></CENTER></TD>
+<TD BGCOLOR="WHITE"><CENTER><B>Description</B></CENTER></TD>
+</TR>
+endtext
+  set n=0
+  dir /[!*.ion] /a:-d /bo:-t | for %i in (@con) (
+    echo %=<TR%=> >> %f
+    echo %=<TD%=>%=<A HREF="%i"%=>%i%=</A%=>%=</TD%=> >> %f
+    echo %=<TD%=>%@filedate["%i"]%=</TD%=> >> %f
+    echo %=<TD%=>%@format[5,%@filesize["%i",K]]K%=</TD%=> >> %f
+    echo %=<TD%=>&nbsp;%@descript["%i"]%=</TD%=> >>%f
+    echo %=</TR%=> >> %f
+    set n=%@inc[%n]
+  )
+  echo %=</TABLE%=> >>%f
+  echo %=<P%=>[%n files indexed on %_date at %_time >> %f
+  echo by %=<BIG%=>%=<A HREF="http://jpsoft.com/"%=>4DOS%=</A%=>!]%=</BIG%=>%=</BODY%=>%=</HTML%=> >> %f
+  :done
+

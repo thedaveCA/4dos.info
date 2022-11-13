@@ -1,0 +1,127 @@
+:------------ cut everything above this line ------------
+: WHICH.BTM
+:
+: 31-MAR-93 version
+:
+: (for 4DOS, 4OS2/16, and 4OS2/32)
+:
+: Determine "WHICH" command(s) will be executed -- internal, alias, external,
+: executable extension, etc.
+:
+: Syntax:
+:              WHICH cmd1 cmd2 ... cmd256
+:
+: - Executable extensions and aliases are recursively processed
+: until reduced to a single executable (program or batch file).
+: - Directories (including those available via CDPATH) are identified
+: whenever possible.
+: - Environment variables are allowed (eg. "which %temp").
+:
+: No promise or guarantee of suitability for any purpose. - MRB
+:
+: (from an original batch file contributed by Ray Tackett)
+:
+*setlocal
+:main
+*set i=%1
+:loop
+*iff .%i eq . .or. .%i eq .* .or. %@ascii[%i] eq 34 then
+  *echo Syntax: %@upper[%@name[%0]] command(s)
+  *quit
+*else
+  *echo ``
+  *set targ=%@upper[%@name[%i]]
+  *set x=%@upper[%@ext[%i]]
+  *echos %@upper[%i] is a
+*endiff
+*iff .%@substr[%i,0,1] eq .* then
+  *set i=%@substr[%i,1]
+  *iff isalias %i then
+    *echo n unaliased %@upper[%i]
+    *unalias %i>&nul
+  *else
+    *echo n equivalent for %@upper[%i]
+  *endiff
+  *goto loop
+*endiff
+*if .%x eq . *goto noext
+*if %_dos eq dos .and. %@index[.com.exe.bat.btm.,.%x.] ge 0 *goto catext
+*if %_dos eq os2 .and. %@index[.exe.btm.cmd.,.%x.] ge 0 *goto catext
+*set y=.%x
+*iff %@len[%[%y]] gt 0 .or. .%.* ne . then
+ *echo n Executable extension: %@upper[%[%y]]
+  *iff .%@path[%[%y]] eq . then
+    *set i=%@word[0,%[%y]]
+    *goto loop
+  *endiff
+  *iff not exist %@full[%[%y]] then
+    *echo Extension program not found
+    *goto cleanup
+  *endiff
+*else
+  *echo n unknown %@upper[%_dos] command!
+  *beep
+*endiff
+*goto cleanup
+:catext
+*set targ=%targ.%x
+:noext
+*iff isalias %i then
+  *echos n Alias:` `
+  *alias %targ
+  *set z=%@unique[%temp]
+  *alias %targ>!%z
+  *set p=%@index[%@line[%z,0],|]
+  *iff %p eq -1 .or. %p ge %@len[%@word[0,%@line[%z,0]]] then
+    *set y=%@word[0,%@line[%z,0]]
+    *del /qy %z
+    *if .%i eq .%y *goto cleanup
+    *set i=%y
+    *goto loop
+  *else
+    *goto cleanup
+  *endiff
+*elseiff isinternal %i then
+  *echo n internal command
+  *goto cleanup
+*endiff
+*set targ=%@search[%i]
+*iff .%targ ne . then
+ *iff .%@ext[%targ] eq .bat .or. .%@ext[%targ] eq .btm then
+    *echos `` Batch File
+  *elseiff %_dos eq os2 .and. .%@ext[%targ] eq .cmd then
+    *iff .%@substr[%@line[%targ,0],0,2] eq ./* then
+      *echos `` REXX
+    *endiff
+    *echos `` Command File
+  *else
+    *echos n Executable File
+    *iff %_dos.%@ext[%targ] eq os2.exe .or. %_dos.%@ext[%targ] eq os2.com then
+      echos  (%@exetype[%targ])
+    *endiff
+  *endiff
+  *echos ` `in %@path[%targ] =
+  *echo ``
+  *iff %_dos eq dos .and. %_dosver gt 3 then
+*if %@truename[%targ] ne %targ *echo (true location is %@path[%@truename[%targ]])
+  *endiff
+  *dir /dkma %targ
+*else
+  *pushd >&nul
+  *cdd %1 >&nul
+  *iff %_? eq 0 then
+    *echo  directory on drive %_disk =
+    *echo  %_cwd
+  *else
+    *echo n unknown %@upper[%_dos] command!
+    *beep
+  *endiff
+  *popd >&nul
+*endiff
+:cleanup
+*iff %@len[%2] gt 0 then
+  *shift
+  *goto main
+*endiff
+:------------ cut everything below this line ------------
+

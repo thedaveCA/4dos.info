@@ -1,0 +1,350 @@
+
+
+
+                                  JP Software
+
+                           4DOS Update Documentation
+
+                       Version 5.51 -- October 17, 1995
+
+   Copyright 1988 - 1995, JP Software Inc., All Rights Reserved.  Published
+   by JP Software Inc., P.O. Box 1470, E. Arlington, MA 02174 USA, (617)
+   646-3975.
+
+
+   Check through this file for a comprehensive list of what's changed since
+   version 5.5.  Additional documentation on new features is in the online
+   help.
+
+   Some of the descriptions below may be more detailed than you need; if
+   you aren't using a feature, feel free to skip to the next item.  If you
+   are new to 4DOS with version 5.51, you can skip this file entirely, and
+   begin with the 4DOS Introduction and Installation Guide.
+
+   This file is divided into the following sections:
+
+          General Features and Enhancements
+          Startup and Initialization
+          Command Changes
+          Internal Variables and Variable Functions
+          Technical, Compatibility, and Bug Fixes (each revision)
+
+   Significant new features and those which affect most users are marked
+   with "**" in the lists below.  Other items discuss smaller or more
+   technical changes.
+
+   This file may cover multiple revisions (e.g. version 5.51A, 5.51B,
+   etc.).  Most items refer to changes made in the initial release,
+   revision A.  Any item with a revision letter in the left margin (e.g. an
+   item marked with "=>B") was added or updated in that revision.  Minor
+   technical, compatibility, and bug fixes for each revision are listed at
+   the end of the file.
+
+   This file is formatted at 58 lines per page, and contains form feeds and
+   page footers.  It can be viewed with a file viewer such as the 4DOS LIST
+   command, or printed on most PC printers using the command:
+
+                  copy updat551.doc prn
+
+   Printing it with a program that formats the pages is not likely to work
+   due to the formatting included in the file.
+
+
+
+
+                                                              (10/95-5.51B)
+
+
+
+   4DOS 5.51  [10-17-95]         UPDAT551.DOC                        page 1
+
+
+
+                             4DOS 5.51 Change List
+
+   General Features and Enhancements
+   ---------------------------------
+
+   =>B ** 4DOS now supports beta versions of Windows 95 including long
+          filenames, LOCK and UNLOCK commands, and several other features. 
+          See the "Win95" topic in the online help for additional
+          information if you are using 4DOS under Windows 95.
+
+   => **  4DOS now supports PC-DOS 7 REXX batch files.  Any .BAT file with
+          "/*" at the beginning of the first line will be passed to
+          REXX.EXE for processing, just as it is under PC-DOS 7
+          COMMAND.COM.
+
+   =>     4DOS now supports batch file line continuation.  Lines terminated
+          with an escape character (Ctrl-X) will have the escape character
+          removed and the next line appended.
+
+
+   Startup and Initialization
+   --------------------------
+
+   =>     4DOS will not inherit aliases, .INI settings, etc. from a primary
+          shell under Windows 95 if disk swapping is used in the primary
+          shell.  This is because the file handle for the primary shell's
+          swap file cannot be passed properly to a secondary shell under
+          Windows 95.  Also a message is now displayed when 4DOS starts as
+          a secondary shell under Windows 95 (as it did previously for Win
+          3.x).
+
+   =>     Added two new .INI directives:
+
+              ListExit = Key (Esc):  Allows you to map the keystroke used
+              to exit the LIST command.
+
+              RexxPath = Path:  If RexxPath is set, 4DOS will look at .BAT
+              files to see if they're REXX files (begin with a /*); if they
+              are 4DOS will insert the program name specified in RexxPath
+              in front of the batch file name and reexecute it.  If you're
+              running PC-DOS 7, 4DOS will default to using "REXX.EXE" for
+              the RexxPath directive.
+
+
+   Command Changes
+   ---------------
+
+   => **  COPY / DEL / MOVE / REN:  When using the prompt (/P) option, an
+          ESCAPE will now cancel further processing for that argument,
+          rather than canceling prompting and continuing with the
+          operation.
+
+
+
+   4DOS 5.51  [10-17-95]         UPDAT551.DOC                        page 2
+
+
+   => **  DIR:  Added the /Z switch to force the old ("8.3"-style) filename
+          display on drives which support long filenames, and the /X switch
+          to display both the long and short filenames (under Windows 95
+          only).
+
+   =>B ** DIR / SELECT:  Colorizing filenames with no extension wasn't
+          specifically covered before, though you could do it by using
+          "*:color" to color everything.  You can now specify files without
+          extensions using the syntax " :color".  For example, the
+          following ColorDir setting in the .INI file will color EXE files
+          red, TXT files bright red, and files with no extension bright
+          cyan:
+
+                  ColorDir = exe:red;txt:bri red; :bri cya
+
+   =>     GOSUB / GOTO:  Made a change to try to accommodate both the old
+          label style (first word only) and the new style that permits
+          multi-word labels.
+
+   =>     IFF:  Changed the way the command processor handles piping to
+          IFF.  You can now pipe to an IFF and the pipe information will be
+          passed to the command(s) following the IFF (previously it was
+          ignored).
+
+   =>B    LIST:  Now defaults to listing (all files ("*.*") if the argument
+          is a directory name.  Also printing the file now displays a
+          header (filename, date, and time) on the first page, and GOTO now
+          supports negative offsets -- for example you can enter "-10" to
+          go back 10 lines.  When using negative offsets, the number of
+          lines moved will not correspond accurately to the line count in
+          the LIST status bar when the LIST display is wrapped.
+
+   =>     LOCK, UNLOCK:  Added these new Win95 commands.  See the online
+          help for syntax and other details.
+
+   =>     ON:  Added a new ON ERRORMSG option.  ON ERRORMSG is the same as
+          ON ERROR, but displays the usual error message before executing
+          the specified command (ON ERROR suppresses the error message).
+
+   =>     SETDOS:  You can now change the default description filename with
+          the SETDOS /D switch.  If the /D is followed by a double quote,
+          the string inside the quotes will be used as the description
+          file.  For example:
+
+                  setdos /d"files.bbs"
+
+          The SETDOS /D[0|1] switch (to disable or enable description
+          processing) is still available.
+
+   =>     TYPE:  Will now check for a filename of "NUL" and allow it. 
+          However TYPE will trap attempts to type any other character
+          device.
+
+
+
+   4DOS 5.51  [10-17-95]         UPDAT551.DOC                        page 3
+
+
+   =>     VER:  Displays "(Win 95) DOS" under Windows 95.
+
+
+   Internal Variables and Variable Functions
+   -----------------------------------------
+
+   =>     Added two new internal variables:
+
+                  %_CI           returns the insert-mode cursor shape, as a
+                                 percentage (see SETDOS /S)
+
+                  %_CO           returns the overstrike-mode cursor shape,
+                                 as a percentage
+
+   =>     %_WIN:  Now returns "30" under Windows NT and "40" under Windows
+          95.
+
+   =>     @ATTRIB:  Added an optional third argument.  The new syntax is
+          %@ATTRIB[filename[,NRSHA[,p]]].  The 'p' tells ATTRIB to accept a
+          partial match; i.e. if the file has "RHA" attributes set:
+
+                  %@ATTRIB[filename,R]          fails, because @ATTRIB
+                                                wants an exact match
+
+                  %@ATTRIB[filename,R,p]        succeeds
+
+   =>     @READSCR:  Added offset capability when "+" and "-" are used in
+          the row and column (e.g., "READSCR[-2,0,10]").  The ofsset is
+          relative to the current cursor position.
+
+   =>     @TIMER:  Now separates the hundredths digits with the default
+          country decimal character, not a hard-coded decimal point.
+
+
+   Technical, Compatibility, and Bug Fixes (5.51 rev A)
+   ----------------------------------------------------
+
+   =>     The version number now uses the default decimal separator for the
+          current country (e.g. "2,51" rather than "2.51" for Germany). 
+          This allows you to make numeric comparisons of version numbers in
+          the IF and IFF commands.
+
+   =>     Improved compatibility with APPEND in OS/2 DOS sessions.  See
+          APPNOTES.DOC for details.
+
+   =>     Fixed a minor bug in UNKNOWN_CMD alias processing which caused
+          the command processor to remove the command argument if it was
+          (1) an existing file, and (2) not an executable file.
+
+   =>     ?:  Fixed a problem with the ? prompting command only displaying
+          the first word of the prompt.
+
+
+
+
+   4DOS 5.51  [10-17-95]         UPDAT551.DOC                        page 4
+
+
+   =>     DEL:  Disabled "fast deletes" with /Q when /A:... is used to
+          specify attributes.  Previously the /Q overrode the /A: and the
+          attribute settings were ignored.
+
+   =>     DO:  Fixed a problem with ITERATE inside nested IFFs inside DOs.
+
+   =>     FFIND:  Fixed a problem which sometimes caused FFIND to loop
+          endlessly printing blank lines; also fixed a problem with FFIND
+          not searching past the first 64K of the file in a text search.
+
+   =>     INKEY:  Fixed an obscure problem with combining the /P and /K
+          switches and then entering invalid input. 
+
+   =>     LIST:  Fixed a problem with searching through very large pipes
+          with LIST /S.
+
+   =>     SCRPUT / VSCRPUT:  Now preserve leading quoted whitespace in the
+          text argument.
+
+
+   Technical, Compatibility, and Bug Fixes (5.51 rev B)
+   ----------------------------------------------------
+
+   =>     Fixed a problem which caused trouble with QEMM LOADHI on the
+          SHELL= line (it still won't work all the time, but that is not a
+          4DOS problem), and fixed a related problem with VIDRAM.
+
+   =>     The upper limit for the StackSize .INI directive has been
+          increased to 16384 for those running extremely complex batch
+          files.  Please note that you may receive "out of memory" errors
+          which prevent 4DOS from loading if you use large StackSize values
+          along with enlarged alias and/or history buffers.
+
+   =>     Filename completion was incorrectly inserting quotes around
+          filenames with embedded ampersands.
+
+   =>     Fixed a problem with long filenames in the LOG /W path.
+
+   =>     Fixed problems with DIR running out of memory when handling large
+          directories on drives which support long filenames.
+
+   =>     %_DPMI:  Changed to use the country-dependent decimal character.
+
+   =>     %_WINVER:  Changed to use the country-dependent decimal
+          character.
+
+   =>     COPY / MOVE:  Fixed problems with copying files across a network
+          from a drive which supports long filenames to a drive which does
+          not.  Also modified these commands to use less stack space; this
+          should reduce the chance that you will need to increase the
+          StackSize setting in 4DOS.INI when processing deeply-nested
+          directory structures with COPY /S or MOVE /S.
+
+
+
+   4DOS 5.51  [10-17-95]         UPDAT551.DOC                        page 5
+
+
+   =>     DESCRIBE:  Fixed a problem with describing subdirectories.
+
+   =>     DIR:  Fixed some problems with displaying compression ratios on
+          DRVSPACE compressed drives under Windows 95.
+
+   =>     FFIND:  Fixed a problem with not clearing the hex flag after a
+          previous LIST /X.
+
+   =>     DESCRIBE:  Fixed a problem with describing subdirectories.  Also
+          fixed a problem on non-Win95 systems with a command like:
+
+              describe aaa "bbb"
+
+          when "bbb" is also an existing filename.
+
+   =>     QUIT:  Fixed a problem with running "QUIT n" from the command
+          line.
+
+   =>     SELECT:  Fixed a problem with page numbering in the SELECT
+          display.
+
+   =>     TRUENAME:  Worked around a Windows 95 limitation which prevented
+          use of TRUENAME with long filenames.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   4DOS 5.51  [10-17-95]         UPDAT551.DOC                        page 6
+
