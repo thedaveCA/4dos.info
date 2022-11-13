@@ -1,0 +1,3303 @@
+<!-- saved from url=(0022)http://internet.e-mail -->
+<html>
+<head>
+<title>4 DOS Kurs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style>
+pre { background-color:#FFFFCC; }
+h1  { font-size:25px; background-color:#80f0c0; font-weight:bold; padding-top:5px; padding-bottom:5px; padding-left:10px; }
+h3  { color:blue; }
+.head { font-size:37px; background-color:#ffc080; font-weight:bold; padding-top:15px; padding-bottom:15px; }
+</style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+
+<center><div class=Head>4 DOS Kurs</div></center>
+
+<div align=right><b>von Stefan Petri (1994)<br>&uuml;berarbeitet von Elm&uuml;Soft&nbsp;</b></div>
+
+<h1>Teil 1</h1>
+
+<h3>1. Was ist eigentlich 4DOS?</h3>
+
+     Nun, um es kurz zu sagen ist 4DOS.COM ein Befehlsinterpreter
+     (Programm), welcher die Leistung des normalen DOS <b>absolut</b> steigert!
+<p>
+     4DOS ist KEIN eigenstaendiges Betriebssystem, es ist ausschliesslich
+     ein "Aufsatz" oder eine "Erweiterung" auf ein vorhandenes
+     Betriebssystem.
+
+<h3>2. Was bringt mir 4DOS?</h3>
+
+     Eine ganze Menge!
+     <b>4DOS bietet Dir alle bisherigen DOS-Befehle weiterhin</b> und ist somit
+     voll kompatibel zu MS-DOS und auch das neue Novell-DOS.
+<p>
+     4DOS gibt es auch fuer OS2, was ich hier jedoch nicht ansprechen
+     moechte.
+<p>
+     4DOS bietet Dir selbstverstaendlich alle von MS-DOS bekannten
+     Befehle. Aus diesem Grunde wird das Hauptaugenmerk auf die
+     4DOS-spezifischen Erweiterungen gegenueber MS-DOS gelegt werden.
+     Dies sind vor allem flexible Funktionen und Abfragen der Bereiche:
+<p>
+- Datum<br>
+- Zeit<br>
+- File<br>
+- Beschreibung<br>
+- Tastatureingaben<br>
+...moeglich.
+<p>
+     z.B.:
+     Eine bessere Speichergestaltung, verwenden von ALIASEN (vergeben
+     von bestimmten Tasten oder Worten/Befehlen, die bestimmte Aktionen
+     ausloesen sollen) sowie einfachere Fehlerabfragen (Errorlevels)
+     und natuerlich viel, viel mehr!
+<p>
+     Auch hier im Kurs kann nicht alles von 4DOS angesprochen werden, da
+     es einfach zuviel wird. Am schnellsten hilft die F1-Taste (oder
+     auch HELP {befehl} ).
+
+<h3>3. Wie bringe ich 4DOS zum ersten Mal zum Laufen?</h3>
+
+     Wenn Du es erst einmal nur testen willst kannst Du auch 4DOS
+     direkt aufrufen und es laeuft in einer eigenen SHELL.
+<p>
+     Dies geht durch Aufruf an der DOS-Ebene im Verzeichnis von 4DOS durch
+
+<pre>
+    4DOS.com
+</pre>
+
+     Besser ist es jedoch, 4DOS direkt in der CONFIG.SYS und AUTOEXEC.BAT
+     einzubinden. Dies geschieht durch die folg. Eintraege:
+<pre>
+    in der CONFIG.SYS:
+    SHELL=C:\PFAD\4DOS.COM
+    
+    in der AUTOEXEC.BAT:
+    SET COMSPEC=C:\PFAD\4DOS.COM
+</pre>
+
+     Bei dieser Loesung ist 4DOS sofort beim Start des PC praesent.
+
+<h3>4. Erste Schritte!</h3>
+
+     So, nun geht's an die Praxis!
+     Als erstes solltest Du Dich mit den am haeufigsten benutzten Tasten
+     vertraut machen!
+<pre>
+     F1                 Hilfe zu 4DOS (Datei 4help.exe muss im gleichen Pfad sein wie die 4DOS.COM, 
+                        alternativ auch HELP {befehl} moeglich)
+     F7                 oeffnet Menue, wo alle ausfuehrbaren Dateien (also EXE, COM, BAT und BTM-Dateien) und Verzeichnisse
+                        aufgelistet sind (Enter fuehrt aus, Escape springt zurueck - wie so oft)
+     Bild-rauf          zeigt bisher eingegebene Befehle
+     Bild-runter          "      "       "          "
+     Pfeil-hoch         geht sofort zum letzten Befehl (wie DOSKEY)
+     TABulator o. F9    fuehrt alle EXE, COM, BAT, BTM aus, bzw. bringt alle ausfuehrbaren Dateien/Verz. auf den Bildschirm 
+                        und erspart somit eine Menge Tipparbeit!
+     Escape             loescht die Eingabezeile schnell
+</pre>
+
+     Das fuer's erste, weiteres sollte hier erstmal noch nicht rein.
+
+<h3>5. BTM-Dateien</h3>
+
+     Bei "Erste Schritte" tauchten diese BTM-Dateien schon auf, doch was
+     sind denn BTM-Dateien?
+<p>
+     Es sind ebenfalls normale BATCH-Dateien, naja, nicht ganz normal,
+     sonst waeren sie ja nicht erwaehnenswert.
+<p>
+     (B)atch (t)o (M)emory heisst die Abkuerzung, also auf Deutsch:
+     Stapelverarbeitungsdatei zuerst in den Speicher lesen!
+<p>
+     Bei BAT-Dateien wird jede Zeile der Datei einzeln von der Festplatte
+     oder Diskette gelesen und sind somit wesentlich langsamer als die
+     BTM-Dateien.
+
+<h3>6. interne & externe Befehle</h3>
+
+     Unter DOS gibt es INTERNE und EXTERNE Befehle.
+<p>
+     Der Unterschied besteht darin, dass Externe Befehle immer EINE
+     eigenstaendige Datei sind, so z.B. MEM, MORE, CHKDSK, SCANDISK,...
+<p>
+     ...die internen Befehlen sind ALLE in der Command.com, bzw. hier
+     in der 4DOS.COM vorhanden, also alles in der einen Datei!
+     Dazu zaehlen z.B. DIR, CD, CLS, EXIT, PAUSE, ECHO, MD, ...
+<p>
+     Da die externen Befehle immer eine Datei sind, wird hierfuer auch
+     jedesmal mehr Zeit benoetigt (suchen auf Festplatte oder Diskette)
+     als bei den internen Befehlen.
+<p>
+     Gut, bis hier noch nichts Besonderes wirst Du sagen, doch 4DOS bietet
+     eine Vielzahl von INTERNEN Befehlen mehr, als es Command.com macht.
+<p>
+     Probiert's doch mal aus!
+     Gebt mal MEM ein und danach mal CLS, ihr werdet dabei den Unterschied
+     an Geschwindigkeit schon merken!
+     Noch gravierender sieht man es, wenn man MEM auf Diskette hat und auf
+     der Diskette aufruft.
+
+<h3>7. Kennenlern-Batch, um den Umfang von 4DOS kennenzulernen</h3>
+
+     Die folgende Batchdatei koennt Ihr mal "ausschneiden" und mit beliebigem Dateinamen abspeichern (Dateiendung muss BAT oder besser BTM sein
+     (BTM ist die Endung der Batchdateien unter 4DOS).
+<p>
+     Diese Batchdatei ist fuer den Anfang noch zuviel zum Erlernen von
+     4DOS, doch sie soll einmal einen kleinen Teil zeigen, was man mit
+     4DOS so alles machen kann (bzw. abfragen kann).
+<p>
+     Und nochmals zur Info: Es ist alles BATCH!
+
+<pre>
+    @echo off
+    set FG=%_fg
+    set BG=%_bg
+    setlocal
+    setdos /s0:0
+    
+    :anfang
+    set schoner=0
+    set Wahl=
+    if "%_dow" == "Mon" set wtag=Montag
+    if "%_dow" == "Tue" set wtag=Dienstag
+    if "%_dow" == "Wed" set wtag=Mittwoch
+    if "%_dow" == "Thu" set wtag=Donnerstag
+    if "%_dow" == "Fri" set wtag=Freitag
+    if "%_dow" == "Sat" set wtag=Samstag
+    if "%_dow" == "Sun" set wtag=Sonntag
+    set tag=%_day
+    set monat=%_month
+    set Jahr=%_year
+    
+    cls whi on blu
+    screen 0 9 Rechner:  %_CPU-Rechner
+    if "%_NDP" == "0" screen 0 31 ohne Coprozessor
+    if "%_NDP" == "87"  screen 0 31 mit %_NDP-Coprozessor
+    if "%_NDP" == "287" screen 0 31 mit %_NDP-Coprozessor
+    if "%_NDP" == "387" screen 0 31 mit %_NDP-Coprozessor
+    screen 1 12 Maus:
+    if "%_MOUSE" == "1" screen 1 19 installiert
+    if "%_MOUSE" != "1" screen 1 19 nicht installiert
+    screen 2 11 Video:  %_VIDEO
+    screen 3 9 Monitor:  %_MONITOR
+    screen 4 5 Ansitreiber:
+    if "%_ANSI" == "1" screen 4 19 geladen
+    if "%_ANSI" != "1" screen 4 19 nicht geladen
+    screen 5 13 %_DOS:  %_DOSVER
+    screen 6 12 4DOS:  %_4VER
+    screen 7 7 Shellevel:  %_SHELL
+    screen 8 9 Display:  %_COLUMNS Spalten %_ROWS Zeilen
+    screen 9 10 Farben:  %_FG on %_BG
+    screen 10 8 Bootdisk:  %_BOOT:
+    screen 11 8 Lastdisk:  %_LASTDISK:
+    screen 12 6  Systemzeit:  %_DOW %_DATE  %_TIME Uhr
+    screen 13 4 EMS-Speicher:  %@EMS[b] bytes frei
+    screen 14 4 EXT-Speicher:  %@EXTENDED[b] bytes frei
+    screen 15 4 XMS-Speicher:  %@XMS[b] bytes frei
+    screen 16 4 DOS-Speicher:  %@DOSMEM[b] bytes frei
+    screen 17 0 Environment frei:  %_env bytes frei
+    screen 18 9 Windows:
+    if "%_WIN" == "0" screen 18 19 Windows nicht geladen
+    if "%_WIN" == "1" screen 18 19 Windows 2.x geladen
+    if "%_WIN" == "2" screen 18 19 Windows im 386-Modus geladen
+    if "%_WIN" == "3" screen 18 19 Windows im Real/Standard-Modus geladen
+    if "%_WIN" == "20" screen 18 19 Windows in OS/2 DOS-Box geladen
+    
+    screen 20 1 akt. Laufwerk %_DISK: %@DISKTOTAL[%_DISK,K] Kilobytes gesamt
+    screen 21 19 %@DISKUSED[%_DISK:,K] Kilobytes benutzt
+    screen 22 19 %@DISKFREE[%_DISK:,K] Kilobytes frei
+    
+    drawbox 22 58 24 79 0 bla on bla fill bla
+    scrput 22 %@eval[80-%@len[Heute ist %wtag,]] gre on bla Heute ist %wtag,
+    scrput 23 %@eval[79-%@len[%tag.%monat.%Jahr]] gre on bla %tag.%monat.%Jahr
+    
+    :uhranfang
+    if "%_day" != "%tag" goto anfang
+    scrput 24 59 bri yel on bla Es ist nun:
+    scrput 24 71 bri red on bla %_time
+    inkey /W0 %%Wahl &gt; nul
+    iff "%schoner" == "100" then
+           color bla on bla
+           cls
+           scrput 0 0 bli blu on bla Bildschirmschoner...
+           scrput 23 0 blu on bla Anstatt diesem Bildschirmschoner
+           scrput 24 0 blu on bla koennte auch ein Programm gestartet werden!
+           pause &gt;nul
+           color whi on blu
+           cls
+           set schoner=
+           goto anfang
+    endiff
+    if "%Wahl" ne "" goto end
+    set schoner=%@eval[%schoner + 1]
+    goto uhranfang
+    
+    :end
+    setdos /s10:100
+    endlocal
+    cls %FG on %BG
+    quit
+</pre>
+<hr>
+<h1>Teil 2</h1>
+
+<h3>1. F1-Taste</h3>
+
+     Am Dos-Prompt solltest Du ruhig mal oefters die F1-Taste druecken!
+     Mit ein paar Englisch-Kenntnissen sollte man hier fast immer die
+     gesuchte Loesung finden!
+     Fuer alle, die auf's Deutsch angewiesen sind, gibt es die Version
+     auch bei Computer Solution, Deutschland, meist jedoch mit etwas
+     Verzoegerung zur aktuellsten Verision.
+<p>
+     Das Hilfe-Fenster wird durch Escape oder ALT-X verlassen.
+     Beim Verlassen mit ALT-X bleibt das angezeigte Bild der Hilfe stehen
+     und man kann das Gesuchte noch ablesen und am Dos-Prompt tippen.
+<p>
+     Im Hilfe-Fenster (F1) kann bei beliebigen Befehlen (erst einen auswaehlen) ein String (=Textfolge) mit "F" (=find) gesucht werden!
+     Soll durch die GESAMTE Hilfe gesucht werden, musst Du "G" (=global)
+     tippen und danach den gewuenschten Suchtext.
+     Es geht auch direkt aus der Befehlsuebersicht der Hilfe, dann jedoch
+     obige Tasten in der Kombination mit der ALT-Taste tippen.
+<p>
+     Damit die Weitersuche auch klappt, tippt man einfach "N" (=next).
+<p>
+     Zum Drucken eines Befehls-Teils tippt man "P" (=print) und bestaetigt
+     danach noch mit Enter fuer LPT1 bestaetigen oder statt LPT1 einen
+     Dateinamen eingeben, wohin die Hilfe geschrieben wird.
+<p>
+     Am Dos-Prompt kann auch der Befehl (z.B. DIR) eingegeben und
+     erst dann die F1-Taste getippt werden, womit sofort die Hilfe zu dem
+     Befehl aufgerufen wird!
+<p>
+     Die F1-Taste kann ich nur jedem empfehlen, da sie oft weiterhilft!
+     Also ruhig mal oefters F1-Taste tippen!
+<p>
+     Soviel zur Hilfe, damit duerfte man schonmal vieles finden!
+
+<h3>2. ECHO / ECHOS</h3>
+
+     Der Befehl ECHO duerfte schon vom normalen DOS bekannt sein.
+     Er bringt einen Text auf den Bildschirm oder in eine Datei:
+<pre>
+    echo Hallo Welt, wie geht's?
+    echo.
+    echo Super!
+</pre>
+     Obiges zeigt 3 Zeilen am Bildschirm (vorher in Datei schreiben und
+     dann Datei aufrufen, moeglichst mit Endung BTM, da es schneller geht)
+<p>
+     "ECHO." bewirkt eine Leerzeile (man beachte den Punkt)
+<pre>
+    echos Hallo
+    echos  Welt,
+    echos  wie geht's?
+    echo   Super!
+
+ ...ergibt:   Hallo Welt, wie geht's?  Super!
+</pre>
+     Mit ECHOS wird am Textende nicht in die naechste Zeile umgebrochen
+     und der naechste ECHO oder ECHOS-Befehl wird hinten angefuegt!
+     Hier muss man die Leerzeichen beachten, da sonst der angefuegte Text
+     ohne Zwischenraum angefuegt wird.
+<p>
+     Man hat also schon eine kleine Erweiterung des normalen ECHO-Befehls.
+     Natuerlich klappen auch alle Textumleitungen in eine Datei, wie:
+<pre>
+    echo Hallo, dies steht nun in TEST.TXT &gt; TEST.TXT
+    echo ...und hier die zweite Zeile! &gt;&gt; TEST.TXT
+    echo. &gt;&gt; TEST.TXT
+    echos Hier ein Beispiel &gt;&gt; TEST.TXT
+    echos fuer ECHOS  &gt;&gt; TEST.TXT
+</pre>
+     Der Text wird in die Datei TEST.TXT geschrieben und erscheint nicht
+     am Bildschirm.
+<pre>
+  "&gt;"  leitet den Befehl (hier echo) in eine Datei um und loescht diese, falls vorhanden.
+  "&gt;&gt;" leitet auch den Befehl in die Datei um, jedoch wird hier der Befehl hinten angehaengt!!! 
+       Es darf so auch eine bestehende Datei sein.
+</pre>
+<h3>3. TEXT / ENDTEXT</h3>
+
+     TEXT bringt die folgenden Zeichen alle als reinen Text auf den
+     Bildschirm und zwar solange, bis der Text mit ENDTEXT abgeschlossen
+     wird.
+     Die Bildschirmausgabe erfolgt WESENTLICH SCHNELLER als bei ECHO:
+<pre>
+    text
+    
+       Hallo Welt,
+       dies ist alles Text! Hier duerfen sogar Umleitungszeichen stehen ("&gt;"), welche hier keine Auswirkung haben.
+    
+       Aber <b>Achtung</b>! Variablen werden hier auch als Text gedeutet
+       weshalb ECHO %TEMP auch ECHO %TEMP anzeigt und nicht den Inhalt der Variable %TEMP.
+    
+    endtext
+</pre>
+     Damit duerfte schon alles zu TEXT und ENDTEXT erklaert sein.
+     Mit folg. Methode kann der gesamte Text auch in eine Datei umgeleitet werden. Dies geschieht so:
+<pre>
+    text &gt; datei.txt
+    
+       Hier steht wieder beliebiger Text, der diesmal jedoch
+       in die Datei "datei.txt" umgeleitet wurde und somit
+       NICHT am Bildschirm angezeigt wird.
+    
+    endtext
+</pre>
+     Fuer die Spezi's unter Euch gibt es auch Moeglichkeiten das
+     Pipe-Zeichen "|" mit dem Text sinnvoll zu kombinieren.
+     Hier ein einfaches prima Beispiel:
+<pre>
+    text|set x=%@trim[%@select[con,5,20,9,60,Ende - Bist Du sicher?]]
+       Ja
+       Nein
+    endtext
+</pre>
+     Probiert es mal aus, damit erhaltet Ihr ein Fenster, genau wie bei
+     %@select[...], jedoch ohne eine Datei anzusprechen (CON = Konsole).
+     Na, ist doch was, oder?
+
+<h3>4. DIR</h3>
+
+     Der DIR-Befehl ist um einiges umfangreicher geworden (nicht nur minimal, wie bei ECHO/ECHOS):
+<p>
+     Alle Parameter fuer DIR (und auch andere Befehle) findest Du am
+     leichtesten durch tippen der F1-Taste.
+<p>
+     Ich will hier nicht alle Parameter auffuehren, da es sonst den Rahmen
+     des Kurses sprengen wuerde, da es einfach zuviele davon gibt!
+<p>
+     Hier mal die am gelaeufigsten (DIR ...):
+<pre>
+    Parameter  zeigt Verz. & Dateien wie folgt an:
+    /p         seitenweise (am Bildschirmende stoppt die Anzeige)
+    /w         waagerecht (alle nebeneinander)
+    /2         2 Spalten
+    /4         4 Spalten
+    /Arhsad    nur Dateien mit dem Attribut rhsad werden angezeigt (Kombinationen sind moeglich)
+               r,h,s,a,d stehen fuer die Attribute der Datei: read only, hidden, system, archive, directory
+    /b         nur Dateinamen mit Extension (=Endung)
+    /e         alles in Grossbuchstaben
+    /f         incl. komplettem Pfad
+    /i"text"   nur Dateien mit "text"-Beschreibung
+    /i"*text*" nur Dateien mit Inhalt des "text"-Strings in der Beschreibung
+    /j         zeigt Dateinamen und Extension getrennt (also wie bei Command.com)
+    /L         alles in Kleinbuchstaben
+    /Ox        Sortiert nach Kriterien (x steht fuer: d = datum s = size (groesse) e = extension)
+    /s         incl. Subdirectorys (Unterverz.)
+    /t         incl. Dateiattribut
+    /u         nur Datei-Info's (Groesse gesamt, Dateianzahl, ...) ist also eine kleine Zusammenfassung.
+    /v         sortiert bei Kombination mit 2, 4, w von oben nach unten und dann die naechste Spalte, usw.
+</pre>
+     Kombinationen sind hier moeglich, so z.B.:
+<pre>
+    dir /ad
+    dir /vw
+    dir /4vsjp
+</pre>
+     Also einfach mal ausprobieren!
+
+
+<h3>5. LIST</h3>
+
+     LIST ist der interne Befehl, um Datei-INHALTE anzusehen, also ein
+     reiner Dateibetrachter (Ausdruck und Suche ist aber auch moeglich)
+<p>
+     Aufruf durch:
+<pre>
+    LIST Dateiname
+    
+    ...Platzhalter (und andere Argumente) sind erlaubt (also ? und *).
+</pre>
+     Die Bedienung ist aehnlich wie in der 4DOS-Hilfe, "F" fuer find, also
+     suchen, "N" (=next) fuer weitersuchen/naechste, "P" (=print) zum
+     drucken.
+     "X" ist zum Umschalten auf HEXadezimale Ansicht, also gleichzeitig
+     ein HEXA-Viewer!
+<p>
+     Erlaubte Tasten stehen in der obersten Zeile von LIST hinter Command,
+     einfach austesten!
+
+<h3>6. Parameter /S</h3>
+
+     Auf den Parameter /s moechte ich hier nochmal besonders hinweisen!
+     Der Parameter /s ist in vielen Befehlen anwendbar und erleichtert
+     somit die Bearbeitung oder Anzeige von Dateien in Unterverzeichnissen
+<p>
+     Wenn Du z.B. alle Dateien mit der Endung TMP in allen Unterverz.
+     loeschen moechtest, so geht dies einfach durch den Paramter /s
+<pre>
+    Also so:   DEL \*.TMP /s
+                ^---der Backslash bewirkt den Beginn im Hauptverz.
+</pre>
+<h3>7. MD (make Directory)</h3>
+
+     MD duerfte wohl fast allen bekannt sein, es erstellt ein neues
+     Verzeichnis.
+<p>
+     Der MD-Befehl von 4DOS soll hier nur deshalb kurz erklaert werden,
+     da man auch hervorragend MEHRERE Verzeichnisse GLEICHZEITIG erstellen kann.
+     Dies geht so:
+<pre>
+    MD 1 2 3 4 5 6 7 8 9
+</pre>
+     ...erstellt die Verzeichnisse von 1 bis 9.
+     Mehr soll hier nicht mehr dazu gesagt werden. Man kann also auch
+     hier eine Menge Tipparbeit ersparen.
+
+<h3>8. Mini-Uebungsbatch</h3>
+<pre>
+    echo Hallo %1, wie geht's?
+    echo.
+    echos Nun mal nebeneinander...
+    echo nicht wahr, %1?
+    text
+
+       Hier mal ein Text
+
+    endtext
+    pause
+    list %0
+    pause
+    DIR /4p
+    echo Ende der Batch
+</pre>
+Danach mit dem Dateinamen und dahinter dem eigenem Namen aufrufen.
+
+<hr>
+<h1>Teil 3</h1>
+
+<h3>1. COPY / XCOPY</h3>
+
+     Als erstes sollte hier mal der Unterschied von Copy und Xcopy erklaert werden: COPY liest jede Datei ein, kopiert, liest die naechste
+     Datei ein, kopiert, usw.
+     XCOPY liest erst den Speicher voll (also z.B. 10 Dateien in einem
+     Rutsch) und kopiert erst dann (alle im Speicher vorhandenen Dateien).
+<p>
+     Welches Ihr von beidem benutzt bleibt Euch selbst ueberlassen.
+     Bei mir hat es sich so "eingebuergert", dass ich nur noch COPY nutze
+     obwohl es BEI VIELEN Dateien etwas langsamer ist.
+     COPY bietet mir jedoch einige Parameter mehr.
+<p>
+     XCopy ist aber um ein Vielfaches schneller, wenn es darum geht,
+     Dateien von/nach Diskette zu kopieren.
+<p>
+      Hier mal die Parameter, die bei beiden identisch sind:
+<pre>
+    /M      (M)odified       - Geaenderte Dateien werden kopiert
+    /P      (P)rompt         - fordert Bestaetigung
+    /S      (S)ubdirectories - incl. Unterverz.
+    /V      (V)erify         - Vergleicht die Dateien nach dem Kopieren
+</pre>    
+    Das Verz. C:\TEMP muss unten natuerlich vorhanden sein:
+<pre>
+     copy *.* c:\temp /msp     
+    xcopy *.* c:\temp /msp     
+</pre>                          
+...kopiert also alle geaenderten Dateien des akt. Verz. nach C:\TEMP
+incl. aller Unterverz. und fordert eine Bestaetigung des Anwenders (Abbruch mit Ctrl-C oder Ctrl-Break)
+<p>
+     Ich moechte daher nur noch einige Parameter ansprechen, dies
+     sind:
+<pre>
+    /W      (XCOPY) Wartet auf Tastendruck um Kopieren zu starten
+    /U      (Copy)  Kopiert nur Dateien, die auf dem Ziel noch nicht vorhanden sind, oder aelteren Datums sind (update)
+    /R      (Copy)  Fragt vor Kopieren, ob ein bereits bestehendes File, gleichen Namens ueberschrieben werden kann.
+    /H      (Copy)  Kopiert incl. Versteckten Dateien (Hidden)
+    /N      (copy)  fuehrt den Befehl aus, macht jedoch NICHTS! es ist also eine reine Simulation und dient dazu,
+                    die WIRKUNG eines Befehls zu SEHEN, ohne ihn auszufuehren.
+</pre>
+     Probiert mal folg. aus:
+<pre>
+    copy *.* c:\temp
+</pre>
+     Aendert nun irgendeine Datei in dem Verzeichnis, in dem ihr euch
+     gerade befindet (oder fuegt eine Datei hinzu).
+<p>
+     Dann fuehrt ihr den Befehl
+<pre>
+    copy *.* c:\temp /u
+</pre>
+     ...aus. Ihr werdet merken, dass nur das geaenderte (oder hinzugefuegte) File kopiert wird!
+
+<h3>2. MOVE</h3>
+
+     Move VERSCHIEBT Dateien - dies ist fast gleich, als wenn man zuerst
+     ein (mehrere) File(s) kopiert und die alten dann loescht.
+     Move klappt jedoch bedeutend schneller!
+<p>
+     Move ist mit MS-DOS als seperate Datei (=externer Befehl)
+     mitgeliefert, wird jedoch mit 4DOS nicht mehr benoetigt, da 4DOS
+     den Befehl MOVE als INTERNEN BEFEHL vorhanden hat!
+     Man kann also getrost DEL C:\DOS\MOVE.COM vornehmen.
+<p>
+     Die Parameter von MOVE sind identisch mit denen von COPY (siehe oben)
+     Dies ist somit gut geloest, da man sich nicht immer verschiedene
+     Parameter angewoehnen muss!
+     (Anmerkung: es geben noch kleinere Unterschiede zu den Parametern,
+     die jedoch hier nicht zu tragen kommen)
+<p>
+     <b>ACHTUNG</b>: Zum Testen von MOVE solltet ihr (damit nichts schieflaeuft)
+              immer den Parameter /N hinzufuegen, da man so erst einmal
+              das Ergebnis des Befehls ueberpruefen kann (wird am Bildschirm angezeigt).
+
+<h3>3. DEL / ERASE</h3>
+
+    Auch hier gelten die meisten Parameter wie bei COPY!
+    Hier gibt es allerdings noch zusaetzlich andere Parameter:
+<pre>
+    /X      entfernt leere Unterverz. (nur in Verbindung mit /S)
+    /Y      bestaetigt das loeschen automatisch mit JA (Yes)
+    /Z      loescht auch versteckte und Read-Only (nur lesen) Dateien
+</pre>
+
+<h3>4. CD / CDD / DIRS</h3>
+
+     CD (=Change Directory, oder auch CHDIR) duerfte wohl allen bekannt
+     sein (in anderes Verzeichnis wechseln).
+<p>
+     Was hier anders/neu ist, zeigen folg. Beispiele:
+<pre>
+    CD...     wechselt 2 Verz. hoeher
+    CD....    wechselt 3 Verz. hoeher
+    \         wechselt ins Hauptverzeichnis (\ ohne CD schreiben!)
+    CD -      wechselt ins Verz., wo man sich zuletzt befunden
+              hatte (etwa wie eine UNDO/Rueckgaengig-Funktion)
+</pre>
+     Nun zu CDD: CDD wechselt nicht nur in ein anderes Verz. sondern
+     wechselt auch auf ein anderes LAUFWERK!
+<pre>
+    C:           wechselt auf C:
+    CDD D:\TEMP  wechselt auf D: und ins Verz. \TEMP
+    CDD -        wechselt auf das Laufwerk und ins Verz., wo man sich
+                 zuletzt befunden hatte (etwa wie eine UNDO/Rueckgaengig-Funktion)
+</pre>
+     CDD arbeitet also Laufwerksuebergreifend!
+
+<h3>5. CDPATH</h3>
+
+     CDPATH ist eine Umgebungsvariable, aehnlich wie TEMP oder COMSPEC.
+     Mit CDPATH kann man sich einen Pfad anlegen, welcher von jedem
+     Verzeichnis aus angesprungen werden kann.
+<p>
+     Um z.B. in das Verzeichnis C:\DOS\LUSTIG\TOLL zu wechseln, muesste
+     man normalerweise folg. eingeben.
+<pre>
+    cd \dos\lustig\toll
+</pre>
+     Hat man nun vorher (z.B. in der autoexec.bat) die Variable CDPATH
+     gesetzt (SET CDPATH=C:\DOS\LUSTIG), so kann man nun direkt in das
+     gewuenschte Verz. springen:
+<pre>
+    cd toll
+</pre>
+     ...hat somit den gleichen Effekt, wie die oben beschriebenen Variante.
+<p>
+     Will man mit CDPATH mehrere Pfade anlegen, werden diese mit einem
+     Semikolon ";" getrennt (Set cdpath=c:\dos\lustig;c:\;d:\)
+
+<h3>6. PUSHD / POPD</h3>
+
+     PUSHD sichert den aktuellen Pfad, zu welchem mit POPD wieder
+     zurueckgesprungen werden kann (wie "CD -" oder "CDD -").
+<p>
+     Der Unterschied zu CD / CDD / CD -  besteht darin, dass mit
+     PUSHD der aktuelle Pfad dauerhaft gesichert wird, also auch nach
+     mehreren Verzeichniswechseln und Laufwerkwechseln.
+<pre>
+    PUSHD C:\DOS
+    PUSHD C:\WINDOWS
+</pre>
+     Sichert auch mehrere Pfade. Hier wird erst C:\DOS, dann C:\WINDOWS
+     als Pfad (nicht path!) gesichert.
+     Wenn man nun einmal POPD eingibt, springt man nach C:\WINDOWS,
+     bei der zweiten Eingabe von POPD geht's zurueck zu C:\DOS.
+<p>
+     Alle gesicherten Pfade koennen mit dem folg. Befehl DIRS ausgelesen
+     werden.
+
+<h3>7. DIRS</h3>
+
+     DIRS zeigt den Directory Stack an - nur Ausgabemeldung, einfach
+     testen. (Solltet Ihr uebrigens bei allen 4DOS-Sachen ruhig machen).
+
+<h3>8. Mini-Uebungsbatch</h3>
+<pre>
+    cls
+    echo Aktuelles Verzeichnis ist nun:
+    cd
+    echo Sichern diesen Verzeichnisses mit PUSHD
+    pushd
+    echo.
+    echos `Ins Hauptverz. von LW D: springen...  `
+    cdd D:\
+    echo Nun sind wir auf:
+    cd
+    echo.
+    echo Die "DIRS-Liste" ist:
+    dirs
+    echo.
+    echo Testkopieren aus Hauptverz. nach Temp-Verz.
+    pause Beliebige Taste fuer weiter...
+    copy \. %temp /n
+    echo.
+    echo Zurueckspringen auf's letzte LW und Verz. 
+    cdd -
+    echo Wir sind nun wieder in:
+    cd
+    echo.
+    echo Mit POPD ins Ursprungsverz. zurueck (am Anfang der Batch)
+    popd
+    echo Hier sollte nun das erste LW und Verz. stehen, in welchem
+    echo die Batch aufgerufen wurde:
+    cd
+    echo.
+</pre>
+<hr>
+<h1>Teil 4</h1>
+
+<h3>1. Ansi.sys</h3>
+
+     Ansi.sys ist dazu da, Farben korrekt auf dem Bildschirm darzustellen.
+     Deshalb sollte auch in der CONFIG.SYS eine der folgende Zeilen
+     stehen:
+<pre>
+    DEVICE=C:\DOS\ansi.sys
+    oder:
+    DEVICEHIGH=C:\DOS\ansi.sys
+</pre>
+     Ansi.sys wird mit dem MS-DOS mitgeliefert, es gibt jedoch eine Menge
+     Ersatztreiber auf dem Shareware-/Public Domain-Markt, wie z.B.:
+     Nansi.sys, NNansi.sys, Tansi.sys, Zansi.sys, uvm.
+<p>
+     Also wichtig erst ANSI.SYS (oder Ersatzprogramm) in der Config.sys
+     mitladen, damit folgende Befehle auch klappen!
+     Natuerlich muss nach dem Eintrag in der Config.sys der PC erst
+     wieder neu gestartet werden, damit es wirksam wird!
+
+<h3>2. COLOR</h3>
+
+     Mit COLOR kann die Schriftfarbe und der Hintergrund geaendert werden
+     z.B.:
+<pre>
+    COLOR white on blue
+</pre>
+     ...bedeutet "Farbe Weiss auf Blau"
+<p>
+     Das Woertchen "ON" muss zwischen den Farben stehen!
+     Die erste Farbe steht fuer die Schrift, die 2. fuer den Hintergrund.
+<p>
+     Die Farben werden auch in englisch geschrieben, daher hier die
+     Farbauswahl:
+<pre>
+    Farbe          mit BRIGHT          ohne BRIGHT
+    **********************************************
+    white          =hellweiss          weiss
+    black          =grau               schwarz
+    blue           =hellblau           blau
+    cyan           =hellzyan           zyan
+    green          =hellgruen          gruen
+    magenta        =hellviolett        violett
+    yellow         =gelb               braun
+    red            =hellrot            dunkelrot
+</pre>
+     Ihr seht, man kann die Farben auch hell darstellen!
+     Dazu wird das Attribut BRIGHT benoetigt, was dann so aussieht:
+<pre>
+    COLOR BRIGHT YELLOW ON Yellow
+</pre>
+     Ihr braucht aber nicht immer alles voll ausschreiben, es reicht,
+     wenn die ersten DREI BUCHSTABEN benutzt werden, 4DOS erkennt dies.
+<pre>
+    Color bri yel on blu
+</pre>
+     Ausserdem kann COLOR mit CLS kombiniert werden, so dass beides
+     gleichzeitig ausgefuehrt wird:
+<pre>
+    CLS bri cya on bla
+</pre>
+     Es gibt auch noch ein zweites Attribut, namens BLINK, welches
+     die Schrift zum Blinken bringt
+<pre>
+    Color BLI bri yel on blu
+</pre>
+     Alles klar? - Gut, dann weiter zum naechsten Befehl!
+
+<h3>3. SCREEN</h3>
+
+     Screen ist aehnlich wie ECHO, mit dem Unterschied, dass bei SCREEN
+     immer eine Position angegeben werden muss, wo der Cursor hinspringen
+     soll, um dort den Text auszugeben.
+     Man kann somit einen Text an einer beliebigen Stelle des Bildschirms
+     plazieren:
+<p>
+     Probiert es nun mal mit diesem hier aus:
+<pre>
+    SCREEN 10 10 Hier beim ersten Wort "hier", ist Position 10 10
+</pre>
+     Die erste Zahl steht fuer die Reihe von oben gezaehlt.
+     Die zweite Zahl steht fuer die Zeichen von links gezaehlt.
+<pre>
+    Screen 0 0     =die obere  linke Ecke
+    Screen 24 0    =die untere linke Ecke
+    Screen 0 79    =die obere  rechte Ecke (hier passt aber nur noch ein Zeichen hin!)
+    Screen 24 79   =die untere rechte Ecke (hier passt ebenfalls nur noch ein Zeichen hin!)
+</pre>
+     Gut, damit ist die zweite Huerde ueberwunden, doch es sieht noch ein
+     wenig farblos aus, oder? Dazu kommt uns der SCRPUT zugute:
+
+<h3>4. SCRPUT / VSCRPUT</h3>
+
+     ScreenPut (SCRPUT) ist eine Kombination aus COLOR und SCREEN!
+     Es muss bei SCRPUT somit die Position UND die Farbe vorgegeben
+     werden:
+<pre>
+    SCRPUT 12 40 bri bli yel on blu Prima, gut gemacht!
+</pre>
+     ...nun sollte in der 12. Reihe von oben und am 40. Zeichen von links
+     in den Farben GELB auf BLAU und blinkend der Text "Prima, gut
+     gemacht!" stehen. Na, klappt's?
+<p>
+     Probiert ein wenig damit aus und ihr werdet es schnell lernen!
+     Zur Not oefters mal F1 tippen!
+<p>
+     Um jedoch nur einen leeren "Balken" anzuzeigen, ohne Text, muesst
+     Ihr sowohl bei SCREEN als auch bei SCRPUT die Leerzeichen in
+     Hochkommas "einpacken", z.B. so:
+<pre>
+    SCREEN 12 40 `                       `
+</pre>
+     Man achte auf die Richtung der Hochkommas (Taste zwischen der Ruecktaste und dem Fragezeichen - (Leertaste nachdruecken), oder die
+     ALT-Taste druecken, dann auf dem Nummernblock 96 tippen und ALT-Taste
+     wieder loslassen).
+<p>
+     Parallel zu scrput gibt es noch Vscrput (=vertikal Scrput).
+     VSCRPUT arbeitet genau wie Scrput, jedoch wird der Text dabei von
+     oben nach unten geschrieben.
+
+<h3>5. DRAWBOX</h3>
+
+     Gut, wenn Ihr es bis hierher geschafft habt, seid ihr schon recht
+     weit!
+<p>
+     DRAWBOX ist wieder so aehnlich wie obige Befehle. Man kann damit
+     eine BOX, bzw. Kasten zeichnen.
+<p>
+     Es verlangt aber auch eine genaue SYNTAX (wie oben):
+<pre>
+    DRAWBOX 2 20 10 60 1 whi on blu fill gre shadow
+          | |  |  |  |  |  |   |   |   |   L--- Schatten
+          | |  |  |  |  |  |   |   |   L------- Fuellfarbe
+          | |  |  |  |  |  |   |   L----------- Fuellung der Box
+          | |  |  |  |  |  |   L-- RahmenHINTERGRUNDfarbe
+          | |  |  |  |  |  L------ auf
+          | |  |  |  |  L--------- Rahmenfarbe
+          | |  |  |  L------------ RahmenART (von 0 bis 4)
+          | |  |  L-- Zeichen von links fuer RECHTE obere Ecke
+          | |  L----- Reihe von oben fuer RECHTE obere Ecke
+          | L-------- Zeichen von links fuer LINKE obere Ecke
+          L---------- Reihe von oben fuer LINKE obere Ecke
+</pre>
+     Shadow (oder SHA) kann man auch weglassen. Es geht auch ZOOM,
+     dann wird die Box von innen nach aussen aufgebaut (sieht man bei
+     schnellem Rechner eh nicht mehr).
+<p>
+     Will man nun die Box mit Text fuellen, sollte man moeglichst
+     SCRPUT verwenden, damit die Hintergrundfarbe uebereinstimmen kann.
+
+<h3>6. drawHline / drawVline</h3>
+<pre>
+     DRAWHLINE (draw=zeichne, H=horizontale, Line=Linie).
+     DRAWVLINE (draw=zeichne, V=vertikale, Line=Linie).
+</pre>
+     Hiermit werden Linien gezeichnet (waagerecht oder senkrecht).
+<pre>
+    DRAWHLINE 2 20 10 1 whi on blu
+              | |  |  |  |  |   |
+              | |  |  |  |  |   L-- LinienHINTERGRUNDfarbe
+              | |  |  |  |  L------ auf
+              | |  |  |  L--------- Linienfarbe
+              | |  |  L---- Linienart (1=Einzellinie, 2=Doppellinie)
+              | |  L------- Linienlaenge (hier 10 Zeichen)
+              | L---------- Zeichen von links fuer Anfangspunkt
+              L------------ Reihe von oben fuer Anfangspunkt
+</pre>
+        Die obige Erklaerung duerfte klar sein, einfach mal testen, dann
+        seht Ihr die Wirkung.
+
+<h3>7. Mini-Uebungsbatch</h3>
+
+     Die folgende Batch kann mit DATEINAME Zahl1 Zahl2 Zahl3 Zahl4 Zahl5
+     gestartet werden. Moegliche Zahlen in dieser Batch sind in der
+     Syntax ausgewiesen (z.B. datei.ext 14 10 19 60 1).
+<pre>
+    :start
+       cls
+       if "%1" == "" (echo SYNTAX: %0 {0-23} {0-78} {1-23} {1-77} {1-4}^QUIT)
+       drawbox %1 %2 %3 %4 %5 bri %_fg on %_bg fill %_bg sha zoo
+       screen %1 %2 `*&lt;-- Hier obere linke Ecke`
+       screen %3 %@eval[%4 - 27] `Hier untere rechte Ecke --&gt;*`
+       delay 2
+       drawhline 11 35 11 2 bri yel on gre
+       drawvline 9 40 5 2 bri yel on gre
+       vscrput 3 79 bri blu on bla PRIMA  gemacht!
+</pre>
+<hr>
+<h1>Teil 5</h1>
+
+<h3>1. INKEY</h3>
+
+     INKEY dient zur Eingabe von EINEM ZEICHEN ueber die Tastatur vom
+     Bediener. Die Eingabe wird dann in eine Variable gesetzt.
+<pre>
+    inkey %%variable
+    echo Variable ist diesmal: %variable
+</pre>
+     INKEY benoetigt KEIN Enter/Return sondern nur einen Tastendruck!
+     In diesem Beispiel erscheint am DOS-Prompt keine Anzeige, doch wenn
+     nun eine Taste gedrueckt wird (fast jede moeglich), wird mit dem
+     echo-Befehl der Tastencode angezeigt.
+     Schoener geht es da so:
+<pre>
+    inkey Druecke eine Taste! %%variable
+    echo Variable ist diesmal: %variable
+</pre>
+     Hier ist das Ganze wenigstens mit einem Text versehen.
+     Oder so:
+<pre>
+    inkey /w4 Druecke eine Taste, oder warte 4 sek.! %%variable
+    echo Variable ist diesmal: "%variable"
+</pre>
+     ...der Parameter "/wX" (wobei X fuer eine Zahl steht!) wartet die
+     angegebene Zeit ab. Sollte bis Ablauf der angegebenen Zeit noch keine
+     Eingabe erfolgt sein, wird INKEY uebergangen und als Wert fuer die
+     Variable (hier %variable) NICHTS uebergeben.
+<p>
+     Manchmal ist es nicht schoen, wenn man die Eingabe sieht, so dass
+     man "/p" einfuegen kann. Die Tasten-Eingabe wird dann unterdrueckt:
+<pre>
+    inkey /P Druecke eine Taste! %%variable
+    echo Variable ist diesmal: %variable
+</pre>
+     Mit INKEY kann man auch ganz bestimmte Tastendruecke fordern. Dabei
+     muss der Parameter "/K" verwendet werden und die gewuenschten Tasten
+     muessen in Anfuehrungszeichen gesetzt werden ("").
+<pre>
+    inkey /k"abc" Druecke Taste A, B oder C: %%variable
+    echo Variable ist diesmal A, B oder C: %variable
+</pre>
+     Bei Funktionstasten oder Tastenkombinationen (Alt-G, Shift-F9,
+     Ctrl-J,...) muessen diese zusaetzlich in eckigen Klammern eingeklammert werden, z.B. so:
+<pre>
+    inkey /k"[F4][Alt-X]" Druecke F4 oder Alt-X: %%variable
+    echo Variable ist diesmal @62 oder @45: %variable
+</pre>
+     Ihr seht, hier kommt ein anderer Code wieder. Dies sind nur die
+     Codewerte fuer die Tasten F4 (@62) und Alt-X (@45).
+<p>
+     Natuerlich kann man beides auch kombinieren:
+<pre>
+    inkey /k"[Alt-X]abc" Druecke Alt-X, A, B oder C: %%variable
+</pre>
+     Bei falschem Tastendruck ertoent ein Tonsignal.
+<p>
+     Das Ganze kann man, damit es wirklichen Sinn bringt auch noch mit
+     Abfragen wie IF oder IFF (kommt in der naechsten Folge) kombinieren
+     um je nach Tasteneingabe bestimmte Befehlsfolgen, Batche oder
+     Programme zu starten.
+<p>
+     Hier noch ein Beispiel, wo eine Eingabe abgefragt wird:
+<pre>
+    inkey /K"JN" %%taste
+    if "%taste" == "J" echo Hier koennte ein Programmstart stehen.
+</pre>
+     Nun aber erst zu INPUT, da beides irgendwie zusammenhaengt.
+
+<h3>2. INPUT</h3>
+
+     Nun, INPUT ist fast gleich wie INKEY. Hier wird jedoch nicht nur
+     eine Taste, sondern eine ganze Zeichenfolge abgefragt/eingegeben.
+<pre>
+    INPUT Beliebigen Text eingeben: %%variable
+    echo Hier steht Dein eingegebener Text:
+    echo %variable
+</pre>
+     Natuerlich kann der Parameter /k hier nicht funktionieren, da ja
+     auch keine einzelne Taste abgefragt wird.
+<pre>
+    /wX  (X=Zahl) klappt auch bei INPUT (also X-Sekunden warten).
+    /LX   begrenzt die Eingabe auf X-Zeichen!
+    
+    input /L5 Text (bis 5 Zeichen): %%variable
+</pre>
+     Wie Du merkst, laesst INPUT hier nur die vorgegebene Laenge von 5
+     Zeichen zu. Mehr geht nicht.
+<p>
+     Mit /P (=Passwort) kann die Eingabe als Passwort erfolgen, d.h.
+     es werden statt der Benutzereingaben nur ***** Sternchen angezeigt.
+<p>
+     Fuer diejenigen, die eine schon vorhandene Variable bei der Eingabe
+     editieren wollen, ist der Parameter "/E" der Richige.
+     Man kann somit auch bestimmte Textfolgen vorgeben.
+<pre>
+    set variable=Hallo
+    input /E Text oder Enter zum uebernehmen: %%variable
+    echo %variable
+</pre>
+     Hier auch noch ein Beispiel fuer INPUT, wo eine Eingabe abgefragt
+     wird:
+<pre>
+    input /L5 %%eingabe
+    if "%eingabe" == "Hallo" echo Gut gemacht!
+    if "%eingabe" != "Hallo" echo Falsch, nur "Hallo" erlaubt!
+</pre>
+     Die IF-Abfrage sollte immer mit z.B. Anfuehrungszeichen ("")
+     (oder beliebigem anderen Zeichen) eingeklammert werden, damit
+     keine Syntax-Fehler auftreten koennen.
+<p>
+     Hier wird gefragt, ob die Eingabe "Hallo" war, wenn ja ( == bedeutet
+     gleich), so kommt ein Lob, wenn nein ( != bedeutet ungleich), so
+     kommt die Fehlermeldung.
+<p>
+     Mehr will ich heute nicht auf IF eingehen. Naeheres in dem naechsten
+     Teil (#6).
+
+<h3>Zusammenfassung</h3>
+
+     Hier nochmal eine kurze Zusammenfassung der Parameter:
+<pre>
+    INKEY     INPUT          Wirkung
+    ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    /wX       /wX            Wartet X-Sekunden
+    /C        /C             (=Clear Buffer) loescht Variable
+    /P        /P             Unterdrueckt die Anzeige
+              /L             Bestimmt die max. Eingabe-Laenge
+    /K"..."                  Nur bestimmte Tasten erlaubt
+              /E             Editiert schon eine vorhandene Variable
+</pre>
+
+PS: Will man die INKEY oder INPUT-Abfragen an einer bestimmten Stelle
+    auf dem Bildschirm plazieren, sollte man vorher mit SCREEN die
+    Position festlegen (z.B. Screen 10 20).
+
+<h3>3. Batchuebung</h3>
+<pre>
+     :start
+       cls
+       screen 5 10
+       input `Gib hier Deinen Namen ein: ` %%name
+       
+       screen 23 0 Die Loesung des Passwortes ist Dein eingegebener Name! 
+       screen 7 10
+       input /P `Na, wie heisst das Passwort? ` %%passwort
+       if "%name" == "%passwort" goto richtig
+       echo.
+       echo Falsches Passwort, richtig waere: %name
+       goto end
+    
+     :Richtig
+       cls
+       echo Richtig!
+       echo.
+         :: Wenn folg. Zeile nur mit einem "&gt;" steht, werden nur die 
+         :: letzten Zugangsdaten angezeigt.
+       echo Zugang am %_date um %_time Uhr von %name. &gt;&gt; start_he.ute
+       type start_he.ute
+       text
+       
+       Die Daten wurden in der Datei "START_HE.UTE" abgelegt.
+       
+       
+       Hier koennte nun ein Programm gestartet werden.
+       
+       endtext
+     
+     :end
+      pause
+      unset passwort name
+      cls
+</pre>
+<hr>
+<h1>Teil 6</h1>
+
+<h3>1. ^ = UND-Zeichen</h3>
+
+     - ^ - ist ein Verbindungszeichen und arbeitet mehrere Befehle oder
+     Programme nacheinander ab.
+<pre>
+    cls^dir /w^echo Hier ist der 3. Befehl!
+</pre>
+     Oben wird zuerst CLS, dann der DIR-Befehl und zuletzt ECHO ausgefuehrt.
+<p>
+     Der Kommando-Seperator, wie er auch genannt wird, wird im weiteren
+     Verlauf des Kurses benoetigt, daher fuehre ich ihn hier nochmals
+     extra auf.
+<p>
+     Er wird erzeugt durch die Taste links neben der 1, gefolgt von der
+     Leertaste.
+
+<h3>2. IF</h3>
+
+     IF duerfte wohl auch noch einigen bekannt sein.
+     Es gibt jedoch auch hier noch grosse Unterschiede, welches IF etwas
+     komfortabler macht.
+<p>
+     So z.B. die Vergleichsoperatoren:
+<pre>
+    EQ oder ==     ... (=equal)         ist gleich ...
+    NE oder !=     ... (=not equal)     ist UNgleich ...
+    GT             ... (=greater)       ist groesser als ...
+    GE             ... (=greater/equal) ist groesser oder gleich als ...
+    LT             ... (=less)          ist kleiner als ...
+    LE             ... (=less/equal)    ist kleiner oder gleich als ...
+</pre>
+     ...natuerlich geht auch immernoch:
+          IF NOT ...
+<p>
+     Im folgenden Beispielen steht VL fuer Vergleichslabel:
+<pre>
+    if "xxx" == "xxx" echo VL ist gleich VL-2!
+    if "xxx" != "zzz" echo VL ist gleich VL-2!
+    
+    if 7 gt 3         echo VL-1 ist groesser als VL-2!
+    if 3 gt 7         echo VL-1 ist nicht groesser als VL-2!
+    
+    if 3 ge 3         echo VL-1 ist groesser oder gleich VL-2!
+    if 7 ge 3         echo VL-1 ist groesser oder gleich VL-2!
+    
+    if 3 lt 7         echo VL-1 ist kleiner als VL-2!
+    if 7 lt 3         echo VL-1 ist nicht kleiner als VL-2!
+    
+    if 3 le 3         echo VL-1 ist kleiner oder gleich VL-2!
+    if 3 le 7         echo VL-1 ist kleiner oder gleich VL-2!
+</pre>
+     Hier muss man jedoch noch aufpassen, ob es sich um eine Zahl oder
+     um einen String (=Textfolge) handelt.
+     Die Vergleichsoperatoren GT, GE, LE und LT lassen nur Zahlen zu,
+     welche dann auch OHNE Anfuehrungszeichen ("") stehen muessen, da sie
+     sonst als String ausgelesen und wie ein Text behandelt werden.
+<p>
+
+     Mit .AND.  /  .OR.  /  .XOR. (man beachte die Einklammerung mit dem
+     Punkt rechts und links!) kann man Abfragen mit IF auch verbinden.
+<p>
+     Willst Du z.B. fragen: "Wenn 1 ist kleiner 2 UND wenn A ist gleich A
+     dann schreibe: Alles klar!", so heisst die Loesung:
+<p>
+     if 1 lt 2 .AND. "A" == "A" echo Alles klar!
+<p>
+     So geht's auch mit OR (=Oder) und XOR (eine Bedingung = wahr UND die
+     andere Bedingung = falsch).
+<p>
+     So koennte man z.B. abfragen, ob genug freier Speicher zur Verfuegung steht:
+<pre>
+    if %@dosmem[K] le 630 echo Nur %@dosmem[K] Speicher frei!
+</pre>
+     Hier sieht man schon eine interne vorgegebene Variablen von 4DOS,
+     naemlich %@dosmem[K] worauf ich erst im spaeteren Kursteil eingehen
+     moechte.
+<p>
+     Zur Erklaerung: %@dosmem[K] gibt den freien konventionellen Speicher
+                     zurueck, das K in der eckigen Klammer steht fuer
+                     KILObyte, ein b steht fuer Byte, ein kleines "k"
+                     steht fuer Byte geteilt durch 1000.
+<p>
+     Mehr moechte ich nun nicht verraten. Alles zur richtigen Zeit.
+<p>
+     Natuerlich laesst sich mit IF auch pruefen, ob eine Datei oder ein
+     Verzeichnis vorhanden ist:
+<pre>
+    IF EXIST c:\command.com echo c:\command.com kann geloescht werden!
+    oder:
+    IF ISDIR C:\DOS echo Verzeichnis c:\dos ist vorhanden
+    bzw.:
+    IF DIREXIST C:\DOS echo Verzeichnis c:\dos ist vorhanden
+    
+    Auch der Errorlevel wird normal abgefragt:
+    IF ERRORLEVEL == 0 echo Kein Fehler aufgetreten.
+</pre>
+
+     Sollen nach der IF-Abfrage mehrere Befehle abgearbeitet werden, so
+     muss die Befehlskette in Klammern (rund) stehen und mit dem
+     Verbindungszeichen (s.oben) ^ verbunden werden, also so:
+<pre>
+    if 2 == 2 (echo.^echo 2.Zeile^echo.^echo 4.Zeile)
+</pre>
+     Das duerfte erstmal fuer IF reichen, weiteres entnehmt bitte der
+     Online-Hilfe (F1).
+
+<h3>3. IFF</h3>
+
+     IFF arbeitet fast genau wie IF, jedoch sind groessere Verschachtelungen moeglich.
+<p>
+     Bei IFF darf vor Ausfuehrung eines/mehrerer Befehls/Befehlen die
+     Woerter THEN und ENDIFF nicht vergessen werden!
+<pre>
+    IFF "xxx" == "xxx" THEN echo xxx ist gleich xxx!
+    ENDIFF
+</pre>
+     ...es geht auch so:
+<pre>
+    IFF "xxx" == "xxx" THEN
+       echo xxx ist gleich xxx!
+       echo Hier koennte noch ein Programmecho aufruf stehen.
+    ENDIFF
+</pre>
+     Die IFF-Abfrage wird erst bei ENDIFF verlassen!
+<p>
+     Auch tiefe Verschachtelungen (eher was fuer Fortgeschrittene) sind
+     kein Problem, z.B.:
+<pre>
+    IFF "xxx" == "xxx" THEN
+        IFF 3 gt 1 THEN
+            echo 3 ist groesser als 1!
+            echo.
+            if "%temp" == "" set temp=c:\temp
+        rem Hier ist Ende der 2. IFF-Abfrage
+        ENDIFF
+        echo Hier ist die erste Abfrage.
+    rem Hier ist Ende der ersten IFF-Abfrage
+    ENDIFF
+    echo Hier ist keine IFF-Abfrage mehr
+</pre>
+     Es klappt auch eine Alternativ-Abfrage innerhalb von IFF, bzw.
+     ein Ausfuehren eines alternativen Befehls, wenn keine IFF-Bedingung
+     erfuellt wurde:
+<pre>
+    IFF "xxx" == "zzz" THEN echo xxx kann nicht zzz sein, falsch!
+        ELSEIFF 1 LT 5 echo Hier ist die Alternative-IFF
+        ELSE echo Geht hier auch nicht!
+    ENDIFF
+</pre>
+     Bei dieser Abfrage trifft der erste Punkt nicht zu, weshalb die
+     zweite Abfrage (elseiff) geprueft wird, welche zutrifft.
+     Es wird somit der zweite Befehl ausgefuehrt (hier echo ...)
+     Da nun die 2. Abfrage erfuellt wurde, wird die ELSE-Zeile uebergangen, und mit ENDIFF die IFF-Arbeit beendet.
+
+<hr>
+<h1>Teil 7</h1>
+
+<h3>1. DELAY</h3>
+
+     DELAY heisst nichts anderes als "warten". Damit ist auch schon fast
+     alles gesagt:
+<pre>
+    Delay 7
+</pre>
+     ...wartet 7 Sekunden, bevor die Batch weiterverarbeitet wird.
+
+<h3>2. PAUSE</h3>
+
+     PAUSE ist ein Werkzeug, womit man eine Batch anhalten kann.
+     Die Batch wird erst weitergefuehrt, wenn der Bediener eine beliebige
+     Taste drueckt.
+<p>
+     Zum Befehl PAUSE kann man auch noch einen Text anfuegen:
+<pre>
+    PAUSE Hier ist Pause, bis Du eine Taste drueckst...
+</pre>
+     Mit PAUSE kann man auch prima auf detailierte Fehlersuche gehen.
+     z.B.:
+<pre>
+    echo Wo steckt der Fehler?
+    pause
+    ecco Ist er hier?
+    pause
+    echo Hier ist der Fehler nicht.
+    pause
+    echo Hier ist schon zu Ende.
+</pre>
+     Dieses Beispiel verdeutlicht die Sache, denn bei der zweiten Pause
+     sieht man den Fehler.
+<p>
+     Man sollte PAUSE fuer die Fehlersuche moeglichst nur nehmen, wenn
+     man einen kleinen Bereich der Batch fuer den Fehler einkreisen
+     kann.
+
+<h3>3. ECHO ON / OFF</h3>
+
+     Auf Fehlersuche kann man auch mit ECHO ON gehen.
+     ECHO ON sollte dann am Anfang der Batch stehen:
+<pre>
+    ECHO ON
+    echo Hier ist das 1.Echo
+    echo ...mach irgendwas...
+    echo Hier ist das 3.Echo
+</pre>
+     Bei ECHO _ON wird jede Zeile der Batch somit auch am Bildschirm angezeigt, so dass man die Arbeitsweise verfolgen kann.
+<p>
+     Will man ECHO vor Ende der Batch wieder abschalten, so erreicht man
+     dies durch Eingabe von "ECHO OFF".
+
+<h3>4. LOG</h3>
+
+     Da die Loesung mit Echo off nicht unbedingt die optimalste ist,
+     bietet 4DOS auch noch den Befehl "LOG" an, womit eine "Logdatei"
+     angelegt werden kann.
+<pre>
+    LOG ON
+</pre>
+     ...legt im Hauptverzeichnis des Bootlaufwerks eine Datei namens
+     4DOSLOG an, wo alle Batchbefehle registriert werden.
+<pre>
+    LOG /w d:\dos\4dos.log
+</pre>
+     ...legt auf Laufwerk D: im Verzeichnis DOS eine Logdatei namens
+     4DOS.LOG an.
+<p>
+     Mit LOG OFF kann man die Katalogisierung der Befehle in dieser Datei
+     beenden.
+     Nun wollen wir uns aber auch mal das Format ansehen, wie 4DOS diese
+     LOG-Datei anlegt:
+<pre>
+    [17.08.94 11:53:08] cls
+    [17.08.94 11:53:09] dir
+    [17.08.94 11:53:23] echo Hier ist ein Beispiel fuer die 4DOS.LOG
+    [17.08.94 11:53:43] echo das duerfte reichen...
+    [17.08.94 11:53:46] log off
+</pre>
+     Man sieht, es ist immer ein einheitliches Format mit Datum, Uhrzeit
+     und natuerlich dem, was man an Befehlen eingab, bzw. was an Befehlen
+     ueber die Batch ausgefuehrt wurde.
+<p>
+     Mit diesem Hilfsmittel kann man fast jeden Fehler in einer Batch
+     SCHNELL finden!
+<p>
+     LOG sollte den Befehlen PAUSE und ECHO ON zur Fehlersuche vorgezogen
+     werden.
+
+<h3>5. Variablen</h3>
+
+     Da nun dieser Teil etwas leichter ging, moechte ich zwischendurch
+     mal ein paar Variablen erklaeren:
+<p>
+     Was sind Variablen?
+     Variablen geben versch. Werte/Eingaben wieder.
+<p>
+     Gebe ich...
+<pre>
+    SET VAR=12345
+</pre>
+     ...ein, so erhalte ich mit...
+<pre>
+    ECHO %VAR
+</pre>
+     ...die Zahl 12345 als Ausgabe. Mache ich anschliessend eine Abfrage
+     vom Benutzer mit...
+<pre>
+    INPUT Hier Variable eingeben %%VAR
+</pre>
+     ...so wird die Variable wieder neu gesetzt (mit der Eingabe vom
+     Benutzer), welche ich wieder mit "ECHO %VAR" abfragen kann.
+<p>
+     Variablen werden durch verschiedene Arten gesetzt, sei es durch:
+<pre>
+    SET VAR=irgendwas...
+    oder:
+    inkey Gib hier die Variable ein: %%VAR
+</pre>
+     Solche Variablen werden auch ENVIRONMENT-Variablen genannt.
+<p>
+     Bei jedem Mal, wo eine weitere Variable gesetzt wird, geht
+     wertvoller "Environment-Variablen-Speicher" verloren.
+     Man "haut sich sozusagen die Environment zu".
+     Dies kann dazu fuehren, dass bei Ueberlauf keine Variablen mehr
+     bearbeitet und aufgenommen werden koennen. Dies sollte man vermeiden!
+<p>
+     Zwei Moeglichkeiten sind:
+<pre>
+    UNSET variable1 variable2 variable3 ...
+    oder:
+    set variable1=
+    set variable2=
+    ...
+</pre>
+     UNSET ist also das Gegenstueck zu SET.
+     SET setzt Variablen oder aendert sie,
+     UNSET entfernt sie wieder aus dem Speicher.
+<p>
+     Ob man seine Variable auch tatsaechlich geloescht hat, kann man mit
+     dem Befehl SET am DosPrompt testen.
+     Wenn Variablen gesetzt wurden kann man sie auch so alle auf einmal
+     lesen.
+<p>
+     *******************************************************************
+<p>
+     Nun kommen jedoch noch andere Variablen zur Geltung, worauf wir
+     keinen direkten Einfluss mehr haben, die jedoch sehr nuetzlich sein
+     koennen: die INTERNEN Variablen!
+<p>
+     Interne Variablen erkennt man daran, dass nach dem Prozentzeichen
+     ein Unterstrich steht.
+     Interne Variablen geben uns bestimmte Werte vom PC zurueck, so erhalten wir bei
+<p>
+(Datum und Uhrzeit)
+<pre>
+    ECHO %_date              ...das aktuelle Datum
+    ECHO %_time              ...die aktuelle Zeit
+    ECHO %_hour              ...die aktuelle Stunde
+    ECHO %_dow               ...den aktuellen Wochentag (in englisch)
+    usw.
+</pre>
+(Laufwerke und Verzeichnisse)
+<pre>
+    ECHO %_cwd            Aktuelles LaufWerk und Verzeichnis (d:\pfad)
+    ECHO %_cwds           Aktuelles LW und Verzeichnis mit \ (d:\pfad\)
+    ECHO %_cwp            Aktuelles Verzeichnis (\pfad)
+    ECHO %_cwps           Aktuelles Verzeichnis mit \ (\pfad\)
+    ECHO %_disk           Aktuelles LW (C, D, usw.)
+    ECHO %_lastdisk       Letztes erreichbares Laufwerk (E, F, usw.)
+</pre>
+(Fehler-Codes)
+<pre>
+    ECHO %?               Ende-Code vom letzten externen Programm
+                          (oder auch Errorlevel-Code-Abfrage)
+    ECHO %_?              Ende-Code vom letzten internen Befehl
+    ECHO %_SYSERR         Letzter DOS-Fehler
+</pre>
+     ...und natuerlich noch viele mehr!
+     Alle INTERNEN VARIABLEN koennt Ihr in der 4DOS-Hilfe nachlesen.
+     (F1 / unter: Variables)
+     Dort findet man sie alle. Jedoch beachtet bitte, dass die Variablen
+     dort ohne Prozentzeichen aufgefuehrt sind, man muss also noch das
+     Prozentzeichen (%) davorschreiben.
+<p>
+     *******************************************************************
+<p>
+     Nun kann man auch den ENVIRONMENT-Variablen die INTERNEN Variablen
+     zuordnen (da sich die Internen Var. regelmaessig aendern).
+     Mit...
+<pre>
+    SET Zeit=%_time
+</pre>
+     ...setze ich mir die Variable "ZEIT" mit der akt. Uhrzeit.
+
+<h3>5. Mini-Uebungsbatch</h3>
+<pre>
+    set H=%_hour
+    iff %H ge 12 .and. %H lt 15 then
+        echo Nun ist Mittagszeit (12-15 Uhr)!
+        goto end
+    elseiff %H ge 7 .and. %H lt 12 .or. %H ge 15 .and. %H lt 18 then
+        echo Arbeitszeit (7-12 Uhr und 15-18 Uhr)!
+        goto end
+    else echo Freizeit ist angesagt (18-7 Uhr)!
+    endiff
+    
+    :end
+</pre>
+<hr>
+<h1>Teil 8</h1>
+
+
+<h3>1. Timer</h3>
+
+    Timer ist eine einfache "Stoppuhr".
+<p>
+    Folg. Beispiel sollte schon alles zu Timer sagen:
+<pre>
+    Timer
+    delay 2
+    Timer
+</pre>
+    Als Bildschirmausgabe erhaelt man somit:
+<pre>
+    Timer 1 on:  19:51:49
+    Timer 1 off: 19:51:51  Elapsed: 0:00:02.03
+</pre>
+    Man kann also mit TIMER wie bei einer Stoppuhr eine Zeit stoppen.
+    Stopp, das stimmt so nicht, man kann mit TIMER bis zu 3 (!!!) Zeiten
+    stoppen, sogar mit Zwischenzeitfunktion.
+<pre>
+    Timer /1             ...startet die 1. Stoppuhr
+      delay 1            ...wartet ca. 1 Sekunde
+    
+    timer /2             ...startet die 2. Stoppuhr
+      delay 1            ...wartet ca. 1 Sekunde
+    
+    timer /3             ...startet die 3. Stoppuhr
+      delay 1            ...wartet ca. 1 Sekunde
+    
+    timer /3             ...stoppt die 3. Stoppuhr
+    timer /2             ...stoppt die 2. Stoppuhr
+    timer                ...stoppt die 1. Stoppuhr
+</pre>
+    Als Bildschirmausgabe erhaelt man nun:
+<pre>
+    Timer 1 on: 19:57:07
+    Timer 2 on: 19:57:08
+    Timer 3 on: 19:57:09
+    Timer 3 off: 19:57:10  Elapsed: 0:00:00.99
+    Timer 2 off: 19:57:10  Elapsed: 0:00:01.98
+    Timer 1 off: 19:57:10  Elapsed: 0:00:02.96
+</pre>
+    Will man z.B. testen, ob ARJ oder PKZIP der schnellere Packer ist,
+    so kann man dies mit TIMER sehr gut herausfinden.
+
+<h3>2. Beep</h3>
+
+    Beep ist fuer die Ausgabe von Toenen unter Dos ueber den PC-Speaker
+    gedacht.
+<p&gt;&gt;
+    Versucht mal einfach am DosPrompt BEEP einzugeben.
+    Ihr werdet dann normalerweise einen Ton in 400 Herz hoeren.
+<pre>
+    BEEP 1000 2
+</pre>
+    ...ergibt einen Ton in der Frequenz 1000 Hz mit einer Taktlaenge
+    von 2.
+<p>
+    Kombinationen sind auch hier moeglich:
+<pre>
+    BEEP 1000 2 500 1 0 1 2000 3
+</pre>
+    Obiges sollte eine Tonfolge von 1000 Hz (2 Takte), dann 500 Hz (1
+    Takt), ohne Ton fuer 1 Taktlaenge und noch einen Ton von 2000 Hz
+    ueber 3 Takte erzeugen.
+
+<h3>3. Befehl:  SELECT</h3>
+
+    SELECT heisst nichts anderes als "selektieren" oder sinngemaess
+    "auswaehlen aus einer Liste".
+<p>
+    Man kann mit SELECT einen Befehl kombinieren, wodurch vorher aus
+    einer Liste die gewuenschten Dateien markiert werden koennen.
+<p>
+    Gibt man beispielsweise folg. Befehl ein:
+<pre>
+    SELECT copy (*.*) c:\temp
+</pre>
+    ...so wuerde sich der "SELECTer" (man moege mir fuer die Ausdrucksweise verzeihen) oeffnen und man kann mit Hilfe der Leertaste die
+    gewuenschten Dateien markieren oder entmarkieren, welche nach (im
+    Beispiel) C:\TEMP kopiert werden sollen.
+<p>
+    Nehmen wir mal an, dass sich im aktuellen Verz. die drei markierten
+    Dateien DATEI.1, DATEI.2, DATEI.3 befinden, so wuerde SELECT
+    arbeiten wie:
+<pre>
+    copy DATEI.1 c:\temp
+    copy DATEI.2 c:\temp
+    copy DATEI.3 c:\temp
+</pre>
+    Hierbei wird jede Datei einzeln mit dem COPY-Befehl aufgerufen.
+<p>
+    Waehlt man die Dateien in ECKIGEN KLAMMERN, so werden alle markierten Dateien nicht nacheinander vom COPY-Befehl abgearbeitet, sondern
+    "an einem Stueck":
+<pre>
+    SELECT copy [*.*] c:\temp
+</pre>
+    ...arbeitet wie:
+<pre>
+    copy DATEI.1;DATEI.2;DATEI.3 c:\temp
+</pre>
+    Aber <b>Achtung</b>! Bei eckigen Klammern ist die Befehlszeile incl. der
+    ausgewaehlten Dateien begrenzt auf 256 Zeichen, da ja alles in eine
+    Zeile zusammengepackt wird und als einen einzigen Befehl ausgefuehrt
+    wird.
+<p>
+    SELECT kann man auch mit anderen Befehlen kombinieren, z.B. mit
+    MOVE, DEL, DIR, REN, ...
+<p>
+    Auch hier ist es moeglich (aehnlich wie bei DIR) Dateien im SELECTer
+    zu sortieren:
+    Ihr erinnert Euch sicherlich noch wage:
+<pre>
+    dir /O:s        sortiert nach der Dateigroesse (s wie size)
+    SELECT /O:s        "      "    "        "       "  "   "
+</pre>
+    Um nochmal alle Moeglichkeiten dieser Sortierung nachzulesen solltet
+    Ihr Euch nochmal den Kursteil Nr. 2 anschaun oder am DosPrompt F1
+    tippen und SELECT auswaehlen, dort findet Ihr alle Moeglichkeiten
+    von SELECT.
+<p>
+    Will man jedoch nur Dateien mit einem bestimmten Attribut, so wird
+    der Parameter "/A:X" verwendet, wobei X fuer einen der folg. Buchstaben steht:
+<pre>
+    A    (a)rchive      = geaenderte Dateien
+    H    (h)idden       = versteckte Dateien
+    R    (r)ead only    = Nur-Lese Dateien
+    S    (s)ystem       = System Dateien
+    D    sub(d)irectory = Verzeichnisse
+</pre>
+    Naeher moechte ich auf SELECT nicht eingehen, wenn noch Fragen dazu
+    sind, so stellt sie doch einfach in der 4DOS.GER !
+
+<hr>
+<h1>Teil 9</h1>
+
+<h3>1. GOTO</h3>
+
+     GOTO heisst einfach GO TO, also "gehe zu...", womit ein Gang(Sprung)
+     zu einer Stelle in der Batchdatei erzeugt wird.
+     Dieses Sprungziel nennt man Label. Labels fangen mit einem Doppelpunkt an.
+     Label bedeutet dabei auch soviel wie Marke oder Markierung, z.B:
+<pre>
+    :start
+    echo Hier ist Start
+    goto zweitens
+    
+    :erstens
+    echo Hier ist erstens...
+    goto ende
+    
+    :zweitens
+    echo Hier ist zweitens...
+    goto erstens
+    
+    :ende
+    QUIT
+</pre>
+     In dieser kleinen Batch wird erst vom Start zu Zweitens und dann
+     zu Erstens gesprungen. Nachdem dies geschah, wird zum Ende gegangen.
+<p>
+     Man kann sich mit GOTO also gut in Batch-Dateien bewegen.
+<p>
+     Ein bedeutender Unterschied gegenueber dem "normalem" Dos liegt
+     darin, dass es die Begrenzung der Laenge eines Labels hier nicht
+     bei 8 Zeichen liegt (mit Command.com werden alle Zeichen dahinter
+     nicht mehr beruecksichtigt), sondern bei max. 255 Zeichen.
+<p>
+     Eine Unterscheidung von:
+<pre>
+    :aaaaaaaaaaaaaaaaaaaaaaaaa1
+    und
+    :aaaaaaaaaaaaaaaaaaaaaaaaa2
+</pre>
+     ...ist bei 4DOS jedenfalls moeglich (bei command.com nicht).
+<p>
+     Dies gilt auch fuer GOSUB (siehe unten).
+
+<h3>2. GOSUB / RETURN</h3>
+
+     Etwas gewandter kann man sich mit GOSUB (go Subroutine = gehe zu einer
+     Unterroutine) bewegen.
+     Zu GOSUB gehoert auch IMMER das RETURN !
+<p>
+     GOSUB arbeitet wie GOTO, nur mit dem Unterschied, dass bei GOSUB beim
+     naechsten RETURN ein Ruecksprung erfolgt!
+<p>
+     Das Beispiel verdeutlicht die Arbeitsweise von GOSUB / RETURN:
+<pre>
+    :Start
+    echo Hier ist Start...
+    GOSUB nochwas
+    
+    :Erstens
+    echo Hier ist erstens...
+    GOSUB nochwas
+    
+    :Zweitens
+    echo Hier ist zweitens...
+    GOSUB nochwas
+    goto ende
+    
+    :nochwas
+    echo Hier ist immer wieder die GOSUB-Routine.
+    echo Hier koennten noch mehr Befehle oder Programme stehen.
+    echo.
+    RETURN
+    
+    :ende
+    QUIT
+</pre>
+     Na, habt Ihr es ausprobiert? Und klappt's?
+
+<h3>3. QUIT / CANCEL</h3>
+
+     Nun, oben kam jetzt bereits zweimal der Befehl QUIT vor. Dieser
+     bewirkt die Beendigung der Batch (nur dieser einen Batch).
+<p>
+     Es gibt aber noch CANCEL, welches alle laufenden Batches beendet.
+     Der Unterschied liegt darin, dass CANCEL alle Batch-Dateien beendet,
+     auch solche, die vorher eine andere Batch mit CALL aufgerufen hatten.
+     Es hat ein "TOTAL-ENDE" von allen Batch-Dateien zur Folge.
+<pre>
+    QUIT      = Ende der laufenden Batch
+    CANCEL    = Ende ALLER Batchdateien, die gerade laufen und vorher mit CALL andere 
+                Batches gestartet haben (ob geCALLt oder nicht, spielt hier keine Rolle)
+</pre>
+     Manch einer wird jetzt sagen, dass in den oberen Batch-Beispielen
+     kein Sprung zu "ende" noetig ist. Dies ist fuer den ersten Fall
+     richtig.
+<p>
+     Im diesem Gosub/return-Batchbeispiel braucht man den Sprung zum Ende,
+     sonst erhaelt man einen "RETURN without GOSUB"-Fehler.
+<p>
+     Ich habe es mir zur Gewohnheit gemacht, immer zum Label END oder ENDE
+     zu springen, damit ich einen einheitlichen Abschluss der Batch habe.
+<p>
+     Dies wird wichtig, wenn am Anfang der Batch Variablen (z.B. der
+     Farbe) gesichert werden, die am Ende der Batch die alte Variablen
+     wiederherstellen sollen (...die alte Farbe wiederherstellen).
+<p>
+     Ich rate deshalb, es in der gleichen Form zu machen.
+
+<h3>4. Batchuebung</h3>
+
+     Nun will ich mal die bisher erlernten Befehle in einer kleinen Batch
+     zusammenfuegen. Seht sie Euch mal naeher an und versucht deren
+     Wirkung mal im Kopf durchzuspielen, bevor ihr die Batch austestet:
+<pre>
+    :start
+    cls whi on blu
+    text
+    
+       Hallo 4DOS-User!
+    
+    endtext
+    screen 1 34 Na, wie geht's?
+    scrput 2 0 bri gre on blu `  Ist es ein guter 4DOS-Kurs?   `
+    
+    :abfrage
+    screen 5 0
+    inkey /k"jn" Gefaellt Dir 4DOS nun (J/N)? %%antwort
+    IFF "%antwort" == "J" THEN echo Na dann ist es ja gut!
+        ELSE echo Schade, denn dann hast Du was versaeumt!
+    ENDIFF
+    
+    :textabfrage
+    screen 8 0 Moechtest Du diese Batch nochmal von Anfang an?
+    screen 9 0 Eingabe: JA oder NEIN!
+    screen 9 23
+    input /L4 %%antwort2
+    if "%antwort2" == "JA" goto START
+    if "%antwort2" == "NEIN" (gosub sonstwas^goto ENDE)
+    screen 9 0 `                                 `
+    goto textabfrage
+    
+    :sonstwas
+    echo Hier ist immer wieder die GOSUB-Routine.
+    echo Hier koennten noch mehr Befehle oder Programme stehen.
+    echo.
+    RETURN
+    
+    :ENDE
+    unset antwort antwort2
+    QUIT
+</pre>
+<hr>
+<h1>Teil 10</h1>
+
+<h3>1. SETLOCAL und ENDLOCAL</h3>
+
+     Heute sehen wir die DRITTE Moeglichkeit, wie man unnoetige
+     Konflikte durch Doppelnamen von Variablen oder durch Ueberlastung
+     des Environments vermeidet!
+<p>
+     Es geht - sofern man in der Batch keine TSR-Programme (=speicherresidente Programme) startet!!! - auch noch einfacher:
+<p>
+     Zum Anfang der Batch wird SETLOCAL und zum Schluss ENDLOCAL gesetzt!
+     Dies hat den Vorteil, dass alle "alten" Variablen zum Zeitpunkt des
+     Starts der Batch "gesichert" werden und mit ENDLOCAL spaeter wieder
+     "hergestellt" werden.
+<p>
+     <b>ACHTUNG:</b>
+     Warum soll man in einer SETLOCAL/ENDLOCAL -Kombination kein
+     TSR-Programm laden?
+<p>
+          Beim Laden von TSR-Programmen koennen zum Ende der Batch
+          sogenannte "Loecher" im Speicher entstehen, d.h. Luecken
+          bleiben zurueck, wodurch es unter Umstaenden zu einem Absturz
+          des PC's kommen KANN (nicht muss).
+<p>
+     Ob Variablen einen Wert haben, laesst sich wieder durch Eingabe von
+     SET am DosPrompt nachsehen.
+<p>
+     Dies hier wieder mal in eine Batch schreiben:
+<pre>
+    setlocal
+    
+      set variable1=INHALT1
+      set variable2=INHALT2
+    
+      echo Hier steht nun die Variable1: %variable1
+      echo Hier steht nun die Variable2: %variable2
+    
+    endlocal
+    
+      echo Hier steht keine Variable1 : %variable1
+      echo Hier steht keine Variable2 : %variable2
+    
+    QUIT
+</pre>
+     Na, schon klar, oder nochmal testen?
+     Beim ersten Aufruf mit ECHO werden die Variablen gezeigt,
+     beim zweiten Aufruf (nach dem ENDLOCAL) wird KEINE Variable
+     mehr angezeigt, da die Variablen, die innerhalb von SETLOCAL und
+     ENDLOCAL stehen, nach ENDLOCAL wieder geloescht werden.
+<p>
+     Dieses Konzept hat also Aehnlichkeit mit den Gueltigkeitsbereichen
+     in Programmiersprachen. 4DOS ist abr leider nicht so maechtig wie
+     zum Beispiel Turbo Pascal. In 4DOS duerfen SETLOCAL-ENDLOCAL-Bereiche
+     !nicht! geschachtelt werden!
+
+<h3>2. Uebungsbatch</h3>
+
+    Nun koennt Ihr ja schon recht viel, doch noch lange nicht alles von
+    4DOS, dazu fehlt noch 'ne Menge. Doch hier wieder unsere Minibatch:
+<pre>
+:start
+  setlocal
+
+:menueaufbau
+  cls whi on blu
+  text
+
+            Mini-Menueoberflaeche
+            *********************
+
+            1. MEM /C /P
+            2. diese Datei ansehen
+            3. Box zeichnen
+            4. Text auf Bildschirm schreiben
+            5. dieser Datei eine Beschreibung beifuegen
+
+            Escape = Abbruch
+
+            Waehle nun eine Menuepunkt aus.
+            (Zahl zwischen 1 und 5 tippen)!
+
+  endtext
+  inkey /k"12345[Esc]" /p %%WAHL
+    :: Mit "%@ascii[...]" wird der Code des eingegebenen Zeichens
+    :: abgefragt, welcher bei ESCAPE auf diese Art notwendig ist.
+    if "%@ascii[%wahl]" == "27" goto Abbruch
+    for %X in (1 2 3 4 5) do if "%x" == "%wahl" goto punkt%X
+
+  :punkt1
+    cls
+      mem /c /p
+    pause Beliebige Taste druecken, um zum Menue zurueckzukehren...
+    goto menueaufbau
+
+  :punkt2
+    list %0
+    goto menueaufbau
+
+  :punkt3
+    drawbox 17 10 21 58 3 bri yel on bla fill gre sha
+    screen 24 0
+    pause Beliebige Taste fuer weiter...
+    goto menueaufbau
+
+  :punkt4
+    scrput 19 12 bri whi on red `  Prima, es scheint ja zu klappen  `
+    screen 24 0
+    pause Beliebige Taste fuer weiter...
+    goto menueaufbau
+
+  :punkt5
+    screen 20 0 Gib hier eine Beschreibung fuer diese Datei ein:
+    screen 21 0
+    describe %0
+    cls
+    dir %0 /hkm
+    screen 24 0 Beliebige Taste fuer weiter...
+    pause &gt;nul
+    goto menueaufbau
+
+  :Abbruch
+    screen 24 0 Mini-Menuebatch wurde beendet.
+    goto end
+
+   :end
+     endlocal
+</pre>
+<hr>
+<h1>Teil 11</h1>
+
+<h3>1. Funktionen</h3>
+
+     Nun kennen wir schon viele interne und externe Befehle, die
+     Environment-Variablen und auch die internen Variablen.
+<p>
+     Dabei soll es aber nicht bleiben, denn nun wird Euer Horizont im
+     Bereich von 4DOS nochmals erheblich erweitert!
+<p>
+     ...mit den Funktionen:
+<p>
+     Was sind Funktionen?
+     Funktionen dienen dazu, sich das Leben mit dem PC wesentlich zu
+     vereinfachen, indem bestimmte Arbeiten auf einfache Weise uebernommen werden.
+<p>
+     So kann man z.B. mit 4DOS rechnen:
+<pre>
+    echo Das Ergebnis lautet: %@eval[100 + 30 * 2]
+    echo Das Ergebnis lautet: %@eval[100 / 3]
+    echo Das Ergebnis lautet: %@eval[100 \ 3]
+</pre>
+     ...eine Textfolge auslesen:
+<pre>
+    echo Hier wird "abc" ausgegeben: %@substr[abcdefg,0,3]
+    echo Hier wird "cde" ausgegeben: %@substr[abcdefg,2,3]
+    echo Hier wird "efg" ausgegeben: %@substr[abcdefg,4,3]
+    echo Hier die letzten 3 Buchstaben "efg": %@substr[abcdefg,2,-3]
+</pre>    
+     ...oder die bessere Variante (da hier auch Kommas erlaubt sind):
+<pre>
+    echo Hier wird "ab,c" ausgegeben: %@instr[0,4,ab,cdefg]
+</pre>
+     ...ein Zeichen aus einem Text suchen:
+<pre>
+    echo "c" steht an %@index[abcdefg,c]. Stelle im Text.
+    (hier wird das erste Zeichen als Stelle 0 gezaehlt)
+</pre>
+     ...den freien Speicherplatz ausgeben:
+<pre>
+    echo %@dosmem[b]         gibt den freien konventionellen Speicher aus (b=byte; k=1.000 byte; K=1 KB; m=1.000.000 byte; M=1 MB)
+    echo %@diskfree[C:,M]    gibt den freien Speicherplatz auf dem Laufwerk (hier: C: in MegaByte) aus
+</pre>
+     ...und noch dies (fuer DATEI.EXT einen Filenamen einsetzen):
+<pre>
+    echo %@name[DATEI.EXT]      gibt DATEINAMEN ohne Extension aus
+    echo %@ext[DATEI.EXT]       gibt EXTENSION ohne Dateinamen aus
+    echo %@search[DATEI.EXT]    sucht die Datei im Pfad und gibt Ergebnis aus
+    echo %@descript[DATEI.EXT]  gibt die Dateibeschreibung aus (siehe auch weiter unten: Punkt 2)
+</pre>
+     Ist schon eine ganze Menge, oder?
+     Dabei gibt es <b>NOCH VIELE WEITERE FUNKTIONEN</b>, die 4DOS bereithaelt
+     und die man noch beliebig weiterverarbeiten kann.
+<p>
+     So waere es z.B. zum Rechnen sinnvoll ein Alias (kommt im spaeteren
+     Kursteil) oder eine Batchdatei anzulegen, die z.B. so aussieht:
+<pre>
+    echo Das Ergebnis lautet: %@eval[%&]
+</pre>
+     Mit "%&" werden alle Parameter, die der Anwender eingibt an die
+     Batchdatei oder das Alias uebergeben und koennen weiterverarbeitet
+     werden.
+<p>
+     Somit kann diese Batch - z.B. "rechne.btm" genannt - mit...
+<pre>
+    rechne 21 + 4 * 5
+    oder:
+    rechne (21 + 4) * 5
+</pre>
+     ...aufgerufen werden.
+<p>
+     Damit Ihr auch noch die anderen Funktionen kennenlernt, solltet Ihr
+     mal wieder in die Online-Hilfe (Taste F1) sehen.
+     Dort findet Ihr es unter "FUNKTIONEN"
+
+<h3>2. Describe</h3>
+
+    Mit Hilfe von DESCRIBE kann man Dateien und Verzeichnisse mit Texten
+    vermerken, die dann bei Ausfuehrung des Befehls DIR angezeigt werden.
+<pre>
+    Describe *.txt
+</pre>
+    ...fordert Dich auf, alle Dateien der Endung TXT zu beschreiben oder
+    mit Enter zu uebergehen (und somit nicht zu beschreiben).
+<p>
+    Die spaetere Ausgabe mit DIR *.txt koennte dann etwa so aussehen:
+<pre>
+    4doskurs.txt  7608  18.07.94  3:47 Goto, Gosub, Return, Batch-Uebungen, Set, Unset, Setlocal, Endlocal
+    4k-info.txt   1667  15.07.94  0:00 Hinweis auf den Start des 4DOS-Kurses!
+    boxen.txt      414  18.07.94  4:13
+</pre>
+    Man kann auch Dateien direkt beschreiben (ueber Batchdatei, etc.)
+    indem man folgenden Syntax einhaelt:
+<pre>
+    DESCRIBE datei.ext "Hier sollte nun die Beschreibung stehen!"
+</pre>
+    Man kann sich nun mit DESCRIBE die Art einer Datei, bzw. das was eine
+    Datei macht besser merken, da man es ja (bis zu max. 200 Zeichen)
+    nun ausfuehrlich beschrieben hat.
+
+<pre>
+    setlocal
+    set tempdat=%@unique[%temp]
+    dir %& /b &gt; %tempdat
+    cls
+    
+    scrput 0 0 bri mag on blu Datei beschreiben = ENTER,     Ende = ESC!
+    
+    :LESEN
+      set DAT=%@select[%tempdat,3,23,%_rows,37,Description]
+        if "%DAT" == "" iff "%DAT" == "" then
+          cls
+          echo Programmende von %0
+          goto end
+        endiff
+      drawbox 23 0 24 79 0 %_bg on %_bg
+      screen 23 0
+      describe %DAT
+    cls
+      iff isdir %DAT then dir /A:d /kmh
+        else dir %DAT /kmh
+      endiff
+    goto LESEN
+    
+    
+    :end
+    del %tempdat &gt;nul
+    endlocal
+    QUIT
+</pre>
+
+<h3>2. Uebungsbatch</h3>
+
+    Nun, da wir uns das letzte Mal mit einem Menue von 4DOS angefreundet
+    haben, machen wir diesmal das Menue per INKEY, SCRPUT, ... etwas
+    komfortabler. Erschreckt bitte nicht vor der Laenge, bei einem der
+    naechsten Teile seht Ihr eine voellig kurze Loesung:
+<pre>
+    %@search[%0]  sucht nach der aufgerufenen Datei im Pfad und gibt den kompletten Pfad mit Datei wieder
+    %@ascii[%var] gibt den Zeichencode der Taste wieder und wird fuer die Taste ESCAPE (Zeichen 27) benoetigt.
+    @72           ist die Taste "Pfeil-hoch"
+    @80           ist die Taste "Pfeil-runter"
+    @28           ist die Taste "Enter"
+</pre>
+    ******************************************************************
+
+<pre>
+    :start
+      setlocal
+    
+    :menueaufbau
+      cls whi on blu
+      screen 2 30 Mini-Menueoberflaeche
+      screen 5 30 1. MEM /C |more
+      screen 6 30 2. diese Datei ansehen
+      screen 7 30 3. Hinweis
+      screen 12 0 Bewegen mit Pfeil-hoch, bzw. Pfeil-runter
+      screen 13 0 Auswaehlen mit Enter!
+      screen 14 0 Escape = Abbruch
+    
+      :punkt1
+      scrput 5 30 red on cya `1. MEM /C |more       `
+      screen 5 30
+      inkey /k"[Enter][Up][Down][Esc]" %%WAHL &gt;nul
+        if "%@ascii[%wahl]" == "27" goto Abbruch
+        screen 5 30 `1. MEM /C |more       `
+        if "%wahl" == "@72" goto punkt3
+        if "%wahl" == "@80" goto punkt2
+        cls
+          mem /c |more
+        pause Beliebige Taste druecken, um zum Menue zurueckzukehren...
+        goto menueaufbau
+    
+      :punkt2
+      scrput 6 30 red on cya `2. diese Datei ansehen`
+      screen 6 30
+      inkey /k"[Enter][Up][Down][Esc]" %%WAHL &gt;nul
+        if "%@ascii[%wahl]" == "27" goto Abbruch
+        screen 6 30 `2. diese Datei ansehen`
+        if "%wahl" == "@72" goto punkt1
+        if "%wahl" == "@80" goto punkt3
+        list %@search[%0]
+        goto menueaufbau
+    
+      :punkt3
+      scrput 7 30 red on cya `3. Hinweis            `
+      screen 7 30
+      inkey /k"[Enter][Up][Down][Esc]" %%WAHL &gt;nul
+        if "%@ascii[%wahl]" == "27" goto Abbruch
+        screen 7 30 `3. Hinweis            `
+        if "%wahl" == "@72" goto punkt2
+        if "%wahl" == "@80" goto punkt1
+        drawbox 17 10 21 58 3 bri yel on bla fill gre sha
+        scrput 19 12 bri red on gre Na, alles verstanden? Denke dran: ueben...
+        screen 24 0
+        pause Beliebige Taste fuer weiter...
+        goto menueaufbau
+    
+    
+      :Abbruch
+        screen 24 0 Mini-Menuebatch wurde beendet.
+        goto ende
+    
+       :ende
+         echo.
+         endlocal
+</pre>
+<hr>
+<h1>Teil 12</h1>
+
+<h3>1. Reboot</h3>
+
+     Wer wollte sowas nicht schon laengst einmal unter command.com versuchen?
+     Ja, der Befehl sagt schon fast alles. Mit REBOOT laesst sich ein
+     Neustart des Rechners durchfuehren.
+<p>
+     Hierbei gibt es noch zwei Parameter:
+<pre>
+    /C        fuehrt einen Kaltstart durch
+    /V        fragt beim Benutzer sicherheitshalber nochmal nach, ob der Neustart gewuenscht wird
+</pre>
+     REBOOT (ohne Parameter) fuehrt den Warmstart durch (oder auch
+     Klammeraffen-Griff genannt: Tasten: Ctrl-Alt-Del)
+<p>
+Wer ein Software-Cache (zum Beispiel NCache von Norton) installiert hat,
+braucht keine Angst zu haben, dass ihm evtl. noch im Speicher befindliche
+Daten verloren gehen. 4DOS veranlasst ein sogenanntes Flushen der Puffer der
+Laufwerke, bevor der Kalt/Warmstart tatsaechlich durchgefuehrt wird.
+
+<h3>MEMORY</h3>
+
+     MEMORY gibt Dir einige Informationen des PC's wieder und dient auch
+     keiner anderen Funktion.
+<p>
+     Einfach mal am DosPrompt eingeben und als Ergebnis erscheint als
+     Ausgabe am Bildschirm, etwa so:
+<pre>
+     655.360 bytes total DOS RAM
+     593.232 bytes free
+
+   2.981.888 bytes total EMS memory
+   2.883.584 bytes free
+
+   2.895.872 bytes free XMS memory  (HMA in use)
+
+       1.504 bytes total environment
+       1.042 bytes free
+
+       5.008 bytes total alias
+       1.315 bytes free
+
+       1.024 bytes total history
+</pre>
+<h3>HISTORY</h3>
+
+     Die einfache Eingabe des Befehls HISTORY am DosPrompt bewirkt die
+     Bildschirmausgabe der bisher am Prompt eigegebenen Befehle.
+<p>
+     Dies ist jedoch nicht die eleganteste Loesung. Einfacher und wesentlich ansprechender ist der Druck auf die Taste
+<pre>
+    PgUp/Bild-auf
+    oder:
+    PgDown/Bild-ab
+</pre>
+     Ein sinnvoller Schalter (Parameter) ist "/R".
+     So kann man mit diesem Parameter auch eine bestimmte Datei einlesen,
+     in der bereits vordefinierte Befehle drin stehen.
+<p>
+     In einer Datei namens "history.ini" steht beispielsweise:
+<pre>
+    cls
+    edit c:\dos\lustig\meine\datei.txt
+    dir /suk
+</pre>
+     Wird nun mit...
+<pre>
+    history /r c:\4dos\history.ini
+</pre>
+     diese Datei ausgelesen, so stehen die vordefinierten Befehle in dem
+     History-Fenster schon bereit und koennen schneller aufgerufen werden.
+<p>
+     Weitere (nicht so wichtige) Parameter und Hilfe zu HISTORY entnehmt
+     bitte der Online-Hilfe von 4DOS (F1 tippen).
+
+<h3>KEYBD</h3>
+
+     Manchmal sucht man auch nach einer Loesung, die die "Numerische
+     Tastatur" (rechter Block an der Tastatur) ein- bzw. wieder ausschaltet (NUM-LOCK).
+<p>
+     Dies kann man mit Hilfe von KEYBD (vergesst nicht das D - es hat
+     nichts mit dem Tastaturtreiber von MS-DOS, o.ae. (keyb) zu tun)
+     machen.
+<p>
+     Zusaetzlich geht auch noch die Umschaltung der Tasten
+<pre>
+    NUM-LOCK
+    CAPS-LOCK
+    SCROLL-LOCK.
+</pre>
+     So waere es denkbar, vor einer INPUT-Eingabe des Benutzers die
+     Tastatur auf Grossschreibung (Caps-Lock) umzuschalten.
+<p>
+     Hier die versch. Moeglichkeiten:
+<pre>
+    keybd /N0       Schaltet (N)um-Lock aus
+    keybd /C0       Schaltet (C)aps-Lock aus
+    keybd /S0       Schaltet (S)croll-Lock aus
+    
+    keybd /N1       Schaltet (N)um-Lock ein
+    keybd /C1       Schaltet (C)aps-Lock ein
+    keybd /S1       Schaltet (S)croll-Lock ein
+</pre>
+<h3>4DOS.INI</h3>
+
+     Fuer viele wird die 4DOS.INI ein Begriff sein und kaum jemand moechte
+     diese noch missen.
+<p>
+     Man kann sich in einer Datei namens 4DOS.INI Standardwerte einstellen
+     die z.B. die Kompatibilitaet zu anderen Programmen (Desqview, OS2...)
+     bewahren, aber auch die bessere Nutzung des Speichers erlauben.
+<p>
+     Ausserdem sind noch einige persoenliche Einstellungen moeglich.
+<p>
+     Wer noch keine 4DOS.INI erstellt hat, sollte sich nun in diese Datei
+     (hier bitte erst noch IM GLEICHEN VERZEICHNIS wie die Datei 4DOS.COM)
+     einmal folgende Zeilen reinschreiben:
+<pre>
+    BatchEcho      = No
+    UMBEnvironment = Yes
+    UMBLoad        = Yes
+    ColorDir       = com exe:RED;bat:GRE;btm:BRI GRE;DIRS:bri whi;*:WHI
+</pre>
+
+     Tja, was bedeutet dies denn nun? Ganz einfach:
+<pre>
+      BatchEcho      = No  ; bedeutet, das bei allen Batchdateien
+                           ; "@echo off" angenommen wird, also
+                           ; die Anzeige unterdrueckt wird
+                           ; Man braucht somit kein ECHO OFF am Anfang
+                           ; jeder Batch zu schreiben.
+    
+      UMBEnvironment = Yes ; Die Environment-Variablen werden in den
+                           ; oberen Speicher verlagert
+                           ; (= mehr konventioneller Speicher frei)
+      UMBLoad        = Yes ; Der groesste Teil von 4DOS wird auch
+                           ; in den oberen Speicher verlagert
+                           ; (= mehr konventioneller Speicher frei)
+    
+      ColorDir       = ... ; die versch. Dateien werden farblich
+                           ; dargestellt
+</pre>
+     Naeheres entnehmt bitte der komplett dokumentierten 4DOS.INI, die
+     in einem spaeteren Kursteil (wahrscheinlich Teil 016) nochmal mit
+     veroeffentlicht wird.
+<p>
+     HINWEIS!: Die Eintragungen, bzw. Aenderungen in der 4DOS.INI
+               werden erst bei einem Neustart des Rechners wirksam.
+
+<hr>
+<h1>Teil 13</h1>
+
+<h3>1. FOR</h3>
+
+     FOR wiederholt ein Kommando fuer mehrere Werte einer Variablen.
+     So kann man sich beispielsweise alle DOC, DOK und TXT-Dateien
+     mit Hilfe einer FOR-Schleife anzeigen lassen:
+<pre>
+    for %x in (*.doc *.dok *.txt) do list %x
+</pre>
+     Nehmen wir an, dass im aktuellem Verzeichnis jeweils zwei Dateien
+     namens 111 und 222 mit der Endung .DOC, .DOK und .TXT vorhanden
+     sind, dann wird der Befehl folgendermassen abgearbeitet:
+<pre>
+    list 111.doc
+    list 222.doc
+    
+    list 111.dok
+    list 222.dok
+    
+    list 111.txt
+    list 222.txt
+</pre>
+     Mit FOR wird somit ein Befehl mit Hilfe einer Variablen wiederholt.
+
+<h3>2. FREE</h3>
+
+     Hier noch ein einfaches Beispiel:
+<pre>
+    for %lw in (c d e) do free %drive:
+</pre>
+     Na, was macht dieser Befehl???
+     Genau!:
+<pre>
+    free c:
+    free d:
+    free e:
+</pre>
+     Oops, hab ich da etwa noch einen Befehl von 4DOS vergessen?
+     Ihr kennt ihn sicherlich schon: FREE zeigt Euch:
+<p>
+          den Namen des Datentraegers (z.B. einer Festplatte)
+          die Speichergroesse des Datentraegers
+          belegten Speicherplatz auf dem Datentraeger
+          freien         "        "   "       "
+<p>
+     FREE gibt also nur Informationen zum Datentraeger preis.
+<p>
+     -------------------------------------------------------------------
+<p>
+     Manche von Euch werden nun vielleicht sagen: "das ist doch (fast)
+     nichts Neues gegenueber der FOR-Schleife von command.com".
+     Dies ist so nicht richtig, denn:
+<p>
+          Mit FOR-Schleifen unter 4DOS ist es ohne weiteres moeglich,
+          z.B. zu Sprungmarken (Labels) zu springen mit Hilfe von
+          GOTO oder GOSUB/RETURN, oder auch eine umfangreiche Abfrage
+          mit dem Kommando IF, bzw. IFF.
+<p>
+     Es lassen sich so auch innerhalb einer FOR-Schleife komplexe ineinander verschachtelte IFF-Abfragen realisieren.
+<p>
+     Eine FOR-Schleife koennte unter Umstaenden auch in etwa so aussehen:
+<pre>
+     for %xyz in (*.txt;*.doc) do 
+     (
+       echo Datei "%xyz" ist vorhanden...
+       echo.
+       pause Taste fuer weiter...
+       list %xyz
+     )
+</pre>
+     HINWEIS: Wie ihr seht, kann man den Schleifenkoerper einfach klammern.
+                Dabei muss man allerdings aufpassen, dass die gesamte
+                Schleife (also "for... (...)") nicht zu lang wird. Will man
+                einen sehr grossen Schleifenkoerper verwirklichen, so
+                bietet es sich an, den Koerper als Subroutine mit einem
+                Label zu versehen und ihn jeweils per gosub label
+                anzuspringen.
+<pre>
+    for %xyz in (*.txt;*.doc) do gosub sprungmarke
+    
+    REM ...irgendwas in der Batch...
+    
+    :sprungmarke
+    echo Datei %xyz ist vorhanden
+    echo.
+    list %xyz
+    return
+</pre>
+
+     Auch bei FOR sind die Optionen bezueglich dem Datei-Attribut moeglich!
+     Dazu nehmen wir den Parameter "/A:x" (x fuer folgende Buchstaben):
+<pre>
+    R  (R)ead-only      = Dateien, die nur gelesen werden koennen
+    H  (H)idden         = Dateien, die versteckt sind
+    S  (S)ystem         = System-Dateien, die zum System gehoeren
+    D  Sub(d)irectory   = Unterverzeichnisse
+    A  (A)rchive        = Dateien, die veraendert wurden
+</pre>
+     Wir koennten nun mit Hilfe des Archive-Attributes pruefen und anzeigen lassen, welche Dateien wieder mal ein Backup benoetigen.
+     Dies ginge dann so:
+<pre>
+    for /A:a %dateien in (*.*) echo %dateien braucht ein Backup!
+</pre>
+     FOR bietet noch eine weitere Moeglichkeit (@datei.ext), worauf ich
+     jedoch erst in einem spaeteren Kursteil eingehen moechte.
+
+<h3>3. EXCEPT</h3>
+
+     EXCEPT bedeutet auf Deutsch: ausschliesslich/ohne..., d.h. nun fuer
+     Euch, dass man mit EXCEPT auch Dateien einfach auschliessen kann.
+<p>
+     Will man nun alle Dateien aus einem Verzeichnis loeschen, ausser
+     denen, deren Endung EXE oder COM ist, so erreicht man dies mit:
+<pre>
+    EXCEPT (*.exe;*.com) del *.* /y
+</pre>
+     (Zur Erinnerung: der Parameter "/Y" bei DEL ergibt die Bestaetigung
+                      der Abfrage mit "YES", bzw. mit "JA")
+<p>
+     Man darf bei EXCEPT jedoch nicht die Klammern vergessen, sonst wird
+     ploetzlich genau das gemacht, was man eigentlich verhindern wollte,
+     naemlich (im Beispiel) das Loeschen aller Dateien!
+
+<hr>
+<h1>Teil 14</h1>
+
+<h3>ALIAS</h3>
+
+     Aliase sind etwas sehr Nuetzliches, was sicherlich auch niemand
+     mehr missen moechte!!!
+<p&gt;&gt;
+     Alias bedeutet "Spitzname", "Ersatzname" oder "Deckname".
+     Dies sagt uns, dass wir mit ALIASen neue (selbstdefinierte) Befehle
+     anlegen koennen!
+<p>
+     Es ist z.B. moeglich mit Hilfe eines Alias einen anderen Befehl
+     auszufuehren:
+<pre>
+    alias D=dir /2p
+</pre>
+     (D ist hier der ALIAS)
+     ...dieser ALIAS bewirkt, dass man nun nur noch "D" (gefolgt von
+     Enter) druecken muss um die Ausgabe des Befehls DIR /2P zu erhalten.
+<p>
+     Wie schreibe ich mir ein ALIAS?
+<br> - entweder am DosPrompt eingeben (wie in den Beispielen)
+<br> - oder in eine Datei schreiben (das Wort "ALIAS &lt;name&gt;=" dann weglassen) und mit "ALIAS /R DATEI" wieder auslesen
+<p>
+     /R (read) bedeutet das Auslesen der Datei zum Anlegen von ALIASen.
+<p>
+     Sinnvollerweise sollte diese Datei dann auch "ALIAS.INI" heissen.
+     (haltet Euch mal daran, denn im naechsten Kursteil ist es entsprechend angepasst - mit einer Beispiel-ALIAS.INI)
+<p>
+     Es ist auch machbar, dass man sich Befehle "eindeutscht", z.B. so:
+<pre>
+    alias kopiere=copy %&
+    alias versch*iebe=move %&
+</pre>
+     (KOPIERE, bzw. VERSCH*IEBE ist hier der ALIAS)
+     Stop, hier sind schon wieder zwei Dinge hinzugekommen. Was ist das?
+<p>
+     Es ist ganz leicht: Der Parameter "%&" gibt alle Eingaben am DosPrompt
+     dem neuen ALIAS mit, so dass auch aus "kopiere datei1 datei2"
+     schliesslich "copy datei1 datei2" wird.
+<p>
+     Die zweite Sache ist das Sternchen in dem ALIAS.
+     Ein Sternchen steht auch hier als Platzhalter und erlaubt so eine
+     Eingabe von mehreren Moeglichkeiten (hier im Beispiel):
+<pre>
+    versch datei1 c:\temp
+    verschi datei1 c:\temp
+    verschie datei1 c:\temp
+    verschieb datei1 c:\temp
+    verschiebe datei1 c:\temp
+</pre>
+     So weit, so gut...
+<p>
+     Man kann nun auch noch Befehle auf bestimmte Tasten festlegen, z.B.:
+<pre>
+    alias @F5=cls
+    alias @@F6=cls
+</pre>
+     ...die Klammeraffen des ALIASes haben zwei Bedeutungen:
+<pre>
+    ein "@"   ...der Befehl wird nur auf's DosPrompt geschrieben nicht jedoch ausgefuehrt (warten auf Enter)
+    zwei "@"  ...bewirken die SOFORTIGE Ausfuehrung des Befehls (ohne zusaetzlichen Druck auf die Enter-Taste)
+</pre>
+     Da es nicht gerade ermunternd ist, wenn man auf ALIASe nur einen
+     Befehl legen koennte, hat der Programmierer auch die Moeglichkeit
+     gegeben, Befehle zu verbinden (siehe auch Kursteil Nr. 006).
+<pre>
+    alias d=cls^dir /2p
+</pre>
+     Solltet Ihr nun nicht die korrekte Ausfuehrung des Befehls erhalten,
+     so liegt dies daran, dass 4DOS am DosPrompt (!) obigen ALIAS als
+     zwei Befehle erkennt.
+     Damit dies nicht geschieht schreiben wir den ALIAS in zwei Hochkommas
+<pre>
+    alias d=`cls^dir /2p`
+</pre>
+     ...damit 4DOS weiss, dass es sich hier um eine einzige Befehlszeile
+        handelt (Text innerhalb von Hochkommas wird als reiner Text interpretiert)
+<p>
+     Man achte auf die Richtung der Hochkommas, welche mit der Taste
+     rechts neben dem Fragezeichen liegt und mit der Leertaste nachgedrueckt werden muss.
+     Oder man haelt die ALT-Taste gedrueckt und tippt auf dem
+     numerischen Ziffernblock die Zahlen: 96 (bei Codetabelle 437/850)
+     und laesst dann die ALT-Taste wieder los.
+<p>
+     Komfortabler geht es mit dieser Loesung:
+     Die Aliase werden in einer Datei (alias.ini) abgespeichert und sind
+     so bei jedem Einlesen dieser Datei verfuegbar.
+&lt;&lt;p>
+     Das Einlesen geschieht mit:
+<pre>
+    ALIAS /R ALIAS.INI
+</pre>
+     (/R fuer 'R'ead)
+     Man braucht in dieser Datei (alias.ini) weder das Wort ALIAS noch
+     das Gleichheitszeichen (mind. 1 Leerzeichen) und auch nicht die
+     Hochkommas!
+<p>
+     Bei Eingabe von ALIAS ohne Zusaetze werden alle aktiven ALIASe
+     am Bildschirm angezeigt.
+
+<h3>ESET</h3>
+
+     ESET hilft dabei, seine ALIASE zu veraendern.<br>
+     ESET kann auch zur Bearbeitung von Variablen verwendet werden.
+<pre>
+    ESET D         ...editiert das ALIAS "D"
+    ESET temp      ...editiert die Variable "temp"
+</pre>
+     ESET kann nicht nur fuer ALIASe, sondern auch fuer Environment
+     Variablen (siehe Kursteil 007) verwendet werden.
+
+<hr>
+<h1>Teil 15</h1>
+<pre>
+;    - ausfuehrlich dokumentierte ALIAS.INI
+;
+; -------------------------------------------------------------------------
+; Ersteller: St. Petri, Fido: 2:2454/92.30, 4DOS Vers. 5.0 /F (5.5) in 1994
+; -------------------------------------------------------------------------
+;
+; Hier ist ein "kleiner" Auszug aus der ALIAS.INI:
+;
+; Anmerkung:
+; Zeilen, die mit "..." enden und in naechster Zeile wieder so anfangen,
+; gehoeren in eine Zeile geschrieben.
+; Anmerkungen wurden vor dem Alias/Befehl gesetzt und mit ";" als REM
+; markiert, weshalb diese Datei komplett mit "ALIAS /R DATEI" ausgelesen
+; werden kann (nachdem Origin/Signatur geloescht wurden).
+;
+; Der Klammeraffe (@) vor dem Alias-Befehl bewirkt, dass die Befehlskette
+; NICHT in die History-Liste aufgenommen wird.
+;
+; ACHTUNG: Die letzten Zeilen mit meinem Origin und der Signatur solltet
+;          Ihr moeglichst loeschen, da es sonst Fehlermeldungen beim
+;          Einlesen der ALIAS.INI gibt.
+; -------------------------------------------------------------------------
+;
+; _ALIASE:_
+;
+
+; .*.......... bewirkt den schnelleren Ruecksprung OHNE Eingabe von CD
+;              z.B. "...." springt drei Verz. hoeher.
+; Ihr erinnert euch, das * hat hier die Bedeutung eines Platzhalters.
+; Man kann den Befehl komplett eingeben, oder auch nur bis zum *
+; siehe auch beim Alias "R*ECHNE"
+.*..........   %0\
+
+; "-" ermoeglicht den schnellen Ruecksprung
+-              @cdd -
+
+cdx            @cdd d:\dfue\xp\eingang\%&^d
+d              @cls^dir /ph
+
+; DAL (DEL ALLES) ist aehnlich dem DOS 6.2 -Befehl "DELTREE"
+dal            @del %& /szx
+
+; Hier ist beim DIR ein "*" davor geschrieben, warum? Es wird damit ein
+; Weiterbenutzen des normalen Befehls (also hier dem DIR-Befehl) er-
+; moeglicht. Wird dieses "*" nicht davor geschrieben kann es dazu kommen,
+; dass der normale Befehl NICHT mehr abgearbeitet wird.
+dd             @cls^*dir /A:d /p
+
+; DH (DIR HEUTE) ist sinnvoll, wenn Dateien in Ihrer BESCHREIBUNG ein Datum
+; erhalten (z.B. nach einem FileRequest) und anschliessend diese (neuen)
+; Dateien (ohne aeltere FileRequest-Dateien) anzuzeigen.
+dh             @cls^echo Heutiger Eintrag an Dateien: ...
+               ...^echo.^dir /pkmho:-d /i"*%_date*"
+
+; DHF (DIR HEUTIGE FILES) zeigt Dateien an, die als Filedatum den heutigen
+; Tag haben ("D" ist obiges Alias!).
+dhf            @if %1 gt 0 (d %2& /[d-%1]^quit)^ d %& /[d-0]
+
+; DJ (DIR JETZT) zeigt Files an, deren Filedatum & Zeit identisch mit akt.
+; Datum und Zeit sind (gut fuer geaenderte Files aus XP anzeigen zu lassen
+; (logisch: erst XP verlassen))
+; Bei Eingabe von "DJ 5" werden alle Files der letzen 5 min angezeigt.
+dj             @if %1 gt 0 (d %2& /[d-0] /[t-%1]^quit)^ d %& /[d-0] /[t-1]
+
+dp             @cls^*dir /O:-d /p
+dw             @cls^dir /4vh
+
+; FINDE sucht nach einem bestimmten Text in den angegebenen Dateien
+; FINDE50 ist fuer die 4DOS Vers. 5.0, FINDE55 fuer die Vers. 5.5
+finde50        @set y=%temp\seek^rem&gt;%y^if %# le 1 (echo Aufruf: %0 ...
+               ...Dateien Suchtext^quit)^echo Suchergebnis von ...
+               ..."%2&"&gt;&gt;%y^scrput +0 +0 bli bri gre on blu Suche ...
+               ...l„uft!^find /n "%2&" %1 &gt;&gt; %y ^list %y^unset y
+
+finde55        @set y=%temp\seek^rem&gt;%y^if %# le 1 (echo Aufruf: %0 ...
+               ...Dateien Suchtext^quit)^echo Suchergebnis von ...
+               ..."%2&"&gt;&gt;%y^scrput +0 +0 bli bri gre on blu Suche ...
+               ...l„uft!^ffind /t"%2&" %1&gt;&gt;%y^list %y^unset y
+
+
+; KD (Kill Directory) loescht alle Dateien, Unterverz. und das Verz., in
+; dem man sich gerade befindet (Ausnahme: Hauptverz.)
+kd             @iff %_cwps EQ \ then^Echo Loeschen des Haupt-Verzeichnis ...
+               ...nicht erlaubt!^else^inkey Loesche dieses Verzeichnis ...
+               ...mit allen Unterverz. (J/N)? %%answer^if "%answer" EQ ...
+               "J"  (set kd=%_CWD^cd..^del %kd /SXYZT^unset kd)^unset ...
+               answer^endiff
+
+; Der Alias LA ist manchmal besser als Batch zu gebrauchen (wenn z.B. mit
+; "unalias *" alle Aliase geloescht werden, kann man mit LA.BTM diese
+; wieder einlesen.
+la             echo Lese Tasten.INI^alias /r d:\4dos\tasten.ini
+
+; LD (Lese Dokumentationen) liest alle im Verzeichnis befindlichen DOK's,
+; DOC's, TXT's und read.me 's in den LISTer um diese dort zu betrachten.
+ld             list *.txt;*.doc;*.dok;*.me
+
+; Syntax: LOGG Datei     Logg fuehrt eine Datei aus und gibt einen Log-
+; bericht aus, der sofort nach Ende des Programms gezeigt wird.
+logg           log /w e:\logg.log^%&^log off^pause^list e:\logg.log...
+               ...^del e:\logg.log &gt;nul
+
+; N (Newer) fuehrt den Befehl nur fuer Dateien aus, deren Datum neuer
+; als die Eingabe sind.
+; Syntax:   N Befehl/Datei Tage
+; Beispiel: N DIR 20        zeigt alle Dateien, deren Filedatum eines der
+;                           letzten 20 Tage ist.
+n              %2& /[d-%1]
+
+m              *mem /c /p
+
+; Fuer die LogiTech-Maus. (Maus muss nicht staendig mitgeladen sein).
+; Syntax:   MAUS DATEI
+maus           if "%1" == "" (echo Syntax: %0 Programm^quit)^mouse...
+               ...^call %&^mouse /out
+
+; O (Older) ist wie (N)ewer und fuehrt den Befehl nur fuer aeltere Dateien
+; aus.
+; Beispiel: O DIR 20        zeigt somit alle Dateien an, deren Filedatum
+;                           aelter sind als das Datum vor 20 Tagen
+o*lder         %2& /[d01-01-80,%@eval[%@date[%_date]-%1]]
+
+; R*ECHNE ist ein kleiner Taschenrechner
+; Aufruf mit R Rechnung
+; oder mit RE Rechnung
+; oder mit REC Rechnung
+; oder mit RECH Rechnung
+; oder mit RECHN Rechnung
+; oder mit RECHNE Rechnung
+; das "*" laesst also Abkuerzungen des Alias zu.
+; Beispiel: rechne 10 + (10 / 3)
+;
+; Fuer 4DOS Vers. 5.5 sieht's schoener aus, statt %@eval[%&], dann so:
+;  ... %@comma[%@eval[%&]]
+r*echne        echo Das Ergebnis lautet: ^scrput -1 21 bri gre ...
+               ...on %_bg %@eval[%&]
+
+; SD*EL (Select Delete) Selektives loeschen! Syntax: SD[el] [Dateien]
+sd*el          iff "%1" == "" then select del (.)^else select del (%&)
+
+;SU*CHE   Datei suchen, die im Pfad liegt.
+su*che         @iff "%@search[%1]" == "" then echo %1 liegt NICHT im ...
+               ...Pfad!^else echo Hier ist es: %@search[%1]^endiff
+
+; STOP ist eine Stoppuhr fuer Batchdateien. Es laesst sich somit leicht
+; pruefen, wie schnell eine Batchdatei laeuft.
+; Aufruf: STOP Programm
+stop           @timer^call %&^timer
+
+; Gibt andere Fehlermeldung aus (dabei kann man z.B. auch prima ein
+; Soundfile abspielen - das Programm PLANY.EXE eignet sich hierfuer gut.
+; (ist auch in der Pellenz-Box zu haben).
+unknown_cmd    @echo Ich kenne diesen Befehl nicht:
+
+; auf Viren pruefen:
+@@Alt-1        @d:\viren\scan.exe a:\
+@@Alt-2        @d:\viren\scan.exe b:\
+@@Alt-3        @d:\viren\scan.exe \
+@@Alt-4        @d:\viren\scan.exe *.*
+@@Alt-5        @d:\viren\scan.exe
+
+; INI's editieren
+@@Alt-a        @edit c:\4dos\tasten.ini^la
+@@Alt-h        @edit c:\4dos\history.ini
+@@Alt-i        @edit c:\4dos\4dos.ini
+@@Alt-s        @edit c:\4dos\setting.ini
+
+; Schneller aus einer zweiten (oder 3., 4., ...) Shell zurueckspringen.
+@@Alt-X        @EXIT
+@@Alt-F4       @EXIT
+
+; Autoexec.bat, bzw. Config.sys EDITIEREN
+@@Ctrl-F5      @edit c:\autoexec.bat
+@@Ctrl-F6      @edit c:\config.sys
+
+; Autoexec.bat und Config.sys anzeigen lassen (per LIST)
+@@Shift-F5     @list c:\config.sys;autoexec.bat
+</pre>
+
+<hr>
+<h1>Teil 16</h1>
+<pre>
+;      - ausfuehrlich dokumentierte 4DOS.INI
+;
+;
+;--------------------------------------------------------------------------
+;
+; Wie erstelle ich mir eine 4DOS.INI???
+;
+; Einfach folgende gewuenschten Eintraege der 4DOS.INI in eine Datei
+; schreiben, die 4DOS.INI heisst und (moeglichst) im gleichen Verzeichnis
+; wie die Datei 4DOS.COM steht.
+;
+;
+; -------------------------------------------------------------------------
+; REM Ersteller: St. Petri, Fido: 2:2454/92.30, 4DOS Vers. 5.0 /F in 1994
+; -------------------------------------------------------------------------
+;
+;      Als erste Bemerkung in der rechten Spalte stehen die Moeglichkeiten,
+;      die fuer die Einstellung in der linken Spalte gueltig sind.
+;      Dahinter (oder darunter) steht eine kurze Erklaerung
+;
+; ACHTUNG: Die letzten Zeilen mit meinem Origin und der Signatur solltet
+;          Ihr moeglichst loeschen, da es sonst Fehlermeldungen beim
+;          beim Einlesen der 4DOS.INI gibt.
+; -------------------------------------------------------------------------
+;
+4StartPath = C:\4DOS           ; c:\4dos   d:\dos\4dos   c:\temp  ...
+                               ; Pfad fuer 4START.BTM und 4EXIT.BTM
+
+Alias = 2048                   ; Zahl
+                               ; Platz, der fuer Aliase reserviert wird.
+
+ANSI = AUTO                    ; AUTO  YES  NO
+                               ; YES = ANSI.SYS-Treiber geladen
+                               ; AUTO= 4DOS sucht automatisch nach Ansi.sys
+
+AmPm = AUTO                    ; AUTO  YES  NO
+                               ; YES = Zeitdarstellung auf 12-Std.-Anzeige
+                               ; AUTO= Zeitdarstellung auf den Country-Code
+
+AutoExecParms =                ; beliebige Zeichen(folge)
+                               ; Param, die von AUTOEXEC uebergeben werden
+
+AutoExecPath = D:\4DOS         ; c:\   d:\4dos   ...
+                               ; Pfad (u. Name) fuer AUTOEXEC.BAT
+
+
+BatchEcho = No                 ; YES NO
+                               ; NO=Befehlanzeige in BAT/BTM's = AUS
+                               ; NO wirkt sich genauso aus, als wuerde man
+                               ; bei jeder Batchdatei zu Anfang @ECHO OFF
+                               ; schreiben
+
+BeepFreq = 440                 ; 440 (=Standard) oder belieb. andere Zahl
+                               ; Tonfrequenz von BEEP
+
+BeepLength = 10                ; Zahl
+                               ; Dauer von BEEP in 1/18 Sekunden
+
+BrightBG = NO                  ; YES NO
+                               ; YES=aktiviert die Darstellung von hellen
+                               ; Hintergrundfarben, jedoch gleichzeitig
+                               ; Deaktivierung der blinkenden Schriften
+
+ColorDIR = exe:bri red;btm:gre ; Extension(en) Doppelpunkt Farbe Semikolon
+                               ; z.B. ergibt: exe:bri red
+                               ;      die farbliche Anzeige (hier hellrot)
+                               ;      der "EXE"-Dateien
+                               ; fuer Verzeichnisse wird "DIRS" verwendet
+                               ; fuer ALLE anderen Dateien kann "*"
+                               ; verwendet werden
+                               ; ColorDir zeigt also Dateien/Verzeichnisse
+                               ; und auch bestimmte Dateien mit Attributen
+                               ; in verschiedenen Farben an.
+; Hier noch ein Beispiel:
+ColorDIR = exe:bri red;btm:bri gre;DIRS:bri whi;hidden system:bri bla;*:whi
+
+CommandSep = ^                 ; ^   %+   %&  ...oder belieb. and. Zeichen
+                               ; Trennzeichen fuer Befehle in einer Reihe
+
+
+CursorOver = 50                ; Zahl von 0 bis 100
+                               ; 10  = Cursor im ENTFernen-Modus = 10 %
+
+DelHistory = Ctrl-D            ; Ctrl-D (=Standard) oder and. Tastenkomb.
+                               ; HotKey fuer einen History-Eintrag loeschen
+
+Descriptions = Yes             ; YES  NO
+                               ; YES = Erlaubt bei COPY, MOVE, REN
+                               ;       das die Kommentare zu den Dateien
+                               ;       (Description) mit kopiert/gemoved
+                               ;       bzw. umbenannt werden
+
+DescriptionMax = 40            ; Zahl von 20 bis 200  (40=Standard)
+                               ; Laenge der Kommentare (Description)
+
+EditMode = Insert              ; INSERT  OVER
+                               ; INSERT = Editiermodusvoreinstellung
+                               ;          fuer EINFuege-Taste
+
+Environment = 4096             ; Zahl
+                               ; Speicherplatz, der fuer Environment-Variablen
+                               ; zur Verfuegung steht.
+
+
+EnvFree = 128                  ; Zahl
+                               ; Minium Umgebungsspeicher fuer
+                               ; Unterprozessor (=2.Shell)
+
+EscapeChar = Ctrl-X            ; belieb. Zeichen (Standard= Ctrl-X)
+                               ; Escapezeichen fuer ESC-Sequenz vom
+                               ; DOS-Prompt
+
+Help = F1                      ; beliebige Taste(nkombination)
+                               ; HotKey zum Aufruf der Hilfe
+
+HelpPath = D:\4DOS             ; d:\4dos   c:\4dos  c:\helps  ...
+                               ; Pfad, wo die Hilfedatei 4help.exe liegt
+
+History = 1024                 ; Zahl
+                               ; HISTORY-Puffergroesse in Byte
+
+HistCopy = No                  ; YES  NO
+                               ; NO = keine History-Mehrfacheintragungen
+
+HistLogName =                  ; c:\4dos\history.log  d:\temp\his.txt ...
+                               ; Dateiname fuer History-Log-File
+
+HistMin = 3                    ; Zahl (moeglichst nur zwischen 0 & 5)
+                               ; Mindesteingabelaenge zum Speichern in
+                               ; der HISTORY-Liste
+
+HistWinColor = blu on whi      ; Farbe (z.B. white on blue)
+                               ; HISTORY-Fenster-Farbe
+
+HistWinHeight = 21             ; Zahl von 2 bis 50
+                               ; HISTORY-Fenster-Hoehe inklusive Rand
+
+HistWinLeft = 47               ; Zahl von 0 bis 77
+                               ; HISTORY-Fenster-Abstand von links
+
+HistWinTop = 1                 ; Zahl von 0 bis 48
+                               ; HISTORY-Fenster-Abstand von oben
+
+HistWinWidth = 33              ; Zahl von 2 bis 80
+                               ; HISTORY-Fenster-Breite inklusive Rand
+
+HistWinOpen = PgUp             ; Taste(nkombination)
+                               ; Taste zum Oeffnen des HISTORY-Fensters
+
+HistWinEdit = Ctrl-E           ; Taste(nkombination)
+                               ; HISTORY-Fenster-Zeile editieren
+
+HistWinBegin = Ctrl-PgUp       ; Taste(nkombination)
+                               ; Oeffnet HISTORY-Fenster mit erster Zeile
+
+HistWinEnd = Ctrl-PgDn         ; Taste(nkombination)
+                               ; Oeffnet HISTORY-Fenster mit letzter Zeile
+
+INIQuery = No                  ; YES  NO
+                               ; YES=4DOS.INI mit Einzelabfrage jeder Zeile
+                               ; NO=4DOS.INI ohne Einzelabfrage jeder Zeile
+
+InputColor = Cyan on Black     ; Farbe
+                               ; Input-Standardfarbe
+                               ; gilt fuer Input/Inkey/Eset ect. und fuer den
+                               ; Dos-Prompt
+
+LineInput = No                 ; YES  NO
+                               ; NO= Eingabebehandlung ala 4DOS
+                               ; YES=Eingabebehandlung ala MS-DOS)
+
+ListColors = White on Blue     ; Farbe
+                               ; LIST-Fensterfarbe
+
+ListStatBarColors = Red on Whi ; Farbe
+                               ; LIST-Statuszeilenfarbe
+
+LocalAliases = Yes             ; YES  NO
+                               ; YES= 4dos-Shells verwalten ihre eigene
+                               ;      Alias-Liste
+                               ; NO = 4dos-Shells teilen sich eine Alias-
+                                      Liste gemeinsam.
+
+LocalHistory = Yes             ; YES  NO
+                               ; YES= 4dos-Shells verwalten ihre eigene
+                               ;      History-Liste
+                               ; NO = 4dos-Shells teilen sich eine History-
+                                      Liste gemeinsam.
+
+MessageServer = Yes            ; YES  NO
+                               ; YES=Fehlermeldung externer Prog. anzeigen
+
+NoClobber = No                 ; YES  NO
+                               ; YES=verhindert das Ueberschreiben bereits
+                               ;     existierender Dateien bei Umleitungs-
+                               ;     Zeichen
+
+PauseOnError = Yes             ; YES  NO
+                               ; Erlaubt Fehlermeldungen von 4DOS.INI
+
+SelectColors = White on Blue   ; Farbe
+                               ; SELECT-Fensterfarbe
+
+SelectStatBarColors = Red on Whi ; Farbe
+                               ; SELECT-Statuszeilenfarbe
+
+Swapping = XMS, EMS            ; XMS, EMS, E:\temp, c:\temp, none
+                               ; Reihenfolge, wie 4DOS die Auslagerungsdatei
+                               ; (4dosswap.000) ablegt (hier stellt E:\temp
+                               ; die RamDisk dar)
+
+UMBAlias = No                  ; YES  NO
+                               ; YES=laedt Alias-Liste ins UMB
+                               ; NO =laedt Alias-Liste in konvent. Speicher
+
+UMBEnvironment = YES           ; YES  NO
+                               ; YES=laedt Environment-Variablen ins UMB
+                               ; NO =laedt Environment-Variablen in
+                               ;     den konventionellen Speicher
+
+UMBHistory = No                ; YES  NO
+                               ; YES=laedt History-Liste ins UMB
+                               ; NO =laedt History-Liste in konv. Speicher
+
+UMBLoad = Yes                  ; YES  NO
+                               ; YES=laedt 4DOS-TSR-Teil ins UMB
+                               ; NO =laedt 4DOS-TSR-Teil in konv. Speicher
+
+UniqueSwapName = Yes           ; YES  NO
+                               ; YES=Einheitlicher Swapdat.Name (Yes = OS2)
+                               ; NO =es wird jeweils ein neuer Dateiname
+                               ;     fuer eine "UniqueSwap-Datei" vergeben
+
+UpperCase = No                 ; YES  NO
+                               ; YES=Grossbuchstabendarstellung
+                               ; NO =Normaldarstellung der Buchstaben
+
+;------------------------------------------------------------------------------
+
+[Primary]                      ; Hauptkomandoprozessorebene (Shell 0)
+
+StdColors = cya on bla         ; Farbe
+                               ; Standardfarbe des Bildschirm's
+
+;------------------------------------------------------------------------------
+
+[Secondary]                    ; Unterkomandoprozessorebene
+                               ; (Shell 1 bis unendlich)
+
+UpperCase = No                 ; YES  NO
+                               ; YES=Grossbuchstabendarstellung
+                               ; NO =Normaldarstellung der Buchstaben
+</pre>
+<hr>
+<h1>Teil 17</h1>
+
+<h3>1. KSTACK</h3>
+
+     KSTACK ist ein EXTERNES Programm, welches mit 4DOS mitgeliefert wird.
+     Dieses Programm KSTACK (man achte auf die Schreibweise!) ermoeglicht
+     dem Anwender die Ausfuehrung von Tastendruecken.
+<p>
+     Dies geschieht genauso, als ob der Anwender Eingaben bestimmter
+     Buchstaben oder Funktionstasten, etc. selbst von Hand eintippt.
+<p>
+     KSTACK muss erst aktiviert werden, damit die "automatische Tasteneingabe" ausgefuehrt werden kann.
+     Dies kann man entweder am DosPrompt erreichen oder (damit's staendig
+     geladen ist) in der autoexec.bat aufrufen.
+<p>
+     Doch STOP!
+     Was fuer die Ausfuehrung der Tastendruecke (ich nenne diese mal
+     "Makros") benoetigst wird, ist nicht der Name des Programms, sondern
+     der Befehl:
+
+<h3>2. KEYstack (das EY nicht vergessen)</h3>
+
+     Um nun eine Textfolge auszuloesen, werden die Buchstaben innerhalb
+     von Anfuehrungszeichen (") eingeschlossen:
+<pre>
+    keystack "echo Hallo!"
+</pre>
+     Obiger Befehl schreibt einfach nur "echo Hallo!" am DosPrompt.
+     Wenn nun mit Enter bestaetigt wird, so wird der Befehl ECHO auch
+     ausgefuehrt.
+<p>
+     Nun soll aber auch noch der Druck auf die ENTER-Taste ausgefuehrt
+     werden, welches man entweder durch:
+<pre>
+    keystack ENTER           (= ScanCode 28)
+    oder:
+    keystack 13              (= AsciiCode 13)
+</pre>
+     ...erreicht (13 fuer den ASCII-Code von ENTER, bzw. 28 bei dem
+     Scan-Code bei Eingabe von Enter (bei KEYSTACK)).
+     Funktionstasten, bzw. Tastenkombinationen werden OHNE Anfuehrungszeichen zum KEYSTACK hinzugefuegt.
+<p>
+     Unser Beispiel wird nun so aussehen, damit auch der Befehl ECHO
+     ausgefuehrt wird, nun mit Bestaetigung durch ENTER:
+<pre>
+    keystack "echo Hallo!" ENTER
+    oder:
+    keystack "echo Hallo!" 13
+</pre>
+     Soweit, so gut.
+     KEYSTACK kann die Tastendruecke auch verzoegern, welches man durch
+     den Parameter "/Wx" (x fuer eine Zahl) erreicht.
+<p>
+     Die Zahl 1 ist 1/18tel-Sekunde.
+     Mit:
+<pre>
+    keystack /w18 Enter
+</pre>
+     erreicht man eine Wartezeit von einer Sekunde.
+     Die Zahl 180 sind somit 10 Sekunden und so weiter... (max. bis 1 Std.)
+<pre>
+    keystack "echo" /w8 " Na, klappt's?" /w18 Enter
+</pre>
+     ...erzeugt am DosPrompt erst das Hinschreiben von "echo", wartet dann
+     8/18tel Sekunden, schreibt danach " Na, klappt's?" und wartet noch
+     eine Sekunde bis dieser Befehl mit ENTER bestaetigt wird.
+<p>
+     Es kann auch ein Programm aufgerufen werden, welches ein
+     "Keystack-Makro" mitbekommt und somit eine bestimmte Aktion in dem
+     aufgerufenen Programm erzeugt.
+<p>
+     Dabei muss zuerst der KEYSTACK-Befehl stehen und anschliessend der
+     Aufruf des gewuenschten Programms.
+<p>
+     Evtl. muss hier noch experimentiert werden, wie lange mit Hilfe des
+     Parameters /Wx gewartet wird, bis der Tastendruck ausgefuehrt wird.
+<p>
+     So koennte man beispielsweise in dem DFUE-Programm FrontDoor 2.02 NC
+     einen automatischen Netcall/Force Poll aufrufen indem man folgendes
+     eingibt (z.B. in eine Batchdatei):
+<pre>
+    keystack /w80 Alt-F "2:2454/1234" Enter ^ c:\fd\ ^ fd2.bat
+</pre>
+     Hier im Beispiel wuerde bei der Box 2:2454/1234 gepollt.
+
+<p>
+     Wer nun fleissig probiert, die Makro's an Programme zu uebergeben,
+     wird bei dem ein oder anderen Programm feststellen, dass es nicht
+     auf KEYSTACK reagiert. Warum?
+<p>
+     Um es einfach zu erklaeren: Manche Programme missachten die Tastatureingabe waehrend der Ausfuehrung der programmeigenen Ausfuehrungen.
+<p>
+     Auch dies kann man umgehen, indem man KEYSTACK befiehlt, den Tastaturpuffer zu loeschen, um so weitere Eingaben von KEYSTACK zuzulassen.
+<p>
+     Dies geht einfach durch Hinzufuegen einer oder mehrerer Nullen bei
+     KEYSTACK:
+<pre>
+    keystack 0 Enter 0 Enter 0 Enter
+    oder:
+    keystack 0 13 0 13
+    oder:
+    keystack /w80 0 Alt-F "2:2454/1234" 0 Enter ^ fd2.bat
+</pre>
+     Sollte es dann immer noch nicht klappen, so wird es daran liegen,
+     dass das Programm die Tasteneingabe nicht ueber den normalen ASCII-
+     Code und auch nicht ueber den ScanCode (siehe weiter oben)
+     akzeptiert.
+<p>
+     Dann kann man es nur noch versuchen, beide Code's zu uebergeben.
+     4DOS bietet mit KEYSTACK auch diese Moeglichkeit, man muss dann
+     jedoch ein wenig rechnen:
+<pre>
+    (256 * ScanCode) + Ascii-Code
+</pre>
+     Fuer Enter ergibt sich somit die Zahl 7181, die sich wie folgt errechnet:
+<pre>
+    ScanCode  Ascii-Code
+    (256  *   28   ) +   13
+</pre>
+     Um nun dem Programm ein "sicheres" Enter zu uebergeben, gibt man
+     einfach folg. ein:
+<pre>
+    keystack 0 7181 ^ programm.exe
+</pre>
+     Spaetestens jetzt sollte es auch klappen (evtl. noch Warteschleife
+     zwischensetzen mit Parameter "/Wx".
+<p>
+     So, ich hoffe, das es Euch nicht ueberfordert hat, da es etwas
+     schwierig war. Doch ich bin ueberzeugt davon, dass es nach
+     einigen Versuchen auch bei Euch klappt. Ansonsten fragt ruhig bei
+     mir oder im Echo "4DOS.GER" des FIDO-NETZES nach.
+<hr>
+<h1>Teil 18</h1>
+
+<h3>Dateien suchen nach speziellen Suchkriterien:</h3>
+
+     4DOS bietet gegenueber Command.com auch weitere Suchmoeglichkeiten.
+     Wo es bei
+<pre>
+    dir at*.* /s
+</pre>
+     mit command.com gerade noch geht um Dateien zu suchen, die mit AT
+     beginnen, bekommt command.com schon Schwierigkeiten, bzw. es geht
+     gar nicht bei
+<pre>
+    dir *tt*.*
+</pre>
+     ...wo doch nur nach Dateien gesucht werden soll, die in ihrem Dateinamen die Buchstabenkombination TT beinhaltet.
+     Hier liegt 4DOS mal wieder klar im Vorteil!
+     (Selbst der Windows-Datei-Manager schafft diese Suche nicht mehr!)
+<p>
+     Bei 4DOS sind allerdings noch (viele) weitere Jokerzeichen zur Suche
+     nach Dateien (und auch zur Kombination von Befehlen, wie DEL, MOVE,
+     COPY, ...) moeglich.
+     So kann man mit 4DOS Dateien selektieren:
+<pre>
+    - mit H bis M beginnend                      [h-m]*
+    - NICHT mit H bis M beginnend                [!h-m]*
+    
+    - mit A oder B beginnend                     [ab]*
+    - NICHT mit A oder B beginnend               [ab]*
+    
+    - mit einer Zahl irgendwo                    *[0-9]*
+    - ohne Buchstaben irgendwo                   *[!a-z]*
+    
+    - mit der Buchstabenfolge
+    AY, AZ, BY oder BZ irgendwo                *[ab][yz]*
+</pre>
+     Hier noch ein paar Beispiele:
+<pre>
+    Files loeschen, die mit ~ oder T in der Extension anfangen     DEL *.[~t]*
+    Dateien anzeigen, die eine Zahl beinhalten                     DIR *[0-9]*
+    Files kopieren, die keine Buchstaben von X bis Z beinhalten    copy *[!x-z]* ZIEL
+</pre>
+
+     Ich hoffe, Ihr seid auch alle klar gekommen, denn nun geht's noch
+     weiter:
+
+<h3>Dateien suchen nach Datum:</h3>
+
+     Ja, nach dem Filedatum kann man natuerlich auch selektieren:
+     Dazu wird ein Parameter uebergeben, der den Befehl auf das Datum
+     begrenzt. Auch hier funktioniert die Parameteruebergabe bei sehr
+     vielen 4DOS-Befehlen (hier in den Beispielen nur mit DIR aufgefuehrt)
+     Wir schreiben in den eckigen Klammern das "D" fuer DATE (=Datum).
+     Dateien, deren DateiDatum...:
+<pre>
+    ...neuer als 0 Tage ist (=heute)             dir /[d-0]
+    ...neuer als 1 Monat ist                     dir /[d-31]
+</pre>
+     (<b>Achtung</b>: folgendes ist je nach LandesCodeTabelle unterschiedlich!
+                 bei englischer Landeseinstellung wird Monat und Tag
+                 vertauscht, z.B. 12-31-93 fuer den 31.12.1993 !)
+<pre>
+    ...aus dem Jahre 1993 ist                    dir /[d1-1-93,31-12-93]
+    ...dem 27.07.1994 ist (Beginn des Kurses)    dir /[d27-07-94]
+</pre>
+<h3>Dateien suchen nach Zeit:</h3>
+
+     Ihr koennt Euch jetzt sicher denken, dass 4DOS nun auch eine Auswahl
+     fuer die Uhrzeit des Filedatums bereithaelt - Ja, dem ist so:
+     Wir schreiben in den eckigen Klammern das "T" fuer TIME (=Zeit).
+     Fuer Dateien,...
+<pre>
+    ...der aktuellen Uhrzeit           dir /[t-0]
+    ...der letzten Stunde              dir /[t-60]
+</pre>
+     (<b>Achtung</b>: folgendes ist je nach LandesCodeTabelle unterschiedlich!
+                 bei englischer Landeseinstellung wird fuer die Zeit nach
+                 mittags 12.00 Uhr mit englischer Zaehlung 1:00p gearbeitet, 
+                 z.B. dir /[t2:00p] ergeben Files nach 14.00 Uhr!)
+<pre>
+    ...seit 2 Uhr nachts               dir /[t2:00]
+    ...zwischen 12:30 und 14:00 Uhr    dir /[t12:30,14:00]
+</pre>
+<h3>Kombinationen von Datum und Zeit:</h3>
+
+     Es gibt nun zwei Varianten, die Selektion von Datum und Zeit zu
+     kombinieren:
+<pre>
+    1. wie oben beschrieben:           dir /[d-0] /[t2:00]
+    2. die kuerzere Kombination:       dir /[d-0@2]
+                           oder:       dir /[d-0@2:00]
+</pre>
+     Die zweite Kombination ist immer mit dem Klammeraffen (Alt-64) getrennt und funktioniert genauso, wie die erste Moeglichkeit.
+<p>
+     Ihr koennt selbst entscheiden, welche der Varianten Ihr nehmt.
+
+<h3>Dateien suchen nach Dateigroesse:</h3>
+
+     Auch hier ist die Syntax des Parameters wie bei Datum oder Zeit:
+     Wir schreiben in den eckigen Klammern das "S" fuer SIZE (=Groesse).
+     Fuer Dateien,...
+<pre>
+    ...groesser/gleich 8 KB                      dir /[s8k]
+    ...gleich 5 KB                               dir /[s5k,5k]
+    ...gleich 0 Byte                             dir /[s0,0]
+    (ist prima zum Loeschen von Null-Byte-Files: DEL *.* /[s0,0] /s)
+    
+    ...zwischen 5 KB und 20 KB                   dir /[s5k,20k]
+    ...zwischen 7 MB und Dateien, die bis
+       zu 500 KB kleiner sind als 7 MB           dir /[s7m,-500k]
+</pre>
+     usw., usf., ...
+<p>
+     Die Liste liesse sich noch lange fortfuehren :-)
+<p>
+     Weitere Hilfe findet Ihr wieder unter der Online-Hilfe (F1) im Menuepunkt "Selection". Dort sind die verschiedenen Varianten der
+     Selektionen nochmals unterteilt und aufgefuehrt.
+
+<hr>
+<h1>Teil 19</h1>
+
+<h3>1. For %var in (@DATEI.EXT) do ...</h3>
+
+     Oft kommt es vor, dass man in einer Batchdatei eine Datei mit
+     Informationen verarbeiten muss.
+<p>
+     Nehmen wir an, dass man sich keinem Backup-Programm anvertrauen
+     moechte, da manche doch recht langsam oder nicht so komfortabel sind,
+     vielleicht auch einfach nur, weil es notwendig ist, fuer ein gutes
+     Backup-Programm wieder viel Geld hinzulegen!
+<p>
+     Hier kann man sich auch eine reine 4DOS-Loesung zunutze machen.
+     So koennten z.B. in einer Datei je Zeile die gewuenschten Dateien
+     stehen, die regelmaessig gesichert werden sollen.
+<p>
+     Diese Datei koennte dann so aussehen:
+<p>
+     - backup.dat
+<pre>
+    c:\autoexec.bat
+    c:\config.sys
+    c:\windows\*.ini
+    c:\4dos\*.btm /s
+</pre>
+
+     Die dazu passende Verwendung unserer neuen Befehlsvariante von
+     "FOR..." sieht dann so aus:
+<pre>
+    for %datei in (@backup.dat) do copy %datei c:\backup\
+</pre>
+     Dabei wird jede Zeile aus der Datei "backup.dat" (oder jeder anderen
+     gewuenschten Datei) ausgelesen und mit (hier:) dem COPY-Befehl
+     kombiniert! Die Abarbeitung des obigen Befehls sieht hier so aus:
+<pre>
+    copy c:\autoexec.bat c:\backup
+    copy c:\config.sys c:\backup
+    copy c:\windows\*.ini c:\backup
+    copy c:\4dos\*.btm /s c:\backup
+</pre>
+     Alles klar? Es wird also jede Zeile aus der entsprechenden Datei
+     ausgelesen und mit der FOR-Schleife kombiniert.
+<p>
+     Doch VORSICHT!:<br>
+          Wenn sich in der Datei, welche ausgelesen wird, Umleitungszeichen
+          "  &gt;  &gt;&gt;  &lt;  &lt;&lt;  " oder Redirektions (Pipe-Zeichen | ) befinden,
+          kann es zum CHAOS kommen!
+          Diese Sonderzeichen werden hier naemlich ALLE mitverarbeitet,
+          wodurch ein "echo irgendwas &gt; abc" ploetzlich eine Datei "abc"
+          erzeugt, bzw. sogar ueberschreibt!
+<p>
+          ALSO VORSICHTIG damit umgehen!
+<p>
+     Einen Schritt weiter...
+<p>
+     Die Bearbeitung von Dateien mit FOR ist von Vorteil, wenn man genau
+     weiss, dass ALLE Zeilen einer Datei durchgegangen werden sollen.
+     FOR ist recht schnell in der Ausfuehrung.
+<p>
+     Ein gravierender Nachteil von FOR ist, dass die Abarbeitung nur
+     umstaendlich unterbrochen/abgebrochen werden kann.
+
+<h3>2. Dateifunktionen</h3>
+
+     Professioneller laesst sich das Arbeiten mit Dateien unter 4DOS
+     mittels folgender Funktionen gestalten:
+<pre>
+    %@fileopen...........oeffnet Dateien zum Lesen oder Schreiben
+    %@fileread...........liest die naechste Zeile aus geoeffneter Datei
+    %@filewrite..........Schreibt eine Zeile in eine zum Schreiben geoeffnete Datei
+    %@fileseek...........Positioniert den Datei-Zeiger einer geoeffneten Datei an die gewuenschte Stelle
+    %@fileclose..........Schliesst eine offene Datei
+</pre>
+<h3>3. @fileOPEN</h3>
+
+     Syntax: %@fileOPEN[datei.ext,Modus]
+<p>
+     Diese Funktion dient dazu, eine Datei zu oeffnen. Man muss dabei
+     angeben, in welchem Modus man die Datei oeffnen moechte:
+<pre>
+    - read     Die Datei wird zum Lesen geoeffnet
+    - write    Die Datei wird zum Schreiben geoeffnet
+    - append   Die Datei wird zum Schreiben geoeffnet, wobei der erste Schreibvorgang 
+               automatisch am Ende der Datei stattfinden wird. (append = anhaengen)
+</pre>
+     Das Ergebnis der @fileopen-Funktion ist ein ganzzahliger Wert.
+     Ist dieser Wert -1, so konnte die Datei nicht erfolgreich geoeffnet
+     werden. Ist der Wert z.B. 6, so hat das Betriebssystem die Kenn-Nummer
+     6 fuer diese Datei vergeben.
+<p>
+     Immer, wenn von ihr gelesen oder in sie geschrieben werden soll, muss
+     nun dieser Wert (hier also 6) angegeben werden! Der Name der Datei
+     ist dabei nicht mehr wichtig.
+<p>
+     In der Praxis muss also das Ergebnis von @fileopen in einer
+     Variable gespeichert werden, um diese auf Fehler zu testen, bzw. um
+     fuer die weitere Ver-/Bearbeitung die Kenn-Nummer angeben zu koennen.
+
+<h3>4. @fileCLOSE</h3>
+
+     Syntax: %@fileCLOSE[KennNummer]
+<p>
+     Nach der Bearbeitung muss eine Datei wieder geschlossen werden!
+     Dies erledigt @fileclose. Als Argument ist die Kenn-Nummer anzugeben,
+     die durch @fileopen vergeben wurde.
+<p>
+     Dies ist sehr WICHTIG,
+     Falls versehentlich "vergessen" wird, die Datei wieder zu schliessen,
+     so kann man diese Datei in der aktuellen "Sitzung" NICHT mehr
+     weiterverarbeiten, z.B. mit EDIT (editieren) oder LIST (ansehen).
+
+<h3>5. @fileREAD, @fileWRITE</h3>
+<pre>
+     Syntax: %@fileWRITE[KennNummer]
+       bzw.: %@fileREAD[KennNummer]
+</pre>
+     Die Funktion @fileread[&lt;Kenn-Nummer&gt;] liest eine Zeile aus einer
+     Datei. Man uebergibt der Funktion die Kenn-Nummer der Datei und
+     erhaelt dafuer die naechste Zeile bzw. **EOF**, (eof = end of file)
+     wenn keine Zeilen mehr zum Lesen vorhanden waren.
+<p>
+     <b>Anmerkung:</b>
+     In der bis Okt. 94 aktuellen Version (5.0 Revision F) unterstuetzt
+     4DOS nur das Lesen ganzer Zeilen. Es ist nicht moeglich, zum Beispiel
+     die naechsten 10 Buchstaben zu lesen.
+     Ab der Version 5.5 ist auch dieses moeglich.
+<p>
+     Beispiel:  set zeile=%@fileread[%kennnr]
+<p>
+                Nach diesem Befehl enthaelt die Variable "zeile" die
+                naechste Zeile der Datei (bzw. **EOF** fuer Dateiende)
+<p>
+     Hat man eine Datei mit @fileopen zum Schreiben oder Anhaengen
+     geoeffnet, darf man in sie schreiben. Dies geschieht mit @filewrite.
+<p>
+     Man uebergibt @filewrite die Kenn-Nummer der Datei und den Text, der
+     geschrieben werden soll.
+<p>
+     Beispiel:  set result=%@filewrite[%kennnr,Dies ist ein Test]
+<p>
+                Dieser Befehl haengt die Zeichenkette
+                "Dies ist ein Test" an eine Datei an.
+
+<h3>6. @fileSEEK</h3>
+
+     Mit dieser Funktion ist es moeglich, die aktuelle Position des Dateizeigers zu veraendern oder abzufragen.
+<p>
+     Syntax: %@fileseek[KennNummer,Anzahl,Startposition]
+<p>
+     Das Ergebnis von @fileseek - das man wiederum mit
+<pre>
+    set vari=%@fileseek...
+</pre>
+     abfragen sollte, ist die Position des Zeigers <b>NACH</b> dem Verschieben.
+<pre>
+&lt;Kennnr&gt; ist wie schon in @fileread/close/write die Kenn-Nummer, die vom
+         Betriebssystem beim Oeffnen der Datei zugeteilt wurde.
+</pre>
+<pre>
+&lt;Anzahl&gt; ist die Anzahl der Bytes, um die der Zeiger verschoben werden soll.
+         Bei postitiven Werten  wird Richtung Dateiende verschoben    (also vorwaerts)
+         Bei negativen Werten   wird Richtung Dateianfang verschoben  (also rueckwaerts)
+</pre>
+<pre>
+&lt;Start&gt;  kann 0, 1 oder 2 sein.
+         0 - Das Verschieben geschieht relativ zum Dateianfang
+         1 - Das Verschieben geschieht relativ zur aktuellen Position
+         2 - Das Verschieben geschieht relativ zum Dateiende.
+</pre>
+     Ab der Version 5.5 von 4DOS stehen hier noch weitere Funktionen zur
+     Bearbeitung von Dateien (lesen, schreiben, ...) zur Verfuegung, wobei
+     vor allem das Lesen und Schreiben vereinzelter Zeichen innerhalb
+     einer Zeile machbar ist.
+<p>
+Beispiel:
+<pre>
+    :start
+    
+    @echo off
+    echo Datei oeffnen...
+    set kennnr=%@fileopen[%1,read]
+    if %kennnr == -1 goto error
+    echo Datei ist offen, jetzt wird gelesen...
+    set anzahl=0
+    do until !%zeile == !**EOF**
+       set zeile=%@fileread[%kennnr]
+       echo %@index[%zeile,%2]
+       if %@index[%zeile,%2] ge 0 set anzahl=%@inc[%anzahl]
+    enddo
+    echo Dateiende erreicht!
+    echo Die Zeichenkette %2 kommt in %anzahl Zeilen der Datei vor.
+    echo Nun die Datei schliessen...
+    set result=%@fileclose[%kennnr]
+    if %result == -1 goto error
+    echo Datei wurde geschlossen.
+    unset anzahl kennnr result
+    
+    goto ende
+    
+    :error
+    echo Datei konnte nicht geoeffnet bzw. geschlossen werden!
+    quit
+    
+    :ende
+</pre>
+</body>
+</html>

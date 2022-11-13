@@ -1,0 +1,86 @@
+                               JP Software
+
+             4DOS 5.0 rev E ==> 5.0 rev F Patch Documentation
+
+                              May 31, 1994
+
+
+Copyright 1994, JP Software Inc., All Rights Reserved.  Published by JP
+Software Inc., P.O. Box 1470, E. Arlington, MA 02174 USA, (617)
+646-3975.  4DOS is a registered trademark of JP Software Inc.
+
+
+This file explains how to install the 4DOS 5.0 rev F patches.
+
+To use the patch, you must have:
+
+     * JP Software's PATCH.EXE program.  This program is in a separate
+     file, PATCH.ZIP on CompuServe, or 4DPATCH.ZIP on bulletin boards
+     and the Internet.  [* See note below.]
+
+     * A copy of 4DOS 5.0 rev E.  The simplest way to check your
+     revision level is to use the 4DOS VER /R command.
+
+     If you find you have rev A, B, C, or D you must download additional
+     patch files and sequentially update your current copy of 4DOS to
+     rev E before you can apply this latest rev F patch.  To update
+     you will need one or more of the following files:
+
+          From Rev       To Rev         Use this File
+          --------       ------         -------------
+             A              B           4D50B.ZIP
+             B              C           4D50C.ZIP
+             C              D           4D50D.ZIP
+             D              E           4D50E.ZIP
+
+     The older patch files should be available from the same place where
+     you got this rev F file.
+
+To use this patch, copy the 4DOS50F.RTP file to the directory where your
+4DOS version 5.0 files are stored. Make sure JP Software's PATCH.EXE is
+in the same directory, or in a directory on your PATH, then enter the
+command:
+
+      patch 4dos50f
+
+This patch converts 4DOS 5.0 rev E to version 5.0 rev F.  It modifies
+only 4DOS.COM, all other files are unchanged from rev D.  Branding (name
+and serial number) information in your 4DOS.COM file will be preserved
+in the modified file.
+
+If you want to test 4DOS.COM to make sure the patch worked, restart
+4DOS, then use the VER /R command.  This command will report "4DOS
+Revision E" (if the patch did not work) or "4DOS Revision F" (if it did
+work).
+
+If you are short on disk space and receive a message that there is not
+enough space to perform the patch, you can use a command like this to
+reduce the disk space required:
+
+      patch /noundo pat50f
+
+This will make recovery slightly more difficult in the unlikely event of
+a power failure or similar problem during the patch process, but will
+reduce the disk space required to perform the patch.
+
+
+[* JP Software's PATCH.EXE is the version 1.10 patch program from the
+.RTPatch patch software sold by PocketSoft Inc.  If you have a copy of
+PATCH.EXE version 1.10 or later from another company which also uses
+.RTPatch to update its software, you can use it with JP Software
+patches. However, we recommend that you do NOT use version 2.0 of
+PATCH.EXE under OS/2.  When PATCH.EXE 2.0 is used under OS/2 it patches
+the files properly, but does not correctly update the dates and times of
+the patched files.]
+
+
+4DOS version 5.0 revision F includes the following changes to version
+5.0 revision E:
+
+     * Fixed a problem with identifying the CPU chip which could cause
+       a system hang on newer 486 and Pentium systems.
+
+     * Made some minor internal changes to the DOS 6 compressed drive
+       support.
+
+

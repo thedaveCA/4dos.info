@@ -1,0 +1,319 @@
+4dostech.txt [01-Dec-97]
+
+  ADDITIONAL 4DOS TECHNICAL INFORMATION
+
+
+        This appendix provides technical information for programmers who
+        wish to build interfaces to 4DOS.  It covers detecting 4DOS,
+        placing keystrokes in the Keystack, writing installable commands,
+        using the DESCRIPT.ION file, and using the interrupt 2E "back door"
+        entry into 4DOS to execute commands.
+
+
+        Detecting 4DOS
+
+
+             Detecting 4DOS From a Batch File
+
+             From a batch file, you can determine if 4DOS is loaded by
+             testing for the variable function @EVAL, with a test like
+             this:
+
+                  if "%@eval[2+2]" == "4" echo 4DOS is loaded!
+
+             This test can not succeed in COMMAND.COM and is therefore a
+             reliable way to detect 4DOS.  Other variable functions could
+             be used for the same purpose.
+
+
+             Detecting 4DOS From a Program
+
+             Any program can test for the presence of 4DOS by making a
+             simple INT 2Fh call.  Be sure to check the INT 2Fh vector
+             first as it may be 0 under some versions of DOS if no program
+             has hooked the interrupt.  To detect 4DOS, call INT 2Fh with:
+
+                  AX     D44Dh
+                  BX     0
+
+             If 4DOS is not loaded, AX will be returned unchanged.  If 4DOS
+             is loaded, it will return the following (no other registers
+             are modified):
+
+                  AX     44DDh
+                  BX     Version number (BL = major version, BH = minor
+                         version)
+                  CX     4DOS PSP segment address
+                  DL     4DOS shell number
+
+             The shell number is incremented each time a new copy of 4DOS
+             is loaded, either in a different multitasker window (for
+             example, under Windows), or via nested shells.  The primary
+             shell is shell number 0.  In OS/2 DOS sessions, each session's
+             primary shell is shell 0.
+
+             The response to INT 2F function D44Dh will come from the most
+             recently loaded 4DOS shell.  For example, if your program is
+             run from a secondary shell the response will come from that
+             secondary shell, and will reflect its shell number and PSP
+             address.
+
+             This function tells you if 4DOS is loaded in memory, but not
+             whether it is the parent process of your program.  You can
+             determine if 4DOS is the parent process by comparing the PSP
+             value returned in CX to the PSP chain pointer at offset 16h in
+             your program's PSP.
+
+
+             Detecting the 4DOS Prompt
+
+             4DOS generates INT 2Fh calls before and after the prompt is
+             displayed to allow TSRs to detect that 4DOS is at the prompt.
+             The calls are:
+
+                  AX     D44Eh
+                  BX     0 if 4DOS is about to display the prompt; 1 if
+                         4DOS has displayed the prompt and is about to
+                         accept keyboard input; or 2 if keyboard input is
+                         complete and 4DOS is about to begin processing
+                         the line.
+
+             Any routine intercepting these calls should preserve the SI,
+             DI, BP, SP, DS, ES, and SS registers.
+
+
+        Placing Keystrokes Into the Keystack
+
+             You can put keystrokes into the 4DOS Keystack with an INT 2Fh
+             call.  First, you must make a call to check whether KSTACK.COM
+             is loaded:
+
+                  AX     D44Fh
+                  BX     0
+
+             If KSTACK.COM is not loaded, this call will return AX
+             unchanged.  If it is loaded, AX will be returned as 44DDh;
+             other registers will be unchanged.  Once you have determined
+             that KSTACK.COM is loaded, you can send keystrokes with this
+             call:
+
+                  AX     D44Fh
+                  BX     1
+                  CX     number of words being passed (0 - 255)
+                  DS:DX  address of the keystroke array
+
+             On return, if the call succeeded then AX will be 0; if it
+             failed, AX will be non-zero.  BX, CX, and DX are destroyed;
+             other registers are preserved.  If the call succeeds,
+             subsequent calls to INT 16h functions 0, 1, 10h, or 11h will
+             receive the stacked keystrokes.
+
+             The keystroke array passed to KSTACK must be an array of words
+             containing the values to return from INT 16h.  The high byte
+             of each word is a scan code and the low byte is an ASCII code.
+             Many programs accept keystrokes properly with only the ASCII
+             code, but some require the scan code as well.  See Appendix B
+             of your Reference Manual for a list of ASCII and scan codes
+             for most keyboards.  To insert a delay in the keystroke
+             sequence, include a word set to FFFFh followed by a word
+             containing the desired delay in clock ticks.
+
+
+        Writing Installable Commands
+
+             An "installable command" is created with a memory-resident
+             program (TSR) which can receive signals from 4DOS and process
+             commands.  4DOS makes every command available to such TSRs
+             before it is executed; if any TSR chooses to execute the
+             command, 4DOS will do no further processing.  Otherwise, 4DOS
+             processes the command normally.
+
+             The 4DOS "Installable Command" interface is compatible with an
+             undocumented interface present in COMMAND.COM for MS-DOS and
+             PC-DOS 3.3 and above.  This interface is documented more
+             thoroughly in the excellent reference text Undocumented DOS by
+             Schulman et. al., published by Addison Wesley.
+
+             4DOS looks for an installable command after alias and variable
+             expansion and redirection, and after checking to see if the
+             command is a drive change, but before checking for an internal
+             or external command.
+
+             4DOS first makes an INT 2Fh call to determine whether any TSR
+             loaded will respond to the command, with:
+
+                  AX     AE00h
+                  BX     offset of command line buffer:
+                            first byte = maximum length of command line
+                            second byte = actual length of command line,
+                              not including trailing CR
+                            remainder = command line, with a trailing CR
+                  CH     FFh
+                  CL     length of command line, not including the command
+                         name
+                  DX     FFFFh
+                  SI     offset of command name buffer:
+                            first byte = length of command name
+                            remainder = command name, shifted to upper case
+                              and padded with blanks to 11 characters
+                  DS     segment for command line and command name buffers
+
+             If the TSR does not recognize the command as its own, it must
+             pass the INT 2Fh along with registers unchanged.  If it does
+             recognize the command, it must return 0FFh in AL.  The command
+             should not be executed at this point.  4DOS will then make
+             another call (buffer formats are the same as above):
+
+                  AX     AE01h
+                  BX     offset of command line buffer
+                  CH     0
+                  CL     length of command name
+                  DX     FFFFh
+                  SI     offset of command name buffer
+                  DS     segment for command line and command name buffers
+
+             If the TSR executes the command line, it must set the command
+             name length at DS:[SI] to 0.  If the command name length is
+             not set to 0, 4DOS will attempt to execute the command as an
+             internal or external command.  This allows the TSR to return a
+             modified command line to 4DOS by modifying the command line
+             buffer at DS:BX, and leaving the command name length byte at
+             DS:[SI] set to a non-zero value.  If the command is executed,
+             the TSR should return the result of the command (zero for
+             normal return or non-zero for an error) in AL.
+
+
+        Using DESCRIPT.ION
+
+             4DOS uses the file DESCRIPT.ION (or the file named in the
+             DescriptionName INI directive) to store file descriptions.
+             This file is created as a hidden file in each subdirectory
+             which has descriptions, and deleted when all descriptions are
+             removed or when all files with descriptions are deleted.  If
+             you remove the hidden attribute from the file, 4DOS will not
+             hide it again.
+
+             Your programs can access DESCRIPT.ION to create, retrieve, or
+             modify file descriptions, and to store other information.
+             DESCRIPT.ION has one line per file, and is unsorted.  Each
+             line is in the following format:
+
+                  filename.ext Description[*<ID>Other program info]...<CR>
+
+             There is normally one space between the description and
+             filename but additional spaces may be used in future versions
+             of 4DOS.  The characters after the description allow extension
+             of the description format for use by other programs.  They are
+             as follows:
+
+                  * is an ASCII Ctrl-D (04), and marks the end of the
+                  description text and the beginning of information for a
+                  program other than 4DOS.  This symbol can appear multiple
+                  times on each line; each occurrence marks the beginning
+                  of information for another program.
+
+                  <ID> is an identification byte for the program which is
+                  using this area of the particular line.  If you are
+                  writing a program which will store information in
+                  DESCRIPT.ION, test it using an ID byte of your own
+                  choosing.  When you are ready to release the program,
+                  contact JP Software and we will provide you with an ID
+                  byte value that is not in use by others to the best of
+                  our knowledge.
+
+                  Other program info is any text the program wishes to
+                  store in its area of the line.  The text should relate
+                  specifically to the file named on the line.  It may not
+                  contain the Ctrl-D character, carriage returns, line
+                  feeds, or nulls (ASCII 0s).
+
+             4DOS will copy, delete, or move all the information on a line
+             in DESCRIPT.ION, including  information owned by other
+             programs, when performing the same action on the corresponding
+             file.  4DOS will also change the name if a file is renamed.
+             To support DESCRIPT.ION properly, your program must do the
+             same if it copies, deletes, moves, or renames files.  Take
+             care not to remove information which does not belong to your
+             program, or delete lines which contain information for other
+             programs.  Your program should be able to handle a line
+             terminated by a CR or LF alone, a CR/LF pair, an EOF (ASCII
+             26), or the physical end of the file.  The lines it creates
+             should be terminated with CR / LF.  The line length limit is
+             4096 bytes; exceeding this limit will cause unpredictable
+             results.
+
+
+        Interrupt 2E
+
+             4DOS provides full, documented support for the undocumented
+             COMMAND.COM "back door" entry, INT 2E (hex).  INT 2E allows
+             applications to call the primary copy of the command processor
+             to execute commands, without loading a secondary shell.
+
+             INT 2E support is enabled by default.  It can be disabled with
+             the FullINT2E = No directive in 4DOS.INI, in which case 4DOS
+             "hooks" INT 2E, but any calls to it are ignored.  INT 2E
+             support adds about 100 bytes to the resident size of 4DOS, and
+             applies only to the primary shell (it is ignored in secondary
+             shells).
+
+             To use INT 2E, set DS:SI to the address of a buffer containing
+             the command, then issue an INT 2E.  The buffer format is:
+
+                  First byte  Length of the command, not including this
+                              byte or the last byte
+                  Text bytes  The command text
+                  Last byte   CR (ASCII 13)
+
+             You must release enough memory for 4DOS to reload its
+             transient portion, and provide about 80 bytes of available
+             stack space for the INT 2E handler to use.  INT 2E can not be
+             called from a TSR while 4DOS is running (for example, a TSR
+             popped up at the 4DOS prompt or from within LIST or SELECT),
+             but can be called from within any application or from within a
+             TSR while an application (including the 4DOS HELP system) is
+             running.
+
+             INT 2E can invoke any 4DOS command including an alias, an
+             internal command, an external command, or a batch file.  All
+             changes to 4DOS data (such as aliases, environment variables,
+             and SETDOS settings) which are made by a command executed via
+             INT 2E calls will affect the primary shell, and the
+             environment passed to a program called via INT 2E will be a
+             copy of the primary shell's environment.
+
+             INT 2E uses the same internal stack as the primary shell.  If
+             a complex command is used in the primary shell to start a
+             program which eventually issues an INT 2E, the additional
+             stack space required by commands executed through INT 2E may
+             (in rare circumstances) cause a stack overflow.  If this
+             occurs, use the StackSize directive in 4DOS.INI to increase
+             4DOS's internal stack space.
+
+             INT 2E also uses the same batch file "stack" as the primary
+             shell.  This means that if INT 2E is used to execute a batch
+             file, this batch file is considered "nested" within any batch
+             file(s) used in the primary shell to start the program which
+             issued the INT 2E.  This may cause batch nesting errors from
+             within the INT 2E call which would not occur if the same
+             command were executed at the prompt.
+
+             On return from INT 2E, all registers will be destroyed except
+             SS and SP.  AX will be set as follows:
+
+                  FFFFh  An error occurred before processing the command:
+                         not enough memory was available, INT 2E was
+                         called from a TSR, or another error made it
+                         impossible to handle the interrupt.
+
+                  0      The command was processed without error.
+
+                  > 0    There was an error in processing the command.  AX
+                         is the error number, equivalent to the %_? value
+                         from an internal command or the %? value from an
+                         external command.  If a batch file is run, the
+                         value will be the error level returned by the
+                         batch file (via QUIT n or CANCEL n) or the last
+                         command within it.  If an alias is run the value
+                         will be the exit code returned by the last
+                         command in the alias.

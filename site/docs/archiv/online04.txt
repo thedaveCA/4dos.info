@@ -1,0 +1,811 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><HTML>
+<!-- HTML source and images Copyright 2004, JP Software Inc., All
+     Rights  Reserved.  See http://jpsoft.com/jplegal.htm  before
+     doing anything with any material from JP Software's web site.
+-->
+<HEAD>
+<BASE TARGET="_top">
+<LINK REL="SHORTCUT ICON" HREF="http://jpsoft.com/favicon.ico">
+<LINK REL="P3Pv1" HREF="http://jpsoft.com/w3c/p3p.xml">
+<LINK REV="made" HREF="&#119;&#101;&#098;&#109;&#097;&#115;&#116;&#101;&#114;&#064;&#106;&#112;&#115;&#111;&#102;&#116;&#046;&#099;&#111;&#109;">
+<LINK REL="prefetch" HREF="/images/blogo.gif">
+<LINK REL="prefetch" HREF="/images/bhomeb2.gif">
+<LINK REL="prefetch" HREF="/images/bstoreb2.gif">
+<LINK REL="prefetch" HREF="/images/bprodb2.gif">
+<LINK REL="prefetch" HREF="/images/bordb2.gif">
+<LINK REL="prefetch" HREF="/images/bupgrb2.gif">
+<LINK REL="prefetch" HREF="/images/bsuppb2.gif">
+<LINK REL="prefetch" HREF="/images/bsiteb.gif">
+<LINK REL="prefetch" HREF="/images/bhelpb2.gif">
+<LINK REL="prefetch" HREF="/images/bhomes2.gif">
+<META HTTP-EQUIV="Cache-Control" CONTENT="must-revalidate">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="author" CONTENT="webmaster@jpsoft.com">
+<META NAME="copyright" CONTENT="Copyright 2004, JP Software, Inc. All Rights Reserved.">
+<META NAME="description" CONTENT="Advanced Command processors for DOS and Windows">
+<META NAME="keywords" CONTENT="COMMAND LINE,WINDOWS PROMPT, BATCH FILE,SHELL,SCRIPT,PROMPT,BTM,CMD,4DOS,4NT,TCMD,TAKE COMMAND,JPSOFT,WINDOWS,WIN98,WINME,W2K,XP,DOS,NT">
+<META NAME="rating" CONTENT="General">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="revisit-after" CONTENT="7 Days">
+<STYLE type="text/css">
+#highlight {background: #FFFF80; }
+#lowlight {background: #D2E2FF; }
+#neon {background: #99FF00; }
+A:HOVER { color: #000000; background: yellow}
+</STYLE>
+<BASE HREF="http://jpsoft.com/">
+<META NAME="ROBOTS" CONTENT="NOFOLLOW,NOARCHIVE,NOINDEX">
+<TITLE>JP Software - Text File Viewer: online04.txt</TITLE></HEAD>
+<BODY BGCOLOR="#FBF7FB" TEXT="#000000" LINK="#0000FF" ALINK="#FF0000" VLINK="#4F2F4F">
+<CENTER><TABLE COLS=1 BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=600 BGCOLOR="#D2E2FF">
+<TR><TD WIDTH=600 VALIGN=TOP NOWRAP>
+<A NAME="top"><IMG HEIGHT=50 WIDTH=136 HSPACE=0 VSPACE=0 BORDER=0 ALIGN=LEFT ALT="JP Software: " SRC="/images/blogo.gif"></A>
+<A TARGET="_top" HREF="/index.htm" onmouseover="document.images.home.src='/images/bhomeb2.gif'" onmouseout="document.images.home.src='/images/bhomes2.gif'"><img name=home HEIGHT=50 WIDTH=52 HSPACE=0 VSPACE=0 BORDER=0 ALIGN=LEFT ALT="Home Page" SRC="/images/bhomes2.gif"></A>
+<A HREF="http://jpsoft.com/store/store.mv" onmouseover="document.images.store.src='/images/bstoreb2.gif'" onmouseout="document.images.store.src='/images/bstores2.gif'"><img name=store HEIGHT=50 WIDTH=46 HSPACE=0 VSPACE=0 BORDER=0 ALIGN=LEFT ALT="Online Store" SRC="/images/bstores2.gif"></A>
+<A HREF="/products.htm" onmouseover="document.images.prod.src='/images/bprodb2.gif'" onmouseout="document.images.prod.src='/images/bprods2.gif'"><img name=prod HEIGHT=50 WIDTH=65 HSPACE=0 VSPACE=0 BORDER=0 ALIGN=LEFT ALT="Products" SRC="/images/bprods2.gif"></A>
+<A HREF="/ordinf.htm" onmouseover="document.images.ord.src='/images/bordb2.gif'" onmouseout="document.images.ord.src='/images/bords2.gif'"><img name=ord HEIGHT=50 WIDTH=54 HSPACE=0 VSPACE=0 BORDER=0 ALIGN=LEFT ALT="Orders" SRC="/images/bords2.gif"></A>
+<A HREF="/upgrade.htm" onmouseover="document.images.upgr.src='/images/bupgrb2.gif'" onmouseout="document.images.upgr.src='/images/bupgrs2.gif'"><img name=upgr HEIGHT=50 WIDTH=70 HSPACE=0 VSPACE=0 BORDER=0 ALIGN=LEFT ALT="Upgrades" SRC="/images/bupgrs2.gif"></A>
+<A HREF="/techsup.htm" onmouseover="document.images.supp.src='/images/bsuppb2.gif'" onmouseout="document.images.supp.src='/images/bsupps2.gif'"><img name=supp HEIGHT=50 WIDTH=61 HSPACE=0 VSPACE=0 BORDER=0 ALIGN=LEFT ALT="Support" SRC="/images/bsupps2.gif"></A>
+<A TARGET=JP_Help HREF="/help/index.htm" onmouseover="document.images.help.src='/images/bhelpb2.gif'" onmouseout="document.images.help.src='/images/bhelps2.gif'"><img name=help HEIGHT=50 WIDTH=45 HSPACE=0 VSPACE=0 BORDER=0 ALIGN=LEFT ALT="Online Help" SRC="/images/bhelps2.gif"></A>
+</TD></TR></TABLE>
+</CENTER>
+<P>
+<CENTER><FONT COLOR="#003399"><H1><STRONG>Text File Viewer</STRONG></H1></FONT></CENTER>
+<CENTER><H2><BIG><STRONG>"online04.txt"</STRONG></BIG> (
+27666
+ bytes)</H2>
+<STRONG>also available in <A HREF="ascii/online04.txt">text/plain</A> format</STRONG>
+</CENTER><P><FONT FACE="arial, helvetica, sans-serif" SIZE="-1" COLOR="#006699">
+<UL><LI>Use your browser's FIND function to locate specific text.</UL></FONT>
+<HR NOSHADE WIDTH="95%">
+<TABLE COLS=1 BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH="100%" BGCOLOR="#FBF7FB" BACKGROUND="/images/perf.gif"><TR><TD>
+<UL><UL></FONT><PRE>
+
+                 The Prompt Solution - Online Edition
+                 JP Software's Electronic Newsletter
+
+                       Issue #4 - June 21, 2001
+
+
+ >>  New Releases of 4DOS, 4NT, and Take Command/32 are now
+ >>  available!  To order go direct to our online store at
+ >>  http://www.jpsoft.com/store/store.mv.  See below for
+ >>  complete details, tech tips, new support plans, and more!
+
+
+[Sent to the address you gave us when you purchased a JP Software
+product.  For address changes and list removal see end of message.]
+
+*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*
+
+In this Issue:
+
+    * Major Upgrades to 4DOS, 4NT, and Take Command/32
+
+        - New Releases Offer FTP Support - and Over 200 Other
+             Enhancements
+        - Ordering the Upgrade
+        - Electronic and Physical Shipment Schedule
+        - Downloading the New Version
+        - Automatic Upgrades
+        - 4OS2, Take Command/16, and Take Command for OS/2
+
+    * New Technical Support Plans Announced
+
+        - Extended and Premium Support
+        - Online Support Forum
+
+    * Tech Tips:
+
+        - Using the New FTP Features
+        - File Processing with @file Lists
+
+    * Customer Service and Miscellaneous
+
+        - Contacting JP Software
+        - Newsletter Address Correction, List Removal, and
+             Privacy Information
+        - Copyrights, Trademarks, and Fine Print
+
+
+*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*
+
+ >>> Major Upgrades for 4DOS, 4NT, and Take Command/32 <<<
+
+----------------------------------------------------------------------
+
+New Releases Offer FTP Support - and Over 200 Other Enhancements
+
+
+JP Software is pleased to announce the release of version 7.0 of 4DOS,
+version 4.0 of 4NT, and version 3.0 of Take Command/32!
+
+All products are fully compatible with the latest operating systems
+including Windows NT / 2000 and Windows 95 /98 / ME.  And all have
+been updated with a host of new features - here's just a small sample:
+
+    FTP Support:
+
+        The single biggest enhancement in these versions is FTP
+        support (in 4NT and Take Command).  This support extends
+        across many commands and functions (e.g. you can use most file
+        oriented commands -- COPY, DEL, MOVE, REN, TYPE, etc.  -- on
+        FTP servers).  It enables file management on FTP servers from
+        the command line, and brings all of the capabilities of 4NT
+        and Take Command/32's enhanced batch scripting language to
+        automation of FTP transfers.  It's an important tool for web
+        developers, and anyone maintaining a web or FTP server and
+        needing to manage it using familiar commands, and/or automate
+        their work.  See the first "Tech Tip" below for details on how
+        to use these features.
+
+    @file Lists:
+
+        Another significant addition, "@file" lists, adds even more
+        flexibility to file processing, allowing you to take a list of
+        files generated by another command, or another application,
+        and use it as input to any file processing command.  Use @file
+        lists to find text in files and then process only those files
+        containing the matching text, to change the order in which
+        files are copied or moved, or use the same file lists for
+        internal commands and external applications with similar
+        features (e.g.  .ZIP file tools).  See the second "Tech Tip"
+        below for more information.
+
+    Usability Improvements:
+
+        We've also added plenty of little things that help with
+        usability - like server and sharename completion on the
+        command line, variable name completion, a more robust way to
+        handle standard text-mode applications in Take Command/32, and
+        dozens more.  And there are over 100 enhancements to existing
+        commands, giving you more command line power and flexibility
+        than ever.
+
+    Batch File Enhancements:
+
+        For batch programmers, this release offers a wide range of
+        additional enhancements, including over 40 new variables and
+        functions that offer capabilities like manipulation of the
+        Windows registry, access to Windows system data, new
+        arithmetic calculations, additional date handling, and access
+        to new Windows 2000 file attributes.
+
+The price for all this?  Just $34.95 for the first product, $19.95 for
+each additional product, or $54.95 for the JP CD Suite.  Plus if you
+currently have one or more individual products you can convert to the
+CD Suite with all products for just $69.95!
+
+Additional enhancements in this version include the following:
+
+    * In addition to FTP support, COPY, MOVE, and REN also support
+      file management on HTTP and HTTPS servers (in 4NT and Take
+      Command/32).
+
+    * The maximum batch file nesting depth has been increased from 10
+      to 16 (4DOS) or 32 (4NT and TC32).
+
+    * 4DOS now has mouse support for the popup windows (history list,
+      directory history, @SELECT, etc.) and for the SELECT command.
+
+    * New commands in 4NT and Take Command/32 include EVENTLOG, IFTP,
+      KEYSTACK, PLAYAVI, PLAYSOUND, PRINT, QUERYBOX, SENDMAIL,
+      SHORTCUT, TASKEND, TASKLIST, and WHICH.
+
+    * New commands in 4DOS include LFNFOR and WHICH.
+
+    * There are over 100 new features in 4DOS, 4NT, and Take
+      Command/32 commands, including:
+
+        - CDD can now update specific drives or directories in the
+          extended directory search database, without deleting and
+          recreating the entire database.
+
+        - DEL (and RD /S) in 4NT and Take Command/32 now delete files
+          to the recycle bin, and you can disable this behavior or
+          change the default with switches and a .INI file directive.
+
+        - DIR has support for Windows 2000 junction points, a way to
+          disable default options, and new options for cleaner summary
+          (/U) output.
+
+        - GOSUB now supports passing parameters to subroutines.
+
+        - LIST has new options to delete a file or to save pipe
+          output.
+
+        - TOUCH can now select files by attribute (including setting
+          the date and time for directories under Windows NT/2000),
+          and "transfer" file dates / times from one file to another.
+
+        - UNALIAS and UNSET now support wildcard deletions.
+
+    * There are almost 50 new internal variables and functions,
+      including new date-related capabilities, registry access (in 4NT
+      and Take Command/32), numeric min / max calculation, and many
+      more.
+
+    * 4NT and Take Command/32 now support the additional Windows 2000
+      file attributes (encrypted, temporary, compressed, etc.).
+
+    * Take Command's Caveman feature to capture output from character
+      mode applications has a number of internal enhancements to
+      improve support for all applications, and also offers a new
+      "STDIO" option which provides significantly better support for
+      applications which only generate sequential output.
+
+For additional details see the "What's New" section of the online help
+for each product.  A file with essentially the entire list of changes
+is also available -- check the ASCII files area of our web site at
+http://www.jpsoft.com/ for WHATSNEW.TXT.
+
+
+----------------------------------------------------------------------
+
+Ordering the Upgrade
+
+All of the new products are available now for electronic delivery.
+Physical shipments are expected to begin approximately August 1, 2001.
+
+You can order your upgrade from JP Software via several methods:
+
+    * Through our online store at
+      http://www.jpsoft.com/store/store.mv.  This is the simplest and
+      fastest method.  Orders are transmitted to our office (credit
+      card numbers are encrypted) and are processed in the order
+      received.
+
+    * By calling our order line at 800-368-8777, accessible from the
+      US and Canada, or by calling our main number, 781-646-3975.
+      (Our normal office hours are 9:00 AM to 5:00 PM, eastern US
+      time.)  Telephone coverage and response time may be affected by
+      the upgrade workload; if you have difficulty reaching us, use
+      the web site to place your order, or leave a voice mail and we
+      will call you back.
+
+    * Via fax to 781-646-0904, or email to sales@jpsoft.com.  Please
+      include name and address, exact items desired, email and
+      telephone contact information, and full credit card details with
+      all orders.
+
+    * By mail to P.O. Box 1470, E. Arlington, MA 02474.
+
+When ordering by mail or fax you may find it convenient to use our
+upgrade order form, available from the ASCII files area of our web
+site in the file UPGFORM.TXT (for upgrades) or ORDFORM.TXT (for new
+customers).
+
+Single-system upgrade pricing is as follows:
+
+    4DOS 5.5* or above, 4NT 2.5* or above, or any version of Take
+    Command:  just $34.95 for the first product and $19.95 for each
+    additional product, plus shipping.
+
+    JP CD Suite:  $54.95 plus shipping.
+
+    Convert from individual products to the JP CD Suite with all
+    products:  $69.95 plus shipping.
+
+For multi-system license upgrade pricing see
+http://www.jpsoft.com/mlprice.htm, or contact us for a quote.
+
+(* Individual product upgrades from earlier versions -- 4DOS 5.0 or
+below, or 4NT 2.0 or below -- are $10 additional for the first
+product.)
+
+----------------------------------------------------------------------
+
+Electronic and Physical Shipment Schedule
+
+Initially these new versions will be available for electronic delivery
+only (electronic delivery consists of an email message with your
+serial number and code, and an attached program to install the serial
+number in the software).  This is due to production issues with
+printed manuals and physical media; we expect to be able to ship
+physical copies and manuals approximately August 1, 2001.
+
+If you place an order for electronic or "dual" (physical and
+electronic) delivery we will charge your credit card now, ship the
+electronic portion of your order now, and hold the physical portion
+(if any) until physical materials are available.  If you place an
+order for physical delivery only, it will be held until after the
+materials are available, and your credit card will not be charged
+until it is shipped.
+
+Orders will be processed and shipped in the order in which they are
+received.  Note that there may be noticeable delays in order
+processing due to the unusually high workload during the upgrade
+period.
+
+
+---------------------------------------------------------------------
+
+Downloading the New Version
+
+The new versions are available from our web site at
+http://www.jpsoft.com/download.htm, or direct from our FTP site at
+ftp://ftp.jpsoft.com.
+
+On the FTP site look for these files:
+
+    4DOS v7.0:  4dos/4dos700.exe
+
+    4NT v4.0:  4nt/4nt400.exe
+
+    Take Command/32 v3.0:  tcmd32/tc32300.exe
+
+
+---------------------------------------------------------------------
+
+Automatic Upgrades
+
+
+If you purchased 4DOS, 4NT, or Take Command/32 (or a pack or CD which
+contained any of these products) on or after January 1, 2001 you will
+receive an upgrade automatically.
+
+Also if you purchased any special offer which included 4DOS 6.0 or
+above, 4NT 3.0 or above, or Take Command/32 2.0 or above and which
+also included the next version "free", you will also receive an
+upgrade automatically.
+
+Automatic upgrades will be sent by email, and will include new brand
+codes and a new brand program to be used with a downloaded trial copy
+of each product being upgraded.  You can not use your old brand codes
+and program with the new versions.
+
+Due to our upgrade workload, automatic upgrades may take up to one to
+two weeks to process after the product release.
+
+
+---------------------------------------------------------------------
+
+4OS2, Take Command/16, and Take Command for OS/2
+
+
+4OS2, Take Command/16, and Take Command for OS/2 are not being upgraded
+due to the declining number of users for the corresponding operating
+systems (OS/2 and Windows 3.x), and the corresponding dramatic drop in
+demand for these products.
+
+However, these products are still supported and we will do our best to
+answer technical questions from OS/2 and Windows 3.x users.  We also
+plan to offer maintenance upgrades to 4OS2 and Take Command for OS/2
+later this summer to correct a few minor problems.
+
+
+*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*
+
+ >>> New Technical Support Plans Announced <<<
+
+----------------------------------------------------------------------
+
+Extended and Premium Support
+
+
+We are pleased to announce that, beginning August 1, 2001 we will
+offer three product support plans.
+
+Our basic no-charge electronic support plan continues.  We are also
+offering two new paid subscription plans for current products; these
+include automatic delivery of upgrades, and a monthly technical
+newsletter.
+
+The plans are:
+
+    * Standard Support is offered with all product purchases and is
+      available at no additional charge.
+
+    * Extended Support is a paid plan available on an annual basis,
+      and includes Standard Support benefits plus private support via
+      email or telephone, a monthly email newsletter, and delivery of
+      all major upgrades.
+
+    * Premium Support is a paid plan available on an annual basis, and
+      includes most Extended Support benefits, plus a 4-hour response
+      time to support incidents, and physical delivery of all
+      upgrades.
+
+For single-system users Extended Support is just $29.95 per year for
+one product, or $39.95 for two or more -- plus get a $10 discount off
+these prices if you order Extended Support when you upgrade!
+
+For complete details, plan pricing for multi-system licenses and for
+Premium Support, more information on the benefits of each plan, and
+plan terms and conditions, see the support area of our web site at
+http://www.jpsoft.com/.
+
+Support plans may be ordered through any of the methods listed above
+for the upgrades themselves - through our online store, or by phone,
+email, fax, or mail.
+
+
+----------------------------------------------------------------------
+
+Online Support Forum
+
+
+Our online Support Forum, accessible from the Support area of our web
+site, is our primary technical support venue, and it's where you'll
+receive the fastest answers.  It also allows you to benefit from the
+experience of other users, and lets them learn from you as well.
+Since it is a moderated list, it is free from "spam", unwarranted
+advertising, and other common annoyances.
+
+The support forum is accessible via a newsreader, a web interface, or
+as an email list.  There is no charge to join or participate.  To
+join, go to:
+
+     http://jpsoft.media3.net/lyris.pl?join=jpsoft.support.
+
+Be sure to use your full real name when you join.  Choose the proper
+access method (in the "Status" field on the signup form).  To access
+the forum as a newsgroup (recommended) or via the web interface,
+choose "nomail".
+
+After joining via the web page you will receive a confirmation email
+from jpsoft.media3.net.  You must respond to this email to activate
+your membership.  Once membership is activated you will receive
+another email which welcomes you to the forum and explains our access
+rules and policies.
+
+For additional details on the support forum see
+http://www.jpsoft.com/forum.htm.
+
+
+*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*
+
+ >>> Tech Tips <<<
+
+----------------------------------------------------------------------
+
+Using the New FTP Features
+
+
+4NT 4.0 and Take Command/32 3.0 include a range of features which
+allow you to manage files on FTP servers.  The primary FTP features
+are:
+
+    * FTP support in file processing commands including COPY, DEL,
+      DIR, FFIND, LIST, MOVE, MD, RD, REN, SELECT, and TYPE.
+
+    * The new IFTP command, which lets you open an FTP site and leave
+      it open for subsequent use by other commands.
+
+    * FTP support in other file-related commands and features,
+      including the CD command, filename completion, and file- and
+      directory-oriented variables and variable functions.
+
+The simplest way to access a file on an FTP site is to use its name in
+a command, like this:
+
+     copy "ftp://ftp.jpsoft.com/4dos/4dos700.exe" d:\jpsoft\
+
+This will perform an anonymous login to the FTP site, and copy the
+named file.  FTP file names must always be in quotes, and can include
+wildcards, for example:
+
+     copy "ftp://ftp.jpsoft.com/4nt/*" d:\jpsoft\
+
+Note that we use forward slashes in the FTP URL passed to the command.
+This is the norm for FTP and is required in most cases; some servers
+may accept backslashes as well.
+
+Commands like those shown above will open and close the FTP server for
+every command.  If you plan to perform multiple commands on the same
+server it is much faster to open the connection to the server once,
+with IFTP, use it for multiple commands, then close it, for example:
+
+     iftp "ftp://ftp.jpsoft.com/"
+     copy "ftp:4dos/4dos700.exe" d:\jpsoft\
+     copy "ftp:4nt/*" d:\jpsoft\
+     iftp /c
+
+Note that once the site is opened with IFTP, the server name
+("//ftp.jpsoft.com/") should be left out of the command as it is
+implied by the initial "ftp:".  Most FTP servers have a time limit on
+inactive connections, so if you open a connection with IFTP and then
+don't use it for a while, it may be closed by the server, and have to
+be reopened.
+
+You can also specify a user name and password in any command which
+uses a full FTP server name, for example:
+
+     iftp "ftp://user:pass@ftp.something.com/"    or
+     copy "ftp://user:pass@ftp.something.com/file1.txt" .\
+
+When you have opened a site with IFTP, you can change the current
+directory with CD.  The changes can be relative, or absolute (i.e.
+with a full path specified), for example:
+
+     cd "ftp:data"
+     cd "ftp:/main/data"
+
+Remember that the "root" directory for your FTP connection is not
+necessarily the root directory of the actual FTP server.  Instead, it
+is usually the "home" directory selected by the server's administrator
+for the user name (or anonymous login) you used to connect to the
+server.
+
+There are several small glitches you can run into when accessing FTP
+servers.  Many servers don't report properly to 4NT or Take Command/32
+whether a name you pass is actually a directory or a file.  For
+example, if you try this command to see the contents of the directory
+"/data":
+
+     dir "ftp://jpsoft.com/data"
+
+what you are really asking for is a directory of all files in the
+directory, i.e.  "data/*".  If the server responds as if the name
+belonged to a file and not a directory, the results will be incorrect.
+You can usually work around this by explicitly specifying what you
+want, for example:
+
+     dir "ftp://jpsoft.com/data/*"
+
+You may also find that when you send files to an FTP server
+(especially a Unix server) you want them to be copied with lower case
+names, but the names on your local system are in upper case.  You can
+address this with the FOR command and the %@LOWER variable function.
+For example, this command may create files on the server in upper
+case:
+
+     copy *.html "ftp:/htdocs/"
+
+But this one will force the names to lower case:
+
+     for %file in (*.html) copy %file "ftp:/htdocs/%@lower[%file]"
+
+You can also create an alias like the following to make this easier.
+This alias assumes an FTP connection was already opened with IFTP.
+Remember that this is an example only, you may need to adjust it to
+meet your needs and your server's behavior:
+
+     alias fcopy `for %f in (%1) copy %f "ftp:%2/%@lower[%file]"`
+     fcopy *.html /htdocs
+
+4NT and Take Command use standard FTP commands to retrieve information
+about files and directories and manipulate those files and directories
+on FTP servers, and rely on the server's compliance with Internet FTP
+standards.  If your server is not fully compliant, or does not operate
+in the manner that 4NT and Take Command expect, the results may not be
+what you intend.  For example, FTP servers are supposed to be case-
+insensitive; if the server you are connecting to is not, you may have
+to use the stored case of file and directory names when you use FTP
+commands.  We urge you to test each server you use with nondestructive
+commands like DIR before you try to copy or delete files, create or
+remove directories, etc.
+
+Before you can use the built-in FTP support or the IFTP command, you
+must establish the necessary connection to the Internet.  For example,
+if you use Windows Dial-Up Networking to connect to the Internet, you
+must start your dial up connection first.
+
+
+----------------------------------------------------------------------
+
+File Processing with @file Lists
+
+
+All of our new releases have a feature in many file processing
+commands that used to be available just in the FOR command:  "@file"
+lists that let you specify the names of files to be processed in a
+text file.  You may be familiar with similar features in other
+applications, such as PKZIP.  We call these "@file lists" because the
+"@" sign is used in the command, preceding the list filename.
+
+An @file list is simply a standard ASCII file containing the names of
+the files to process, one per line.  This allows you to create a list
+of files for processing using output from DIR /B, DIR /F, or FFIND, a
+text editor, or any other method that produces a file in the proper
+format.  Paths may be included in the file; see below for details.
+
+@File lists are supported by the ATTRIB, COPY, DEL / ERASE, DESCRIBE,
+EXCEPT, LIST, MOVE , RD / RMDIR, REN / RENAME, TOUCH, and TYPE
+commands.
+
+To use an @file list, precede its name with an "@" sign in the
+command.  For example, to copy all of the files listed in MYLIST.TXT
+to D:\SAVE\:
+
+     [c:\] copy @mylist.txt d:\save\
+
+If you use a drive and/or path specification the "@" sign can appear
+before the path or before the file name.  For example, these are
+equivalent:
+
+     [c:\] copy @e:\lists\mylist.txt d:\save\
+     [c:\] copy e:\lists\@mylist.txt d:\save\
+
+One of the most common uses for @file lists is to use FFIND's ability
+to search for text in files, then perform another command on all the
+files with matching text.  For example, this command finds all .TXT
+files which contain the word "mango".  The /S tells FFIND to search
+the current directory and all of its subdirectories, and /B makes the
+output a list of names only (without the actual lines which matched):
+
+     ffind /b /s /t"mango" *.txt
+
+If you saved the output of this command in a file you could use it as
+input to another command, for example:
+
+     ffind /b /s /t"mango" *.txt > manglist.txt
+     copy @manglist.txt d:\save\
+
+Similarly, DIR output can be used to process a group of files with
+finer control than might otherwise be possible.  For example, this
+command will TYPE all of the matching files:
+
+     type rec*.txt
+
+Output from this command will be in the order the files are stored in
+the directory.  To control the order, use DIR to generate a list in
+the desired order, then use an @file list to TYPE the files.  For
+example, to process the files in reverse date order:
+
+     dir /b /o:-d rec*.txt > reclist.txt
+     type @reclist.txt
+
+The entries in @file lists may contain no path, a relative path, or an
+absolute path, for example:
+
+     file1
+     mydir\file1
+     d:\data\mydir\file1
+
+If a filename has no path the command processor will look for the file
+in the directory that is current when the operation takes place.
+Similarly, if a relative path is used it will be interpreted as
+relative to the directory that is current when the operation takes
+place.
+
+@file lists should not be used with the subdirectory switches in file
+processing commands (COPY /S, DEL /S, etc.).  To process files listed
+in a single @file list across multiple subdirectories use FOR's
+ability to read the list and handle each file name individually, for
+example:
+
+     for %file in (@flist) copy /s %file d:\target\
+
+For additional information on @file lists see the corresponding
+section under File Selection in the online help.
+
+
+*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*
+
+Contacting JP Software
+
+Use our web site at http://www.jpsoft.com/ as a simple, centralized
+contact point for all departments, and for online ordering and file
+downloads.
+
+We answer most sales and customer service inquiries and return most
+technical support calls within 24 hours (assuming we can reach you!).
+Orders are normally processed and shipped in 2 - 3 business days;
+however there may be significant order processing delays during peak
+periods after a new version is released.
+
+     Address:
+         JP Software Inc.
+         P.O. Box 1470
+         East Arlington, MA 02474
+         USA
+
+     Main number:  (781) 646-3975
+     Fax: (781) 646-0904
+     Order Line:  (800) 368-8777 (US / Canada, orders only)
+
+     Online:
+         Web site:  http://www.jpsoft.com/
+         FTP site:  ftp.jpsoft.com
+         Sales / Customer Service:  sales@jpsoft.com
+
+     Technical Support:
+         Standard (no-charge) support:  Available via our online
+         support forum, accessible from the support area of our web
+         site; see Support Forum article above for details.  Paid
+         support options are also available; see our web site for
+         details.
+
+Our normal office hours are 9:00 AM to 5:00 PM, eastern US time.
+
+
+----------------------------------------------------------------------
+
+Newsletter Address Correction, List Removal, and Privacy Information
+
+
+We send this newsletter periodically to all registered JP Software
+customers using the email address you gave us when you placed an
+order.
+
+To correct your email address, or if you have any other questions
+about our mailing list not covered here, send email to
+sales@jpsoft.com.
+
+If you don't want to receive additional issues of this newsletter,
+just send a note to nlremove@jpsoft.com, and we will remove your name
+from our newsletter email list prior to sending out the next issue.
+
+We do not send this newsletter to anyone who has not given us their
+address voluntarily as part of a purchase or other customer
+transaction with JP Software.  We also will NOT give, sell, or
+otherwise distribute your email address to any other company without
+your permission.
+
+
+----------------------------------------------------------------------
+
+Copyrights, Trademarks, and Fine Print
+
+
+Copyright (c) 2001, JP Software Inc. All Rights Reserved.  4DOS (r)
+and Take Command (r) are registered trademarks of JP Software Inc.
+4DOS (r), 4OS2, and 4NT are JP Software Inc.'s trademarks for its
+family of character-mode command processors.  "The Prompt Solution",
+JP Software, jpsoft.com, and all JP Software designs and logos are
+also trademarks of JP Software Inc. Other product and company names
+are trademarks of their respective owners.  Published June 2001 by JP
+Software Inc., P.O. Box 1470, E. Arlington, MA 02474, USA.
+
+</PRE></UL></UL>
+</TR></TD></TABLE>
+<HR NOSHADE WIDTH="95%">
+<CENTER><STRONG>also available in <A HREF="ascii/online04.txt">text/plain</A> format</STRONG></CENTER>
+</FONT><FONT FACE="arial, helvetica, sans-serif" SIZE="-1" COLOR="#006699">
+<UL><A HREF="jpview.cgi?online04.txt#top"><IMG SRC="images/top4.gif" VSPACE=5 HSPACE=0 WIDTH=13 HEIGHT=7 ALIGN=TOP BORDER=0 ALT="^"><FONT COLOR="#663399"><STRONG>Top</STRONG></FONT></A></UL>
+<UL><LI>If your browser displayed this page in a separate window, <A HREF="" onclick="window.close()">close this window</A> to return to your previous location.</UL>
+</FONT><P>
+<center>
+<FORM TARGET="JP_Link" METHOD="get" ACTION="http://sitelevel.whatuseek.com/query.go">
+<INPUT TYPE="hidden" SIZE=0 NAME="crid" VALUE="4d3ea8ef0d7c5f46">
+<INPUT TYPE="hidden" SIZE=0 NAME="slice_title" VALUE="Text Files only">
+<TABLE bgcolor="#D2E2FF" CELLSPACING=0 CELLPADDING=5 BORDER=1 BORDERCOLOR="#003399">
+<TR><SMALL><TD ALIGN="center">
+<INPUT TYPE="submit" NAME="B1" VALUE=" search Text Files">
+</TD></SMALL></TR>
+<TR><TD ALIGN="center" VALIGN="bottom">
+<INPUT TYPE="text" NAME="query" SIZE="20" VALUE="&quot;search string&quot;" MAXLENGTH="200"></TD></TR>
+</TABLE></FORM>
+</center>
+<FONT FACE="Helvetica,Arial,Geneva,Swiss,sans-serif" SIZE=2>
+<UL><LI><H3>View a <A HREF="ascii.htm">Directory of all Text Files</A></H3></UL>
+<P></FONT>
+<P><HR WIDTH="95%"><P>
+<TABLE COLS=1 CELLSPACING=0 CELLPADDING=0 BORDER=0 WIDTH="90%">
+<TR><TD></TD></TR>
+<TR><TD BGCOLOR="#D2E2FF"><CENTER>
+<FONT FACE="Helvetica,Arial,Geneva,Swiss,sans-serif" SIZE=2>
+<A TARGET="_top" HREF="/index.htm">Home</A> |
+<A HREF="http://jpsoft.com/store/store.mv">Store</A> |
+<A HREF="/products.htm">Products</A> |
+<A HREF="/ordinf.htm">Orders</A> |
+<A HREF="/upgrade.htm">Upgrades</A> |
+<A HREF="/techsup.htm">Support</A> |
+<A TARGET=JP_Help HREF="/help/index.htm">Online Help</A>
+</FONT>
+</CENTER></TD></TR>
+<TR><TD>&nbsp;</TD></TR>
+<TR><TD><CENTER>
+<A HREF="#top"><IMG HEIGHT=30 WIDTH=90 VSPACE=5 BORDER=0 ALT=" (top of page) " SRC="/images/smjpswsh.gif"></A>
+</CENTER></TD></TR>
+<TR><TD><CENTER>
+<FONT FACE="Helvetica,Arial,Geneva,Swiss,sans-serif" SIZE=1>
+Page script last updated by
+<A HREF="&#119;&#101;&#098;&#109;&#097;&#115;&#116;&#101;&#114;&#064;&#106;&#112;&#115;&#111;&#102;&#116;&#046;&#099;&#111;&#109;?subject=Comments_WWW" TITLE="Comments_WWW">webmaster@jpsoft.com</A>.
+Copyright &copy; 2004 JP Software, Inc.  All Rights Reserved.
+<BR>See our <A HREF="/jplegal.htm">Legal Notices and Trademarks</A>
+and <A HREF="/privacy.htm">Privacy</A> Statements.
+<BR>
+<CENTER><FORM>
+<INPUT TYPE="button" VALUE=" &lt;&lt " onClick="history.go(-1)">
+<A HREF="#top"><IMG SRC="/images/top4.gif" VSPACE=5 HSPACE=0 WIDTH=13 HEIGHT=7 ALIGN=TOP BORDER=0 ALT="^"><FONT COLOR="#663399"><STRONG>Top</STRONG></FONT></A>
+<INPUT TYPE="button" VALUE=" &gt;&gt; " onCLick="history.go(1)">
+</FORM></CENTER>
+</FONT>
+</CENTER></TD></TR>
+<TR><TD>
+<CENTER><P><script language="JavaScript1.2" src="http://www.altavista.com/r?entr"></script></CENTER>
+</TD></TR>
+</TABLE>
+</BODY></HTML>

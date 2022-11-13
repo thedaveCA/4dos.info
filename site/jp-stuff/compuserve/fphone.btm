@@ -1,0 +1,67 @@
+@echo off
+rem This is 4OS2/TC batchfile that finds a phone number in IBMWorks PHONE.DBF
+rem By Bill Hinkle 75300.2050@compuserve.com  (FPHONE.BTM rev 2 15Feb96)
+setlocal
+set dbname=PHONE.DBF
+if "%IBMWORKS_INI" != "" set dbname=%IBMWORKS_INI\DATA\%dbname
+set fptr=%@fileopen[%dbname,read,b]
+if "%fptr" == "-1" goto errquit
+on break goto bailout
+setdos /x-568
+iff "%1" == "" then
+ iff isinternal querybox then
+  querybox "Find Phone" Enter name (and optional type: Fax, Bus, Home): %%needle
+ else
+  input /x Enter name (and optional type keyword: Fax, Bus, Home): %%needle
+ endiff
+ set tell=%@words[" ,	",%needle]
+ iff %tell GT 1 then
+  set pntype=%@word[" ,	",-0,%needle]
+  set needle=%@word[" ,	",0,%needle]
+ endiff
+else
+ set needle=%1
+ shift %@eval[%# - 2]
+ set pntype=%2
+endiff
+if "%needle" == "" goto bailout
+set tell=%@fileseek[%fptr,4,0]
+setdos /X-7
+set nrecs=%@eval[%@ascii[%@fileread[%fptr,1]%] + %@ascii[%@fileread[%fptr,1]%] * 256 + %@ascii[%@fileread[%fptr,1]%] * 65536 + %@ascii[%@fileread[%fptr,1]%] * 16777216]
+set doffs=%@eval[%@ascii[%@fileread[%fptr,1]%] + %@ascii[%@fileread[%fptr,1]%] * 256]
+set rlen=%@eval[%@ascii[%@fileread[%fptr,1]%] + %@ascii[%@fileread[%fptr,1]%] * 256]
+setdos /X+7
+do %nrecs
+ set tell=%@fileseek[%fptr,%doffs,0]
+ iff "%@fileread[%fptr,1]" != "*" then
+  set name=%@trim[%@fileread[%fptr,35]], %@trim[%@fileread[%fptr,35]]
+  iff %@index["%name",%needle] != -1 then
+   set tell=%@fileseek[%fptr,%@eval[%doffs + 514],0]
+   do 8
+    set label=%@trim[%@fileread[%fptr,20]]
+    set number=%@trim[%@fileread[%fptr,40]]
+	if "%label" == "" leave
+	iff "%pntype" != "" then
+     if %@index[%label,%pntype] == -1 iterate
+    endiff
+    do until %ispipe == -1
+      set ispipe=%@index[%number,|]
+      if %ispipe != -1 set number=%@instr[0,%ispipe,%number]%@if[%ispipe == 0,,-]%@instr[%@eval[%ispipe + 1],40,%number]
+    enddo
+    set number=%@instr[0,%@eval[%@len[%number]-1],%number]
+    echo %name %label: %number
+   enddo
+  endiff
+ endiff
+ set doffs=%@eval[%doffs + %rlen]
+enddo
+:bailout
+setdos /x0
+set tell=%@fileclose[%fptr]
+endlocal
+quit 0
+:errquit
+endlocal
+echo Can't open PHONE.DBF database!
+quit 1
+

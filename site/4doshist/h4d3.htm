@@ -1,0 +1,1471 @@
+<!doctype HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+<meta name="generator" content="Microsoft FrontPage 5.0" />
+<meta name="ProgId" content="FrontPage.Editor.Document" />
+<meta http-equiv="Content-Language" content="en-gb" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<title>4DOS.INFO - Klaus Meinhard&apos;s Homepage: Title</title>
+<meta name="description" content="Everything about 4DOS and Batch Programming - Alles zu 4DOS und Batch-Programmierung" />
+<meta name="keywords" content="4XBTM, SHELL, SCRIPT, BATCH, COMMAND, PROMPT, 4DOS, 4OS2, 4NT, TCMD, TAKE COMMAND, JPSOFT, DOS, BTM" />
+<meta name="rating" content="General" />
+<meta name="resource-type" content="document" />
+<meta name="revisit-after" content="30 Days" />
+<meta http-equiv="Expires" content="0" />
+<meta http-equiv="Last-Modified" content="0" />
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+<meta name="MSStartTagsPreventParsing" content="True" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<base target="_self" />
+<!-- Disable other sites from forcing a Frameset on this page -->
+<script type="text/javascript">
+<!--
+if(parent.frames.length>0) {
+parent.location.href=location.href;
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+a:link       { font-family: Courier New; font-size: 10pt; color: #0000CC; font-weight: bold; text-decoration:none )              }
+a:visited    { font-family: Courier New; font-size: 10pt; color: #3366CC; font-weight: bold; text-decoration:none }
+a:active     { font-family: Courier New; font-size: 10pt; color: #6600CC; font-weight: bold; text-decoration:none }
+h6           { font-family: verdana; font-size: 10pt; font-weight: bold; text-align:left; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h5           { font-family: verdana; font-size: 10pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h4           { font-family: verdana; font-size: 12pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h3           { font-family: verdana; font-size: 14pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h2           { font-family: verdana; font-size: 18pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h1           { font-family: verdana; font-size: 24pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+p            { font-family: verdana; font-size: 10pt; text-align:left; word-spacing:0; text-indent:0; line-height:110%; margin-left:6; margin-right:6; margin-top:6; margin-bottom:6}
+li           { font-family: Courier New; font-size: 10pt; text-align:left; word-spacing:0; text-indent:0; line-height:110%; margin-left:6; margin-right:6; margin-top:6; margin-bottom:12}
+-->
+</style>
+<style type="text/css">
+A:hover {color: #6600CC; font-weight: bold}
+</style>
+</head>
+
+<body bgcolor="#666699" text="#000080" link="#0000FF" vlink="#3366CC" alink="#99CCFF">
+
+<h1 style="margin-bottom: 6"><font color="#FFFFFF"><a name="0"></a>[4DOS.INFO]</font></h1>
+<p style="margin-bottom: 6">&#160;</p>
+<div align="left">
+  <p style="margin-top: 0; margin-bottom: 6">
+  <font face="verdana" align="center" margin-bottom:="" 6"="" color="#FEFEFE" size="5">
+  c:\test\&gt; _</font></p></div>
+<div align="left">
+  <table summary="menú" border="0" width="165" bordercolor="#000080" cellpadding="6" cellspacing="0" height="509" align="left" style="position: absolute; left: 10; top: 100; border-collapse: collapse">
+    <tbody>
+    <tr>
+      <td valign="top" bgcolor="#FFFFFF" width="164" height="1">
+      <!-- beginn freecity.de counter code -->
+      <a href="http://www.freecity.de" target="_new">
+      <img src="http://tools.freecity.de/counter/Klaus_Meinhard" border="0" width="154" height="88" /></a>
+      <!-- ende freecity.de counter code -->&#160; </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#FFFFFF" width="164" height="15">
+      <h4 align="center" style="text-align: center">&#160;Topics</h4>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#EEEEEE" width="164" height="4">
+      <p style="margin-top: 6; margin-bottom: 6"><a href="../updates.htm">
+      <font face="Verdana">Updates</font></a><font face="Verdana"> </font></p></td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#FFFFFF" width="164" height="18">
+      <h4><font face="Verdana" size="3">4DOS INFO</font></h4>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#EEEEEE" width="164" height="237">
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="../v4dos.htm" target="_self"><font face="Verdana">4DOS Versions</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="../v4nt.htm" target="_self"><font face="Verdana">4NT Versions</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="../v4os2.htm" target="_self"><font face="Verdana">4OS2 Versions</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="../4tips.htm" target="_self"><font face="Verdana">4DOS Tips &amp; Tricks</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="../4docs.htm" target="_self"><font face="Verdana">4DOS Docs</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="../4batfaq.htm" target="_self"><font face="Verdana">4DOS BatFAQ</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a target="_self" href="../4obtms.htm"><font face="Verdana">4DOS Batches, 
+      Aliases, Functions</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <font face="Verdana">&#160; </font><a href="../4bernd.htm" target="_self">
+      <font face="Verdana">B. Schneider's</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <font face="Verdana">&#160; </font><a href="../4xbtm.htm">
+      <font face="Verdana">K. Meinhard's</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="../4links.htm" target="_self"><font face="Verdana">4DOS Links</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="../4tools.htm" target="_self"><font face="Verdana">4DOS Tools</font></a></h6>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#FFFFFF" width="164" height="18">
+      <h3 align="center"><font size="3" face="Verdana">INFO for DOS</font></h3>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#EEEEEE" width="164" height="42">
+      <p align="left"><a href="../dlinks.htm" target="_self"><font face="Verdana">
+      DOS-Links</font></a></p>
+      <p><a href="../dalter.htm"><font face="Verdana">DOS Alternatives</font></a></p>
+      <p><a href="../dhardw.htm" target="_self"><font face="Verdana">DOS Hardware</font></a></p>
+      <p><a href="../dtools.htm"><font face="Verdana">DOS Tools</font></a></p>
+      <p><a href="../dprogs.htm"><font face="Verdana">DOS Programs</font></a></p>
+      <p><a href="../dgems.htm"><font face="Verdana">DOS Gems</font></a></p></td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#FFFFFF" width="164" height="18">
+      <h3 align="center"><font face="Verdana" size="3">Service</font></h3>
+      </td>
+    </tr>
+    <tr>
+      <td width="164" height="40" bgcolor="#EEEEEE">
+      <p style="margin: 6"><a href="../search.htm" target="_self">
+      <font face="Verdana">Search Engines</font></a></p>
+      <p><a href="mailto:K_Meinhard@gmx.de"><font face="Verdana">Contact me</font></a><font face="Verdana">
+      </font></p></td>
+    </tr>
+    <tr>
+      <td width="164" height="1" bgcolor="#FFFFFF">
+      <p style="margin: 6"><a href="../default.htm" target="_self">
+      <font face="Verdana">Back to Homepage</font></a><font face="Verdana">
+      </font></p></td>
+    </tr>
+  </tbody>
+  </table>
+</div>
+<table summary="main body" border="0" width="75%" cellpadding="6" cellspacing="0" bordercolor="#000080" align="left" style="position: absolute; left: 200; top: 100; border-collapse: collapse" height="16932">
+  <tbody>
+  <tr>
+    <td width="75%" bgcolor="#FFFFFF" height="15">
+    <h4><font color="#0000CC">4DOS V3.nn&nbsp; Version History</font></h4>
+    <p style="text-align: center"><font color="#0000CC">This page can be
+    <a href="h4dos3.doc">downloaded</a> in MS-Word .doc format.</font> 
+    </td>
+  </tr>
+  <tr>
+    <td width="75%" bgcolor="#EEEEEE" height="14">
+    <div align="left">
+      <p style="margin-top: 0; margin-bottom: 0" align="left">
+      <b>
+      <font color="#0000CC">4DOS Change Log - this log describes changes and bug fixes to  version 
+      3.nn of 4DOS</font></b></div>
+    </td>
+    </tr>
+  <tr>
+    <td width="75%" bgcolor="#FFFFFF" height="12">
+    <p style="margin-top: 0; margin-bottom: 0"></p>
+    <h5 style="margin-top: 0; margin-bottom: 0"><font color="#0000CC">Version 
+    3.0, 3/7/90</font></h5>
+    </td>
+  </tr>
+  <tr>
+    <td width="75%" bgcolor="#EEEEEE" height="8054"><b><font color="#0000CC">General 
+    Enhancements:</font></b><p>&nbsp;</p>
+    <p><font color="#0000CC" face="Verdana" size="2">
+    Installation and Configuration</font></p>
+    <ul>
+      <li><font color="#0000CC">The 4DOS loader (4DOS.COM) has been completely 
+      rewritten. It now takes a little under 3K of low memory (less than 
+      COMMAND.COM!). In version 2.21 it required close to 5K.</font></li>
+      <li><font color="#0000CC">4DOS now supports swapping to XMS extended 
+      memory. In order for it to work you must have an XMS driver such as 
+      HIMEM.SYS loaded, or an equivalent program such as 386MAX or QEMM 5.0.</font></li>
+      <li><font color="#0000CC">The resident portion of 4DOS and the master 
+      environment can now be loaded high if your hardware and software support 
+      XMS Upper Memory Blocks (UMBs). If both options are used 4DOS's low-memory 
+      footprint can be reduced to as little as 256 bytes. See the options 
+      section below for details.</font></li>
+      <li><font color="#0000CC">The 4DOS loader now distinguishes processor 
+      types more carefully when loading the EXE file. 4DOS286.EXE (which in fact 
+      runs on any 80186 / 188 or later processor) will now automatically be 
+      loaded for all processors other than 8086 / 88. This should make NEC V20 / 
+      V30 systems run 4DOS286 automatically.</font></li>
+      <li><font color="#0000CC">The loader now displays the size of the swap 
+      area being used in K, e.g. &quot;EMS swapping initialized (80K)&quot;.</font></li>
+      <li><font color="#0000CC">IF 4DOS is swapping to EMS and your EMS driver 
+      supports the LIM EMS 4.0 specification, EMS swapping blocks will be named 
+      4DOS:nnn where nnn is the shell nesting level (000 for the primary shell).&nbsp;Previously the blocks were unnamed. They will remain unnamed on EMS 3.2 
+      systems.</font></li>
+      <li><font color="#0000CC">Errors detected by the low memory portion of 
+      4DOS are now quite cryptic, to save space in low memory. They all read 
+      simply &quot;4DOS error XX&quot;. See the Error Messages appendix in the manual for 
+      the meaning of the codes.</font></li>
+    </ul>
+    <p><font color="#0000CC">Aliases and Environment:</font></p>
+    <ul>
+      <li><font color="#0000CC">Aliases are now in a separate block, whose size 
+      is defined with the new SHELL and 4DSHELL parameter /A:nnnn. You will need 
+      to add this parameter, and probably reduce your environment size 
+      accordingly.</font></li>
+      <li><font color="#0000CC">Since aliases are in a separate block, there is 
+      little need to swap out the master copy of the environment to save space. 
+      Therefore 4DOS defaults to a memory-resident master environment (formerly 
+      selected with the /M command line option), whether you specify the 
+      environment size with /E or /M.</font></li>
+    </ul>
+    <p><font color="#0000CC">Command Line Options:</font></p>
+    <ul>
+      <li><font color="#0000CC">The new /A:nnnn switch specifies the size of the 
+      alias buffer, in<br>
+      bytes.</font></li>
+      <li><font color="#0000CC">The history and environment limits have been 
+      changed. The new values for environment, aliases, and history are (all in 
+      bytes): </font>
+      <p><font color="#0000CC"><br>
+      <font face="Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      Min&nbsp;&nbsp; Max&nbsp;&nbsp; Default<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ----- ----- 
+      -------<br>
+      Environment 256&nbsp;&nbsp; 32000&nbsp; 512<br>
+      Aliases&nbsp;&nbsp;&nbsp;&nbsp; 256&nbsp;&nbsp; 32000 1024<br>
+      History&nbsp;&nbsp;&nbsp;&nbsp; 256&nbsp;&nbsp;&nbsp; 8192 1024</font></font></p>
+      <p>&nbsp;</li>
+      <li><font color="#0000CC">The /M switch is obsolete, but will still be 
+      accepted. It is equivalent to /E.</font></li>
+      <li><font color="#0000CC">/E:nnnn may be followed by U (/E:nnnnU) to load 
+      the master environment into a UMB in high DOS memory. See the information 
+      on /U below regarding hardware/software compatibility and UMB access.</font></li>
+      <li><font color="#0000CC">The new /U switch requests that 4DOS load its 
+      resident portion into an Upper Memory Block (UMB) at the high end of DOS 
+      memory.
+      You must have the appropriate hardware and XMS driver software for this 
+      option to work; if you don't the resident portion will simply be loaded 
+      normally in low memory. See COMPAT.DOC for the latest details on what 
+      hardware and software is required for 4DOS to access UMBs.</font></li>
+    </ul>
+    <p><font color="#0000CC">Technical Information on Installation:</font></p>
+    <ul>
+      <li><font color="#0000CC">4DOS.COM has been modified to set the PSP memory 
+      size, rather than relying on DOS to do it properly. This allows 4DOS's 
+      swapping mode to work properly in the OS/2 compatibility box.</font></li>
+      <li><font color="#0000CC">The critical error and ctrl-C / ctrl-break 
+      handlers are now in low memory all the time. Previously they were in high 
+      memory, and switched to low memory when an application was run. This 
+      should solve some compatibility problems with programs that wanted these 
+      handlers to be in low memory and/or to have their addresses fixed, rather 
+      than changing each time an application was run. </font></li>
+      <li><font color="#0000CC">4DOS now hooks interrupt 2E (in the primary 
+      shell only). Some programs use this to find the root command processor 
+      and/or global master environment. Note 4DOS does NOT process INT 2E in any 
+      way, it just returns. But it does hook it.</font></li>
+    </ul>
+    <p><font color="#0000CC"><b>Features and Usage</b><br>
+    <br>
+    General Features:</font></p>
+    <ul>
+      <li><font color="#0000CC">&quot;4DOS286&quot; is now compiled in 186-compatible mode 
+      to assure compatibility with NEC V20/V30 microprocessors. This does not 
+      affect the speed or size of the EXE file.</font></li>
+      <li><font color="#0000CC">The functions that accept multiple arguments 
+      (COPY, MOVE, DEL, RENAME, etc.) no longer abort on an error - they will 
+      continue processing the remainder of the arguments, and then return an 
+      error. This will allow things like DEL *.BAK to continue when a read-only 
+      file exists among the .BAK files and cannot be deleted.</font></li>
+      <li><font color="#0000CC">SHARE / LAN support has been added for all file 
+      I/O. (For example, LIST and TYPE open their files in &quot;deny write&quot; mode; 
+      other systems can still read the files, but can't write them while LIST 
+      and TYPE are using them). This change should be transparent to most users 
+      but will improve compatibility on some networks.</font></li>
+      <li><font color="#0000CC">The ctrl-C / ctrl-Break handler has been cleaned 
+      up and should be more reliable.</font></li>
+      <li><font color="#0000CC">4DOS now supports the DOS 4.0 DOSSHELL command 
+      without the use of special batch files, COMMAND.COM, etc.</font></li>
+      <li><font color="#0000CC">A bug in the 4DOS beep subroutine could cause 
+      the beep issued for an invalid keystroke or any other reason to stay on 
+      indefinitely when running a multitasker with background processing active 
+      (e.g. DESQView, VM/386), or when using PC Magazine's ANSI.COM version 1.2. 
+      This has been fixed.</font></li>
+      <li><font color="#0000CC">4DOS now issues a specific interrupt just after 
+      displaying the prompt and before accepting input. This allows TSRs to tell 
+      when 4DOS is back at the prompt. The interrupt call is an INT 2F with AX = 
+      0D44Eh. Any routine intercepting this should preserve at least the SI, DI, 
+      BP, SP, DS, ES, and SS registers.</font></li>
+      <li><font color="#0000CC">The program name passed to DOS for external 
+      programs is now set to upper case. Previously some external programs could 
+      not find their own name as they were not written to handle lower case. 
+      This resulted in errors in finding overlay files and other similar 
+      problems.</font></li>
+      <li><font color="#0000CC">If the screen width in the BIOS is 0, 4DOS now 
+      defaults to 80, to accommodate the TI Professional.</font></li>
+      <li><font color="#0000CC">The date, time, and thousands separator 
+      characters are now set by the default country definition (in DOS 3+). 
+      Previously the country definition only affected the date and time format.</font></li>
+      <li><font color="#0000CC">Previously 4DOS sometimes failed to ask ask 
+      &quot;Cancel batch file&quot; when aborting via ^C from an external program. This 
+      has been fixed.</font></li>
+    </ul>
+    <p><font color="#0000CC">Command Line Editing:</font></p>
+    <ul>
+      <li><font color="#0000CC">The ^D (delete) command now displays the 
+      previous history command after deleting the current one.</font></li>
+      <li><font color="#0000CC">A new command, ^E (end), moves to the last entry 
+      in the history list and displays it.</font></li>
+      <li><font color="#0000CC">Filename completion (F9 / F10 keys) has two 
+      changes:<br>
+&nbsp;</font><ul>
+        <li><font color="#0000CC">The F8 key will now return the previous 
+        matching filename if you go past the filename you want in the list.</font></li>
+        <li><font color="#0000CC">When scanning the directory for filename 
+        completion 4DOS now starts with the name you type (if any) and appends a 
+        &quot;*.*&quot; if no extension is given (as it used to), and also a &quot;*&quot; if an 
+        extension is given (that's the new part). This makes names like &quot;FILE.E&quot; 
+        expand as &quot;FILE.E*&quot;. </font></li>
+      </ul>
+      </li>
+    </ul>
+    <p><font color="#0000CC">Command Parsing:</font></p>
+    <ul>
+      <li><font color="#0000CC">The command line parser has been completely 
+      rewritten. (The&nbsp; parser is the part of 4DOS that reads your commands 
+      and analyzes them for aliases, environment variables, program names, 
+      switches, etc.). It now supports multiple commands and redirection more 
+      gracefully. Specific changes are listed below:</font></li>
+      <li><font color="#0000CC">When entering multiple commands on the line, 
+      each command is parsed just before it is executed. (This is true at the 
+      prompt, in aliases, and in batch files.) Previously all commands on the 
+      line were parsed before any of them were executed. </font></li>
+      <li><font color="#0000CC">As a result, environment variable and alias 
+      changes made in one command now take effect immediately, and will affect 
+      the parsing of commands later on the same line. Previously these changes 
+      did not take effect until the entire line had been parsed.</font></li>
+      <li><font color="#0000CC">The 255-character command limit now applies to 
+      each individual command as it is expanded, and to the original command 
+      line. Previously the entire command line after alias and variable 
+      expansion had to fit within 255 characters as well.</font></li>
+      <li><font color="#0000CC">EXCEPT, FOR, GLOBAL, IF, and SELECT now accept 
+      aliases as the command argument.</font></li>
+      <li><font color="#0000CC">Filename parsing has been modified to allow a 
+      forward slash (&quot;/&quot;) as a path separator in most places. However commands 
+      which use &quot;/&quot; for switches may still get confused if you use this 
+      construct. </font></li>
+      <li><font color="#0000CC">&quot;Whitespace&quot; (delimiter) characters (;=,) 
+      following the command name are no longer skipped for the first command 
+      line argument, but still are for the second argument onwards. This allows 
+      commands like &quot;XYZ,,,,,&quot; to pass white space characters (comma is a 
+      whitespace character in DOS) correctly to an external program.</font></li>
+      <li><font color="#0000CC">The parser's memory handling has been rewritten 
+      to eliminate &quot;stack overflow&quot; errors with long aliases. </font></li>
+      <li><font color="#0000CC">You can now disable the saving of a specific 
+      command to the history list by prefacing the command with &quot;@&quot;.</font></li>
+      <li><font color="#0000CC">Filenames ending with a &quot;\&quot; are now assumed to 
+      be directory names, i.e., &quot;C:\4DOS\&quot; is equivalent to &quot;C:\4DOS\*.*&quot;. This 
+      allows you to force 4DOS to consider something to be a directory name 
+      rather than a file name if there may be ambiguity.</font></li>
+      <li><font color="#0000CC">Alias expansion will now take place even when 
+      the first item on
+      the line is an environment variable. Previously executing &quot;%var&quot;
+      as a command would not work when the variable contained an alias
+      name.</font></li>
+      <li><font color="#0000CC">ECHOing of the command line now occurs before 
+      piping. This allows commands like &quot;echo y | del *.*&quot; to work when ECHO is 
+      on.&nbsp; Previously these commands would pipe the ECHO command itself, 
+      instead of the Y, to the following command, and the command would not 
+      behave properly.</font></li>
+      <li><font color="#0000CC">The parser has been modified to not treat 
+      parentheses as special characters; FOR, EXCEPT, and SELECT have been 
+      modified to do their parentheses parsing internally. This fixes a problem 
+      with renaming files whose names start with a left parenthesis.</font></li>
+    </ul>
+    <p><font color="#0000CC">Aliases:</font></p>
+    <ul>
+      <li><font color="#0000CC">Alias expansion has been changed slightly. 
+      Previously, if you had variables in an alias (%1, %2, ...) then once 
+      variable substitution was complete 4DOS would discard the remainder of the 
+      command line. Now, 4DOS discards the command line up to and including the 
+      highest referenced variable, and appends the rest of the line to the end 
+      of the expanded command.</font></li>
+    </ul>
+    <p><font color="#0000CC">Batch Files:</font></p>
+    <ul>
+      <li><font color="#0000CC">A new extension to support &quot;in memory batch 
+      files&quot; has been added (.BTM = &quot;batch to memory&quot;). The features of .BTM 
+      files are:<br>
+      <br>
+&nbsp;</font><ul>
+        <li><font color="#0000CC">The file will be loaded into memory and then 
+        executed without requiring further disk I/O. This will be 2 - 5x faster 
+        than the approach used for .BAT files (to retain compatibility with 
+        COMMAND.COM), where the file is closed and reopened for each line.</font></li>
+        <li><font color="#0000CC">You can now remove the disk containing an 
+        original .BTM file without having to worry about the &quot;Missing batch 
+        file&quot; message.</font></li>
+        <li><font color="#0000CC">.BTM files are limited to 64K bytes in size.</font></li>
+        <li><font color="#0000CC">Do not load TSRs (memory-resident programs) 
+        from a .BTM file. If you do the memory released when the .BTM file is 
+        done will leave a &quot;hole&quot; in memory below the TSR. This is not harmful, 
+        but it wastes memory.</font></li>
+        <li><font color="#0000CC">Self-modifying batch files can NOT be 
+        converted to .BTM files.</font></li>
+        <li><font color="#0000CC">4START can now be a .BAT or .BTM file.</font></li>
+      </ul>
+      </li>
+      <li><font color="#0000CC">Batch file variable %0 now returns the batch 
+      file name as it was entered on the command line, in upper case, just like 
+      COMMAND.COM. This should fix compatibility problems with some installation 
+      batch files.</font></li>
+    </ul>
+    <ul>
+      <li><font color="#0000CC">The %# variable has been added to batch files. 
+      It returns the number of command line arguments (%1 - %n).</font></li>
+    </ul>
+    <p><font color="#0000CC">I/O Redirection:</font></p>
+    <ul>
+      <li><font color="#0000CC">Redirection is now fully nestable. For example, 
+      invoking a batch file XYZ with &quot;XYZ &gt; OUT.DAT&quot; will redirect all output 
+      from the batch file to OUT.DAT unless additional redirection is 
+      encountered&nbsp;&nbsp; within the batch file.</font></li>
+      <li><font color="#0000CC">The EXCEPT, FOR, GLOBAL, and SELECT commands now 
+      handle I/O redirection when processing begins for the second command 
+      (previously it was handled when the EXCEPT, FOR, GLOBAL, or SELECT was 
+      processed). In FOR, this allows you to redirect output to a file whose 
+      name depends on the FOR variable.</font></li>
+      <li><font color="#0000CC">Redirection of STDERR only has been added. The 
+      syntax is &quot;&gt;&amp;&gt; filename&quot; to redirect STDERR to a file, or &quot;&gt;&gt;&amp;&gt; filename&quot; 
+      to append STDERR to a file.</font></li>
+      <li><font color="#0000CC">4DOS now checks for duplicate redirection (i.e., 
+      &quot;DIR &gt; 1.DAT &gt; 2.DAT&quot;). Previously duplicate redirection would end up with 
+      output permanently redirected to never-never land once the command was 
+      finished.</font></li>
+    </ul>
+    <p><font color="#0000CC">Environment Variables:</font></p>
+    <ul>
+      <li><font color="#0000CC">VERY IMPORTANT: The 4DOS internal variables (CWD, 
+      CWDS, DOSVER, etc.) are now prefixed with an underscore (_). This should 
+      reduce conflicts with your own environment variables of the same name. You 
+      must modify any batch files or aliases which use these variables or they 
+      will not work properly with 4DOS 3.0. The only variables 4DOS uses which 
+      are NOT prefixed with an underscore are the ones which are actually 
+      inserted in the environment: PATH, COMSPEC, 4DSHELL, TMP, etc.</font></li>
+      <li><font color="#0000CC">Many new internal variables have been added; see 
+      the manual and README.DOC for an up-to-date list of all variables. 
+      Additions include:<br>
+      <br>
+      %? Exit code of last external program<br>
+      %_bg, %_fg Current screen colors<br>
+      %_cpu CPU type<br>
+      %_cwp, %_cwps Like %_cwd and %_cwds but without the drive<br>
+      %_shell Current shell nesting level<br>
+&nbsp;</font></li>
+      <li><font color="#0000CC">Variables you insert into the environment with 
+      SET or in any other way now override 4DOS internal variables of the same 
+      name (%_CWD, %_DATE, etc.).</font></li>
+      <li><font color="#0000CC">A new internal &quot;function variable&quot; type has been 
+      added. These functions allow you to parse strings. See the manual for full 
+      details. The functions are:<br>
+      <br>
+      %@ext[filename] Get extension part of filename<br>
+      %@full[filename] Get full file name<br>
+      %@len[string] Get the length of a string<br>
+      %@line[filename,n] Get line n from a file (see README.DOC, not described 
+      in manual)<br>
+      %@name[filename] Get name part of filename<br>
+      %@path[filename] Get path part of filename<br>
+      %@search[filename] Search the path<br>
+      %@substr[string,start,len] Extract a substring<br>
+&nbsp;</font></li>
+      <li><font color="#0000CC">The '$' character has been added to the valid 
+      variable name<br>
+      character list.</font></li>
+      <li><font color="#0000CC">The new syntax %[varname] will accept any 
+      sequence of characters as a valid environment variable name for expansion. 
+      This will override both the assumption that a variable is a batch or alias 
+      argument if it starts with a digit, and the restrictions on what 
+      characters are normally considered part of a variable name.</font></li>
+    </ul>
+    <p><font color="#0000CC">Commands</font></p>
+    <ul>
+      <li><font color="#0000CC">ALIAS: Lines beginning with a colon (&quot;:&quot;) are 
+      now ignored in ALIAS /R files; this allows you to add comments to the 
+      files.</font></li>
+      <li><font color="#0000CC">ATTRIB: No longer changes subdirectory 
+      attributes unless the new /D(irectory) switch is used.</font></li>
+      <li><font color="#0000CC">BEEP: Now uses the default duration of 2/18 
+      second if no duration is specified. Will no longer hang with the speaker 
+      on when a task switch occurs in a multitasking system (DESQView, VM/386, 
+      etc.).</font></li>
+      <li><font color="#0000CC">CD and CDD: Added support for Netware-like args 
+      &quot;...&quot; to change to the directory two levels up, &quot;....&quot; to go three levels 
+      up, etc.</font></li>
+      <li><font color="#0000CC">CLS: Now allows color specification if ANSI.SYS 
+      is installed, e.g. CLS BRIGHT WHITE ON BLUE.</font></li>
+      <li><font color="#0000CC">COLOR: This is a new command to set the screen 
+      colors. You must have an ANSI driver (ANSI.SYS or equivalent) loaded.</font></li>
+      <li><font color="#0000CC">COPY: There are a number of changes:<br>
+      <br>
+&nbsp;</font><ul>
+        <li><font color="#0000CC">Three switches have been added: /Q(uiet) to 
+        turn off the display of files copied, /R(eplace) to prompt before 
+        overwriting an existing file, and /U(pdate) to copy the file only if the 
+        target doesn't exist or is older than the source.</font></li>
+        <li><font color="#0000CC">/A and /B are now COMMAND.COM-compatible: When 
+        copying to a character device (e.g. PRN), /A or /B anywhere on the line 
+        will treat all files in the specified mode. When copying to a file, the 
+        /A and /B switches apply only to the immediately previous filespec 
+        (whether it is for source or target), and all subsequent ones on that 
+        line. (Note that if you are copying multiple files and mix /A and /B on 
+        the same line, all kinds of things can happen. None of them are &quot;wrong&quot; 
+        but they may not be what you want.)</font></li>
+        <li><font color="#0000CC">A problem with DOS 2 not recognizing source 
+        devices properly has been fixed.</font></li>
+      </ul>
+      <p>&nbsp;</li>
+      <li><font color="#0000CC">CTTY: Now uses the DOS get line call (INT 21h 
+      function 0Ah) to get input. This should permit crude line editing with the 
+      backspace and ESC keys. Even this level of line editing was not possible 
+      under the old CTTY.</font></li>
+      <li><font color="#0000CC">DEL: Two switches have been added. /Q(uiet) 
+      turns off the display of files deleted. /Y(es) skips the &quot;Are you sure&quot; 
+      prompt for commands like &quot;DEL *.*&quot; -- use it with caution!.</font></li>
+      <li><font color="#0000CC">DELAY: This is a new command. It waits specified 
+      number of seconds and then continues; it can be used to delay for an 
+      external event in a batch file.</font></li>
+      <li><font color="#0000CC">DESCRIBE: This command now lists only normal and 
+      read-only files and directories, and does not not list hidden / system 
+      files. <br>
+      Also the file description write is now to 2 - 20 times faster,&nbsp; 
+      depending on the size of the description file.</font></li>
+      <li><font color="#0000CC">DIR: There are many changes:</font><ul>
+        <li><font color="#0000CC">/4 is a new switch to give a 4-column 
+        directory display.</font></li>
+        <li><font color="#0000CC">/A(ttrib) display format has been changed to 
+        use standard 1-column format, with the attributes in place of the file 
+        description.</font></li>
+        <li><font color="#0000CC">/V(ertical) sort now creates newspaper-style 
+        columns when invoked along with /2, /4, or /W and /P(ause). Previously 
+        DIR /2VP (for example) would create two long columns, not divided by 
+        page.</font></li>
+        <li><font color="#0000CC">DIR now has an &quot;include list&quot; format, e.g. DIR 
+        *.WKS+*.DAT to display all specified files in one list. Previously 
+        without the &quot;+&quot; there would be two separate lists displayed.</font></li>
+        <li><font color="#0000CC">The directory scan now allocates memory in 
+        larger blocks.&nbsp; This should speed up DIR a bit on 8088 systems, and 
+        improve reliability on some networks which couldn't handle many small 
+        memory allocation requests properly.</font></li>
+        <li><font color="#0000CC">Internal memory allocation for DIR has been 
+        rewritten so that the limit on the number of files it can handle is now 
+        based only on available memory. The previous limit was just over 1000 
+        files.</font></li>
+        <li><font color="#0000CC">Subdirectory sizes are now excluded from the 
+        summary totals.&nbsp; This gets around a bug in Netware 386 which 
+        returns about 2 billion bytes as the size of a subdirectory!</font></li>
+        <li><font color="#0000CC">If the file time is exactly 00:00:00 no time 
+        is displayed, just like under COMMAND.COM.</font></li>
+      </ul>
+      </li>
+      <li><font color="#0000CC">DRAWBOX, DRAWHLINE, DRAWVLINE: These new 
+      commands draw boxes and lines on the display. Color control is included, 
+      and connectors are generated automatically when two lines intersect.</font></li>
+      <li><font color="#0000CC">ESET: When editing aliases with truncated names 
+      the whole alias is now displayed. For example if you have an alias WHER*EIS 
+      and say ESET WHER the editing line will now show the whole name, WHER*EIS, 
+      not just WHER like it did before.</font></li>
+      <li><font color="#0000CC">FOR has several changes:</font><ul>
+        <li><font color="#0000CC">A slight change in variable parsing was made 
+        to emulate COMMAND.COM, which only allows FOR variables to be 1 
+        character long. When these variables had other text added to them 4DOS 
+        couldn't find the variable name. Single-character FOR variables will now 
+        work properly with text appended to the variable name (e.g. FOR %%X IN 
+        (A B C) DO COPY %%Xfile D:).</font></li>
+        <li><font color="#0000CC">The DO in the FOR syntax is now optional.</font></li>
+        <li><font color="#0000CC">FOR variables may now be specified either as 
+        %%var or %var whether the command is issued at the prompt or from a 
+        batch file. Previously two percent signs were required in either place.</font></li>
+      </ul>
+      </li>
+      <li><font color="#0000CC">GOTO and GOSUB: These commands now take effect 
+      immediately when there are multiple commands on a single line.</font></li>
+      <li><font color="#0000CC">HISTORY: A new switch, /R(ead) allows you to 
+      read the history from a file (generally this will be one created via 
+      HISTORY &gt; filename.</font></li>
+      <li><font color="#0000CC">IF: There are new IF conditions which allow you 
+      to test for file attributes (including volume label), monitor and video 
+      card types, free memory of various types (DOS, EMS, XMS, extended), free 
+      disk space, file size, and existence of an alias. </font></li>
+      <li><font color="#0000CC">IFF: This is probably the single most powerful 
+      new feature of version 3.0. It is a block-structured command allowing IFF 
+      / THEN / ELSE / ELSEIFF structures in batch files and aliases. The syntax 
+      is straightforward:<br>
+&nbsp;</font><p><font color="#0000CC"><font face="Courier New">IFF condition 
+      then<br>
+      command(s)<br>
+      ELSE[IFF]<br>
+      command(s)<br>
+      ...<br>
+      ENDIFF<br>
+      <br>
+      </font>See the manual for further details.</font></p>
+      <p>&nbsp;</li>
+      <li><font color="#0000CC">INKEY: A new switch has been added, /Wn (wait), 
+      to wait up to n seconds for a reply. If the time elapses without any 
+      entry, the&nbsp; command returns without modifying the variable. /W0 
+      returns immediately whether or not a keystroke is pending, and thus can be 
+      used to test for a pending keystroke.</font></li>
+      <li><font color="#0000CC">INPUT: A /W has switch has been added as for 
+      INKEY. /W0 returns immediately if no keystroke is pending, and waits for 
+      the rest of the string if a keystroke is pending.</font></li>
+      <li><font color="#0000CC">KEYSTACK: A longstanding bug has been fixed. 
+      KEYSTACK was randomly trashing a word somewhere in memory. While this was 
+      rarely causing trouble, the fix may help with some KEYSTACK compatibility 
+      problems.</font></li>
+      <li><font color="#0000CC">LIST: There are several changes:</font><ul>
+        <li><font color="#0000CC">The function keys have been changed. F1 
+        (search) and F2 (search again) have been changed to F5 and F6 to avoid 
+        confusion with HELP. F4 (print file) has been changed to F7. There are 
+        two new switches. /S(TDIN) gets input from standard input instead of a 
+        file. This allows you to pipe the output from another command to LIST 
+        for full-screen viewing, e.g. DIR | LIST /S. /W(rap) wraps all lines at 
+        the right side of the screen, which is useful for viewing non-text 
+        files.</font></li>
+        <li><font color="#0000CC">EGA and VGA display speed has been increased.</font></li>
+        <li><font color="#0000CC">The Ctrl-Right Arrow and Ctrl-Left Arrow keys 
+        can now be used to shift left or right 40 columns at a time (the arrow 
+        keys alone shift 8 columns at a time as before).</font></li>
+      </ul>
+      </li>
+      <li><font color="#0000CC">LOG: This is a new command which allows you to 
+      log all commands entered at the prompt to a log file, with date and time 
+      stamps. You can enables or disable logging, write text to the log file, 
+      and set its name.</font></li>
+      <li><font color="#0000CC">MEMORY: The display includes several new items: 
+      the total and free XMS memory; whether the High Memory Area (HMA, a part 
+      of the XMS specification) is free; the total and free alias space, and the 
+      history list size.</font></li>
+      <li><font color="#0000CC">MOVE: There are two new switches: /Q(uiet) turns 
+      off the display of files moved; /R(eplace) prompts before overwriting an 
+      existing file.</font></li>
+      <li><font color="#0000CC">PATH: The path is now saved in upper case to 
+      work around a Novell Netware bug. The bug causes loss of the local path 
+      when mapping network drives, if the local path is stored in lower case.</font></li>
+      <li><font color="#0000CC">PROMPT: Now checks for a null current directory 
+      to prevent displaying garbage when the current drive is changed to a drive 
+      that isn't ready. Also there are some changes to the &quot;$&quot; strings you can 
+      use:</font><ul>
+        <li><font color="#0000CC">--&gt; $a (ampersand) has been removed to avoid a 
+        problem with ProComm, which uses $a as an invalid character in order to 
+        generate a space in the prompt. If you need an ampersand in your prompt, 
+        just use the &quot;&amp;&quot; character instead of $a.</font></li>
+        <li><font color="#0000CC">$xd: is a new function which displays the 
+        current directory for the specified drive. For example, to display the 
+        current directory on drive E:, include $xe: in the prompt string. </font>
+        </li>
+        <li><font color="#0000CC">Using $Xd: instead of $xd: will display the 
+        directory in upper case.</font></li>
+        <li><font color="#0000CC">$z is a new function which displays the 4DOS 
+        shell nesting level (0 for the primary shell, 99 for memory-resident 
+        copies of 4DOS).</font></li>
+      </ul>
+      </li>
+      <li><font color="#0000CC">PUSHD / POPD: The directory stack now discards 
+      the oldest entries when full and &quot;wraps around&quot; -- previously an error was 
+      generated if the directory stack overflowed. Also, PUSHD now supports 
+      Netware-like args as in CD and CDD: &quot;...&quot; to change to the directory two 
+      levels up, &quot;....&quot; to go three levels up, etc.</font></li>
+      <li><font color="#0000CC">REN: The new /Q(uiet) switch turns off the 
+      display of the files renamed.</font></li>
+      <li><font color="#0000CC">REM: Remarks are now parsed before alias and 
+      variable expansion, so you can have any number of unmatched quotes in the 
+      REM statement without an error message. Previously any unmatched quotes 
+      would cause a &quot;No closing quote&quot; error.</font></li>
+      <li><font color="#0000CC">SCRPUT: This new command to writes text directly 
+      to the screen, and includes color control and cursor positioning.</font></li>
+      <li><font color="#0000CC">SELECT: There are several changes: </font>
+      <ul>
+        <li><font color="#0000CC">Files can now be marked with the spacebar, and 
+        pressing the spacebar or &quot;+&quot; on a marked file will unmark it. The F1 key 
+        will call up 4DOS HELP from inside SELECT.</font></li>
+        <li><font color="#0000CC">SELECT now has an &quot;include list&quot; format, e.g. 
+        SELECT COPY (*.WKS+*.DAT) A: to display all specified files in one list.&nbsp; 
+        Previously without the &quot;+&quot; there would be two separate lists displayed.</font></li>
+        <li><font color="#0000CC">The SELECT header has been redesigned. The 
+        entire command you typed is now displayed on the second line, instead of 
+        just the filespec (if you have more than about 64 characters in the 
+        command line, the display will be truncated). The header now shows the 
+        length of the command line as well; this is especially useful when using 
+        SELECT with [] as it is easy to get the command line to long for 
+        external commands (126- character limit) or internal commands (255 
+        characters).</font></li>
+        <li><font color="#0000CC">It is now possible to use SELECT with only one 
+        parameter, e.g. SELECT (*.BAT) to choose a batch file to run.</font></li>
+        <li><font color="#0000CC">A bug which sometimes hung the system in 
+        SELECT if the command line got too long has been fixed.</font></li>
+      </ul>
+      </li>
+      <li><font color="#0000CC">SET has two new switches: /P(ause) pauses after 
+      each page of display; &quot;/R filename&quot; reads the environment variables from a 
+      file (similar to ALIAS /R).</font></li>
+      <li><font color="#0000CC">SETDOS: There are five new switches: </font>
+      <ul>
+        <li><font color="#0000CC">/A(NSI) forces 4DOS to assume ANSI.SYS is 
+        installed, even if it appears not to be. /A1 enables this, /A0 returns 
+        to automatic detection of ANSI.SYS and is the default.</font></li>
+        <li><font color="#0000CC">/I(nternal) is used to disable or re-enable a 
+        4DOS internal command. /I-cmd disables &quot;cmd&quot;, /I+cmd re-enables it.</font></li>
+        <li><font color="#0000CC">/L(ine input) forces 4DOS to read input one 
+        line at a time, instead of the usual one character at a time. This may 
+        be necessary for compatibility with some programs; see COMPAT.DOC for 
+        details. /L1 enables line input; /L0 disables it and is the default.</font></li>
+        <li><font color="#0000CC">/U(pper) forces all filenames to be displayed 
+        in upper case in all commands and error messages. /U1 forces upper case; 
+        /U0 is the default and enables lower case output.</font></li>
+        <li><font color="#0000CC">/W sets the DOS and 4DOS switch character. 
+        This new switch is described in README.DOC, but is not included in the 
+        manual. Be sure to read the cautionary note in README.DOC before using 
+        this switch!</font></li>
+      </ul>
+      </li>
+      <li><font color="#0000CC">SHIFT: This command has been modified to prevent 
+      execution except while in a batch file.</font></li>
+      <li><font color="#0000CC">SWAPPING: This is a new command which turns 
+      swapping ON or OFF.&nbsp; Turning swapping off locks the transient portion 
+      of 4DOS in high memory. This improves performance on systems running disk 
+      swapping, especially when running lots of little programs (e.g. during 
+      AUTOEXEC). Turning swapping off will not close the disk swap file or 
+      deallocate reserved EMS or XMS memory. Entering the command with no 
+      arguments displays the current swapping status. </font></li>
+      <li><font color="#0000CC">TIME: Now supports the COMMAND.COM &quot;AM / PM&quot; 
+      syntax as well as 24-hour time syntax. Also a bug was fixed which caused 
+      the hundredths of a second to be set to random values, some good, some not 
+      so good.</font></li>
+      <li><font color="#0000CC">UNSET: This new command removes environment 
+      variables (like UNALIAS does for aliases). To clear the entire 
+      environment, use &quot;UNSET *&quot; -- but do so with caution, it will remove PATH, 
+      COMSPEC, and other essential information!</font></li>
+    </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="75%" bgcolor="#FFFFFF" height="12">
+    <h5><font color="#0000CC">Version 3.01, 5/22/90</font></h5>
+    </td>
+  </tr>
+  <tr>
+    <td width="75%" bgcolor="#EEEEEE" height="6121">
+    <font color="#0000CC" face="Verdana" size="2">General 
+    Enhancements:</font><ul>
+      <li><font color="#0000CC">Disk swapping should no longer cause occasional 
+      system hangs if the Ctrl-C or Ctrl-Break key is hit while 4DOS is swapping 
+      itself in from disk (i.e. when exiting an application).</font></li>
+      <li><font color="#0000CC">CLS, LIST, and SELECT are no longer affected by 
+      a video BIOS bug in old IBM PCs.</font></li>
+    </ul>
+    <p><font color="#0000CC">Command Line Options:</font></p>
+    <ul>
+      <li><font color="#0000CC">Either / or - may be used as the switch 
+      character on the 4DOS command line (eg SHELL=4DOS -S:E instead of /S:E, 
+      etc.).</font></li>
+      <li><font color="#0000CC">Option files (@filename):<br>
+      <br>
+      The new @filename option allows you to put 4DOS options into a disk file 
+      instead of specifying them on the SHELL= line in CONFIG.SYS. This gets 
+      around a bug in DOS which limits the length of the SHELL= line.<br>
+      <br>
+      The file specified in the &quot;@filename&quot; option can have more than one line, 
+      and is limited to a total of 255 characters in the file, not 128. A file 
+      invoked with @filename can have another @filename inside it. Wherever 
+      @filename occurs, all options placed after it are ignored, so it must be 
+      the last item present.</font></li>
+      <li><font color="#0000CC">Alias size (/A):<br>
+      <br>
+      Aliases are now in a separate block, whose size in bytes is defined with 
+      the new SHELL and 4DSHELL parameter /A:nnnn. You will need to add this 
+      parameter, and probably reduce your environment size accordingly.<br>
+      <br>
+      The /A switch supports the same incremental syntax used with /E, i.e. /A+n. 
+      When used in 4DSHELL this allows you to guarantee a specified amount of 
+      free alias space in<br>
+      secondary shells.</font></li>
+      <li><font color="#0000CC">Environment size (/E):<br>
+      <br>
+      4DOS now defaults to a memory-resident master environment (formerly 
+      selected with the /M command line option). The /M switch is therefore 
+      obsolete, but will still be accepted. It is equivalent to /E.<br>
+      <br>
+      /E:nnnn may also be followed by S (/E:nnnnS) to swap the master copy of 
+      the environment; this is equivalent to the 4DOS version 2 /E option. This 
+      will save a small amount of low memory, but may not be compatible with all 
+      applications, and will not work with any application that needs to modify 
+      the master environment.<br>
+      <br>
+      /E:nnnn may be followed by U (/E:nnnnU) to load the master environment 
+      into a UMB in high DOS memory. This switch is subject to the same 
+      compatibility restrictions as /U (below).</font></li>
+      <li><font color="#0000CC">Reduced swap size:<br>
+      <br>
+      4DOS will normally reduce the space used to swap a secondary shell by 
+      retrieving static information from the primary shell's swap area. This 
+      reduces secondary shell swap size from 68K or more to about 20K. This 
+      feature will not work if the total of your alias, history, and environment 
+      sizes in the secondary shell is larger than that specified for the primary 
+      shell, or if the size of DOS memory has been reduced when the secondary 
+      shell is started (e.g. by a program like DESQView that reserves some 
+      memory at the top end of DOS memory). In such cases secondary shells will 
+      require<br>
+      a full-size swap area. The size of the swap area is dis played in the 
+      &quot;swapping initialized (nnK)&quot; message when 4DOS starts.</font></li>
+      <li><font color="#0000CC">Disk swapping (/S:D):<br>
+      <br>
+      The default location for disk swap files in secondary --&gt; shells is now in 
+      the root directory of the drive specified in the COMSPEC environment 
+      variable (the drive where 4DOS.COM is stored). If you want disk swap files 
+      to go to another drive or directory, use the &quot;/S:Bd:\path&quot; or &quot;/S:Dd:\path&quot; 
+      settings in the 4DSHELL environment variable (see page 25 of the manual). 
+      This should cut down on swap file clutter, yet leave you with complete 
+      control over swap file location. </font></li>
+      <li><font color="#0000CC">Load high (/U):<br>
+      <br>
+      The new /U switch requests that 4DOS load its resident portion into an 
+      Upper Memory Block (UMB) at the high end of DOS memory, reducing low 
+      memory usage to 256 bytes. <br>
+      <br>
+      The /U switch requires 386MAX, QRAM, or QEMM 5.0 or above. It may not be 
+      compatible with all other software products. See COMPAT.DOC for full 
+      details on compatibility.</font></li>
+    </ul>
+    <p><b><font color="#0000CC">Features and Usage</font></b></p>
+    <p><font color="#0000CC"><br>
+    General Features:</font></p>
+    <ul>
+      <li><font color="#0000CC">4DOS now has better support for non-English 
+      characters in filenames, environment variables, and aliases.</font></li>
+      <li><font color="#0000CC">Most of the changes in version 3.0 to allow 
+      shareable file access on networks have been removed, because some networks 
+      and a few popular programs (e.g. SHARE and FASTOPEN) couldn't handle them 
+      properly. SHARE/LAN support is now provided where possible, but is avoided 
+      in many places where it has been found to cause trouble. This change 
+      should eliminate most or all I/O redirection problems on networks.</font></li>
+      <li><font color="#0000CC">A number of changes have been made to increase 
+      4DOS's execution speed, and reduce its size slightly. Speed improvements 
+      are primarily in the areas of file access (particularly .BAT files)and 
+      environment variable and alias expansion. They may not be noticeable on 
+      higher-speed systems.</font></li>
+      <li><font color="#0000CC">4DOS can now correctly handle text files (.BAT 
+      or .BTM files, files to be LISTed or TYPEd, etc.) which have CR/LF, CR 
+      only, or LF only at the end of each line. Previously not all of these line 
+      terminators worked correctly.</font></li>
+    </ul>
+    <p><font color="#0000CC">Command Line Editing:</font></p>
+    <ul>
+      <li><font color="#0000CC">You can now enter characters that would normally 
+      be interpreted by the line editor as a command (e.g., Ctrl-D or Ctrl-K). 
+      To do so precede the character with an ASCII 255 (hold down the ALT key 
+      and enter 255 on the numeric keypad, then release the<br>
+      ALT key). To enter the ASCII 255 itself into the line, you must enter it 
+      twice.</font></li>
+      <li><font color="#0000CC">The cursor shape will now be changed properly 
+      when you hit the Ins key to switch editing modes. Previously if SETDOS 
+      specified a block cursor in the default mode it would not be changed to an 
+      underline when Ins was hit.</font></li>
+    </ul>
+    <p><font color="#0000CC">Aliases:</font></p>
+    <p>&nbsp;</p>
+    <ul>
+      <li><font color="#0000CC">Fixed a bug in alias expansion which occurred 
+      when a &quot;%&quot; was the<br>
+      last character on the line.</font></li>
+    </ul>
+    <p><font color="#0000CC">Batch Files:</font></p>
+    <ul>
+      <li><font color="#0000CC">See the commands section below for information 
+      on the new LOADBTM command, which allows any batch file to work as a BTM 
+      file some or all of the time.</font></li>
+      <li><font color="#0000CC">Batch files can now be nested 6 levels deep (the 
+      previous limit was 4).</font></li>
+    </ul>
+    <p><font color="#0000CC">I/O Redirection:</font></p>
+    <ul>
+      <li><font color="#0000CC">4DOS now checks for duplicate redirection (i.e., 
+      &quot;DIR &gt; 1.DAT &gt; 2.DAT&quot;). Previously duplicate redirection could hang the 
+      system.</font></li>
+      <li><font color="#0000CC">The system will no longer hang if a command 
+      specifies input redirection after output redirection.</font></li>
+    </ul>
+    <p><font color="#0000CC">Environment Variables:</font></p>
+    <ul>
+      <li><font color="#0000CC">In order to support subtraction in the new %@EVAL 
+      function (see below) 4DOS will no longer accept a &quot;-&quot; in the name of an 
+      environment variable to be expanded, unless the name is enclosed in 
+      brackets [].</font></li>
+      <li><font color="#0000CC">Three new internal variables have been added:</font><p>
+      <font color="#0000CC" face="Courier New">%_dow The day of the week as a 
+      string (Mon,Tue, etc.)<br>
+      %_rows The height of the screen<br>
+      %_columns The width of the screen</font></li>
+      <li><font color="#0000CC">A new function, %@eval, has been added. The 
+      syntax is:<br>
+      <br>
+&nbsp;%@eval[expression]<br>
+      <br>
+      Where &quot;expression&quot; is any arithmetic expression. The expression can 
+      include any of the following elements:  </font>
+    </ul>
+    <blockquote>
+      <blockquote>
+        <p><font color="#0000CC" face="Courier New">parentheses, which may be nested<br>
+    unary + or - operators<br>
+    multiplication and division operators: *, /, and %% (modulo)<br>
+    addition and subtraction operators: + and -<br>
+    environment variables, variable functions, and constants</font></p>
+      </blockquote>
+      <p><font color="#0000CC" face="Courier New">The elements of an expression are processed with the precedence shown above. 
+    For example, 5*3+2 is treated as (5*3)+2 rather than 5*(3+2). Examples of 
+    the use of %@eval are:<br>
+    <br>
+    Increment a variable: set a=%@eval[%a+1]<br>
+    <br>
+    Perform environment variable arithmetic:</font></p>
+      <p>&nbsp;</p>
+    <p><font face="Courier New" color="#0000CC">set c=%@eval[(%a*2) + (%@len[%b]-5)*7]</font></p>
+    <p><font face="Courier New" color="#0000CC">
+    <br>
+    Evaluate expressions in IF:<br>
+    <br>
+    if %@eval[%@substr[%_time,0,2] %% 12] == 0 echo 12:00!<br>
+    <br>
+    Set up a simple command line calculator:<br>
+    <br>
+    alias calc `echo The answer is: %@eval[%&amp;]`</font></p>
+    </blockquote>
+    <ul>
+      <li><font color="#0000CC"><font face="Courier New">Another new function, %@INDEX[string1,string2] returns
+    the position of string2 within string1 (string2 can be as small as a single 
+      character). The first position in string1 is numbered 0. If there is no match, the function returns -1.</font></font></li>
+      <li><font color="#0000CC">When expanding environment variables 4DOS will display a
+    &quot;Variable loop&quot; error if you nest variable functions too deep, or
+    define variables which refer back to themselves.</font></li>
+      </ul>
+    <p><font color="#0000CC">Technical Information:</font><ul>
+        <li><font color="#0000CC">4DOS.COM now closes file handles 5 - 29 when it starts. This
+    should solve problems with programs that pass open file handles
+    to a secondary shell.</font></li>
+        <li><font color="#0000CC">4DOS now generates two different INT 2F calls to allow TSRs to
+    tell when 4DOS is back at the prompt. These calls have AX =
+    D44Eh. The first occurs immediately before displaying the
+    prompt, with BX = 0; the second occurs after displaying the
+    prompt and immediately before accepting keyboard input, with BX =
+    1. Any routine intercepting these calls should preserve at least
+    the SI, DI, BP, SP, DS, ES, and SS registers.</font></li>
+        </ul>
+    <p><font color="#0000CC">Commands</font><ul>
+          <li><font color="#0000CC">ALIAS: ALIAS /R can now read multiple files, for example:<br>
+    <br>
+    alias /r alias1 alias2 alias3</font></li>
+          <li><font color="#0000CC">CD and CDD: Modified to allow forward slashes (/) in
+    path names.</font></li>
+          <li><font color="#0000CC">COPY: There are several changes:<br>
+    <br>
+    Problems with appending files in binary mode have been fixed.<br>
+    <br>
+          The way that COPY accesses files has been modified to minimize or eliminate problems with the MS-DOS APPEND command.<br>
+    <br>
+    The /R and /U switches are now ignored if the target is a
+    device.<br>
+    <br>
+    A ^Z (end of file mark) is now properly added to the target
+    file when it is in ASCII mode.</font></li>
+          <li><font color="#0000CC">DEL: Speed has been improved somewhat, especially on<br>
+    non-cached disks.</font></li>
+          <li><font color="#0000CC">DESCRIBE: 4DOS description files will no longer get mixed up<br>
+    between directories when running reasonably-behaved data pathing<br>
+    utilities like DPATH.</font></li>
+          <li><font color="#0000CC">DIR: Changed to display directory totals even when the &quot;File not<br>
+    found&quot; message is displayed. Changed the /F and /H switches so<br>
+    they don't conflict with each other.</font></li>
+          <li><font color="#0000CC">DRAWBOX: Styles 3 and 4 now work properly.</font></li>
+          <li><font color="#0000CC">FOR: Now aborts when a nested batch file CANCELs. Also, fixed a<br>
+    bug that was causing FOR variables to be ignored inside double<br>
+    quotes.</font></li>
+          <li><font color="#0000CC">GLOBAL: Added a /Q(uiet) switch to disable the display<br>
+    of &quot;GLOBAL: pathname&quot;.</font></li>
+          <li><font color="#0000CC">GOTO inside an IFF statement now cancels all IFF parsing,and assumes you've branched completely outside the IFF construct.
+    If you haven't, you will get &quot;Unknown command&quot; errors on subsequent ELSE, ELSEIFF, and ENDIFF statements (see examples below).
+    Also fixed a bug which prevented GOTO from branching to the end
+    of the file from within a GOSUB subroutine.<br>
+    <br>
+          <i>iff &quot;%1&quot;==&quot;Y&quot;<br>
+    :test<br>
+    copy file1 a:<br>
+    goto done &lt;--- Legal - branches outside the<br>
+    else IFF block<br>
+    copy file2 b:<br>
+    goto test &lt;--- Illegal - branches within IFF<br>
+    endiff block<br>
+    [do some other work here]<br>
+    :done</i></font></li>
+          <li><font color="#0000CC">HELP: There are several changes to HELP:<br>
+    <br>
+          There are many corrections and additions to the text, including a complete ASCII table.<br>
+    <br>
+          A new &quot;soft pagination&quot; capability enables many commands to
+    be displayed completely on one screen if using more than 25
+    lines, but paginates in a logical spot if using a 25-line
+    screen.<br>
+    <br>
+          HELP is now DESQView-aware and should run properly in a
+    less than full screen DESQView window.<br>
+    <br>
+          HELP now accepts up to 16 pages per topic and 32 crossreferences per topic, to allow 4MAKE users to install longer
+    topics inside the help file.<br>
+    <br>
+          Three new environment variables have been added to give you
+    better control over HELP:<br>
+    <br>
+    4HELP Specifies the full path and file name for the
+    help program to be loaded when F1 is pressed.
+    If not used, 4DOS will look for HELP.EXE in
+    the current directory and then on the PATH.
+    4HELP affects only F1, NOT the HELP command;
+    if you need to change how the HELP command
+    works as well, use an alias (see example
+    below).<br>
+    <br>
+    4HELPF Specifies the full path and file name for the
+    help text file. If not used, HELP will
+    search for DOS.HLP in the directory specified
+    in 4HELP (if any), then in the current directory and on the path.<br>
+    <br>
+    4HELPC Specifies control switches for HELP.EXE. At
+    present the only switch is /R, which disables
+    dynamic window resizing and forces all text
+    screens to be displayed at the full screen
+    height.<br>
+    <br>
+    For example, the following commands load HELP.EXE (which has
+    been renamed to 4DHELP.EXE) from directory D:\4DOS when F1 is
+    pressed, set up an alias to load this same program when the
+    HELP command is used, load the help text file from RAMdisk
+    drive I:\, and disable dynamic window resizing:<br>
+    <br>
+          <i>set 4help=d:\4dos\4dhelp.exe<br>
+    <br>
+    alias help d:\4dos\4dhelp.exe<br>
+    rem The above could also use &quot;alias help %[4help]&quot;<br>
+    set 4helpf=i:\dos.hlp<br>
+    set 4helpc=/r</i></font></li>
+          <li><font color="#0000CC">IF: There are several corrections to the description
+    in the manual. Some of these errors are present only in early
+    copies of the manual:<br>
+    <br>
+          The DOS memory size option is named DOSMEM, not DOSFREE.<br>
+    <br>
+          The tests which check a numeric value (EMS, DOSMEM, etc.)
+    use the same relational operators as the string tests, as
+    shown in the examples. For example, the syntax for EMS
+    should read:<br>
+    <br>
+    EMS relop n[K|M]<br>
+    <br>
+    where &quot;relop&quot; means EQ, GE, GT, etc. The &quot;relop&quot; is optional
+    for ERRORLEVEL, but required for all other numeric tests.<br>
+    <br>
+          The MONITOR and VIDEO tests also require a relational operator (==, EQ, or NE) as described above for numeric tests.<br>
+    <br>
+          The IF ATTRIB test has an additional option: &quot;N&quot; tests for
+    no attributes set (i.e. all of the other attributes are off). <br>
+    <br>
+          IF ATTRIB volname V will only work if the volume name refers to the root directory, and if there is a period after
+    the eighth character in volume names of nine characters or
+    more (e.g. to test for volume &quot;MYFILES0107&quot; in drive A:, use<br>
+    IF ATTRIB A:\MYFILES0.107 V ...).<br>
+    <br>
+    * Two tests are missing from some copies of the manual:<br>
+    <br>
+    IF DISKFREE relop n<br>
+    Tests the disk free space on the current drive. <br>
+    Cannot be used to test other drives.<br>
+    <br>
+    IF FILESIZE filename relop n<br>
+    Tests the size of the specified file.<br>
+    <br>
+    For example:<br>
+    <br>
+          <i>if diskfree gt 40M echo Plenty of room<br>
+    if filesize myfile.dat gt 360K echo It won't fit!</i></font></li>
+          <li><font color="#0000CC">IF: String comparisons will now be done numerically
+    if both values being compared begin with a digit. This allows
+    you to do true arithmetic tests. For example:<br>
+    <br>
+          <i>set aa=027<br>
+    set bb=20<br>
+    if %aa gt %bb ... This test will succeed because it
+    will compare the numeric values 27
+    and 20.<br>
+    if &quot;%aa&quot; gt &quot;%bb&quot; ... This test will fail because it will
+    compare the alphanumeric values
+    &quot;027&quot; and &quot;20&quot;, and the &quot;02&quot; will
+    appear 'smaller' (alphanumerically)
+    than &quot;20&quot;.</i></font></li>
+          <li><font color="#0000CC">IF: The ATTRIB test for a volume label has been changed to get
+    around a bug in DOS, and should now recognize labels correctly.</font></li>
+          <li><font color="#0000CC">IFF: ELSE and ENDIFF will now be recognized properly even if
+    they are not followed with whitespace.</font></li>
+          <li><font color="#0000CC">INPUT: Fixed a bug with very long variable names and/or input
+    text.</font></li>
+          <li><font color="#0000CC">KEYSTACK: There are two changes:<br>
+    <br>
+          KEYSTACK now supports a new symbol, !, to clear keystrokes
+    from the typeahead buffer, as well as anything in the
+    KEYSTACK buffer. For example:<br>
+    <br>
+          <i>keystack ! @59</i><br>
+    <br>
+    will clear the typeahead buffer before stacking the @59 (F1)<br>
+    keystroke.<br>
+    <br>
+          Some programs will not interpret stacked keystrokes properly unless they contain both the correct ASCII value and the
+    correct keyboard &quot;scan code&quot;. For example, if you attempt to
+    KEYSTACK an &quot;Enter&quot; using ASCII code 13 (carriage return) and
+    see a small musical note instead, the program you are running probably needs 
+          the scan code to interpret the keystroke properly.<br>
+    <br>
+    KEYSTACK now supports the entry of scan codes for standard
+    ASCII keys. To enter the scan code, multiply it by 256 and
+    add it to the ASCII code. Using the same example, the scan
+    code for the Enter key is 28, so the full value for this key
+    would be 28*256+13 = 7181. With some programs you will find
+    that KEYSTACK 7181 works when KEYSTACK 13 does not (or vice
+    versa). Experimentation is required to get the correct value. A full discussion and table of scan codes is beyond the
+    scope of this document, but is available in many basic PC
+    books.</font></li>
+          <li><font color="#0000CC">LIST: There are several changes:<br>
+    <br>
+          Changed the search and print keys to use letters instead of
+    function keys: F(ind), N(ext), and P(rint). This avoids
+    conflicts when you wish to redefine the function keys for
+    other purposes.<br>
+    <br>
+    Added a new switch, /H, to strip the high bit of each character, for displaying WordStar documents and other similar
+    files.</font></li>
+          <li><font color="#0000CC">LOADBTM: This is a new command. It will switch the
+    current batch file to and from .BTM mode. The syntax is:<br>
+    <br>
+    LOADBTM [ON | OFF]<br>
+    <br>
+    LOADBTM ON loads the entire file into memory and processes the
+    following lines as a .BTM file. LOADBTM OFF unloads the file
+    from memory and processes the following lines one by one like a
+    .BAT file. Both commands can be used regardless of the file's
+    original extension. <br>
+    <br>
+    LOADBTM will allow you to have a single batch file for both
+    COMMAND.COM and 4DOS, and select .BTM mode via a statement like:<br>
+    <br>
+          <i>if &quot;%@eval[2+2]&quot; == &quot;4&quot; loadbtm on</i><br>
+    <br>
+    Since the %@eval function does not exist under COMMAND.COM, the
+    IF test will fail there and the rest of the line will be ignored.
+    Under 4DOS where %@eval exists, the LOADBTM ON will be executed.<br>
+    <br>
+    LOADBTM will also allow you to load TSRs from a .BTM file by
+    switching it into .BAT mode, loading the TSRs, and switching back
+    to .BTM mode. However note that, depending on what the file
+    does, such mode switching can erase much of the speed gained by
+    using a .BTM file in the first place.</font></li>
+          <li><font color="#0000CC">LOG: Fixed a problem which caused a ^C to occasionally hang the
+    system when LOG was ON. Also changed LOG to automatically switch
+    LOG OFF if it couldn't open the log file.</font></li>
+          <li><font color="#0000CC">MOVE: Now returns an &quot;Access denied&quot; error 
+          if you try to move files to a character device. Also the way that MOVE accesses
+    files has been modified to minimize or eliminate problems with
+    the MS-DOS APPEND command.</font></li>
+          <li><font color="#0000CC">REM: Will now be echoed if ECHO is ON.</font></li>
+          <li><font color="#0000CC">SET: SET /R can now read multiple files, for example:<br>
+    <br>
+    set /r env1 env2 env3</font></li>
+          <li><font color="#0000CC">SETDOS: There are two changes:<br>
+    <br>
+    /S now resets the cursor shape immediately, so it can be used
+    to hide the cursor while in a batch file.<br>
+    <br>
+    /U1 should now properly return uppercase filenames in all
+    instances.</font></li>
+          </ul>
+          </td>
+  </tr>
+  <tr>
+    <td width="75%" bgcolor="#FFFFFF" height="12">
+    <h5><font color="#0000CC">&nbsp;Version 3.02, 9/7/90</font></h5>
+    </td>
+  </tr>
+  <tr>
+    <td width="75%" bgcolor="#EEEEEE" height="2222">
+    <font face="Verdana" size="2" color="#0000CC">General Enhancements:</font><ul>
+      <li><font color="#0000CC">When starting a shareware copy of 4DOS there is 
+      a 1/2-second, two-tone beep to identify this as a shareware copy, followed 
+      by a 3-second delay to allow reading of the shareware reminder message. 
+      Beginning with version 3.02, you can skip this<br>
+      delay by pressing any key.<br>
+&nbsp;</font></li>
+    </ul>
+    <p><font color="#0000CC">Features and Usage:</font></p>
+    <p>&nbsp;</p>
+    <ul>
+      <li><font color="#0000CC">Several changes have been made in 4DOS's file 
+      handling to eliminate problems with incomplete redirected output files on 
+      Novell networks.</font></li>
+      <li><font color="#0000CC">There is a small speedup in description 
+      processing for the file commands (COPY, DEL, MOVE, and REN).</font></li>
+      <li><font color="#0000CC">The &quot;?&quot; character in filename wildcards now 
+      matches zero or more characters like COMMAND.COM instead of one or more 
+      like previous versions of 4DOS. Thus &quot;DIR A?.&quot; will match both the files 
+      &quot;A&quot; and &quot;AA&quot;; before it would only match &quot;AA&quot;. This change adjusts 4DOS to 
+      work the way COMMAND.COM works instead of the way COMMAND.COM is 
+      documented to work.</font></li>
+      <li><font color="#0000CC">The F3 key now works like COMMAND.COM, so you 
+      can type part of a line and hit F3 to get the rest of the previous line.</font></li>
+    </ul>
+    <p><font color="#0000CC">Aliases</font></p>
+    <p>&nbsp;</p>
+    <ul>
+      <li><font color="#0000CC">The ECHO state is now inherited properly when 
+      batch files chain. In version 3.01 the echo state was inherited properly 
+      on a CALL, but not on a chain.</font></li>
+    </ul>
+    <p><font color="#0000CC">Environment Variables</font></p>
+    <ul>
+      <li><font color="#0000CC">One new internal variable has been added:<br>
+      <br>
+      %_ndp Returns:<br>
+      0 if no coprocessor is installed<br>
+      87 for an 8087<br>
+      287 for an 80287<br>
+      387 for an 80387<br>
+      <br>
+      There are a few minor errors or points which are not clear in the list of 
+      variable functions in some versions of the manual:<br>
+      <br>
+      When using variable functions they must be preceded (and optionally 
+      followed) by a percent sign, like all other environment variables. For 
+      example the &quot;ext&quot; function is referenced as %@ext[filename] or as %@ext[filename]%.<br>
+      <br>
+      The correct spelling for the string length function is &quot;%@len&quot;, not 
+      &quot;%@length&quot;.<br>
+      <br>
+      The %@line function is missing from early copies of the manual. This 
+      function returns the nth line of a file. The first line of the file is 
+      numbered 0.<br>
+      <br>
+      In the %@substr function, the first character is numbered 0, and the 
+      correct syntax is &quot;%@substr[string,start,length]&quot; not &quot;%@substr[string,start,end]&quot;.<br>
+&nbsp;</font></li>
+      <li><font color="#0000CC">Commas will now be ignored by %@eval. This will 
+      allow (for example) %@eval[10,000 * 3] to get the expected result. It will 
+      also allow %@eval to work on the output of a command like FREE, which 
+      contains embedded commas. Also %@eval will give a &quot;Divide by zero&quot; error 
+      message if you try to use 0 as a denominator for division or modulo 
+      calculation; previously it would give an error for the modulo, but return 
+      the numerator as the result for the division.</font></li>
+      <li><font color="#0000CC">%@substr can now handle quotes around the 
+      &quot;string&quot; argument. Double quotes and back quotes are equivalent in this 
+      context, and the quote characters DO count when determining which 
+      characters are placed in the substring. This capability allows you to get 
+      substrings of strings which contain commas. For example:<br>
+      <br>
+      %@substr[&quot;Mon, Aug 27, 1990&quot;, 1, 3]<br>
+      <br>
+      will return &quot;Mon&quot;. Previously the commas would be seen as argument 
+      separators, even if they were within a quoted string.</font></li>
+      <li><font color="#0000CC">&nbsp;3.02 [p 42] Two new variable functions 
+      have been added:<br>
+      <br>
+      %@upper[string] Returns the string converted to upper case.<br>
+      <br>
+      %@lower[string] Returns the string converted to lower case.<br>
+&nbsp;</font></li>
+      <li><font color="#0000CC">Both 4DOS.COM and the 4DOS EXE files now check 
+      for version mismatch (e.g. trying to use version 3.01a 4DOS.COM with a 
+      version 3.02 EXE file). Previously this testing was done by 4DOS.COM only, 
+      so a mismatch could go undetected in some circumstances.</font></li>
+      <li><font color="#0000CC">Divide by zero handling has been removed from 
+      4DOS, allowing standard DOS divide by zero handling to take place. The 
+      4DOS divide by zero handler was not providing any advantage and could 
+      occasionally fail to recover properly from division errors in<br>
+      application programs.</font></li>
+      <li><font color="#0000CC">Cursor positioning during command line editing 
+      will now take place in the current video page, rather than assuming page 
+      0. This should fix minor cursor positioning problems with programs that 
+      shell to DOS with the video adapter set somewhere other than page 0 (like 
+      Turbo Debugger).</font></li>
+      <li><font color="#0000CC">Handling of the Abort response to a critical 
+      error during a 4DOS command has been modified to solve some obscure 
+      problems with changing floppy disks after Aborting from a disk error.</font></li>
+    </ul>
+    <p><font color="#0000CC">Commands</font></p>
+    <ul>
+      <li><font color="#0000CC">DESCRIBE: Problems with missing &lt;cr&gt;s in 
+      description files have been solved. These problems did not cause any 
+      trouble within 4DOS, but 3rd-party description editors were confused by 
+      them.</font></li>
+      <li><font color="#0000CC">DIR: The time separator character will now be 
+      correct when the country code is set for outside the US. Previously it was 
+      hardcoded as a colon.</font></li>
+    </ul>
+    <blockquote>
+      <p><font color="#0000CC">Problems with occasional &quot;Out of memory&quot; errors 
+      and missing description displays in DIR have been resolved. However, if 
+      you fragment DOS memory (for example by loading two TSRs, then unloading 
+      the first but not the second) you can get &quot;Out of memory&quot; errors in larger 
+      directories as DIR tries to expand the memory it is using to store your 
+      filenames and descriptions. If this occurs, determine the cause of the 
+      fragmentation and resolve it. </font></p>
+    </blockquote>
+    <ul>
+      <li><font color="#0000CC">IF and IFF: The string tests will now work 
+      correctly even if the string contains an &quot;=&quot; sign (which is one of the IF 
+      test characters) or a &quot;/&quot; (which is the 4DOS switch character). Also the 
+      EMS test now returns the correct value (0) if there is no EMS driver 
+      present. In version 3.01 it would return a random value.</font></li>
+      <li><font color="#0000CC">LIST: The switches now work properly when 
+      specified without spaces, eg as /WS or /W/S. Previously they required a 
+      space (/W /S) to work correctly.</font></li>
+      <li><font color="#0000CC">SETDOS: The COMPOUND character (SETDOS /C) can 
+      now be any ASCII character except those specified in the manual as not 
+      allowed. Previously characters above ASCII 127 would not work as the 
+      separator.</font></li>
+    </ul>
+    <p><font color="#0000CC">Help System</font></p>
+    <ul>
+      <li><font color="#0000CC">The text has been modified in many places. An 
+      ANSI table has´been added along with the APPEND, FASTOPEN, GRAPHICS, KEYB, 
+      NLSFUNC, RECOVER, and REPLACE commands, and more information on HELP 
+      itself. The explanations of JOIN and SUBST are more detailed. All resident 
+      commands now show their DOS 3.3 resident size. Several minor typographical 
+      errors have been corrected.</font></li>
+      <li><font color="#0000CC">HELP has two switches which can be set 
+      temporarily on the command line (in version 3.02), or &quot;permanently&quot; -- 
+      until explicitly changed -- via the 4HELPC environment variable (see 
+      below). When switches are set on the command line they can be placed 
+      before or after the topic name (if any), so for example these two commands 
+      are equivalent:<br>
+      <br>
+      <i>help copy /r<br>
+      help /r copy<br>
+      <br>
+      </i>The switches are:</font></li>
+    </ul>
+    <blockquote>
+      <p><font color="#0000CC" face="Courier New">/BW: Forces HELP to display 
+      all text in monochrome colors, to support the use of monochrome monitors 
+      attached to color video boards (e.g. use of a composite monochrome monitor 
+      on a CGA system). If you have such a system you will probably want to set 
+      the /BW switch permanently as shown under 4HELPC below.</font></p>
+      <p><font color="#0000CC"><font face="Courier New">/R: Disables dynamic 
+      window resizing and forces all text screens to be displayed at the full 
+      screen height for those who prefer an unchanging display window size.</font></font></p>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td width="75%" bgcolor="#FFFFFF" height="19">
+    <h5>&nbsp;Version 3.03, 4/12/91</h5>
+    </td>
+  </tr>
+  <tr>
+    <td width="75%" bgcolor="#EEEEEE" height="19">
+    <font color="#0000CC" face="Verdana" size="2">General 
+    Enhancements:</font><ul>
+      <li><font color="#0000CC">4DOS will now preserve leading whitespace on the 
+      command tail for external commands, and pass no whitespace to the command 
+      if that's how the line is entered. For example, the command:<br>
+      <br>
+      <i>myprog/c</i><br>
+      <br>
+      will pass &quot;/c&quot; to MYPROG; previously an extra space (&quot; /c&quot;) was passed. 
+      This should fix occasional problems with programs that can't handle 
+      leading whitespace.</font></li>
+      <li><font color="#0000CC">There is one additional character which can be 
+      used after the 4DOS escape character (the escape character is normally 
+      ctrl-X): a &quot;t&quot; will mean the ASCII TAB character, so that:<br>
+      <br>
+      ^Xt<br>
+      <br>
+      will place a TAB on the line (^X means the single character ctrl-X, which 
+      appears on your screen as an upward-pointing arrow).</font></li>
+    </ul>
+    <p><font face="Verdana" color="#0000CC">Command Line Editing:</font></p>
+    <ul>
+      <li><font color="#0000CC">TAB has been added as a synonym for F9, and 
+      Shift-TAB as a synonym for F8. Also the F3 key will now put the cursor at 
+      the end of the command line after recalling the previous command.</font></li>
+    </ul>
+    <p><font face="Verdana" color="#0000CC">Batch Files:</font></p>
+    <ul>
+      <li><font color="#0000CC">Error levels generated by external programs in 
+      batch files are now returned properly to the calling program when the 
+      batch file is run from a transient 4DOS shell (4DOS /C). This should fix 
+      problems with BBS systems which return error levels through batch files 
+      (also see the EXIT command below for related information).</font></li>
+    </ul>
+    <p><font face="Verdana" color="#0000CC">Technical Information:</font></p>
+    <ul>
+      <li><font color="#0000CC">4DOS now does a disk reset following a ^C, or a 
+      MOVE, REN, or DEL command. This should fix problems occasional problems 
+      with disk caches and FASTOPEN.</font></li>
+    </ul>
+    <p><font face="Verdana" color="#0000CC">Commands:</font></p>
+    <ul>
+      <li><font color="#0000CC">BEEP, DELAY: Fixed a bug that could hang the 
+      system if a BEEP or DELAY was active at an even 1/2 hour.</font></li>
+      <li><font color="#0000CC">DATE: If you enter only two digits for the year 
+      and it is below 80, 4DOS will now assume it is in the 21st century; if it 
+      is 80 or above 4DOS will assume it is in the 20th century. You can specify 
+      the year you want explicitly by using a 4-digit value.&nbsp; The system of 
+      using 3-digit year values for dates in the 21st century, as documented in 
+      the printed manual, has been removed. Also DATE now supports the European 
+      date display format (Mon 1.Jan 1991).</font></li>
+      <li><font color="#0000CC">DIR: Fixed an occasional problem with doing a 
+      &quot;DIR .&quot; in the root directory.</font></li>
+      <li><font color="#0000CC">EXIT: EXIT now accepts a numeric argument (EXIT 
+      n). The argument value is returned to the previous program as the error 
+      level. If no argument is given the error level from the most recent 
+      external program will be returned; this is a change from previous versions 
+      of 4DOS, for compatibility with COMMAND.COM.</font></li>
+      <li><font color="#0000CC">FOR: An active FOR is now aborted properly when 
+      a nested batch file CANCELs, or when a batch file chains to another batch 
+      file.</font></li>
+      <li><font color="#0000CC">GOSUB: Previously if a GOSUB was used within an 
+      IFF statement and there was another IFF statement inside the called 
+      subroutine, the two IFF statements could interfere with each other. This 
+      has been corrected; two such IFF statements will now operate independently 
+      of each other. This also means that you can use a GOTO inside the 
+      subroutine without canceling the operation of the IFF statement in the 
+      calling part of the batch file (see next item on GOTO and IFF).</font></li>
+      <li><font color="#0000CC">PROMPT: When displaying the date in the prompt 
+      4DOS now supports the European format (e.g. Mon 1. Jan 1991).</font></li>
+      <li><font color="#0000CC">REN: Fixed a bug which would give an &quot;Invalid 
+      path&quot; error when the only thing specified for the target was &quot;.&quot;, as in:<br>
+      <br>
+      <i>ren \4dos\4dos.doc .</i></font></li>
+      <li><font color="#0000CC">TIME: An invalid entry will now display an error 
+      message and prompt again, instead of generating an incorrect time value.</font></li>
+      <li><font color="#0000CC">TYPE: TYPE will now stop on a ^Z (end of file 
+      mark), for compatibility with COMMAND.COM.</font></li>
+      <li><font color="#0000CC">Y: &quot;Y:&quot; at the start of the command line will 
+      now refer to drive Y rather than the Y command. This should allow network 
+      users with mapped &quot;Y&quot; drives to execute programs on those drives without 
+      having to disable the 4DOS Y command.</font></li>
+    </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="75%" bgcolor="#FFFFFF" height="26">
+    <p align="center" style="text-align: center"><a href="#0">
+    <font face="verdana">Top of Page</font></a> - <a href="../default.htm">
+    <font face="verdana">Home</font></a></p></td>
+  </tr>
+</tbody>
+</table>
+
+</body>
+
+</html>

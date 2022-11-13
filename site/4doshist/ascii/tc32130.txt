@@ -1,0 +1,111 @@
+
+                            JP Software Inc.
+                             P.O. Box 1470
+                      E. Arlington, MA 02474, USA
+
+                             (781) 646-3975
+                           fax (781) 646-0904
+                         Email sales@jpsoft.com
+                       Web http://www.jpsoft.com/
+
+                 Patch Documentation -- April 12, 1999
+
+This patch updates:
+
+   From:   TCMD/32 v2.02 rev A (build 129)
+   To:     TCMD/32 v2.02 rev B (build 130)
+
+This file explains how to install the patch.
+
+To use this patch, you must have:
+
+     * JP Software's PATCH.EXE program.  PATCH.EXE is distributed in a
+       separate file, JPPATCH.ZIP, and is available on our Internet FTP
+       site and in our CompuServe file area (see below for details).
+
+     * A copy of TCMD/32 2.02 rev A (build 129).
+
+       The simplest way to check your revision and build number is to
+       use use the VER /R command.
+
+To use this patch, copy the TC32130.RTP file to the directory where
+your TCMD/32 version 2.02 (129) files are stored.
+
+Make sure JP Software's PATCH.EXE is in the same directory, or in a
+directory on your PATH, then enter the command:
+
+      patch TC32130
+
+This patch modifies the following files:
+
+          TCMD32.EXE
+
+Any branding (name and serial number) information will be preserved in
+the modified files.  If any of the files are missing the patch program
+will continue without patching them.
+
+If you want to test TCMD/32 to make sure the patch worked, restart the
+program and then use the VER /R command.  After the patch is complete
+VER /R should report version 2.02B (130).
+
+
+The changes in this revision / build include:
+
+   Bugs Fixed
+   ----------
+
+     * INKEY and INPUT:  Fixed a problem with /W which would hang these
+       commands until the wait time ended.  [TC32 only, did not affect
+       other products]
+
+     * @EXEC:  Fixed a problem which prevented the command from being
+       executed at all if it was preceded with an @.
+
+     * @MAKEAGE:  Fixed a problem which caused 2-digit dates to be
+       interpreted based on 1980 rather than 2000 (e.g.  01-01-02 was
+       taken to mean 1-Jan-1982 rather than the correct value,
+       1-Jan-2000).
+
+     * Fixed a problem which occasionally caused spurious "internal
+       error" crashes.
+
+If this patch updates the help file (see the file list above) you can
+also review this change list in the "What's New" section of the online
+help, under "Bugs Fixed", after the patch is completed.
+
+
+For additional assistance or file downloads you can contact JP Software
+at the addresses below:
+
+   Internet      sales@jpsoft.com (sales / customer service), or
+                 support@jpsoft.com (technical support)
+
+   WWW           http://www.jpsoft.com/
+
+   FTP           ftp.jpsoft.com (product directories are below the main
+                 directory)
+
+   CompuServe    For sales / customer service send mail to user ID
+                 75020,244.  For our support forum use the Quick
+                 Reference Word JPSOFT (for off-line readers use GO
+                 CVTHREE, section 2), user ID 75300,1215.
+
+   Voice         (781) 646-3975, days Eastern US time
+   Fax           (781) 646-0904
+
+   US Mail       JP Software
+                 P.O. Box 1470
+                 E. Arlington, MA 02474, USA
+
+-----------
+
+Copyright 1999, JP Software Inc., All Rights Reserved.  Published by JP
+Software Inc., P.O. Box 1470, E. Arlington, MA 02474, U.S.A., phone
+781-646-3975, fax 781-646-0904.
+
+Take Command and 4DOS are registered trademarks of JP Software Inc.
+4DOS, 4OS2, and 4NT are JP Software Inc.'s trademarks for its family of
+character-mode command processors.  JP Software, jpsoft.com, and all JP
+Software designs and logos are also trademarks of JP Software Inc. Other
+product and company names are trademarks of their respective owners.
+

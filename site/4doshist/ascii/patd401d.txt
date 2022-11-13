@@ -1,0 +1,158 @@
+
+                                JP Software
+
+             4DOS 4.01 rev A / B ==> rev D Patch Documentation
+
+                             September 30, 1992
+
+
+Copyright 1988 - 1992, JP Software Inc., All Rights Reserved.  Published
+by JP Software Inc., P.O. Box 1470, E. Arlington, MA 02174 USA, (617)
+646-3975.
+
+
+This file explains how to install the 4DOS 4.01 rev D patches for 4DOS.COM.
+
+(NOTE:  These patches upgrade your copy of 4DOS 4.01 to the latest revision
+level.  If you have 4DOS version 4.0 or earlier, they will NOT work!  You
+must download a different file to upgrade from an earlier version of 4DOS
+to version 4.01.)
+
+To use these patches, you must have the PATCH.EXE program uploaded by JP
+Software.  This program is in a separate file, PATCH.ZIP or PATCH4D.ZIP
+(depending on your download source).  Instructions for running the PATCH
+program are in the file PATCH.DOC which is distributed with PATCH.EXE. 
+PATCH.EXE should be in the same directory as the files to be patched, or in
+a directory on your PATH.
+
+Before using these patches, you must determine the revision level of your
+copy of 4DOS.  To do so, use the 4DOS command:
+
+      VER /R
+   
+and find the "4DOS revision level" in the output.  In most cases you will
+probably find that you have revision B.
+
+There are two patch files:
+
+      PAT401B.RTP    Updates 4DOS 4.01 to revision level B from level A
+      PAT401D.RTP    Updates 4DOS 4.01 to revision level D from level B
+                     (there is no revision level C of 4DOS)
+
+You should apply the appropriate patch files, in sequence, for the revision
+of 4DOS you are currently running:
+
+      If you are running      Then apply patch files in this order
+      ------------------      ------------------------------------
+      revision A              PAT401B then PAT401D
+      revision B              PAT401D only
+      
+The patch files modify 4DOS.COM only.  Branding (name and serial number)
+information in your original 4DOS.COM file will be preserved in the
+modified file.
+
+To apply a patch, copy the corresponding .RTP file to the directory where 
+4DOS.COM is stored.  Then change to that directory, and enter the command:
+
+      patch <patch file name>
+
+where <patch file name> is PAT401B or PAT401D.  
+
+[Some of our documentation for PATCH.EXE shows a period between the program
+name (PATCH) and the patch file name, for example:
+
+      patch . pat401d
+      
+This period may be used but is not required.]
+
+If you have OS/2, you can run PATCH.EXE in either a DOS session or an an
+OS/2 session.
+
+
+The revision D patches fix the minor bugs and anomalies in 4DOS 4.01 which
+are listed below.  These problems are small and have not affected most
+users.
+
+  Revision B:
+
+     * Descriptions were not always properly deleted when a file was
+       deleted.
+
+     * If two copies of 4DOS were started on top of each other in an OS/2
+       DOS session (eg START 4DOS from a 4OS2 prompt, which runs one copy
+       of 4DOS to start the session and another as the application to run)
+       the session would not change the title properly when running an
+       external program.
+
+     * 4DOS did not terminate properly when it reached the end of a
+       redirected input file (eg 4DOS < cmdlist).
+
+
+  Revision D (changes affecting both 4DOS and 4OS2):
+
+     * Key reassignments did not work properly for a few non-ASCII keys.
+
+     * F3 left incorrect characters on the command line when the new
+       line was longer than the original line.
+
+     * Leading whitespace on the command line was causing problems with
+       command completion.
+
+     * Testing for too many nested environment variables did not always
+       work correctly.
+
+     * Netware volume labels longer than 12 characters were not handled
+       properly.
+
+     * COLORDIR would not work properly when there were more than 64
+       extensions in the COLORDIR setting.
+
+     * %@EVAL returned random values when given invalid expressions like
+       %@EVAL[+].  Also %@EVAL was not checking for invalid numbers like
+       "1.1.1".
+
+     * The ? command did not allow output redirection.
+
+     * COPY did not work properly when appending very large files.
+
+     * DEL /Q was not returning a proper internal error level.
+
+     * DIR could cause a crash if it ran out of memory during a DIR /S.
+
+     * FOR /A caused conflicts when the FOR invoked a DIR /A.  Also
+       conflicts could occur between FOR and SET in rare circumstances.
+
+
+  Revision D (changes affecting 4DOS only):
+
+     * Occasionally console output would begin to work incorrectly after
+       a Ctrl-C or Ctrl-Break.
+
+     * OS/2 2.0 DOS session titles could get "stuck" when a program was
+       aborted with Ctrl-C.
+
+     * Redirection to named pipes from an OS/2 DOS session was failing
+       due to an OS/2 bug.  It will now work properly.
+
+     * 4DOS was very rarely allowing disk swapping to a drive which did not
+       have enough space for the swap file.  
+
+     * CMDLINE was not removed from the environment when a command started
+       with an "@".
+
+     * The DVCleanup directive did not work from 4DOS.INI -- it only worked
+       when invoked from the command line (with //DVCleanup=Yes).
+
+     * The version number returned by INT 2F / AX=D44D was still set to
+       4.0 when it should have been 4.01.
+
+     * Disk free space was reported incorrectly on JOINed drives when
+       running DR-DOS.
+
+     * CTTY would not work properly without a SETDOS /L1.  CTTY now
+       automatically sets the SETDOS /L1 parameter.
+
+     * The DRAWxxxx commands did not work correctly when drawing a line
+       in the rightmost screen position.
+
+

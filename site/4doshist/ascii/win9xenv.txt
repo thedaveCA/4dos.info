@@ -1,0 +1,84 @@
+[ 4-Jun-99 ]
+
+Copyright 1999, JP Software Inc., All Rights Reserved.
+4DOS is a registered trademark of JP Software Inc.  Other product
+names are trademarks of their respective manufacturers.
+
+
+
+ Sharing Environment Variables under Windows 9x
+
+          Methods for setting an environment variable in one 4DOS
+          session under Windows 95/98, and retrieving it from another:
+
+          (1) Set the variable in the 4DOS master environment and
+              retrieve it with the %@MASTER function:
+
+                Batch file in session 1:
+
+                        ...
+                        set /m var=value
+                        ...
+
+                Batch file in session 2:
+
+                        ...
+                        set var=%@master[var]
+                        ...
+
+          (2) Save the variable name and value to a file and retrieve
+              it with SET /R:
+
+                Batch file in session 1:
+
+                      ...
+                      set var=value
+                      ...
+                      echo var=%var > d:\path\filename
+                      ...
+
+                Batch file in session 2:
+
+                      ...
+                      set /r d:\path\filename
+                      ...
+
+          (3) Set the variable in the Windows master environment with
+              Microsoft's WINSET so that it is automatically passed to
+              the second session.
+
+                Batch file in session 1:
+
+                      ...
+                      winset var=value
+                      ...
+
+                Batch file in session 2:
+
+                      ...
+                      [no special processing needed,
+                                just use the variable]
+                      ...
+
+          In most cases the simplest method is probably #1.  The only
+          requirement for this method is that you load 4DOS as the
+          primary shell in CONFIG.SYS (see the manual or help for
+          details on this and other 4DOS configuration issues under
+          Windows 95/98).
+
+          Notes for method #3:
+
+          - You must find and install Microsoft's WINSET.EXE program
+            from the Windows 95/98 CD.  For Win95 it's in the
+            "\admin\apptools\envvars\" directory, and for Win98 in the
+            "\tools\reskit\scrpting\" directory.  You may also be able
+            to find the program on the Internet.
+
+          - The second session cannot be started until after WINSET is
+            run in the first session.  Under the other methods you can
+            start the sessions in any sequence you like, and the only
+            timing requirement is the obvious one that you can't use
+            the variable in session 2 until after it has been set in
+            session 1.
+
+

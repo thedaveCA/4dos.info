@@ -1,0 +1,366 @@
+
+
+
+
+
+
+
+          N       NN    DDDDDDD        OOOOO        SSSSSS
+          NN      NN    DDDDDDDD      OOOOOOO      SSSSSSSS
+          NNN     NN    DD     DD    OO     OO    SS
+          NN N    NN    DD     DD    OO     OO    SS
+          NN  N   NN    DD     DD    OO     OO     SSSSSS
+          NN   N  NN    DD     DD    OO     OO      SSSSSS
+          NN    N NN    DD     DD    OO     OO           SS
+          NN     NNN    DD     DD    OO     OO           SS
+          NN      NN    DDDDDDDD      OOOOOOO     SSSSSSSS
+          NN      NN    DDDDDDD        OOOOO       SSSSSS
+
+
+    The software described in this document is furnished under a
+    license agreement and may be used only in accordance with the
+    terms of the agreement.
+
+    Copyright 1991 - 1993 Symantec Corporation.
+
+    All Rights Reserved.
+
+    NDOS is distributed under license from its developer, JP
+    Software, Inc., Arlington, MA, U.S.A. Portions copyright 1988-
+    1993 JP Software, Inc. All Rights Reserved.
+
+    No part of this publication may be copied without the express
+    written permission of Symantec Corporation, Peter Norton
+    Group, 10201 Torre Avenue, Cupertino, CA  95014.
+
+    Norton Utilities, Norton Disk Doctor, UnErase, and Symantec
+    are registered trademarks; and Calibrate, Disk Monitor, Disk
+    Tools, Diskreet, Image, Norton Backup, Norton Cache, SmartCan,
+    Speed Disk, WipeDisk, WipeFile, and Wipe Information are
+    trademarks of Symantec Corporation.
+
+    Windows is a trademark of Microsoft Corporation. Other product
+    names mentioned in this manual may be trademarks or registered
+    trademarks of their respective companies and are hereby
+    acknowledged.
+
+    For technical support see the Customer Service Plan in the
+    back of the "Norton Utilities User's Guide."
+
+                                                           CONTENTS
+___________________________________________________________________
+
+
+CONTENTS
+
+
+Introduction...............................................1
+     How to Use This Manual................................1
+
+Chapter 1, NDOS Features...................................5
+
+Chapter 2, Installation....................................9
+     Uninstalling NDOS....................................10
+
+Chapter 3, A Guided Tour of NDOS..........................12
+     Starting The Tour....................................12
+     Basic Commands.......................................13
+     Command Line Editing and History.....................17
+     More About Files.....................................20
+     Directory Navigation.................................25
+     Aliases..............................................26
+     Other Commands.......................................29
+     Batch Programming....................................31
+     Conclusion...........................................33
+
+Chapter 4, General Concepts...............................34
+     DOS and the Command Interpreter......................34
+          Primary and Secondary Shells....................35
+          AUTOEXEC.BAT, NSTART, and NEXIT.................36
+     Command Processing...................................36
+     Files and Paths......................................38
+     The Environment......................................41
+     Memory...............................................42
+     ASCII and Key Codes..................................43
+     The Keyboard.........................................44
+     Video................................................45
+     ANSI Drivers.........................................45
+
+Chapter 5, Using NDOS.....................................47
+     At the Command Line..................................47
+          Command Line Editing............................48
+          Command History and Recall......................49
+          Command History Window..........................51
+          Filename Completion.............................52
+          Multiple Commands...............................54
+          Automatic Directory Changes.....................54
+          Temporarily Disabling Aliases...................55
+          Command Line Help...............................55
+          Command Line Length Limits......................58
+     Input and Output.....................................58
+
+___________________________________________________________________
+NDOS Reference Manual                                            i
+
+                                                           CONTENTS
+___________________________________________________________________
+
+          Redirection.....................................59
+          Piping..........................................60
+          Keystack........................................61
+     File Processing......................................63
+          Extended Parent Directory Names.................64
+          Multiple Filenames..............................66
+          Include Lists...................................67
+          Executable Extensions...........................68
+     The Environment......................................70
+          NDOS Configuration Variables....................72
+          NDOS Internal Variables.........................73
+          NDOS Variable Functions.........................77
+     Advanced Features....................................83
+          Conditional Commands............................83
+          Command Grouping................................84
+          Escape Character................................86
+          Argument Quoting................................86
+     Aliases..............................................88
+     Batch Files..........................................91
+          .BAT Files and .BTM Files.......................91
+          Echoing.........................................91
+          Batch File Variables............................92
+          Batch File Commands.............................93
+          Interrupting a Batch File.......................95
+          Batch File Tips.................................95
+
+Chapter 6, Options and Tuning............................100
+     Configuration Files.................................100
+     Setting up CONFIG.SYS...............................101
+          Startup Options for Secondary Shells...........104
+     Using AUTOEXEC.BAT..................................105
+     Using NSTART and NEXIT..............................107
+     Using the NDOS.INI File.............................108
+          Types of Directives............................112
+          Initialization Directives......................114
+          Configuration Directives.......................117
+          Color Directives...............................121
+          Key Mapping Directives.........................121
+          Advanced Directives............................126
+
+Chapter 7, Using NDOS with Your Hardware and Software....130
+     Hardware............................................130
+          The CPU........................................130
+          Memory.........................................131
+          Video..........................................133
+          Hard Drives and Floppy Disks...................135
+          Laptop and Notebook Computers..................136
+          Critical Errors................................138
+     Software............................................139
+
+
+___________________________________________________________________
+NDOS Reference Manual                                           ii
+
+                                                           CONTENTS
+___________________________________________________________________
+
+          NDOS and DOS...................................140
+          Using NDOS with Task Switchers and Multitaskers140
+          Multitasking and Disk Swapping.................142
+          NDOS and Microsoft Windows.....................143
+          NDOS and DESQview..............................144
+          Using NDOS on a Network........................146
+     Solving Software Compatibility Problems.............147
+
+Chapter 8, Command Reference Guide.......................153
+     NDOS Commands.......................................153
+     How to Use the Command Descriptions.................155
+     ?...................................................158
+     ALIAS...............................................159
+     ATTRIB..............................................168
+     BEEP................................................170
+     BREAK...............................................172
+     CALL................................................173
+     CANCEL..............................................174
+     CD/CHDIR............................................175
+     CDD.................................................177
+     CHCP................................................179
+     CLS.................................................180
+     COLOR...............................................182
+     COPY................................................183
+     CTTY................................................188
+     DATE................................................189
+     DEL/ERASE...........................................190
+     DELAY...............................................192
+     DESCRIBE............................................193
+     DIR.................................................195
+     DIRS................................................202
+     DRAWBOX.............................................203
+     DRAWHLINE...........................................205
+     DRAWVLINE...........................................206
+     ECHO................................................207
+     ECHOS...............................................209
+     ENDLOCAL............................................210
+     ESET................................................211
+     EXCEPT..............................................212
+     EXIT................................................214
+     FOR.................................................215
+     FREE................................................219
+     GLOBAL..............................................220
+     GOSUB...............................................222
+     GOTO................................................224
+     HISTORY.............................................225
+     IF..................................................227
+     IFF.................................................233
+     INKEY...............................................235
+     INPUT...............................................238
+
+___________________________________________________________________
+NDOS Reference Manual                                         iii
+
+                                                           CONTENTS
+___________________________________________________________________
+
+     KEYSTACK............................................239
+     LH/LOADHIGH.........................................243
+     LIST................................................245
+     LOADBTM.............................................247
+     LOG.................................................249
+     MD/MKDIR............................................251
+     MEMORY..............................................252
+     MOVE................................................253
+     NDOSHELP............................................256
+     PATH................................................257
+     PAUSE...............................................259
+     POPD................................................260
+     PROMPT..............................................261
+     PUSHD...............................................264
+     QUIT................................................266
+     RD/RMDIR............................................267
+     REBOOT..............................................268
+     REM.................................................269
+     REN/RENAME..........................................270
+     RETURN..............................................272
+     SCREEN..............................................273
+     SCRPUT..............................................274
+     SELECT..............................................275
+     SET.................................................280
+     SETDOS..............................................283
+     SETLOCAL............................................287
+     SHIFT...............................................288
+     SWAPPING............................................289
+     TEE.................................................290
+     TEXT................................................291
+     TIME................................................292
+     TIMER...............................................293
+     TRUENAME............................................295
+     TYPE................................................296
+     UNALIAS.............................................297
+     UNSET...............................................298
+     VER.................................................299
+     VERIFY..............................................300
+     VOL.................................................301
+     VSCRPUT.............................................302
+     Y...................................................303
+
+Appendix A, NDOS Error Messages..........................304
+
+Appendix B, ASCII and Key Codes..........................315
+     ASCII...............................................315
+     Keys and Key Codes..................................316
+
+Appendix C, Technical Information........................322
+     Detecting NDOS......................................322
+
+___________________________________________________________________
+NDOS Reference Manual                                           iv
+
+
+___________________________________________________________________
+
+     Placing Keystrokes Into the Keystack................323
+     Writing Installable Commands........................324
+     Using DESCRIPT.ION..................................325
+     Interrupt 2E........................................326
+
+Glossary.................................................329
+
+Index....................................................340
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+___________________________________________________________________
+NDOS Reference Manual                                            v
+
+
+___________________________________________________________________
+
+
+
+
+
+INTRODUCTION
+
+
+Welcome, and thanks for purchasing The Norton Utilities!
+
+We started developing NDOS when we realized that our computers
+could be a lot more powerful and a lot more helpful than they were.
+Whether you are a computer novice or an experienced power user, we
+think that NDOS will help you get the most out of your IBM PC or
+compatible computer.
+
+Technically, NDOS is a command interpreter or "DOS Shell."  That
+means that it reacts to the commands you type at the C> prompt.
+We've designed NDOS so that you don't have to change your computing
+habits or unlearn anything to use it.  If you know how to display a
+directory, copy a file, or start an application program, you
+already know how to use NDOS.  NDOS understands all of the commands
+you know and adds to them.  Its purpose is to make DOS friendlier,
+easier to use, and much more powerful and versatile, without
+requiring you to use or learn a new program, a new set of commands,
+or a new style of work.
+
+Once you have NDOS installed, you can learn its new features at
+your own pace.  It has more than 40 new commands and scores of
+enhanced features, but you don't have to learn them all at once.
+Press the F1 key whenever you need help.  NDOS will soon become an
+essential part of your computer, and you'll wonder how you ever 

@@ -1,0 +1,299 @@
+
+                             4DOS v7.01
+
+                  README.TXT -- December 21, 2001
+
+                          JP Software Inc.
+                           P.O. Box 1470
+                    E. Arlington, MA 02474, USA
+
+                           (781) 646-3975
+                         fax (781) 646-0904
+                       Email sales@jpsoft.com
+                     Web http://www.jpsoft.com/
+
+
+Greetings, and thanks for trying 4DOS!
+
+This file contains a variety of information you should read before using
+4DOS, including:
+
+      Installation and "Branding" Notes
+      New Version Overview
+      Files Included with this Version
+      Technical Support and Downloads
+      Legal Notices
+
+Other information is available in other files:
+
+      For ...                                See ...
+      -----------------------------------    ------------
+      Product and upgrade information        PRODUCTS.TXT
+      Support plan information               SUPPORT.TXT
+      New customer order form                ORDFORM.TXT
+      Current customer upgrade order form    UPGFORM.TXT
+      Introduction and Installation Guide    4DOS.TXT
+         (introductory documentation)
+      Complete list of new features          Online help
+      Trial version information              TRIAL.TXT
+      License agreements                     LICPURCH.TXT
+                                         and LICTRIAL.TXT
+
+
+INSTALLATION AND "BRANDING" NOTES
+---------------------------------
+
+   Our products are generally distributed as EXE files which install
+   the product when run.  The EXE files are "ZIP-compatible" (i.e.,
+   they can also be read as .ZIP files).  Products distributed on CD
+   are shipped with individual files visible; the files are not
+   compressed into a single .EXE file.
+   
+   If you have unzipped a distribution .EXE file yourself, or are
+   using a CD copy, and prefer to perform the installation manually,
+   see the Introduction and Installation Guide in the file
+   4DOS.TXT.  The detailed instructions for 4DOS are in
+   Chapter 5.
+
+   If you unzip the distribution EXE file manually, you will find
+   many extra files which are used by the installer and are not part
+   of the product itself.  You can use a command similar to the
+   following in the product directory to get rid of the extra files
+   (this assumes you have not installed other non-JP Software files
+   in the product directory which this command would delete):
+
+     *del /qe file*.dat *.dll _msrstrt.exe unwise32.exe rebootnt.exe
+
+   If you are installing a purchased copy of 4DOS from a CD,
+   you can install most files manually by copying them from the
+   appropriate directory on the CD if you wish.  However the
+   BR4DOS.EXE file can only be extracted by using the installation
+   software.  To extract this file when performing a manual
+   installation, copy the files yourself, then run SETUP.EXE in the
+   CD's 4DOS directory and select the "Brand" option to
+   install your name and serial number and copy BR4DOS.EXE to
+   the hard disk.
+
+   If you are installing 4DOS under plain DOS (without Windows
+   9x/ME) you MUST use manual installation, as the automated
+   installer is Windows-based.  In this case if you have a purchased
+   copy on CD, you will not be able to extract the BR4DOS.EXE file
+   used to install your name and serial number in 4DOS.  If you
+   informed us of your need to be able to install and brand 4DOS
+   without Windows present, we should have shipped a floppy disk
+   containing BR4DOS.EXE along with your CD.  If we did not, please
+   contact us and we will ship or email a copy to you.
+
+   When installing 4DOS under Windows 95/98 we recommend that you do
+   NOT use a "long" directory name.  If you do, you will have to
+   know and use the equivalent short name to load 4DOS in
+   CONFIG.SYS; it's easier to simply use a short name from the
+   beginning.  (This is not a 4DOS limitation.  It's because DOS,
+   which starts before Windows 95/98 and loads the primary command
+   processor, cannot handle long file names.  While 4DOS fully
+   supports long file names, to make DOS work well it is best to
+   install 4DOS in a directory with a short name.)
+
+   You can view any of the documentation files on-line, or copy them to
+   your printer.  The Introduction and Installation Guide in 4DOS.TXT
+   has page breaks, headers and footers; all other documentation files
+   are unpaginated ASCII text.
+
+
+Branding
+
+   If you are installing a purchased copy of 4DOS, or have
+   purchased an upgrade, you may need to run the "branding" program
+   to install your name and serial number in 4DOS (trial version
+   users can skip this section).
+
+   In most cases the installation process will run the brand program
+   for you if it is available.  If it is not, or you need to perform
+   the branding manually for another reason, use the instructions
+   here.
+
+   The brand program is named BR4DOS.EXE.  In order to perform the
+   branding you will need the brand program, and the registered
+   name, serial number, and validation code which came with your
+   purchased copy of or upgrade to 4DOS.
+
+   (If you have lost your branding information it is replaceable,
+   but a small charge is required as recreating the branding codes
+   is a multi-step process.  To request replacement codes contact JP
+   Software at sales@jpsoft.com, or at one of the addresses listed
+   at the start of this file.  You can also check the support area
+   of our web site at http://www.jpsoft.com/ to see if an automated
+   system for retrieving brand codes has been implemented.)
+
+   To run BR4DOS.EXE use these simple steps:
+
+      (1) Start 4DOS or go to an existing 4DOS
+      prompt.
+
+      (2) Change to the directory where 4DOS.COM is installed, and
+      verify that both 4DOS.COM and BR4DOS.EXE are in that
+      directory.
+
+      (3) Locate the branding information which came with your copy
+      of 4DOS (information from other products won't work!).
+
+      (4) Enter the command BR4DOS and follow the instructions on
+      the screen.
+
+   If you attempt to brand your downloaded copy and receive the message
+   "contact JP Software or your dealer for an upgrade", then you are
+   not eligible to download and brand a trial version of this
+   release -- instead, you must purchase the upgrade.  See
+   UPGFORM.TXT for an order form.  Once you have ordered an upgrade
+   you can continue to use the trial version until your upgrade
+   arrives.
+
+   If you receive any other error, you have probably mistyped your name,
+   serial number, or validation code, or are attempting to use the brand
+   program or codes from one product with another product, which will
+   not work.
+
+
+NEW VERSION OVERVIEW
+--------------------
+
+Since the last major release we've added over 200 new features to
+4DOS!
+
+Here are a very small number of major highlights; for complete details,
+see the online help:
+
+   >> Most file processing commands now support a standard
+      "@filelist" parameter where the list of files to be processed
+      is specified in a text file.  In addition most commands which
+      work with files now support the /I switch to match
+      descriptions when selecting files to process.
+
+   >> The maximum batch file nesting depth has been increased from
+      10 to 16.
+
+   >> There are two new commands:
+
+           LFNFOR:  Enable or disable LFN file processing in FOR
+           (for compatibility with COMMAND.COM in Windows 98).
+
+           WHICH:  Show the command type and what command would
+           be executed (alias, internal command, external command,
+           executable extension, or batch file).
+
+   >> There are dozens of new features in 4DOS commands,
+      including:
+
+           CDD can now update specific drives or directories in
+           the extended directory search database, without deleting
+           and recreating the entire database.
+
+           GOSUB now supports passing parameters to subroutines.
+
+           TOUCH can now select files by attribute (including
+           setting the date and time for directories), and "transfer"
+           file dates / times from one file to another.
+
+           UNALIAS and UNSET now support wildcard deletions.
+
+   >> New and updated internal variables and functions include
+      _CMDPROC, _DOS, _DOWF, @ABS, @ALTNAME, @ASCII, @CHAR, @CLIPW,
+      @DECIMAL, @DIGITS, @DOWF, @ERRTEXT, @EVAL, @EXPAND, @FILEAGE,
+      @FILEDATE, @FILEREAD, @FILETIME, @INIREAD, @INIWRITE,
+      @MAKEDATE, @MAX, @MIN, and @SELECT.
+
+See the online help for 200+ additional new command line tools,
+switches, variables, functions and other enhancements!
+
+
+FILES INCLUDED
+--------------
+
+   The following files are included with 4DOS 7.01:
+
+         4DOS.COM          4DOS program file
+         4HELP.EXE         4DOS help program
+         4DOS.HLP          4DOS help text
+         4DOS.TXT          ASCII copy of the 4DOS, 4NT, and Take
+                              Command Introduction and
+                              Installation Guide
+         4DOS.ICO          Icon file for 4DOS under Windows
+         BATCOMP.EXE       Batch file compression utility
+         BR4DOS.EXE      # Brand program for registered users to
+                              install name and product serial
+                              number
+         CSCLEAN.BAT       Batch file used to restore CONFIG.SYS
+                              during uninstall
+         EXAMPLES.BTM      Sample batch file demonstrating the use
+                              of variable functions and internal
+                              variables
+         HELPCFG.EXE       Color configuration program for the help
+                              system
+         KSTACK.COM        Memory-resident program used by the
+                              KEYSTACK command
+         LICPURCH.TXT      License agreement for purchased software
+         LICTRIAL.TXT      License agreement for trial versions
+         OPTION.EXE        Program used by the OPTION command
+         ORDFORM.TXT       New customer order form
+         PRODUCTS.TXT      Product and ordering information
+         README.TXT        This file
+         SUPPORT.TXT       Technical support contacts, support
+                              plans, and paid support options
+         TRIAL.TXT         Explanation of trial version
+         UPGFORM.TXT       Upgrade order form
+
+      # Included with purchased copies only.
+
+
+TECHNICAL SUPPORT AND DOWNLOADS
+-------------------------------
+
+   Complete details on technical support, including support plans
+   and terms and conditions, are in the SUPPORT.TXT file, and on our
+   web site.
+
+   Standard, no-charge support is available electronically through
+   our online support forum, where our support personnel can read
+   and respond to your messages, and other users can respond as
+   well.  The forum is accessible via several methods; for complete
+   details and access links see the support area of our web site at
+   http://www.jpsoft.com/.
+
+   We also offer paid support options which include automatic
+   upgrades, an email newsletter, and support by private email or
+   telephone.  A premium plan with a guaranteed response time is
+   also available.
+
+   If the support forum is not accessible to you, or you need to
+   include confidential information in your support request, you can
+   also contact us via email at support@jpsoft.com.
+
+   Technical support messages should always be sent as standard
+   ASCII text.  Please do not transmit attached files, binary files,
+   screen images, or any file over 10K bytes in size to any of our
+   electronic technical support addresses unless asked to do so by
+   our support staff.
+
+   To download JP Software files, including maintenance updates and
+   trial versions, visit:
+
+      >> Our web site at http://www.jpsoft.com/
+
+      >> Our ftp site at ftp.jpsoft.com
+
+
+LEGAL STUFF
+-----------
+
+Copyright 2001, JP Software Inc., All Rights Reserved.  Published by JP
+Software Inc., P.O. Box 328, Chestertown, MD  21620, U.S.A., phone
+410-810-8818, fax 410-810-0026.
+
+Take Command and 4DOS are registered trademarks of JP Software Inc.
+4DOS, 4OS2, and 4NT are JP Software Inc.'s trademarks for its family of
+character-mode command processors.  JP Software, jpsoft.com, and all JP
+Software designs and logos are also trademarks of JP Software Inc. Other
+product and company names are trademarks of their respective owners.
+
+All prices and terms subject to change without notice.
+

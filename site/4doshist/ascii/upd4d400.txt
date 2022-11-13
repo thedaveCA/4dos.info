@@ -1,0 +1,753 @@
+
+
+                              4DOS Update Documentation
+
+                           Version 4.0 -- November 18, 1991
+
+        Copyright 1988 - 1991, JP Software Inc., All Rights Reserved.  Pub-
+        lished by JP Software Inc., P.O. Box 1470, E. Arlington, MA 02174 USA,
+        (617) 646-3975.
+
+
+        Version 4.0 is a major new release and many parts of 4DOS have
+        changed.  The list below summarizes these changes for version 3.0
+        through 3.03 users; users who are new to 4DOS with version 4.0 can
+        skip this information.
+
+        This file is a summary list only, it doesn't explain how to use new
+        features and enhancements.  For more details on items which are relat-
+        ed to a specific command, see that command's entry in the command
+        reference section of the manual.  For other items, look up the subject
+        the item discusses in the manuals's table of contents or index to find
+        more information.
+
+        Some of the descriptions below may be more detailed than you need; if
+        you aren't using the feature described, feel free to skip through to
+        the next item!
+
+        Items in this file marked with "**" are changes that occurred after
+        the manual went to press.  These items are more fully documented in
+        the MANMOD.DOC file distributed with registered copies of 4DOS and in
+        the ASCII (on-disk) manual, but are not documented in the printed
+        manual.
+
+
+        Installation and Configuration
+        ------------------------------
+
+           4DOS is now a single file, 4DOS.COM.  The old structure of separate
+           4DOS.COM and 4DOS88.EXE / 4DOS286.EXE files has been eliminated.
+
+           There is a wide variety of new startup options for 4DOS, ranging
+           from the simple to the highly technical.  Most of the startup
+           switches that used to go on the SHELL= line in CONFIG.SYS or in the
+           4DSHELL environment variable have been eliminated, and 4DOS config-
+           uration is now controlled through the new 4DOS.INI file, for both
+           primary and secondary shells.  Those switches which still work for
+           DOS compatibility reasons (such as /E: for environment size) can
+           also be set through 4DOS.INI.
+
+           If you install 4DOS manually or have a complex configuration, you
+           should read about 4DOS.INI in the manual before modifying your
+           SHELL= line to load version 4.0!  See Chapter 6 for more details. 
+
+
+        4DOS 4.0  [11-18-91]         UPDATE40.DOC                       page 1
+
+
+           The following summary lists version 3 startup switches and the
+           corresponding 4DOS.INI directive for version 4.0.  Switches marked
+           with a "*" are still available in version 4.0, in order to maintain
+           compatibility with DOS.
+
+              Ver. 3 Switch     Function                4DOS.INI Directive
+              -------------     -------------------     ------------------
+                 /A:nnnn        Set alias list size     Alias = nnnn
+                 /C*            Execute one command     none
+                 /E:nnnn*       Set environment size    Environment = nnnn
+                 /E:nnnnU       Load environment high   UMBEnvironment = Yes
+                 /H:nnnn        Set history list size   History = nnnn
+                 /L:path        Set EXE file location   none, not needed
+                 /P*            Load permanently        none
+                 /R             Disable reduced swap    Reduce = No
+                 /S:type        Set swap type           Swapping = swap type
+                 /U             Load 4DOS high          UMBLoad = Yes
+                 /V             (Used with Windows)     none, automatic
+
+           The KEYSTACK.SYS device driver is no longer used.  It has been
+           replaced by KSTACK.COM, a TSR (memory-resident program), normally
+           loaded from AUTOEXEC.BAT (or with INSTALL= in CONFIG.SYS).
+
+           The /P switch is now set automatically when 4DOS is loaded as the
+           true primary shell via a SHELL= statement in CONFIG.SYS.
+
+           4DOS now supports the COMMAND.COM syntax for specifying a COMSPEC
+           directory in the SHELL statement.  See "Setting up CONFIG.SYS". 
+           However (see next item) ...
+
+           Under MS-DOS and PC-DOS you probably won't need to set the COMSPEC
+           directory on the SHELL= line or in AUTOEXEC.  4DOS sets it automat-
+           ically in most cases, provided that you specify the full path for
+           4DOS.COM in the name you use on the SHELL= line in CONFIG.SYS.  If
+           you use DR-DOS automatic determination of the COMSPEC directory
+           will NOT work, so you will have to set the directory yourself on
+           the SHELL= line.  (Thanks to Hans Salvisberg, author of BOOT.SYS,
+           for the technical information needed to implement the automatic
+           COMSPEC directory feature!).  See "Setting up CONFIG.SYS".
+
+           4DOS can now load its resident portion and / or the master environ-
+           ment into DOS 5 UMBs.  DOS 5 UMBs are used automatically if they
+           are available and if UMB access is requested with the UMBLoad or
+           UMBEnvironment directive in 4DOS.INI.
+
+           Swapping is now controlled by the Swapping directive in 4DOS.INI. 
+           You can use this directive to set up any sequence of swapping at-
+           tempts you like (for example, you can tell 4DOS to try EMS, then
+           your RAM disk, then XMS, then the hard disk).  If no Swapping di-
+           rective is used the default is to try EMS, then XMS, then the root
+           directory of the boot drive if it is drive C: or higher.  4DOS will
+
+
+
+
+        4DOS 4.0  [11-18-91]         UPDATE40.DOC                       page 2
+
+
+           no longer attempt to swap to drive A: or B: by default (though you
+           can tell it to if you want to).  If all of these methods fail, 4DOS
+           will load resident.
+
+           Most SETDOS settings can be initialized in the 4DOS.INI file. 
+           SETDOS settings are now inherited automatically in secondary
+           shells, so you no longer need to put a SETDOS command into the
+           4START file to get the right settings in secondary shells.
+
+           The LOG state and log file name are now inherited by secondary
+           shells, and may be set at boot time using the LogName directive in
+           4DOS.INI.
+
+           For BBS operators, the /F startup switch (or the CritFail directive
+           in 4DOS.INI) generates an automatic "fail" response to all critical
+           errors.
+
+
+        General Features
+        ----------------
+
+           The PATH search is now faster by 50 - 100% depending on where the
+           file is found in the path.
+
+           Secondary shells now require only about 1.7K of resident space
+           (down from about 2.8K in version 3.03).  The primary shell require-
+           ment is still 3K or less under most circumstances.
+
+           Description file processing has been sped up substantially, and
+           should generate much less network traffic than before.
+
+           Directory displays in DIR and SELECT can now be colorized based on
+           file extension or attributes.  See "COLORDIR".
+
+           "Include lists" which allow you to specify multiple files with a
+           single path were only available for the DIR and SELECT commands in
+           4DOS 3.03.  In version 4.0 they have been extended to all 4DOS file
+           processing commands, and the separator character has been changed
+           to a semicolon.  For example, the command:
+
+                 copy d:\data\*.dat;*.txt a:
+
+           will copy the .DAT and .TXT files from D:\DATA to drive A:.  See
+           "Include Lists".
+
+           Wildcards have been enhanced so that you can specify lists or rang-
+           es of characters to include or exclude.  For example [abf-h]*.*
+           means all files whose names begin with a, b, f, g, or h.  See
+           "Wildcards".
+
+
+
+
+
+
+        4DOS 4.0  [11-18-91]         UPDATE40.DOC                       page 3
+
+
+           4DOS now performs variable expansion on the prompt string, so any
+           environment variable, internal variable, or variable function can
+           be put into the prompt and displayed.
+
+           When 4DOS exits from a shell it looks for and executes a 4EXIT.BAT
+           or 4EXIT.BTM file (like the 4START file).  This can be used to save
+           history or perform other actions.
+
+           All upper case conversions (SETDOS /C1, DIR /C, @UPPER, etc.) now
+           support international characters.
+
+           Executable extensions will now support internal commands, and they
+           no longer require the full path name of an executable file.  Also,
+           executable extensions now support wildcards, including the new
+           extended wildcards.  For example, to set the program for all exten-
+           sions starting with WK to 123:
+
+                 set .wk?=d:\123\123.com
+
+           A "." can now be used in the PATH to delay the search of the cur-
+           rent directory.
+
+           Command grouping (originally an OS/2 feature) has been added to
+           4DOS.  This allows you to use parentheses to group commands logi-
+           cally.  This is a powerful feature, especially when used with the
+           "prefix" commands like EXCEPT, FOR, GLOBAL, and SELECT.
+
+           4DOS now supports Microsoft's command processor based message pro-
+           cessing scheme for DOS external commands.  If you enter a DOS ex-
+           ternal command with a bad argument (eg DEBUG XYZZY) in DOS 4 or
+           above you will now get a real error message (eg "File not found")
+           instead of a numerical message ("Extended error 2").  This feature
+           adds about 200 bytes to the resident size of 4DOS, and can be dis-
+           abled with the "MessageServer = No" directive in 4DOS.INI.
+
+
+        At the Command Line
+        -------------------
+
+           The command history can now be viewed and executed from a popup
+           window as well as at the command line.
+
+           "Automatic directory changes" let you change to a directory by
+           typing its name followed by a backslash.
+
+
+        4DOS HELP System
+        ----------------
+
+           The help system has been extensively revised.  It now supports line
+           by line scrolling, and scrolling and paging with the mouse follow
+
+
+
+
+        4DOS 4.0  [11-18-91]         UPDATE40.DOC                       page 4
+
+
+           industry standard conventions.  The mouse can be used more easily
+           to perform most help navigation functions.
+
+           The help text has been updated and expanded to cover all new 4DOS
+           features as well as MS-DOS 5 external commands.
+
+           Help is now context sensitive.  If you press F1 from the command
+           line, 4DOS will try to find help for the first command on the line. 
+           If there is no help for that command, you will be put into the main
+           HELP menu.
+
+           The help program has been renamed 4HELP.EXE to avoid conflicts with
+           other HELP.EXE programs.  This program is run when F1 is pressed at
+           the command line or when the HELP command is executed.  The help
+           text file is now 4DOS.HLP (for those with a utility disk, the ASCII
+           text file is 4DOS.TXT).  The 4HELP, 4HELPF, and 4HELPC environment
+           variables have been removed and replaced by the 4DOS.INI directives
+           HelpPath and HelpOptions.
+
+           The new HELP system is not compatible with the version 3.0 HELP
+           system; if you have modified the version 3.0 HELP text you must
+           purchase a version 4.0 Utility Disk and recompile your help text to
+           use it with 4DOS 4.0 HELP.
+
+           HELPCFG now supports a /M switch to force it to run in monochrome
+           mode and adjust the monochrome HELP colors, even on color systems. 
+           Also the HELPCFG exit keys have been changed to conform to general
+           usage standards.
+
+
+        I/O Redirection
+        ---------------
+
+           Added a new environment variable for directing where to create the
+           temporary pipe files in 4DOS.  4DOS will first look for the envi-
+           ronment variable TEMP4DOS; if it doesn't find it it will look for
+           the (DOS 5 standard) TEMP variable; if it doesn't find that pipes
+           will be created in the root directory of the boot disk.
+
+           Pipe names are now unique for each shell, to avoid conflicts when
+           running pipes in different partitions under a multitasker.
+
+
+        Environment Variables, Internal Variables, and Variable Functions
+        -----------------------------------------------------------------
+
+        There are many new environment variables, internal variables, and
+        variable functions -- far too many to list here!  This section just
+        mentions a few highlights; see the manual for full details.
+
+           New environment variables used by 4DOS include CDPATH, COLORDIR,
+           and TEMP4DOS.  The old TMP has been changed to TEMP for DOS 5 com-
+
+
+
+        4DOS 4.0  [11-18-91]         UPDATE40.DOC                       page 5
+
+
+           patibility.  The old 4DSHELL variable has been eliminated, its
+           functions are now provided by 4DOS.INI.  One new variable (_CDPATH,
+           as opposed to CDPATH) is described in MANMOD.DOC, but is not in the
+           printed manual.
+
+           New internal variables let you access a broad range of information
+           on system status and configuration.  Some didn't make it into the
+           manual:  see the beginning of this file for information on _BOOT,
+           _LASTDISK, _MOUSE, and _TRANSIENT.
+
+           In addition a very large number of variable functions have been
+           added providing a wide array of new functions -- everything from
+           available memory and disk space to menuing.  A few of these func-
+           tions didn't make it into the printed manual, so see the ASCII
+           manual or MANMOD.DOC for information on @ALIAS, @DEVICE, @LINES,
+           @MAKEDATE, @MAKETIME, @READSCR, and @SELECT, and some changes to
+           @LINE, @SUBSTR, and @WORD.
+
+           Environment variable expansion will now handle nested variables in
+           the form %[%var] (or even %[%[%var]]!).
+
+           There are some enhancements to specific variables and functions:
+
+              _DATE and _TIME:  Return a leading zero if the first number in
+              the date or time string is less than 10.
+
+              @EVAL:  Now supports decimal places!  Numbers can have up to 16
+              digits to the left of the decimal point and 8 to the right. 
+              Also %@EVAL now accepts commas in numbers.
+
+              @LINE:  Now returns "**EOF**" at the end of the file.  Also
+              @LINE can now get its input from STDIN if you specify "con" as
+              the filename**.
+
+              @SUBSTR:  The last argument (the length of the string) is now
+              optional; it will default to the remainder of the string**.
+
+              @WORD:  Now allows you to return words from the end of the
+              string**.  For example %@word[-0,now is the time] returns
+              "time", %@word[-2,now is the time] returns "is".
+
+
+        Aliases
+        -------
+
+           The command line can now grow to up to 512 bytes while an alias is
+           being executed.  The alias definition itself is still limited to
+           255 bytes.
+
+           "Key aliases" allow you to assign aliases to function keys and most
+           Alt and Ctrl keys.  See "Keystroke aliases".
+
+
+
+
+        4DOS 4.0  [11-18-91]         UPDATE40.DOC                       page 6
+
+
+           QUIT can now be used in aliases.
+
+
+        Batch Files
+        -----------
+
+           GOSUB now saves the IFF state, so you can use IFF within subrou-
+           tines without interfering with an IFF in the calling section of the
+           batch file.
+
+           .BAT files have been sped up significantly, especially when execut-
+           ing internal commands (this speed increase applies only to .BAT
+           files, not to .BTM files which are already much faster).
+
+
+        Command Changes
+        ---------------
+
+        This section describes changes to 4DOS commands and new commands, but
+        only briefly.  It is intended to alert you to areas where your use of
+        4DOS commands may need to be changed, not to provide a comprehensive
+        description.  See the manual for full details.
+
+           ATTRIB:  Added two new switches:  /Q (quiet) and /S (process cur-
+           rent directory and its subdirectories).
+
+           CANCEL:  Now accepts an optional argument to set the ERRORLEVEL.
+
+           CD and CDD:  These commands now use the CDPATH environment variable
+           to find the subdirectory to change to.  This allows changing to a
+           subdirectory without typing its full path name.  Also, CD and CDD
+           now save the previous directory, and allow you to switch back to it
+           with "CD -" or "CDD -".
+
+           CLS and COLOR:  Can now set the screen border color, and will set
+           colors with or without ANSI loaded.  If ANSI is not loaded, the
+           colors will not be "sticky" -- you may lose them when you run an
+           application.
+
+           COPY:  New switches include /C (copy changed files only), /H (copy
+           hidden files), /N (do nothing, just test results of copy), and /S
+           (copy files from the current directory and its subdirectories).  /Q
+           (quiet) now turns off the display of the number of files copied. 
+           If you copy a file and the target file has a description but the
+           source doesn't, 4DOS will now preserve the target description; this
+           allows you to update files without losing the descriptions.  A full
+           destination disk during a COPY will now give an informative mes-
+           sage, and stop the copy.  COPY now preserves Hidden and System
+           attributes (but not Read Only) when creating the target file.
+
+           DEL:  New switches include /N (do nothing, just test results of
+           DEL), /S (delete files from the current directory and its subdirec-
+
+
+
+        4DOS 4.0  [11-18-91]         UPDATE40.DOC                       page 7
+
+
+           tories), /X (remove empty subdirectories), and /Z (allow deletion
+           of hidden, system, and read-only files).  If you have a large num-
+           ber of files to delete you can increase deletion speed dramatically
+           if you use the /Q switch and do NOT use 4DOS's extended wildcards
+           in the file name.
+
+           DIR:  (See additional section below on switch changes).  Directory
+           displays can now be colorized with COLORDIR.  Free space displays
+           will be correct even on JOINed, SUBSTed, or ASSIGNed drives in DOS
+           3.1 and above.  File description handling has been sped up signifi-
+           cantly.  Directory names are displayed in square brackets [] for
+           DOS 5 compatibility.  If an argument begins with "\\", 4DOS will
+           assume it's a network reference and will not try to get the volume
+           label or disk space for that drive, to avoid network errors.
+
+           DIR Switches:  Many switches have been changed for DOS 5 compati-
+           bility; a summary is below.  DIR now supports the DOS 5 sort order
+           switches (/O:[-degns]), as well as the original 4DOS switches
+           (/O:[-eirtuz]).  The new /O:a option sorts the directory in stan-
+           dard ASCII order rather than sorting filenames containing numbers
+           in the default numerical order.  A byproduct of the switch changes
+           is that the /A:xxxx and /O:xxxx switches CANNOT be followed by
+           another parameter without an intervening slash.  For example, you
+           used to be able to say DIR /OEP to display the directory in exten-
+           sion order with pauses.  You must now use DIR /OE/P.
+
+                 Old Switch     Function                   New Switch
+                 ----------     ----------------------     ----------
+                    /1          Single column              no change
+                    /2          Two columns                no change
+                    /4          Four columns               no change
+                    /A          Display attributes            /T
+                    /C          Upper case                 no change
+                    /D          Scan subdirectories           /S
+                    /F          Display files only            /A:-d
+                    /H          Display all files             /A
+                    /J          Justify file names         no change
+                    /N          Reset DIR options          no change
+                    /O          Sort order                 see above
+                    /P          Pause at end of screen     no change
+                    /Q          Display file names only       /B
+                    /S          Display summary only          /U
+                    /V          Sort vertically            no change
+                    /W          Wide display               no change
+                    /X          Display directories only      /A:d
+                    New         Disable colorization          /D**
+                    New         Display full path names       /F
+                    New         Suppress header               /K
+                    New         Lower case                    /L
+                    New         Suppress footer               /M
+
+
+
+
+
+        4DOS 4.0  [11-18-91]         UPDATE40.DOC                       page 8
+
+
+           DRAWBOX:  Added a new "shadow" option to create a transparent drop
+           shadow for the box.
+
+           ECHOS:  This is a new command which works just like an ECHO, but
+           doesn't print a CR/LF at the end of a line.  It's useful when redi-
+           recting output to a printer or other device.
+
+           ESET:  The new /M switch makes the change to the master environ-
+           ment, not the local one.
+
+           EXIT can now accept and return a result code (error level) to the
+           program that started a secondary shell.
+
+           FOR:  The set to be processed can now be read from a file.  The new
+           /A: switch allows selection of files for processing based on at-
+           tributes, using the same syntax as DIR /A**.
+
+           GLOBAL:  Added switches /H (process hidden directories) and /P
+           (prompt before executing the command in each directory)**.
+
+           GOTO:  Added a /I switch which tells 4DOS to NOT cancel IFF pro-
+           cessing.  (Use only if you know EXACTLY what you're doing, and
+           don't attempt to jump outside of the IFF or into a different IFF or
+           IFF nesting level!)
+
+           HISTORY:  Two switches were added:  /A adds a command to the histo-
+           ry list; /P pauses after displaying each page of the history.
+
+           IF and IFF:  Most of the old tests for system resources (EMS, XMS,
+           DISKFREE, etc.) have been moved to variable functions to make the
+           information available throughout 4DOS rather than just in IF and
+           IFF.  You will need to edit your batch files or aliases if you used
+           these tests in IF or IFF commands (see below).  New conditional
+           operators .AND., .OR., and .XOR. have been added.  Some new tests
+           have been added:  ISINTERNAL tests if a string matches the name of
+           an internal command; ISLABEL tests if a label exists in the current
+           batch file**.
+
+                 Old IF / IFF test       New Variable or Variable Function
+                 -----------------       ---------------------------------
+                    MONITOR              %_MONITOR
+                    VIDEO                %_VIDEO
+                    ATTRIB               %@ATTRIB[filename,attrib]
+                    DISKFREE             %@DISKFREE[d:,b|k|m]
+                    DOSMEM               %@DOSMEM[b|k|m]
+                    EMS                  %@EMS[b|k|m]
+                    EXTENDED             %@EXTENDED[b|k|m]
+                    FILESIZE             %@FILESIZE[filename,b|k|m]
+                    XMS                  %@XMS[b|k|m]
+
+           INKEY:  The new /K switch specifies the permissible keystrokes**.
+
+
+
+
+        4DOS 4.0  [11-18-91]         UPDATE40.DOC                       page 9
+
+
+           KEYSTACK:  Key names can be entered mnemonically, and delays can
+           now be included in the keystroke sequence.  The KEYSTACK.SYS device
+           driver has been removed and replaced by a TSR, KSTACK.COM.
+
+           LH:  New command added to support DOS 5's load high capability.
+
+           LIST:  Now saves your position on a search or a print, and returns
+           you to it after the print or an unsuccessful search.  You can now
+           toggle the high bit (/H) and line wrap (/W) flags from inside LIST,
+           and /W(rap) now affects the P(rint) option.
+
+           LOADHIGH:  New command added to support DOS 5's load high capabili-
+           ty.
+
+           LOG:  The LOG state and file name are now inherited by secondary
+           shells.  The log file name and/or path can be set with the LogName
+           directive in 4DOS.INI** (using LogName does not turn logging on,
+           you must still use LOG ON to do so).
+
+           MOVE:  New switches include /C (move changed files only), /D (re-
+           quire that the destination be a directory), /H (move hidden files),
+           /N (do nothing, just test results of move), and /S (move files from
+           the current directory and its subdirectories).  /Q (quiet) now
+           turns off the display of the number of files copied.  If you move a
+           file and the target file has a description but the source doesn't,
+           4DOS will now preserve the target description; this allows you to
+           update files without losing the descriptions.  A full destination
+           disk during a MOVE will now give an informative message, and stop
+           the move.
+
+           PROMPT:  Environment variables, internal variables, and variable
+           functions can now be used from within the prompt, allowing you to
+           include a wide variety of values in your prompt text.  The case of
+           the path displayed in the prompt is now controlled solely by the $P
+           and $p characters, and is not affected by SETDOS /U.
+
+           QUIT:  Now accepts an optional argument to set the ERRORLEVEL.
+
+           REBOOT:  This is a new command which does a warm or cold boot, with
+           an optional verification prompt.  You need to test it on your sys-
+           tem as some reboot methods do not work on all systems or with all
+           other software.
+
+           REN has two new switches:  /N (do nothing, just test results of
+           rename); /S (allow subdirectory renames).  Subdirectory renames are
+           now disabled if wildcards are used in the old name, to avoid inad-
+           vertent renaming of directories; you can enable them with /S.
+
+           SELECT:  There are some new switches and switch changes:  /A se-
+           lects files based on attribute (see DIR), /C displays in upper
+           case, /D disables directory colorization**, and /O has the same
+           changes as in DIR.  A "*" now reverses the marks on all files,
+
+
+
+        4DOS 4.0  [11-18-91]         UPDATE40.DOC                      page 10
+
+
+           rather than simply marking all files -- for example, if you mark 3
+           files and then press '*' SELECT will unmark those three files and
+           mark all the others.  You can now unmark all of the marked files
+           with a '/'.
+
+           SET:  The new /M switch makes the change to the master environment,
+           not the local one.  The syntax has been changed to match
+           COMMAND.COM:  you MUST enter an '=' in a SET statement, and you may
+           now put whitespace in the variable name or the argument.  Also, if
+           you enter SET VARNAME with nothing else on the line SET will now
+           display the value of the variable, rather than removing it from the
+           environment as it used to.  To remove an environment variable, you
+           must add the "=" sign to the end (e.g. SET VARNAME=), or use UNSET. 
+           Also note that, because whitespace in environment variable names
+           and values is now preserved, batch files with lines like
+           "SET MYVAR = MYVALUE" may not work unless they are changed to elim-
+           inate the extra spaces.  Under 4DOS 3.03 this example would set
+           "MYVAR" to "MYVALUE; under 4DOS 4.0 it will set "MYVAR " to
+           " MYVALUE".
+
+           SETDOS:  The /A option can now be set to tell 4DOS that ANSI is not
+           loaded (/A2).  The /H option has been removed; the minimum length
+           of a command to save can be set with the HistMin option in
+           4DOS.INI.  The /S option now uses percentages, not line counts, to
+           set the cursor shape for insert and overstrike modes.  The /U op-
+           tion no longer affects the case of the path displayed in the 4DOS
+           prompt; that is now controlled solely by the $P and $p PROMPT char-
+           acters.  The /V option can now be set to echo everything, even if
+           echo is off (/V2)**.
+
+           SWAPPING:  Now displays the current swapping type (EMS, XMS, Disk,
+           or None) as well as the swapping state.
+
+           TIMER:  There are now three timers available, selected with /1, /2,
+           or /3.  TIMER ON can be used to force a reset of the timer regard-
+           less of the current state.
+
+           TRUENAME:  This is a new command which displays the true name of a
+           file, even on ASSIGNed, JOINed, or SUBSTed drives.
+
+           UNSET:  The new /M switch makes the change to the master environ-
+           ment, not the local one.
+
+           VER:  The new /R switch displays the DOS revision level and loca-
+           tion of the DOS kernel (DOS 5 only)**.
+
+           VSCRPUT:  This is a new command which has the same parameters as
+           SCRPUT, but displays the string vertically.
+
+
+
+
+
+
+
+        4DOS 4.0  [11-18-91]         UPDATE40.DOC                      page 11
+
+
+        Technical Changes
+        -----------------
+
+        These changes are primarily of interest to programmers and others
+        interested in "how 4DOS works".  Most users do not need to read this
+        information.
+
+           New programming interfaces are included in version 4.0; see Appen-
+           dix C of the manual for details.  These include a new KEYSTACK
+           interface, installable commands, and extended information in the
+           DESCRIPT.ION file.
+
+           Full support for INT 2E is now provided.  See the "Appendix C"
+           section of this file for details.
+
+           4DOS now reserves all available DOS RAM while it is running at the
+           prompt.  This space is freed as needed for BTM files, DIR, LIST,
+           SELECT, etc., and is always freed when starting an application. 
+           This mimics COMMAND.COM; we have implemented it to get around some
+           odd behavior with loading certain networks or TSRs which depend on
+           this approach.
+
+           4DOS now detects a version mismatch with a previous shell and dis-
+           ables alias and history inheritance and reduced swapping if one is
+           found.
+
+           4DOS now supports third-party INT 24 (critical error) handlers like
+           4DOS24H, and will no longer disable them when an unruly TSR
+           unloads.
+
+           The 4DOS transient portion is now 100% dynamically relocatable. 
+           This means if you have a TSR that grabs a block from the end of DOS
+           memory, 4DOS will dynamically relocate itself below the TSR when it
+           swaps in after the TSR goes resident.  The only thing you can't do
+           is load such a TSR with swapping off, then turn swapping back on. 
+           If you do the results will not be good.
+
+           Reduced swapping is now enabled all the time.  Starting a secondary
+           shell under DESQView, or when alias or environment space is expand-
+           ed, etc., will no longer result in a full-sized swap area.  The
+           only way to get a full-sized swap area in a secondary shell is to
+           force it with the Reduce = NO directive in 4DOS.INI, or to load one
+           version of 4DOS on top of another.
+
+           The maximum internal line size in 4DOS has been increased from 255
+           to 512 characters.  The maximum command line length is still 255,
+           but the increase in the internal buffer will allow you to have more
+           complex aliases, variables, and command groups.
+
+
+
+
+
+
+
+        4DOS 4.0  [11-18-91]         UPDATE40.DOC                      page 12
+
+
+        COMPATIBILITY CHANGES
+        ---------------------
+
+        This section gives a quick overview of changes to 4DOS 4.0 to enhance
+        compatibility with other software.  For details on any specific pack-
+        age see APPNOTES.DOC.
+
+           ANSI:  4DOS has improved ANSI detection and now will usually cor-
+           rectly detect whether ANSI is loaded regardless of whether ANSI or
+           DOS is loaded high or low.  If you have problems with ANSI detec-
+           tion use SETDOS /A or the ANSI directive in 4DOS.INI to tell 4DOS
+           whether ANSI is installed.
+
+           APPEND:  4DOS sets APPEND's /PATH:OFF flag if using DOS 4 or DOS 5. 
+           This will eliminate any attempt by APPEND to extend its searches in
+           a way that interferes with 4DOS file access and file descriptions.
+
+           DESQview:  A Close Window command from within 4DOS will now release
+           all resources (XMS, EMS, UMB, swap file, shell number, interrupts)
+           owned by 4DOS before the window is closed, just as if you typed
+           EXIT.  4DOS only performs this cleanup if you are actually in 4DOS
+           when you issue the Close Window command.  If you are in an applica-
+           tion the cleanup will not occur.
+
+           DR-DOS:  Several changes have been made for DR-DOS compatibility
+           including access to 4DOS extended wildcards, and use of DR-DOS
+           passwords (the ";" must be doubled on certain commands for this to
+           work).
+
+           Novell Netware:  Numerous changes have been made to improve Netware
+           compatibility, especially with 4DOS redirection and batch files. 
+           Novell has also fixed bugs which would cause environment variables
+           to be destroyed when logging in to the network under 4DOS.  Also,
+           you can now swap secondary shells to a network drive using the
+           SwapReopen dircetive in 4DOS.INI.
+
+           Windows:  4DOS now detects Windows 3 and configures itself accord-
+           ingly.  At startup you will get a message:  "4DOS running under
+           Windows 3 in [Win3 mode]".  There will be no message if you aren't
+           running under Win3.  Memory allocation in Win3 is now automatic,
+           hence there is no need for the old /V switch.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        4DOS 4.0  [11-18-91]         UPDATE40.DOC                      page 13
+
+

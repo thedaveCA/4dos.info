@@ -1,0 +1,1738 @@
+<!doctype HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+<meta name="generator" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Language" content="en-gb">
+<link rel="shortcut icon" href="favicon.ico">
+<title>4DOS.INFO - Klaus Meinhard's Homepage: 4DOS BATFAQ/Frequently asked 
+Questions</title>
+<meta name="description" content="Everything about 4DOS and Batch Programming - Alles zu 4DOS und Batch-Programmierung">
+<meta name="keywords" content="4XBTM, SHELL, SCRIPT, BATCH, COMMAND, PROMPT, 4DOS, 4OS2, 4NT, TCMD, TAKE COMMAND, JPSOFT, DOS, BTM">
+<meta name="rating" content="General">
+<meta name="resource-type" content="document">
+<meta name="revisit-after" content="30 Days">
+<meta http-equiv="Expires" content="0">
+<meta http-equiv="Last-Modified" content="0">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="MSStartTagsPreventParsing" content="True">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<base target="_self">
+<!-- Disable other sites from forcing a Frameset on this page -->
+<script type="text/javascript">
+<!--
+if(parent.frames.length>0) {
+parent.location.href=location.href;
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+a:link       { font-family: Courier New; font-size: 10pt; color: #0000CC; font-weight: bold; text-decoration:none )              }
+a:visited    { font-family: Courier New; font-size: 10pt; color: #3366CC; font-weight: bold; text-decoration:none }
+a:active     { font-family: Courier New; font-size: 10pt; color: #6600CC; font-weight: bold; text-decoration:none }
+h6           { font-family: verdana; font-size: 10pt; font-weight: bold; text-align:left; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0 }
+h5           { font-family: verdana; font-size: 10pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h4           { font-family: verdana; font-size: 12pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h3           { font-family: verdana; font-size: 14pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h2           { font-family: verdana; font-size: 18pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h1           { font-family: verdana; font-size: 24pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+p            { font-family: verdana; font-size: 10pt; text-align:left; word-spacing:0; text-indent:0; line-height:110%; margin-left:6; margin-right:6; margin-top:6; margin-bottom:6}
+li           { font-family: Courier New; font-size: 10pt; text-align:left; word-spacing:0; text-indent:0; line-height:110%; margin-left:6; margin-right:6; margin-top:6; margin-bottom:12}
+-->
+</style>
+<style type="text/css" fprolloverstyle>
+A:hover {color: #6600CC; font-weight: bold}
+<style type="text/css" fprolloverstyle>
+A:hover {color: #6600CC; font-weight: bold}
+</style>
+</head>
+
+<body bgcolor="#666699" text="#000080" link="#0000FF" vlink="#3366CC" alink="#99CCFF">
+
+<h1 style="margin-bottom: 6; margin-top:0" align="center"><a name="0"></a>
+<font face="verdana" color="#FEFEFE">[4DOS.INFO]</font></h1>
+<p style="margin-bottom: 6">&nbsp;</p>
+<p style="margin-bottom: 6"><font face="verdana" size="5" color="#FFFFFF">
+c:\4dos\batfaq\&gt; _</font></p>
+<div align="left">
+  <table summary="men£" border="0" width="165" bordercolor="#000080" cellpadding="6" cellspacing="0" height="509" align="left" style="position: absolute; left: 10; top: 100; border-collapse: collapse">
+    <tr>
+      <td valign="top" bgcolor="#FFFFFF" width="164" height="1">
+      <!-- beginn freecity.de counter code -->
+      <a href="http://www.freecity.de" target="_new">
+      <img src="http://tools.freecity.de/counter/Klaus_Meinhard" border="0" width="154" height="88"></a>
+      <!-- ende freecity.de counter code -->&nbsp; </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#FFFFFF" width="164" height="15">
+      <h4 align="center" style="text-align: center">&nbsp;Topics</h4>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#EEEEEE" width="164" height="4">
+      <p style="margin-top: 6; margin-bottom: 6"><a href="updates.htm">
+      <font face="Verdana">Updates</font></a><font face="Verdana"> </font></td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#FFFFFF" width="164" height="18">
+      <h4><font face="Verdana" size="3">4DOS INFO</font></h4>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#EEEEEE" width="164" height="237">
+    <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="sources.htm" target="_self"><font face="Verdana">4DOS Sources</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="v4dos.htm" target="_self"><font face="Verdana">4DOS Versions</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="v4nt.htm" target="_self"><font face="Verdana">4NT Versions</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="v4os2.htm" target="_self"><font face="Verdana">4OS2 Versions</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="4tips.htm" target="_self"><font face="Verdana">4DOS Tips &amp; Tricks</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="4docs.htm" target="_self"><font face="Verdana">4DOS Docs</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="4batfaq.htm" target="_self"><font face="Verdana">4DOS BatFAQ</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a target="_self" href="4obtms.htm"><font face="Verdana">4DOS Batches, 
+      Aliases, Functions</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <font face="Verdana">&nbsp; </font><a href="4bernd.htm" target="_self">
+      <font face="Verdana">B. Schneider's</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <font face="Verdana">&nbsp; </font><a href="4xbtm.htm">
+      <font face="Verdana">K. Meinhard's</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="4links.htm" target="_self"><font face="Verdana">4DOS Links</font></a></h6>
+      <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="4tools.htm" target="_self"><font face="Verdana">4DOS Tools</font></a></h6>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#FFFFFF" width="164" height="18">
+      <h3 align="center"><font size="3" face="Verdana">INFO for DOS</font></h3>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#EEEEEE" width="164" height="42">
+        <p align="left">
+        <a href="dlinks.htm" target="_self"><font face="Verdana">DOS Links</font></a></p>
+		<p align="left">
+        <a href="dlinksu.htm" target="_self"><font face="Verdana"> More DOS 
+		Links</font></a></p>
+		</p>
+        <p><a href="dalter.htm"><font face="Verdana">DOS Alternatives</font></a></p>
+      <p><a href="dhardw.htm" target="_self"><font face="Verdana">DOS Hardware</font></a></p>
+      <p><a href="dtools.htm"><font face="Verdana">DOS Tools</font></a></p>
+      <p><a href="dprogs.htm"><font face="Verdana">DOS Programs</font></a></p>
+      <p><a href="dgems.htm"><font face="Verdana">DOS Gems</font></a></td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#FFFFFF" width="164" height="18">
+      <h3 align="center"><font face="Verdana" size="3">Service</font></h3>
+      </td>
+    </tr>
+    <tr>
+      <td width="164" height="40" bgcolor="#EEEEEE">
+      <p style="margin: 6"><a href="search.htm" target="_self">
+      <font face="Verdana">Search Engines</font></a></p>
+      <p><a href="mailto:K_Meinhard@gmx.de"><font face="Verdana">Contact me</font></a><font face="Verdana">
+      </font></td>
+    </tr>
+    <tr>
+      <td width="164" height="1" bgcolor="#FFFFFF">
+      <p style="margin: 6"><a href="index.htm" target="_self">
+      <font face="Verdana">Back to Homepage</font></a><font face="Verdana">
+      </font></td>
+    </tr>
+  </table>
+</div>
+<table summary="main body" border="0" width="75%" cellpadding="6" cellspacing="0" style="border-collapse: collapse; position:absolute; left:200; top:100" bordercolor="#000080" align="left">
+  <tr>
+    <td width="100%" bgcolor="#FFFFFF" height="15" style="border-left-style: solid; border-left-width: 1">
+    <h4 align="center" style="margin-top: 0; margin-bottom: 0">4DOS Bat-FAQ</h4>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" bgcolor="#EEEEEE" height="150" style="border-left-style: solid; border-left-width: 1">
+    <p style="margin-top: 0; margin-bottom: 6">Instead of reading this online, 
+    you can download</p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6">my <a href="docs/4batfaq.zip">
+    4DOS BATFAQ</a></p>
+    <p style="margin-top: 0; margin-bottom: 6">
+    <a href="ftp://garbo.uwasa.fi/pc/link/tsbat.zip" target="_self">Prof. Timo 
+    Salmi's BATFAQ</a></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6">for comparison.</p>
+    <p style="margin-top: 0; margin-bottom: 6">I have ceased to mirror the 
+    frequent updates of Prof. Salmi's BATFAQ. I think I've achieved my original 
+    goal to show that&nbsp;a 4DOS solution is shorter, faster, easier to implement, 
+    easier to understand and easier to maintain. If you need another&nbsp;4DOS answer 
+    to one of Prof. Salmi's later batch FAQs, please contact the newsgroup 
+    comp.os.msdos.4dos or ask me by email.</td>
+  </tr>
+  <tr>
+    <td width="100%" bgcolor="#FFFFFF" height="1" style="border-left-style: solid; border-left-width: 1">
+    <h4><a name="69"></a>Introduction</h4>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" bgcolor="#EEEEEE" height="234" style="border-left-style: solid; border-left-width: 1">
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">In 
+    TSBATnn.ZIP, Prof. Timo Salmi, batch expert and regular of the 
+    alt.msdos.batch Usenet group, has written and maintains a very hefty and 
+    thorough FAQ dealing with vanilla DOS batch problems named 1BATFAQ.TXT.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">His 
+    syntax here isn't very exact, however, because batches are executed not by 
+    the DOS (=Disk Operating System) per se, but specifically by the command 
+    processor, usually named COMMAND.COM and included with the operating system. 
+    Like many utilities provided by MS and its rivals, its abilities aren't 
+    necessarily state of the art, and can (and should) be replaced by the power 
+    user.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">In 
+    question (69) Prof. Salmi deals with 4DOS, which is my special interest 
+    (surprise, surprise!).</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    4DOS.COM is an alternative command processor by JP Software, with enhanced 
+    features all around, running under practically any DOS version. It is so 
+    powerful, in fact, that it is mostly unnecessary to resort to any external 
+    executable or language, like Prof. Salmi often has to do in his solutions, 
+    as I will show you.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">In 
+    most cases of this FAQ, a one-line solution is possible under 4DOS.COM, 
+    replacing a lengthy, convoluted and non-intuitive COMMAND.COM solution. My 
+    thanks go to all people who sent me corrections or amendments.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">I 
+    have mirrored the questions according to Prof. Salmi's FAQ, and given (the) 
+    short 4DOS solutions, to give the reader the chance to view both side by 
+    side for comparison..</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    I'll start, however, out of order with Prof. Salmi's remarks about 4DOS 
+    (question 69) and my answers to them.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    (Note: bold text is quoted from Prof. Salmi's 1BATFAQ.TXT)</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <h4 style="margin-top: 0; margin-bottom: 6" align="center"><font size="2">
+    FAQs:</font></h4>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">69) All these solutions are for wimps. Why not 
+    rather use 4DOS?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">I 
+    know that for most batch fans the real challenge is to do the nearly 
+    impossible with the somewhat performance challenged means MS (and others) 
+    bestow on you in the form of COMMAND.COM. I can understand and respect that. 
+    There are many situations, however, where a batch solution is not sought as 
+    &quot;art pour l'art&quot;, but to solve real problems in a robust and maintainable 
+    way.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">So 
+    I cannot let go these statements and dire warnings by Prof. Salmi 
+    uncommented:</font></p>
+    <ul>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+      1) You have to decide whether the extra features are worth the hassle of 
+      changing the command interpreter.</font></li>
+    </ul>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">The 
+    extra features are galore, and the &quot;hassle&quot; to change the command 
+    interpreter burns down to unzipping a file in a new directory and changing 
+    the &quot;SHELL=...&quot; line in CONFIG.SYS to point to 4DOS.COM. The latest 4DOS 
+    version will do all this automatically for you.</font></p>
+    <ul>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+      2) You have to weigh the advantages against the inconvenience of the 
+      incompatibilities. Not only of batches, but some programs will cease 
+      working properly if you change your command interpreter.</font></li>
+    </ul>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    There _are_ some incompatibilities, mainly when undocumented &quot;features&quot; of 
+    COMMAND.COM (which version, btw, ?) are exploited. So there _may_ be a 
+    number of your batches that will not work without minor changes. 4DOS.COM 
+    uses a superset of COMMAND.COM commands, and most batches will run unchanged 
+    under it. You don't even have to ditch your old command.com: you can start 
+    it from your 4DOS shell to run your old batch files.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    I'll still have to see a program that ceases working properly under 4DOS.COM 
+    (and why should a properly written program care?). It's when you shell out 
+    from a (really rare) not-so-well-written program that has a hard-coded 
+    shell-out to COMMAND.COM instead of %comspec% that problems occur. Again: 
+    these are rare and often easily solved.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">On 
+    the plus side, you can really start to produce. You can structure your 
+    batches with IFF ... THEN ... ELSE, DO loops, SWITCH ... CASEs, GOSUB labels 
+    and so on, as I'll show you if you hang on.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">You 
+    can stop worrying about how to get user input, a (any) string into a 
+    variable, or a date into a filename. You have more than a hundred internal 
+    variables and functions at your command(line), that will give you access to 
+    and info about most parts of your system. And yes, you can do more than 
+    basic arithmetic with @EVAL. In short, the information you now wrestle to 
+    get is already there and waiting for you to do something sensible with it.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">You 
+    have additional internal commands like TOUCH, LIST, SELECT, GLOBAL, EXCEPT 
+    and dozens of others. Have you noticed how often you have to resort to an 
+    external 3rd-party utility or even a complete language like BASIC or PASCAL 
+    using COMMAND.COM? After starting to use 4DOS, you will quickly and gladly 
+    delete a megabyte of various tools (all with different syntax!) from your 
+    disk. You can have aliases (like memory resident batches or DOSKEY macros), 
+    fuzzy directory change, a fully editable command line with history, 16 
+    available colors even without ANSI.SYS, and more.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Last not least you have a command-line sensitive HELP function at your 
+    fingertip: just hit the F1 key.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">So 
+    you could start to use 4DOS and finally get a life :-)<br>
+    <br>
+    Further FUAAs [frequently used arguments against ... ;-)]:</font></p>
+    <ul>
+      <li>
+      <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+      a: 4DOS _is_ a commercial program, and costs money.</font></li>
+    </ul>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    This is now obsolete, because 4DOS 7.50 has been declared freeware. You can 
+    take it with you and copy it freely to every system you work on. Is your 
+    favourite editor available on every system? Same solution: take a disk/CD 
+    with the needed files with you and work from that or reserve yourself some 
+    diskspace on the system.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">Now 
+    let's start on the FAQs and make &quot;short&quot; work of them: a quick compare of 
+    the relative file sizes will give you a very accurate first impression.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    <br>
+    <strong>1) How can I make &quot;@echo off&quot; MS-DOS version independent?</strong></font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">Use 
+    the INI-directive &quot;BatchEcho = NO&quot; in your 4DOS.INI file to make it 
+    standard. BTW, @ECHO OFF is version-independant in 4DOS :-)</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    <strong>2) Deleting all files without being prompted &quot;Are you sure (Y/N)?</strong>&quot;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Make an alias for the DEL command, e.g.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    DEL=*DEL /Y %&amp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">3) Is it possible to nest for loops in batch 
+    files?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    4DOS knows not only the FOR command, but also the more flexible DO ... ENDDO 
+    loop. You can nest DO loops up to 15 levels deep, nesting of FOR loops 
+    depends on available memory.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">4) How can I check in a batch whether a 
+    directory exists?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    4DOS has&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    IF ISDIR path ...</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">If 
+    the subdirectory exists, the condition is true. For compatibility with 
+    Novell DOS/OpenDOS, DIREXIST may be used as a synonym for ISDIR.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">5) Checking that a program is available at the 
+    current directory or at path</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Besides &quot;IF EXIST path/file ...&quot; you can check for executables in the path 
+    (&quot;WHICH command.exe&quot;, new in 4DOS 7.00) which will tell you if that command 
+    is an binary executable file, a batch or an alias. You can use the 
+    %@SEARCH[filename] function, which will tell you the whole path/filename if 
+    the file exists in the path.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">6) Is it possible to use subroutines and 
+    recursion in batches?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Easily in 4DOS: use the &quot;GOSUB label&quot; command to branch to a subroutine and 
+    &quot;RETURN&quot; to do just that. Use &quot;DO n&quot;, &quot;DO x=0 to 10&quot;, &quot;DO UNTIL ...&quot; or &quot;DO 
+    FOREVER&quot; to loop until a certain condition is met.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">7) How can I convert a lowercase parameter to 
+    uppercase?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">Use 
+    the %@UPPER[] function. Of course there's %@LOWER[] too.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">8) Is there an easy way to append a new 
+    directory to the path?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    4DOS supports a path length of &gt; 500 characters. To append to it from the 
+    command line, use &quot;ESET %path&quot;. Or use</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    PATH %path;c:\somedir</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">9) How can I compare if two files are 
+    identical?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Besides resorting to an external FC utility, you can check all attributes of 
+    the file(s) using functions like %@FILESIZE[], %@FILEDATE, %@FILETIME, you 
+    can compare each line of both files using @line[] on a string basis or on 
+    ascii value basis of each char with %@ASCII[]. It's easy to write your own 
+    filecompare tool using only inbuilt functions.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">10) Writing an empty line to the screen. How 
+    is that done?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">Use 
+    &quot;ECHO.&quot; or &quot;ECHO `` &quot; If your aims are higher, you can use SCRPUT, VSCRPUT, 
+    DRAWBOX, DRAWHLINE and DRAWVLINE to put characters, boxes and lines anywhere 
+    on your screen, in 16 available colors and several styles.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">11) A tip: Customizing the pause message</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    4DOS knows &quot;PAUSE [text]&quot; to display a custom message. It also knows DELAY, 
+    which can time a pause from milliseconds to 1 hour.&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">12) A tip: Complicated renaming of files with 
+    for</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Replacing FOR with DO ... ENDDO, you can rename files found based on 
+    wildcards, ranges, or include lists. Depending on what result you want to 
+    achieve, there are internal variables und functions for all aspects of the 
+    date and time, %@INC[] and %@DEC[] to increase and (yeah!) decrease numbers, 
+    %@EVAL for arithmetic, and everything you need for string handling of 
+    filenames. REN's /N switch will show the results without doing any actual 
+    renaming.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">13) How can I check if the file name given 
+    included wildcards?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">Use 
+    the %@INDEX[string1,string2] function, e.g.:&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    IF %@INDEX[file,?] ne -1 .or. %@INDEX[file,*] ne -1 ECHO Wildcard found!</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">14) Is it possible to prevent the user from 
+    breaking the batch?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Yes. Use BREAK OFF and BREAK ON to allow it once more..</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">15) Can I prevent a break from bypassing the 
+    autoexec.bat?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">See 
+    above. But that's not very reliable, at least not under Windows95 /MS-DOS 7 
+    and up. Hitting F8 allows you to step through the startup files, as long as 
+    you have not &quot;BootKeys=0&quot; in there. Prof. Salmi's method using CTTY suffers 
+    the same limitation.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">16) How can I extract the extension of a file 
+    name?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">Use 
+    function %@EXT[filename]</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">17) Information on the quote character %</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&quot;%&quot; 
+    is not a &quot;quote character&quot;.&nbsp; It is the metacharacter used for variable 
+    substitution.&nbsp; The quote characters are, of course, &quot;`&quot; and &quot;&quot;&quot;.<br>
+    </font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">To 
+    echo the string &quot;%1&quot;, you can use ECHO %%1, but the 4DOS way is to escape 
+    the char that has a special meaning. To do that, you prepend the problematic 
+    character with the escape character, (ALT 024), or its representative &quot;%=&quot;, 
+    so to echo the string &quot;%1&quot; you use &gt;&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    ECHO %=%1</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">18) Eliminating auxiliary batches (making do 
+    with the main batch)</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">A 
+    recursion problem easily solved by using GOSUB and RETURN.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">19) Utilizing the subst command in paths</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">The 
+    use of SUBST isn't recommended under Windows. 4DOS knows PUSHD and POPD, 
+    uses fuzzy CD and CDD (to change drives, too), aliases and variables. On my 
+    system I write &quot;4D&quot; on the command line and get a selection menu for all 
+    dirs starting with &quot;4D&quot;.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">20) How can I run a batch once a week (testing 
+    for the weekday)</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    4DOS has an example batch called ONCEADAY.BTM. Using functions like %@DOW[] 
+    (day of the week), %@DOWI[] (DOW as integer), %@DOY[] (yes, day of the year) 
+    it's easy to write a batch that will only execute once a day, week, month or 
+    year (or any other regular interval you care to name).</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">21) How can I test if a given file name 
+    includes the path?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">Use 
+    %@PATH[filename] (or %@PATH[%filename], if you already have a variable 
+    called filename) to extract the path from any given filename.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">22) How can I display the time without having 
+    to press enter?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">Use 
+    the internal variables %_TIME, or %_HOUR, %_MINUTE, %_SECOND, use TIMER to 
+    time events, or %@TIME[] to convert any time to number of seconds since 
+    midnight.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    ECHO %_time</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    shows the current time.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">23) Alternatives for testing for the 
+    errorlevel value</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Most internal 4DOS commands set errorlevel values. 4DOS has internal 
+    variables for external program exit code (%?), reason for external program 
+    termination (%??), exit code last internal command (%_?) and last DOS error 
+    (%_SYSERR). Since 4DOS is able to determine values equal, less than, less or 
+    equal, greater, greater or equal, unequal to another value, it's easy to 
+    catch specific errors:</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    IF &quot;%_?&quot; NE &quot;&quot; GOSUB ERR_HANDLER</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    :ERR_HANDLER</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    IF %_? == 1 ...</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    IF %_? == 2 ...</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    ...</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    RETURN</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">The 
+    &quot;ON ERROR...&quot; command is also available to catch (and recover from) errors.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">24) About redirecting a batch file's output</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Redirection and piping is enhanced in 4DOS. You can redirect standard 
+    output, standard error or both, creating or appending to a file, a device or 
+    the Windows clipboard. Piping is enhanced by the TEE and Y &quot;pipe fittings&quot;. 
+    And obviously you can</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    BATCHNAME &gt; OUTFILE</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">25) How can I test if m batch has sufficient 
+    environment space?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">For 
+    a minmum of 200 bytes</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    IF %_ENV .LT. 200 ECHO Not enough environment space</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Then there's the&nbsp; &quot;EnvFree=200&quot; .INI-directive which would ensure that 
+    any new shell starts with at least 200 bytes free env space.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">26) Is there a simple trick to &quot;disable&quot; or 
+    hide a drive?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Only using external utils.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">27) How can I send an escape sequence to the 
+    printer?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">See 
+    17) for info about the escape character. To send e.g. a form feed followed 
+    by the sequence ESC Y to the printer, you can use this command:</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    ECHOS %=f%=eY &gt; PRN</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">28) Is it possible to create a random string 
+    in a batch?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">Use 
+    %@RANDOM to create random numbers, %@UNIQUE to create unique files with 
+    random names. Using one or both functions you can create random numbers or 
+    strings of any length.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">29) Is it possible in a batch to find out the 
+    length of a string?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Use&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    %@LEN[string]</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">30) How to obtain the MS-DOS version into an 
+    environment variable?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">Use 
+    %_DOSVER to get the version, %_DOS to get the operating system, %_4DOS to 
+    get the 4DOS version, %_WIN to get the Windows version...<br>
+    </font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">31) How can I find out the number of regular 
+    files on a drive?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">To 
+    get the number of files in directory, e.g. the root of A:, use</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    %@FILES[Drive:path/wildcard]</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Prof. Salmi's example to get the filenumber of a whole drive using ATTRIB is 
+    ingenious, and can be enhanced in 4DOS:</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    ATTRIB /S C:\* | FIND /c &quot;\&quot; | INPUT %%filenum</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong><font face="verdana">
+    <a name="32"></a><font size="2">32) How can I use a batch to augment line 
+    numbers to my text file?</font></font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Since internal FFIND cannot display (up to now) nonmatching lines of a file, 
+    you could use 4DOS' TYPE instead. The /L switch prepends each line with the 
+    line number:</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    TYPE /L infile outfile</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    which will prepend each line of infile with a linenumber in outfile.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">33) Storing and returning to the original 
+    directory (push and pop)</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    4DOS knows PUSHD and POPD commands.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">34) Enticing the current date into an 
+    environment variable</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    &quot;Enticing&quot; in 4DOS means using the internal variable %_DATE.&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">35) A tip for power users. Identifying the 
+    individual PC.</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Setting a var for the PC in AUTOEXEC.BAT is trivial. You could probably use 
+    the drive's unique (?) number or label. The drive label can be accessed with 
+    %@LABEL[drive], the serial number (e.g. for drive A:) with</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    SET sernum=%@WORD[-0,%@EXECSTR[vol a:]]</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">36) For loop and redirection quirks</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">The 
+    (not working under COMMAND.COM!) problematic line in Prof. Salmi's FAQ</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    FOR %%f IN (a b c d) DO IF EXIST %%f ECHO put %%f &gt;&gt; tmpfile</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    works as expected under 4DOS.COM.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">37) Is it possible to traverse a directory 
+    tree with a batch?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Most file operation commands have the /S (for subdirectories) switch. Then 
+    there's the GLOBAL command, the TREE command...</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">38) Is it possible to echo the redirection 
+    symbol in a batch?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">Use 
+    the representation of the escape character: Ctrl-X, %=, Alt-024 or use 
+    backquotes:</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    ECHO ^X&gt;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    ECHO %=&gt;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    ECHO `&gt;`</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">all 
+    work. Then there is TEXT ... ENDTEXT which will put any text between these 
+    lines on the screen even if it contains reserved characters..</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">39) How can I extract the file basename?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">Use</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    %@NAME[file]</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">40) A batch to put user input into an 
+    environment variable</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">Use 
+    INPUT to put strings, INKEY to put single keystrokes into variables.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">41) How can I get the last replaceable 
+    parameter given to a batch?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">%0 
+    contains the name of the batch file as it was entered on the command line, 
+    %# contains the number of command line arguments, and %n&amp; contains the 
+    complete command-line tail starting with argument number n. So</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    %[#]%&amp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">or</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    %@WORD[%#,%&amp;]</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    contains the last parameter.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Note that 4DOS normally uses only a leading &quot;%&quot; to indicate a variable. But 
+    for compatibility with command.com it understands the trailing &quot;%&quot; too.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">In 
+    the example above square brackets are used to indicate the end of &quot;%#&quot;. 
+    Syntax like &quot;%#%%&amp;&quot; or &quot;%#%%&amp;%&quot; is allowed as well.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">42) Creating an empty file if the file does 
+    not already exist</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Use&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    &gt;&gt; filename</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">43) How can I change or remove the disk volume 
+    serial number?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">You 
+    need to use an external like DEBUG.EXE. A 4DOS batch to do that with a 
+    comfortable user interface is XSERIAL.BTM in my 4XBTM collection.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">44) How to pause in a batch for a preset 
+    number of seconds?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    DELAY n (number of seconds)</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">45) Where can I find a program to compile 
+    batches into COMs or EXEs?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Batch compilers work only badly for COMMAND.COM compatible batches (each 
+    version introduces new behaviour of old commands, and most batch compilers 
+    haven't been updated for some time). 4DOS batches use a superset of DOS 
+    batch commands, so batch compilers will not know what to do with them. 4DOS 
+    has BATCOMP.EXE, which will compress and (weakly) encrypt a&nbsp; batch, 
+    making it difficult for the novice user to decrypt and change that batch.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">46) How can I test whether a disk is empty or 
+    not?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Several possibilities: %@FILES[A:\] will tell you if there are files in the 
+    root dir, %@FILESIZE[A:\*.*] will tell you their size (0?), %@DISKUSED[a:] 
+    will tell you how many bytes on A: are used by files.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">47) 
+    How can I run a different batch depending on the weekday?</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    IF %_DOWI == 0 call sunday.bat<br>
+&nbsp; IF %_DOWI == 1 call monday.bat<br>
+&nbsp; IF %_DOWI == 2 call tuesday.bat<br>
+    ...</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">48) Can one put line numbers into a file with 
+    just batch commands?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Already answered</font> <a href="#32">(32)</a></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong><font face="verdana">
+    <a name="49"></a><font size="2">49) How can I backup from the current 
+    directory files made today?</font></font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">The 
+    COPY command (and many others) understands date ranges, e.g.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    COPY /[d-0] *.* d:\backup\</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">50) How can I traverse all files of a 
+    directory in a batch?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">Use 
+    DO as in</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    DO x IN *.*<br>
+&nbsp;&nbsp;&nbsp; your action here<br>
+&nbsp; ENDDO</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">or 
+    FOR:</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    FOR %x in (*.*) DO (<br>
+    ..your action here.<br>
+&nbsp; )</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">or 
+    GLOBAL.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">51) How can I step through a batch a command 
+    at a time to debug it?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    4DOS has a built-in batch debugger which allows you to step through a batch, 
+    inspect the variable values, expand the current command, skip a line ...</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">52) How to display all files made or updated 
+    on a day or today?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">The 
+    DIR command understands ranges (date, time and size) too. So the command</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    DIR /[d-1,+0] *.*</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    will display all files in the current dir created yesterday.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">53) How can I make a list of all my files and 
+    locate a certain file?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">To 
+    make a list of all your files on all drives (C:, D:, E:):</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    FOR %x IN (c: d: e:) DO DIR /B/F/S * &gt; filelist.dat</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Locate a filename:</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    FFIND /B/T&quot;filename&quot; filelist.dat</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">54) How can I tell if a batch is running in a 
+    Windows dosbox?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">Use 
+    the internal %_WIN variable, which will tell you which Windows variant 
+    you're under, too.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">55) How can I test if there is a disk in a 
+    floppy disk drive?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">Use 
+    %@READY[A:]</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">56) Could you please solve this problem for me 
+    with a batch?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">We 
+    are always happy to help a civil questioner at</font>
+    <a href="news://comp.os.msdos.4dos">comp.os.msdos.4dos</a><font size="2" face="verdana">.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">57) How can I make a loop that is repeated a 
+    preset number of times?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">Use 
+    &quot;DO 4&quot; or &quot;DO n=1 to 4&quot;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">58) How can I display the contents of the 
+    memory?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">Use 
+    external &quot;MEM /C | MORE&quot; for an overview, which has nothing to do with 4DOS. 
+    You could use the internal functions %@DOSMEM[], %@XMS[], %@EMS[], 
+    %@EXTENDED[] to check free memory. To display the actual content you'll have 
+    to use DEBUG.EXE.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">59) How get today's date into a six-character 
+    environment variable?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    SET year=%@RIGHT[2,%_year]</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    SET month=%@RIGHT[2,0%_month]</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    SET day=%@RIGHT[2,0%_day]</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    SET myvar=%year%%month%%day%</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">60) How can I find and copy the files updated 
+    today in a directory?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Already answered</font> <a href="#49">(49)</a></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    COPY /[d-0] dir\*.* newdir\</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">61) How can I test in a batch whether a TSR 
+    program has been loaded?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Looking for the memory footprint of a TSR can be done with internal 
+    (FIND.EXE is an external program) means only, which means faster:&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    MEM /C | FFIND /K/M/Tsmartdrv | INPUT %%test<br>
+&nbsp; ECHO SMARTDRV is %@IF[%@INDEX[%test,smartdrv] != -1,loaded,not loaded].</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">62) Putting the current drive letter into an 
+    environment variable.</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">No 
+    need: the current drive is in internal var %_DISK</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">63) How can I extract the drive letter from a 
+    full file path?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">Use 
+    the string handling capabilities of 4DOS: assuming the full path is in var 
+    %fp, easiest would be</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    SET drv=%@left[2,%fp]</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">64) How can I write a &quot;SLEEP&quot; command to pause 
+    for a certain time?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Already answered in (44). Use DELAY.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">65) How can I put comments into a batch file?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    &quot;REM&quot; and &quot;::&quot; can both be used.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">66) How can I echo just the word &quot;off&quot; in a 
+    batch file?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    @ECHO off<br>
+&nbsp; ECHO.off</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    works just the same as under COMMAND.COM. If the goal is to just place the 
+    word &quot;OFF&quot; on the screenin a certain position, you can alternatively use</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    SCREEN row col OFF<br>
+    <br>
+    <strong>67) How can I extract the first two characters of a file name?</strong></font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">You 
+    would use %@LEFT or, just to demonstrate another string handling command,</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    SET myvar=%@INSTR[0,2,filename]</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    where &quot;filename&quot; can be a variable.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">68) How can I compare two numbers with batch 
+    commands?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    With pure numbers 4DOS does a numerical compare, e.g.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    IF 19 GT 2 ECHO true</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">To 
+    do a string compare, use</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    IF &quot;2&quot; GT &quot;19&quot; ECHO true also</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">You 
+    can use .AND., .OR. and .XOR. to refine your comparison:</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    IF 19 GT 2 .AND. &quot;2&quot; GT &quot;19&quot; ECHO both true</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">69) ---------- Moved to</font></strong>
+    <a href="#69">Introduction</a><strong><font size="2" face="verdana">-----------------------</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">70) How can I give more than the nine 
+    parameters to a batch?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    4DOS routinely handles up to 127 parameters. So no more need to SHIFT vars 
+    (but you _can_, of course).</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">71) How can I update copy files from one 
+    directory to another?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    4DOS' COPY command has the /U switch. Using this, COPY will only copy each 
+    source file if it is newer than a matching destination file or if a matching 
+    destination file does not exist:</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    COPY /U firstdir\*.* seconddir\</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">72) How can I best clear all the files from my 
+    TEMP directory?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Instead of using external DELTREE.EXE, use the internal DEL command (with 
+    due caution!):</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    DEL /S /X /Y /Z dirname</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    will leave your dirname dir pristinely clear. You can test the action of 
+    this (and many other) commands with the /N switch. This will do anything but 
+    actually delete the files, giving you a chance beforehand to see what would 
+    get deleted.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">73) How can I check the number of parameters 
+    given to a batch?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    It's in the internal &quot;%#&quot; variable.&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">74) How can I locate and e.g. delete all *.TMP 
+    files on a drive?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">For 
+    drive C: use</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    DEL /S C:\*.tmp</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    which will delete matching files in all subdirectories too. Again: you may 
+    want to test with the /N switch mentioned in (72)</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">75) How can I rename all files sequentially in 
+    a directory?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    You'd write a short batch (you can always convert it to an alias later). 
+    Let's assume the files are in your working dir, and that you want 4 digits 
+    in that filename with leading zeros, starting with 0000:</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    SET n=0<br>
+&nbsp;&nbsp; DO %f IN *.*<br>
+&nbsp;&nbsp;&nbsp; REN %f %@right[4,000%n].TXT<br>
+&nbsp;&nbsp;&nbsp; SET n=%@INC[%n]<br>
+&nbsp; ENDDO</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    would rename all files to 0000.TXT, 0001.TXT etc. With an additional line 
+    you could have those files sorted for date, time, name, extension, size etc. 
+    before renaming, and you can test your batch using REN's /N switch, which 
+    will show you the results without doing any actual renaming.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">76) How to search all the *.txt files on a 
+    drive for a word?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    4DOS' FFIND with switch /S will do that for you:</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    FFIND /S /Tmyword C:\*.txt</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">77) How can I give multiple commands on one 
+    line?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    4DOS knows a command separator: &quot;^&quot; or the internal variable representing 
+    it: &quot;%+&quot; This lets you write several independant commands on one line:</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    BEEP ^ ECHO Did I get your attention? ^ BEEP</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">78) Is there a batch to individually zip each 
+    file in a directory?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    FOR %x IN (*.*) DO (</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp;&nbsp;&nbsp; 
+    IF &quot;%@ext[%x]&quot; ne &quot;ZIP&quot; PKZIP -m %@name[%x] %x</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp;&nbsp;&nbsp; 
+    )</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">79) A batch to substitute a string through a 
+    set of text files?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">You 
+    _can_ write a 4DOS batch file for this, but it would not be a job for the 
+    novice and at least 10 lines long :-). I agree with Prof. Salmi that it's 
+    best handled by SED, AWK or some similar external tool.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">80) Where do I find a good book or WWW page on 
+    batch programming?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Look at the</font> <a href="4links.htm">4DOS Links</a>
+    <font size="2" face="verdana">and <a href="dlinks.htm">DOS Links</a> pages 
+    here ;-}</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">81) How to read a file's date and time into 
+    environment variables?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">Use 
+    the %@FILEDATE[] and %@FILETIME[] functions:</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    SET myvar=%@FILEDATE[file]-%@FILETIME[file]</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">You 
+    can do arithmetic with dates and times, too.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">82) How would I get a beep in a batch file?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">Use 
+    &quot;BEEP&quot; or &quot;BEEP frequency duration&quot; if you want something fancy.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">83) Y2K: My old BIOS gives a wrong year at 
+    boot. How can I fix it?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Assuming the day and month are correct and the year needs to be changed, 
+    you'd place a line like</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    DATE %_month/%_day/2001</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">in 
+    your AUTOEXEC.BAT, or you can get really fancy and evaluate the current year 
+    by adding a fixed amount to the wrong year, eg</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    DATE %_month/%_day/%@eval[19%_year + 20]</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    This assumes the mm/dd/yy format.&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">84) Is there a batch to drop the first letter 
+    of a file name?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Assuming the filename is in a variable (%1 in a batch file?) you'd use</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    REN %1 %@instr[1,,%1]</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">Be 
+    careful. There may be filenames with only one character!</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">85) How do I close the command window once my 
+    batch file has run?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Same as under COMMAND.COM. Check the &quot;Close when finished&quot; box in the 
+    programm properties of your DOS box, use EXIT or CLS as the last line of 
+    your batch.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong><font face="verdana">
+    <a name="86"></a><font size="2">86) Is MS-DOS batch programming going to die 
+    along with W2K?</font></font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Nice Freudian slip here ;-)</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">I 
+    don't agree with Prof. Salmi here.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">DOS 
+    has a very large user base, and existing batches will be used for quite some 
+    time to come.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">But 
+    With the advent of W2K aka NT5 new work will tend to be done under NT's 
+    CMD.EXE, which is reasonably compatible with COMMAND.COM. Migrating heritage 
+    DOS batches to NT isn't too difficult.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">So 
+    my prediction is: active DOS batching will decline faster than usually 
+    expected (my bet is ~2 years), NT batching will correspondingly prosper. It 
+    might be prudent to have a look at 4NT, the 4DOS answer to CMD.EXE, and 
+    mostly compatible with 4DOS, too.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">87) How can I test for the existence of a 
+    substring in a string?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">Use 
+    %@INDEX:</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    IF %@INDEX[string,substring] NE -1 ECHO It's there!</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">88) How can I put MS-DOS FIND results into an 
+    environment variable?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    You'd prefer to use the faster internal FFIND command, but for both it's 
+    easy to pipe the results into a variable (%newvar):</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    FIND &quot;your specs here&quot; | INPUT %%newvar</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">or</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    FFIND &quot;your specs here&quot; | INPUT %%newvar</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">89) How to get months as letters and years in 
+    four digits in DIR?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Using 4DOS, you can write your own DIR command with customized display. 
+    Assuming you want to see the 8.3 filename, filesize, filedate as above for 
+    the parameter (%1) of your customized command, you could write (%= is the 
+    line continuation var):</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    ::MYDIR.BTM</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    FOR /A:-d %fn IN (&quot;%1&quot;) DO (<br>
+&nbsp;&nbsp;&nbsp; SET fnd=%@FILEDATE[&quot;%fn&quot;]<br>
+&nbsp;&nbsp;&nbsp; SET mon=%@WORD[%@MONTH[%fnd],x Jan Feb Mar Apr May Jun %=<br>
+&nbsp;&nbsp;&nbsp; Jul Aug Sep Oct Nov Dec]<br>
+&nbsp;&nbsp;&nbsp; SET year=%@EVALl[%@YEAR[%fnd] + %@IF[%@YEAR[%fnd] ge 80 %=<br>
+    .&nbsp;&nbsp; AND. %@YEAR[%fnd] le 99,1900,2000]]<br>
+&nbsp;&nbsp;&nbsp; ECHOS %@SFN[%fn] %@REPEAT[%@CHAR[255],%=&nbsp;&nbsp;&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp;&nbsp;&nbsp; 
+    %@EVAL[15-%@LEN[%@SFN[%fn]]]]&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp;&nbsp;&nbsp; 
+    ECHOS %@FORMAT[10.10,%@FILESIZE[%fn]]&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp;&nbsp;&nbsp; 
+    ECHO %@RIGHT[2,0%@DAY[%fnd]]/%mon/%year&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp;&nbsp;&nbsp; 
+    )&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    This is slow, but much faster than working with external utils in a 
+    saved-to-disk file and displaying the results.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">90) Isn't MS-DOS dead with W2K? So why bother 
+    with MS-DOS batches?&nbsp;</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">See</font>
+    <a href="#86">(86)</a><font size="2" face="verdana">&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">91) How can I exit the called batch without 
+    returning to the first?&nbsp;</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Prof. Salmi's solution is valid under 4DOS, too, but 4DOS also has the 
+    &quot;CANCEL&quot; command, which terminates all batch processing regardless of 
+    nesting level.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">92) How do I create a sequence of directories 
+    from 1 to MaxValue?&nbsp;</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">No 
+    need to employ another language: 4DOS can do it like this, assuming you want 
+    5 digits and leading zeros like DIR00000 to DIR99999:</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp;&nbsp; 
+    :: NUMDIR.BTM</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp;&nbsp; 
+    :: give start and max value as parameter 1 and 2 on the command line&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp;&nbsp; 
+    DO n=%1 TO %2&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    MD DIR%@right[0000%n]&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp;&nbsp; 
+    ENDDO&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">93) How do I add +1 to a variable in a batch?&nbsp;</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    4DOS has the @EVAL function, so you could&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    SET newvar=%@EVAL[%oldvar + 1]&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">or, 
+    since version 5.5 as far as I remember, %@INC[]:&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    SET newvar=%@INC[%oldvar]&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">94) How to copy the errorlevel into a variable 
+    in a batch?&nbsp;</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">No 
+    need, it already is in an internal 4DOS var. See (23).&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">95) How can I test for a zero byte file or a 
+    larger file?&nbsp;</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">The 
+    %@FILESIZE[file] function shows you the size of a file, in Bytes, Kilo- or 
+    Megabytes if you wish:</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    IF %@FILESIZE[file] == 0 ...&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">or, 
+    for other filesizes, eg. lighter or equal to 100 bytes:</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    IF %@FILESIZE[file] le 100 ...&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">or 
+    greater or equal to 1 MB:</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    IF %@FILESIZE[file] gt 1000000 ...&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">96) How to show the last N lines of a file 
+    using DOS batch files?&nbsp;</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    4DOS can determine the number of lines in a file with %@LINES[file], the 
+    content of a particular line n with %@LINE[n,file]. So to show the last 10 
+    lines of a file given in parameter 1 you would write something simple like</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp;&nbsp; 
+    ::TAIL.BTM&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp;&nbsp; 
+    SET ln=%@lines[%1]&nbsp;&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp;&nbsp; 
+    DO n=%@EVAL[%ln - 10] TO %ln&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp;&nbsp;&nbsp;&nbsp; 
+    ECHO %@line[%1,%n]&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp;&nbsp; 
+    ENDDO&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">97) How do I get the path of a file located 
+    somewhere on my disk?&nbsp;</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    DIR /B/J/S myfile&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    would give you only the full path and filename of files matching the myfile 
+    spec. You could redirect the output to a file and use this as input for 
+    another command (Most 4DOS commands can use filelists generated like this). 
+    Let's assume you want to delete all these files on all drives:&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    DIR /B/J/S C:\myfile &gt; tempfile.dat&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    DIR /B/J/S D:\myfile &gt;&gt; tempfile.dat&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    DIR /B/J/S E:\myfile &gt;&gt; tempfile.dat&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    DEL @tempfile.dat&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">or, 
+    using multiple wildcards: &nbsp;&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    DIR /B/J/S C:\myfile D:\myfile E:\myfile &gt; tempfile.dat&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    DEL @tempfile.dat&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">98) How to read a file's attributes into 
+    environment variables?&nbsp;</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">For 
+    a file with the attributes R,H and A the function %@ATTRIB[file] would 
+    return &quot;RH_A_&quot; (without the quotes):&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    SET myvar=%@ATTRIB[file]&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">99) Is it possible to echo without linefeed 
+    like the Unix echo -n?&nbsp;</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Yes. ECHOS does that:&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    ECHOS text&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">100) How can I detect the F1-F10 function keys 
+    in a batch?&nbsp;</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">The 
+    INKEY command is used to get single key input into a variable. This includes 
+    the function keys. To get the F1 key, you'd use&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    INKEY %%key&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    IF %key eq @59 ...&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">101) How can I get the free size and total 
+    size of a drive?&nbsp;</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">For 
+    drive C: you'd use&nbsp;the internal command</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    FREE C:</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">or 
+    the (you guessed it!) internal functions:&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    ECHO %@DISKFREE[C:] of %@DISKTOTAL[C:] bytes free on drive C:&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">102) How can I search for a string through a 
+    directory of files?&nbsp;</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    FFIND /S /T&quot;string&quot; dir\*.*&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">103) How do I find the largest numeric 
+    extension and add +1 to it?&nbsp;</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    We'll assume that there are files with other extensions mixed with those 
+    numerical extension files that interest us, to make it a little bit more 
+    difficult, and to give me cause to introduce you to extended wildcards in 
+    4DOS :-)&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">DIR 
+    can sort the files according to date and time, or name, or, in this case, 
+    extension. Direct that to a file (or get your input through a pipe from the 
+    CON device directly), parse out the numeric extension, and add 1: The 
+    command&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    DIR /A:-d /B /O:-e *.[0-9][0-9][0-9]</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    will display only files (no dirs) without header or footer sorted in 
+    descending order with numerical extensions in the range from .000 to .999. 
+    The following&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    DIR /A:-d /B /O:-e *.[0-9][0-9][0-9] | set n=%@EXT[%@LINE[CON,0]]&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    SET n=%@INC[%n]&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    extracts the extension from the first line of CON and will give you the next 
+    extension in variable %n.&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">104) How do I run the latest executable from 
+    the default directory?&nbsp;</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">A 
+    nice way to select an executable file in the current directory, in this case 
+    ordered by date, is&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    DIR /B /O:-d *.exe;*.com;*.bat;*.btm | %=&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    SET exevar=%@SELECT[con,4,5,19,20,Exe]&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    %exevar&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    which displays all executable files ordered by date (youngest first) in a 
+    nice menu window for your selection by cursor key (that's what %@SELECT[] 
+    does) and can be nicely concatenated to an alias.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">To 
+    really blindly (!) run the latest executable, use&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    DIR /B /O:-d *.exe;*.com;*.bat;*.btm | %=&nbsp;%@LINE[CON,0] &nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">105) How can I determine if ANSI.SYS is 
+    loaded?&nbsp;&nbsp;</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    IF %_ANSI == 1 ...&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">106) How do I get the last drive into an 
+    environment variable?&nbsp;</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">It 
+    already is in internal variable %_LASTDRIVE ...&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">107) How can I calculate the number of lines 
+    in a file?&nbsp;</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">You 
+    don't need to. It can be determined with internal function&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    %@LINES[file].&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">108) Is it possible to save and later restore 
+    the command history?&nbsp;</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">Oh 
+    yes. 4DOS has a configurable command history buffer, and you can save it 
+    with&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    HISTORY &gt; histfile</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp;or 
+    append it with&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    HISTORY &gt;&gt; histfile</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">You 
+    can sort the histfile, delete dupes and reread it with&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    HISTORY /R histfile</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">109. Is it possible to change just one line of 
+    a file with a batch?&nbsp;</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">The 
+    short answer is: that depends...</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">... 
+    on a number of things. If we assume that it's a text file, then there are 
+    easy ways to change the first or the last line:&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">To 
+    add a first line, echo your text to a temp file, copy this temp file plus 
+    the oldfile to newfile, et voila.&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">To 
+    add a last line to oldfile, just echo your text using &quot;&gt;&gt;&quot; to append to that 
+    file.&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">To 
+    replace text in the middle, the best way would be to use an external tool.&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Using 4DOS, you'd have to walk through each line of that file, using the 
+    %@LINE[file,n] function, copying unchanged lines to a new file, then add the 
+    changed new line, then add the rest of the oldfile lines to the new file. 
+    Doable, but not easy for the novice.&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">You 
+    can do such things in 4DOS even on the binary level on single bytes, and I 
+    have a few examples for this in my 4XBTM collection, but it would at least 
+    run to 10 or 20 lines :-) Ask me a concrete question for a specific file and 
+    I will show you how to do it.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong><font face="verdana">
+    <a name="109"><font size="2">110</font></a><font size="2">. Is it possible 
+    to delete lines by their linenumbers only?</font></font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">You 
+    can determine the number of lines of a textfile by internal function 
+    @LINES[file], each individual line n by internal function @LINE[file,n], n 
+    starting with 0. So a batch to delete line n from a file would look like 
+    this:</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    SET infile=%1</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    SET linetokill=%2</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    DO n=0 to %@dec[%linetokill]</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp;&nbsp;&nbsp; 
+    ECHO %@line[%infile,%n] &gt;&gt; outfile</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    ENDDO</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    DO n=%@inc[%linetokill] to %@lines[%infile]</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp;&nbsp;&nbsp; 
+    ECHO %@line[%infile,%n] &gt;&gt; outfile</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    ENDDO</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    DEL %infile</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    REN outfile %infile</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    This can be made quicker by using the @FILEOPEN, ...READ, ...WRITE,&nbsp; 
+    ..CLOSE functions, and by using SETDOS you can make it work with special 
+    characters (like those used for piping) too.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">111. How can I tell what drive has been 
+    allocated by ramdrive.sys?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Prof. Salmi's solutions are all workable in 4DOS. If you want to determine 
+    this on another system, you'll have to take 3rd_ party ramdrives with other 
+    names into account. The only idea I can add is to use 4DOS' @TIMER function 
+    to time an action that would on a ramdrive be discernably faster that on any 
+    physical HD. That's not a trivial task, because eg. writing and reading a 
+    file would probably need a large file to see enough of a difference, and 
+    there is no data how large the ramdrive in question is. Then you have to 
+    consider the existence and influence of diverse caches that modern HDs and 
+    OSs employ. Whenever possible it is preferable by far to set a varibale (eg. 
+    SET ramdrive=1) in CONFIG.SYS when you load(high) the driver so you can 
+    check for that.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">112. How can in insert a line in the middle of 
+    a file with a batch?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    There are several possible solutions, and the question lacks the necessary 
+    info to discern which one is best or even relevant.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">One 
+    solution is to use the batch solution from</font> <a href="#109">question 
+    109</a> <font size="2" face="verdana">, add a line</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    ECHO This is the text for the inserted line &gt;&gt; outfile</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    between the 2 DO ... ENDDO loops. All remarks written there apply here too.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">If 
+    you only have to insert an each time new line into a static, nonchanging 
+    file another, faster solution suggests itself: split the static file into 2 
+    parts (using a text editor), part 1 containing the text before, part 2 
+    containing the text after the insert. Now you can simply</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    COPY part1 outfile</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    ECHO This is the text for the inserted line &gt;&gt; outfile</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    COPY outfile + part2</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">to 
+    concatenate part1, inserted line and part2 to outfile.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">113. What is difference between MS-DOS and 
+    various Windows batches?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    This answer by Prof. Salmi is born out of a heated discussion in the 
+    alt.msdos.batch newsgroup. Some members there try to shun everything that 
+    does not fit a very narrow (but changing according to their own changing 
+    preferences) definition of a DOS batch, especially NT batch discussions.&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    4DOS users at least have the security that with 4NT they find a command 
+    processor under NT that is fairly compatible with 4DOS and shares its 
+    superior power.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">114. Is it possible to display comments from 
+    the config.sys file?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">I 
+    personally recommed CONFIX, a utility that can do more than echo from 
+    CONFIG.SYS. You can get it
+    <a href="http://www.uwe-sieber.de/files/confix.zip">here</a>.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">115. Can I split a single command over 
+    multiple lines in a batch?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">To 
+    make a very long command line more readable, you can tell 4DOS that the 
+    command line continues on the next line by ending the line with the escape 
+    char or its representational internal variable %=</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">116. How can I get yesterday's date into an 
+    environment variable?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Doing all sorts of date arithmetic is easy in 4DOS. For may commands you can 
+    enter date ranges:</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    COPY /[d-1,+0] *.* a:&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Meaning: copy all the files that were changed yesterday to the floppy disk.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">To 
+    get yesterday's date into a variable, convert current date to number of days 
+    since 1980, subtract one, convert back to date format, of course all with 
+    internal vars and functions:</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    SET yesterday=%@MAKEDATE[%@EVAL[%@DATE[%_DATE] - 1]]</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Easy, isn't it?</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">117)<a name="117"></a> How do I get the 3rd 
+    word from the 5th line of a text file?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">Use 
+    4DOS internal functions. Assuming &quot;get&quot; means putting the result in a 
+    variable, one solution would be</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    SET myvar=%@WORD[2,%@LINE[myfile,4]]</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    remembering 4DOS starts counting at 0 :-)</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">118) How to put the content of text file into 
+    a variable?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Under 4DOS you can parse a textfile into lines, the lines into words, the 
+    words into characters. This is essentially the same question as #</font>
+    <a href="#117">117</a></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    <br>
+    <strong>119) How do I get the three oldest and latest files of a directory?</strong></font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">To 
+    get the oldest 3 files you can use this small btm:</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    DIR /b/o:d/a:-d * &gt; %temp\dirfile.tmp<br>
+&nbsp; DO x=0 to 2<br>
+&nbsp;&nbsp;&nbsp; ECHO %@LINE[%temp\dirfile.tmp,%x]<br>
+&nbsp; ENDDO<br>
+&nbsp; DEL /q/y %temp\dirfile.tmp</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">The 
+    output of a &quot;blank&quot; DIR command is piped into a file, then the first 3 (0-2) 
+    lines of that file are echoed to screen. To get the three latest files 
+    change the sorting order of the DIR command (/o.-d)</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    <br>
+    <strong>120) Hint: Displaying an ASCII (hex) value table</strong></font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    There is a very nice btm displaying the complete ascii chart in my 4XBTM 
+    collection: XASCII.BTM. You can switch between two pages, select a character 
+    and copy it to the Ctrl-Ins key for later use.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    <br>
+    <strong>121) How to make %0 include the full path of the called batch file?</strong></font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Assuming you want to execute TEST.BAT, which is in your path, you could 
+    execute</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp;&nbsp; 
+    %@SEARCH[test]&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    which will yield the desired result when %0 is expanded in your batch. 
+    Another way would be to use the internal variable %_batchname, which expands 
+    to the full path and filename of the current batch.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    <br>
+    <strong>122) How can I test if a file is dated less than hour ago?</strong></font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Just to make this a little bit more challenging here's the core of my 
+    XRCF.BTM (Recently Changed Files):</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    DIR /s/f/h/a/[d0]/[t-%1] *.*</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">You 
+    can call this from the command line with the number of minutes as parameter 
+    (%1) and it will show you all files changed within the given number of 
+    minutes in your current dir and its subdirs.&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">To 
+    test just one file if its filedate/time is less than an hour ago (even if 
+    you're just past midnight!) you could use the following 3-line btm (filename 
+    as parameter %1 in batch or alias):</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    SET&nbsp; fileage= %@EVAL[%@DATE[%@FILEDATE[%1]] * 28800 %=<br>
+&nbsp; + %@TIME[%@FILETIME[%1]]]</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    SET&nbsp; now=%@EVAL[%@DATE[%_DATE] * 28800 %=<br>
+&nbsp; + %@TIME[%_TIME]]</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    ECHO File is %@IF[%@EVAL[%now - %fileage] le 3600,younger,older] than 1 
+    hour!</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">The 
+    1st line (%= as the last entry on a line tells 4DOS that the line continues 
+    on the next line) determines the fileage in seconds (28800 in a day) since 
+    01.01.1980.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    This 2nd line determines the current date/time in seconds since 01.01.1980.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">The 
+    3rd line takes the 2 integers to determine if the fileage is less or more 
+    than 1 hour.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">123) How I can (re)set the screen text and 
+    background colors?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">The 
+    4DOS solution is to use the vailable commands like CLS (with color 
+    parameters), COLOR, SCRPUT etc. which allow you to design your screen colors 
+    without cryptic ANSI escape sequences.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">124) How do I get the echo status into an 
+    environment variable?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    This will do the trick in 4DOS:</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    ECHO | INPUT %%_echo %+ SET _echo=%@WORD[2,%_echo]</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">THe 
+    output of the ECHO command is piped to the INPUT command, which sets our new 
+    %_echo variable, which is then shortened to the 3rd word (ON or OFF).</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">125) How can I delete all empty directories on 
+    a drive?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    4DOS has the GLOBAL command, which will perform a given command in the 
+    current dir and all subdirs. Another possibility is to use FOR /R 
+    (recursive) for this purpose, but 4DOS' DEL command is powerful enough on 
+    its own:</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    DEL /a:d&nbsp; /sexy *</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">In 
+    the order of appearance: Delete only directories (attribute: d, you'd have 
+    to use a nonexisting dummy filename to delete without this.) recursing 
+    subdirs (/s), no error messages (/e, just there for the pun), remove empty 
+    subdirs (/x ) and say yes to all prompts (/y).</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">126) How can I put an = into an environment 
+    variable?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">A 
+    real challenge ;-) 4DOS understands</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    SET test==</font></p>
+    <p style="margin-top: 0; margin-bottom: 6">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 6"><strong>
+    <font size="2" face="verdana">127) How can I reverse a word or an entire 
+    line?</font></strong></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">Now 
+    this one is real fun to do in 4DOS. I have written batches to produce all 
+    possible character combinations of a given name, produce all possible words 
+    of a given length (remember the story &quot;All the Names of God&quot; by Arthur C. 
+    Clarke?) and to mimic the monkey hammering the keys to eventually produce 
+    all the works of Shakespeare. To fulfill this special requirement, you could 
+    use</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    INPUT Enter your text:&nbsp; %%text</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    ECHO.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    IFF &quot;%text&quot; NE &quot;&quot; THEN</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    SET text=%@REPLACE[ ,%@CHAR[255],%text]</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp;&nbsp;&nbsp; 
+    DO n=%@DEC[%@LEN[%text]] TO 0 BY -1</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    ECHOS %@INSTR[%n,1,%text]</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp;&nbsp;&nbsp; 
+    ENDDO</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    SET text=%@REPLACE[%@CHAR[255], ,%text]</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">&nbsp; 
+    ENDIFF</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    which does the following: it gets the text to reverse from the user and&nbsp; 
+    echos a blank line. It then checks for user abort (%text would not exist). A 
+    space in the variable %text would produce unwanted results, so the batch 
+    replaces all &quot;soft&quot; spaces with &quot;hard&quot; (ascii char 255) spaces. Now it echos 
+    the variable %text from last to first character on the same line. At last it 
+    replaces the hard spaces with soft spaces and you can continue to use the 
+    variable %text.</font></p>
+    <p style="margin-top: 0; margin-bottom: 6"><font size="2" face="verdana">
+    Note that this works only if there are no characters with special meaning in 
+    the %text variable (since we get our input via the INPUT command, none are 
+    possible here). If you derive the %text variable by some other 
+    means,&nbsp;however,&nbsp; SETDOS /X&nbsp; might be used to guard against 
+    percent, redirection, pipe and escape characters.</font></p>
+    <p>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="100%" bgcolor="#FFFFFF" height="18" style="border-left-style: solid; border-left-width: 1">
+    <h5 align="center"><a href="#0"><font face="verdana">Top of Page</font></a> 
+    - <a href="index.htm"><font face="verdana">Home</font></a></h5>
+    </td>
+  </tr>
+</table>
+
+</body>
+
+</html>

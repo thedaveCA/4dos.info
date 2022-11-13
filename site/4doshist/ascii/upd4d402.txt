@@ -1,0 +1,523 @@
+
+                                  JP Software
+
+                           4DOS Update Documentation
+
+                        Version 4.02 -- March 30, 1993
+
+   Copyright 1988 - 1993, JP Software Inc., All Rights Reserved.  Published
+   by JP Software Inc., P.O. Box 1470, E. Arlington, MA 02174 USA, (617)
+   646-3975.
+
+
+   This file provides a list of changes in 4DOS version 4.02.  If you are
+   new to 4DOS with version 4.02, you can skip this file and begin with the
+   printed 4DOS Reference Manual, or with the ASCII manual in the file
+   4DOS.DOC.
+
+   This file is intended for 4DOS 4.01 users upgrading to 4DOS 4.02.  If
+   you have an earlier version of 4DOS (3.x or 4.0) please review
+   UPDAT401.DOC for changes made through version 4.01 before reading this
+   file.
+
+   Some of the descriptions below may be more detailed than you need; if
+   you aren't using the feature described, feel free to skip through to the
+   next item!
+
+   There are feature changes in 4DOS 4.02 which may apply to you if:
+
+      - you are using MS-DOS version 6.0
+      - you are using OS/2 version 2.1
+      - you want to be able to display times in "AM/PM" format
+      - you want to be able to display bright background colors
+
+   If you're in one of these groups, check through this file for changes
+   which may affect you.  Otherwise, you can probably replace 4DOS 4.01
+   with 4.02 without noticing any change at all, and review the lists below
+   only if you have a question.
+
+   The changes referred to above are marked with a "**" in the lists below. 
+   All items without a "**" are more technical or less important; you can
+   skip them unless you are trying to solve a particular problem, or are
+   looking for specific changes which may affect you.
+
+   This file is formatted at 58 lines per page, and contains form feeds and
+   page footers.  It can be viewed with a file viewer such as the 4DOS LIST
+   command, or printed on most PC printers using the command:
+
+            copy updat402.doc prn
+
+   Printing it with a program that formats the pages is not likely to work
+   due to the formatting included in the file.
+
+                                                               (3/93-4.02A)
+
+
+
+   4DOS 4.02  [3-30-93]          UPDAT402.DOC                        page 1
+
+
+
+                             4DOS 4.02 Change List
+
+
+   Startup and Initialization
+   --------------------------
+
+      Three new startup switches are now supported in 4DOS:
+
+   **    /P[:]filename sets the path and file name for the AUTOEXEC file in
+         the primary shell.  This is equivalent to using the //AutoExecPath
+         directive in 4DOS.INI.  It is included for compatibility with the
+         DOS_AUTOEXEC setting available under OS/2 2.1, and should not be
+         needed elsewhere.
+
+         /D disables AUTOEXEC.  A /D overrides AutoExecPath and /A (see
+         above).  This switch is intended for internal use by MS-DOS 6.0
+         when you use the F8 key at boot time, and answer "No" to the "Run
+         AUTOEXEC" question.
+
+         /K[:]command:  Run the specified command after 4DOS starts.  4DOS
+         4.01 supported this switch in OS/2 DOS sessions; it is now
+         available in a standard DOS boot as well.  For compatibility
+         reasons, in a primary shell under MS-DOS 6.0, /K will execute the
+         command INSTEAD of AUTOEXEC.BAT.  However in other environments
+         (DOS 5.0, OS/2 DOS sessions, etc.), /K will execute the command IN
+         ADDITION to AUTOEXEC.
+
+
+      The 4DOS manual has never stated any required order for items on the
+      startup command line.  In order for command line switches to properly
+      override items in the INI file, and in order for 4DOS to find the INI
+      file, you should use the following order in the command tail:
+
+            - any "d:\path" for COMSPEC directory
+            - any explicit INI file name (@ininame)
+            - the /A, /E, /F, and /P switches, if used, in any order
+            - the /C or /K switch, if used
+            - any explicit startup command
+
+      (For more information on startup options, see your 4DOS manual.)
+
+
+      There are two new directives in 4DOS.INI:
+
+   **    AmPm = Yes | NO | Auto:  Yes tells 4DOS to display times in
+         12-hour format with a trailing "a" for AM or "p" for PM.  The
+         default of No formats times in military (24-hour) format.  Auto
+         formats the time according to the country code set for your
+         system.  The time format selected by AmPm applies to DIR and
+         SELECT displays, LOG files, the output of TIMER, and the DATE and
+
+
+
+
+   4DOS 4.02  [3-30-93]          UPDAT402.DOC                        page 2
+
+
+         TIME commands.  It does not affect %_TIME, %@MAKETIME, or PROMPT
+         $t and $T.
+
+   **    BrightBG = Yes | No.  Yes switches the video board to display
+         bright background colors (rather than blinking foreground colors)
+         within 4DOS (what happens within other programs is up to them). 
+         No switches to blinking foreground mode and disables bright
+         backgrounds.  The default if BrightBG is not used is to leave the
+         video board in its current state and not adjust the mode at all. 
+         For further details before using BrightBG see the section on
+         "Color Changes" below.
+
+
+      The AutoExecPath directive in 4DOS.INI can now specify a path, or a
+      path and file name.  Previously this directive could only include a
+      path; the file name was always AUTOEXEC.BAT.  Now, if a file name is
+      included that file will be run instead of AUTOEXEC.BAT.  If only a
+      path is included, 4DOS will run AUTOEXEC.BAT from the specified
+      directory.  For example:
+
+         AutoExecPath=C:\MYDIR
+            Runs the file C:\MYDIR\AUTOEXEC.BAT when the system boots.
+
+         AutoExecPath=C:\MYDIR\MYSTART.BAT
+            Runs the specified file when the system boots.
+
+      This change allows you to put multiple startup files for different
+      boot options or different OS/2 2.x DOS sessions into the same
+      directory, and pick the file to be run by changing the AutoExecPath
+      directive.
+
+
+   ** The default setting for the FullINT2E directive in 4DOS.INI is now
+      Yes.  This increases 4DOS's default memory usage by about 100 bytes,
+      but ensures compatibility with applications that use interrupt 2E. 
+      Only a few applications use interupt 2E to execute commands.  If you
+      don't run any such applications, you can save the space taken by
+      interrupt 2E support by including a FullINT2E=No directive in
+      4DOS.INI.
+
+
+   ** 4DOS fully supports the MS-DOS 6.0 multiple configuration facility
+      which allows menus in CONFIG.SYS.  This includes support for SET
+      statements in CONFIG.SYS, and for the CONFIG variable generated when
+      CONFIG.SYS menus are used.  Environment variables created from
+      CONFIG.SYS will be available within AUTOEXEC and 4START when the
+      primary 4DOS shell begins execution.
+
+
+
+
+
+
+
+
+   4DOS 4.02  [3-30-93]          UPDAT402.DOC                        page 3
+
+
+   ** Color Changes
+   ----------------
+
+      There are two general changes to color specifications in 4DOS 4.02.
+
+      First, the DRAWBOX, DRAWHLINE, DRAWVLINE, SCRPUT, and VSCRPUT
+      commands no longer accept border colors.  Border colors did not
+      always work as expected in these commands, and were never part of the
+      documented syntax.  To specify border colors you must use CLS or
+      COLOR, or the StdColors directive in 4DOS.INI followed by a CLS.
+
+      Second, bright background colors can now be specified in color
+      settings on EGA and VGA systems.  The remainder of this section
+      describes the use of bright background colors.
+
+      Bright background colors work only on EGA and VGA displays, and
+      should not be used on other systems.  They are an alternative to
+      blinking text, and you must choose one or the other:  if you enable
+      bright backgrounds, displayed text will not blink, and vice versa.
+
+      To use bright background colors, enable them with the BrightBG
+      directive in 4DOS.INI (see Startup and Initialization changes above
+      for details).
+
+      The syntax of color specifications has been changed to support bright
+      backgrounds.  The full syntax is now:
+
+            [BRIght] [BLInk] fg on [BRIght] bg
+
+      This change applies to all commands which accept color
+      specifications, and to all color directives in 4DOS.INI.
+
+      Technical Notes:
+
+         Bright background and blinking foreground colors use the same bit
+         in the video board's registers.  Therefore, you must have the
+         BrightBG setting and your color specifications properly
+         synchronized to get the desired result.  With BrightBG = No,
+         either "blink" or "bright [bg]" in the color specification will
+         result in blinking text.  With BrightBG = Yes, either
+         specification will result in a bright background.
+
+         For example, these two color specifications will always produce
+         the same result on the screen:
+
+               color blink white on blue
+               color white on bright blue
+
+         If BrightBG = No, the above statements will both result in the
+         same blinking white text on a blue background.  If BrightBG = Yes,
+         they will both result in the same white text on a bright blue
+         background.
+
+
+
+   4DOS 4.02  [3-30-93]          UPDAT402.DOC                        page 4
+
+
+         Setting BrightBG may not be compatible with all video boards, but
+         should work with standard EGA- and VGA-compatible systems.  If
+         BrightBG is set to Yes or No the video board bright background /
+         blinking foreground state is set each time 4DOS displays the
+         prompt.  If BrightBG is not used the video board state is not
+         adjusted at all.  If you experience screen "flashes" at each
+         prompt when BrightBG is used, then your video board probably is
+         not compatible with the approach used by 4DOS's bright background
+         support.  In this case, leave the BrightBG statement out of
+         4DOS.INI altogether to eliminate the "flashes".  This problem
+         should be very rare and is not likely to occur on standard EGA and
+         VGA systems.
+
+
+   Command Changes
+   ---------------
+
+   ** DIR:  The following switch changes were made, for compatibility with
+      MS-DOS 6.0's DBLSPACE disk compression facility:
+
+         /C:   The old /C (upper case display) switch has been changed to
+               /E.
+
+         /C:   Display per-file and total compression ratios on drives
+               compressed with MS-DOS 6.0's DBLSPACE disk compression
+               utility.  The compression ratio is displayed instead of the
+               file description.  The ratio is left blank for directories
+               and files with length 0, and for files on non-DBLSPACE
+               drives.  /C only works in single-column mode, and is ignored
+               if /2, /4, or /W is used.
+
+               The numerator for the displayed compression ratio is the
+               amount of space which would be allocated to the file on the
+               DBLSPACE drive if it were not compressed, using the DBLSPACE
+               drive's cluster size (normally 8K bytes).  The denominator
+               is the space actually allocated for the compressed file.
+
+         /CH:  Display compression ratios like /C, but base the calculation
+               on the host drive's cluster size.  This gives a more
+               accurate picture of the space saved through compression than
+               is given by /C.
+
+               PLEASE NOTE:  /CH will occasionally display compression
+               ratios slightly less than 1.0 to 1.0.  This reflects files
+               which have actually expanded when stored on the DBLSPACE
+               drive.  COMMAND.COM may display these ratios as 1.0 to 1.0,
+               even if the true ratio is slightly less.  4DOS always
+               displays the true ratio.
+
+         /O:c  Sort by DBLSPACE compression ratio (the least compressed
+               file in the list sorts first; the most compressed file sorts
+               last).  The sort can be reversed with /O:-c.  For single-
+
+
+
+   4DOS 4.02  [3-30-93]          UPDAT402.DOC                        page 5
+
+
+               column directory displays, /O:c implies /C -- in other
+               words, compression ratios will be displayed as well as used
+               for the sort order.  For wider displays (/2, /4, etc.) the
+               ratios will be used to determine the order, but will not be
+               displayed.  If /O:c is used /O:i (sort by description) will
+               be ignored.  If /CH is used with /O:C the sort will be by
+               compression ratios base don the host drive cluster size.
+
+
+   ** LH / LOADHIGH:  Now support loading memory-resident programs into
+      specific regions in upper memory.  These new features are designed
+      for compatibility with MS-DOS 6.0's COMMAND.COM, but will also work
+      with MS-DOS 5.0 and in OS/2 2.0 VDMs.
+
+      The full syntax for LH is now:
+
+            LH [/L:r1,n1;r2,n2;... /S] [d:][path]filename
+
+      To use the new upper memory region switches you must meet ALL of the
+      following requirements:
+
+         - You must be running MS-DOS / PC-DOS 5.0 or above, or a DOS
+         session under OS/2 2.0 or above.
+
+         - You must have one of the following memory management packages
+         running:  EMM386 and HIMEM.SYS from MS-DOS / PC-DOS 5.0 or above;
+         386MAX from Qualitas; QEMM from Quarterdeck; or DOS session memory
+         management under OS/2 2.x, with UMB support enabled (typically via
+         the /UMB switch on the VXMS.SYS line in your OS/2 CONFIG.SYS
+         file).
+
+         - You must have a DOS=HIGH,UMB or DOS=UMB statement in CONFIG.SYS;
+         or under OS/2 2.x, you must have the DOS_UMB setting for the
+         session set to "On".
+
+      The new LH / LOADHIGH options are:
+
+         /L:r1,n1;r2,n2;...:  Give the program access to upper memory
+         region r1 if that region has at least n1 bytes available, to
+         region r2 if it has at least n2 bytes available, and so on.  If /L
+         is not used, the program is given access to all upper memory
+         regions.
+
+         Region numbers beyond those that exist on your system will be
+         ignored, with a warning.  The figures for space required in each
+         region (n1, n2, etc.) are rounded up to the nearest 16 bytes.  If
+         the free space in any region is less than the space required for
+         that region, then the region will be locked out and unavailable to
+         the program.  If the required space value is left out the program
+         is given access to the region regardless of the amount of free
+         space available.
+
+
+
+
+   4DOS 4.02  [3-30-93]          UPDAT402.DOC                        page 6
+
+
+         The program, its environment block, and any data allocated by the
+         program, will be loaded only into the region(s) allowed by the /L
+         switch; all other regions will be locked out and made unavailable
+         to the program.  If a program requests memory beyond that
+         available to it in upper memory, DOS will normally allocate low
+         memory (below 640K) to fulfill the request.
+
+         Regions are numbered beginning with 1.  If you specify region 0
+         the program and its environment will be loaded into low memory,
+         and any other region(s) specified will be available for allocation
+         of program data.  Any minimum size for region 0 will be ignored.
+
+         For example, for a simple load into region 2 only, regardless of
+         the space available in that region:
+
+               LH /L:2 progname ...
+
+         For access to region 2 if it has 10000 bytes free, and region 3 if
+         it has 15000 bytes free:
+
+               LH /L:2,10000;3,15000 ...
+
+
+         /S:  Shrink each specified region to the minimum available size
+         before loading the program.  If /S is not used all space in the
+         specified region(s) is made available to the program.  You can use
+         /S to prevent a program from taking more than the minimum
+         specified space in a particular region (e.g. to limit memory used
+         by a cache that takes whatever memory it can get).
+
+         For example, to load a cache program into low memory, give the
+         program access to region 2 for data as long as there is at least
+         16K free in region 2, and also limit the program to using no more
+         than that 16K:
+
+               LH /L:0;2,16384 /S mycache ...
+
+         The /S switch is intended for use by MS-DOS 6.0's MEMMAKER
+         utility.  It will not be especially useful for other purposes
+         unless you are involved in complex manual adjustments to upper
+         memory allocations, and have a thorough understanding of the
+         memory allocation strategies used by the programs involved.
+
+
+   ** MOVE:  MOVE now intercepts attempts to perform an infinitely
+      recursive MOVE /S, and displays an error message.
+
+
+   ** SELECT:  There are several switch changes to support MS-DOS 6.0's
+      DBLSPACE disk compression.  The upper case display switch has been
+      changed to /E, and there is new compression support provided by /C,
+      /CH, and /O:c.  See DIR above for details.
+
+
+
+   4DOS 4.02  [3-30-93]          UPDAT402.DOC                        page 7
+
+
+
+   Bugs Fixed
+   ----------
+
+      A /E:nnnn setting on the startup command line was not overriding an
+      Environment= setting in the default 4DOS.INI file.
+
+      A /F on the startup command line was not overriding a CritFail=No in
+      the default 4DOS.INI file.
+
+      4DOS occasionally displayed an incorrect filename in error messages
+      related to 4DOS.INI.
+
+      If there was no 4DOS.INI file in the directory with 4DOS.COM, 4DOS
+      was sometimes looking for it in the root directory of that drive,
+      rather than the documented location of the root directory of the boot
+      drive.
+
+      The 4DOS PSP in upper memory was not chaining back to the low-memory
+      PSP when UMBLoad was used.  This fix should solve some very rare
+      problems with programs that trace down the PSP chain.
+      Redirection was not properly backing up over an end of file mark (^Z)
+      when appending to an existing file.
+
+      Filename completion could not handle illegal DOS filenames like
+      OS/2's "EA DATA. SF" properly.  (You still can't USE these filenames
+      in commands, but they will no longer cause trouble with filename
+      completion when you go past them.)
+
+      %_ALIAS and the MEMORY command did not agree as to the amount of free
+      alias space.
+
+      When a prompt was displayed in a command with a /P switch (e.g. COPY
+      /P), pressing a non-printing key would display garbage characters.
+
+      A bug in MS-DOS JOIN sometimes prevented 4DOS from correctly
+      identifying JOINed directories as directories.  We have worked around
+      this bug.
+
+      COPY and MOVE:  Occasionally would not properly handle attempts to
+      copy OS/2 Extended Attributes to file systems that did not support
+      them.
+
+      DEL /Q:  Conflicted with include lists so that only the first file on
+      the list was deleted.
+
+      EXCEPT:  Using EXCEPT (*.) ... to prevent processing of files with no
+      extension could cause problems in EXCEPT's handling of the
+      directories "." and "..".
+
+
+
+
+
+
+   4DOS 4.02  [3-30-93]          UPDAT402.DOC                        page 8
+
+
+      EXIT:  4EXIT would not always be run when EXITing from a batch file. 
+      Also an infinite loop would occur if an EXIT command was included in
+      4EXIT.
+
+      LH / LOADHIGH:  Fixed a problem which could very rarely cause a crash
+      on return from a TSR loaded with LOADHIGH.
+
+      MOVE:  Incorrect moves could occur when the source file was on a
+      Netware Lite drive.  These problems were due to network bugs, not
+      4DOS bugs; we have worked around the network problems.
+
+      SELECT:  The displayed counter would overflow when tagging over 64MB
+      of files.
+
+      Y:  had several minor problems when used at the console.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   4DOS 4.02  [3-30-93]          UPDAT402.DOC                        page 9
+
+

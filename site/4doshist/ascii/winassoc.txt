@@ -1,0 +1,232 @@
+[ 30-Jul-97 ]
+
+Note: the following text is extracted from the Take Command/32 2.00 online
+help but also largely applies to 4NT.
+
+Copyright 1997, JP Software Inc., All Rights Reserved.
+4DOS is a registered trademark of JP Software Inc.  Other product names are
+trademarks of their respective manufacturers.
+
+
+
+ Windows File Associations
+
+          Windows 95, and Windows NT include the ability to associate
+          file extensions with specific applications; this feature is
+          sometimes called "file associations".  For example, when you
+          install Microsoft Word, it creates an association between files
+          with a .DOC or .DOT extension and the Word program file,
+          WINWORD.EXE.
+
+          Take Command includes a similar feature, called executable
+          extensions, which allows you to set environment variables which
+          associate a file extension with a particular application.
+
+          Under Windows 95 and Windows NT, file associations can be
+          stored in two places within the Windows registry.  One part of
+          the registry contains "direct" associations similar to those in
+          the Windows 3.x WIN.INI file _ they simply list the extension
+          and the application name, associating the extension directly
+          with the application.  Another part of the registry holds
+          associations which are "indirect" _ they associate an extension
+          with a "file type," and separately specify attributes of files
+          of that type, including the command to execute in order to open
+          such a file.
+
+          When Take Command starts, it retrieves the direct file
+          associations from Windows, and treats them like Take Command
+          executable extensions.  To disable loading of these direct
+          associations see the Startup page of the configuration dialogs,
+          or the LoadAssociations directive in TCMD32.INI.  The indirect
+          associations are accessed through built-in Windows features
+          (see below), and can not be disabled.
+
+          When you attempt to execute a program from the command line or
+          a batch file, Take Command first searches its list of
+          executable extensions, including the standard extensions (.COM,
+          .EXE, .BTM, etc.).  It then checks Take Command executable
+          extensions, followed by direct file associations inherited from
+          Windows.  If  all of these tests fail, Take Command passes the
+          command name to Windows to see if Windows can find an indirect
+          association for it.  Each of these tests is done in all of the
+          standard search directories described under the PATH command.
+
+          Take Command/32 offers two commands which provide limited
+          control over indirect file associations.  Both should be used
+          with caution to avoid creating errors in the registry or
+          damaging existing file types.  The ASSOC command modifies or
+          displays the associations between extensions and file types in
+          the Windows registry.  The FTYPE command modifies or displays
+          the command used to open a file of a specified type.
+
+          Executable extensions defined in Take Command always take
+          precedence over the direct and indirect file associations
+          defined in Windows.  For example, if you associate the .TXT
+          extension with your own editor using a Take Command executable
+
+          extension, and Windows has associated .TXT with Notepad, your
+          setting will have priority, and the association with Notepad
+          will be ignored when you invoke a .TXT file from within Take
+          Command.
+
+          Unfortunately, it is not unusual to find both a direct
+          association and an indirect association in the Windows registry
+          for the same extension.  This can happen when an ill-behaved
+          install or uninstall program modifies the wrong registry entry,
+          or when a 16-bit application registers one type of association
+          and a 32-bit application registers the other type for the same
+          extension.  For example, under Windows 95 you might have a
+          direct association between .GIF files and a 16-bit graphics
+          program, and an indirect association between .GIF files and a
+          newer 32-bit application.  When this happens Take Command will
+          find the direct association first, which may not be the result
+          you want.
+
+          To address such problems, you can correct the registry entries (
+          use extreme caution when modifying the registry manually as
+          errors in the registry can prevent your system from booting);
+          create a Take Command executable extension which explicitly
+          specifies the application to run; disable the loading of direct
+          associations from the Startup page of the configuration dialogs
+          , or with a LoadAssociations = No directive in the TCMD32.INI
+          file; or disable an individual association with the UNSET
+          command.
+
+          To disable individual direct file associations while you are
+          working in Take Command, use the UNSET command plus the
+          appropriate file extension for each association that you want
+          Take Command to ignore.  UNSET will disable that file
+          association within Take Command, but will not affect the use of
+          the association by other Windows applications.  For example, to
+          disable a direct association between .WAV files and a sound
+          player while you are working in Take Command, you could use
+          this command:
+
+               [c:\] unset .wav
+
+          This approach can only be used to disable direct associations.
+          Indirect associations cannot be disabled (although they can be
+          overridden with a Take Command executable extension).
+
+
+
+ Executable Files and File Searches
+
+          When Take Command knows that it is supposed to run an external
+          command, it tries to find an executable file whose name matches
+          the command name.  (Executable files are typically those with a
+          .COM or .EXE extension, or with a .PIF extension under
+          Windows.)  It runs the executable file if it finds one.
+
+          If Take Command cannot find an executable program to run, it
+          next looks for a batch file (a file with one or more commands
+          in it) whose name matches the command name.  Take Command looks
+          first for a .BTM file, then for a .CMD file, then for a .BAT
+          file, and finally for a .REX file.  If the command processor
+          finds such a file, it then reads each line in the file as a new
+          command.
+
+          If the search for a batch file fails, Take Command checks to
+          see if the command name matches the name of a file with an
+          extension that is associated with a specific application (for
+          example, if you have associated .DOC with your editor or word
+          processor, and type the name of a .DOC file).  If a match is
+          found, Take Command runs the program you specified when the
+          association was defined.
+
+          In searching for the application associated with a file, Take
+          Command will first examine any executable extensions you have
+          defined to associate a file extension with a specific program
+          to process that type of file.  Take Command then checks file
+          associations defined in WIN.INI and / or the Windows registry;
+          see Windows File Associations for complete details.
+
+          Take Command first searches for an executable program, a batch
+          file, and a file with an executable extension or Windows file
+          association in the current directory.  If that search fails, it
+          repeats its search in every directory in your search path.
+
+          The search path is a list of directories that Take Command (and
+          some applications) search for executable files.  For example,
+          if you wanted Take Command to search the root directory of the
+          C: drive, the \WINUTIL subdirectory on the C: drive, and the
+          \UTIL directory on the D: drive for executable files, your
+          search path would look like this:
+
+               PATH=C:\;C:\WINUTIL;D:\UTIL
+
+          Notice that the directory names in the search path are
+          separated by semicolons.
+
+          You can create or view the search path with the PATH command.
+          You can use the ESET command to edit the path.  Many programs
+          also use the search path to find their own files.  The search
+          path is stored in the environment with the name PATH.
+
+          Under Windows 95, Take Command also searches the \WINDOWS
+          directory then the \WINDOWS\SYSTEM directory; under Windows NT
+          the order is reversed, and Take Command searches the
+          \WINDOWS\SYSTEM32 directory followed by the \WINDOWS
+          directory.  (The actual directory names may be different on
+          your system.  Take Command will determine the correct names for
+          the "Windows" and "Windows System" directories and use them.)
+          This part of the search procedure conforms with the traditional
+          search sequences used by Windows 95 and Windows NT.
+
+          Remember, Take Command always looks for an executable file or a
+          file with an executable extension or Windows file association
+          in the current subdirectory, then in the Windows directories if
+          appropriate (see above), and then in each directory in the
+          search path.  (You can change the search order so the current
+          directory is not searched first; see the PATH command for
+          details.)
+
+          If you include an extension as part of the command name, Take
+          Command only searches for a file with that extension.
+          Similarly, if you include a path as part of the command name,
+          the command processor will look only in the directory you
+          specified, and ignore the usual search of the current directory
+          and the PATH.
+
+          The following table sums up the possible search options (the
+          term "standard search" refers to the search of the current
+          directory, the Windows directories in Take Command/16 and Take
+          Command/32, and each directory in the search path):
+
+               Command      Take Command Search Sequence
+
+               WP           Standard search for any executable file whose
+                            base name is WP.
+
+               WP.EXE       Standard search for WP.EXE; will not find
+                            files with other extensions.
+
+               C:\WP7\WP    Looks in the C:\WP7 directory for any
+                            executable file whose base name is WP.  Does
+                            not check the standard search directories.
+
+               C:\WP7\WP.EXE  Looks only for the file C:\WP7\WP.EXE.
+
+               LAB.DOC      Standard search for LAB.DOC, if .DOC is
+                            defined as a Take Command executable
+                            extension or Windows file association.  Runs
+                            the associated application if the file is
+                            found.
+
+               C:\LI\LAB.DOC  Looks only for the file C:\LI\LAB.DOC, and
+                            only if .DOC is defined as a Take Command
+                            executable extension or Windows file
+                            association.  Runs the associated application
+                            if the file is found.
+
+          If Take Command cannot find an executable file, batch program,
+          or a file with an executable extension or Windows file
+          association in the current directory or any directory in the
+          search path, it looks for an alias called UNKNOWN_CMD (see the
+          ALIAS command for details).  If you have defined an alias with
+          that name, it is executed (this allows you to control error
+          handling for unknown commands).  Otherwise, Take Command
+          displays an "Unknown command" error message and waits for your
+          next instruction.
+
+

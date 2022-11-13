@@ -1,0 +1,35 @@
+: Alfred Bergkemper?
+
+:==================== The CompDir.btm file ==============================
+pushd
+set par1=%1
+set par2=%2
+if "%par2"=="" goto usage
+if not isdir %par1 `echo %par1 is not a directory. ^ goto usage`
+if not isdir %par2 `echo %par2 is not a directory. ^ goto usage`
+set wildfile=%3
+if "%wildfile"=="" set wildfile=*.*
+if not "%@instr[1,1,%par1]"==":" set par1=%@truename[%_cwd\%par1]
+if not "%@instr[1,1,%par2]"==":" set par2=%@truename[%_cwd\%par2]
+if "%bg"=="" set bg=%_bg
+if "%fg"=="" set fg=%_fg
+drawbox %_row %_column %@eval[%_row] %@eval[%_columns-1] 0 yel on %_bg
+color bri whi on yel
+echo           %par1     Vs     %par2
+color %fg on %bg
+cdd %par1
+:The following global command should go in one line.
+global /q/i for %a in (%wildfile) call compfile %@full[%a]
+%par2%%@instr[%@len[%par1],%@eval[%@len[%@full[%a]]-%@len[%par1]],%@full[%a]]
+drawbox %_row %_column %@eval[%_row] %@eval[%_columns-1] 0 yel on %_bg
+color bri whi on yel
+echo           Finishded comparison. Only descrepencies are mentioned.
+color %fg on %bg
+goto end
+:usage
+echo Usage:
+echo         CompDir d:\ e:\
+echo     or  CompDir d:\msdev\projects\Test1 d:\msdev\projects\Test2 *.cpp
+:end
+popd
+:==================== The CompDir.btm file ends here ====================

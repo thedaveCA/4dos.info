@@ -1,0 +1,276 @@
+
+                              JP Software
+
+                              4DOS v. 6.02
+                              4OS2 v. 3.02
+                              4NT v. 3.02
+                        Take Command/16 v. 2.02
+                        Take Command/32 v. 2.02
+                     Take Command for OS/2 v. 2.02
+
+                     WHATSNEW.TXT -- March 29, 1999
+
+
+This maintenance release includes bug fixes and compatibility
+enhancements developed since our last major release.  It does not
+include any significant new features or functions.
+
+For details on what changed in our last major release see the product
+history information on our web site, or the online help for any product.
+
+Some changes apply only to certain products; the list of products
+affected is included in square brackets at the end of the paragraph
+describing such changes (e.g. "[4NT, TC32]").  If there is no
+indication of a specific product, the change applies to all products.
+
+
+Feature Changes
+---------------
+                                                                          
+   >> The maximum length of a typed or batch file command line has been
+      increased from 255 to 511 characters.  (The internal limit on
+      command line length after expansion of variables etc. remains at
+      511 characters as well.)  [4DOS]
+
+   >> Added new .INI settings:
+
+         >  PathExt = NO | Yes:  If set to No (the default), the PATHEXT
+            environment variable is ignored.  If set to Yes, the PATHEXT
+            environment variable will be used to determine extensions to
+            look for when searching the PATH for an executable file.  To
+            set PATHEXT use a command like this:
+
+                  set pathext=.com;.exe;.btm;.bat
+
+            If PATHEXT is enabled the standard search for .PIF, .COM,
+            .EXE, .BTM, .BAT,and .REX / .REXX files is replaced by a
+            search for files with the extensions listed in PATHEXT, in
+            the order listed there.  Enabling this option affects ONLY
+            the standard path search, it does not affect the subsequent
+            searches for files with executable extensions or Windows
+            file associations.  CAUTION:  If you set PathExt = Yes and
+            then fail to set the PATHEXT environment variable, path
+            searches will fail as there will be no extensions for which
+            to search!
+
+            PATHEXT is supported for compatibility reasons but should
+            not generally be used as a substitute for the more flexible
+            executable extensions feature.
+
+         >  UnixPaths = NO | Yes:  If set to Yes, enables forward slashes
+            as a path separator in the command name (the first item on
+            the command line).  This allows you to enter a command like:
+
+               c:\> /bin/programs/foo.exe
+
+            without having the forward slashes would be interpreted as
+            switch characters.  Note that setting UnixPaths to Yes does
+            NOT change the command processor or operating system switch
+            character, it's still '/'.  It simply allows you to put
+            forward slashes in the command name without problems.
+
+         >  ListRowStart=1|0:  specifies whether LIST considers the
+            first line in the file line "1" or line "0".  The new
+            default is "1".
+
+   >> Take Command/32 now supports the "mouse wheel" on newer mice The
+      wheel will scroll the display in the main window and in the LIST
+      command.  [TC32]
+
+   >> CD / CDD:  Added a /N switch to disable fuzzy searching and the
+      change directory popup window (intended primarily for unattended
+      batch files).
+
+   >> Extended wildcards (i.e., "[xx]") are now supported inside
+      file exclusion ranges.  For example, to copy *.TXT from C:\TEST to
+      D:\TEST but exclude those files whose names begin with "X" or "Y":
+
+         c:\test> copy /[![xy]*.*] *.txt d:\test\
+
+   >> START:  There is a /FS (fullscreen) switch -- it was previously
+      left out of the documentation.  [4NT, TC32]
+
+
+Bug Fixes
+---------
+
+   >> Fixed a crash when attempting to write/read > 64K to/from the
+      clipboard.  [4DOS]
+
+   >> Fixed some problems with directory and file names with non-
+      English characters.  [4NT]
+
+   >> Fixed a problem at startup with truncating passed command lines
+      over 126 characters long, and with not always picking up the full
+      line from the CMDLINE variable.  [4DOS]
+
+   >> Fixed a problem in the Caveman dialog when the .INI file was
+      missing.  [TC32]
+
+   >> Fixed a problem where piping to Windows NT's MORE utility would
+      not capture all output lines.  [4NT, TC32]
+
+   >> Fixed a problem which prevented filename completion from returning
+      hidden and system files when these files were enabled in the
+      FILECOMPLETION variable.  Note that the default filename
+      completion search does not display hidden and system files, but
+      nowif you use FILECOMPLETION to enable those files for a specific
+      command, they will be shown as you cycle through files with <Tab>.
+
+   >> Fixed a problem which prevented the commercial version of IBM's
+      Object REXX from working properly with 4NT / Take Command/32, but
+      allowed Object REXX support to work properly with the version of
+      Object REXX included in IBM's book of the same name.  Both
+      versions should now work properly.  [4NT, TC32]
+
+   >> Fixed a problem with finding and/or listing files larger than 4GB
+      (affected primarily DIR and FFIND).  [4NT, TC32]
+
+   >> Fixed a problem with multiple redirections to CON:.  [4NT]
+
+   >> Improved handling of commands using both * (disable alias) and @
+      (don't add to command history) at the start.
+
+   >> Fixed a problem with date sequencing in DIR /OT and SELECT /OT (in
+      most cases this bug only affected years after about 2050).  [4DOS]
+
+   >> START:  Fixed a problem with specifying the title for a 4NT
+      session.  [4NT]
+
+   >> @FILES:  Fixed a problem which caused this function to leave a
+      file handle open, which could cause subsequent "access denied"
+      errors.  [4NT, TC32]
+
+   >> @REPLACE:  Fixed a problem with replacing commas.
+
+   >> @SELECT:  Fixed a problem with files over 64K. [4OS2, 4NT, TC32,
+      TCOS2]
+
+   >> CDD:  Fixed a problem if TREE was disabled (CDD /S uses TREE to
+      build the directory index).
+
+   >> CDD:  Fixed an erratic problem with CDD /S not always including
+      the short directory name.  [4DOS, 4NT, TC32]
+
+   >> COPY:  Fixed a problem with concatenating to files with /Z. [4NT,
+      TC32]
+
+   >> FFIND:  Fixed a problem with /C and bracketed wildcards.
+
+   >> INKEY:  Fixed a problem with not accepting input if a /W is
+      specified.  [TC32]
+
+   >> INPUT:  Fixed a problem with line input (SETDOS /L1) and the /Ln
+      switch.  (It was allowing a maximum of "n-1" rather than "n"
+      characters.)  [4DOS, 4OS2]
+
+   >> INPUT:  Fixed a problem with the input variable length being
+      restricted to 3 characters if SETDOS /L1 (LineInput) is set, and
+      no length is specified for INPUT.  [4DOS]
+
+   >> LIST:  Fixed a problem with highlighting the offsets as well as
+      the actual found text when in hex mode.
+
+   >> ON ERRORMSG:  Fixed a problem with freeing memory when the batch
+      file exited.  [4DOS]
+
+   >> START:  Fixed a problem with setting the title on a new 4NT
+      session.  [4NT]
+
+   >> START:  Fixed a problem with the program arguments being ignored
+      on a START /CM, and another problem with setting the title on a
+      new TCMD/32 session.  [TC32]
+
+   >> SWITCH:  Fixed minor problems with nested SWITCH statements.
+
+   >> TEE:  Fixed a problem with TEE'ing to CLIP:.
+
+   >> TOUCH:  Fixed a problem with failing to display a usage message
+      when there were no parameters after a /C, and another problem with
+      properly detecting invalid times.
+
+   >> UNALIAS:  Fixed a problem with /R.
+
+
+Technical and Compatibility Changes
+-----------------------------------
+
+   >> Added more seamless support for Regina REXX, including adding
+      ".rexx" as a default executable extension.  [4NT, TC32]
+
+   >> Added support for the (apparently undocumented) CMD.EXE behavior
+      of disabling all output if first argument to CMD.EXE is "NUL"
+      (i.e., "CMD NUL copy file1 file2").  [4NT]
+
+   >> Added support for the CMD.EXE %* variable, which returns all of
+      the arguments on the line, like the %$ default, but without the
+      additional ability to specify where to start (i.e. there is no
+      %n*).  [4NT, TC32]
+
+   >> Caveman apps no longer overwrite the default console buffer (i.e.,
+      the one visible via Alt-V where non-Caveman apps are executed).
+      [TC32]
+
+   >> Fixed a problem when specifying a directory name as the first
+      argument on the startup command line (i.e., a "set COMSPEC"
+      request).  [4NT, TC32]
+
+   >> Fixed a problem with recognizing and executing Pharlap extended
+      DOS apps.  [4NT, TC32]
+
+   >> Improved the performance of Caveman apps and fixed a couple of
+      minor glitches, including one which sometimes kept the old "caret"
+      (text cursor) from being cleared when scrolling.  [TC32]
+
+   >> Worked around a Win32 API bug that would occasionally cause the
+      free space on a UNC volume to return "0".  [4NT, TC32]
+
+   >> Worked around several NT and Win9x bugs with piping to/from 16-
+      bit DOS apps.  [4NT, TC32]
+
+   >> Made a change to allow displaying directories which have an
+      embedded semicolon in the directory name.
+
+   >> Worked around a couple of bugs (one in NT and one in Win95/ Win98)
+      that (erratically) caused a very slow shutdown when Take Command
+      was active.  [TC32]
+
+   >> Worked around an NT API bug which could cause a crash with
+      filenames with embedded left square brackets ('[').  [4NT, TC32]
+
+   >> @UNIQUE:  Worked around an OS/2 bug that caused trouble if @UNIQUE
+      was called repeatedly on a fast machine.  [4OS2, TCOS2]
+
+   >> CALL:  Added support for the (undocumented) CMD.EXE "call :label
+      [args]" syntax, which calls a new copy of the shell and starts
+      execution at the specified label.  [4NT, TC32]
+
+   >> FOR:  Added support for the CMD.EXE %~.. syntax.  For further
+      documentation see CMD.EXE documentation -- the same things can be
+      done in a much better way with variable functions.  [4NT, TC32]
+
+   >> IF:  Added EQU to the IF tests (same as EQL) -- CMD.EXE in Windows
+      NT uses EQU, but the documentation says EQL, so now both are
+      supported.
+
+   >> MOVE:  Will now restore the original attributes if the move failed
+      (previously it would remove the read-only attribute, as this is
+      required under Netware to rename files, but this attribute was not
+      restored if the MOVE failed).
+
+   >> SET:  If you use SET to display the value of an environment
+      variable, e.g:
+      
+            set var
+         
+      and the specified environment variable doesn't exist, SET will now
+      display all the variables whose name begins with the specified
+      string.  In the example above, if there is a variable named "abc"
+      it will be displayed.  If not, but there are variables whose names
+      start with "abc", then they will be displayed.  (This change is
+      for basic compatibility with CMD.EXE, though CMD.EXE will also
+      display additional variables even when it finds an exact match.)
+      [4NT, TC32]
+
+   >> START:  Now accepts /W as well as /WAIT.  [4NT, TC32]
+

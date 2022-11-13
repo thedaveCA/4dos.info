@@ -1,0 +1,556 @@
+history.txt                           [last updated: 30-November-2004]
+
+
+    Note: This list is merely for informational purposes and is not
+          intended to show all changes from one build to another, nor
+          does it necessarily include all private, beta, and public
+          builds.  For details on current versions and builds, visit
+          us at "http://jpsoft.com/" or in our Support Forum.
+
+4NT 6.01 and Take Command 6.01  Build 235
+-----------------------------------------
+
+    4NT - enabled Alt-Bksp for key aliases.
+
+    @EVAL - fixed a problem with embedded commas (thousands
+      separators) in variables.
+
+4NT 6.01 and Take Command 6.01  Build 234
+-----------------------------------------
+
+    Take Command - fixed a problem with STDIO Caveman apps.
+
+    Take Command - added an additional check to keep the TC
+      window from returning to the foreground after running
+      a Caveman app and switching to another window before
+      the Caveman app exits.
+
+    RD - added check for existence when using the /S switch.
+
+    SET - added dumb kludge to emulate the undocumented (bug?) 
+      CMD.EXE behavior with:
+
+	set "var=xxx"
+
+    TYPE - 4NT now attempts to guess whether you're (erroneously?)
+      typing a binary file, and if so, turns off the processed
+      output.  This keeps the beep (ASCII 0x07) from hanging
+      the process, or even the whole system (Windows bug).
+
+4NT 6.01 and Take Command 6.01  Build 233
+-----------------------------------------
+
+    Take Command - fixed a problem (Windows bug) with not closing TCMD
+      on a logoff or Windows shutdown.
+
+    Take Command - fixed a problem (Windows bug) with the console
+      window appearing as a topmost window.
+  
+    SELECT (4NT) - fixed a GPF in the (somewhat unlikely) event that
+      you have a > 256 column window.
+
+    SET - added support for the (undocumented & illegal syntax) CMD
+      quoted argument:
+
+        set "myvar=xxx"
+		
+4NT 6.01 and Take Command 6.01  Build 232
+-----------------------------------------
+
+    Take Command - Worked around a Windows bug when starting TC
+      maximized from a shortcut.
+
+    Take Command - Fixed some display glitches with DOS apps writing
+      directly to the screen.
+
+    Take Command - added right-click context menu support for pasting
+      into Caveman apps.
+
+4NT 6.01 and Take Command 6.01  Build 231
+-----------------------------------------
+
+    Take Command - worked around a Windows bug that was causing
+      an erratic crash when exiting a Caveman app.
+
+    PROMPT - fixed a problem with $W.
+
+4NT 6.01 and Take Command 6.01  Build 230
+-----------------------------------------
+
+    Take Command - fixed a problem with very large (>16K characters) 
+      displays in Caveman.
+
+    Added a check for (incorrect) quoting of device names.
+
+    Fixed a problem with setting the CMDLINE environment variable.
+
+    @EXPAND - fixed a problem with the value returned by @EXPAND
+      being incorrectly truncated at 4K (should have been 8K) characters.
+
+    COPY (4NT) - now supports "copy file con:".
+
+4NT 6.01 and Take Command 6.01  Build 228
+-----------------------------------------
+
+    Fixed an erratic problem when using output append redirection and
+      the target file has a trailing ^Z.
+  
+    Fixed a couple of problems with filename matching and include lists:
+      (1) it would only match two filenames in the include list; and (2)
+      if the pathname required double quotes, a trailing quote would be
+      added to subsequent file natches in the include list.
+	  
+    Directory sorting - modified the /O:n matching so if the filenames
+      match it will then sort on the extensions (unless there is an explicit
+      'e' in the sort order).
+
+    Take Command - various Caveman tweaks to improve compatibility and
+      speed.
+	  
+    Take Command - added Caveman support for some ill-behaved apps like
+      Microsoft's Telnet.exe.
+  
+    TCMD - fixed a problem with Caveman apps that don't install their
+      own Ctrl-C handler.  
+	
+    Take Command - unless you're executing a DOS app, the Caveman console 
+      window in Windows 2000 & XP will now be the same size as the Take 
+      Command window, not just either 80x25, 80x43, or 80x50.  (Note that
+      this could make some badly-written console apps fail!)  If the
+      Take Command window is less than 25 lines, it will be resized to 
+      25 lines for the duration of the console app.
+	
+    If your Windows time format setting specifies leading 0's for hours, 
+      the time displays (i.e., in DIR) will now display a leading 0 for
+      single-digit hours.
+	  
+    Filename matching - if the filename contains semicolons, the file search
+      now first checks for an exact match before looking for an include list.
+
+    Filename completion - if you want to complete non-executable files as 
+      the first argument on the command line without defining an executable 
+      extension, you can create a "dummy" executable extension with an
+      executable name of "*".  For example, to allow completing .TXT and
+      .DOC files as the first argument:
+	  
+        set .txt;.doc=*
+	
+      To allow every extension, use "set .*=*".
+	 
+    Fixed various problems with local filenames in UNC form (i.e., 
+      "dir \\.\d:\*").
+	  
+    Fixed an erratic problem when debugging batch files with piping or
+      @EXEC / @EXECSTR calls.
+ 
+    Added support for (the nearly-useless) redirection to CON.
+	
+    4NT Unicode / Take Command Unicode - now work with DEP enabled in XP
+      SP2.
+	  
+    TCMD - added an Insert / Overstrike indicator to the status bar.
+	
+    TCMD - fixed a problem with piping (from build 222).
+	
+    TCMD - fixed a problem (Windows bug) with not closing TCMD on a logoff
+      or Windows shutdown.
+	  
+    TCMD - the TCMD window no longer changes to the inactive color when
+      a Caveman app is running.  (The TCMD window always stays active, and
+      passes keystrokes to the console app.)
+	
+    Ctrl-Tab - changed slightly so that if only a single filename matches,
+      it displays it on the command line and does not display the popup 
+      window.
+
+    %_CMDSPEC - new internal variable that returns the full pathname of
+      the command processor.
+	  
+    %_DATETIME - new internal variable that returns the current date and
+      time in the format yyyymmddhhmmss (with no separators).
+
+    @CWD - new function to return the current directory on the specified
+      drive. (The returned string includes the drive spec.) The syntax is:
+	  
+        @cwd[d:]
+		
+    @CWDS - new function, like @CWD, but ensures there is a trailing \ on 
+      the returned directory name.
+	
+    @DIRSTACK - fixed a problem when calling it with no arguments.
+	
+    @DOMAIN (Unicode & Win2K+ only) - new function to return the domain 
+      (if any) for the specified computer.  The syntax is:
+	  
+        @domain[name]
+	
+      where "name" is the DNS or NetBIOS name of the computer to query.  If
+      no name is specified, @DOMAIN returns the domain for the local computer.
+	  
+    @EVAL - added three synonyms for existing operators:
+	
+        MOD - modulo (same as %)
+        SHL - shift left (same as <<)
+        SHR - shift right (same as >>)
+		
+    @EXPAND - added support for ranges.  The range must be the first argument,
+      with a space before the filename.  For example:
+
+        echo %@expand[/[d-5] *.doc]
+
+    @FILES - added support for ranges.  The range must be the first argument,
+      with a space before the filename.  For example:
+
+        echo %@files[/[d-5] *.doc]
+
+    @FINDFIRST - added support for ranges.  The range must be the first argument,
+      with a space before the filename.  For example:
+
+        echo %@findfirst[/[d-5] *.doc]
+
+    @INSERT - added support for negative position.  (If the first argument
+      is negative, the insertion will be made counting backwards from the
+      end of the string.)
+
+    @TRUNCATE - new function that truncates the specified file at the current 
+      file pointer position. The syntax is: 
+  
+        @truncate[n]
+    
+      where "n" is a file handle returned by @FILEOPEN.  (You must have opened
+      the file for write access.) 
+
+    @WORKGROUP (Unicode & Win2K+ only)- new function to return the 
+      workgroup (if any) for the specified computer.  The syntax is:
+	  
+        @dworkgroup[name]
+	
+      where "name" is the DNS or NetBIOS name of the computer to query.
+      If no name is specified, @WORKGROUP returns the workgroup for the 
+      local computer.
+
+    BDEBUGGER - fixed an obscure problem with the batch file handle
+      possibly being left open if you click on the "Stop Debugging"
+      icon and then File/Exit.
+	  
+    BDEBUGGER - has a new option:
+
+        /I(nactive) - loads the batch file into the debugger but don't
+          execute it.  (This allows you to edit the batch file before 
+          you start debugging.)
+  
+    BDEBUGGER - fixed an erratic gpf (at program exit) when you use a
+      SETDOS /Y1 or BDEBUGGER with no argument to turn on the debugger
+      inside a batch file.  
+
+    COPY - the /G option when combined with /V will now show the percent
+      verified.
+	
+    DIR - added additional attribute types to directory colorization:
+
+        Encrypted
+        Normal
+        Temporary
+        Sparse
+        Junction
+        Compressed
+        Offline
+        Notindexed
+
+    DIR - /O:n now excludes the extension when sorting the filenames (to
+      match CMD.EXE's behavior).
+
+    GOSUB - changed the argument parsing to not consider the switch
+      character (/) as a delimiter.  (Note that this may be changed
+      back if compatibility issues occur.)
+
+    IF - added the ISFILE test to check for the existence of the specified
+      file.  (ISFILE was added because Microsoft changed IF EXIST to return
+      1 if either a file or directory exists.  This made it impossible to
+      check for an empty directory because "." and ".." always exist.)
+ 
+    INPUT - fixed a (harmless) problem with the /L option beeping when the input
+      string was greater than or equal to the maximum length (rather than only
+      when it would be greater than the maximum length).
+
+    LIST - added the Ctrl-L key (LIST selected file) to Take Command.  (It 
+      was already in 4NT.)
+  
+    ON - fixed a problem with ON BREAK only being called the first time.
+	
+    REBOOT - changed the messages when using /V (previously it would always
+      prompt to reboot even when logging off or shutting down).
+	  
+    SET - added the /E option to also set the local environment when setting
+      registry variables.
+	  
+    SHIFT - fixed a GPF with SHIFT /1 when you don't have any arguments
+      to shift.
+
+    TCTOOLBAR - fixed a GPF when using (incorrect) syntax with no whitespace
+      between the arguments.
+
+    UNSET - added the /E option to also unset the local environment when
+      unsetting registry variables.
+
+4NT 6.0 and Take Command 6.0  Build 222
+---------------------------------------
+
+    Fixed a problem with multiple pipes and output redirection on the
+      same line.
+	  
+    ASSOC - fixed a problem with /R.
+	
+4NT 6.0 and Take Command 6.0  Build 221
+---------------------------------------
+
+    4NT - trying another kludge for the Windows bug with popup windows
+      and the console.
+	  
+    TCMD - fixed a problem with the toolbar being disabled (only in 
+      build 220).
+	  
+    BDEBUGGER - fixed an (erratic) problem with starting BDEBUGGER with
+      no arguments and selecting a batch file from an LFN directory
+      (with embedded whitespace in the pathname).
+  
+    START - fixed a problem (the transient switches were being ignored)
+      when parsing the (pointless) syntax:
+	
+        4nt /c 4nt /c ...
+      or
+        tcmd /c tcmd /c ...
+
+4NT 6.0 and Take Command 6.0  Build 220
+---------------------------------------
+
+    4NT - Implemented another attempt at fixing the Windows bug with 
+      putting popup windows behind the console window (only the first 
+      time).  This one should also work when you start 4NT in full-
+      screen mode.
+  
+    4NT - fixed a problem with Alt-numeric key aliases.
+
+    Fixed a problem with the clipboard when the clipboard text is in
+      Unicode format and you're writing to an ASCII file.  (The Unicode
+      xFEFF was not being stripped from the beginning of the file.)
+
+    @FORMATN - will now accept the decimal separator for your locale in
+      the numeric argument (NOT in the format argument).
+
+    @FORMATN - fixed a problem with decimal numbers < 0.10.
+
+    BDEBUGGER - you can now invoke the batch debugger in an already-
+      running batch file by the command:
+ 
+        BDEBUGGER
+  
+      with no arguments.
+  
+    ON - fixed a problem with ON ERROR / ON ERRORMSG only working for
+      the first error.
+
+    SENDMAIL - fixed a problem with passing only a / as an argument.
+
+    SETDOS - fixed a problem with /Y1 when the batch debugger hadn't
+      been started yet.
+  
+4NT 6.0 and Take Command 6.0  Build 219
+---------------------------------------
+
+    Fixed a (rare) problem with extremely long command groups.
+
+4NT 6.0 and Take Command 6.0  Build 219
+---------------------------------------
+
+    Fixed a sporadic problem with some of the "Save As" dialogs with the
+      file types in the combobox.
+	  
+    @DAY - fixed a problem when passing a date with a two-digit year.
+      (Also affected @DOY, @MONTH, and @YEAR.)
+
+    BDEBUGGER - fixed an erratic startup problem when starting BDEBUGGER
+      with no arguments.
+	  	
+    PDIR - added more error checking on the width field (to avoid a GPF
+      for those users determined to pass exceptionally bad arguments).
+
+4NT 6.0 and Take Command 6.0  Build 218
+---------------------------------------
+
+    Command groups - fixed a problem with embedded REM's in a command
+      group.
+	  
+    @FINDFIRST - fixed a problem with the optional second argument (for
+      attribute searches) being ignored.
+  
+    @FINDNEXT - Fixed a (very old) GPF caused when you call @findnext with
+      no parameters and you've already closed the directory search handle.
+  
+    PDIR (ASCII versions, Win9x only) - fixed an erratic GPF with invalid
+      arguments.
+
+4NT 6.0 and Take Command 6.0  Build 217
+---------------------------------------
+
+    Rolled back an updated third-party component that was causing GPFs in 
+      Win98 systems and erratic (unreproducible) problems in Win2K / XP.
+      (This means the DEP support in XP SP2 is disabled.)
+
+4NT 6.0 and Take Command 6.0  Build 216
+---------------------------------------
+
+    4NT and Take Command now include a French language.dll option.
+
+    Fixed an erratic FTP problem with DEL, MD, and RD.
+
+    Fixed a compatibility issue with an undocumented variation of CMD.EXE
+      ":=" variable syntax that's too horrible to document, for fear
+      some misguided soul will actually try to use it.  (Use variable
+      functions instead; they're smaller and more understandable.)
+  
+    @DISKFREE - fixed a problem with it not complaining about invalid
+      input.
+
+    DIR - fixed a problem with Win9x crashing on "DIR /:".
+  
+    ON - fixed a problem with ON ERROR only working once.
+
+    PDIR - fixed a problem with Win9x crashing on a "PDIR /(".
+
+4NT 6.0 and Take Command 6.0  Build 215
+---------------------------------------
+
+    Fixed a problem with the FOR ~ variable syntax when used with batch
+      variables (i.e., %0-%9).  (This bug was introduced in build 214 with
+      the fix for another bug with FOR ~ variables.)
+	  
+    %_MONTHF - corrected a misspelling in "September".
+
+4NT 6.0 and Take Command 6.0  Build 214
+---------------------------------------
+
+    Fixed a problem in the variable windows (in the debugger, and in
+      ESET /W) with the shortcut keys printing a character before
+      popping up the appropriate dialog.
+  
+    Filename completion -- when the previous character is a semicolon,
+      filename completion now checks if the filename to complete begins
+      with a drive spec (i.e., c:) or a pathname separator (\).  If so,
+      it turns off include list matching.
+  
+    Fixed a problem with the CMD ~ FOR variables when the single-character
+      FOR variable is the same as the last character used in the ~ variable,
+      and that last character is one of the ~ variable modifiers (ADFNPSTXZ).
+
+4NT 6.0 and Take Command 6.0  Build 213
+---------------------------------------
+
+    Fixed a problem with the registration information (and possibly other
+      information) sometimes being overwritten when you pass a batch
+      file on the startup line.
+
+    Added a kludge to work around a problem with some ineptly-written
+      Windows apps (such as NETSTAT) that invoke another copy of the
+      command processor with a command line looking like:
+
+        "c:\program files\jpsoft\4nt6\4nt.exe" c:\program files\jpsoft\4nt6\4nt.exe /c route.exe
+
+      (The first argument is properly quoted, and the second is a useless
+      duplicate and isn't quoted.)
+
+    TC - fixed a problem with random screen writes ahead of the last
+      line in the buffer.
+
+    OPTION (TC) - fixed a problem with some keystroke combinations
+      invoking the online help.
+
+4NT 6.0 and Take Command 6.0  Build 212
+---------------------------------------
+
+    Fixed a problem with the batch debugger not restoring breakpoints
+      when returning from a CALL.
+
+    Fixed a problem with active mode and FTP.  (Note that SSL still
+      only supports passive mode.)
+
+    LIST ( TC) - fixed a problem with listing the clipboard ("clip:").
+
+    LIST (TC) - fixed a GPF when using the scrollbar to rapidly scroll
+      through very large files.
+
+    START - added support for nonstandard (non-MS) ftp handlers
+      ("start ftp://jpsoft.com").
+
+4NT 6.0 and Take Command 6.0  Build 211
+---------------------------------------
+
+    Added a kludge for the peculiar syntax "\dir\.", as in
+
+        copy * \newdir\.
+
+      (Note that this syntax is meaningless, and a simpler way would
+      be to delete the trailing ".".)
+
+    Fixed a problem with the F1 key on the Caveman and Debugger tabs
+      in the Option dialog.
+
+    TC - fixed a problem with the descriptions editor.
+
+    @FILEOPEN - changed to return -1 rather than an error message for
+      non-critical failure (i.e., file not found, file locked, etc.)
+
+    @FILEOPEN - fixed a problem with "append" not automatically moving
+      to the end of the file.
+
+    FOR - fixed a problem with the temp file in a "for %f in ('...')"
+      construct not being deleted.
+
+    LIST - fixed a problem with the status bar when using large system
+      fonts.
+
+    LIST (TC) - fixed a problem with the /T switch when not using quotes
+      around the argument.
+
+
+4NT 6.0 and Take Command 6.0  Build 211
+---------------------------------------
+
+    Added a kludge for the peculiar syntax "\dir\.", as in
+
+        copy * \newdir\.
+		
+      (Note that this syntax is meaningless, and a simpler way would
+      be to delete the trailing ".".)
+	  
+    Fixed a problem with the F1 key on the Caveman and Debugger tabs
+      in the Option dialog.
+	  
+    TC - fixed a problem with the descriptions editor.
+	
+    @FILEOPEN - changed to return -1 rather than an error message for
+      non-critical failure (i.e., file not found, file locked, etc.)
+	  
+    @FILEOPEN - fixed a problem with "append" not automatically moving
+      to the end of the file.
+	  
+    FOR - fixed a problem with the temp file in a "for %f in ('...')"
+      construct not being deleted.
+	  
+    LIST - fixed a problem with the status bar when using large system
+      fonts.
+	  
+    LIST (TC) - fixed a problem with the /T switch when not using quotes
+      around the argument.  
+
+4NT 6.0 and Take Command 6.0  Build 210
+---------------------------------------
+
+    Initial public release of 4NT and Take Command 6.0.
+	
+
+=======================================================================
+JP Software Inc.               P.O. Box 328, Chestertown, MD 21620, USA
+phone: (410) 810-8818                               fax: (410) 810-0026
+WWW: http://jpsoft.com                          email: sales@jpsoft.com
+

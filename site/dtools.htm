@@ -1,0 +1,668 @@
+<!doctype HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+<meta name="generator" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Language" content="en-gb">
+<link rel="shortcut icon" href="favicon.ico">
+<title>4DOS.INFO - Klaus Meinhard's Homepage: DOS Tools</title>
+<meta name="description" content="Everything about 4DOS and Batch Programming - Alles zu 4DOS und Batch-Programmierung">
+<meta name="keywords" content="TOOLS, HELPER, UTILITY, SHELL, SCRIPT, BATCH, COMMAND, PROMPT">
+<meta name="rating" content="General">
+<meta name="resource-type" content="document">
+<meta name="revisit-after" content="30 Days">
+<meta http-equiv="Expires" content="0">
+<meta http-equiv="Last-Modified" content="0">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="MSStartTagsPreventParsing" content="True">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<base target="_self">
+<!-- Disable other sites from forcing a Frameset on this page -->
+<script type="text/javascript">
+<!--
+if(parent.frames.length>0) {
+parent.location.href=location.href;
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+a:link       { font-family: Courier New; font-size: 10pt; color: #0000CC; font-weight: bold; text-decoration:none )              }
+a:visited    { font-family: Courier New; font-size: 10pt; color: #3366CC; font-weight: bold; text-decoration:none }
+a:active     { font-family: Courier New; font-size: 10pt; color: #6600CC; font-weight: bold; text-decoration:none }
+h6           { font-family: verdana; font-size: 10pt; font-weight: bold; text-align:left; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h5           { font-family: verdana; font-size: 10pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h4           { font-family: verdana; font-size: 12pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h3           { font-family: verdana; font-size: 14pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h2           { font-family: verdana; font-size: 18pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+h1           { font-family: verdana; font-size: 24pt; font-weight: bold; text-align:center; word-spacing:0; text-indent:0; line-height:100%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0}
+p            { font-family: verdana; font-size: 10pt; text-align:left; word-spacing:0; text-indent:0; line-height:110%; margin-left:6; margin-right:6; margin-top:6; margin-bottom:6}
+li           { font-family: Courier New; font-size: 10pt; text-align:left; word-spacing:0; text-indent:0; line-height:110%; margin-left:6; margin-right:6; margin-top:6; margin-bottom:12}
+-->
+</style>
+<style type="text/css">
+A:hover {color: #6600CC; font-weight: bold}
+</style>
+</head>
+
+<body bgcolor="#666699" text="#000080" link="#0000FF" vlink="#3366CC" alink="#99CCFF">
+
+<h1 style="margin-bottom: 6"><font color="#FFFFFF"><a name="0"></a>[4DOS.INFO]</font></h1>
+<div align="left">
+  <p style="margin-top: 0; margin-bottom: 6">&nbsp;</div>
+<div align="left">
+  <p style="margin-top: 0; margin-bottom: 6">
+  <font face="verdana" align="center" margin-bottom: color="#FEFEFE" size="5">
+  c:\dos\tools\&gt; _</font></div>
+<table summary="menú" border="0" width="165" bordercolor="#000080" cellpadding="6" cellspacing="0" height="509" align="left" style="position: absolute; left: 10; top: 100; border-collapse: collapse">
+  <tr>
+    <td valign="top" bgcolor="#FFFFFF" width="164" height="1">
+    <!-- beginn freecity.de counter code -->
+    <a href="http://www.freecity.de" target="_new">
+    <img src="http://tools.freecity.de/counter/Klaus_Meinhard" border="0" width="154" height="88"></a>
+    <!-- ende freecity.de counter code -->&nbsp; </td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FFFFFF" width="164" height="15">
+    <h4 align="center" style="text-align: center">&nbsp;Topics</h4>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#EEEEEE" width="164" height="4">
+    <p style="margin-top: 6; margin-bottom: 6"><a href="updates.htm">
+    <font face="Verdana">Updates</font></a><font face="Verdana"> </font></td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FFFFFF" width="164" height="18">
+    <h4><font face="Verdana" size="3">4DOS INFO</font></h4>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#EEEEEE" width="164" height="237">
+    <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+      <a href="sources.htm" target="_self"><font face="Verdana">4DOS Sources</font></a></h6>
+    <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+    <a href="v4dos.htm" target="_self"><font face="Verdana">4DOS Versions</font></a></h6>
+    <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+    <a href="v4nt.htm" target="_self"><font face="Verdana">4NT Versions</font></a></h6>
+    <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+    <a href="v4os2.htm" target="_self"><font face="Verdana">4OS2 Versions</font></a></h6>
+    <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+    <a href="4tips.htm" target="_self"><font face="Verdana">4DOS Tips &amp; Tricks</font></a></h6>
+    <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+    <a href="4docs.htm" target="_self"><font face="Verdana">4DOS Docs</font></a></h6>
+    <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+    <a href="4batfaq.htm" target="_self"><font face="Verdana">4DOS BatFAQ</font></a></h6>
+    <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+    <a target="_self" href="4obtms.htm"><font face="Verdana">4DOS Batches, 
+    Aliases, Functions</font></a></h6>
+    <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+    <font face="Verdana">&nbsp; </font><a href="4bernd.htm" target="_self">
+    <font face="Verdana">B. Schneider´s</font></a></h6>
+    <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+    <font face="Verdana">&nbsp; </font><a href="4xbtm.htm"><font face="Verdana">
+    K. Meinhard's</font></a></h6>
+    <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+    <a href="4links.htm" target="_self"><font face="Verdana">4DOS Links</font></a></h6>
+    <h6 style="margin-left: 6; margin-top: 6; margin-bottom: 6">
+    <a href="4tools.htm" target="_self"><font face="Verdana">4DOS Tools</font></a></h6>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FFFFFF" width="164" height="18">
+    <h3 align="center"><font size="3" face="Verdana">INFO for DOS</font></h3>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#EEEEEE" width="164" height="42">
+        <p align="left">
+        <a href="dlinks.htm" target="_self"><font face="Verdana">DOS Links</font></a></p>
+	<p align="left">
+        <a href="dlinksu.htm" target="_self"><font face="Verdana"> More DOS 
+	Links</font></a></p>
+	</p>
+        <p><a href="dalter.htm"><font face="Verdana">DOS Alternatives</font></a></p>
+	<p><a href="dhardw.htm" target="_self"><font face="Verdana">DOS Hardware</font></a></p>
+    <p><a href="dtools.htm"><font face="Verdana">DOS Tools</font></a></p>
+    <p><a href="dprogs.htm"><font face="Verdana">DOS Programs</font></a></p>
+    <p><a href="dgems.htm"><font face="Verdana">DOS Gems</font></a></td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FFFFFF" width="164" height="18">
+    <h3 align="center"><font face="Verdana" size="3">Service</font></h3>
+    </td>
+  </tr>
+  <tr>
+    <td width="164" height="40" bgcolor="#EEEEEE">
+    <p style="margin: 6"><a href="search.htm" target="_self">
+    <font face="Verdana">Search Engines</font></a></p>
+    <p><a href="mailto:K_Meinhard@gmx.de"><font face="Verdana">Contact me</font></a><font face="Verdana">
+    </font></td>
+  </tr>
+  <tr>
+    <td width="164" height="1" bgcolor="#FFFFFF">
+    <p style="margin: 6"><a href="index.htm" target="_self">
+    <font face="Verdana">Back to Homepage</font></a><font face="Verdana"> </font>
+    </td>
+  </tr>
+</table>
+<table summary="main body" border="0" width="655" cellpadding="6" cellspacing="0" bordercolor="#000080" align="left" style="position: absolute; left: 200; top: 100; border-collapse: collapse">
+  <tr>
+    <td width="100%" height="15" bgcolor="#FFFFFF">
+    <h4>DOS Tools</h4>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" height="1" bgcolor="#EEEEEE">&nbsp;
+    <p>MS-DOS was always a little sparse, MS doing the least amount of 
+    developement they could get away with (remember the countless magazine pages 
+    written when they finally added an external MOVE command?). In consequence 
+    uncountable little tools and utilities were developed by individuals and 
+    companies, or ported from grown up operating systems like Unix. Here's a 
+    small and very personal selection:</p>
+    <p>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="100%" height="1" bgcolor="#FFFFFF">
+    <h4 align="center">Topics:</h4>
+    <p align="center">&nbsp;</p>
+    <p align="center" style="text-align: center">
+    <span style="background-color: #CCCCFF">&nbsp; <a href="#01">
+    <font face="Verdana">DOS Enhancers</font></a><font face="Verdana">&nbsp;
+    </font></span><font face="Verdana">&nbsp;
+    <span style="background-color: #CCCCFF">&nbsp; </span></font><a href="#02">
+    <span style="background-color: #CCCCFF"><font face="Verdana">Batch Enhancers</font></span></a><font face="Verdana"><span style="background-color: #CCCCFF">&nbsp;
+    </span>&nbsp; <span style="background-color: #CCCCFF">&nbsp; </span></font>
+    <span style="background-color: #CCCCFF"><a href="#03"><font face="Verdana">
+    Text Utilities</font></a><font face="Verdana">&nbsp; </font></span>
+    <font face="Verdana">&nbsp; </font></p>
+    <p align="center" style="text-align: center"><font face="Verdana">
+    <span style="background-color: #CCCCFF">&nbsp; </span></font><a href="#05">
+    <font face="Verdana"><span style="background-color: #CCCCFF">Communication</span></font></a><font face="Verdana"><span style="background-color: #CCCCFF">&nbsp;
+    </span>&nbsp; <span style="background-color: #CCCCFF">&nbsp; </span></font>
+    <span style="background-color: #CCCCFF"><a href="#04"><font face="Verdana">
+    Internet Utilities</font></a><font face="Verdana">&nbsp; </font></span></p>
+    <p align="center" style="text-align: center">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="100%" height="1" bgcolor="#EEEEEE">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="100%" height="1" bgcolor="#FFFFFF">
+    <h4><a name="01"></a>DOS Enhancers</h4>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" height="1" bgcolor="#EEEEEE">
+    <font face="Verdana Ref" size="2">Most of these utilties together don't do 
+    as much as 4DOS alone, where all of this functionality and more is built-in 
+    :-) </font>
+    <ul>
+      <li><span style="background-color: #CCCCFF">
+      <a target="_blank" href="http://www.jpsoft.com">4DOS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></span> 
+      &nbsp;The ultimate DOS enhancer: a replacement for command.com with a ton of 
+      new internal commands, internal variables, built-in functions, aliases, 
+      enhanced command line editing, colored dirs, file lister, select boxes, 
+      quick dir changes, and much more. - by Rex Conn, JP Software</li>
+      <li>
+      <a target="_blank" href="ftp://ftp.cdrom.com/pub/simtelnet/msdos/dirutl/acd300.zip">
+      <span style="background-color: #CCCCFF">ACD 300</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+      &nbsp;Fast directory change (à la 4DOS's fuzzy dir or NCD or LCD). This one can 
+      handle Win95 LFNs, but not NT's. Freeware. - by A. Merckens</li>
+      <li>
+      <a target="_blank" href="ftp://garbo.uwasa.fi/pc/goldies/ced.zip">
+      <span style="background-color: #CCCCFF">CED 1.0</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+      &nbsp;Command line editor. Good Doskey replacement. In 4DOS comfortable command 
+      line editing is a built-in feature . - by Cristopher J. Dunford</li>
+      <li>
+      <a target="_blank" href="http://www.idcomm.com/personal/lorenblaney/COLORDIR.ZIP">
+      <span style="background-color: #CCCCFF">COLORDIR 1.5</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+      &nbsp;ColorDIR is a replacement for DOS's DIR command. It uses color to make it 
+      easy to spot different types of files. It sorts by name, extension, date 
+      or size, and it even handles international date and time formats for my 
+      Canadian friends. (built-in feature in 4DOS). Freeware. - by Loren Blaney</li>
+      <li>
+      <a target="_blank" href="http://cygutils.fruitbat.org/consize/">
+      <span style="background-color: #CCCCFF">Consize</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; A resizer for the console. Translation: a scrollbar for the 
+      command prompt window in Win9x.</li>
+      <li><a target="_blank" href="tools/direct13.zip">
+      <span style="background-color: #CCCCFF">DIRECT 1.3</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+      &nbsp;Complete path- and filenames with ALT-Tab from the command line and in 
+      user progs. - by Tobias Polzin</li>
+      <li>
+      <a target="_blank" href="http://www.microsoft.com/technet/archive/wfw/4_ch9.mspx">
+      <span style="background-color: #CCCCFF">MS Technet</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; Tips for optimizing performance for WfW 3.1 plus specific 
+      information about using EMM386.</li>
+      <li>
+      <a target="_blank" href="ftp://ftp.cdrom.com/pub/simtelnet/msdos/screen/scrlit18.zip">
+      <span style="background-color: #CCCCFF">SCROLLIT 1.8</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+      &nbsp;Another backscroll buffer, if you don't want to use Ansiplus. Shareware. 
+      - by Bromfield Software Products.<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+    </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" height="1" bgcolor="#FFFFFF">
+    <h4><a name="02"></a>Batch Enhancers</h4>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" height="1" bgcolor="#EEEEEE">
+    <p style="margin-top: 0; margin-bottom: 12">&nbsp;</p>
+    <ul>
+      <li><a target="_blank" href="http://www.jpsoft.com">
+      <span style="background-color: #CCCCFF">4DOS</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; Surely the most powerful single prog to enhance DOS 
+      batching. See my <a href="4dinfo.htm">Info</a> page </li>
+      <li><a target="_blank" href="http://www.goodells.net/dan/pclib.htm">
+      <span style="background-color: #CCCCFF">Compare</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; Compares 2 files with errorlevel return. - by Dan Goodell. 
+      (MS-DOS' own FC utility does not return a meaningful errorlevel, making it 
+      nearly useless for batch purposes).</li>
+      <li><span style="background-color: #CCCCFF">
+      <a target="_blank" href="http://comandiux.scot.sk/">Commandiux</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; <font size="2">Comandiux is multipurpose command line system 
+      utility. Enhances standard windows environment with many new features. 
+      Automates various activities and ads power to batch files. - by Marian 
+      Hubinsky.</font></li>
+      <li><a target="_blank" href="tools/xds993.zip">
+      <span style="background-color: #CCCCFF">ExtraDOS Toolbox</span></a> 
+      &nbsp;ExtraDOS Toolbox Professional is a compilation of powerful and 
+      sophisticated tools for MS-DOS users. - by Foley Hi-tech Systems</li>
+      <li><a target="_blank" href="http://www.slavasoft.com/fsum/index.htm">
+      <span style="background-color: #CCCCFF">FSUM</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; A fast and handy command line utility for file integrity 
+      verification. It offers a choice of 13 of the most popular hash and 
+      checksum functions for file message digest and checksum calculation. - by 
+      Slavasoft</li>
+      <li>
+      <a target="_blank" href="http://gnuwin32.sourceforge.net/packages.html">
+      <span style="background-color: #CCCCFF">GnuWin32</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; Quite a lot of utilities: GnuWin32 provides Win32-versions 
+      of GNU tools (Unix), or tools with a similar open source licence. The 
+      ports are native ports, that is they rely only on libraries provided with 
+      any 32-bits MS-Windows operating system, such as MS-Windows 95 / 98 / 2000 
+      / NT / XP</li>
+      <li><a target="_blank" href="ftp://garbo.uwasa.fi/pc/menu/vmenu.zip">
+      <span style="background-color: #CCCCFF">PC V-Menu</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+      &nbsp;Free. A DOS menu system. This is the public version of the popular GMENU 
+      program found throughout the Army - by John Junod</li>
+      <li><a target="_blank" href="http://www.simtel.net/pub/pd/45560.shtml">
+      <span style="background-color: #CCCCFF">StupenDOS</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+      &nbsp;Programmable DOS shell with integrated zip/unzip. Supports 4DOS 
+      descriptions. Long abandoned shareware - by Eclipse Technologies Inc</li>
+      <li><span style="background-color: #CCCCFF">
+      <a target="_blank" href="http://xset.tripod.com/index.html">XSET</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; XSET allows you to put data into variables of the current 
+      DOS, Windows, Windows 95, Windows 98, Windows NT, Windows 2000, Windows XP 
+      or OS/2 environment and use it as if you had assigned it the value with 
+      the standard command SET. - by Marc Stern. Good, but not as efficient as 
+      4DOS.</li>
+      <li><span style="background-color: #CCCCFF">
+      <a target="_blank" href="http://www.xxcopy.com/index.htm">XXCOPY</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; A very much enhanced and in some cases indispensable free 
+      copy command (you can even duplicate entire bootable system drives) in 16 
+      and 32 bit versions. There's an enhanced commercial Pro version. - by 
+      Pixelab</li>
+    </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" height="1" bgcolor="#FEFEFE">
+    <h4><a name="03"></a>Text Utilities</h4>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" height="1" bgcolor="#EEEEEE">
+    <p style="margin-top: 6">Parsing of text files is a frequently encountered 
+    chore in DOS, and lot's of tools have been developed to help in this. Here 
+    are a few:</p>
+    <ul>
+      <li><span style="background-color: #CCCCFF">
+      <a href="http://www.c-point.com/download/CodeChameleon.zip">Code Chameleon</a>&nbsp;
+      </span>&nbsp; Code anything easily with this powerful, flexible, and 
+      extensible editor supporting multitudes of programming and scripting 
+      languages: ActionScript, Active Server Pages (ASP), ADA, Apache, BASIC, 
+      batch files, C, C++, C#, Cascading Style Sheets (css), ColdFusion 
+      templates, Fortran, HTML, Java, JavaScript, Pascal, Perl script, PHP, SQL, 
+      TCL, and VB Script. Includes Intellisense, and project and code templates. 
+      - Shareware by Dr. Alex, C Point Pty Ltd.</li>
+      <li><a target="_blank" href="http://www.context.cx/">
+      <span style="background-color: #CCCCFF">ConTEXT</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; ConTEXT is a small, fast and powerful text editor, developed 
+      mainly to serve as secondary tool for software developers. After years and 
+      years searching for suitable Windows text editor, I haven't found any of 
+      them to completely satisfy my needs, so I wrote my own. Freeware by Eden 
+      Kirin</li>
+      <li><a target="_blank" href="http://www.crimsoneditor.com/">
+      <span style="background-color: #CCCCFF">Crimson Editor</span></a><span style="background-color: #CCCCFF">&nbsp;
+      </span>&nbsp; Crimson Editor is a free professional source code editor for 
+      Windows, fast and small. While it can serve as a good replacement for 
+      Notepad, it also offers many powerful features for programming languages 
+      such as HTML, C/C++, Perl and Java. - by Ingyu Kang</li>
+      <li>
+      <a target="_blank" href="http://elvis.the-little-red-haired-girl.org/gettingelvis/index.html">
+      <span style="background-color: #CCCCFF">Elvis</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; Elvis&nbsp; is a very powerful vi/ex clone providing a 
+      remarkable number of bells and whistles like syntax highlighting, multiple 
+      files in multiple windows, browse modes for LaTeX (rather experimental), 
+      HTML and MAN pages, networking support (http and ftp) and GUI frontends 
+      for some of its platforms (DOS among others). - by Steve Kirkendall</li>
+      <li>
+      <a target="_blank" href="http://www.lugaru.com/">
+      <span style="background-color: #CCCCFF">Epsilon </span></a>
+      <span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; Epsilon by Lugaru features powerful built-in Emacs-style and 
+      Brief-style command sets, incredible performance, convenient built-in help 
+      etc. Commercial software.</li>
+      <li>
+      <a target="_blank" href="http://public.planetmirror.com/pub/freedos/gnuish/gawk306x.zip">
+      <span style="background-color: #CCCCFF">GAWK for DOS</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+      &nbsp;Port of GNU AWK&nbsp; V.3.04: a pattern scanning and processing language 
+      for working on text files. Free. - by Rob Duff</li>
+      <li>
+      <a target="_blank" href="http://gnuwin32.sourceforge.net/packages/gsar.htm">
+      <span style="background-color: #CCCCFF">GSAR</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; Win32 General Search and Replace utility for text and binary 
+      files. - by Tormod Tjaberg</li>
+      <li>
+      <a target="_blank" href="http://cyberside.dyn.ee/FreeSoft/txtfrmt.htm">
+      <span style="background-color: #CCCCFF">Cyberside</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+      &nbsp;Good overview of and links to text formatters and filters.</li>
+      <li>
+      <a target="_blank" href="http://home.t-online.de/home/Jens.Altmann/jfe_eng.htm">
+      <span style="background-color: #CCCCFF">JFE</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; Jens' File Editor, a free editor from a german author with 
+      lots of useful features . - by Jens Altmann</li>
+      <li><a target="_blank" href="http://www.flos-freeware.ch/notepad2.html">
+      <span style="background-color: #CCCCFF">Notepad2</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; Notepad2 is a small, fast and free (Windows) text editor 
+      with syntax highlighting for HTML and other common languages, eg. Batch 
+      :-).</li>
+      <li><a target="_blank" href="http://www.goldshell.com/pedit/">
+      <span style="background-color: #CCCCFF">Pedit</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; Pedit is a freeware DOS editor similar to, but better than 
+      the standard DOS edit program. - by Goldshell Digital Media</li>
+      <li><a target="_blank" href="http://www.simtel.net/pub/pd/51643.shtml">
+      <span style="background-color: #CCCCFF">RPSORT 1.02</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; Very enhanced SORT filter, large files, multiple keys, etc. 
+      Freeware.&nbsp;- by Bob Pirko</li>
+      <li><a target="_blank" href="ftp://garbo.uwasa.fi/pc/goldies/qedit3c.zip">
+      <span style="background-color: #CCCCFF">Q-EDIT 3c</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; QEdit Advanced, SemWare's shareware text editor, gr8! Free. 
+      Replaced by
+      <a target="_blank" href="ftp://ftp.cdrom.com/pub/simtelnet/msdos/semware/tsejr4.zip">
+      TSE junior</a>. There's a test version of
+      <a target="_blank" href="http://www.semware.com/files/testdrive/tsedos25.zip">
+      TSE 2.5 f. DOS</a>. by <a target="_blank" href="http://www.semware.com/">
+      Semware Inc</a>.</li>
+      <li><a target="_blank" href="http://www.scintilla.org/">
+      <span style="background-color: #CCCCFF">Scintilla</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; Scintilla's SCITE is a free 32-bit editor. It comes with 
+      complete source code and a license that permits use in any free project or 
+      commercial product. As well as features found in standard text editors, 
+      Scintilla includes features especially useful when editing and debugging 
+      source code. These include support for syntax styling, error indicators, 
+      code completion and call tips (for
+      <a target="_blank" href="http://mailman.lyra.org/pipermail/scite-interest/2003-September/subject.html#2181">
+      4NT / 4DOS</a>). - Open source project. </li>
+      <li>
+      <a target="_blank" href="http://www.student.northpark.edu/pemente/sed/sed15x.zip">
+      <span style="background-color: #CCCCFF">SED for DOS</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+      &nbsp;Port of Unix SED V. 1.5, a Stream EDitor for working on text files. Free. 
+      - by Eric S. Raymond, David P Kirschbaum &amp; Howard L. Helman. A good SED 
+      site is
+      <a target="_blank" href="http://www.student.northpark.edu/pemente/sed/index.htm">
+      Eric Pement's</a></li>
+      <li><a target="_blank" href="http://www.brixoft.net/prodinfo.asp?id=1">
+      <span style="background-color: #CCCCFF">SourceEdit</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; Brixoft Source Edit is a free editor especially made for 
+      developers. It has syntax highlighters for all the most common computer 
+      languages and if you miss one you easily create your own with the built-in 
+      Language Editor. </li>
+      <li><a target="_blank" href="http://jsimlo.sk/notepad/">
+      <span style="background-color: #CCCCFF">TED Notepad</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; Another free text editor with many interesting features - by 
+      Juraj Simlovic</li>
+      <li><a target="_blank" href="http://www.fireflysoftware.com/index.htm">
+      <span style="background-color: #CCCCFF">TEXTools</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; TEXTools is a powerful pipe-based text editing workbench for 
+      Windows that allows you to morph text into other forms quickly.
+      <font size="2">TEXTools can be utilized from batch files, (using TEXTools 
+      Command Line) scripting languages such as VBScript, JScript, Perl, Python, 
+      etc. and also from programs written in languages such as Visual Basic, 
+      Delphi, C++, etc. Commercial app by Firefly Software.</font> </li>
+      <li>
+      <span style="background-color: #CCCCFF">
+      <a target="_blank" href="http://uk.geocities.com/short_stop_uk/freesoft/txtutil1.htm">Text Tools</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&nbsp; Short.Stop's pages for free text format utils and filters 
+      for DOS, a very comprehensive site.</li>
+      <li>
+      <span style="background-color: #CCCCFF">
+      <a target="_blank" href="http://groups.google.com/group/vde_editor/web/home-page">VDE</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&nbsp; 
+      Eric Meyers's VDE, a small, fast text editor and word processor that is 
+      surprisingly powerful and customizable. - maintained by Dennis McCunney</li>
+      <li>
+      <a target="_blank" href="http://www-atm.physics.ox.ac.uk/user/iwi/charmap.html">
+      <span style="background-color: #CCCCFF">Unicode CharMap</span></a><span style="background-color: #CCCCFF">
+      </span>&nbsp; Free Online Unicode Character Map, - by Alan Iwi</li>
+    </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" height="1" bgcolor="#FFFFFF">
+    <h4><a name="05"></a>Communication</h4>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" height="1" bgcolor="#EEEEEE"><font size="2" face="Verdana">
+    The Fax programs:</font><ul>
+      <li>
+      <a target="_blank" href="ftp://ftp.nsk.su/pub/msdos/comm/bgfax160.zip">
+      <span style="background-color: #CCCCFF">BGFAX</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; Version 1.60. - by B. J. Guillot</li>
+      <li><a target="_blank" href="ftp://ftp.nsk.su/pub/msdos/comm/bitfax.arj">
+      <span style="background-color: #CCCCFF">BITFAX</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; Version 3.09. - by BIT Software</li>
+    </ul>
+    <p><font face="Verdana" size="2">The 3 big T comm programs of the DOS era:</font></p>
+    <ul>
+      <li><a href="http://www.ftp.nsk.su/cgi-bin/bbs2html?pub/msdos/comm">
+      <span style="background-color: #CCCCFF">Telemate</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; Telemate was my favourite as a comm program. Very powerful 
+      and easy to use. (Program is split into 4 files at this site! Be careful 
+      to get them all). - by White River Software</li>
+      <li>
+      <a target="_blank" href="http://www.telix.com/delta/products/index.html">
+      <span style="background-color: #CCCCFF">Telix</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; Telix for DOS is still a commercial communications product, 
+      celebrating its tenth anniversary. It boasts a long feature list while 
+      maintaining a small size and ease of use. Windows version available. - by 
+      deltaComm</li>
+      <li>
+      <a target="_blank" href="http://www.ftp.nsk.su/cgi-bin/bbs2html?pub/msdos/comm">
+      <span style="background-color: #CCCCFF">Terminate</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; Extremely Powerful Terminal Program w. many <br>
+      Features. - by Datacomm</li>
+    </ul>
+    <p>Generally useful sites:</p>
+    <ul>
+      <li><a target="_blank" href="http://www.juge.com/bbs/Dos.1.Html">
+      <span style="background-color: #CCCCFF">CAPI/Fossil</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; Collection of CAPI Fossil drivers. - by Robert E. Juge</li>
+      <li><a target="_blank" href="http://www.the-infobase.de/isdn/">
+      <span style="background-color: #CCCCFF">ISDN-Seite</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; German Site with help, info and downloads. by Peter Zwosta</li>
+      <li><a target="_blank" href="http://www.juge.com/bbs/Dos.Html">
+      <span style="background-color: #CCCCFF">Robert E. Juge</span></a><span style="background-color: #CCCCFF">&nbsp;
+      </span>&nbsp; BBS-oriented file collection with many comm programs, 
+      offline readers, BBS systems and utilities, othr DOS programs and more.</li>
+      <li>
+      <a target="_blank" href="http://www.modemhelp.net/basicatcommand.shtml">
+      <span style="background-color: #CCCCFF">Modem Commands</span></a><span style="background-color: #CCCCFF">&nbsp;
+      </span>&nbsp; The standard Hayes modem command set explained</li>
+      <li>
+      <a target="_blank" href="http://www.ftp.nsk.su/cgi-bin/bbs2html?pub/msdos/comm">
+      <span style="background-color: #CCCCFF">Rinet</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; Many comm programs and tools. Very useful file collection.</li>
+    </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" height="1" bgcolor="#FFFFFF">
+    <h4><a name="04"></a>Internet Utilities</h4>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" height="1" bgcolor="#EEEEEE">
+    <p style="margin-top: 6">I have no experience of my own with these programs 
+    except Crosspoint. I've tried to concentrate on sites of people who make a 
+    competent impression here.</p>
+    <ul>
+      <li><a target="_blank" href="http://home.arachne.cz/">
+      <span style="background-color: #CCCCFF">Arachne</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+      &nbsp;DOS Web Browser. - by Arachne Labs. A new maintainer has taken Arachne up 
+      to v.1.8n <a target="_blank" href="http://www.cisnet.com/glennmcc/">here</a>.</li>
+      <li><a target="_blank" href="http://sourceforge.net/projects/blat">
+      <span style="background-color: #CCCCFF">Blat</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; Blat - A Win32 command line SMTP/NNTP mailer. Use it to 
+      automatically eMail logs, the contents of a html FORM, or whatever else 
+      you need to send. - By Pedro Mendes, Mark Neal et. al.</li>
+      <li><a target="_blank" href="http://www.jastra.com.pl/dosinet.htm">
+      <span style="background-color: #CCCCFF">C. dela Cruz</span></a><span style="background-color: #CCCCFF"> 
+      &nbsp;&nbsp;&nbsp;</span> &nbsp;WWW Bowsers for DOS</li>
+      <li><a target="_blank" href="http://www.crynwr.com/drivers/">
+      <span style="background-color: #CCCCFF">Crynwr</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; Good collection of packet drivers. - by Russel Nelson</li>
+      <li><a href="http://www.smashco.com/wattcp.asp">
+      <span style="background-color: #CCCCFF">Greg Covey</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; TCP/IP for DOS using the WATTCP clients.</li>
+      <li><a target="_blank" href="http://www.crosspoint.de/">
+      <span style="background-color: #CCCCFF">Crosspoint</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+      &nbsp;The ultimative german DOS newsreader for usenet, Fido. MausNet ... - by 
+      Peter Mandrella. It's still being been developed further under the GNU 
+      license as <a target="_blank" href="http://www.freexp.co.uk/">FreeXP</a>,
+      <a target="_blank" href="http://www.openxp.de/">OpenXP</a> and
+      <a target="_blank" href="http://xp2.de/">XP2</a>.</li>
+      <li><span style="background-color: #CCCCFF">
+      <a target="_blank" href="http://www.ncf.ca/~ag221/dosppp.html">H. 
+      Eisenberger</a>&nbsp;&nbsp;</span> &nbsp;DOS Internet Links,&nbsp; TCP/IP, PPP, Browsers, 
+      Newsreaders...</li>
+      <li><a target="_blank" href="http://www.dendarii.co.uk/">
+      <span style="background-color: #CCCCFF">Dendarii Nexus</span></a><span style="background-color: #CCCCFF">&nbsp;
+      </span>&nbsp;Dos Internet pages with FAQs and many links. - by Michael Bernardi</li>
+      <li>
+      <a target="_blank" href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dncode/html/secure11152004.asp">
+      <span style="background-color: #CCCCFF">Drop My Rights</span></a><span style="background-color: #CCCCFF">&nbsp;
+      </span>&nbsp; DropMyRights is a very simple application to help users who 
+      must run as an administrator run applications in a much-safer context—that 
+      of a non-administrator. It does this by taking the current user's token, 
+      removing various privileges and SIDs from the token, and then using that 
+      token to start another process, such as Internet Explorer or Outlook. This 
+      tool works just as well with Mozilla's Firefox, Eudora, or Lotus Notes 
+      e-mail.</li>
+      <li><a target="_blank" href="http://www.fdisk.com/doslynx/">
+      <span style="background-color: #CCCCFF">FDISK.COM</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; DOS Internet pages, a good collection of links to DOS 
+      Internet-realted software, drivers, ...</li>
+      <li>
+      <a target="_blank" href="http://www.interlog.com/~tcharron/getmail.html">
+      <span style="background-color: #CCCCFF">Getmail</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; The perfect companion to Blat: Getmail can be used to 
+      automatically extract MIME encoded or UU encoded binary files as it 
+      downloads your mail. - by Tim Charron</li>
+      <li><a target="_blank" href="http://www.tennyo.org/martin/software.html">
+      <span style="background-color: #CCCCFF">Martin Goebbel</span></a><span style="background-color: #CCCCFF">&nbsp;
+      </span>&nbsp; Getnews, Sendnews, and other command line programs.</li>
+      <li><a href="http://www.fdisk.com/doslynx/">
+      <span style="background-color: #CCCCFF">Wayne Janzen&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp;</a>FDISK.COM: 
+      DOS and the Internet.&nbsp;Tools, links and infos for Internet access from DOS.</li>
+      <li><a target="_blank" href="http://alumnus.caltech.edu/~dank/trumpet/">
+      <span style="background-color: #CCCCFF">Dan Kegel</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+      &nbsp;MS-DOS TCP/IP Programming</li>
+      <li><a target="_blank" href="http://www.komaromi.com/dos_email/">
+      <span style="background-color: #CCCCFF">Dan Komáromi</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+      &nbsp;Setting up Email in DOS with today's ISP using a dialup PPP TCP/IP 
+      connection</li>
+      <li><a target="_blank" href="http://home.westbrabant.net/~fiber/dose.htm">
+      <span style="background-color: #CCCCFF">Richard Kroonen</span></a><span style="background-color: #CCCCFF">&nbsp;</span> 
+      &nbsp;Email for DOS</li>
+      <li><a target="_blank" href="http://www.mailsend-online.com/">
+      <span style="background-color: #CCCCFF">Jim Lawless</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; MailSend is a Win32 command-line SMTP Internet e-mail 
+      transmission utility. It provides the ability to send e-mail from batch 
+      files, scripts, executable programs, or any tool capable of running a 
+      secondary program. </li>
+      <li><span style="background-color: #CCCCFF">
+      <a target="_blank" href="http://users.ohiohills.com/fmacall/">Fred C. Macall</a> 
+      &nbsp;</span> &nbsp;Fred's DOS Internet Software: Tips, links, programs&nbsp; to set 
+      up Internet access with an old PC</li>
+      <li>
+      <a target="_blank" href="http://www.rahul.net/dkaufman/lynx2.8.5rel.1-DOSc.zip">
+      <span style="background-color: #CCCCFF">Lynx</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+      &nbsp;DOS Web Browser. - by University of Kansas, GNU public licence. Also WGET 
+      and CURL at this site.</li>
+      <li>
+      <a target="_blank" href="http://blogs.msdn.com/aaron_margosis/archive/2004/07/24/193721.aspx">
+      <span style="background-color: #CCCCFF">Make Me Admin</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;
+      </span>&nbsp; When you run it, you get a Command Prompt running under your 
+      normal user account, but in a new logon session in which it is a member of 
+      the Administrators group. This Command Prompt and any programs started 
+      from it use your regular profile, authenticate as you on the network, but 
+      have full local admin privileges. All other programs continue to run with 
+      your regular, unprivileged account.</li>
+      <li>
+      <a target="_blank" href="http://home.arcor.de/dosps2/mercury.htm">
+      <span style="background-color: #CCCCFF">Mercury</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; Advanced textbased dosmailer for small Computers. Runs in 
+      plain DOS and Dosbox of WINDOWS ME</li>
+      <li>
+      <a target="_blank" href="http://www.chiark.greenend.org.uk/~sgtatham/putty/">
+      <span style="background-color: #CCCCFF">PuTTY</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; PuTTY is a free implementation of Telnet and SSH for Win32 
+      and Unix platforms, along with an xterm terminal emulator. Written and 
+      maintained primarily by Simon Tatham.</li>
+      <li>
+      <a target="_blank" href="http://www.robotronic.de/runasspcEn.html">
+      <span style="background-color: #CCCCFF">RunasSPC</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; Many users are working under administrator account, because 
+      some programs are missing administrator rights to run correctly.<br>
+      With runasspc a standard user has not to login as administrator to run 
+      this applications. Free for private use.</li>
+      <li><a href="http://sshdos.sourceforge.net/">
+      <span style="background-color: #CCCCFF">SSH-Client</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+      &nbsp;SSHDOS is an open source SSH, SCP, SFTP and Telnet client for DOS.</li>
+      <li><a target="_blank" href="http://www.smashco.com/wattcp.asp">
+      <span style="background-color: #CCCCFF">TCP/IP f. MS-DOS</span></a>&nbsp; 
+      This document outlines using the University of Waterloo TCP (<a target="_blank" href="http://www.bgnett.no/~giva/">WATTCP</a>) 
+      clients under MS-DOS.</li>
+      <li><a href="http://www.ncsa.uiuc.edu/SDG/Software/PCTelnet/">
+      <span style="background-color: #CCCCFF">Telnet-Client</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;</span> 
+      &nbsp;Sources for DOS-based Internet programs. - by NCSA</li>
+      <li><span style="background-color: #CCCCFF">
+      <a target="_blank" href="http://www.winsite.com/bin/Info?500000000873">
+      Telnet Scripting Tool</a> </span>&nbsp; Windows telnet is not scriptable. 
+      Telnet Scripting Tool is a utility to automate telnet sessions (like 
+      calling dip on a linux system, or doing router maintenance for example).
+      </li>
+      <li><a target="_blank" href="http://www.tropinet.com/dos.html">
+      <span style="background-color: #CCCCFF">Tropinet</span></a><span style="background-color: #CCCCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>&nbsp; The DOS user's guide to the Internet
+      </li>
+    </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" height="1" bgcolor="#FFFFFF">
+    <p align="center" style="text-align: center"><a href="#0">
+    <font face="verdana">Top of Page</font></a> - <a href="index.htm">
+    <font face="verdana">Home</font></a></td>
+  </tr>
+</table>
+
+</body>
+
+</html>

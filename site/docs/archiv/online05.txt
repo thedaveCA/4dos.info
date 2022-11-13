@@ -1,0 +1,782 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><HTML>
+<!-- HTML source and images Copyright 2004, JP Software Inc., All
+     Rights  Reserved.  See http://jpsoft.com/jplegal.htm  before
+     doing anything with any material from JP Software's web site.
+-->
+<HEAD>
+<BASE TARGET="_top">
+<LINK REL="SHORTCUT ICON" HREF="http://jpsoft.com/favicon.ico">
+<LINK REL="P3Pv1" HREF="http://jpsoft.com/w3c/p3p.xml">
+<LINK REV="made" HREF="&#119;&#101;&#098;&#109;&#097;&#115;&#116;&#101;&#114;&#064;&#106;&#112;&#115;&#111;&#102;&#116;&#046;&#099;&#111;&#109;">
+<LINK REL="prefetch" HREF="/images/blogo.gif">
+<LINK REL="prefetch" HREF="/images/bhomeb2.gif">
+<LINK REL="prefetch" HREF="/images/bstoreb2.gif">
+<LINK REL="prefetch" HREF="/images/bprodb2.gif">
+<LINK REL="prefetch" HREF="/images/bordb2.gif">
+<LINK REL="prefetch" HREF="/images/bupgrb2.gif">
+<LINK REL="prefetch" HREF="/images/bsuppb2.gif">
+<LINK REL="prefetch" HREF="/images/bsiteb.gif">
+<LINK REL="prefetch" HREF="/images/bhelpb2.gif">
+<LINK REL="prefetch" HREF="/images/bhomes2.gif">
+<META HTTP-EQUIV="Cache-Control" CONTENT="must-revalidate">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="author" CONTENT="webmaster@jpsoft.com">
+<META NAME="copyright" CONTENT="Copyright 2004, JP Software, Inc. All Rights Reserved.">
+<META NAME="description" CONTENT="Advanced Command processors for DOS and Windows">
+<META NAME="keywords" CONTENT="COMMAND LINE,WINDOWS PROMPT, BATCH FILE,SHELL,SCRIPT,PROMPT,BTM,CMD,4DOS,4NT,TCMD,TAKE COMMAND,JPSOFT,WINDOWS,WIN98,WINME,W2K,XP,DOS,NT">
+<META NAME="rating" CONTENT="General">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="revisit-after" CONTENT="7 Days">
+<STYLE type="text/css">
+#highlight {background: #FFFF80; }
+#lowlight {background: #D2E2FF; }
+#neon {background: #99FF00; }
+A:HOVER { color: #000000; background: yellow}
+</STYLE>
+<BASE HREF="http://jpsoft.com/">
+<META NAME="ROBOTS" CONTENT="NOFOLLOW,NOARCHIVE,NOINDEX">
+<TITLE>JP Software - Text File Viewer: online05.txt</TITLE></HEAD>
+<BODY BGCOLOR="#FBF7FB" TEXT="#000000" LINK="#0000FF" ALINK="#FF0000" VLINK="#4F2F4F">
+<CENTER><TABLE COLS=1 BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=600 BGCOLOR="#D2E2FF">
+<TR><TD WIDTH=600 VALIGN=TOP NOWRAP>
+<A NAME="top"><IMG HEIGHT=50 WIDTH=136 HSPACE=0 VSPACE=0 BORDER=0 ALIGN=LEFT ALT="JP Software: " SRC="/images/blogo.gif"></A>
+<A TARGET="_top" HREF="/index.htm" onmouseover="document.images.home.src='/images/bhomeb2.gif'" onmouseout="document.images.home.src='/images/bhomes2.gif'"><img name=home HEIGHT=50 WIDTH=52 HSPACE=0 VSPACE=0 BORDER=0 ALIGN=LEFT ALT="Home Page" SRC="/images/bhomes2.gif"></A>
+<A HREF="http://jpsoft.com/store/store.mv" onmouseover="document.images.store.src='/images/bstoreb2.gif'" onmouseout="document.images.store.src='/images/bstores2.gif'"><img name=store HEIGHT=50 WIDTH=46 HSPACE=0 VSPACE=0 BORDER=0 ALIGN=LEFT ALT="Online Store" SRC="/images/bstores2.gif"></A>
+<A HREF="/products.htm" onmouseover="document.images.prod.src='/images/bprodb2.gif'" onmouseout="document.images.prod.src='/images/bprods2.gif'"><img name=prod HEIGHT=50 WIDTH=65 HSPACE=0 VSPACE=0 BORDER=0 ALIGN=LEFT ALT="Products" SRC="/images/bprods2.gif"></A>
+<A HREF="/ordinf.htm" onmouseover="document.images.ord.src='/images/bordb2.gif'" onmouseout="document.images.ord.src='/images/bords2.gif'"><img name=ord HEIGHT=50 WIDTH=54 HSPACE=0 VSPACE=0 BORDER=0 ALIGN=LEFT ALT="Orders" SRC="/images/bords2.gif"></A>
+<A HREF="/upgrade.htm" onmouseover="document.images.upgr.src='/images/bupgrb2.gif'" onmouseout="document.images.upgr.src='/images/bupgrs2.gif'"><img name=upgr HEIGHT=50 WIDTH=70 HSPACE=0 VSPACE=0 BORDER=0 ALIGN=LEFT ALT="Upgrades" SRC="/images/bupgrs2.gif"></A>
+<A HREF="/techsup.htm" onmouseover="document.images.supp.src='/images/bsuppb2.gif'" onmouseout="document.images.supp.src='/images/bsupps2.gif'"><img name=supp HEIGHT=50 WIDTH=61 HSPACE=0 VSPACE=0 BORDER=0 ALIGN=LEFT ALT="Support" SRC="/images/bsupps2.gif"></A>
+<A TARGET=JP_Help HREF="/help/index.htm" onmouseover="document.images.help.src='/images/bhelpb2.gif'" onmouseout="document.images.help.src='/images/bhelps2.gif'"><img name=help HEIGHT=50 WIDTH=45 HSPACE=0 VSPACE=0 BORDER=0 ALIGN=LEFT ALT="Online Help" SRC="/images/bhelps2.gif"></A>
+</TD></TR></TABLE>
+</CENTER>
+<P>
+<CENTER><FONT COLOR="#003399"><H1><STRONG>Text File Viewer</STRONG></H1></FONT></CENTER>
+<CENTER><H2><BIG><STRONG>"online05.txt"</STRONG></BIG> (
+28353
+ bytes)</H2>
+<STRONG>also available in <A HREF="ascii/online05.txt">text/plain</A> format</STRONG>
+</CENTER><P><FONT FACE="arial, helvetica, sans-serif" SIZE="-1" COLOR="#006699">
+<UL><LI>Use your browser's FIND function to locate specific text.</UL></FONT>
+<HR NOSHADE WIDTH="95%">
+<TABLE COLS=1 BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH="100%" BGCOLOR="#FBF7FB" BACKGROUND="/images/perf.gif"><TR><TD>
+<UL><UL></FONT><PRE>
+
+                 The Prompt Solution - Online Edition
+                 JP Software's Electronic Newsletter
+
+                       Issue #5 - July 2, 2002
+
+
+ >>  Special summer pricing on CD upgrades -- including a special
+ >>  "second license free" offer!  To order go direct to our online
+ >>  store at http://jpsoft.com/store/store.mv.  See below for
+ >>  complete details, tech tips, and more!
+
+
+[Sent to the address you gave us when you purchased a JP Software
+product.  For address changes and list removal see end of message.]
+
+*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*
+
+In this Issue:
+
+    * Summer Specials
+
+        - Upgrade to the JP CD Suite -- Get a FREE Second License!
+        - Tell Your Friends -- New CD Suite Purchases Get a FREE
+             Second License too!
+
+    * Latest Versions of 4DOS, 4NT, and Take Command/32
+
+        - What?  You Missed the Upgrade?? ... Newest Releases Offer
+             FTP Support, and Over 200 Other Enhancements
+        - Latest Maintenance Releases
+
+    * Tech Tips:
+
+        - Understanding File Systems:  Something Old, Something New
+        - Command Line Features You Forgot
+
+    * Customer Service and Miscellaneous
+
+        - Contacting JP Software
+        - Newsletter Address Correction, List Removal, and
+             Privacy Information
+        - Copyrights, Trademarks, and Fine Print
+
+
+*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*
+*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*
+
+   **>> Summer Specials <<**
+
+----------------------------------------------------------------------
+
+>> Upgrade to the JP CD Suite -- Get a FREE Second License!
+
+Already own 4DOS, 4NT, or Take Command/32?  Now you can move up to our
+JP CD Suite with all three products for just $59.95 -- that's $10
+under the regular upgrade price -- AND we'll throw in a second CD
+license at the same time, at no additional charge!
+
+We know many of you now use more than one computer -- for work and
+home, for your children's education, as a network gateway, and more.
+This is the perfect opportunity to build in consistency and ease of
+maintenance across all your machines, at a very attractive price.
+
+If you don't need a second license for another system, you can save
+it, pass it on to a friend, or even give it to your boss (just let us
+know who it's going to when you order).
+
+Using more than two systems yourself?  We can help there too -- if
+you're taking advantage of the offer above for your own computers you
+can add on CD licenses for more systems (up to a total of 10), at just
+$39.95 additional per seat.  That's over 20% off our usual
+multi-system CD pricing!
+
+To order just visit our online store at:
+
+   http://jpsoft.com/store/store.mv
+
+This special offer expires August 31, 2002, so act now!
+
+
+----------------------------------------------------------------------
+
+>> Tell Your Friends -- New CD Suite Purchases Get a
+>> FREE Second License too!
+
+We're happy to extend the benefits of this offer to new customers too!
+
+From now through August 31, when you order a new CD Suite you'll get a
+second license FREE as well!
+
+Need more beyond the second license?  Already own the CD Suite?  Take
+advantage of the same offer mentioned above:  go up to a total of 10
+machines at just $39.95 additional per seat.
+
+This offer also expires August 31, and is available through our online
+store at http://jpsoft.com/store/store.mv.
+
+
+*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*
+*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*
+
+   **>> Latest Versions of 4DOS, 4NT, and Take Command/32 <<**
+
+----------------------------------------------------------------------
+
+>> What?  You Missed the Upgrade??
+   Newest Releases Offer FTP Support - and Over 200 Other Enhancements
+
+If you're still on 4DOS 6.02 (or below), 4NT 3.02, or Take Command/32
+2.02 -- or any earlier versions -- then perhaps you missed last year's
+major upgrades.  Well, they're still available -- and at the same low
+price.  Here are some highlights ...
+
+    FTP Support:
+
+        The single biggest enhancement in these versions is FTP
+        support (in 4NT and Take Command).  This support extends
+        across many commands and functions (e.g. you can use most file
+        oriented commands -- COPY, DEL, MOVE, REN, TYPE, etc.  -- on
+        FTP servers).  It enables file management on FTP servers from
+        the command line, and brings all of the capabilities of 4NT
+        and Take Command/32's enhanced batch scripting language to
+        automation of FTP transfers.  It's an important tool for web
+        developers, and anyone maintaining a web or FTP server and
+        needing to manage it using familiar commands, and/or automate
+        their work.  See the first "Tech Tip" below for details on how
+        to use these features.
+
+    @file Lists:
+
+        Another significant addition, "@file" lists, adds even more
+        flexibility to file processing, allowing you to take a list of
+        files generated by another command, or another application,
+        and use it as input to any file processing command.  Use @file
+        lists to find text in files and then process only those files
+        containing the matching text, to change the order in which
+        files are copied or moved, or use the same file lists for
+        internal commands and external applications with similar
+        features (e.g.  .ZIP file tools).  See the second "Tech Tip"
+        below for more information.
+
+    Usability Improvements:
+
+        We've also added plenty of little things that help with
+        usability - like server and sharename completion on the
+        command line, variable name completion, a more robust way to
+        handle standard text-mode applications in Take Command/32, and
+        dozens more.  And there are over 100 enhancements to existing
+        commands, giving you more command line power and flexibility
+        than ever.
+
+    Batch File Enhancements:
+
+        For batch programmers, this release offers a wide range of
+        additional enhancements, including over 40 new variables and
+        functions that offer capabilities like manipulation of the
+        Windows registry, access to Windows system data, new
+        arithmetic calculations, additional date handling, and access
+        to new Windows 2000 file attributes.
+
+In addition all products are fully compatible with the latest
+operating systems including Windows NT / 2000 / XP and Windows 95 /98
+/ ME.
+
+The price for all this?  Just $34.95 for the first product, $19.95 for
+each additional product, or $54.95 for the JP CD Suite.  Plus if you
+currently have one or more individual products you can convert to the
+CD Suite with all products for just $69.95!
+
+For additional details see the "What's New" section of the online help
+for each product.  A file with essentially the entire list of changes
+is also available -- check the ASCII files area of our web site at
+http://jpsoft.com/ for WHATSNEW.TXT.
+
+
+----------------------------------------------------------------------
+
+>> Latest Maintenance Releases
+
+The latest releases of our most popular command line tools are 4DOS
+7.01, 4NT 4.01, and Take Command/32 3.01.  Earlier this year we also
+released a maintenance upgrade to 4OS2, version 3.03.
+
+To download these latest releases, visit:
+
+    * Our web site at http://jpsoft.com/
+
+    * Our FTP site at ftp.jpsoft.com.  See the product subdirectories
+      for the file for each product (these are the same files
+      available from our web page).
+
+This maintenance release includes bug fixes and compatibility
+enhancements developed since our last release.  It does not include
+any major new features or functions.  For complete details on all
+changes see the "What's New" topic in the online help, or the
+same information available from the Technical Support area of our web
+page.
+
+If you are currently running 4DOS 7.00, 4NT 4.00, or Take Command/32
+3.00, this is a minor upgrade.  To update your current copy, simply
+download the new version and install in a new directory (or over the
+old one if you wish).  For manual installation, see the brief
+instructions in README.TXT and/or the more detailed instructions in
+the ASCII Introduction and Installation Guide (included with the
+downloaded files).
+
+If this is a major upgrade for you (e.g. if you are running 4DOS 6.02,
+4NT 3.02, or Take Command/32 2.02, and have not yet upgraded) please
+see the previous article.
+
+
+*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*
+*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*
+
+   **>> Tech Tips <<**
+
+----------------------------------------------------------------------
+
+>> Understanding File Systems:  Something Old, Something New
+
+Remember the good -- or, depending on your view, bad -- old days?  A 20
+MB hard disk was large, and file names were 8 letters or numbers
+followed by an extension of three more.  File systems were barely
+mentioned because there was only one, and of course pretty much all work
+on PCs was done in DOS and from the command line!
+
+Things are a little different now.  Some people don't even know what
+the command line is.  20 MB is more like a file size than a disk
+size.  And you have to make sense of a plethora of file systems --
+FAT, VFAT, CDFS, NTFS, NFS, and more.  What's more, each has its own
+unique characteristics and many are not compatible with each other.
+
+4DOS, 4NT, and Take Command can work with pretty much any file system
+that's provided on the platforms they run on.  However there are real
+differences in behavior that depend on both the operating system and
+the file system.  Understanding these differences is important if you
+work on multiple platforms, or with multiple file systems, as many
+people do.
+
+The operating systems under which our products run support four
+standard file systems:  FAT, VFAT, FAT32, and NTFS.
+
+   * The FAT File System is the traditional file system used by all
+     versions of DOS.  Its name comes from the File Allocation Table
+     DOS uses to keep track of the space allocated to each file.
+     Windows 95, 98, ME, NT, 2000, and XP also support the FAT file
+     system.
+
+   * The VFAT File System is an extension of the FAT file system
+     available in Windows 95 and above.  This system maintains
+     additional information about files on FAT drives, including long
+     filenames (LFNs).
+
+   * The FAT32 File System is an additional extension to the VFAT file
+     system.  It is available in Windows 95 OEM Service Release 2
+     ("OEMSR2"), and in Windows 98, ME, 2000, and XP.  It is similar
+     to VFAT, but supports larger disk drives.  It is not supported
+     under Windows NT 4.0 or earlier, or under DOS.
+
+   * The Windows NT File System or NTFS is a file system provided with
+     all versions of Windows NT / 2000 / XP.  It is not an extension
+     of any of the FAT-based systems, and instead uses a new design to
+     support long file names and to offer improved performance and
+     support for large drives.
+
+In addition, you probably have access to one or more file systems
+which are on other computers accessed across a network.  Those file
+systems may be any of the ones listed above -- or may be completely
+different systems such as Unix, VMS, or Netware file systems, whose
+rules and functions are quite different from the systems you are used
+to under DOS and Windows.
+
+The remainder of this article discusses some of the issues you can
+run into when working with a range of file systems, and how features
+of 4DOS, 4NT, and Take Command can help.
+
+
+File Names
+
+Often the most obvious difference between file systems is in the names
+allowed.  FAT systems support only traditional "8.3" names -- those
+with an 8-character name and a 3-character extension, all in upper
+case.  All of the other common systems allow longer file names,
+usually up to about 255 characters.
+
+If you are using a system which supports long filenames you can
+convert between the long and short names while typing at the command
+line, or programmatically in a command or batch file.  To convert
+while typing, type part of the name you want, then press Tab until the
+file name has been filled in.  Normally this will display the long
+filename; to see the short name instead, press Ctrl-A. Press Ctrl-A
+again to toggle back to the long name.  This feature allows you to,
+for example, display the long name of a file and then switch to the
+short name in order to pass it to an older program which does not
+handle long filenames.
+
+In any command or batch file you can also use the @SFN and @LFN
+functions to perform these conversions, for example:
+
+     c:\>echo %@sfn["My Documents"]
+     C:\MYDOCU~1
+
+     c:\>echo %@lfn[MYDOCU~1]
+     C:\My Documents
+
+In addition the characters allowed in file names vary from system to
+system.  A complete discussion of the characters allowed is beyond our
+scope here, but on FAT systems you can use alphabetic and numeric
+characters plus the punctuation marks ! # $ % & ' ( ) - @ ^ _ ` { }
+and ~ in both the name and the extension of a file.  Other
+Windows-based file systems may allow additional characters, though
+non-Windows systems tend to be more restrictive.
+
+Because the exclamation point [!], percent sign [%], caret [^], at
+sign [@], parentheses [()], and back-quote [`] also have other
+meanings to 4DOS, 4NT, and Take Command, it is best to avoid using
+them in filenames.  If you do find filenames with these characters in
+them there are several ways to handle them.  Here are some examples:
+
+   * For the % sign, use two -- to delete the file named my%file:
+
+          del my%%file
+
+   * Use the escape character ("%=") to remove the usual special
+     meaning of the next character:
+
+          del my%=%file
+
+   * Place backquotes around the filename to prevent special
+     characters from being processed when the command is first
+     examined:
+
+         del `my%file`
+
+   * Use SETDOS /X to disable the special meaning of certain
+     characters (e.g. the backquote, or the command separator
+     character).  See SETDOS /X for additional details.
+
+   * Use a wildcard character in brackets if there is no other file
+     name it will match; this command will delete all files whose
+     name is "my", then any single character, then "file":
+
+          del my[?]file
+
+The last two methods will only work for internal commands.  The others
+will generally work for external commands as well.  The last method --
+using [?] -- is the most robust and easiest, but can be dangerous if
+you have other similarly named files as it can match more than one
+filename.
+
+
+Upper and Lower Case
+
+All of the DOS and Windows file systems described above (except the
+original FAT system) are "case-retentive", meaning they remember
+filenames as they were created with both upper and lower case letters.
+However they are also "case-insensitive", meaning that you can refer
+to the file MyFile as MYFILE or myfile or MyFile, all are equivalent.
+For this reason you will not usually have to modify or deal with the
+case of filenames under these systems.
+
+Network file systems, on the other hand, particularly those running
+under Unix, are often case-sensitive -- that is, MyFile, MYFILE, and
+myfile all refer to different files.  When accessing these systems you
+may want to take some steps to make sure you are using the correct
+file names.  Here are some areas where this can affect you:
+
+     DIR:  Don't use the /E or /L switches when displaying directories
+     for case-sensitive file systems.  These switches force the DIR
+     output to upper or lower case, which will prevent DIR from
+     displaying the true names of the files.
+
+     COPY, MD, MOVE, RD, REN, etc.:  Commands which handle files or
+     directories must be given the correct name, including upper and
+     lower case characters, or they will not be able to find the file.
+     The same applies to variable functions.
+
+     When copying or moving files to case-sensitive file systems you
+     may need to force the case to be what you want.  For example,
+     this command will copy the file JANDATA.ZIP to an FTP site using
+     4NT or Take Command/32's FTP features, and store it with an upper
+     case name on the target file system:
+
+          copy JANDATA.ZIP "ftp://ftp.somesite.com/"
+
+     In most cases you will want such an operation to convert the
+     filename to lower case, rather than making assumptions about how
+     it will be transferred.  You can do this explicitly:
+
+          copy JANDATA.ZIP "ftp://ftp.somesite.com/jandata.zip"
+
+     Or if you do it frequently, you can set up an alias.  This
+     example copies the file to a named FTP site, and forces the name
+     to lower case (the FOR command is used to allow wildcard file
+     names).  Be sure to enter the alias on one line:
+
+          alias lcopy `for %file in (%1) copy %file
+               "ftp://%2/%@lower[%file]"`
+
+     To use this alias:
+
+          lcopy JANDATA.ZIP ftp.somesite.com
+
+
+International Issues
+
+One area that causes a lot of confusion is the use of "international"
+(non-English) characters in filenames.
+
+Under the FAT-based file systems you will generally find that any
+legal character from the 255-character extended ASCII set that you can
+enter on your keyboard can be used in a filename and will be stored
+and retrieved properly.  Your online help lists these characters under
+"Reference Information" in the "ASCII and Key Codes" topics.
+
+However, when using Windows NT's NTFS file system, which supports the
+use of "Unicode" in filenames to handle a wider range of characters,
+the issue is far more complex.  Windows will convert any characters
+you enter to Unicode prior to storing them as part of the filename,
+and will convert them back to ASCII when retrieving them for
+non-Unicode programs like 4NT and Take Command.
+
+This conversion is "symmetric" for standard English-language
+characters, so the character you type for the filename is the one you
+will see in directories and can use in file processing commands and
+functions.  However for non-English characters the conversion
+performed by Windows unfortunately is not symmetric, so that if you
+(for example) enter an "o" with a German "umlaut" over it in a
+filename, the character may appear completely different when displayed
+in a DIR, and may not match properly when used to manipulate the file.
+This problem does not affect all non-English characters, only some of
+them; occurs only on NTFS drives; and is less likely to cause trouble
+in Take Command than in 4NT; nevertheless, it can be quite confusing
+when it does happen.
+
+At this time the only easy solution to this problem is to use
+the [?] wildcard for the character in question, for example:
+
+     ren dankesch[?]n dankeschon
+
+Note that this will also attempt to rename other matching files with
+similar names, and any character in the next to last position.  (A
+future version of 4NT and Take Command may provide Unicode support to
+address this issue, but development plans for such a version are still
+under discussion and are not final at this time.)
+
+
+Other Issues
+
+There are a number of other issues where file systems differ which we
+don't have room to go into in detail here, but we can give you a brief
+"heads-up" on some areas you should be aware of:
+
+   - Under Windows 2000 and XP, NTFS drives can store a range of extra
+     file "attributes" such as "temporary" or "offline".  These are
+     not available in FAT-based systems, nor on NTFS pre-Windows 2000.
+     See the online help for details.
+
+   - Translations between file attributes on different operating
+     systems are not usually reliable.  In particular, there is no
+     clear way to map Unix file permissions to DOS and Windows file
+     attributes, and attempts to manipulate permissions on Unix
+     systems through a network using 4DOS, 4NT, or Take Command are
+     likely to fail completely, or yield incorrect results.  To
+     address this use a Unix-based tool or stand-alone FTP software to
+     change the Unix permissions.
+
+   - Not all file systems correctly identify themselves or their
+     characteristics when working in a network environment.  In
+     particular, the file system on another machine may appear to
+     support long filenames when it does not.  Similarly, a directory
+     may appear to 4DOS, 4NT, or Take Command to be a file, or vice
+     versa.  If you see odd results from DIR (e.g. empty directories
+     that you know have files, or mangled filenames) you should
+     suspect that the file system on the other machine is not
+     identifying itself and its characteristics correctly to 4DOS,
+     4NT, or Take Command.
+
+----------------------------------------------------------------------
+
+>> Command Line Features You Forgot
+
+All too often, we get "suggestions" to add a feature to 4DOS, 4NT, or
+Take Command when the requested feature is already present.  Usually,
+it's been there for years!  This is no surprise -- with such a large
+feature set it's easy to find benefits in only a small subset of
+what's offered, and at times forget what else might be there.
+
+For this article we looked back through the list of command line
+features, and thought we'd remind you of a few you may have forgotten.
+(These descriptions use typical 4DOS and 4NT keystrokes; a few may be
+different in Take Command):
+
+   * Command Completion:  This is basic but we've seen many
+     experienced users ignore it.  Need to recall a previous command?
+     Type the first part of it and press up-arrow, and you'll see only
+     the matching commands.  This way there's almost never any need to
+     press up-arrow repeatedly to search for a command -- even if all
+     you remember is the first letter, you can speed up your search
+     considerably.
+
+     If you use command completion and see some useless commands in
+     the history that are messing up your scan for the one you want,
+     press Ctrl-D instead of the up-arrow.  That will delete the
+     useless command and proceed to the next one, and next time it
+     won't be there.
+
+   * History Options:  Do you wish the command you just recalled would
+     stay at the end of the history where you could find it again
+     quickly, and in sequence?  Tired of going around in circles in
+     the history list?  There are a whole range of configuration
+     options that let you control how the command history works.  We
+     don't have room to cover all of them in detail here, but you can
+     read about them in the Configuration section of the online help.
+     See History and LocalHistory under Initialization Directives, or
+     on the Startup page of the configuration dialogs.  Also see
+     HistCopy, HistMin, HistMove, and HistWrap under Configuration
+     Directives, or on the History page of the configuration dialogs.
+
+   * Automatic Directory Changes:  Are you still using CD (or CDD) to
+     change directories?  That's the old way -- in most cases it's
+     quicker to just type the directory name, followed by a backslash,
+     and let the command processor find the directory for you.  For
+     even more flexibility, enable extended directory searches and you
+     can type just part of the name; see Directory Navigation in the
+     online help for details.
+
+   * Variable Name Completion:  This works like filename completion.
+     If the argument begins with a %, the completion routines will
+     scan the environment for matching variable names.  For example,
+     if the PROMPT and PATH variables are in the environment, in that
+     order, this sequence might be used to display the PATH:
+
+          [c:\] echo %p<Tab>
+          [c:\] echo %PROMPT<Tab>
+          [c:\] echo %PATH<Enter>
+
+   * Customized Filename Completion:  Don't see the file names you
+     want when you press Tab or the other filename completion keys?
+     Check out the AppendToDir, CompleteHidden, and FileCompletion
+     directives that you can add to your .INI file for a range of
+     customization options (e.g. to add backslashes automatically to
+     directory names, to only complete .TXT files when you are
+     entering a NOTEPAD command, or to see only directories when
+     typing an RD command).  The same options are on the Editing tab
+     of the configuration dialogs.
+
+   * F3:  That's right, the ancient F3 command that used to be one of
+     the only ways to edit the command line.  What does it do?  It
+     adds the rest of the previous command line on to the current one,
+     starting after the characters you've typed.  Here's one simple
+     use, to create a directory and change to it:
+
+          [c:\] md newdir
+          [c:\] c<F3>
+
+     When you press F3 the command processor substitutes the rest of
+     the previous line -- in this case, "d newdir", and fills in the
+     command:
+
+          cd newdir
+
+     Then just press Enter to execute it.
+
+   * Keystroke Aliases:  These assign a command to a single keystroke.
+     They're often used with function keys, for example to use Alt-F4
+     to enter and execute an "exit" command in 4DOS:
+
+          alias @@Alt-F4 exit
+
+     For complete details see the ALIAS command in the online help.
+
+This of course is only a sample -- if you'd like to review more,
+browse through the online help, reviewing the sections titled "The
+Command Line", "File Selection", and "Directory Navigation".
+
+
+*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*
+*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*
+
+   **>> Customer Service and Miscellaneous <<**
+
+----------------------------------------------------------------------
+
+>> Contacting JP Software
+
+Use our web site at http://jpsoft.com/ as a simple, centralized
+contact point for all departments, and for online ordering and file
+downloads.
+
+We answer most sales and customer service inquiries and respond to
+most technical support requests within 24 hours (assuming we can reach
+you!).  Orders are normally processed and shipped in 2 - 3 business
+days.
+
+     Address:
+         JP Software Inc.
+         P.O. Box 1470
+         East Arlington, MA 02474
+         USA
+
+     Main number:  (781) 646-3975
+     Fax: (781) 646-0904
+     Order Line:  (800) 368-8777 (US / Canada, orders only)
+
+     Online:
+         Web site:  http://jpsoft.com/
+         FTP site:  ftp://jpsoft.com
+         Sales / Customer Service:  sales@jpsoft.com
+
+     Technical Support:
+         Standard (no-charge) support:  Available via our online
+         support forum, accessible from the support area of our web
+         site.  Paid support options are also available; see our web
+         site for details.
+
+Our normal office hours are 9:00 AM to 5:00 PM, eastern US time.
+
+
+----------------------------------------------------------------------
+
+>> Newsletter Address Correction, List Removal, and Privacy Information
+
+
+We send this newsletter periodically to all registered JP Software
+customers using the email address you gave us when you placed an
+order.
+
+To correct your email address, or if you have any other questions
+about our mailing list not covered here, send email to
+sales@jpsoft.com.
+
+If you don't want to receive additional issues of this newsletter,
+just send a note to nlremove@jpsoft.com, and we will remove your name
+from our newsletter email list prior to sending out the next issue.
+
+We do not send this newsletter to anyone who has not given us their
+address voluntarily as part of a purchase or other customer
+transaction with JP Software.  We also will NOT give, sell, or
+otherwise distribute your email address to any other company without
+your permission.
+
+
+----------------------------------------------------------------------
+
+>> Copyrights, Trademarks, and Fine Print
+
+
+Copyright (c) 2002, JP Software Inc. All Rights Reserved.  4DOS (r)
+and Take Command (r) are registered trademarks of JP Software Inc.
+4DOS (r), 4OS2, and 4NT are JP Software Inc.'s trademarks for its
+family of character-mode command processors.  "The Prompt Solution",
+JP Software, jpsoft.com, and all JP Software designs and logos are
+also trademarks of JP Software Inc. Other product and company names
+are trademarks of their respective owners.  Published July 2002 by JP
+Software Inc., P.O. Box 1470, E. Arlington, MA 02474, USA.
+
+
+</PRE></UL></UL>
+</TR></TD></TABLE>
+<HR NOSHADE WIDTH="95%">
+<CENTER><STRONG>also available in <A HREF="ascii/online05.txt">text/plain</A> format</STRONG></CENTER>
+</FONT><FONT FACE="arial, helvetica, sans-serif" SIZE="-1" COLOR="#006699">
+<UL><A HREF="jpview.cgi?online05.txt#top"><IMG SRC="images/top4.gif" VSPACE=5 HSPACE=0 WIDTH=13 HEIGHT=7 ALIGN=TOP BORDER=0 ALT="^"><FONT COLOR="#663399"><STRONG>Top</STRONG></FONT></A></UL>
+<UL><LI>If your browser displayed this page in a separate window, <A HREF="" onclick="window.close()">close this window</A> to return to your previous location.</UL>
+</FONT><P>
+<center>
+<FORM TARGET="JP_Link" METHOD="get" ACTION="http://sitelevel.whatuseek.com/query.go">
+<INPUT TYPE="hidden" SIZE=0 NAME="crid" VALUE="4d3ea8ef0d7c5f46">
+<INPUT TYPE="hidden" SIZE=0 NAME="slice_title" VALUE="Text Files only">
+<TABLE bgcolor="#D2E2FF" CELLSPACING=0 CELLPADDING=5 BORDER=1 BORDERCOLOR="#003399">
+<TR><SMALL><TD ALIGN="center">
+<INPUT TYPE="submit" NAME="B1" VALUE=" search Text Files">
+</TD></SMALL></TR>
+<TR><TD ALIGN="center" VALIGN="bottom">
+<INPUT TYPE="text" NAME="query" SIZE="20" VALUE="&quot;search string&quot;" MAXLENGTH="200"></TD></TR>
+</TABLE></FORM>
+</center>
+<FONT FACE="Helvetica,Arial,Geneva,Swiss,sans-serif" SIZE=2>
+<UL><LI><H3>View a <A HREF="ascii.htm">Directory of all Text Files</A></H3></UL>
+<P></FONT>
+<P><HR WIDTH="95%"><P>
+<TABLE COLS=1 CELLSPACING=0 CELLPADDING=0 BORDER=0 WIDTH="90%">
+<TR><TD></TD></TR>
+<TR><TD BGCOLOR="#D2E2FF"><CENTER>
+<FONT FACE="Helvetica,Arial,Geneva,Swiss,sans-serif" SIZE=2>
+<A TARGET="_top" HREF="/index.htm">Home</A> |
+<A HREF="http://jpsoft.com/store/store.mv">Store</A> |
+<A HREF="/products.htm">Products</A> |
+<A HREF="/ordinf.htm">Orders</A> |
+<A HREF="/upgrade.htm">Upgrades</A> |
+<A HREF="/techsup.htm">Support</A> |
+<A TARGET=JP_Help HREF="/help/index.htm">Online Help</A>
+</FONT>
+</CENTER></TD></TR>
+<TR><TD>&nbsp;</TD></TR>
+<TR><TD><CENTER>
+<A HREF="#top"><IMG HEIGHT=30 WIDTH=90 VSPACE=5 BORDER=0 ALT=" (top of page) " SRC="/images/smjpswsh.gif"></A>
+</CENTER></TD></TR>
+<TR><TD><CENTER>
+<FONT FACE="Helvetica,Arial,Geneva,Swiss,sans-serif" SIZE=1>
+Page script last updated by
+<A HREF="&#119;&#101;&#098;&#109;&#097;&#115;&#116;&#101;&#114;&#064;&#106;&#112;&#115;&#111;&#102;&#116;&#046;&#099;&#111;&#109;?subject=Comments_WWW" TITLE="Comments_WWW">webmaster@jpsoft.com</A>.
+Copyright &copy; 2004 JP Software, Inc.  All Rights Reserved.
+<BR>See our <A HREF="/jplegal.htm">Legal Notices and Trademarks</A>
+and <A HREF="/privacy.htm">Privacy</A> Statements.
+<BR>
+<CENTER><FORM>
+<INPUT TYPE="button" VALUE=" &lt;&lt " onClick="history.go(-1)">
+<A HREF="#top"><IMG SRC="/images/top4.gif" VSPACE=5 HSPACE=0 WIDTH=13 HEIGHT=7 ALIGN=TOP BORDER=0 ALT="^"><FONT COLOR="#663399"><STRONG>Top</STRONG></FONT></A>
+<INPUT TYPE="button" VALUE=" &gt;&gt; " onCLick="history.go(1)">
+</FORM></CENTER>
+</FONT>
+</CENTER></TD></TR>
+<TR><TD>
+<CENTER><P><script language="JavaScript1.2" src="http://www.altavista.com/r?entr"></script></CENTER>
+</TD></TR>
+</TABLE>
+</BODY></HTML>

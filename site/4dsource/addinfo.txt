@@ -1,0 +1,18 @@
+2009-03-05 Luchezar Georgiev wrote in newsgroup c.o.m.4
+
+4DOS builds only with the Microsoft C 8.0 (a.k.a. Visual C++ 1.x) compiler. 
+Neither Borland C, nor the Walter Bright's compilers (Datalight C / Zortech 
+/ Symantec / Digital Mars) are supported. Even Watcom can't fully build it.
+
+There is a batch file called MKDOS which you need to run. See my web site 
+for the exact steps to do. As to setting up the compiler, it is enough to 
+extract the VC152.EXE in e.g. C:\VC, and adjust the PATH, INCLUDE and LIB 
+environment variables. For example:
+
+PATH=C:\VC\BIN;%PATH%
+SET INCLUDE=C:\VC\INCLUDE
+SET LIB=C:\VC\LIB
+
+But you don't need to set the variables in your environment. Only in MSC7.BTM,
+as described on my site. In short, all the information is already on my site. 
+Read it and do it. That's all.

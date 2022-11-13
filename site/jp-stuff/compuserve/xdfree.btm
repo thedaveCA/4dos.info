@@ -1,0 +1,109 @@
+::  DFREE.BTM
+::  Graphically Displays disk usage
+::
+::  Written by Joe Caverly
+::  Date: 95/07/05
+::  Compuserve 75620,611
+::  Internet Joe_Caverly@ACLPO1.ccmail.compuserve.com
+::
+::  Modified by: Don E. Groves, Jr.
+::  Date: 95/07/07
+::  CIS: 71310,3702
+::
+::  Again modified by Klaus Meinhard
+::                    Compuserve 100115,2025
+::                    01.Nov.1995
+::
+::  This btm was published under the name DF.BTM as a CIS JP Software
+::  forum message (in a thread by the authors) and never made it into
+::  the forum lib, so you might have missed it, and that would be a pity.
+::  The original btm served a slightly different purpose.
+::
+::  I could not resist to do it over in the 4XBTM style (de gustibus ...).
+::  So if you like DFREE.BTM, look for 4XBTM.ZIP in the JP Software lib.
+
+:START
+    *setlocal
+    unalias *
+    cls
+    if "%1" ne "" goto :USAGE
+
+:SCREEN
+    screen 0 0
+    ::  n is first row for output
+    set n=7
+    ::  m is height of box. This scheme will crash `drawbox` if there are too
+    ::  many drives (# of screen rows - %n - 2 ). So I built in a check that
+    ::  cuts off when the screen is full.
+    set m=%@eval[(%@ascii[%_lastdisk]-64)+(%n-1)]
+    set t=%@eval[%_rows-(%m+1)]
+    :: %t gets negativ if too many drives
+    iff %t lt 0 then
+        set ld=%@eval[%@ascii[%_lastdisk]+%t]
+        :: set the internal _lastdisk var brutally to what we want (locally!).
+        set _lastdisk=%@char[%ld]
+        set m=%@eval[%m+%t]
+    endiff
+    drawbox 3 3 %m 76 1 bri whi on bri blu fill blu sha
+    scrput 3 28 bri whi on red ` 4XBTM Diskfree Utilty `
+    scrput 4 4 bri whi on cya ` DISK Total  Free  0    10   20   30   40   50   60   70   80   90  100 `
+    drawhline 5 4 72 0 bri blu on bri blu
+    scrput 5 12 bri whi on bri blu ` MB    MB  ÃÄÄÄÄÅÄÄÄÄÅÄÄÄÄÅÄÄÄÄÅÄÄÄÄÅÄÄÄÄÅÄÄÄÄÅÄÄÄÄÅÄÄÄÄÅÄÄÄÄ´ `
+
+:DRIVES
+    set biggest=-1
+::  Do_loop from C to Lastdrive
+    do cdrive = 67 to %@ascii[%_lastdisk]
+        set drive=%@char[%cdrive]:
+        ::  Search all harddisks, no remotes, no removables.
+        iff %@ready[%drive] == 1 .and. %@removable[%drive] == 0 .and. %@remote[%drive] == 0 then
+            set dsize=%@disktotal[%drive,m]
+            set dfree=%@diskfree[%drive,m]
+            ::  Look for biggest free space on disk
+            iff %dfree gt %biggest then
+                set biggest=%dfree
+                set o=%n
+            endiff
+            ::  Graph turns RED when free space has become less 5 %
+            iff %@eval[%dsize/100*5] GE %dfree then
+                set color=bri red on %_BG
+            ::  Graph turns YELLOW when free space has become less 10 %
+            elseiff %@eval[%dsize/100*10] GE %dfree THEN
+                set color=bri yel on %_BG
+            else
+                set color= bri green on %_BG
+            endiff
+            scrput %n 23 bri whi on blu %@repeat[±,51]
+            scrput %n 6 bri whi on blu %drive  %@format[5,%dsize] %@format[5,%dfree]
+            scrput %n 23 %color %@REPEAT[%@CHAR[219],%@INT[%@EVAL[(%dfree/%dsize*50)+1]]]
+            set n=%@inc[%n]
+        endiff
+    enddo
+:BIGGEST
+::  Mark disk with biggest free space
+    scrput %o 3 bri whi on bri red 
+    scrput %o 76 bri whi on bri red 
+    screen 23 0
+
+:END
+    quit
+
+:USAGE
+
+    text
+
+
+ XDFREE.BTM  ÄÄÄÄÄÄÄÄÄÄÄ  Diskfree Utility
+
+ Syntax:
+
+ XDFREE [none]            Display total Mb, free Mb and percentage bar
+                          of free MB on all your hard disks.
+                          Special marking of disk with biggest free Mb.
+
+
+ XDFREE /?                Syntax (this screen)
+
+    endtext
+    goto :END
+

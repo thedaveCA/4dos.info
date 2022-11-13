@@ -1,0 +1,234 @@
+
+
+
+                                  JP Software
+
+                     Take Command/16 Update Documentation
+
+                        Version 1.02 -- April 17, 1996
+
+   Copyright 1988 - 1996, JP Software Inc., All Rights Reserved.  Published
+   by JP Software Inc., P.O. Box 1470, E. Arlington, MA 02174 USA, (617)
+   646-3975.  4DOS is a registered trademark and 4OS2, Take Command, and
+   Take Command/32 are trademarks of JP Software Inc.  Other brand and
+   product names are trademarks of their respective owners.
+
+
+   Check through this file for a comprehensive list of what's changed in
+   Take Command/16 for Windows 3.x since version 1.01.  Additional
+   documentation on new features is in the online help.  Information about
+   product changes before version 1.01 may be viewed at our web page
+   (http://www.jpsoft.com) by selecting Take Command and then Product
+   History.  Many product history files are also available in our
+   Compuserve forum (GO PCVENB or GO JPSOFT, library 10 / JP Software, look
+   for files named UPxxxxxx.ZIP).
+
+   Some of the descriptions below may be more detailed than you need; if
+   you aren't using a feature, feel free to skip to the next item.  If you
+   are new to Take Command with version 1.01, you can skip this file
+   entirely, and begin with the Introduction and Installation Guide.
+
+   This file is divided into the following sections:
+
+          General Features and Enhancements
+          Startup and Initialization
+          Command Changes
+          Technical, Compatibility, and Bug Fixes
+
+   Significant new features and those which affect most users are marked
+   with "**" in the lists below.  Other items discuss smaller or more
+   technical changes.
+
+   This file is formatted at 58 lines per page, and contains form feeds and
+   page footers.  It can be viewed with a file viewer such as the LIST
+   command, or printed on most PC printers using the command:
+
+              copy updat102.doc prn
+
+   Printing it with a program that formats the pages is not likely to work
+   due to the formatting included in the file.
+
+                                                                (4/96-1.02)
+
+
+
+
+
+
+
+   Take Command 1.02  [04-17-96] UPDAT102.DOC                        page 1
+
+
+                       Take Command/16 1.02 Change List
+
+
+   General Features and Enhancements
+   ---------------------------------
+
+   ==> ** Increased the maximum history size from 8K to 32K. 
+
+   ==> ** The print dialog now allows printing a marked block of text, by
+          using the "Print Selection" button.  The button will only be
+          enabled if text is marked.
+
+   ==>    In the find files dialog, removed the file description / date /
+          time text field from under the list box, due to difficulties
+          synchronizing updates of this information with list box
+          scrolling.  This information is still available by double-
+          clicking the file name in this list box.
+
+
+   Startup and Initialization
+   --------------------------
+
+   ==>    Added a new .INI directive:
+
+              AppendToDir = [Yes | NO]:  If set to "Yes", TCMD will append
+              a trailing '\' to directory names when doing filename
+              completion.
+
+
+   Command Changes
+   ---------------
+
+   ==>    IF ISWINDOW:  Now supports wildcards in the window name.
+
+   ==> ** LIST:  Enabled mouse button 2 for "copy & paste" operation inside
+          LIST.  To use this feature, hold the button down and select an
+          area by dragging the cursor.  When you release the button, the
+          marked area is copied to the clipboard.  This is the same
+          behavior that was already available in the command window.
+
+
+   Technical, Compatibility, and Bug Fixes 
+   ---------------------------------------
+
+   ==>    DESCRIPT.ION now allows either a space, tab, or comma as the
+          delimiter between the filename and the description.  This is for
+          compatibility with some third-party description files.
+
+   ==>    Fixed a problem with marking more than one line using the
+          keyboard (e.g. using Shift-Home at the end of a multi-line
+          command).
+
+
+
+
+   Take Command 1.02  [04-17-96] UPDAT102.DOC                        page 2
+
+
+   ==>    Fixed a problem with files executed via executable extensions. 
+          Double quotes are now added if the name contains whitespace.
+
+   ==>    Fixed a problem with NUL characters in batch files.
+
+   ==>    Fixed a problem with redirection and NoClobber (NoClobber was
+          effectively being ignored).
+
+   ==>    Fixed a problem with the HistCopy directive.
+
+   ==>    Fixed the Find Files dialog so the Disks box correctly reflects
+          choices made with the radio buttons.
+
+   ==>    If you are using TCMD/16 as the Windows shell you may now hold
+          down the SHIFT key when starting TCMD to prevent programs in the
+          STARTUP group from executing (as you can in Program Manager).
+
+   ==>    Take Command now passes the Pause key on to other applications
+          (this should resolve problems found while using SpinWizard).
+
+   ==>    The PATH search routine now queries if the specified drive is
+          ready before attempting to find an external command, which avoids
+          a critical error message.
+
+   ==>    DDEEXEC:  Added a wait to solve a problem slower systems may have
+          with terminating DDE links and fixed a problem with DDEEXEC not
+          passing the command arguments.
+
+   ==>    DO:  Now allows embedded equal signs in a test condition.
+
+   ==>    FOR:  Fixed a problem with include lists in the FOR arguments and
+          enabled extended parent directory names.
+
+   ==>    IF:  Added a work-around for constructs like:
+
+              if 1 == 0 echo foo && echo bar
+
+          to emulate CMD.EXE's behavior of basing the && condition on the
+          result of the IF test.
+
+   ==>    INPUT:  Fixed a problem with using INPUT /E in a transient shell
+          and solved a problem with INPUT /W /E which prevented the
+          existing value from being displayed unless a key was pressed.
+
+   ==>    KEYSTACK:  Fixed a sporadic problem with feeding keystrokes to
+          message boxes.
+
+   ==>    LIST:  Fixed problems with:  Using Find with wrap on; marking
+          wrapped lines; marking long lines with several embedded tabs; and
+          selecting long filenames from the Open dialog.
+
+
+
+
+
+   Take Command 1.02  [04-17-96] UPDAT102.DOC                        page 3
+
+
+   ==>    LIST:  Improved LIST's ability to find the end of each line
+          properly in files with unusual line terminations (e.g. CR or LF
+          alone, LF/CR, CR/CR/LF, etc.).
+
+   ==>    MD:  Fixed a problem with /S and UNC names.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   Take Command 1.02  [04-17-96] UPDAT102.DOC                        page 4
+

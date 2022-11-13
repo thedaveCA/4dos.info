@@ -1,0 +1,139 @@
+::  DFREE.BTM
+::  Graphically Displays disk usage
+::
+::  Written by Joe Caverly
+::  Date: 95/07/05
+::  Compuserve 75620,611
+::  Internet Joe_Caverly@ACLPO1.ccmail.compuserve.com
+::
+::  Modified by: Don E. Groves, Jr.
+::  Date: 95/07/07
+::  CIS: 71310,3702
+::
+::  Again modified by Klaus Meinhard
+::                    Compuserve 100115,2025
+::                    01.Nov.1995
+::
+::  This btm was published under the name DF.BTM as a CIS JP Software
+::  forum message (in a thread by the authors) and never made it into
+::  the forum lib, so you might have missed it, and that would be a pity.
+::  The original btm served a slightly different purpose.
+::
+::  I could not resist to do it over in the 4XBTM style (de gustibus ...).
+::  So if you like DFREE.BTM, look for 4XBTM.ZIP in the JP Software lib.
+::
+::  Modified yet again by: Scott J. Bohning
+::  Date: 96/08/26
+::  CIS: 70034,3231   sbohning@igc.apc.org   PGP keyID=0x56CDFCA5
+::  To avoid divide overflow in % free disks with under 1 MB free, changed
+::    internals to KB, added decimal point in display for under 2 MB free
+::  Scan disks to build drive list first (so loop up to _LASTDISK only once)
+::  Added /R switch to include remote drives in listing
+::  Added A: to drive list - remove if you wish via "includeA" variable
+::  Made display position adjustable via "n" variable
+
+:START
+    @echo off
+    :: Change to anything but "yes" to exclude A: drive from listing
+    @set includeA=yes
+
+    *setlocal
+    unalias *
+    cls
+    set inclremote=0
+    iff "%1" ne "" then
+        iff "%1"=="/R" then
+           set inclremote=1
+        else
+           goto :USAGE
+       endiff
+    endiff
+    :: Determine how many drives there are, build drive list
+    set drivelist=
+    set drivecount=0
+    if "%includeA"=="yes" if %@ready[a]==1 (set drivelist=A ^ set drivecount=1)
+    do cdrive = 67 to %@ascii[%_lastdisk]
+       set drive=%@char[%cdrive]
+       iff %@ready[%drive] == 1 .and. %@removable[%drive] == 0 .and. %@if[%inclremote==1,0,%@remote[%drive]] == 0 then
+          set drivelist=%drivelist %drive
+          set drivecount=%@inc[%drivecount]
+       endiff
+    enddo
+
+:SCREEN
+    screen 0 0
+    ::  n is first row for output (incl. header; 1st disk displayed at n+4)
+    set n=1
+    :: Maximum number of drives displayable
+    set maxdrives=%@eval[%_rows-%n-3]
+    if %drivecount gt %maxdrives set drivecount=%maxdrives
+    :: m is bottom of box
+    set m=%@eval[%n + %drivecount + 4 + 1]
+
+    drawbox %n 3 %m 76 1 bri whi on bri blu fill blu sha
+    scrput %n 28 bri whi on red ` 4XBTM Diskfree Utilty `
+    scrput %@eval[%n+1] 4 bri whi on cya ` DISK Total   Free 0    10   20   30   40   50   60   70   80   90  100 `
+    drawhline %@eval[%n+2] 4 72 0 bri blu on bri blu
+    scrput %@eval[%n+2] 12 bri whi on bri blu ` MB     MB ÃÄÄÄÄÅÄÄÄÄÅÄÄÄÄÅÄÄÄÄÅÄÄÄÄÅÄÄÄÄÅÄÄÄÄÅÄÄÄÄÅÄÄÄÄÅÄÄÄÄ´ `
+
+    set n=%@eval[4+%n]
+
+:DRIVES
+    set biggest=-1
+    ::  Do_loop through drivelist
+    do cdrive = 0 to %@dec[%drivecount]
+        set drive=%@char[%@eval[67+%cdrive]]:
+        set drive=%@word[%cdrive, %drivelist]:
+        set dsize=%@disktotal[%drive,k]
+        set dfree=%@diskfree[%drive,k]
+        ::  Look for biggest free space on disk
+        iff %dfree gt %biggest then
+            set biggest=%dfree
+            set o=%n
+        endiff
+        ::  Graph turns RED when free space has become less 5 %
+        iff %@eval[5*%dsize/100] GE %dfree then
+            set color=bri red on %_BG
+        ::  Graph turns YELLOW when free space has become less 10 %
+        elseiff %@eval[10*%dsize/100] GE %dfree THEN
+            set color=bri yel on %_BG
+        else
+            set color= bri green on %_BG
+        endiff
+        scrput %n 23 bri whi on blu %@repeat[±,51]
+        iff %dsize lt 10240 then^ set sdec=1.1 ^else^ set sdec=0.0 ^endiff
+        iff %dfree lt 10240 then^ set fdec=1.1 ^else^ set fdec=0.0 ^endiff
+        scrput %n 6 bri whi on blu %drive %@format[6,%@eval[%dsize/1024=%sdec]] %@format[6,%@eval[%dfree/1024=%fdec]]
+        scrput %n 23 %color %@REPEAT[%@CHAR[219],%@INT[%@EVAL[(50*%dfree/%dsize)+1]]]
+        set n=%@inc[%n]
+    enddo
+:BIGGEST
+::  Mark disk with biggest free space
+    scrput %o 3 bri whi on bri red 
+    scrput %o 76 bri whi on bri red 
+    screen 23 0
+
+:END
+    quit
+
+:USAGE
+
+    text
+
+
+ XDFREE.BTM  ÄÄÄÄÄÄÄÄÄÄÄ  Diskfree Utility
+
+ Syntax:
+
+ XDFREE [none]            Display total Mb, free Mb and percentage bar
+                          of free MB on all your hard disks.
+                          Special marking of disk with biggest free Mb.
+
+
+ XDFREE /?                Syntax (this screen)
+
+ XDFREE /R                Include remote drives in listing
+
+    endtext
+    goto :END
+

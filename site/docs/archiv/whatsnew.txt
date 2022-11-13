@@ -1,0 +1,568 @@
+                    WHATSNEW.TXT -- November 2004 
+
+                          JP Software Inc. 
+                            P.O. Box 328 
+                     Chestertown, MD 21620, USA 
+
+                           (410) 810-8818 
+                         fax (410) 810-0026 
+
+                       Email sales@jpsoft.com 
+                       support@jpsoft.com 
+                       Web http://jpsoft.com 
+
+
+NEW VERSION OVERVIEW -  Take Command and 4NT 6.01
+------------------------------------------------- 
+
+Since the last major release we've added numerous new features, commands, 
+switches, variables, and other enhancements to 4NT and Take Command! 
+
+This is a summary of the compatibility fixes and new features.  For complete 
+details, see the appropriate topics in the online help. 
+
+New and modified features: 
+------------------------- 
+
+    4NT and Take Command have been rewritten to share a common .DLL 
+      (TakeCmd.dll).  This means they will use much less memory when 
+      you have multiple shells open.   
+
+    The Caveman support in Take Command has improved compatibility and
+      speed.
+	  
+    4NT and Take Command use a new IPWORKS version (IPWORKS6.DLL and  
+      IPWSSL6.DLL). 
+
+    4NT - no longer needs a separate KEYSTACK.EXE (it's built into 
+      TakeCmd.dll). 
+
+    4NT and Take Command now recognize Windows 2003. 
+
+    Added FTPS (SSL FTP) support. 
+
+    Added HTTPS (SSL HTTP) support.   
+
+    Added TFTP (trivial FTP) support.  
+
+    4NT and TC will now look for your FTP user names and passwords in the 
+      file "FTP.CFG", which is kept in the 4NT or TC directory by default 
+      (you can specify another directory with the FTPCFG .INI directive). 
+               
+    Added a new type of redirection (like the *nix "here-document") using  
+      the "program << word" syntax. 
+        
+    You can now preface an .INI filename on the startup line with a / to 
+      work around a Windows problem with not displaying the entire command  
+      line in a shortcut when an argument begins with @. 
+
+    Increased key substitution table from 64 to 128 entries. 
+
+    Increased command line length to 8191 characters, and maximum length 
+      (after expansion) to 16383 characters. 
+
+    Increased maximum number of arguments per batch file command line  
+      to 511. 
+       
+    Increased the global alias list size to 128K characters. 
+     
+    Increased the global user function list size to 64K characters. 
+
+    Removed nesting limits for DO and IFF. 
+
+    User functions now support the %# variable (number of arguments 
+      passed to the function). 
+       
+    The user function parsing has been changed so that the switch character 
+      ('/') is not considered a parameter delimiter.   
+       
+    The environment variable TreeExclude specifies which drives & directories 
+      to ignore when updating the JPSTREE.IDX file.  
+         
+    Take Command will now pop up the context menu when you press the context 
+      key at the prompt. 
+
+    Take Command - added right-click context menu support for pasting
+      into Caveman apps.
+
+
+New and modified .INI directives: 
+-------------------------------- 
+
+    FTPCFG=filename - the full path & filename for the FTP.CFG file (see 
+      above). 
+
+    ProxyUser - A user name if Basic authentication is to be used for the  
+      HTTP proxy.  
+       
+    ProxyPassword - A password if Basic authentication is to be used for  
+      the HTTP proxy.  
+
+    SSLPort=n - The port for the FTP SSL service.  If not specified, or if 
+      SSLPort is set to 0 (its default value), SSL uses the default SSL port 
+      (21).  For implicit SSL, use port 990 (SSLPort=990). 
+  
+    SSLProvider=xxx - The name of the security provider to use.  The default 
+      value is "*", which selects the default SSL provider defined in the  
+      system. (On Windows, this is "Microsoft Unified Security Protocol  
+      Provider".)  
+       
+    SSLStartMode=n - specify how to start SSL negotiation. 
+     
+        0 (default) If the remote port is set to the standard plaintext  
+          port of the protocol, SSL will behave the same as if SSLStartMode  
+          is set to 2 (sslExplicit). In all other cases, SSL negotiation will 
+          be  implicit (sslImplicit).   
+        1 (sslImplicit) The SSL negotiation will start immediately after the  
+          connection is established.   
+        2 (sslExplicit) Connection will first be in plaintext, and then SSL  
+          negotiation will be explicitly started through a protocol command 
+          such as STARTTLS.   
+        3 (sslNone) No SSL negotiation, no SSL security. All communication  
+          will be in plaintext mode.   
+
+    UnicodeOutput=NO|yes - disable / enable Unicode output for redirection. 
+      (This option will be overridden by a /A or /U option on the startup 
+      command line.) 
+
+    UpperCase - has been removed (it was only relevant to 4DOS). 
+   
+
+New and modified internal Variables: 
+----------------------------------- 
+
+    %_ALT - returns 1 if either Alt key is depressed. 
+     
+    %_BATCHTYPE - returns 0 if the current batch file is a normal .BTM,  
+      1 if compressed, 2 if encrypted. 
+
+    %_CAPSLOCK - returns 1 if the Caps Lock key is toggled on. 
+     
+    %_CMDSPEC - new internal variable that returns the full pathname of
+      the command processor.
+
+    %_CTRL - returns 1 if either Ctrl key is depressed. 
+	  
+    %_DATETIME - new internal variable that returns the current date and
+      time in the format yyyymmddhhmmss (with no separators).
+
+    %_ININAME - returns the full pathname of the .INI file used by the  
+      shell. 
+       
+    %_IMONTH - returns the abbreviated name for the current month for 
+      this locale. 
+       
+    %_IMONTHF - returns the full name for the current month for this 
+      locale. 
+
+    %_LALT - returns 1 if the left Alt key is depressed. 
+     
+    %_LCTRL - returns 1 if the left Ctrl key is depressed. 
+     
+    %_LSHIFT - returns 1 if the left shift key is depressed. 
+     
+    %_MONTHF - returns the full name of the current month (January - 
+      December). 
+     
+    %_NUMLOCK - returns 1 if the Numlock key is toggled on. 
+     
+    %_RALT - returns 1 if the right Alt key is depressed. 
+     
+    %_RCTRL - returns 1 if the right Ctrl key is depressed. 
+     
+    %_RSHIFT - returns 1 if the right shift key is depressed. 
+     
+    %_SCROLLLOCK - returns 1 if the Scroll Lock key is toggled on. 
+     
+    %_SHIFT - returns 1 if either shift key is depressed. 
+     
+    %_SHRALIAS - returns 1 if SHRALIAS is loaded. 
+
+    %_STARTPATH - returns the startup directory for the current shell. 
+      (Not necessarily the same as the executable!) 
+
+    %_UNICODE - returns 1 if the shell is using Unicode for redirected 
+      output; otherwise returns 0. 
+
+    %_DISK - if the current directory is a UNC rather than a mapped 
+      drive, %_disk will now return the sharename (previously it 
+      returned an empty string). 
+       
+    %_NDP - obsolete; removed. 
+    
+     
+New and modified variable functions: 
+--------------------------------- 
+
+    @AGEDATE - converts the numeric argument (FILETIME - the number of 
+      100ns intervals since 1601) to a Date/Time pair, in the format: 
+
+   20-04-2004,20:28:00.000 
+
+      (@AGEDATE accepts an optional second parameter to specify the date 
+      format.) 
+
+    @COLOR - displays the color common dialog and returns the RGB value 
+      (as a string in the form "r,g,b"; i.e. "0,128,64".  You can specify 
+      the initially selected color in the same format; i.e., to select 
+      bright red, "%@color[255,0,0]" 
+
+    @CONSOLE - returns 1 if the specified window title belongs to a 
+      console window.  (The title can include wildcards.) 
+
+    @CWD - new function to return the current directory on the specified
+      drive. (The returned string includes the drive spec.) The syntax is:
+	  
+        @cwd[d:]
+		
+    @CWDS - new function, like @CWD, but ensures there is a trailing \ on 
+      the returned directory name.
+	
+    @DIRSTACK - returns the nth directory stack entry (most recent=0). 
+      (The directory stack is the PUSHD / POPD stack.)  If no argument 
+      is specified, return the total number of entries. 
+       
+    @DOMAIN (Unicode & Win2K+ only) - new function to return the domain 
+      (if any) for the specified computer.  The syntax is:
+	  
+        @domain[name]
+	
+      where "name" is the DNS or NetBIOS name of the computer to query.  If
+      no name is specified, @DOMAIN returns the domain for the local computer.
+	
+	@ENUMSERVERS - enumerate the servers on the network. 
+   
+    @ENUMSHARES - enumerate the sharenames for the specified server.  
+  
+    @EXPAND - added support for ranges.  The range must be the first argument,
+      with a space before the filename.  For example:
+
+        echo %@expand[/[d-5] *.doc]
+
+    @FIELDS - returns the number of fields in the string.   
+     
+    @FILEAGE - changed internally to use the FILETIME format, a 64-bit 
+      integer of the number of 100ns intervals since 1601 to the file 
+      date & time. 
+
+    @FILES - added support for ranges.  The range must be the first argument,
+      with a space before the filename.  For example:
+
+        echo %@files[/[d-5] *.doc]
+
+    @FINDFIRST - added support for ranges.  The range must be the first argument,
+      with a space before the filename.  For example:
+
+        echo %@findfirst[/[d-5] *.doc]
+
+    @FORMATN - format a numeric value.   
+
+    @HISTORY - returns a previous line from the command history, or 
+      optionally a specific word from that line.   
+     
+    @INSERT - added support for negative position.  (If the first argument
+      is negative, the insertion will be made counting backwards from the
+      end of the string.)
+
+    @IPADDRESS - returns the IP address for the specified name. 
+
+    @IPNAME - returns the name for the specified IP address. 
+
+    @ISALNUM - returns 1 for alphabetic or numeric (0 - 9) characters. 
+       
+    @ISALPHA - returns 1 for alphabetic characters. 
+     
+    @ISASCII - returns 1 for ASCII characters (0x00 û 0x7F). 
+     
+    @ISCNTRL - returns 1 if the character(s) is a control character 
+      (0x00 û 0x1F or 0x7F). 
+       
+    @ISDIGIT - returns 1 for decimal digits (0 û 9).  
+     
+    @ISPRINT - returns 1 for printable characters. 
+     
+    @ISPUNCT - returns 1 for any printable character that is not a space  
+      or alphanumeric. 
+       
+    @ISSPACE - returns 1 for white-space characters (0x09 û 0x0D or 0x20). 
+     
+    @ISXDIGIT - returns 1 for hexadecimal digits (A û F, a û f, or 0 û 9). 
+      
+    @LTRIM - remove the specified leading characters that are in the 
+      (quoted) first argument.   
+       
+    @MD5 - returns the MD5 hash for a file or string.   
+     
+    @REGDELKEY - deletes the specified key and all of its subkeys.  BE 
+      VERY, VERY CAREFUL WITH THIS! 
+
+    @REGEXIST - returns 1 if the specified key exists. 
+    
+    @RTRIM - remove the specified trailing characters that are in the 
+      (quoted) first argument.   
+
+    @SUBST - substitute a string at the specified position.  
+     
+    @TRUNCATE - new function that truncates the specified file at the current 
+      file pointer position. The syntax is: 
+  
+        @truncate[n]
+    
+      where "n" is a file handle returned by @FILEOPEN.  (You must have opened
+      the file for write access.) 
+
+     @UNC - returns the UNC name for the specified file (or an error if 
+      the file nas no UNC -- i.e., a local file). 
+
+    @WORKGROUP (Unicode & Win2K+ only)- new function to return the 
+      workgroup (if any) for the specified computer.  The syntax is:
+	  
+        @dworkgroup[name]
+	
+      where "name" is the DNS or NetBIOS name of the computer to query.
+      If no name is specified, @WORKGROUP returns the workgroup for the 
+      local computer.
+
+    Most variable functions that take numeric arguments (@CHAR, @CLIP, 
+      @COLOR, @DIRSTACK, @FIELD, @FILEREAD, @FILESEEK, @FILESEEKL,  
+      @FILEWRITE, @FILEWRITEB, @HISTORY, @INSERT, @INSTR, @LEFT, @LINE, 
+      @MAX, @MIN, @REPEAT, @RIGHT, @SUBST, @SUBSTR, @WINSYSTEM, @WORD)  
+      will take either decimal or hex (prefaced with a "0x") input.   
+      (For example, "@CHAR[65]" or "@CHAR[0x41]".) 
+  
+    @ATTRIB - added support for the documented but non-existent attribute 
+      and/or selection.  (Uses the same syntax as the /A:xxxx attribute 
+      specification for file selection.) 
+       
+    @EVAL - now supports hex output.  The syntax is @eval[...=H].  For 
+      example, "echo %@eval[3*6=H]" will output "12". 
+       
+    @FILESEEKL - added an optional third argument.  If it is set to 1, 
+      @FILESEEKL will seek from the current position, not from the 
+      beginning of the file. 
+  
+    @MAKEAGE - now converts the specified date & time to a FILETIME format 
+      (100ns intervals since 1601).  
+
+
+New and updated commands: 
+------------------------ 
+
+    BATCOMP - is now an internal command (no BATCOMP32.EXE).  It also 
+      now includes the /E (encrypt) switch, previously only available in 
+      the runtime versions. 
+
+    BDEBUGGER - Calls the new batch debugger.  The debugger is much more 
+      powerful than the previous one, and includes support for breakpoints, 
+      bookmarks, syntax coloring, and editing.   
+
+    PDIR - like DIR, but with user-definable fields.   
+    
+    SMPP - lightweight message transfer, normally to text-enabled cell 
+      phones.   
+       
+    The internal commands that take numeric arguments (ACTIVATE, BEEP,  
+      CANCEL, DO, DRAWxxx, FOR, INKEY, INPUT, QUIT, START, WINDOW) will  
+      now also accept hex format (leading "0x"). 
+       
+    ALIAS - if there is only a single argument and it contains wildcards 
+      (* or ?), ALIAS will display matching alias names. 
+
+    COPY - added check for /U with filesystems with different time 
+      resolutions (uses coarsest resolution). 
+
+    COPY - added support for TFTP. 
+     
+    COPY - now supports "copy con: "ftp:...". 
+
+    COPY - (XP only) added /D switch to force a copy of an encrypted file 
+      even when the target will be decrypted (CMD compatibility). 
+
+    COPY - the /N switch now displays how many files would be copied. 
+     
+    COPY - the /P(rompt) switch will no longer turn off the /Q(uiet) 
+      switch.  (A /P and /Q will still prompt for the filenames, but 
+      it will not display the totals.) 
+
+    COPY - the /V switch now does a true byte-by-byte comparison between 
+
+      the source and the newly-created target file (unlike CMD). 
+
+    COPY - the /G option when combined with /V will now show the percent
+      verified.
+	
+    DEL - the /N switch now displays how many files would be deleted. 
+     
+    DEL - you can now exclude files from the recycle bin (if RecycleBin=Yes 
+      is set, or if you use the /R option) with the RecycleExclude  
+      environment variable.  
+      
+    DEL - the /P(rompt) switch will no longer turn off the /Q(uiet) 
+      switch.  (A /P and /Q will still prompt for the filenames, but 
+      it will not display the totals.) 
+
+    DESCRIBE - has a new option "/U" to update the DESCRIPT.ION file  
+      (deleting the descriptions for any nonexistent files).   
+        
+    DIR - changed the /: display when combined with /B or /F to remove 
+      the stream size and the indenting to the filename column.  A /F and  
+      /: will display the filename on the first line, then any streams 
+      appended to the filename on subsequent lines. 
+       
+    DIR - added additional attribute types to directory colorization:
+
+        Encrypted
+        Normal
+        Temporary
+        Sparse
+        Junction
+        Compressed
+        Offline
+        Notindexed
+
+     DO - has a new option "UNTIL DATETIME" to execute the DO loop until 
+      the specified date (ISO format) and time (24-hour format).   
+     
+    ENDLOCAL - has a new switch "/D" to export the current directory  
+     (don't restore the original directory saved by SETLOCAL). 
+    
+    ENDLOCAL - the "export environment variables" list now supports  
+      wildcards. 
+
+    ESET - has a new switch "/W" to edit the variable, alias, or function  
+      list in a popup window (as used by the batch debugger).   
+     
+    FFIND - has new options "/+n" to skip the first "n" matches and "/-n"  
+      to stop after "n" matches 
+         
+    FOR - added the command "LEAVEFOR" to terminate a FOR loop (like the 
+      LEAVE command in DO). 
+       
+    FUNCTION - if there is only a single argument and it contains 
+      wildcards (* and/or ?), FUNCTION will display matching function 
+      names. 
+       
+    HEAD - added support for HTTP and HTTPS files.  
+
+    HELP - does a better job of determining which help you want when the 
+      name conflicts with an internal command.  If the name begins with 
+      a @, it will look for a variable function.  If the name begins with  
+      a "//", it will look for an .INI directive. 
+       
+    HISTORY - you can now exclude commands from the history list by 
+      setting the HistoryExclude environment variable.   
+         
+    IF - added EQC (case-sensitive test) 
+
+    IF - the ISAPP test now checks if the argument has a path and will only 
+      match processes with a matching path. 
+           
+    IF - added the ISFILE test to check for the existence of the specified
+      file.  (ISFILE was added because Microsoft changed IF EXIST to return
+      1 if either a file or directory exists.  This made it impossible to
+      check for an empty directory because "." and ".." always exist.)
+  
+    IFTP - added FTPS (SSL FTP) support (see first section). 
+
+    KEYSTACK - increased maximum string to 8192 characters. 
+
+    LIST - has two new options "/Ln" to start at line "n", and "/Bn" to 
+      start at byte offset "n". 
+      
+    LIST - added Unicode display toggle 'U' (.INI key directive ListUnicode) 
+      or toolbar button in Take Command (Unicode versions only). 
+
+    LIST (4NT) - added mousewheel support. 
+     
+    LIST (4NT) - if no filename is specified (and STDIN is not redirected), 
+      LIST will now open the Windows "open file" dialog. 
+       
+    LIST (4NT) - the 'O' key (.INI key directive ListOpen) or the Ctrl-O key 
+      will open the Windows "open file" dialog to select a new file to list. 
+
+    LIST - added support for HTTP files. 
+
+    LIST - added the Ctrl-L key (LIST selected file) to Take Command.  (It 
+      was already in 4NT.)
+  
+    MKLNK - added support for creating soft links (directory junctions).  
+
+    MOVE - (XP only) added /Y switch to force a copy of an encrypted file 
+      even when the target will be decrypted. 
+
+    MOVE - the /N switch now displays how many files would be moved. 
+     
+    MOVE - the /P(rompt) switch will no longer turn off the /Q(uiet) 
+      switch.  (A /P and /Q will still prompt for the filenames, but 
+      it will not display the totals.) 
+
+    MOVE - added /U check for filesystems with different time 
+      resolutions. 
+
+    MOVE - the /V switch now does a true byte-by-byte comparison between 
+      the source and the newly-created target file (when it is created 
+      on a different volume). 
+
+    OPTION - specifying an option name alone will display the value of 
+      that option. 
+         
+    OPTION - added an "Apply" button. 
+
+    REN - the /N switch now displays how many files would be renamed. 
+     
+    REN - the /P(rompt) switch will no longer turn off the /Q(uiet) 
+      switch.  (A /P and /Q will still prompt for the filenames, but 
+      it will not display the totals.) 
+       
+    SENDMAIL - added support for @con: in the message text (optionally 
+      from a file) field.  (This also now allows piping message text into 
+      SENDMAIL.) 
+       
+    SENDMAIL - added support for @clip: in the message text field. 
+       
+    SENDMAIL - has new options to request delivery notification, set the 
+      importance, set the priority, and specify BCC addresses. 
+    
+    SET - if there is only a single argument and it contains wildcards 
+      (* or ?), SET will display matching on existing variable names. 
+       
+    SETDOS - the /C, /E, and /P options will now accept decimal or hex  
+      ASCII values; i.e. "setdos /c94". 
+     
+    SET - added the /E option to also set the local environment when setting
+      registry variables.
+
+    SETDOS - removed the useless /U option. 
+
+    SHRALIAS - now shares the lists (alias, history, directory history,  
+      and user functions) between 4NT and Take Command. 
+       
+    START - has a new option "/Affinity=n" to set the processor affinity  
+      for this process. 
+
+    TAIL - the /N switch has a new option "/N+x" to start at the x'th line  
+      from the beginning of the file. 
+      
+    TAIL - added support for HTTP and HTTPS files  
+     
+    TREE - changed the display when using the /F switch to differentiate 
+      between files and subdirectories. 
+
+    TYPE - added support for HTTP and HTTPS files. 
+
+    UNSET - added the /E option to also unset the local environment when
+      unsetting registry variables.
+	  
+
+LEGAL STUFF 
+----------- 
+
+    Copyright 2004, JP Software Inc., All Rights Reserved.  Published by JP 
+    Software Inc., P.O. Box 328, Chestertown, MD 21620, USA 
+    Phone 410-810-8818, Fax 410-810-0026. 
+
+    Take Command is a registered trademark of JP Software Inc.  4NT is JP  
+    Software Inc.'s trademark for its character-mode command processor.  JP 
+    Software, jpsoft.com, and all JP Software designs and logos are also  
+    trademarks of JP Software Inc. Other product and company names are  
+    trademarks of their respective owners. 

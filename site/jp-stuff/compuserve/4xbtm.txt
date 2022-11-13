@@ -1,0 +1,298 @@
+
+
+    ßßß    ßßß     ßßß    ßßß          ßßßßßßßß   ßßßßßßßßßßßß  ßßßßßßßßßßßßß
+   ßßß    ßßß      ßßß  ßßß           ßßßßßßßßß  ßßßßßßßßßßßß  ßßßßßßßßßßßßß
+  ßßß    ßßß       ßßßßß             ßßß    ßß      ßßß       ßßß ßßßßß ßßß
+ ßßßßßßßßßßßßß     ßßß    ßßßßßßß   ßßßßßßßß       ßßß       ßßß  ßßß  ßßß
+ßßßßßßßßßßßßß    ßßßßß  ßßßßßßß    ßßßßßßßß       ßßß       ßßß   ß   ßßß
+     ßßß       ßßß ßßß            ßßß    ßß      ßßß       ßßß       ßßß
+    ßßß      ßßß   ßßß           ßßßßßßßßß      ßßß       ßßß       ßßß
+   ßßß     ßßß     ßßß          ßßßßßßßß       ßßß       ßßß       ßßß
+
+                *** 4XBTM VERSION 5.0 CONTENTS NOTES ***
+                            Freeware Package
+
+ 4XBTM Version  5.0  is  a  collection  of  74 utilities / tools written
+ entirely in the 4DOS (5.5) BTM  language  covering  a  broad  range  of
+ topics.  Their outstanding features are a consistent user interface and
+ help system.
+
+ See  the  short  descriptions below to get an impression of the range of
+ functionality of these utilities.  You may want to use some of them as a
+ quick start for your own btms!
+
+ 4XBTM is contributed by    Klaus Meinhard
+                            Brahmsstr. 12
+                            D26842 Ostrhauderfehn
+                            Germany
+
+                            Compuserve ID: [100115,2025]
+
+ and not supported by JP Software.
+
+ ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+ ³FILES INCLUDED ³
+ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+ ============================================================================
+ New in 4XBTM Version 5.0
+ ============================================================================
+ XTCALC.BTM   Running tape calculator  with the usual  four  algebraic
+              functions, memory, square root, and more ...
+
+ XLPLUS.BTM   XLIST enhanced by the ability to edit, copy, move, rename,
+              delete files and view archives thanks to Anthony Williams.
+
+ XTIMEX.BTM   A screen clock showing time the good old analog way. Shows
+              date and alarm time and allows timed program starts.
+
+ XCLOCK.BTM   A screen clock showing time the good old analog way. Shows
+              date and optional alarm time (same as above( without timed
+              prog execution)
+
+ XREMIND.BTM  Utility to remind you of birthdays and other holidays.
+
+ XTODO.BTM    Utility to maintain a simple TODO List.
+
+ XASCII.BTM   Ascii Table with option to copy a character to a key
+
+ XREKEY.BTM   Reassign any assignable key with any text.
+
+ XHVMENU.BTM  A complete and easily customized horizontal menu with drop
+              down vertical menus. Cursor controlled scrollbar,  hotkeys
+              and memory are features of this menu system.  You  can use
+              this to implement a nice user interface for your batches.
+
+ XVMENU.BTM   A vertical menu with the  same  characteristics  found  in
+              XHVMENU. Use this to start your programs.
+
+ XHMENU.BTM   A horizontal menu with the  same characteristics  found in
+              XHVMENU. Use this to start your programs.
+
+ XCOLOR.BTM   Show  COLOR.   Shows  all 256 available color combinations
+              under 4DOS. This is an adaptation of a batch by Mike Bessy.
+
+
+ XSETDEV.BTM  Find and SET DEVice and TSR names and put them  into  4DOS
+              compatible environment variables.
+
+ XWINCOMP.BTM A utility to track the changes made by a WINDOWS  progra   mm
+              to your WINDOWS and SYSTEM directories, your INI files a   nd
+              CONFIG.SYS and AUTOEXEC.BAT
+
+ XROMAN.BTM   A utility  to  convert  decimal  numbers  to  their  rom   an
+              counterpart or vice versa.
+
+ XNCONV.BTM   Utility to convert between decimal, hexadecimal and bina   ry
+              integers.
+
+ XCHKEXE.BTM  Determines the Operating Sytem under which an .EXE file
+              is supposed to run.
+
+ XBL5.BTM     New screen blankers for XAD
+ XBL6.BTM
+ XBL7.BTM
+
+ ============================================================================
+ Present in earlier 4XBTM versions. May be enhanced, debugged, altered.
+ ============================================================================
+
+ XSP.BTM     : Set Prompt. This  is  based on Mike Bessy of JP Software's
+               SETPROMP.BTM.  XSP  gives  you  access  to  13  different,
+               highly informative prompts by choosing from menu / command
+               line parameters. The ultimate megaprompt btm!
+
+ XTOUCH.BTM  : A utility to change the date  and  time  stamps  of files.
+               There was a heated discussion in Compuserve's  4DOS  forum
+               over the proposal to add this function as an internal 4DOS
+               command.  While we are waiting  for  that  implementation,
+               here is an external one. Rewritten!
+
+ XBOOTEX.BTM : Versatile  manager  of  programs / batches you want to run
+               only once every  day  at  first  boot.   Unlimited  progs,
+               selectable interval, selectable ask before execution.  Run
+               CHKDSK every day, a virus scan once a week, defrag once  a
+               month  if  you have the time?  Then XBOOTEX is the btm for
+               you.
+
+ XCORTIME.BTM  Correct Time utility. This is the btm way to automatically
+               adjust your system clock, if it is off by a regular amount
+               of seconds every day. Even handles necessary date changes.
+               Install  XCORTIME  with  XBOOTEX and get your clock to run
+               with accuracy of 1 second a week.
+
+ XCD.BTM     : is  a Change Directory utility with a lot of features.  You
+               can change to any directory on all your drives by giving no
+               or  only  part of the name of the target dir.  If more than
+               one match is found, you can choose from a menu.  XCD senses
+               if  a directory is new or deleted and updates the database.
+
+ XAD.BTM     : is an Administrator for  "screen savers" (After Dawn!). It
+               provides a  random generator for (up to now) four examples
+               of "screen savers" (not blankers!) named XBL1 ... XBL7.BTM
+               Naturally these are not TSR`s and don`t stop until you hit
+               any key.
+ XPATH.BTM   : is a utility to add dir names to your path.
+
+ XDDEL.BTM   : Directory Delete with as much safety as possible (for me).
+               Dir  entries  are  shown  before  you  decide  to  delete.
+               Protects  against  wrong  input,  boot drive deletion etc.
+
+ XPNG.BTM    : Prune and Graft  tree  limbs  from a nd  to your directory
+               tree. See what you'll do before it's done.
+
+ XDREN.BTM   : Rename a directory.
+
+ XND.BTM     : Multiple new  Directories  (and  subdirs!) at one go!
+
+ XFA.BTM     : File Attribute change with the help of SELECT.  Shows only
+               files with matching attribute.  Only 1 attribute at a time.
+
+ XFMT.BTM    : User interface for FORMAT.COM. Format diskette(s)  with  a
+               friendly interface, all imaginable safeguards. Rewritten!
+
+ XDC.BTM     : Disk Copy utility with copy across different formats, sys-
+               tem files recognition, label.  Formats  or  clears  target
+               disk automatically (after confirmation by user).
+
+ XER.BTM     : shows last internal,  external  ,  DOS and programm errors
+               with an explanation  where  possible.   Very  useful  when
+               writing batch files, especially in conjunction with XSP 7.
+
+ XFF.BTM     : File Find utility.  Searches all your  hard  disks  for  a
+               match  for the given filespec.  Shows matches in list with
+               option to change to that dir.
+
+ XLIST.BTM   : is a directory and file lister with not quite as much fea-
+               tures  as  V.   Buerg's  LIST.COM.   Decides automatically
+               between   text   and   hex   listing   for   some    files
+               (configurable).   Lets  you  decide  to  return to home or
+               current dir on ESC.
+
+ XSC.BTM     : Set your coloured prompt and screen foreground / background
+               with menu, example screen.
+
+ XSET.BTM    : Edit existing aliases / environment variables. Picklist to
+               choose from matching specs. New user interface.
+
+ XSI.BTM     : System Info making the most of 4DOS variables.
+
+ XUZ.BTM     : Unzipper  for  downloads  from  mailbox.
+
+ XZIP.BTM    : Zipper for uploads to mailboxes.
+
+ XRT.BTM     : This is a Reaction Timer meant as a game to show the power
+               of 4DOS to your friends on parties.
+
+ XBESAFE.BTM : Safely store the critical WINDOWS files and NDW files in a
+               self-extracting archive for easy restoration.  If you ever
+               experienced   the   General  Protection  Fault  caused  by
+               corrupted NDW groups this one is for you.
+
+ XDAILY.BTM  : Programm execution only  once  daily  at  boot.   Slightly
+               adapted  for  4XBTM from ONCEADAY.BTM as distributed by JP
+               Software with 4DOS.
+
+ XTS.BTM     : Text Search utility.  Very useful!  You can enter any text
+               and a filespec and XTS will find that text in those files,
+               show you where (file name, line number) it  is  found  and
+               lets  you  list  it.  To get even more out of XTS, you can
+               change from 4DOS internal LIST to LIST.COM  from  V. Buerg
+               and  then  you  can  directly  edit,  copy or delete those
+               files.
+
+ XDSKCAT.BTM : Disk Catalogue Utility. You can catalogue   your    floppy
+               disks, look for filenames, list disks, look for free space
+               on disks etc.  It is menudriven and should explain itself.
+
+ XDEREM.BTM  : Delete remarks, leading blanks  and  empty  lines  from  a
+               batch and use BATCOMP on it.  For those of you who like to
+               spend a few minutes to save microseconds.
+
+ XFS.BTM     : File  Size  Utility:  modelled  after  P. Norton's  FS, it
+               shows  you the total size of selected files.  While you do
+               not get info about the slack area of each  file,  you  get
+               intermediate sums, and you can (4DOS)select files that are
+               not covered by wildcards.  See XDSIZE, too, for  directory
+               size.
+
+ XCLEAN.BTM  : Clean  your  drives  of  zero-length  files  and  unwanted
+               backups and / or temp files.  User-configurable.
+
+ XTEL.BTM    : A phone number dialler.  Look  up  your  contacts  with  a
+               search string and let XTEL dial their number.
+
+ XXTEL.BTM   : More elaborate phone number dialler.  Works interactively,
+               reports BUSY line etc.  May not  work  with  every  modem.
+
+ XPURGE.BTM  : Delete  your  files  safely.  With XPURGE purged files are
+               moved to a hidden directory (\XPURGE on your  boot  drive)
+               and stored until you decide to clean them out.
+
+ XUNPURGE.BTM: Restore  XPURGEd  files  to  current or original home dir.
+               Clean \XPURGE directory.  Menudriven.
+
+ XDOUBLE.BTM : Utility to find  duplicate  files  (doubles)  across  your
+               drive(s) with info about age and a  reasonable guess as to
+               what they are.
+
+ XFFD.BTM    : Find Files by Date range and  go  to  directory  of  found
+               files.
+
+ XFFS.BTM    : Find  Files  by  Size  range  and go to directory of found
+               files.
+
+ XFFDESC.BTM : Find Files by Description and go to directory.
+
+ XPW.BTM     : Password utility. Enter your correct password or stop your
+               system. May deter a not very sophisticated attempt to  get
+               at your data.
+
+ XWIPE.BTM   : Utility  to  wipe  the  info in a file before deleting it.
+               CAUTION: Recovering the information of a wiped file is NOT
+               possible!
+
+ XDSIZE.BTM  : Directory Size utility. Sizes  and percentages of disk use
+               for selected directories.
+
+ XIN.BTM     : CD to FIRST subdir.  Dir navigation  in  conjunction  with
+               XOVER.BTM
+
+ XOVER.BTM   : CD to  NEXT  subdir.   Dir  navigation in conjunction with
+
+ XFREN.BTM   : Multiple File REName utility with the help of SELECT.
+
+ XDSKFILL.BTM: XDSKFILL creates an empty file on the disk of your  choice
+               named  XDUMMY.DAT.   This file can be any size, default is
+               all of remaining disk space.  As only  1  byte  is  really
+               written  to  the file, you can view, edit and save textual
+               information of deleted files in the  former  slack  space.
+               With   XWIPE   you  can  then  erase  all  information  in
+               XDUMMY.DAT   for   security   reasons.
+
+ XDN.BTM     : Directory Navigation by cursor  and  enter  keys.   Really
+               only  a  stripped down XLIST.BTM, but there seems to be an
+               endless  demand   for   different   directory   navigation
+               utilities.
+
+ XDOSDEV.BTM : DOS DEVice segment adress display with DIR command! One of
+               the quirks of all DOS versions is that if you issue a  DIR
+               command  with  a  device name like CON or LPT1, the device
+               name will be displayed with a filesize that in reality  is
+               the decimal form of the (hexadecimal) segment adress.
+
+ XCOPYD.BTM  : XCOPY  to diskette with prompt for new diskette, so you do
+               not have to remember which files are already copied.
+
+ XBL1.BTM    : Screen savers for XAD.BTM
+ XBL2.BTM    :
+ XBL3.BTM    :
+ XBL4.BTM    :
+ XBL5.BTM    :
+
+ ========================================================================
+
+     4XBTM is  FREEWARE  donated to the public domain to further the
+     attractivity of 4DOS,  collect useful btms/aliases in one place
+     and give examples of useful btm routines.  Load down and enjoy!
+

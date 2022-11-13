@@ -1,0 +1,521 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><HTML>
+<!-- HTML source and images Copyright 2004, JP Software Inc., All
+     Rights  Reserved.  See http://jpsoft.com/jplegal.htm  before
+     doing anything with any material from JP Software's web site.
+-->
+<HEAD>
+<BASE TARGET="_top">
+<LINK REL="SHORTCUT ICON" HREF="http://jpsoft.com/favicon.ico">
+<LINK REL="P3Pv1" HREF="http://jpsoft.com/w3c/p3p.xml">
+<LINK REV="made" HREF="&#119;&#101;&#098;&#109;&#097;&#115;&#116;&#101;&#114;&#064;&#106;&#112;&#115;&#111;&#102;&#116;&#046;&#099;&#111;&#109;">
+<LINK REL="prefetch" HREF="/images/blogo.gif">
+<LINK REL="prefetch" HREF="/images/bhomeb2.gif">
+<LINK REL="prefetch" HREF="/images/bstoreb2.gif">
+<LINK REL="prefetch" HREF="/images/bprodb2.gif">
+<LINK REL="prefetch" HREF="/images/bordb2.gif">
+<LINK REL="prefetch" HREF="/images/bupgrb2.gif">
+<LINK REL="prefetch" HREF="/images/bsuppb2.gif">
+<LINK REL="prefetch" HREF="/images/bsiteb.gif">
+<LINK REL="prefetch" HREF="/images/bhelpb2.gif">
+<LINK REL="prefetch" HREF="/images/bhomes2.gif">
+<META HTTP-EQUIV="Cache-Control" CONTENT="must-revalidate">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="author" CONTENT="webmaster@jpsoft.com">
+<META NAME="copyright" CONTENT="Copyright 2004, JP Software, Inc. All Rights Reserved.">
+<META NAME="description" CONTENT="Advanced Command processors for DOS and Windows">
+<META NAME="keywords" CONTENT="COMMAND LINE,WINDOWS PROMPT, BATCH FILE,SHELL,SCRIPT,PROMPT,BTM,CMD,4DOS,4NT,TCMD,TAKE COMMAND,JPSOFT,WINDOWS,WIN98,WINME,W2K,XP,DOS,NT">
+<META NAME="rating" CONTENT="General">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="revisit-after" CONTENT="7 Days">
+<STYLE type="text/css">
+#highlight {background: #FFFF80; }
+#lowlight {background: #D2E2FF; }
+#neon {background: #99FF00; }
+A:HOVER { color: #000000; background: yellow}
+</STYLE>
+<BASE HREF="http://jpsoft.com/">
+<META NAME="ROBOTS" CONTENT="NOFOLLOW,NOARCHIVE,NOINDEX">
+<TITLE>JP Software - Text File Viewer: jpserver.txt</TITLE></HEAD>
+<BODY BGCOLOR="#FBF7FB" TEXT="#000000" LINK="#0000FF" ALINK="#FF0000" VLINK="#4F2F4F">
+<CENTER><TABLE COLS=1 BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=600 BGCOLOR="#D2E2FF">
+<TR><TD WIDTH=600 VALIGN=TOP NOWRAP>
+<A NAME="top"><IMG HEIGHT=50 WIDTH=136 HSPACE=0 VSPACE=0 BORDER=0 ALIGN=LEFT ALT="JP Software: " SRC="/images/blogo.gif"></A>
+<A TARGET="_top" HREF="/index.htm" onmouseover="document.images.home.src='/images/bhomeb2.gif'" onmouseout="document.images.home.src='/images/bhomes2.gif'"><img name=home HEIGHT=50 WIDTH=52 HSPACE=0 VSPACE=0 BORDER=0 ALIGN=LEFT ALT="Home Page" SRC="/images/bhomes2.gif"></A>
+<A HREF="http://jpsoft.com/store/store.mv" onmouseover="document.images.store.src='/images/bstoreb2.gif'" onmouseout="document.images.store.src='/images/bstores2.gif'"><img name=store HEIGHT=50 WIDTH=46 HSPACE=0 VSPACE=0 BORDER=0 ALIGN=LEFT ALT="Online Store" SRC="/images/bstores2.gif"></A>
+<A HREF="/products.htm" onmouseover="document.images.prod.src='/images/bprodb2.gif'" onmouseout="document.images.prod.src='/images/bprods2.gif'"><img name=prod HEIGHT=50 WIDTH=65 HSPACE=0 VSPACE=0 BORDER=0 ALIGN=LEFT ALT="Products" SRC="/images/bprods2.gif"></A>
+<A HREF="/ordinf.htm" onmouseover="document.images.ord.src='/images/bordb2.gif'" onmouseout="document.images.ord.src='/images/bords2.gif'"><img name=ord HEIGHT=50 WIDTH=54 HSPACE=0 VSPACE=0 BORDER=0 ALIGN=LEFT ALT="Orders" SRC="/images/bords2.gif"></A>
+<A HREF="/upgrade.htm" onmouseover="document.images.upgr.src='/images/bupgrb2.gif'" onmouseout="document.images.upgr.src='/images/bupgrs2.gif'"><img name=upgr HEIGHT=50 WIDTH=70 HSPACE=0 VSPACE=0 BORDER=0 ALIGN=LEFT ALT="Upgrades" SRC="/images/bupgrs2.gif"></A>
+<A HREF="/techsup.htm" onmouseover="document.images.supp.src='/images/bsuppb2.gif'" onmouseout="document.images.supp.src='/images/bsupps2.gif'"><img name=supp HEIGHT=50 WIDTH=61 HSPACE=0 VSPACE=0 BORDER=0 ALIGN=LEFT ALT="Support" SRC="/images/bsupps2.gif"></A>
+<A TARGET=JP_Help HREF="/help/index.htm" onmouseover="document.images.help.src='/images/bhelpb2.gif'" onmouseout="document.images.help.src='/images/bhelps2.gif'"><img name=help HEIGHT=50 WIDTH=45 HSPACE=0 VSPACE=0 BORDER=0 ALIGN=LEFT ALT="Online Help" SRC="/images/bhelps2.gif"></A>
+</TD></TR></TABLE>
+</CENTER>
+<P>
+<CENTER><FONT COLOR="#003399"><H1><STRONG>Text File Viewer</STRONG></H1></FONT></CENTER>
+<CENTER><H2><BIG><STRONG>"jpserver.txt"</STRONG></BIG> (
+13817
+ bytes)</H2>
+<STRONG>also available in <A HREF="ascii/jpserver.txt">text/plain</A> format</STRONG>
+</CENTER><P><FONT FACE="arial, helvetica, sans-serif" SIZE="-1" COLOR="#006699">
+<UL><LI>Use your browser's FIND function to locate specific text.</UL></FONT>
+<HR NOSHADE WIDTH="95%">
+<TABLE COLS=1 BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH="100%" BGCOLOR="#FBF7FB" BACKGROUND="/images/perf.gif"><TR><TD>
+<UL><UL></FONT><PRE>
+
+                                        [jp-server, updated 18-Jun-03]
+
+
+Welcome to the JP Software Support Forum!
+
+This document explains the different ways you can access the forum
+(newsgroup, web forum, and email list).
+
+The last section explains in detail the commands you can send to the
+server via email to control your forum membership.
+
+
+Sending Commands to Lyris
+
+   Many of the sections below refer to commands you need to send to
+   Lyris, the server software which controls our forum.  In order to
+   send a command to the server, email a message to:
+
+         lyris@email.sparklist.com
+
+   The subject of your message should be left blank, and any
+   standard signature you use should be disabled.
+
+   In the body, include a single line with the command.  For
+   example, if you want to use the newsgroup or web interface, and
+   stop receiving forum messages through email, send the command:
+
+         set jpsoft_support nomail
+
+   Some of the things you can set with commands emailed to the
+   server can also be controlled with settings accessible via
+   Lyris's web interface.  However in this document we cover the
+   more flexible email method, as the settings accessible through
+   the web interface are fairly clear from the text on the web page
+   itself.
+
+   A list of some useful server commands for forum members is at the
+   end of this document.  For complete details see:
+
+    http://www.lyris.com/lm_help/5.0/EmailCommandsForDiscussion.html
+
+Forum Membership Types
+
+   Your forum membership can be one of four types.  The types are:
+
+         mail - Receive each message via email as it is contributed.
+
+         digest - Receive a daily digest with all the messages of
+         the day.
+
+         index - Receive a daily index of the subject lines of all
+         the messages of the day.  You must then retrieve the
+         messages you want to read by sending "get" commands to the
+         server (see the last section below), or using the web
+         interface.
+
+         nomail - Receive no mail.  Use this type when you want to
+         access the forum via the newsgroup or web interface.
+
+   To set your membership type send the appropriate command to the
+   server:
+
+         set jpsoft_support mail
+         set jpsoft_support digest
+         set jpsoft_support index
+         set jpsoft_support nomail
+
+   The default type is "mail".
+
+
+Forum Passwords
+
+   You may assign yourself a password when you join the forum, or
+   add one later (see the server commands section below).
+
+   The advantage of using a password is that (barring successful
+   hacking) no one else will be able to change your forum settings
+   via the web interface.
+
+   The disadvantage is that you must remember the password for forum
+   access via the web interface, and in some cases when using a news
+   reader.
+
+
+Newsgroup Access
+
+   This is the method we recommend, as it gives you the best control
+   over which messages you read, and gives you the ability to see
+   the "thread" (message hierarchy) for each topic.
+
+   If you are currently receiving the forum messages via email, and
+   you want change and read them via the newsgroup instead, set your
+   membership type to "nomail" as described above.
+
+   The support forum is accessible from any news reader, including a
+   news-capable web browser (most current browsers support newsgroup
+   access).  If you use a web browser to access the newgroup, use
+   the URLs:
+
+         news://email.sparklist.com/jpsoft_support
+     or  nntp://email.sparklist.com/jpsoft_support
+
+
+   If you use news reader software (e.g.  Agent, or Gravity), set
+   your software to use the server name:
+
+         email.sparklist.com
+
+   Then select the jpsoft_support newsgroup from this server.
+
+   A user name and password is not required to access the server and
+   read the newsgroup.  However, you may find that you need to join
+   the forum and establish a user name and password in order to post
+   messages from your newsreader.  Whether this step is necessary
+   depends on your newsreader.  If you find that messages you try to
+   post are rejected by Lyris with a response like this:
+
+         Sorry, but Lyris did not find your email address
+         "name@domain.com" listed as a member of
+         jpsoft_support.
+
+   then use the web or email interface (see below) to join the list,
+   being sure to select "nomail" status.
+
+   Once you have joined as described above, you may need to enter
+   your username (email address) and password (if you chose one when
+   joining) into your news reader software in order to access the
+   jpsoft_support newsgroup.
+
+   If you use Forte's Agent or Free Agent and need information on
+   how to set up your software for an additional news server, see
+   Forte's FAQ page, which as of this writing is at:
+
+         http://www.forteinc.com/agsup/csfaq.htm
+
+   Look for the question "How do I set up Agent for multiple users
+   or news servers?"
+
+   The jpsoft_support newsgroup is locally hosted and is available
+   ONLY from the email.sparklist.com server.  It is not part of Usenet
+   and cannot be accessed from any other news server.  Cross-posting
+   and redistribution of Forum contents in any form are specifically
+   prohibited.
+
+   When you connect to the server your software may also show you a
+   list of other newsgroups hosted by sparklist.com.  These
+   newsgroups belong to other sparklist.com customers and are not
+   related to JP Software in any way.
+
+
+Web Access
+
+   Web access allows you to use a web browser with news support
+   (most current browsers offer this) to access the forum.  To do
+   so, use this URL:
+
+     http://email.sparklist.com/cgi-bin/lyris.pl?enter=jpsoft_support
+
+   From this screen you can:
+
+         * Log in as an existing member
+         * Join the forum
+         * Visit without joining,
+
+   Once you have chosen one of these options you can read and post
+   messages using the appropriate buttons on the web forms.  In
+   addition, if you are logged in as a member you can change your
+   forum options.
+
+   If you are currently receiving the forum messages via email, and
+   you want to stop receiving the email and read messages via the
+   web interface instead, send this command to the server:
+
+         set jpsoft_support nomail
+
+
+Email Access
+
+   With email access all messages posted to the forum are
+   automatically sent to your mailbox.  The way you receive the
+   messages depends on your membership type (mail, digest, or
+   index).  See the section on membership types above for details.
+
+   To post a message, send email to the forum address:
+
+         jpsoft_support@email.sparklist.com
+
+   (Do NOT send server commands to this address.  It is only for
+   posting actual substantive messages to the forum.)
+
+   When you send a reply to a forum message the reply will normally
+   go to the forum as well.  If you wish to reply privately, use the
+   appropriate options in your email software to reply to the "From"
+   address in the original message, instead of the "Reply-to"
+   address.
+
+
+Server Commands
+
+   In order to send commands to Lyris, the server software which
+   controls our forum, send email to:
+
+         lyris@email.sparklist.com
+
+   The subject of your message should be left blank, and any
+   standard signature you use should be disabled (or use the "end"
+   command explained below).  In the body of the message include
+   your commands, one per line.
+
+   Except when subscribing or unsubscribing, your command must be
+   sent from the email address at which you joined the forum.
+   Commands from other addresses will be rejected.
+
+   Many of the server commands explained here are equivalent to
+   options available form the web interface described above.
+
+   The server commands are:
+
+      -------------------------------------------------------------
+      subscribe
+
+         Subscribe the sender to the forum.  The format is simply:
+
+               subscribe jpsoft_support your name
+
+         For example:
+
+               subscribe jpsoft_support Mark Zbikowski
+
+         If you want to place a password on your forum options (see
+         the section on passwords above), add the "pw=" modifier:
+
+               subscribe jpsoft_support Mark Zbikowski pw=DOS
+
+         When you subscribe a confirmation message will be sent to
+         your email address.  You will not become a member of the
+         forum until after you respond to this confirmation request.
+
+      -------------------------------------------------------------
+      unsubscribe
+
+         Remove the sender from the forum.  The standard format is:
+
+               unsubscribe jpsoft_support
+
+         If you are sending the command from a different email
+         address than the one you want to remove, use this format:
+
+               unsubscribe jpsoft_support email-address
+
+         For example:
+
+               unsubscribe jpsoft_support me@somewhere.com
+
+         In this case a confirmation message will be sent to the
+         address being removed from the forum.  The actual removal
+         will not take place until after you respond to theis
+         confirmation request.
+
+         [NOTE:  If you receive forum messages in email you can also
+         use the instructions at the end of each email message or
+         digest to unsubscribe.]
+
+      -------------------------------------------------------------
+      set
+
+         Change your membership settings.  The format is:
+
+               set jpsoft_support [option] [option] ...
+
+         You can place as many options on the set line as you wish.
+         The available options are:
+
+            mail
+            digest
+            index
+            nomail
+
+               Set the sender's membership type to mail, digest,
+               index, or nomail.  See the Membership Types section
+               above for details.
+
+            ack
+            noack
+
+               Control whether the sender will receive a
+               confirmation from Lyris of each message posted to the
+               forum (ack), or will not receive such a confirmation
+               (noack).  The default is noack.
+
+            repro
+            norepro
+
+               Control whether the sender will receive copies of
+               their own messages sent to the list (repro), or will
+               not (norepro).  The default is repro.
+
+            email=new-email-address
+
+               Change the sender's email address.  The text after
+               the email= cannot have any spaces in it.
+
+            oldpw=old-password
+            pw=new-password
+
+               Set or change the sender's forum settings password.
+               If you do not currently have a password only the
+               pw= option is needed.  However if you do have a
+               password you must use oldpw= on the sam eline, but
+               before pw=, or the new password will be rejected.
+
+      -------------------------------------------------------------
+      get
+
+         This command has two puposes.  The first is to return a
+         document created by the forum managers.  The format for
+         this is:
+
+               get jpsoft_support document-name
+
+         For example, to get this document use:
+
+               get jpsoft_support jp-server
+
+         To retrieve the documents sent when you join or leave the
+         forum use one of these commands:
+
+               get jpsoft_support hello
+               get jpsoft_support goodbye
+
+         The second purpose of get is to retrieve message bodies.
+         This is particularly useful if you read the forum in
+         "index" mode and want to retrieve a specific message or
+         range of messages after reviewing the index.  The format
+         for this type of get command is:
+
+               get jpsoft_support number [number] ...
+           or  get jpsoft_support firstnum-lastnum
+
+         For example:
+
+               get jpsoft_support 100 105 106 109
+               get jpsoft_support 100-109
+
+      -------------------------------------------------------------
+      end
+
+         End of Lyris commands.
+
+         Use an end command when your email software appends a
+         signature or other text at the end of each message.  Lyris
+         will not process any text after the end command.  For
+         example:
+
+               subscribe jpsoft_support Mark Zbikowski pw=DOS
+               set jpsoft_support digest
+               end
+               -- Signature here --
+
+      -------------------------------------------------------------
+      unhold
+
+         Resume a "held" forum member.
+
+         If you access the forum via email and your email address
+         has been bouncing email for several days, Lyris will
+         normally put your membership on "hold" and stop sending you
+         forum messages.
+
+         In such a case, send the "unhold" command and Lyris will
+         return your "held" subscriptions back to "normal."
+
+         This command does not require the forum name, and should be
+         sent simply as:
+
+               unhold
+
+      -------------------------------------------------------------
+      query
+
+         Return an email message with your forum membership
+         settings.  The format is:
+
+               query jpsoft_support
+
+
+Copyright 2003, JP Software Inc., All Rights Reserved.  Published by
+JP Software Inc., P.O. Box 328, Chestertown, MD 21620, U.S.A.,
+phone 410-810-8818, fax 410-810-0026.
+
+Take Command and 4DOS are registered trademarks of JP Software Inc.
+4DOS, 4OS2, and 4NT are JP Software Inc.'s trademarks for its family
+of character-mode command processors.  JP Software, jpsoft.com, and
+all JP Software designs and logos are also trademarks of JP Software
+Inc. Other product and company names are trademarks of their
+respective owners.
+
+</PRE></UL></UL>
+</TR></TD></TABLE>
+<HR NOSHADE WIDTH="95%">
+<CENTER><STRONG>also available in <A HREF="ascii/jpserver.txt">text/plain</A> format</STRONG></CENTER>
+</FONT><FONT FACE="arial, helvetica, sans-serif" SIZE="-1" COLOR="#006699">
+<UL><A HREF="jpview.cgi?jpserver.txt#top"><IMG SRC="images/top4.gif" VSPACE=5 HSPACE=0 WIDTH=13 HEIGHT=7 ALIGN=TOP BORDER=0 ALT="^"><FONT COLOR="#663399"><STRONG>Top</STRONG></FONT></A></UL>
+<UL><LI>If your browser displayed this page in a separate window, <A HREF="" onclick="window.close()">close this window</A> to return to your previous location.</UL>
+</FONT><P>
+<center>
+<FORM TARGET="JP_Link" METHOD="get" ACTION="http://sitelevel.whatuseek.com/query.go">
+<INPUT TYPE="hidden" SIZE=0 NAME="crid" VALUE="4d3ea8ef0d7c5f46">
+<INPUT TYPE="hidden" SIZE=0 NAME="slice_title" VALUE="Text Files only">
+<TABLE bgcolor="#D2E2FF" CELLSPACING=0 CELLPADDING=5 BORDER=1 BORDERCOLOR="#003399">
+<TR><SMALL><TD ALIGN="center">
+<INPUT TYPE="submit" NAME="B1" VALUE=" search Text Files">
+</TD></SMALL></TR>
+<TR><TD ALIGN="center" VALIGN="bottom">
+<INPUT TYPE="text" NAME="query" SIZE="20" VALUE="&quot;search string&quot;" MAXLENGTH="200"></TD></TR>
+</TABLE></FORM>
+</center>
+<FONT FACE="Helvetica,Arial,Geneva,Swiss,sans-serif" SIZE=2>
+<UL><LI><H3>View a <A HREF="ascii.htm">Directory of all Text Files</A></H3></UL>
+<P></FONT>
+<P><HR WIDTH="95%"><P>
+<TABLE COLS=1 CELLSPACING=0 CELLPADDING=0 BORDER=0 WIDTH="90%">
+<TR><TD></TD></TR>
+<TR><TD BGCOLOR="#D2E2FF"><CENTER>
+<FONT FACE="Helvetica,Arial,Geneva,Swiss,sans-serif" SIZE=2>
+<A TARGET="_top" HREF="/index.htm">Home</A> |
+<A HREF="http://jpsoft.com/store/store.mv">Store</A> |
+<A HREF="/products.htm">Products</A> |
+<A HREF="/ordinf.htm">Orders</A> |
+<A HREF="/upgrade.htm">Upgrades</A> |
+<A HREF="/techsup.htm">Support</A> |
+<A TARGET=JP_Help HREF="/help/index.htm">Online Help</A>
+</FONT>
+</CENTER></TD></TR>
+<TR><TD>&nbsp;</TD></TR>
+<TR><TD><CENTER>
+<A HREF="#top"><IMG HEIGHT=30 WIDTH=90 VSPACE=5 BORDER=0 ALT=" (top of page) " SRC="/images/smjpswsh.gif"></A>
+</CENTER></TD></TR>
+<TR><TD><CENTER>
+<FONT FACE="Helvetica,Arial,Geneva,Swiss,sans-serif" SIZE=1>
+Page script last updated by
+<A HREF="&#119;&#101;&#098;&#109;&#097;&#115;&#116;&#101;&#114;&#064;&#106;&#112;&#115;&#111;&#102;&#116;&#046;&#099;&#111;&#109;?subject=Comments_WWW" TITLE="Comments_WWW">webmaster@jpsoft.com</A>.
+Copyright &copy; 2004 JP Software, Inc.  All Rights Reserved.
+<BR>See our <A HREF="/jplegal.htm">Legal Notices and Trademarks</A>
+and <A HREF="/privacy.htm">Privacy</A> Statements.
+<BR>
+<CENTER><FORM>
+<INPUT TYPE="button" VALUE=" &lt;&lt " onClick="history.go(-1)">
+<A HREF="#top"><IMG SRC="/images/top4.gif" VSPACE=5 HSPACE=0 WIDTH=13 HEIGHT=7 ALIGN=TOP BORDER=0 ALT="^"><FONT COLOR="#663399"><STRONG>Top</STRONG></FONT></A>
+<INPUT TYPE="button" VALUE=" &gt;&gt; " onCLick="history.go(1)">
+</FORM></CENTER>
+</FONT>
+</CENTER></TD></TR>
+<TR><TD>
+<CENTER><P><script language="JavaScript1.2" src="http://www.altavista.com/r?entr"></script></CENTER>
+</TD></TR>
+</TABLE>
+</BODY></HTML>

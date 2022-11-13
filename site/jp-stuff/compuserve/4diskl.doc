@@ -1,0 +1,280 @@
+                            4DOS DOCUMENTATION
+               FOR DISKLESS WORKSTATION SETUP ON NETWARE 386
+
+                          > > > CONFIG.SYS < < <
+
+BREAK=ON
+DEVICE=HIMEM.SYS /MACHINE:AT
+DEVICE=EMM386.EXE 384 /frame=e000 /ram=c600-d7ff /ram=dc00-dfff
+DEVICEHIGH=ANSI.SYS
+DEVICEHIGH=BURNDEV.SYS 21600 H+ F5
+
+SHELL=4DOS.COM @\4DOS.INI /P /F
+BUFFERS=40
+FILES=20
+DOS=HIGH,UMB
+
+                           > > > 4DOS.INI < < <
+
+;                              4DOS.INI
+;               4DOS Initial setup file used in startup
+
+4StartPath=\
+AutoexecPath=\
+HelpPath=\
+;LogName=F:\LOGIN\DW014DOS.LOG
+Swapping=EMS,XMS
+SwapReopen=NO ;YES if swapping 4DOS to Netware drive, NO for other drives.
+;  //WARNING -- If set to YES, swap location -MUST- be a network drive or
+;  will crash workstation if swap invoked.  (See "Swapping" parm. above).
+
+EnvFree=512 ;Amount of environment to make free for 2ndary shells
+UMBLoad=YES
+Ansi=YES
+BatchEcho=YES ;Echo batch commands unless ECHO OFF is received
+CursorIns=40
+CommandSep=^
+HistMin=3
+HistWinColor=BLACK on GREEN border WHITE
+ColorDir=HIDDEN:red; DIRS:green
+UpperCase=NO
+NetwareNames=YES ;Must be set to YES if PC is on Novell network
+
+                         > > > AUTOEXEC.BAT < < <
+
+REM AUTOEXEC.BAT
+REM Diskless Workstations, 4DOS
+
+IF NOT "%_4VER%" == "" AUTOEXEC.BTM
+
+                         > > > AUTOEXEC.BTM < < <
+
+REM AUTOEXEC.BTM
+REM 4DOS AUTOEXEC for Diskless Workstation
+
+MODE CO80
+PATH F:\LOGIN
+SET COMSPEC=F:\LOGIN\4DOS.COM
+
+REM Define system configuration for network (used in system login script):
+SET PC_TYPE=CLONE
+SET PC_CPU=386
+SET PC_MON=VGA
+SET PC_DFTDRV=F:
+SET PC_DFTPRT=
+
+ECHO OFF
+PROMPT $P$G
+ECHO.
+
+ECHO Network, memory resident programs and 4DOS will be loaded next. 
+WAIT
+ECHO.
+LOADHIGH IPX
+EMSNETX
+
+F:
+REM 4DOS vars/commands
+IF "%_4VER%" == "" GOTO NO4DOS
+SET COMSPEC=F:\PUBLIC\4DOS\4DOS.COM
+SET TEMP4DOS=
+SETDOS /I-HELP /I-LIST
+LOADHIGH KSTACK
+ALIAS /R ALIAS.LST
+LOG OFF
+
+:NO4DOS
+SET PCTV=/COLOR
+SET LIST=
+SET TEMP=
+
+LA +AA /C >NUL
+
+IF "%_4VER%" == "" GOTO :EXIT
+  ECHO.
+ECHO Available Base memory: %@DOSMEM[K]k
+ECHO Available Expanded memory (EMS): %@EMS[K]k
+ECHO Available Extended memory (XMS): %@XMS[K]k
+
+:EXIT
+VER
+
+ ----------------------------------------------------------------------------
+
+                      SAMPLE BOOT IMAGE CREATION LOG
+             WITH DIR LISTS FOR A: (BOOT IMAGE DISKETTE) & F:\LOGIN
+
+[PROGCARE #1-SUPERVISOR]
++A:\>dir
+
+ Volume in drive A is DISKLESS WS    Serial number is 2C24:5810
+ Directory of  a:\*.*
+
+burndev.sys      2595   4-13-89  12:16
+wait.com          128   6-01-90   0:24
+ansi.sys         9029   4-09-91   5:00
+command.com     47845   4-09-91   5:00
+netx.com        51201   7-31-91  10:47
+emsnetx.exe     63838   7-31-91  10:49
+emm386.exe     110174   3-10-92   3:10
+himem.sys       13824   3-10-92   3:10
+4dos.com       110082   6-08-92   4:01
+4dos.ico          766   6-08-92   4:01
+4dos.pif          545   6-08-92   4:01
+4dosm.ico         766   6-08-92   4:01
+shell.cfg         133   9-11-92  21:57
+ipx.com         29213   9-15-92  19:59
+4dos.ini          769   9-24-92  20:30
+autoexec.btm      884   9-24-92  21:10
+config.sys        234   9-24-92  21:13
+autoexec.bat       91   9-24-92  21:14
+     442,117 bytes in 18 file(s)           448,000 bytes allocated
+     694,272 bytes free
+
+[PROGCARE #1-SUPERVISOR]
++F:\LOGIN>dir
+
+ Volume in drive F is SYS            Serial number is 7153:7CD9
+ Directory of  f:\login\*.*
+
+.            <DIR>
+..           <DIR>
+LOCAL        <DIR>      5-21-92   0:25
+console.com       103   8-25-87   7:57
+reboot.com        512   6-04-90   0:17
+rprinter.hlp      117   8-09-90  22:40
+token.rpl       13085  11-01-90  10:21
+nlogin.exe      52944  11-02-90  16:02
+slist.exe       22437   1-24-91   7:10
+rprinter.exe    92378   2-06-91   7:39
+loginnw.exe    108619   6-04-91  16:09
+use.exe          6240   7-07-91  14:31 Add dynamically to PATH
+exit&out.bat      627   2-24-92  16:20
+4dos.com       110082   6-08-92   4:01
+4dos.ico          766   6-08-92   4:01
+4dos.pif          545   6-08-92   4:01
+4dosm.ico         766   6-08-92   4:01
+kstack.com        555   6-08-92   4:01
+gaentry.bat       211   6-18-92  22:02
+gm.bat             31   7-20-92  22:13
+sup.bat           362   8-05-92  22:58
+logout.bat       1288   8-07-92  21:47
+menu.bat          361   8-18-92  18:51
+loginmm.bat       640   8-18-92  18:52
+entry.bat         204   8-29-92  10:15
+ke.bat            355   9-15-92  21:46
+login.bat         816   9-15-92  21:49
+la.com          41361   9-16-92  21:58
+alias.lst         275   9-21-92  23:44
+autoexec.btm      884   9-24-92  21:10
+autoexec.bat       91   9-24-92  21:14
+net$dos.sys    535040   9-25-92  15:36
+   1,103,847 bytes in 38 file(s)         1,318,912 bytes allocated
+ 397,205,504 bytes free
+
+[PROGCARE #1-SUPERVISOR]
++F:\LOGIN>map
+
+Drive  A:   maps to a local disk.
+Drive  B:   maps to a local disk.
+Drive  C:   maps to a local disk.
+Drive  D:   maps to a local disk.
+Drive  E:   maps to a local disk.
+Drive  G: = PROGCARE\SYS:  \LOGIN
+      -----
+SEARCH1:  = Z:. [PROGCARE\SYS:  \PUBLIC]
+SEARCH2:  = Y:. [PROGCARE\SYS:  \BAT]
+SEARCH3:  = X:. [PROGCARE\SYS:  \PUBLIC\IBM_PC\MSDOSV5.00]
+SEARCH4:  = W:. [PROGCARE\SYS:  \LOGIN]
+SEARCH5:  = V:. [PROGCARE\SYS:  \UTILSNET\SABERMU]
+SEARCH6:  = U:. [PROGCARE\SYS:  \USAGE]
+SEARCH7:  = R:. [PROGCARE\SYS:  \SYSTEM]
+SEARCH8:  = T:. [PROGCARE\SYS:  \UTILSWS\PUBLIC]
+SEARCH9:  = S:. [PROGCARE\SYS:  \UTILSWS\NORTON]
+SEARCH10:  = C:\BAT
+SEARCH11:  = C:\DOS
+SEARCH12:  = C:\4DOS
+SEARCH13:  = C:\MOUSE
+SEARCH14:  = C:\UTIL
+SEARCH15:  = C:\NETWORK
+SEARCH16:  = C:\MULTEDIT
+SEARCH17:  = C:\RPGSYS\#SYSTEM
+SEARCH18:  = F:\LOGIN [PROGCARE\SYS:  \SYSTEM]
+[PROGCARE #1-SUPERVISOR]
+
+                          > > > BOOTFL.BAT < < <
+
+              BOOT IMAGE FILE (NET$DOS.SYS) CREATION ROUTINE
+Use this to create or revise anything in the diskless workstation boot image
+file.  (For one diskless workstation only!)  See Novell "Installation" manu-
+al, Appendix D, pages 349-360.
+        1. Make desired revisions to boot image diskette
+        2. Run BOOTFL.BAT
+        3. Reboot diskless workstation
+
+@echo off
+REM BOOTFL.BAT
+REM Create diskless workstation boot image file
+
+If not "%1" == "" Call ed a:\%1
+If not "%1" == "" if "%1" == "AUTOEXEC.BAT" copy a:\%1 f:\login
+If not "%1" == "" if "%1" == "AUTOEXEC.BTM" copy a:\%1 f:\login
+
+map f:=sys:system
+map g:=sys:login
+g:
+DOSGEN
+REM Need RPLFIX.EXE patch for DOS5 only.  Get from Netwire.
+RPLFIX NET$DOS.SYS
+
+>>>EXECUTE BOOTFL.BAT
+
++F:\LOGIN>f:
+
+[PROGCARE #1-SUPERVISOR]
++F:\LOGIN>bootfl
+
+Drive F is in use as a search drive.
+Do you want to reassign this search drive? (Y/N) Y
+Drive  F: = PROGCARE\SYS:  \SYSTEM
+
+Drive  G: = PROGCARE\SYS:  \LOGIN
+Floppy Type f9 = Quad Density, 15 Sectors per track
+Total Floppy Space 2400 Sectors
+Setting Up System Block.
+Setting Up FAT Tables.
+Setting Up Directory Structures.
+Traversing Directory Structures.
+Processing IO      SYS
+Processing MSDOS   SYS
+Diskette Label = DISKLESS WS
+Processing COMMAND COM
+Processing HIMEM   SYS
+Processing BURNDEV SYS
+Processing IPX     COM
+Processing AUTOEXECBAT
+Processing NETX    COM
+Processing EMM386  EXE
+Processing ANSI    SYS
+Processing SHELL   CFG
+Processing EMSNETX EXE
+Processing 4DOSM   ICO
+Processing WAIT    COM
+Processing 4DOS    COM
+Processing AUTOEXECBTM
+Processing 4DOS    PIF
+Processing 4DOS    ICO
+Processing 4DOS    INI
+Processing CONFIG  SYS
+Transferring Data to "NET$DOS.SYS"
+
+NetWare Boot Disk Image Patch Program  v1.01 (910226)
+(c) Copyright 1991 by Novell, Inc.  All rights reserved.
+
+Boot disk image file has been modified for DOS 5.xx
+
+[PROGCARE #1-SUPERVISOR]
++G:\LOGIN>
+
+
+>>> Reboot diskless workstation

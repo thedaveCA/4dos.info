@@ -1,0 +1,29 @@
+4DOS 7.50.2 
+(Note: .2 to denote modification from initial source release to allow building,
+ where 7.50 is initial freeware release & 7.50.1 is initial source release.)
+
+To build 4DOS 7.50:
+ - apply 4dos7502.diff
+ - create DOS subdirectory, e.g.
+       C:\4DOS\SOURCE\>  MKDIR DOS
+ - copy SASJP.LIB to DOS subdirectory, e.g.
+       C:\4DOS\SOURCE\>  COPY SASJP.LIB DOS
+ - setup MSC 7 (or higher) and MASM 6.x environment variables, e.g.
+       C:\4DOS\SOURCE\>  \C700\BIN\NEW-VARS.BAT
+       C:\4DOS\SOURCE\>  \MASM611\BINR\NEW-VARS.BAT
+ - run make specifying 4DOS makefile, e.g.
+       C:\4DOS\SOURCE\>  nmake -f 4DOS
+ - finally, test your new 4DOS executable, e.g.
+       C:\4DOS\SOURCE\>  DOS\4DOS.COM
+
+
+Notes:
+  Currently build still requires SASJP.LIB from initial source library.
+  The registration functions (shareware/registered/serial#) are not
+  included and the calls to them are #ifdef'd out so never called.
+  Although it builds now, there are still plenty of warnings (at least
+  with my MSC compiler & MASM versions) and no help text.
+  It is only minimally tested, so there may be other serious errors still.
+
+KJD
+20061125

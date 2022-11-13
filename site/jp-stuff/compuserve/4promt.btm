@@ -1,0 +1,53 @@
+::
+::PROMPTS written by Tim Stoddard (c)1994 and released to Public Domain
+:: ver 1.1 adds more function and corrects a bug. YOU NEED 4DOS V5.5 FOR THIS ONE!
+::
+:: Thanks to John Butler (100347,222) for pointing out a problem that showed up in Drvspace.
+::
+:: If you improve on these, please let me know!!
+:: CompuServe 73127,2664 --- Internet tims@Pipeline.com
+
+:: THESE PROMPTS WERE DESIGNED FOR CYAN ON BLACK
+
+:: You can get around the 255 character prompt limit by using DOS environment
+:: variables and combining them within the PROMPT command. This includes
+:: nesting the variables! As shown below: PROMPT reads the "status" variable
+:: which in turn reads "memory" and "datetime" variables.
+:: This also makes the PROMPT easier to maintain
+
+set memory=`$e[0;36mENV=%_ENV%b ALIAS=%_ALIAS CON=%@dosmem[K]k EMS=%@EMS[K]k XMS=%@XMS[K]k DPMI v%_DPMI`
+set datetime=`$d $t`
+set dosver=`$e[0;36m%_DOS $v/%_4ver on a %_CPU`
+set status=`$e[0;%@EVAL[31+%_ansi]mANSI $e[0;%@EVAL[31+%_mouse]mMOUSE $e[0;%@EVAL[31+%@LPT[1]]mLPT1 $e[0;%@EVAL[31+%@LPT[2]]mLPT2 $e[0;%@EVAL[31+%@LPT[3]]mLPT3`
+set CDROM=`$e[0;%@EVAL[31+%@CDROM[R:]]mCD$e[0;%@EVAL[31+%@READY[R:]]mR `
+:: Edit for your CD drive letter  ^                             ^    ^
+set shell=`$e[0;35;1mShell $z$e[0;36m`
+set disk=`$e[0;36;1m$n:$e[0;36m(%@LABEL[%_disk:])$e[0;36m %@diskfree[%_disk:,m]M Free $e[1;36m%@upper[%_cwps]`
+set end=`$G`
+set winshell=`$e[0;%@EVAL[31+%_win];1mWindows %@word["=",%_win,NOT RUNNING=ver 2.x=ver 3.x ENH=ver 3.x Real/Standard] %Shell`
+
+:: The following two prompts display the status of the MOUSE and LPT1-3
+:: ports in RED or GREEN along with (C)onventional,(E)MS,(X)MS memory, date &
+:: time, Shell level, and current drive,drive label, free space, and PATH.
+:: SELECT ONE OF THE FOLLOWING 4 PROMPTS.
+
+:: The following displays a 3 line prompt
+:: prompt `%dosver %status %CDROM $_%memory $_%shell %datetime %disk $_%end%$e[0;36m`
+
+:: The following displays a 2 line prompt
+:: prompt `%dosver %status %CDROM $_%shell %datetime %disk $_%end%$e[0;36m`
+
+:: The following displays status info on the top line and
+:: drive info on the current line.
+
+:: prompt `%shell %disk $_%end%$e[s$e[1;1H%dosver %status %CDROM%$e[u$e[0;36m`
+
+:: The following displays status & CDROM info on the top line and
+:: drive info on the current line.
+
+prompt `%shell %disk $_%end%$e[s$e[1;1H%dosver %status %CDROM%$e[u$e[0;36m`
+
+:: THE FOLLOWING PROMPT IS USED BY WINDOWS ONLY AND IS IN ADDITION TO THE
+:: ABOVE SELECTION
+:: This prompt will display in a Windows DOS box
+set winpmt=`%dosver %status %CDROM $_%winshell %disk $_%end%$e[0;36m`

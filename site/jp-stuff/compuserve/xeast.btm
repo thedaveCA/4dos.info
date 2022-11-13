@@ -1,0 +1,91 @@
+::  XEASTER.BTM                                    VERSION 1.0   20_Nov_1995
+::  (Easter-dependant holiday utility)
+::
+::  by                                             Klaus Meinhard
+::                                                 Brahmsstr. 12
+::                                                 G 26842 Ostrhauderfehn
+::                                                 Germany
+::                                                 Compuserve 100115,2025
+::
+::  XEASTER.BTM shows the date for Easter Sunday and all holidays dependant
+::  on Easter.
+::
+::  The  algorithm used here is the one by Carl-Friedrich Gauss (no, I don't
+::  really understand it, so I hope I did it right, but it seems to work as
+::  far as I could test it). If you are not using the american date format
+::  (mm-dd-yyyy), you have to make small adjustments in 2 marked places.
+::
+::  I have refrained from doing the output in my 4XBTM colorful way. Perhaps
+::  you could use this routine as an enhancement for a calender program.
+::
+::  Have fun! Further suggestions welcome.
+
+:START
+
+    *setlocal
+    *unset *
+    *unalias *
+
+    set year=%1
+
+    iff %@numeric[%year] eq 0 goto USAGE
+
+    set r1=%@eval[%year %% 19]
+    set r2=%@eval[%year %% 4]
+    set r3=%@eval[%year %% 7]
+    set r4=%@eval[((19*%r1)+24) %% 30]
+    set r5=%@eval[((6*%r4)+(4*%r3)+(2*%r2)+5) %% 7]
+
+::  Date here is in mm-dd-yy format. You may have to change the following
+::  line according to your country settings.
+    set ostern=%@date[03-22-%year]
+::
+    set ostern=%@makedate[%@eval[%ostern+%r4+%r5]]
+
+:CHECK
+::  Correction if Easter is too late
+
+::  Date here is in mm-dd-yy format. You may have to change the following
+::  2 lines according to your country settings.
+    set day=%@instr[3,2,%ostern]
+    set month=%@instr[0,2,%ostern]
+
+    if %day == 26 .and. %month == 4 set ostern=%@makedate[%@eval[%@date[%ostern]-7]]
+    if %day == 25 .and. %month == 4 .and. %r1 gt 10 set ostern=%@makedate[%@eval[%@date[%ostern]-7]]
+
+:OUTPUT
+
+    echo.
+    echo Easter-dependant holidays for %YEAR:
+    echo.
+    echo Ash Wednesday : %@makedate[%@eval[%@date[%ostern]-46]]
+    echo Good Friday   : %@makedate[%@eval[%@date[%ostern]-2]]
+    echo Easter Sunday : %ostern
+    echo Ascension     : %@makedate[%@eval[%@date[%ostern]+39]]
+    echo Whitsunday    : %@makedate[%@eval[%@date[%ostern]+49]]
+    echo Corpus Christi: %@makedate[%@eval[%@date[%ostern]+60]]
+    echo.
+
+:END
+
+    quit
+
+:USAGE
+
+    cls
+    text
+
+
+    XEASTER ÄÄÄÄÄÄÄÄÄ          4XBTM holiday utility
+
+    Syntax:
+
+    XEASTER <year>              Show the dates for all easter-dependant
+                                holidays for <year>, e.g. 1996.
+
+    XEASTER /? -?               Syntax (this screen)
+
+    endtext
+    goto END
+
+
