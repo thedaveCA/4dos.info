@@ -1,0 +1,16 @@
+REGEDIT4
+
+; Restore the ability of IE6 to accept URLS of the form
+;
+;     http://username:password@domain.com/ 
+;  
+; Note that such URLs are often consideerd to constitute a "security" risk.  Use wisely
+;
+; To "undo", either delete the key or set both values to "1".   
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl] 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_HTTP_USERNAME_PASSWORD_DISABLE]
+"iexplore.exe"=dword:00000000
+"explorer.exe"=dword:00000000
+
+; IE6_Login_Fix.reg
