@@ -1,0 +1,7 @@
+*.zip
+*.r??
+*.exe
+*.dll
+*.com
+*.sys
+*.chm
