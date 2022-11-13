@@ -1,0 +1,39 @@
+REGEDIT4
+; JPBATCH.REG
+; 08-Jan-98
+; ------------------------------------------------------------------------
+;    If your Windows configuration already allows you to edit the Properties
+;    of batch files (file type "batfile") by opening an Explorer Window
+;    ("My Computer", for example) and selecting  "View", "Options", then
+;    "File Types", you don't need this file.
+;
+;    If you don't see an entry for "MS-DOS Batch Files" or a similar name,
+;    or if the edit options are unavailable, and you prefer not having to
+;    modify the Windows registry "manually", this file can make the change
+;    for you:
+;
+;    a. Double-click on this file and select the "Merge" action if one is
+;       available.  As an alternative invoke
+;
+;            REGEDIT JPBATCH.REG
+;
+;       from any prompt in this directory.  In either case, this will call
+;       the Microsoft Registry Editor and make the requested modification.
+;
+;    b. To undo the (harmless) change, uncomment (remove the leading
+;       semicolon) the appropriate "EditFlags" line below, and re-run
+;       the procedure in step "a." above.
+;
+       [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\batfile]
+;      @="Batch File"
+        "EditFlags"=hex:00,00,00,00   ; make "batfile" editable
+;       "EditFlags"=hex:d0,04,00,00   ; reset to Win95 default
+;       "EditFlags"=hex:30,04,00,00   ; reset to WinNT default
+;
+;    note: the original name of "MS-DOS Batch file" is somewhat confusing,
+;    especially if you are not running MS-DOS.  We suggest you select the
+;    more neutral "Batch file" name by uncommenting the "@" line above
+:    before invoking the Registry Editor, but that's entirely optional.
+;
+; ------------------------------------------------------------------------
+
