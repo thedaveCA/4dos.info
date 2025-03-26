@@ -1,0 +1,60 @@
+# Generic publish-to-S3-compatible cloud storage workflow for Gitea
+
+name: Deploy Static Site
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      RCLONE_DEST: ${{ vars.S3_BUCKET }}
+
+    steps:
+      - name: Checkout Code (including LFS)
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Install rclone
+        run: |
+          if [ -f "/usr/bin/rclone" ]; then
+            echo "rclone found at /usr/bin/rclone"
+          else
+            echo "rclone not found at /usr/bin/rclone, installing..."
+            curl https://rclone.org/install.sh | sudo bash
+          fi
+
+      - name: Configure rclone for S3 bucket
+        env:
+          CONFIG_S3_TYPE: s3
+          CONFIG_S3_ENDPOINT: ${{ vars.S3_ENDPOINT }}
+          CONFIG_S3_PROVIDER: ${{ vars.S3_PROVIDER }}
+        run: |
+          mkdir -p ~/.config/rclone
+          cat <<EOF > ~/.config/rclone/rclone.conf
+          [s3]
+          type = ${CONFIG_S3_TYPE}
+          endpoint = ${CONFIG_S3_ENDPOINT}
+          provider = ${CONFIG_S3_PROVIDER}
+          access_key_id = ${{ secrets.AWS_ACCESS_KEY_ID }}
+          secret_access_key = ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          EOF
+
+      - name: Check if /site directory exists
+        run: |
+          if [ ! -d "./site" ]; then echo "No '/site' directory found. Aborting deploy." >&2; exit 1; fi
+
+      - name: Publish to bucket
+        env:
+          RCLONE_DRY_RUN: false
+          RCLONE_DELETE_AFTER: true
+          RCLONE_NO_UPDATE_DIR_MODTIME: true
+          RCLONE_NO_UPDATE_MODTIME: true
+          RCLONE_TRANSFERS: 24
+          RCLONE_VERBOSE: 1
+        run: rclone sync ./site ${{ env.RCLONE_DEST }}
